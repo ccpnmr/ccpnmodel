@@ -54,9 +54,6 @@ versionSequence = ['2.0.a0', '2.0.a1', '2.0.a2', '2.0.a3', '2.0.b1', '2.0.b2', '
 emptyDict = {}
 emptyList = []
 
-# functions to convert fullKeys before application
-fullKeyConverters = {}
-
 # guids of elements that should be treated as old
 # Must be kept out of map fixing till the last, as they break it.
 elemsTreatedAsOld = set((

@@ -95,10 +95,3 @@ def getModelDirectory(versionTag):
   else:
     version = Version.Version(versionTag)
   return os.path.join(getTopDirectory(), baseDir, version.getDirName())
-
-
-def getCompatibilityModule(version, toVersion=None):
-  """Get compatibility module for version relative to toVersion NBNB TODO finish this"""
-
-  if toVersion is None:
-    toVersion = str(Version.currentModelVersion)

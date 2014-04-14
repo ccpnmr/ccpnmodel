@@ -52,9 +52,6 @@ versionSequence = ['2.0.a0', '2.0.a1']
 emptyDict = {}
 emptyList = []
 
-# functions to convert fullKeys before application
-fullKeyConverters = {}
-
 # guids of elements that should be treated as old
 # Must be kept out of map fixing till the last, as they break it.
 elemsTreatedAsOld = set((
@@ -69,7 +66,7 @@ elemsTreatedAsOld = set((
 
 # pairs of element guids that should be treated as matching, e.g. when
 # a single element must match with several elements in subclasses
-elementPairings = []
+from ccpnmodel.v_2_0_a2.upgrade import elementPairings
 
 def extraMapChanges(globalMapping):
   """ Extra map changes specific for a given step

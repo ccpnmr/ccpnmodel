@@ -57,10 +57,6 @@ from memops.format.compatibility.upgrade.v_2_1_0 import General as General210
 # Reference data (so no compatibility):
 # NmrReference, StereoChemistry (also never used)
 
-# functions to convert fullKeys before application
-fullKeyConverters = {}
-fullKeyConverters.update(General210.fullKeyConverters)
-
 # guids of elements that should be treated as old
 # RunIo.groupId and runIo.weight:
 # Must be kept out of map fixing till the last, as they break it.
