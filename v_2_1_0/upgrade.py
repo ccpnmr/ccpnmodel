@@ -77,8 +77,8 @@ def extraMapChanges(globalMapping):
     globalMapping['mapsByGuid'][guid]['proc'] = 'delay'
 
   guid = 'www.ccpn.ac.uk_Fogh_2006-08-17-15:11:12_00001'
-  dd = globalMapping['mapsByGuid'][guid]
-  if 'proc' in dd:
+  dd = globalMapping['mapsByGuid'].get(guid)
+  if dd and 'proc' in dd:
     del dd['proc']  # should not be 'proc':'delay' after all.
 
 
