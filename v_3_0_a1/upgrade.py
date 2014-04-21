@@ -64,7 +64,26 @@ elementPairings = []
 def extraMapChanges(globalMapping):
   """ Extra map changes specific for a given step
   """
-  pass
+
+  # Text type disappears and is replaced by String
+  globalMapping['loadMaps']['IMPL.Text'] = globalMapping['loadMaps']['IMPL.String']
+  globalMapping['IMPL']['abstractTypes']['Text'] = globalMapping['IMPL']['abstractTypes']['String']
+  textTypeGuid = 'www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00036'
+  stringTypeGuid = 'www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00035'
+  globalMapping['mapsByGuid'][textTypeGuid] = globalMapping['mapsByGuid'][stringTypeGuid]
+
+
+  # Set up global dictionaries
+  # loadMaps = {}
+  # globalMap['loadMaps'] = loadMaps
+  # mapsByGuid = {}
+  # globalMap['mapsByGuid'] = mapsByGuid
+  #
+  # # IMPL - <MetaPackage: memops.Implementation>: Set up top level dictionaries
+  # currentMap = {}
+  # globalMap['IMPL'] = currentMap
+  # abstractTypes = {}
+  # currentMap['abstractTypes'] = abstractTypes
 
   # Remap Text data type to String
   # textTypeGuid = 'www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00036'
