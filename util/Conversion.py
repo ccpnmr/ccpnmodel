@@ -135,10 +135,9 @@ def setNmrExpPrototypeLink(obj, tag, topObjByGuid, delayDataDict,
       # NB naughty - _packageName is a private attribute.
       # But getPackageName is not static
       obj.root.refreshTopObjects(clazz._packageName)
-      try:
-        oo = topObjByGuid[guid]
-      except:
-        raise ApiError("""%s.%s: NmrExpPrototype with guid %s not found or loaded"""
-                       % (clazz.__name__, tag, guid))
-    obj.__dict__[tag] = clazz.getByKey(oo, keyList[1:-1])
-    del objDataDict[tag]
+      oo = topObjByGuid.get(guid)
+    if oo is not None:
+      # If the experiment is not found, hopefully it wil be picked up at a later
+      # compatibility step.
+      obj.__dict__[tag] = clazz.getByKey(oo, keyList[1:-1])
+      del objDataDict[tag]
