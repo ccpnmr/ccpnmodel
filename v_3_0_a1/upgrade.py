@@ -72,6 +72,12 @@ def extraMapChanges(globalMapping):
   stringTypeGuid = 'www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00035'
   globalMapping['mapsByGuid'][textTypeGuid] = globalMapping['mapsByGuid'][stringTypeGuid]
 
+  #ShiftReference.indirectShiftRatio
+  guid = 'www.ccpn.ac.uk_Fogh_2006-08-16-18:20:12_00012'
+  dd = globalMapping['mapsByGuid'].get(guid)
+  if dd and 'proc' in dd:
+    del dd['proc']  # should not be 'proc':'delay' after all.
+
 
   # Set up global dictionaries
   # loadMaps = {}
