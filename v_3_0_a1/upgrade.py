@@ -72,29 +72,21 @@ def extraMapChanges(globalMapping):
   stringTypeGuid = 'www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00035'
   globalMapping['mapsByGuid'][textTypeGuid] = globalMapping['mapsByGuid'][stringTypeGuid]
 
+  # Double type disappears and is replaced by Float
+  globalMapping['loadMaps']['IMPL.Double'] = globalMapping['loadMaps']['IMPL.Float']
+  globalMapping['IMPL']['abstractTypes']['Double'] = globalMapping['IMPL']['abstractTypes']['Float']
+  doubleTypeGuid = 'www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00030'
+  floatTypeGuid = 'www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00031'
+  globalMapping['mapsByGuid'][doubleTypeGuid] = globalMapping['mapsByGuid'][floatTypeGuid]
+
   #ShiftReference.indirectShiftRatio
   guid = 'www.ccpn.ac.uk_Fogh_2006-08-16-18:20:12_00012'
   dd = globalMapping['mapsByGuid'].get(guid)
-  if dd and 'proc' in dd:
-    del dd['proc']  # should not be 'proc':'delay' after all.
+  if dd:
+    dd['data'] = globalMapping['mapsByGuid']['www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00031']
+    if 'proc' in dd:
+      del dd['proc']  # should not be 'proc':'delay' after all.
 
-
-  # Set up global dictionaries
-  # loadMaps = {}
-  # globalMap['loadMaps'] = loadMaps
-  # mapsByGuid = {}
-  # globalMap['mapsByGuid'] = mapsByGuid
-  #
-  # # IMPL - <MetaPackage: memops.Implementation>: Set up top level dictionaries
-  # currentMap = {}
-  # globalMap['IMPL'] = currentMap
-  # abstractTypes = {}
-  # currentMap['abstractTypes'] = abstractTypes
-
-  # Remap Text data type to String
-  # textTypeGuid = 'www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00036'
-  # stringTypeGuid = 'www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00035'
-  # globalMapping['mapsByGuid'][textTypeGuid].update(globalMapping['mapsByGuid'][stringTypeGuid])
 
 
 

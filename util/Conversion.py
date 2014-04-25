@@ -86,7 +86,7 @@ def getConversionInfo(fromVersionString, toVersionString):
     # make extraMapChanges function
     def extraMapChanges(globalMapping):
       """ mapping changes for series of version changes:"""
-      for mm in reversed(versionModules):
+      for ii,mm in reversed(list(enumerate(versionModules))):
         mm.extraMapChanges(globalMapping)
     result['extraMapChanges'] = extraMapChanges
 

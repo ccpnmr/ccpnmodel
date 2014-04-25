@@ -117,7 +117,7 @@ def testProject(target, outDir):
   target is the directory containing it, or the Implementation.xml file
   outDir the directory to which it is written
   """
-  #print 'Testing %s ...' % target
+  print('Testing %s ...' % target)
   if target.endswith('.xml'):
     dirpath, fileName = os.path.split(target)
     projectName = fileName[:-4]
@@ -134,8 +134,14 @@ def testProject(target, outDir):
   # t3 = time.time()
   if not os.path.exists(outDir):
     os.makedirs(outDir)
-  utilIo.saveProject(ccpnProject,
-                    newPath=corePath.joinPath(outDir,os.path.basename(target)))
+
+  newPath = outDir
+  for extra in (os.path.basename(target), ccpnProject.name):
+    if extra not in newPath:
+      newPath = corePath.joinPath(newPath, extra)
+  print('### saving to',newPath, ccpnProject.name)
+  utilIo.saveProject(ccpnProject, newPath=newPath, newProjectName=ccpnProject.name,
+                     removeExisting=True)
   t4 = time.time()
   #print ('+++ Project Load ', t1-t0)
   #print ('+++ AllData Load ', t2-t1)
