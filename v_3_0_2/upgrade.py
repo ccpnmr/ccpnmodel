@@ -277,7 +277,6 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
 
       resonanceGroup.nmrChain = (nmrProject.findFirstNmrChain(code=groupAssignment[0]) or
                                  nmrProject.newNmrChain(code=groupAssignment[0]))
-      # NBNB TBD data model change required, derived, settable sequenceCode attr
       resonanceGroup.sequenceCode = groupAssignment[1]
       resonanceGroup.residueType = groupAssignment[2]
 
