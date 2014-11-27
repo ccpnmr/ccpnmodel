@@ -124,11 +124,32 @@ def correctFinalResult(memopsRoot):
     for nmrConstraintStore in nmrProject.sortedNmrConstraintStores():
       fixNmrConstraintStore(nmrConstraintStore, chainMap)
 
+    # Fix experiments
+    fixExperiments(nmrProject)
+
     # Transfer assignments in NmrProject
     transferAssignments(nmrProject, mainMolSystem, chainMap)
 
-    # Fix pek intensities and assignments storage
+    # Fix peak intensities and assignments storage
     fixPeaks(nmrProject)
+
+def fixExperiments(nmrProject):
+  """ensure Experiment.name is unique"""#
+  name2Experiment = {}
+  for experiment in nmrProject.sortedExperiments():
+    name = experiment.name
+    ll = name2Experiment.get(name, [])
+    ll.append(experiment)
+    name2Experiment[name] = ll
+
+  for name, experiments in list(name2Experiment.items()):
+    for experiment in ll[1:]:
+      nextName = commonUtil.nextUniqueName(name)
+      while nextName in  name2Experiment:
+        nextName = commonUtil.nextUniqueName(nextName)
+      name2Experiment[nextName] = [experiment]
+      experiment.name = nextName
+
 
 def fixPeaks(nmrProject):
   """Copy Peak intensity records to peak attributes,
