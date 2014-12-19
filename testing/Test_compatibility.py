@@ -54,7 +54,8 @@ def doTest(target=None, workDir=None, maskErrors=True):
     testProjects(target=target, workDir=testDir, maskErrors=maskErrors)
 
 def unzipFile(target, workDir):
-  print('Unzipping %s ...' % target)
+  logger = Logging.getLogger()
+  logger.info('Unzipping %s ...' % target)
   tempDir = os.path.join(workDir, stdTempDir)
   junkDir = os.path.join(workDir, stdJunkDir)
   if os.path.exists(tempDir):
@@ -117,8 +118,9 @@ def testProjects(target, workDir, extraDirs=None, maskErrors=True):
           except:
             if maskErrors:
               logger.exception("Error in test of %s" % projDir)
+              print("Error in test of %s" % projDir)
               # print(">>>>Error>>>> %s" % targetFile)
-              # print(traceback.format_exception_only(sys.exc_info()[0],sys.exc_info()[1]))
+              print(traceback.format_exception_only(sys.exc_info()[0],sys.exc_info()[1]))
               # print()
             else:
               raise
@@ -167,13 +169,19 @@ def testProject(target, outDir):
   #print ('+++ Project Test ', t3-t2)
   #print ('+++ Load and test', t3-t0)
   #print ('+++ Project Save ', t4-t3)
-  logger.info(('+++ Testing OK, project %s. Total time %s. %s  '
-         % (ccpnProject.name , t4-t0, target)))
+  message = ('+++ Testing OK, project %s. Total time %s. %s  '
+         % (ccpnProject.name , t4-t0, target))
+  logger.info(message)
+  print(message)
   utilIo.cleanupProject(ccpnProject)
   del ccpnProject
   
 
 if __name__ == '__main__':
+
+  import logging
+  from ccpncore.util import Logging
+  Logging.defaultLogLevel = logging.DEBUG
 
   if len(sys.argv) < 2:
     print(" Need either a .xml or .tgz package, a directory, or 'all' as input.")
