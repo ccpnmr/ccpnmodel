@@ -46,6 +46,8 @@ automated software development. Bioinformatics 21, 1678-1684.
 """
 __author__ = 'rhf22'
 
+from ccpnmodel.util import Path as modelPath
+
 versionSequence = ['2.0.a0', '2.0.a1', '2.0.a2', '2.0.a3', '2.0.b1', '2.0.b2', '2.0.b3',
                    '2.0.4',  '2.0.5',  '2.1.0',  '2.1.1', '2.1.2', '3.0.a1']
 # NBNB version 2.0.6 is a side branch, not on the main version sequence
@@ -60,6 +62,12 @@ elemsTreatedAsOld = set(())
 # pairs of element guids that should be treated as matching, e.g. when
 # a single element must match with several elements in subclasses
 elementPairings = []
+
+# packages that have been moved - need special code for moving stored data:
+# ~ Dictionary is {newName:oldName}
+movedPackageNames = {
+  'ccp.molecule.Symmetry':'molsim.Symmetry'
+}
 
 def extraMapChanges(globalMapping):
   """ Extra map changes specific for a given step
@@ -89,16 +97,18 @@ def extraMapChanges(globalMapping):
 
 
 
-
 def correctData(topObj, delayDataDict, toNewObjDict, mapping=None):
   """ update topObj object tree using information in delayDataDict
   May be used either to postprocess a file load (minor upgrade)
   or as part of an in-memory data transfer (major upgrade)
 
-  topObj is the MemopsRoot in the new tree
+  topObj is the package TopObject in the new tree
   toNewObjDict is _ID:newObj for minor
     and oldObj/oldObjId:newObj for major upgrades
   """
 
   doGet = delayDataDict.get
   pName = topObj.packageName
+
+  if pName == 'memops.Implementation':
+    topObj._movedPackageNames = movedPackageNames

@@ -60,7 +60,7 @@ def correctData(topObj, delayDataDict, toNewObjDict, mapping=None):
   May be used either to postprocess a file load (minor upgrade)
   or as part of an in-memory data transfer (major upgrade)
 
-  topObj is the MemopsRoot in the new tree
+  topObj is the package TopObject in the new tree
   toNewObjDict is _ID:newObj for minor
     and oldObj/oldObjId:newObj for major upgrades
   """

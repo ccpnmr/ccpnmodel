@@ -9,9 +9,12 @@ from ccpncore.util import Logging
 testDataPath = 'testdata/upgrade/'
 
 alwaysSkipDirs = {'.svn', '.idea', 'ccp', 'ccpnmr', 'cambridge', 'CVS', 'molsim', 'utrecht',}
-stdTempDir='temp'
+stdTempDir='unzipped_%s'
 stdOutDir='out'
-stdJunkDir='junk'
+
+# Gobal variable to distinguish temporary unzip directory names
+global dirIndex
+dirIndex = 0
 
 
 def doTest(target=None, workDir=None, maskErrors=True):
@@ -54,14 +57,11 @@ def doTest(target=None, workDir=None, maskErrors=True):
     testProjects(target=target, workDir=testDir, maskErrors=maskErrors)
 
 def unzipFile(target, workDir):
+  global dirIndex
+  dirIndex += 1
   logger = Logging.getLogger()
   logger.info('Unzipping %s ...' % target)
-  tempDir = os.path.join(workDir, stdTempDir)
-  junkDir = os.path.join(workDir, stdJunkDir)
-  if os.path.exists(tempDir):
-    if os.path.isdir(junkDir):
-      shutil.rmtree(junkDir)
-    shutil.move(tempDir, junkDir)
+  tempDir = os.path.join(workDir, stdTempDir % dirIndex)
   os.makedirs(tempDir)
   
   subprocess.call(['tar', '-xzf', target, '-C', tempDir])
@@ -117,8 +117,8 @@ def testProjects(target, workDir, extraDirs=None, maskErrors=True):
                          maskErrors=maskErrors)
           except:
             if maskErrors:
-              logger.exception("Error in test of %s" % projDir)
-              print("Error in test of %s" % projDir)
+              logger.exception("Error in test of %s" % targetFile)
+              print("Error in test of %s" % targetFile)
               # print(">>>>Error>>>> %s" % targetFile)
               print(traceback.format_exception_only(sys.exc_info()[0],sys.exc_info()[1]))
               # print()
@@ -183,6 +183,8 @@ if __name__ == '__main__':
   from ccpncore.util import Logging
   Logging.defaultLogLevel = logging.DEBUG
 
+  dirIndex = 0
+
   if len(sys.argv) < 2:
     print(" Need either a .xml or .tgz package, a directory, or 'all' as input.")
     sys.exit()
@@ -190,7 +192,8 @@ if __name__ == '__main__':
   targetarg = sys.argv[1]
 
   if targetarg == 'all':
-    doTest(maskErrors=False)
+    doTest()
+    #doTest(maskErrors=False)
   else:
     doTest(targetarg, maskErrors=False)
     #doTest(targetarg)
