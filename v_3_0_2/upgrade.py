@@ -210,7 +210,7 @@ def fixNmrConstraintStore(nmrConstraintStore, chainMap):
 
           # Make new Contribution
           dd = dict((x,getattr(constraint,x))
-                    for x in ('targetValue', 'error', 'upperLimit', 'lowerLimit'))
+                    for x in ('targetValue', 'error', 'upperLimit', 'lowerLimit', 'weight'))
           contribution = getattr(constraint, newContribution)(**dd )
 
           # Transfer resonances to new Items objects and delete old ones.
@@ -226,7 +226,7 @@ def fixNmrConstraintStore(nmrConstraintStore, chainMap):
 
           # Make new Contribution
           dd = dict((x,getattr(constraint,x))
-                    for x in ('targetValue', 'error', 'upperLimit', 'lowerLimit'))
+                    for x in ('targetValue', 'error', 'upperLimit', 'lowerLimit', 'weight'))
           contribution = getattr(constraint, newContribution)(**dd )
 
           # Transfer resonances to new Items objects and delete old ones.
@@ -242,6 +242,7 @@ def fixNmrConstraintStore(nmrConstraintStore, chainMap):
             dd = dict((x,getattr(constraintItem,x))
                       for x in ('targetValue', 'error', 'upperLimit', 'lowerLimit'))
             contribution = getattr(constraint, newContribution)(**dd )
+            contribution.weight = constraint.weight
             getattr(contribution, newItem)(resonances=resonances)
             constraintItem.delete()
 
