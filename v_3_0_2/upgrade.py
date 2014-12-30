@@ -302,7 +302,7 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
 
   # Now fix resonance assignments
   assignmentMap = {}
-  V2Upgrade. mapAssignedResonances(nmrProject, assignmentMap, chainMap=chainMap)
+  V2Upgrade.mapAssignedResonances(nmrProject, assignmentMap, chainMap=chainMap)
   reverseMap = {}
   for resonance in nmrProject.sortedResonances():
     assignment = assignmentMap.get(resonance)
