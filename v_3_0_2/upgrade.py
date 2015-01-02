@@ -74,6 +74,7 @@ def correctFinalResult(memopsRoot):
   NOT part of standard compatibility process, but a special case for upgrade from v2 to v3 """
 
   # Copy across molSystem chains so all NmrProjects have only one MolSystem
+
   molSystemMap = {}
   chainMap = {}
   for nmrProject in memopsRoot.sortedNmrProjects():
@@ -93,6 +94,9 @@ def correctFinalResult(memopsRoot):
           mainMolSystem = molSystem
           sentinel = count
       molSystemMap[mainMolSystem] = mainMolSystem
+
+    # Set link to NmrProject
+    nmrProject.molSystem = mainMolSystem
 
     # Overlap with previous molSystem set - merge into previous system.
     for molSystem in molSystemCounts:
@@ -137,41 +141,46 @@ def fixPeaks(nmrProject):
   """Copy Peak intensity records to peak attributes,
    and assignment related attributes to new locations """
 
-  for peakList in nmrProject.sortedPeakLists():
-    for peak in peakList.sortedPeaks():
+  for experiment in nmrProject.sortedExperiments():
+    for dataSource in experiment.sortedDataSources():
+      for peakList in dataSource.sortedPeakLists():
+        for peak in peakList.sortedPeaks():
 
-      # Copy intensity values across
-      if not peak.height:
-        # No good way of determining which object to take if there are multiple height objects
-        # Fortunately there rarely is (Analysis used findFirst too)
-        intensityObject = peak.findFirstPeakIntensity(intensityType='height')
-        peak.height = intensityObject.value
-        peak.heightError = intensityObject.error
-      if not peak.volume:
-        # No good way of determining which object to take if there are multiple height objects
-        # Fortunately there rarely is (Analysis used findFirst too)
-        intensityObject = peak.findFirstPeakIntensity(intensityType='volume')
-        peak.volume = intensityObject.value
-        peak.volumeError = intensityObject.error
+          # Copy intensity values across
+          if not peak.height:
+            # No good way of determining which object to take if there are multiple height objects
+            # Fortunately there rarely is (Analysis used findFirst too)
+            intensityObject = peak.findFirstPeakIntensity(intensityType='height')
+            if intensityObject is not None:
+              peak.height = intensityObject.value
+              peak.heightError = intensityObject.error
+          if not peak.volume:
+            # No good way of determining which object to take if there are multiple height objects
+            # Fortunately there rarely is (Analysis used findFirst too)
+            intensityObject = peak.findFirstPeakIntensity(intensityType='volume')
+            if intensityObject is not None:
+              peak.volume = intensityObject.value
+              peak.volumeError = intensityObject.error
 
-      for obj in peak.peakIntensities:
-        # clean up
-        obj.delete()
+          for obj in peak.peakIntensities:
+            # clean up
+            obj.delete()
 
-      # Copy across PeakDimComponent data
-      for peakDimComponent in peak.sortedPeakDimComponents():
-        scalingFactor = peakDimComponent.scalingFactor
-        annotation = peakDimComponent.annotation
-        refSerial = peakDimComponent.getByNavigation('dataDimRef', 'expDimRef', 'serial')
-        for peakDimContrib in peakDimComponent.peakDimContribs:
-          if scalingFactor != 1.0:
-            peakDimContrib.scalingFactor = scalingFactor
-          if annotation:
-            peakDimContrib.annotation = annotation
-          if refSerial:
-            peakDimContrib.expDimRefSerial = refSerial
-        #
-            peakDimComponent.delete()
+          # Copy across PeakDimComponent data
+          for peakDim in peak.sortedPeakDims():
+            for peakDimComponent in peakDim.sortedPeakDimComponents():
+              scalingFactor = peakDimComponent.scalingFactor
+              annotation = peakDimComponent.annotation
+              refSerial = peakDimComponent.getByNavigation('dataDimRef', 'expDimRef', 'serial')
+              for peakDimContrib in peakDimComponent.peakDimContribs:
+                if scalingFactor != 1.0:
+                  peakDimContrib.scalingFactor = scalingFactor
+                if annotation:
+                  peakDimContrib.annotation = annotation
+                if refSerial:
+                  peakDimContrib.expDimRefSerial = refSerial
+              #
+                  peakDimComponent.delete()
 
 
 def fixNmrConstraintStore(nmrConstraintStore, chainMap):
@@ -455,7 +464,7 @@ def expandMolSystemAtoms(molSystem):
 
   # Set elementSymbol and add missing atoms (lest something breaks lower down)
   for chain in molSystem.sortedChains():
-    for residue in chain.soredResidues():
+    for residue in chain.sortedResidues():
       chemCompVar = residue.chemCompVar
       for chemAtom in chemCompVar.findAllChemAtoms(className='ChemAtom'):
         atom = residue.findFirstAtom(name=chemAtom.name)
@@ -468,7 +477,7 @@ def expandMolSystemAtoms(molSystem):
 
   # Set boundAtoms for existing atoms within residue
   for chain in molSystem.sortedChains():
-    for residue in chain.soredResidues():
+    for residue in chain.sortedResidues():
       chemCompVar = residue.chemCompVar
       for atom in residue.atoms:
         chemAtom = chemCompVar.findFirstChemAtom(name=atom.name, className='ChemAtom')
@@ -483,9 +492,10 @@ def expandMolSystemAtoms(molSystem):
     # Add boundAtoms for MolResLinks
       for molResLink in chain.molecule.molResLinks:
         ff = chain.findFirstResidue
-        atoms = [ff(seqId=x.molResidue.seqId).findFirstAtom(name=x.linkEnd.boundChemAtom.name)
+        atoms = [ff(seqId=x.molResidue.serial).findFirstAtom(name=x.linkEnd.boundChemAtom.name)
                  for x in molResLink.molResLinkEnds]
-        atoms[0].addBoundAtom(atoms[1])
+        if atoms[1] not in atoms[0].boundAtoms:
+          atoms[0].addBoundAtom(atoms[1])
 
   # Add boundAtoms for MolSystemLinks
   for molSystemLink in molSystem.molSystemLinks:
@@ -497,7 +507,7 @@ def expandMolSystemAtoms(molSystem):
 
   # Add extra atoms corresponding to ChemAtomSets
   for chain in molSystem.sortedChains():
-    for residue in chain.soredResidues():
+    for residue in chain.sortedResidues():
       chemCompVar = residue.chemCompVar
       # AQUA is good on pseudoatom names
       pseudoNamingSystem = chemCompVar.chemComp.findFirstNamingSystem(name='AQUA')
@@ -529,7 +539,7 @@ def expandMolSystemAtoms(molSystem):
               components = [casMap[x] for x in chemContents]
             elementSymbol = chemContents[0].elementSymbol
 
-            commonBound = set.intersection(*(x.boundAtoms for x in components))
+            commonBound = frozenset.intersection(*(x.boundAtoms for x in components))
 
             # Add 'equivalent' atom
             newName = cas.name.replace('*', '#')
@@ -537,6 +547,9 @@ def expandMolSystemAtoms(molSystem):
                                       elementSymbol=elementSymbol,atomSetName=cas.name,
                                       components=components, boundAtoms=commonBound)
             casMap[cas] = newAtom
+
+            # NBNB the test on '#' count is a hack to exclude Tyr/Phe HD#|HE#
+            hackExclude = newName.count('#') >= 2
 
             # Add 'pseudo' atom for proton
             if elementSymbol == 'H':
@@ -570,7 +583,7 @@ def expandMolSystemAtoms(molSystem):
                                 atomSetName=cas.name, components=components, boundAtoms=commonBound)
 
             # Add 'nonstereo atoms
-            if not cas.isEquivalent and len(components) == 2:
+            if not cas.isEquivalent and len(components) == 2 and not hackExclude:
               # NB excludes cases with more than two non-equivalent components
               # But then I do not think there are any in practice.
               # and anyway we do not have a convention for them.
@@ -583,8 +596,12 @@ def expandMolSystemAtoms(molSystem):
                 ll[starpos] = newChar
                 newName = ''.join(ll)
                 newNames.append(newName)
-                residue.newAtom(name=newName, atomType='nonstereo', elementSymbol=elementSymbol,
-                                atomSetName=cas.name, components=components, boundAtoms=commonBound)
+                if residue.findFirstAtom(name=newName) is not None:
+                  print ("WARNING, new atom already exists: %s %s %s %s"
+                         % (residue.chain.code, residue.seqId, residue.ccpCode, newName))
+                else:
+                  residue.newAtom(name=newName, atomType='nonstereo', elementSymbol=elementSymbol,
+                                  atomSetName=cas.name, components=components, boundAtoms=commonBound)
 
 
       # NBNB Now we need to set boundAtoms for non-single Atoms.
