@@ -84,18 +84,13 @@ def correctFinalResult(memopsRoot):
     if not molSystemCounts:
       continue
 
-    for ms in molSystemCounts:
-      mainMolSystem = molSystemMap.get(ms)
-      if mainMolSystem:
-        break
-    else:
-      # select main system as the most common
-      sentinel = -1
-      for molSystem, count in sorted(molSystemCounts.items()):
-        if count > sentinel:
-          mainMolSystem = molSystem
-          sentinel = count
-      molSystemMap[mainMolSystem] = mainMolSystem
+    # select main system as the most common
+    sentinel = -1
+    for molSystem, count in sorted(molSystemCounts.items()):
+      if count > sentinel:
+        mainMolSystem = molSystem
+        sentinel = count
+    molSystemMap[mainMolSystem] = mainMolSystem
 
     # Set link to NmrProject
     nmrProject.molSystem = mainMolSystem
@@ -104,13 +99,13 @@ def correctFinalResult(memopsRoot):
     for molSystem in molSystemCounts:
       if molSystem not in molSystemMap:
         molSystemMap[molSystem] = mainMolSystem
-      copyMolSystemContents(molSystem, mainMolSystem, chainMap=chainMap)
+        copyMolSystemContents(molSystem, mainMolSystem, chainMap=chainMap)
 
     # Add new atoms to MolSystem
     expandMolSystemAtoms(mainMolSystem)
 
     for nmrConstraintStore in nmrProject.sortedNmrConstraintStores():
-      fixNmrConstraintStore(nmrConstraintStore, chainMap)
+      fixNmrConstraintStore(nmrConstraintStore,mainMolSystem,  chainMap)
 
     # Fix experiments
     fixExperiments(nmrProject)
@@ -185,11 +180,12 @@ def fixPeaks(nmrProject):
                   peakDimComponent.delete()
 
 
-def fixNmrConstraintStore(nmrConstraintStore, chainMap):
+def fixNmrConstraintStore(nmrConstraintStore, molSystem, chainMap):
     """Fix NmrConstraintStore"""
 
     # First fix FixedResonances (so we can remap them below)
-    assignmentMap = V2Upgrade.mapAllAssignments(nmrConstraintStore, chainMap=chainMap)
+    assignmentMap = V2Upgrade.mapAllAssignments(nmrConstraintStore, molSystem=molSystem,
+                                                chainMap=chainMap)
     assignment2Resonance = {}
     resonanceMap = {}
     for resonance, assignment in assignmentMap.items():
@@ -277,8 +273,9 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
   else:
     defaultChainCode = '@'
 
-  resonanceGroupMap =  V2Upgrade.mapResonanceGroups(nmrProject, chainMap=chainMap,
-                                               defaultChainCode=defaultChainCode)
+  resonanceGroupMap =  V2Upgrade.mapResonanceGroups(nmrProject, molSystem=mainMolSystem,
+                                                    chainMap=chainMap,
+                                                    defaultChainCode=defaultChainCode)
 
   # Set ResonanceGroup attributes and NmrChains, and merge duplicate ResonanceGroups
   reverseGroupMap = {}
@@ -314,7 +311,8 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
 
   # Now fix resonance assignments
   assignmentMap = {}
-  V2Upgrade.mapAssignedResonances(nmrProject, assignmentMap, chainMap=chainMap)
+  V2Upgrade.mapAssignedResonances(nmrProject, assignmentMap, molSystem=mainMolSystem,
+                                  chainMap=chainMap)
   reverseMap = {}
   for resonance in nmrProject.sortedResonances():
     assignment = assignmentMap.get(resonance)
