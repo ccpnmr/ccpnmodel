@@ -75,6 +75,8 @@ def correctFinalResult(memopsRoot):
 
   # Copy across molSystem chains so all NmrProjects have only one MolSystem
 
+  print ("Correcting Final Result for V2-V3 transition")
+
   molSystemMap = {}
   chainMap = {}
   for nmrProject in memopsRoot.sortedNmrProjects():
