@@ -341,7 +341,7 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
           newResonanceGroup = reverseGroupMap.get(assignment[:3])
           if newResonanceGroup is None:
             # Assigned resonance with no matching ResonanceGroup. Make a new group
-            rg = nmrProject.newResonanceGroup(sequenceCode=assignment[1], residuetype=assignment[2],
+            rg = nmrProject.newResonanceGroup(sequenceCode=assignment[1], residueType=assignment[2],
                                               resonances=(resonance,))
             # NBNB TBD residueType/ccpCode still to be sorted out
             rg.nmrChain = (nmrProject.findFirstNmrChain(code=groupAssignment[0]) or
@@ -360,7 +360,7 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
     else:
       # resonance was not assigned from a resonanceSet (in mapAssignedResonances)
       name = V2Upgrade.regularisedResonanceName(resonance)
-      assignment = groupAssignment + {name,}
+      assignment = groupAssignment + (name,)
 
       oldResonance = reverseMap.get(assignment)
       if oldResonance is None:
@@ -391,7 +391,7 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
           if ss not in name:
             name = '%s@%s' % (name, serial)
           resonance.name = name
-          assignment = groupAssignment + {name,}
+          assignment = groupAssignment + (name,)
           reverseMap[assignment] = resonance
 
         else:
