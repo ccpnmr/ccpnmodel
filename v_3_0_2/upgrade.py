@@ -190,7 +190,7 @@ def fixNmrConstraintStore(nmrConstraintStore, molSystem, chainMap):
     resonanceMap = {}
     for resonance, assignment in assignmentMap.items():
       resonance.chainCode = assignment[0]
-      resonance.sequencCode = assignment[1]
+      resonance.sequenceCode = assignment[1]
       resonance.residueType = assignment[2]
       resonance.name = assignment[3]
 
