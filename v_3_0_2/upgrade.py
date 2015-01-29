@@ -109,13 +109,13 @@ def correctFinalResult(memopsRoot):
     for nmrConstraintStore in nmrProject.sortedNmrConstraintStores():
       fixNmrConstraintStore(nmrConstraintStore,mainMolSystem,  chainMap)
 
-    # Fix mesurementList names
+    # Fix measurementList names
     for obj in nmrProject.measurementLists:
       name = obj.name
       if name:
-        obj.name = '_'.join(name.split()).replace('.','_').replace(':','_')
+        obj.name = '_'.join(name.split()).replace('.','^')
       else:
-        obj.name = '%s_%s' % (obj.className, obj.serial)
+        obj.name = '%ss%s' % (obj.className[:-4], obj.serial)
 
     # Fix experiments
     fixExperiments(nmrProject)
@@ -132,15 +132,15 @@ def fixExperiments(nmrProject):
   for experiment in nmrProject.sortedExperiments():
     name = experiment.name
     if name:
-      name = '_'.join(name.split()).replace('.','_').replace(':','_')
+      name = '_'.join(name.split()).replace('.','^')
     else:
       refExperiment = experiment.refExperiment
       if refExperiment:
         name = refExperiment.synonym or refExperiment.name
-        name = '_'.join(name.split()).replace('.','_').replace(':','_')
+        name = '_'.join(name.split()).replace('.','^')
       else:
         name='Exp'
-      name = '%s_%s' % (name, experiment.serial)
+      name = '%s%s' % (name, experiment.serial)
     ll = name2Experiment.get(name, [])
     ll.append(experiment)
     name2Experiment[name] = ll
@@ -231,12 +231,9 @@ def fixNmrConstraintStore(nmrConstraintStore, molSystem, chainMap):
 
       name = constraintList.name
       if name:
-        constraintList.name = '_'.join(name.split()).replace('.','_').replace(':','_')
+        constraintList.name = '_'.join(name.split()).replace('.','^')
       else:
-        constraintList.name = ("RestraintList:%s.%s,%s" %
-                               (constraintList.nmrConstraintStore.serial,
-                                constraintList.className[:-14], constraintList.serial)
-                              )
+        constraintList.name = ("%ss%s" %(constraintList.className[:-14], constraintList.serial))
 
       className = constraintList.className
       restraintType = className[:-14]
