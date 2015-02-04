@@ -113,9 +113,15 @@ def correctFinalResult(memopsRoot):
     for obj in nmrProject.measurementLists:
       name = obj.name
       if name:
-        obj.name = '_'.join(name.split()).replace('.','^')
+        name = '_'.join(name.split()).replace('.','^')
       else:
-        obj.name = '%ss%s' % (obj.className[:-4], obj.serial)
+        name = '%ss%s' % (obj.className[:-4], obj.serial)
+
+      while nmrProject.findAllMeasurementLists(name=name) not in (set(), {obj}):
+        name = commonUtil.incrementName(name)
+
+      obj.name = name
+
 
     # Fix experiments
     fixExperiments(nmrProject)
@@ -127,33 +133,36 @@ def correctFinalResult(memopsRoot):
     fixPeaks(nmrProject)
 
 def fixExperiments(nmrProject):
-  """ensure Experiment.name is unique"""
-  name2Experiment = {}
+  """ensure DataSource.name is unique"""
+  usedNames = set()
   for experiment in nmrProject.sortedExperiments():
-    name = experiment.name
-    if name:
+    refExperiment = experiment.refExperiment
+    name1 = experiment.name
+    for dataSource in experiment.sorteedDataSources():
+      name2 = dataSource.name
+
+      # Use experiment or datasource name as default
+      name = name1 or name2
+
+      if name1 and name2:
+        # We had both exeriment and datasource name. Combine them
+        name = '%s-%s' % (name1, name2)
+
+      elif not name:
+        # no name set in either object
+       if refExperiment:
+         # Use name from experiment type
+          name = refExperiment.synonym or refExperiment.name
+       else:
+         # Use name from serials
+        name = 'SP%s-%s' % (experiment.serial, dataSource.serial)
+
+      #regularise name
       name = '_'.join(name.split()).replace('.','^')
-    else:
-      refExperiment = experiment.refExperiment
-      if refExperiment:
-        name = refExperiment.synonym or refExperiment.name
-        name = '_'.join(name.split()).replace('.','^')
-      else:
-        name='Exp'
-      name = '%s%s' % (name, experiment.serial)
-    ll = name2Experiment.get(name, [])
-    ll.append(experiment)
-    name2Experiment[name] = ll
-
-  for name, experiments in list(name2Experiment.items()):
-    ll[0].name = name
-    for experiment in ll[1:]:
-      nextName = name
-      while nextName in  name2Experiment:
-        nextName = commonUtil.incrementName(nextName)
-      name2Experiment[nextName] = [experiment]
-      experiment.name = nextName
-
+      while name in usedNames:
+        name = commonUtil.incrementName
+      usedNames.add(name)
+      dataSource.name = name
 
 
 def fixPeaks(nmrProject):
@@ -205,6 +214,19 @@ def fixPeaks(nmrProject):
 def fixNmrConstraintStore(nmrConstraintStore, molSystem, chainMap):
     """Fix NmrConstraintStore"""
 
+    # Set nmrCOnstraintStore name to unique
+    name = nmrConstraintStore.name
+    if name:
+      name = '_'.join(name.split()).replace('.','^')
+    else:
+      name = 'RS%s' %  nmrConstraintStore.serial
+
+    while (nmrConstraintStore.root.findAllNmrConstraintStores(name=name)
+           not in (set(), {nmrConstraintStore})):
+      name = commonUtil.incrementName(name)
+
+    nmrConstraintStore.name = name
+
     # First fix FixedResonances (so we can remap them below)
     assignmentMap = V2Upgrade.mapAllAssignments(nmrConstraintStore, molSystem=molSystem,
                                                 chainMap=chainMap)
@@ -229,14 +251,21 @@ def fixNmrConstraintStore(nmrConstraintStore, molSystem, chainMap):
 
     for constraintList in nmrConstraintStore.sortedConstraintLists():
 
-      name = constraintList.name
-      if name:
-        constraintList.name = '_'.join(name.split()).replace('.','^')
-      else:
-        constraintList.name = ("%ss%s" %(constraintList.className[:-14], constraintList.serial))
-
       className = constraintList.className
       restraintType = className[:-14]
+
+      name = constraintList.name
+      if name:
+        name = '_'.join(name.split()).replace('.','^')
+      else:
+        name = '%ss%s' % (restraintType, constraintList.serial)
+
+      while (nmrConstraintStore.findAllConstraintLists(name=name) not in (set(),
+             {constraintList})):
+        name = commonUtil.incrementName(name)
+
+      constraintList.name = name
+
       newContribution = 'new%sContribution' % restraintType
       newItem = 'new%sItem' % restraintType
 
