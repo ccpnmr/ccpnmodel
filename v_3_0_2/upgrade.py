@@ -145,7 +145,7 @@ def fixExperiments(nmrProject):
       name = name1 or name2
 
       if name1 and name2:
-        # We had both exeriment and datasource name. Combine them
+        # We had both experiment and dataSource name. Combine them
         name = '%s-%s' % (name1, name2)
 
       elif not name:
