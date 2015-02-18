@@ -141,7 +141,7 @@ def fixExperiments(nmrProject):
     for dataSource in experiment.sorteedDataSources():
       name2 = dataSource.name
 
-      # Use experiment or datasource name as default
+      # Use experiment or dataSource name as default
       name = name1 or name2
 
       if name1 and name2:
