@@ -24,7 +24,7 @@ __version__ = "$Revision$"
 
 from ccpncore.util import CopyData
 from ccpncore.lib import V2Upgrade
-from ccpncore.lib import MoleculeModify
+from ccpncore.lib.molecule import MoleculeModify
 from ccpncore.util import Common as commonUtil
 
 
