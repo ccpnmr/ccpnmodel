@@ -150,17 +150,17 @@ def fixExperiments(nmrProject):
 
       elif not name:
         # no name set in either object
-       if refExperiment:
-         # Use name from experiment type
+        if refExperiment:
+          # Use name from experiment type
           name = refExperiment.synonym or refExperiment.name
-       else:
-         # Use name from serials
-        name = 'SP%s-%s' % (experiment.serial, dataSource.serial)
+        else:
+          # Use name from serials
+          name = '%s-%s' % (experiment.serial, dataSource.serial)
 
       #regularise name
       name = '_'.join(name.split()).replace('.','^')
       while name in usedNames:
-        name = commonUtil.incrementName
+        name = commonUtil.incrementName(name)
       usedNames.add(name)
       dataSource.name = name
 
