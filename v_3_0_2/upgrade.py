@@ -167,14 +167,10 @@ def fixExperiments(nmrProject):
     # set expDimRef.axisCodes if not set already
     for expDim in experiment.expDims:
       if expDim.findFirstExpDimRef(axisCode=None) is not None:
-        # TEMP, in future should not need import
-        from ccpncore.lib.ccp.nmr.Nmr.Experiment import resetAxisCodes
-        resetAxisCodes(experiment)
+        experiment.resetAxisCodes()
         # in future can do:
         # experiment.resetAxisCodes()
         break
-
-
 
 
 def fixPeaks(nmrProject):
