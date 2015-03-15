@@ -138,7 +138,7 @@ def fixExperiments(nmrProject):
   for experiment in nmrProject.sortedExperiments():
     refExperiment = experiment.refExperiment
     name1 = experiment.name
-    for dataSource in experiment.sorteedDataSources():
+    for dataSource in experiment.sortedDataSources():
       name2 = dataSource.name
 
       # Use experiment or dataSource name as default
@@ -222,18 +222,6 @@ def fixPeaks(nmrProject):
 def fixNmrConstraintStore(nmrConstraintStore, molSystem, chainMap):
     """Fix NmrConstraintStore"""
 
-    # Set nmrCOnstraintStore name to unique
-    name = nmrConstraintStore.name
-    if name:
-      name = '_'.join(name.split()).replace('.','^')
-    else:
-      name = 'RS%s' %  nmrConstraintStore.serial
-
-    while (nmrConstraintStore.root.findAllNmrConstraintStores(name=name)
-           not in (set(), {nmrConstraintStore})):
-      name = commonUtil.incrementName(name)
-
-    nmrConstraintStore.name = name
 
     # First fix FixedResonances (so we can remap them below)
     assignmentMap = V2Upgrade.mapAllAssignments(nmrConstraintStore, molSystem=molSystem,
