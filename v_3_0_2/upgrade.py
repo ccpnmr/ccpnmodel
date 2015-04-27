@@ -321,6 +321,9 @@ def fixNmrConstraintStore(nmrConstraintStore, molSystem, chainMap):
 def transferAssignments(nmrProject, mainMolSystem, chainMap):
   """Transfer NmrProject assignments"""
 
+  # Set mandatory default NmrChain- must have serial == 1.
+  nmrProject.newNmrChain(code='@')
+
   # Get ResonanceGroup mapping
   if len(mainMolSystem.chains) == 1:
     defaultChainCode = mainMolSystem.findFirstChain().code
