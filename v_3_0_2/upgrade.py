@@ -281,7 +281,7 @@ def fixNmrConstraintStore(nmrConstraintStore, molSystem, chainMap):
                                                             for x in sorted(assignments)))
             constraintItem.delete()
 
-      elif restraintType in ('Csa', 'ChemShift'):
+      elif restraintType in ('Csa', 'ChemicalShift'):
         #ix one-resonance restraints
         for constraint in constraintList.sortedConstraints():
 
