@@ -81,6 +81,8 @@ def correctFinalResult(memopsRoot):
   molSystemMap = {}
   chainMap = {}
   for nmrProject in memopsRoot.sortedNmrProjects():
+    nmrProject.isModifiable = True
+
     molSystemCounts =  getNmrMolSystems(nmrProject)
     if not molSystemCounts:
       continue
@@ -94,6 +96,7 @@ def correctFinalResult(memopsRoot):
     molSystemMap[mainMolSystem] = mainMolSystem
 
     # Set link to NmrProject
+    mainMolSystem.isModifiable = True
     nmrProject.molSystem = mainMolSystem
 
     # Overlap with previous molSystem set - merge into previous system.
@@ -107,6 +110,7 @@ def correctFinalResult(memopsRoot):
       MoleculeModify.expandMolSystemAtoms(chain)
 
     for nmrConstraintStore in nmrProject.sortedNmrConstraintStores():
+      nmrConstraintStore.isModifiable = True
       fixNmrConstraintStore(nmrConstraintStore,mainMolSystem,  chainMap)
 
     # Fix measurementList names
@@ -131,6 +135,7 @@ def correctFinalResult(memopsRoot):
 
     # Fix peak intensities and assignments storage
     fixPeaks(nmrProject)
+
 
 def fixExperiments(nmrProject):
   """ensure DataSource.name is unique"""
