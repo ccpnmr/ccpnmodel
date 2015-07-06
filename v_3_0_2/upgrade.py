@@ -587,4 +587,11 @@ def getNmrMolSystems(nmrProject):
           count = molSystemCounts.get(molSystem, 0)
           molSystemCounts[molSystem] = count + 1
 
+  if not molSystemCounts:
+    molSystems = nmrProject.root.sortedMolSystems()
+    if molSystems:
+      molSystemCounts[molSystems[0]] = 200
+      for molSystem in molSystems[1:]:
+        molSystemCounts[molSystem] = 50
+
   return molSystemCounts
