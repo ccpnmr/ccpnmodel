@@ -92,7 +92,7 @@ def correctFinalResult(memopsRoot):
           mainMolSystem = molSystem
           sentinel = count
     else:
-      mainMolSystem = memopsRoot.newMolSystem(name='MS0')
+      mainMolSystem = memopsRoot.newMolSystem(name='MolSystem0', code='MS0')
       molSystemCounts[mainMolSystem] = 1
     molSystemMap[mainMolSystem] = mainMolSystem
 
