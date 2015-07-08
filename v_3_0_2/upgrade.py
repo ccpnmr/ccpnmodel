@@ -84,15 +84,16 @@ def correctFinalResult(memopsRoot):
     nmrProject.isModifiable = True
 
     molSystemCounts =  getNmrMolSystems(nmrProject)
-    if not molSystemCounts:
-      continue
-
-    # select main system as the most common
-    sentinel = -1
-    for molSystem, count in sorted(molSystemCounts.items()):
-      if count > sentinel:
-        mainMolSystem = molSystem
-        sentinel = count
+    if molSystemCounts:
+      # select main system as the most common
+      sentinel = -1
+      for molSystem, count in sorted(molSystemCounts.items()):
+        if count > sentinel:
+          mainMolSystem = molSystem
+          sentinel = count
+    else:
+      mainMolSystem = memopsRoot.newMolSystem(name='MS0')
+      molSystemCounts[mainMolSystem] = 1
     molSystemMap[mainMolSystem] = mainMolSystem
 
     # Set link to NmrProject
@@ -111,7 +112,7 @@ def correctFinalResult(memopsRoot):
 
     for nmrConstraintStore in nmrProject.sortedNmrConstraintStores():
       nmrConstraintStore.isModifiable = True
-      fixNmrConstraintStore(nmrConstraintStore,mainMolSystem,  chainMap)
+      fixNmrConstraintStore(nmrConstraintStore ,mainMolSystem, chainMap)
 
     # Fix measurementList names
     for obj in nmrProject.measurementLists:
