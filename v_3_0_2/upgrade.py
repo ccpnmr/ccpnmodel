@@ -344,7 +344,6 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
   reverseGroupMap = {}
   for resonanceGroup in nmrProject.sortedResonanceGroups():
     groupAssignment = resonanceGroupMap[resonanceGroup]
-
     firstResonanceGroup = reverseGroupMap.get(groupAssignment)
     if firstResonanceGroup is None:
       # new group - handle it
