@@ -108,7 +108,7 @@ def correctFinalResult(memopsRoot):
 
     # Add new atoms to MolSystem
     for chain in mainMolSystem.sortedChains():
-      MoleculeModify.expandMolSystemAtoms(chain)
+      chain.expandMolSystemAtoms()
 
     for nmrConstraintStore in nmrProject.sortedNmrConstraintStores():
       nmrConstraintStore.isModifiable = True
