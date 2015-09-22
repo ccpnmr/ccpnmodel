@@ -393,21 +393,21 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
         # No resonance assignment clashes - just put in reverse map
         reverseMap[assignment] = resonance
 
-        if groupAssignment != assignment[:3]:
+        if groupAssignment != assignment[:3] or resonanceGroup is None:
           # Residue assignment mismatch. This should not happen
           # Use assignmentMap assignment and remove link to ResonanceGroup
-
-          print ('WARNING, %s: %s does not match %s: %s' %
-                 (resonance, assignment, resonanceGroup, groupAssignment))
+          if resonanceGroup is not None:
+            print ('WARNING, %s: %s does not match %s: %s' %
+                   (resonance, assignment, resonanceGroup, groupAssignment))
 
           newResonanceGroup = reverseGroupMap.get(assignment[:3])
           if newResonanceGroup is None:
             # Assigned resonance with no matching ResonanceGroup. Make a new group
             rg = nmrProject.newResonanceGroup(sequenceCode=assignment[1], residueType=assignment[2],
                                               resonances=(resonance,))
-            # NBNB TBD residueType/ccpCode still to be sorted out
             rg.nmrChain = (nmrProject.findFirstNmrChain(code=groupAssignment[0]) or
                            nmrProject.newNmrChain(code=groupAssignment[0]))
+            reverseGroupMap[assignment[:3]] = rg
 
           else:
             # resonance belongs in a different group. Move it there

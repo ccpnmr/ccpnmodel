@@ -43,11 +43,14 @@ def doTest(target=None, workDir=None, maskErrors=True):
   if os.path.isfile(target):
   
     if target.endswith('.tgz'):
+      print("@~@~ unzipping", target, testDir)
       newTarget = unzipFile(target, testDir)
+      print('@~@~ testing', newTarget)
       testProjects(newTarget, testDir, maskErrors=maskErrors)
                  
     elif target.endswith('.xml'):
       outDir = corePath.joinPath(testDir, stdOutDir)
+      print('@~@~ testing xml', target, outDir)
       testProject(target, outDir)
     
     else:
