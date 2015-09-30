@@ -332,7 +332,10 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
 
   # Get ResonanceGroup mapping
   if len(mainMolSystem.chains) == 1:
-    defaultChainCode = mainMolSystem.findFirstChain().code
+    defaultChainCode = mainMolSystem.findFirstChain().code.strip()
+    if not defaultChainCode:
+      defaultChainCode = 'A'
+      NBNB
   else:
     defaultChainCode = '@'
 

@@ -139,45 +139,49 @@ def testProject(target, outDir):
   target is the directory containing it, or the Implementation.xml file
   outDir the directory to which it is written
   """
-  # print('Testing %s ...' % target)
+  print('Testing %s ...' % target)
   if target.endswith('.xml'):
     dirpath, fileName = os.path.split(target)
     projectName = fileName[:-4]
     target = os.path.dirname(os.path.dirname(dirpath))
   else:
     projectName = None
+  try:
+    t0 = time.time()
+    ccpnProject = utilIo.loadProject(target, projectName=projectName)
+    # t1 = time.time()
+    utilIo.loadAllData(ccpnProject)
+    # t2 = time.time()
+    ccpnProject.checkAllValid(complete=True)
+    # t3 = time.time()
+    if not os.path.exists(outDir):
+      os.makedirs(outDir)
 
-  t0 = time.time()
-  ccpnProject = utilIo.loadProject(target, projectName=projectName)
-  # t1 = time.time()
-  utilIo.loadAllData(ccpnProject)
-  # t2 = time.time()
-  ccpnProject.checkAllValid(complete=True)
-  # t3 = time.time()
-  if not os.path.exists(outDir):
-    os.makedirs(outDir)
+    logger = Logging.getLogger()
 
-  logger = Logging.getLogger()
-
-  newPath = outDir
-  for extra in (os.path.basename(target), ccpnProject.name):
-    if extra not in newPath:
-      newPath = corePath.joinPath(newPath, extra)
-  logger.info('### saving %s to %s' % (ccpnProject.name, newPath))
-  utilIo.saveProject(ccpnProject, newPath=newPath, newProjectName=ccpnProject.name,
-                     removeExisting=True)
-  t4 = time.time()
-  #print ('+++ Project Load ', t1-t0)
-  #print ('+++ AllData Load ', t2-t1)
-  #print ('+++ Project Test ', t3-t2)
-  #print ('+++ Load and test', t3-t0)
-  #print ('+++ Project Save ', t4-t3)
-  message = ('+++ Testing OK, project %s. Total time %s. %s  '
-         % (ccpnProject.name , t4-t0, target))
-  logger.info(message)
-  print(message)
-  utilIo.cleanupProject(ccpnProject)
-  del ccpnProject
+    newPath = outDir
+    for extra in (os.path.basename(target), ccpnProject.name):
+      if extra not in newPath:
+        newPath = corePath.joinPath(newPath, extra)
+    logger.info('### saving %s to %s' % (ccpnProject.name, newPath))
+    utilIo.saveProject(ccpnProject, newPath=newPath, newProjectName=ccpnProject.name,
+                       removeExisting=True)
+    t4 = time.time()
+    #print ('+++ Project Load ', t1-t0)
+    #print ('+++ AllData Load ', t2-t1)
+    #print ('+++ Project Test ', t3-t2)
+    #print ('+++ Load and test', t3-t0)
+    #print ('+++ Project Save ', t4-t3)
+    message = ('+++ Testing OK, project %s. Total time %s. %s  '
+           % (ccpnProject.name , t4-t0, target))
+  except:
+    message = ('+++ Error, target %s' %  target)
+    raise
+  finally:
+    logger.info(message)
+    print(message)
+    utilIo.cleanupProject(ccpnProject)
+    del ccpnProject
   
 
 if __name__ == '__main__':
