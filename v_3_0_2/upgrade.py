@@ -24,6 +24,7 @@ __version__ = "$Revision$"
 
 from ccpncore.util import CopyData
 from ccpncore.lib import V2Upgrade
+from ccpncore.lib import Constants
 from ccpncore.lib.molecule import MoleculeModify
 from ccpncore.util import Common as commonUtil
 
@@ -100,10 +101,30 @@ def correctFinalResult(memopsRoot):
     mainMolSystem.isModifiable = True
     nmrProject.molSystem = mainMolSystem
 
+    # Replace chainCode ' ' with something else
+    for replaceSpaceCode in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopgrstuvwxyz':
+      if mainMolSystem.findFirstChain(code=replaceSpaceCode) is None:
+        break
+    else:
+      replaceSpaceCode = '_'
+    spaceChain = mainMolSystem.findFirstChain(code=' ')
+    if spaceChain is not None:
+      spaceChain._renameChain(replaceSpaceCode)
+
     # Overlap with previous molSystem set - merge into previous system.
+    # resetting chainCode ' ' as you go
     for molSystem in molSystemCounts:
       if molSystem not in molSystemMap:
         molSystemMap[molSystem] = mainMolSystem
+        spaceChain = molSystem.findFirstChain(code=' ')
+        if spaceChain is not None:
+          ss = replaceSpaceCode
+          for char in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopgrstuvwxyz':
+            if molSystem.findFirstChain(code=ss) is None:
+              break
+            else:
+              ss = char
+          spaceChain._renameChain(ss)
         copyMolSystemContents(molSystem, mainMolSystem, chainMap=chainMap)
 
     # Add new atoms to MolSystem
@@ -127,9 +148,13 @@ def correctFinalResult(memopsRoot):
 
       obj.name = name
 
-
     # Fix experiments
     fixExperiments(nmrProject)
+
+    # Make default NmrChan
+    nmrChain = (nmrProject.findFirstNmrChain(code=Constants.defaultNmrChainCode) or
+                nmrProject.newNmrChain(code=Constants.defaultNmrChainCode))
+
 
     # Transfer assignments in NmrProject
     transferAssignments(nmrProject, mainMolSystem, chainMap)
@@ -137,6 +162,9 @@ def correctFinalResult(memopsRoot):
     # Fix peak intensities and assignments storage
     fixPeaks(nmrProject)
 
+    # Remove ResonanceGroup.residue - no longer needed, and suprseded in new model
+    for resonanceGroup in nmrProject.resonanceGroups:
+      resonanceGroup.residue = None
 
 def fixExperiments(nmrProject):
   """ensure DataSource.name is unique"""
@@ -335,9 +363,8 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
     defaultChainCode = mainMolSystem.findFirstChain().code.strip()
     if not defaultChainCode:
       defaultChainCode = 'A'
-      NBNB
   else:
-    defaultChainCode = '@'
+    defaultChainCode = Constants.defaultNmrChainCode
 
   resonanceGroupMap =  V2Upgrade.mapResonanceGroups(nmrProject, molSystem=mainMolSystem,
                                                     chainMap=chainMap,
@@ -464,7 +491,6 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
           oldResonance.absorbResonance(resonance)
 
 
-
 def copyMolSystemContents(molSystem, toMolSystem, chainMap):
   """Copy MolSystem contents into a pre-existing MolSystem
    NB chainMap is an in/out parameter DESIGNED to be modified."""
@@ -501,7 +527,7 @@ def copyMolSystemContents(molSystem, toMolSystem, chainMap):
       coordChain.__dict__['code'] = newCode
       parentDict[newCode] = coordChain
 
-  # reset molSystem link
+    # reset molSystem link
     molSystem.root.override=True
     try:
       structureEnsemble.molSystem = toMolSystem
