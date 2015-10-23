@@ -81,7 +81,7 @@ def testProjects(target, workDir, extraDirs=None, maskErrors=True):
 
   # # Make dummy project as location for logs
   # now ='_'.join((str(x) for x in datetime.datetime.now().timetuple()[:6]))
-  # dummyProject = utilIo.newProject('Logs_%s' % now, path=workDir, removeExisting=True)
+  # dummyProject = utilIo.newProject('Logs_%s' % now, path=workDir, overwriteExisting=True)
   logger = Logging.getLogger()
 
   outDir = corePath.joinPath(workDir, stdOutDir)
@@ -165,7 +165,7 @@ def testProject(target, outDir):
         newPath = corePath.joinPath(newPath, extra)
     logger.info('### saving %s to %s' % (ccpnProject.name, newPath))
     utilIo.saveProject(ccpnProject, newPath=newPath, newProjectName=ccpnProject.name,
-                       removeExisting=True)
+                       overwriteExisting=True)
     t4 = time.time()
     #print ('+++ Project Load ', t1-t0)
     #print ('+++ AllData Load ', t2-t1)
