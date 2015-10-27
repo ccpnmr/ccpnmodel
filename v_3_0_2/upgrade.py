@@ -38,7 +38,12 @@ emptyList = []
 
 # guids of elements that should be treated as old
 # Must be kept out of map fixing till the last, as they break it.
-elemsTreatedAsOld = set(())
+#
+# These are atributes with new IeeeFloat type from FloatMatrix,
+# which being inherited down from an abstract class
+# do not fit in the normal treatment.
+elemsTreatedAsOld = {'www.ccpn.ac.uk_Fogh_2011-03-30-18:03:29_00002',
+                     'www.ccpn.ac.uk_Fogh_2011-03-30-18:03:29_00001',}
 
 # pairs of element guids that should be treated as matching, e.g. when
 # a single element must match with several elements in subclasses
