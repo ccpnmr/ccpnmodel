@@ -62,7 +62,7 @@ import os
 from ccpncore.util import Path as corePath
 from ccpncore.memops import Version
 
-baseDir = 'ccpnmodel'
+baseDir = 'versions'
 
 def getPythonDirectory():
 
