@@ -421,7 +421,16 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
 
       # Use the name of the assignment
       name = assignment[3]
-      resonance.name = name
+      ll = [x for x in resonanceGroup.findAllResonances(name=name) if x is not resonance]
+      if ll:
+        # There is a name clash - must arise from double assignment in input data. Disambiguate
+        if ll[0].serial < resonance.serial:
+          resonance.name = '%s@%s' % (name, resonance.serial)
+        else:
+          ll[0].name = '%s@%s' % (name, ll[0].serial)
+          resonance.name = name
+      else:
+        resonance.name = name
 
       oldResonance = reverseMap.get(assignment)
       if oldResonance is None:
