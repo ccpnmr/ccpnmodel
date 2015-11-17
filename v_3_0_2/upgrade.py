@@ -361,7 +361,9 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
   """Transfer NmrProject assignments"""
 
   # Set mandatory default NmrChain- must have serial == 1.
-  nmrProject.newNmrChain(code='@')
+  # NB Looks like this is (sometimes?) set in wrapper init, hence the if statement
+  if nmrProject.findFirstNmrChain(code=Constants.defaultNmrChainCode) is None:
+    nmrProject.newNmrChain(code=Constants.defaultNmrChainCode)
 
   # Get ResonanceGroup mapping
   if len(mainMolSystem.chains) == 1:
