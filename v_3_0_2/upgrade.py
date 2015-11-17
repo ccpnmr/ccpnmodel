@@ -543,6 +543,19 @@ def copyMolSystemContents(molSystem, toMolSystem, chainMap):
       coordChain.__dict__['code'] = newCode
       parentDict[newCode] = coordChain
 
+      # Make sure code3Letter is set
+      for coordResidue in coordChain.sortedResidues():
+        code3Letter = coordResidue.code3Letter
+        if not code3Letter:
+          chain = coordResidue.chain.chain
+          if chain is not None:
+            residue = (chain.findFirstResidue(seqId=coordResidue.seqId) or
+                      chain.findFirstResidue(seqCode=coordResidue.seqCode,
+                                             seqInsertCode=coordResidue.seqInsertCode))
+            if residue:
+              coordResidue.code3Letter = residue.code3Letter or residue.ccpCode
+
+
     # reset molSystem link
     molSystem.root.override=True
     try:
