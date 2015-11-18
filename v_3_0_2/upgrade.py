@@ -136,6 +136,24 @@ def correctFinalResult(memopsRoot):
     for chain in mainMolSystem.sortedChains():
       chain.expandMolSystemAtoms()
 
+    # Transfer residue Types to structure residues
+
+    # relink StructureEnsembles
+    for structureEnsemble in mainMolSystem.structureEnsembles:
+      for coordChain in structureEnsemble.coordChains:
+        # Make sure code3Letter is set
+        for coordResidue in coordChain.sortedResidues():
+          code3Letter = coordResidue.code3Letter
+          if not code3Letter:
+            chain = coordResidue.chain.chain
+            if chain is not None:
+              residue = (chain.findFirstResidue(seqId=coordResidue.seqId) or
+                        chain.findFirstResidue(seqCode=coordResidue.seqCode,
+                                               seqInsertCode=coordResidue.seqInsertCode))
+              if residue:
+                coordResidue.code3Letter = residue.code3Letter or residue.ccpCode
+
+
     for nmrConstraintStore in nmrProject.sortedNmrConstraintStores():
       nmrConstraintStore.isModifiable = True
       fixNmrConstraintStore(nmrConstraintStore ,mainMolSystem, chainMap)
@@ -543,17 +561,23 @@ def copyMolSystemContents(molSystem, toMolSystem, chainMap):
       coordChain.__dict__['code'] = newCode
       parentDict[newCode] = coordChain
 
-      # Make sure code3Letter is set
-      for coordResidue in coordChain.sortedResidues():
-        code3Letter = coordResidue.code3Letter
-        if not code3Letter:
-          chain = coordResidue.chain.chain
-          if chain is not None:
-            residue = (chain.findFirstResidue(seqId=coordResidue.seqId) or
-                      chain.findFirstResidue(seqCode=coordResidue.seqCode,
-                                             seqInsertCode=coordResidue.seqInsertCode))
-            if residue:
-              coordResidue.code3Letter = residue.code3Letter or residue.ccpCode
+      # # Make sure code3Letter is set
+      # for coordResidue in coordChain.sortedResidues():
+      #   code3Letter = coordResidue.code3Letter
+      #   print ('@~@~1', code3Letter, coordResidue.seqId, coordResidue.seqCode,
+      #          coordResidue.seqInsertCode, coordResidue.chain.chain)
+      #   if not code3Letter:
+      #     chain = coordResidue.chain.chain
+      #     if chain is not None:
+      #       residue = (chain.findFirstResidue(seqId=coordResidue.seqId) or
+      #                 chain.findFirstResidue(seqCode=coordResidue.seqCode,
+      #                                        seqInsertCode=coordResidue.seqInsertCode))
+      #       if residue:
+      #         print ('@~@~2', residue.code3Letter, residue.ccpCode, residue.seqId, residue.seqCode,
+      #                residue.seqInsertCode, )
+      #         coordResidue.code3Letter = residue.code3Letter or residue.ccpCode
+      #       else:
+      #         print ('@~@~2 NO RESIDUE')
 
 
     # reset molSystem link
