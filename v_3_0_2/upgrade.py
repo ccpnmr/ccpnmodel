@@ -397,7 +397,18 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
 
   # Set ResonanceGroup attributes and NmrChains, and merge duplicate ResonanceGroups
   reverseGroupMap = {}
+  # Make sure satellites are treated after main groups
+  ll1 = []
+  ll2 = []
   for resonanceGroup in nmrProject.sortedResonanceGroups():
+    groupAssignment = resonanceGroupMap[resonanceGroup]
+    sequenceCode = groupAssignment[1]
+    if sequenceCode[-1].isdigit and len(sequenceCode) > 1 and sequenceCode[-2] in '+-':
+      ll2.append(resonanceGroup)
+    else:
+      ll1.append(resonanceGroup)
+  for resonanceGroup in ll1 + ll2:
+    # Treat the resonanceGroups
     groupAssignment = resonanceGroupMap[resonanceGroup]
     firstResonanceGroup = reverseGroupMap.get(groupAssignment)
     if firstResonanceGroup is None:
