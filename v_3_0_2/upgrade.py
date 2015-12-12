@@ -414,8 +414,7 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
     if firstResonanceGroup is None:
       # new group - handle it
       reverseGroupMap[groupAssignment] = resonanceGroup
-
-      resonanceGroup.nmrChain = (nmrProject.findFirstNmrChain(code=groupAssignment[0]) or
+      resonanceGroup.directNmrChain = (nmrProject.findFirstNmrChain(code=groupAssignment[0]) or
                                  nmrProject.newNmrChain(code=groupAssignment[0]))
       resonanceGroup.sequenceCode = groupAssignment[1]
       resonanceGroup.residueType = groupAssignment[2]
@@ -432,7 +431,7 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
                          nmrProject.newNmrChain(code=defaultChainCode))
   defaultResonanceGroup = (defaultNmrChain.findFirstResonanceGroup(seqCode=None,
                                                                    seqInsertCode='@') or
-                           nmrProject.newResonanceGroup(nmrChain=defaultNmrChain,
+                           nmrProject.newResonanceGroup(directNmrChain=defaultNmrChain,
                                                        seqInsertCode = '@',
                                                        details="default ResonanceGroup"))
   resonanceGroupMap[None] = (defaultChainCode, '@', defaultResonanceGroup)
@@ -443,6 +442,12 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
                                   chainMap=chainMap)
   reverseMap = {}
   for resonance in nmrProject.sortedResonances():
+
+    # Reset unknown code to '?'
+    if resonance.isotopeCode in (None,'unknown'):
+      resonance.isotopeCode = '?'
+
+    # set up for the rest
     assignment = assignmentMap.get(resonance)
     resonanceGroup = resonance.resonanceGroup
     groupAssignment = resonanceGroupMap.get(resonanceGroup)
@@ -658,6 +663,12 @@ def getNmrMolSystems(nmrProject):
   # count over NmrConstraintSets:
   for constraintSet in nmrProject.nmrConstraintStores:
     for resonance in constraintSet.fixedResonances:
+
+      # Reset unknown code to '?'
+      if resonance.isotopeCode in (None,'unknown'):
+        resonance.isotopeCode = '?'
+
+      # Continue with the rest
       resonanceSet = resonance.resonanceSet
       if resonanceSet:
         for molSystem in (x.topObject for y in resonanceSet.atomSets for x in y.atoms):
