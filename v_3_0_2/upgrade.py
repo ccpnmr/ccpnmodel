@@ -25,8 +25,10 @@ __version__ = "$Revision$"
 from ccpncore.util import CopyData
 from ccpncore.lib import V2Upgrade
 from ccpncore.lib import Constants
-from ccpncore.lib.molecule import MoleculeModify
+from ccpncore.memops.ApiError import ApiError
 from ccpncore.util import Common as commonUtil
+from ccpncore.lib.spectrum import Spectrum as spectrumLib
+# from ccpncore.lib.molecule import MoleculeModify
 
 
 versionSequence = ['2.0.a0', '2.0.a1', '2.0.a2', '2.0.a3', '2.0.b1', '2.0.b2', '2.0.b3',
@@ -114,7 +116,7 @@ def correctFinalResult(memopsRoot):
       replaceSpaceCode = '_'
     spaceChain = mainMolSystem.findFirstChain(code=' ')
     if spaceChain is not None:
-      spaceChain._renameChain(replaceSpaceCode)
+      spaceChain.renameChain(replaceSpaceCode)
 
     # Overlap with previous molSystem set - merge into previous system.
     # resetting chainCode ' ' as you go
@@ -279,10 +281,20 @@ def fixPeaks(nmrProject):
 def fixNmrConstraintStore(nmrConstraintStore, molSystem, chainMap):
     """Fix NmrConstraintStore"""
 
-
     # First fix FixedResonances (so we can remap them below)
-    assignmentMap = V2Upgrade.mapAllAssignments(nmrConstraintStore, molSystem=molSystem,
-                                                chainMap=chainMap)
+    # Map unassigned, then assigned resonances
+    assignmentMap = V2Upgrade.mapUnAssignedFixedResonances(nmrConstraintStore)
+    for resonance, tt in V2Upgrade.mapAssignedResonances(nmrConstraintStore, chainMap=chainMap,
+                                                         molSystem=molSystem).items():
+      residue, name = tt
+      if residue is None:
+        assignmentMap[resonance] = (None, None, None, name)
+      else:
+        chainCode = residue.chain.code
+        sequenceCode = str(residue.seqCode) + (residue.seqInsertCode or '').strip()
+        residueType = residue.molResidue.chemComp.code3Letter
+        assignmentMap[resonance] = (chainCode, sequenceCode, residueType, name)
+
     assignment2Resonance = {}
     resonanceMap = {}
     for resonance, assignment in assignmentMap.items():
@@ -324,6 +336,7 @@ def fixNmrConstraintStore(nmrConstraintStore, molSystem, chainMap):
 
       if restraintType in ('Distance', 'HBond', 'JCoupling', 'Rdc',):
         #ix pairwise restraints
+        kf = commonUtil.numericStringSortKey
         for constraint in constraintList.sortedConstraints():
 
           # Make new Contribution
@@ -335,7 +348,7 @@ def fixNmrConstraintStore(nmrConstraintStore, molSystem, chainMap):
           for constraintItem in constraint.sortedItems():
             assignments = [assignmentMap[resonanceMap.get(x,x)] for x in constraintItem.resonances]
             getattr(contribution, newItem)(resonances=tuple(assignment2Resonance[x]
-                                                            for x in sorted(assignments)))
+                                                            for x in sorted(assignments, key=kf)))
             constraintItem.delete()
 
       elif restraintType in ('Csa', 'ChemicalShift'):
@@ -367,6 +380,9 @@ def fixNmrConstraintStore(nmrConstraintStore, molSystem, chainMap):
       else:
         raise ValueError("Restraint list named %s not recognized by code (BUG?)" % className)
 
+      # Upgrade from earlyV3 to finalV3
+      V2Upgrade.upgradeConstraintList(constraintList)
+
     # Remove obsolete FixedResonances, ResonanceSets and AtomSets
     for oldResonance in resonanceMap:
       oldResonance.delete()
@@ -378,167 +394,456 @@ def fixNmrConstraintStore(nmrConstraintStore, molSystem, chainMap):
 def transferAssignments(nmrProject, mainMolSystem, chainMap):
   """Transfer NmrProject assignments"""
 
-  # Set mandatory default NmrChain- must have serial == 1.
-  # NB Looks like this is (sometimes?) set in wrapper init, hence the if statement
-  if nmrProject.findFirstNmrChain(code=Constants.defaultNmrChainCode) is None:
-    nmrProject.newNmrChain(code=Constants.defaultNmrChainCode)
 
-  # Get ResonanceGroup mapping
-  if len(mainMolSystem.chains) == 1:
-    defaultChainCode = mainMolSystem.findFirstChain().code.strip()
-    if not defaultChainCode:
-      defaultChainCode = 'A'
-  else:
-    defaultChainCode = Constants.defaultNmrChainCode
+  # Map Resonances that are fully assigned
+  resonance2Assignment = V2Upgrade.mapAssignedResonances(nmrProject, molSystem=mainMolSystem,
+                                                         chainMap=chainMap)
+  # Map ResonanceGroups that are fully assigned
+  resonanceGroup2Residue = V2Upgrade.mapResonanceGroupResidues(nmrProject,
+                                                               molSystem=mainMolSystem,
+                                                               chainMap=chainMap)
+  # Map unmapped ResonanceGroups that follow from assigned resonances.
+  # If resonance assignment conflicts with resonanceGroup assignment tha latter takes precedence.
+  # But in that case data are inconsistent  and any solution is arbitrary.
+  # Note that resonances will always keep their assignment
+  for resonance, tt in sorted(resonance2Assignment.items()):
+    resonanceGroup = resonance.resonanceGroup
+    if resonanceGroup is not None and resonanceGroup not in resonanceGroup2Residue:
+      residue, resonanceName = tt
+      if residue is not None:
+        resonanceGroup2Residue[resonanceGroup] = residue
 
-  resonanceGroupMap =  V2Upgrade.mapResonanceGroups(nmrProject, molSystem=mainMolSystem,
-                                                    chainMap=chainMap,
-                                                    defaultChainCode=defaultChainCode)
+  handledResonanceGroups = set(resonanceGroup2Residue.keys())
 
-  # Set ResonanceGroup attributes and NmrChains, and merge duplicate ResonanceGroups
+  # Now set up assigned ResonanceGroups and add their offset groups
   reverseGroupMap = {}
-  # Make sure satellites are treated after main groups
-  ll1 = []
-  ll2 = []
-  for resonanceGroup in nmrProject.sortedResonanceGroups():
-    groupAssignment = resonanceGroupMap[resonanceGroup]
-    sequenceCode = groupAssignment[1]
-    if sequenceCode[-1].isdigit and len(sequenceCode) > 1 and sequenceCode[-2] in '+-':
-      ll2.append(resonanceGroup)
-    else:
-      ll1.append(resonanceGroup)
-  for resonanceGroup in ll1 + ll2:
-    # Treat the resonanceGroups
-    groupAssignment = resonanceGroupMap[resonanceGroup]
-    firstResonanceGroup = reverseGroupMap.get(groupAssignment)
-    if firstResonanceGroup is None:
+  for resonanceGroup, residue in sorted(resonanceGroup2Residue.items()):
+    useResonanceGroup = reverseGroupMap.get(residue)
+    if useResonanceGroup is None:
+      useResonanceGroup = resonanceGroup
       # new group - handle it
-      reverseGroupMap[groupAssignment] = resonanceGroup
-      resonanceGroup.directNmrChain = (nmrProject.findFirstNmrChain(code=groupAssignment[0]) or
-                                 nmrProject.newNmrChain(code=groupAssignment[0]))
-      resonanceGroup.sequenceCode = groupAssignment[1]
-      resonanceGroup.residueType = groupAssignment[2]
+      reverseGroupMap[residue] = resonanceGroup
+      resonanceGroup.assignedResidue = residue
 
-    else:
+    # Add offset ResonanceGroups
+    for direction in (+1,-1):
+      stretch = V2Upgrade.findSpinSystemStretch(resonanceGroup, direction=direction)
+      offset = 0
+      for rg in stretch:
+        offset += direction
+
+        if rg in handledResonanceGroups:
+          # We have reached a residue already handled. Stop here.
+          break
+
+        else:
+          hasAddedGroup = V2Upgrade.addOffsetResonanceGroup(useResonanceGroup, rg, offset)
+          if hasAddedGroup:
+            handledResonanceGroups.add(rg)
+
+    # Add unique, identity-linked ResonanceGroup, if any
+    rg0 = V2Upgrade.findIdentityResonanceGroup(resonanceGroup)
+    if rg0 is not None and rg0 not in handledResonanceGroups:
+      hasAddedGroup = V2Upgrade.addOffsetResonanceGroup(useResonanceGroup, rg0, 0)
+      if hasAddedGroup:
+        handledResonanceGroups.add(rg0)
+
+    if useResonanceGroup is not resonanceGroup:
       # Merge duplicates
+      # NBNB check that resonance names are dealt with properly later
       for resonance in resonanceGroup.resonances:
-        resonance.resonanceGroup = firstResonanceGroup
+        resonance.resonanceGroup = useResonanceGroup
       resonanceGroup.delete()
 
+  # Now deal with stretches of connected resonanceGroups
+  for resonanceGroup in nmrProject.sortedResonanceGroups():
+    if (resonanceGroup not in handledResonanceGroups
+        and not V2Upgrade.findSpinSystemStretch(resonanceGroup, direction=-1)):
+      # start at first resonanceGroup in stretch
+      stretch = V2Upgrade.findSpinSystemStretch(resonanceGroup, direction=1)
+      if len(stretch) == 1:
+        # Two-residue stretch. Set as i,i-1 offset pair, and leave main rg for later
+        hasAddedGroup = V2Upgrade.addOffsetResonanceGroup(stretch[0], resonanceGroup, -1)
+        if hasAddedGroup:
+          handledResonanceGroups.add(resonanceGroup)
 
-  # Add default chain and ResonanceGroup for non-grouped resonances
-  defaultNmrChain = (nmrProject.findFirstNmrChain(code=defaultChainCode) or
-                         nmrProject.newNmrChain(code=defaultChainCode))
+      elif stretch:
+        # Multi-residue stretch. Make connected stretch
+        newNmrChain = nmrProject.newNmrChain(isConnected=True)
+        for rg in stretch:
+          if rg in handledResonanceGroups:
+            break
+          else:
+            newNmrChain.addMainResonanceGroup(rg)
+            handledResonanceGroups.add(rg)
+
+  # Finally deal with isolated resonanceGroups
+
+  # Set mandatory default NmrChain - must have serial == 1.
+  # NB Looks like this is (sometimes?) set in wrapper init, hence the if statement
+  defaultNmrChain = nmrProject.findFirstNmrChain(code=Constants.defaultNmrChainCode)
+  if defaultNmrChain is None:
+    defaultNmrChain = nmrProject.newNmrChain(code=Constants.defaultNmrChainCode)
+  # Also set defaultResonanceGroup
   defaultResonanceGroup = (defaultNmrChain.findFirstResonanceGroup(seqCode=None,
                                                                    seqInsertCode='@') or
                            nmrProject.newResonanceGroup(directNmrChain=defaultNmrChain,
                                                        seqInsertCode = '@',
-                                                       details="default ResonanceGroup"))
-  resonanceGroupMap[None] = (defaultChainCode, '@', defaultResonanceGroup)
+                                                       details="Default ResonanceGroup"))
 
-  # Now fix resonance assignments
-  assignmentMap = {}
-  V2Upgrade.mapAssignedResonances(nmrProject, assignmentMap, molSystem=mainMolSystem,
-                                  chainMap=chainMap)
-  reverseMap = {}
+  for resonanceGroup in nmrProject.sortedResonanceGroups():
+    if resonanceGroup not in handledResonanceGroups:
+
+      # If unique, identity-linked ResonanceGroup, add it
+      rg0 = V2Upgrade.findIdentityResonanceGroup(resonanceGroup)
+      if rg0 is not None:
+        addedGroup = V2Upgrade.addOffsetResonanceGroup(rg0, resonanceGroup, 0)
+        if addedGroup:
+          handledResonanceGroups.add(resonanceGroup)
+          continue
+
+      # At this point we need to put the resonanceGroup in the default chain
+      try:
+        resonanceGroup.directNmrChain = defaultNmrChain
+      except ApiError:
+        resonanceGroup.sequenceCode = None
+        resonanceGroup.directNmrChain = defaultNmrChain
+      handledResonanceGroups.add(resonanceGroup)
+
+  # Done with resonanceGroups. Now for resonances.
+
+  # First assigned resonances
+  for resonance, tt in sorted(resonance2Assignment.items()):
+
+    residue, name = tt
+    if residue is not None and not resonance.isDeleted:
+      # Get target ResonanceGroup
+      chainCode = residue.chain.code
+      nmrChain = (nmrProject.findFirstNmrChain(code=chainCode) or
+                  nmrProject.newNmrChain(code=chainCode))
+      seqCode = residue.seqCode
+      insertCode = residue.seqInsertCode.strip()
+      sequenceCode = '%s%s' % (seqCode, insertCode)
+      resonanceGroup = (nmrChain.findFirstResonanceGroup(seqCode=seqCode,
+                                                         seqInsertCode=insertCode or None)
+                        or nmrChain.newResonanceGroup(sequenceCode=sequenceCode))
+
+      if resonanceGroup is not resonance.resonanceGroup:
+        print ('WARNING, %s ResonanceGroup %s does not match assignment to %s.%s' %
+               (resonance, resonance.resonanceGroup, chainCode, sequenceCode))
+      # Move or merge resonance in position
+      ll = sorted(x for x in resonanceGroup.findAllResonances(name=name) if x is not resonance)
+      if ll and ll[0].serial < resonance.serial:
+        # There is a name clash - must arise from double assignment in input data.
+        # MERGE into earlier resonance
+        ll[0].absorbResonance(resonance)
+      else:
+        # NB. Name clashes with later Resonances (if any)
+        # will be resolved when second clashing resonance comes up.
+        resonance.resonanceGroup = resonanceGroup
+        resonance.name = name
+        if resonance.isotopeCode in ('?', 'unknown', None):
+          resonance.isotopeCode = spectrumLib.name2IsotopeCode(name)
+
+  # Now do unassigned resonances:
   for resonance in nmrProject.sortedResonances():
-
-    # Reset unknown code to '?'
-    if resonance.isotopeCode in (None,'unknown'):
-      resonance.isotopeCode = '?'
-
-    # set up for the rest
-    assignment = assignmentMap.get(resonance)
-    resonanceGroup = resonance.resonanceGroup
-    groupAssignment = resonanceGroupMap.get(resonanceGroup)
-
-    if assignment:
-      # resonance is assigned - at this point it must be to a molecule atom
-
-      # Use the name of the assignment
-      name = assignment[3]
-      ll = [x for x in resonanceGroup.findAllResonances(name=name) if x is not resonance]
-      if ll:
-        # There is a name clash - must arise from double assignment in input data. Disambiguate
-        if ll[0].serial < resonance.serial:
-          resonance.name = '%s@%s' % (name, resonance.serial)
-        else:
-          ll[0].name = '%s@%s' % (name, ll[0].serial)
-          resonance.name = name
-      else:
-        resonance.name = name
-
-      oldResonance = reverseMap.get(assignment)
-      if oldResonance is None:
-        # No resonance assignment clashes - just put in reverse map
-        reverseMap[assignment] = resonance
-
-        if groupAssignment != assignment[:3] or resonanceGroup is None:
-          # Residue assignment mismatch. This should not happen
-          # Use assignmentMap assignment and remove link to ResonanceGroup
-          if resonanceGroup is not None:
-            print ('WARNING, %s: %s does not match %s: %s' %
-                   (resonance, assignment, resonanceGroup, groupAssignment))
-
-          newResonanceGroup = reverseGroupMap.get(assignment[:3])
-          if newResonanceGroup is None:
-            # Assigned resonance with no matching ResonanceGroup. Make a new group
-            rg = nmrProject.newResonanceGroup(sequenceCode=assignment[1], residueType=assignment[2],
-                                              resonances=(resonance,))
-            rg.nmrChain = (nmrProject.findFirstNmrChain(code=groupAssignment[0]) or
-                           nmrProject.newNmrChain(code=groupAssignment[0]))
-            reverseGroupMap[assignment[:3]] = rg
-
-          else:
-            # resonance belongs in a different group. Move it there
-            # NB. Name clashes (if any) wil be resolved when second clashing resonance comes up
-            resonance.resonanceGroup = newResonanceGroup
-
-      else:
-        # Assignment clash - merge into old resonance that at this point must be
-        # assigned and have a lower serial
-        oldResonance.absorbResonance(resonance)
-
-    else:
-      # resonance was not assigned from a resonanceSet (in mapAssignedResonances)
+    if resonance not in resonance2Assignment:
+      resonanceGroup = resonance.resonanceGroup or defaultResonanceGroup
       name = V2Upgrade.regularisedResonanceName(resonance)
-      assignment = groupAssignment + (name,)
-
-      oldResonance = reverseMap.get(assignment)
-      if oldResonance is None:
-        # no clashes
-        resonance.name = name
-        if resonanceGroup is None:
-          resonance.resonanceGroup = defaultResonanceGroup
-        reverseMap[assignment] = resonance
-
-      else:
-        # Assignment clash
-
-        # Check if assignment is to molecule
-        atom =None
-        chain = mainMolSystem.findFirstChain(code=assignment[0])
-        if chain is not None:
-          seqCode, seqInsertCode, offset = commonUtil.parseSequenceCode(assignment[1])
-          seqInsertCode = seqInsertCode or ' '
-          residue = chain.findFirstResidue(seqCode=seqCode, seqInsertCode=seqInsertCode)
-          if residue is not None:
-            atom = residue.findFirstAtom(name=assignment[3])
-
-        if atom is None:
-          # Assignment not to molecule. Add resonance serial to atom name
-          # To preserve difference between
-          serial = resonance.serial
-          ss = '@%s' % serial
-          if ss not in name:
-            name = '%s@%s' % (name, serial)
-          resonance.name = name
-          assignment = groupAssignment + (name,)
-          reverseMap[assignment] = resonance
-
+      oldResonance = resonanceGroup.findFirstResonance(name=name)
+      if oldResonance is not None:
+        # Name clash. Disambiguate
+        serial = resonance.serial
+        ss = '@%s' % serial
+        if ss in name:
+          oldResonance.name = '@%s' % oldResonance.serial
         else:
-          # Assignment ot molecule. Absorb  in previous resonance
-          oldResonance.absorbResonance(resonance)
+          name = name + ss
+
+      resonance.name = name
+      resonance.resonanceGroup = resonanceGroup
+      if resonance.isotopeCode in ('?', 'unknown', None):
+        resonance.isotopeCode = spectrumLib.name2IsotopeCode(name)
+
+  #
+  #
+  #
+  #
+  # reverseMap = {}
+  # for resonance in nmrProject.sortedResonances():
+  #
+  #   # Reset unknown code to '?'
+  #   if resonance.isotopeCode in (None,'unknown'):
+  #     resonance.isotopeCode = '?'
+  #
+  #   # set up for the rest
+  #   assignment = assignmentMap.get(resonance)
+  #   resonanceGroup = resonance.resonanceGroup
+  #   groupAssignment = resonanceGroupMap.get(resonanceGroup)
+  #
+  #   if assignment:
+  #     # resonance is assigned - at this point it must be to a molecule atom
+  #
+  #     # Use the name of the assignment
+  #     name = assignment[3]
+  #     if resonanceGroup is not None:
+  #         ll = [x for x in resonanceGroup.findAllResonances(name=name) if x is not resonance]
+  #         if ll:
+  #           # There is a name clash - must arise from double assignment in input data. Disambiguate
+  #           if ll[0].serial < resonance.serial:
+  #             resonance.name = '%s@%s' % (name, resonance.serial)
+  #           else:
+  #             ll[0].name = '%s@%s' % (name, ll[0].serial)
+  #             resonance.name = name
+  #         else:
+  #           resonance.name = name
+  #
+  #     oldResonance = reverseMap.get(assignment)
+  #     if oldResonance is None:
+  #       # No resonance assignment clashes - just put in reverse map
+  #       reverseMap[assignment] = resonance
+  #
+  #       if groupAssignment != assignment[:3] or resonanceGroup is None:
+  #         # Residue assignment mismatch. This should not happen
+  #         # Use assignmentMap assignment and remove link to ResonanceGroup
+  #         if resonanceGroup is not None:
+  #           print ('WARNING, %s: %s does not match %s: %s' %
+  #                  (resonance, assignment, resonanceGroup, groupAssignment))
+  #
+  #         newResonanceGroup = reverseGroupMap.get(assignment[:3])
+  #         if newResonanceGroup is None:
+  #           # Assigned resonance with no matching ResonanceGroup. Make a new group
+  #           nmrChain = (nmrProject.findFirstNmrChain(code=groupAssignment[0]) or
+  #                          nmrProject.newNmrChain(code=groupAssignment[0]))
+  #           rg = nmrProject.newResonanceGroup(sequenceCode=assignment[1], residueType=assignment[2],
+  #                                             directNmrChain=nmrChain, resonances=(resonance,))
+  #           # rg.nmrChain = (nmrProject.findFirstNmrChain(code=groupAssignment[0]) or
+  #           #                nmrProject.newNmrChain(code=groupAssignment[0]))
+  #           reverseGroupMap[assignment[:3]] = rg
+  #
+  #         else:
+  #           # resonance belongs in a different group. Move it there
+  #           # NB. Name clashes (if any) wil be resolved when second clashing resonance comes up
+  #           resonance.resonanceGroup = newResonanceGroup
+  #
+  #     else:
+  #       # Assignment clash - merge into old resonance that at this point must be
+  #       # assigned and have a lower serial
+  #       oldResonance.absorbResonance(resonance)
+  #
+  #   else:
+  #     # resonance was not assigned from a resonanceSet (in mapAssignedResonances)
+  #     name = V2Upgrade.regularisedResonanceName(resonance)
+  #     assignment = groupAssignment + (name,)
+  #
+  #     oldResonance = reverseMap.get(assignment)
+  #     if oldResonance is None:
+  #       # no clashes
+  #       resonance.name = name
+  #       if resonanceGroup is None:
+  #         resonance.resonanceGroup = defaultResonanceGroup
+  #       reverseMap[assignment] = resonance
+  #
+  #     else:
+  #       # Assignment clash
+  #
+  #       # Check if assignment is to molecule
+  #       atom =None
+  #       chain = mainMolSystem.findFirstChain(code=assignment[0])
+  #       if chain is not None:
+  #         seqCode, seqInsertCode, offset = commonUtil.parseSequenceCode(assignment[1])
+  #         seqInsertCode = seqInsertCode or ' '
+  #         residue = chain.findFirstResidue(seqCode=seqCode, seqInsertCode=seqInsertCode)
+  #         if residue is not None:
+  #           atom = residue.findFirstAtom(name=assignment[3])
+  #
+  #       if atom is None:
+  #         # Assignment not to molecule. Add resonance serial to atom name
+  #         # To preserve difference between
+  #         serial = resonance.serial
+  #         ss = '@%s' % serial
+  #         if ss not in name:
+  #           name = '%s@%s' % (name, serial)
+  #         resonance.name = name
+  #         assignment = groupAssignment + (name,)
+  #         reverseMap[assignment] = resonance
+  #
+  #       else:
+  #         # Assignment to molecule. Absorb in previous resonance
+  #         oldResonance.absorbResonance(resonance)
+
+#
+#
+#
+# def transferAssignments(nmrProject, mainMolSystem, chainMap):
+#   """Transfer NmrProject assignments"""
+#
+#   # Set mandatory default NmrChain- must have serial == 1.
+#   # NB Looks like this is (sometimes?) set in wrapper init, hence the if statement
+#   if nmrProject.findFirstNmrChain(code=Constants.defaultNmrChainCode) is None:
+#     nmrProject.newNmrChain(code=Constants.defaultNmrChainCode)
+#
+#   # Get ResonanceGroup mapping
+#   if len(mainMolSystem.chains) == 1:
+#     defaultChainCode = mainMolSystem.findFirstChain().code.strip()
+#     if not defaultChainCode:
+#       defaultChainCode = 'A'
+#   else:
+#     defaultChainCode = Constants.defaultNmrChainCode
+#
+#   resonanceGroupMap =  V2Upgrade.mapResonanceGroups(nmrProject, molSystem=mainMolSystem,
+#                                                     chainMap=chainMap,
+#                                                     defaultChainCode=defaultChainCode)
+#
+#   # Set ResonanceGroup attributes and NmrChains, and merge duplicate ResonanceGroups
+#   reverseGroupMap = {}
+#   # Make sure satellites are treated after main groups
+#   ll1 = []
+#   ll2 = []
+#   for resonanceGroup in nmrProject.sortedResonanceGroups():
+#     groupAssignment = resonanceGroupMap[resonanceGroup]
+#     sequenceCode = groupAssignment[1]
+#     if sequenceCode[-1].isdigit and len(sequenceCode) > 1 and sequenceCode[-2] in '+-':
+#       ll2.append(resonanceGroup)
+#     else:
+#       ll1.append(resonanceGroup)
+#   for resonanceGroup in ll1 + ll2:
+#     # Treat the resonanceGroups
+#     groupAssignment = resonanceGroupMap[resonanceGroup]
+#     firstResonanceGroup = reverseGroupMap.get(groupAssignment)
+#     print ('@~@~', groupAssignment,resonanceGroup, firstResonanceGroup, nmrProject.findFirstNmrChain(code=groupAssignment[0]))
+#     if firstResonanceGroup is None:
+#       # new group - handle it
+#       reverseGroupMap[groupAssignment] = resonanceGroup
+#       resonanceGroup.directNmrChain = (nmrProject.findFirstNmrChain(code=groupAssignment[0]) or
+#                                  nmrProject.newNmrChain(code=groupAssignment[0]))
+#       resonanceGroup.sequenceCode = groupAssignment[1]
+#       resonanceGroup.residueType = groupAssignment[2]
+#
+#     else:
+#       # Merge duplicates
+#       for resonance in resonanceGroup.resonances:
+#         resonance.resonanceGroup = firstResonanceGroup
+#       resonanceGroup.delete()
+#
+#
+#   # Add default chain and ResonanceGroup for non-grouped resonances
+#   defaultNmrChain = (nmrProject.findFirstNmrChain(code=defaultChainCode) or
+#                          nmrProject.newNmrChain(code=defaultChainCode))
+#   defaultResonanceGroup = (defaultNmrChain.findFirstResonanceGroup(seqCode=None,
+#                                                                    seqInsertCode='@') or
+#                            nmrProject.newResonanceGroup(directNmrChain=defaultNmrChain,
+#                                                        seqInsertCode = '@',
+#                                                        details="default ResonanceGroup"))
+#   # resonanceGroupMap[None] = (defaultChainCode, '@', defaultResonanceGroup)
+#   resonanceGroupMap[None] = (defaultChainCode, '@', None)
+#
+#   # Now fix resonance assignments
+#   assignmentMap = {}
+#   V2Upgrade._mapAssignedResonances(nmrProject, assignmentMap, molSystem=mainMolSystem,
+#                                   chainMap=chainMap)
+#   reverseMap = {}
+#   for resonance in nmrProject.sortedResonances():
+#
+#     # Reset unknown code to '?'
+#     if resonance.isotopeCode in (None,'unknown'):
+#       resonance.isotopeCode = '?'
+#
+#     # set up for the rest
+#     assignment = assignmentMap.get(resonance)
+#     resonanceGroup = resonance.resonanceGroup
+#     groupAssignment = resonanceGroupMap.get(resonanceGroup)
+#
+#     if assignment:
+#       # resonance is assigned - at this point it must be to a molecule atom
+#
+#       # Use the name of the assignment
+#       name = assignment[3]
+#       if resonanceGroup is not None:
+#           ll = [x for x in resonanceGroup.findAllResonances(name=name) if x is not resonance]
+#           if ll:
+#             # There is a name clash - must arise from double assignment in input data. Disambiguate
+#             if ll[0].serial < resonance.serial:
+#               resonance.name = '%s@%s' % (name, resonance.serial)
+#             else:
+#               ll[0].name = '%s@%s' % (name, ll[0].serial)
+#               resonance.name = name
+#           else:
+#             resonance.name = name
+#
+#       oldResonance = reverseMap.get(assignment)
+#       if oldResonance is None:
+#         # No resonance assignment clashes - just put in reverse map
+#         reverseMap[assignment] = resonance
+#
+#         if groupAssignment != assignment[:3] or resonanceGroup is None:
+#           # Residue assignment mismatch. This should not happen
+#           # Use assignmentMap assignment and remove link to ResonanceGroup
+#           if resonanceGroup is not None:
+#             print ('WARNING, %s: %s does not match %s: %s' %
+#                    (resonance, assignment, resonanceGroup, groupAssignment))
+#
+#           newResonanceGroup = reverseGroupMap.get(assignment[:3])
+#           if newResonanceGroup is None:
+#             # Assigned resonance with no matching ResonanceGroup. Make a new group
+#             nmrChain = (nmrProject.findFirstNmrChain(code=groupAssignment[0]) or
+#                            nmrProject.newNmrChain(code=groupAssignment[0]))
+#             rg = nmrProject.newResonanceGroup(sequenceCode=assignment[1], residueType=assignment[2],
+#                                               directNmrChain=nmrChain, resonances=(resonance,))
+#             # rg.nmrChain = (nmrProject.findFirstNmrChain(code=groupAssignment[0]) or
+#             #                nmrProject.newNmrChain(code=groupAssignment[0]))
+#             reverseGroupMap[assignment[:3]] = rg
+#
+#           else:
+#             # resonance belongs in a different group. Move it there
+#             # NB. Name clashes (if any) wil be resolved when second clashing resonance comes up
+#             resonance.resonanceGroup = newResonanceGroup
+#
+#       else:
+#         # Assignment clash - merge into old resonance that at this point must be
+#         # assigned and have a lower serial
+#         oldResonance.absorbResonance(resonance)
+#
+#     else:
+#       # resonance was not assigned from a resonanceSet (in mapAssignedResonances)
+#       name = V2Upgrade.regularisedResonanceName(resonance)
+#       assignment = groupAssignment + (name,)
+#
+#       oldResonance = reverseMap.get(assignment)
+#       if oldResonance is None:
+#         # no clashes
+#         resonance.name = name
+#         if resonanceGroup is None:
+#           resonance.resonanceGroup = defaultResonanceGroup
+#         reverseMap[assignment] = resonance
+#
+#       else:
+#         # Assignment clash
+#
+#         # Check if assignment is to molecule
+#         atom =None
+#         chain = mainMolSystem.findFirstChain(code=assignment[0])
+#         if chain is not None:
+#           seqCode, seqInsertCode, offset = commonUtil.parseSequenceCode(assignment[1])
+#           seqInsertCode = seqInsertCode or ' '
+#           residue = chain.findFirstResidue(seqCode=seqCode, seqInsertCode=seqInsertCode)
+#           if residue is not None:
+#             atom = residue.findFirstAtom(name=assignment[3])
+#
+#         if atom is None:
+#           # Assignment not to molecule. Add resonance serial to atom name
+#           # To preserve difference between
+#           serial = resonance.serial
+#           ss = '@%s' % serial
+#           if ss not in name:
+#             name = '%s@%s' % (name, serial)
+#           resonance.name = name
+#           assignment = groupAssignment + (name,)
+#           reverseMap[assignment] = resonance
+#
+#         else:
+#           # Assignment to molecule. Absorb in previous resonance
+#           oldResonance.absorbResonance(resonance)
 
 
 def copyMolSystemContents(molSystem, toMolSystem, chainMap):

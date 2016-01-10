@@ -148,6 +148,7 @@ def testProject(target, outDir):
     projectName = None
   try:
     t0 = time.time()
+    ccpnProject = None
     ccpnProject = utilIo.loadProject(target, projectName=projectName)
     # t1 = time.time()
     utilIo.loadAllData(ccpnProject)
@@ -178,10 +179,11 @@ def testProject(target, outDir):
     message = ('+++ Error, target %s' %  target)
     raise
   finally:
-    logger.info(message)
+    # logger.info(message)
     print(message)
-    utilIo.cleanupProject(ccpnProject)
-    del ccpnProject
+    if ccpnProject:
+      utilIo.cleanupProject(ccpnProject)
+      del ccpnProject
   
 
 if __name__ == '__main__':
