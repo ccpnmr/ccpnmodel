@@ -551,14 +551,15 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
       resonanceGroup = resonance.resonanceGroup or defaultResonanceGroup
       name = V2Upgrade.regularisedResonanceName(resonance)
       oldResonance = resonanceGroup.findFirstResonance(name=name)
-      if oldResonance is not None:
+      if oldResonance not in (None, resonance):
         # Name clash. Disambiguate
-        serial = resonance.serial
-        ss = '@%s' % serial
-        if ss in name:
-          oldResonance.name = '@%s' % oldResonance.serial
-        else:
-          name = name + ss
+        name = None
+        # serial = resonance.serial
+        # ss = '@%s' % serial
+        # if ss in name:
+        #   oldResonance.name = None
+        # else:
+        #   name = None
 
       resonance.name = name
       resonance.resonanceGroup = resonanceGroup
