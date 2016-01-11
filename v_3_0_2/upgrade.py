@@ -526,7 +526,8 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
       sequenceCode = '%s%s' % (seqCode, insertCode)
       resonanceGroup = (nmrChain.findFirstResonanceGroup(seqCode=seqCode,
                                                          seqInsertCode=insertCode or None)
-                        or nmrChain.newResonanceGroup(sequenceCode=sequenceCode))
+                        or nmrProject.newResonanceGroup(sequenceCode=sequenceCode,
+                                                        nmrChain=nmrChain))
 
       if resonanceGroup is not resonance.resonanceGroup:
         print ('WARNING, %s ResonanceGroup %s does not match assignment to %s.%s' %
