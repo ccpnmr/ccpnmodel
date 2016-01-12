@@ -1,10 +1,10 @@
-import sys, os, traceback, shutil, time, subprocess, datetime
+import sys, os, traceback, time, subprocess, datetime
 
 from ccpnmodel.util import Path as modelPath
 from ccpncore.util import Path as corePath
 
 from ccpncore.util import Io as utilIo
-from ccpncore.util import Logging
+# from ccpncore.util import Logging
 
 testDataPath = 'testdata/upgrade/'
 
@@ -77,7 +77,7 @@ def testProjects(target, workDir, extraDirs=None, maskErrors=True):
   within directory target, putting temporary directories in workDir
   """
   
-  #print 'Testing Projects in %s' % target
+  #print '@~@~ Testing Projects in %s' % target
 
   # # Make dummy project as location for logs
   # now ='_'.join((str(x) for x in datetime.datetime.now().timetuple()[:6]))
@@ -99,6 +99,7 @@ def testProjects(target, workDir, extraDirs=None, maskErrors=True):
         logger.info("Testing %s ..." % projDir)
         testProject(projDir, corePath.joinPath(outDir, projDir[len(target)+1:]))
       except:
+        print ("Error in test of %s" % projDir)
         if maskErrors:
           # print(">>>>Error>>>> %s" % projDir)
           # print(traceback.format_exception_only(sys.exc_info()[0],sys.exc_info()[1]))
@@ -119,9 +120,9 @@ def testProjects(target, workDir, extraDirs=None, maskErrors=True):
             testProjects(newTarget, workDir, extraDirs=xx,
                          maskErrors=maskErrors)
           except:
+            print("Error in test of %s" % targetFile, fn)
             if maskErrors:
               logger.exception("Error in test of %s" % targetFile)
-              print("Error in test of %s" % targetFile)
               # print(">>>>Error>>>> %s" % targetFile)
               print(traceback.format_exception_only(sys.exc_info()[0],sys.exc_info()[1]))
               # print()
@@ -202,7 +203,7 @@ if __name__ == '__main__':
 
   if targetarg == 'all':
     doTest()
-    #doTest(maskErrors=False)
+    # doTest(maskErrors=False)
   else:
     doTest(targetarg, maskErrors=False)
     #doTest(targetarg)

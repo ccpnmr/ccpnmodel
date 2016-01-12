@@ -461,13 +461,7 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
         and not V2Upgrade.findSpinSystemStretch(resonanceGroup, direction=-1)):
       # start at first resonanceGroup in stretch
       stretch = V2Upgrade.findSpinSystemStretch(resonanceGroup, direction=1)
-      if len(stretch) == 1:
-        # Two-residue stretch. Set as i,i-1 offset pair, and leave main rg for later
-        hasAddedGroup = V2Upgrade.addOffsetResonanceGroup(stretch[0], resonanceGroup, -1)
-        if hasAddedGroup:
-          handledResonanceGroups.add(resonanceGroup)
-
-      elif stretch:
+      if len(stretch) > 1:
         # Multi-residue stretch. Make connected stretch
         newNmrChain = nmrProject.newNmrChain(isConnected=True)
         for rg in stretch:
@@ -494,21 +488,82 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
   for resonanceGroup in nmrProject.sortedResonanceGroups():
     if resonanceGroup not in handledResonanceGroups:
 
-      # If unique, identity-linked ResonanceGroup, add it
-      rg0 = V2Upgrade.findIdentityResonanceGroup(resonanceGroup)
-      if rg0 is not None:
-        addedGroup = V2Upgrade.addOffsetResonanceGroup(rg0, resonanceGroup, 0)
-        if addedGroup:
-          handledResonanceGroups.add(resonanceGroup)
-          continue
+      plusStretch = V2Upgrade.findSpinSystemStretch(resonanceGroup, direction=1)
+      minusStretch = V2Upgrade.findSpinSystemStretch(resonanceGroup, direction=-1)
+      if plusStretch and plusStretch[0] in handledResonanceGroups:
+        rgmain = plusStretch[0]
+        rgminus = resonanceGroup
+      elif minusStretch and minusStretch[0] in handledResonanceGroups:
+        rgmain = resonanceGroup
+        rgminus = minusStretch[0]
+      else:
+        rgmain = resonanceGroup
+        rgminus = None
 
-      # At this point we need to put the resonanceGroup in the default chain
-      try:
-        resonanceGroup.directNmrChain = defaultNmrChain
-      except ApiError:
-        resonanceGroup.sequenceCode = None
-        resonanceGroup.directNmrChain = defaultNmrChain
-      handledResonanceGroups.add(resonanceGroup)
+      if rgminus is None:
+        # No two-group stretch found. Try assigning as zero-offset to already assigned resonanceGroup
+        rg0 = V2Upgrade.findIdentityResonanceGroup(resonanceGroup)
+        addedGroup = False
+        if rg0 is not None and rg0.relativeOffset is None:
+          addedGroup = V2Upgrade.addOffsetResonanceGroup(rg0, resonanceGroup, 0)
+
+        if not addedGroup:
+        # Not a zero-offset residue3. Set it is its own right.
+          try:
+            resonanceGroup.directNmrChain = defaultNmrChain
+          except ApiError:
+            resonanceGroup.sequenceCode = None
+            resonanceGroup.directNmrChain = defaultNmrChain
+        handledResonanceGroups.add(resonanceGroup)
+
+      else:
+        # Set i group.
+        try:
+          rgmain.directNmrChain = defaultNmrChain
+        except ApiError:
+          rgmain.sequenceCode = None
+          rgmain.directNmrChain = defaultNmrChain
+        handledResonanceGroups.add(rgmain)
+
+        # Try setting i-1 group as offset
+        addedGroup = V2Upgrade.addOffsetResonanceGroup(rgmain, rgminus, -1)
+        if not addedGroup:
+          try:
+            resonanceGroup.directNmrChain = defaultNmrChain
+          except ApiError:
+            resonanceGroup.sequenceCode = None
+            resonanceGroup.directNmrChain = defaultNmrChain
+        handledResonanceGroups.add(resonanceGroup)
+      #
+      #
+      #
+      #   addedGroup = False
+      #   if rg0 is not None and rg0.relativeOffset is None:
+      #     addedGroup = V2Upgrade.addOffsetResonanceGroup(rg0, resonanceGroup, 0)
+      #   if not addedGroup:
+      #     try:
+      #       resonanceGroup.directNmrChain = defaultNmrChain
+      #     except ApiError:
+      #       resonanceGroup.sequenceCode = None
+      #       resonanceGroup.directNmrChain = defaultNmrChain
+      #   handledResonanceGroups.add(resonanceGroup)
+      #
+      #
+      # # If unique, identity-linked ResonanceGroup, add it
+      # rg0 = V2Upgrade.findIdentityResonanceGroup(resonanceGroup)
+      # if rg0 is not None:
+      #   addedGroup = V2Upgrade.addOffsetResonanceGroup(rg0, resonanceGroup, 0)
+      #   if addedGroup:
+      #     handledResonanceGroups.add(resonanceGroup)
+      #     continue
+      #
+      # # At this point we need to put the resonanceGroup in the default chain
+      # try:
+      #   resonanceGroup.directNmrChain = defaultNmrChain
+      # except ApiError:
+      #   resonanceGroup.sequenceCode = None
+      #   resonanceGroup.directNmrChain = defaultNmrChain
+      # handledResonanceGroups.add(resonanceGroup)
 
   # Done with resonanceGroups. Now for resonances.
 
@@ -527,9 +582,9 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
       resonanceGroup = (nmrChain.findFirstResonanceGroup(seqCode=seqCode,
                                                          seqInsertCode=insertCode or None)
                         or nmrProject.newResonanceGroup(sequenceCode=sequenceCode,
-                                                        nmrChain=nmrChain))
+                                                        directNmrChain=nmrChain))
 
-      if resonanceGroup is not resonance.resonanceGroup:
+      if resonance.resonanceGroup not in (None, resonanceGroup):
         print ('WARNING, %s ResonanceGroup %s does not match assignment to %s.%s' %
                (resonance, resonance.resonanceGroup, chainCode, sequenceCode))
       # Move or merge resonance in position
@@ -544,7 +599,7 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
         resonance.resonanceGroup = resonanceGroup
         resonance.name = name
         if resonance.isotopeCode in ('?', 'unknown', None):
-          resonance.isotopeCode = spectrumLib.name2IsotopeCode(name)
+          resonance.isotopeCode = spectrumLib.name2IsotopeCode(name) or '?'
 
   # Now do unassigned resonances:
   for resonance in nmrProject.sortedResonances():
@@ -565,7 +620,7 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
       resonance.name = name
       resonance.resonanceGroup = resonanceGroup
       if resonance.isotopeCode in ('?', 'unknown', None):
-        resonance.isotopeCode = spectrumLib.name2IsotopeCode(name)
+        resonance.isotopeCode = spectrumLib.name2IsotopeCode(name) or '?'
 
   #
   #
