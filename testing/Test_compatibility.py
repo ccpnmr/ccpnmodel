@@ -4,6 +4,7 @@ from ccpnmodel.util import Path as modelPath
 from ccpncore.util import Path as corePath
 
 from ccpncore.util import Io as utilIo
+from ccpncore.util import LocalShutil as shutil
 # from ccpncore.util import Logging
 
 testDataPath = 'testdata/upgrade/'
@@ -11,6 +12,10 @@ testDataPath = 'testdata/upgrade/'
 alwaysSkipDirs = {'.svn', '.idea', 'ccp', 'ccpnmr', 'cambridge', 'CVS', 'molsim', 'utrecht',}
 stdTempDir='unzipped_%s'
 stdOutDir='out'
+
+# This is BAD, but it seems to be the only way to get the bloody thing to run off the main
+# system disk from the VM without permission errors from copyin the files
+defaultDir = '/home/rhf22/rhf22'
 
 # Gobal variable to distinguish temporary unzip directory names
 global dirIndex
@@ -24,7 +29,10 @@ def doTest(target=None, workDir=None, maskErrors=True):
            
   # set up directories
   if workDir is None:
-    workDir = os.getcwd()
+    # getcwd cause errors when you8 were in a directory on a host disk from a VM
+    # workDir = os.getcwd()
+    # workDir = os.environ['HOME']
+    workDir = defaultDir
 
   xx = datetime.date.today()
   today = '%02d%02d%02d' % (xx.year, xx.month, xx.day)
@@ -43,7 +51,6 @@ def doTest(target=None, workDir=None, maskErrors=True):
   if os.path.isfile(target):
   
     if target.endswith('.tgz'):
-      print("@~@~ unzipping", target, testDir)
       newTarget = unzipFile(target, testDir)
       print('@~@~ testing', newTarget)
       testProjects(newTarget, testDir, maskErrors=maskErrors)
@@ -60,14 +67,18 @@ def doTest(target=None, workDir=None, maskErrors=True):
     testProjects(target=target, workDir=testDir, maskErrors=maskErrors)
 
 def unzipFile(target, workDir):
+  print("@~@~ unzipping", target, workDir)
   global dirIndex
   dirIndex += 1
   logger = Logging.getLogger()
   logger.info('Unzipping %s ...' % target)
   tempDir = os.path.join(workDir, stdTempDir % dirIndex)
-  os.makedirs(tempDir)
-  
-  subprocess.call(['tar', '-xzf', target, '-C', tempDir])
+  # os.makedirs(tempDir)
+  #
+  # # subprocess.call(['tar', '-xzf', target, '-C', tempDir])
+  # subprocess.call(['tar', '-xzf', target, '--no-overwrite-dir', '-C', tempDir])
+  shutil.unpack_archive(target, tempDir)
+  print("@~@~ Done unzipping to", tempDir)
   #
   return tempDir
 

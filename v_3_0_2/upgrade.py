@@ -568,58 +568,83 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
   # Done with resonanceGroups. Now for resonances.
 
   # First assigned resonances
-  for resonance, tt in sorted(resonance2Assignment.items()):
+  for resonance in nmrProject.sortedResonances():
+    tt = resonance2Assignment.get(resonance)
+    if tt is not None:
 
-    residue, name = tt
-    if residue is not None and not resonance.isDeleted:
-      # Get target ResonanceGroup
-      chainCode = residue.chain.code
-      nmrChain = (nmrProject.findFirstNmrChain(code=chainCode) or
-                  nmrProject.newNmrChain(code=chainCode))
-      seqCode = residue.seqCode
-      insertCode = residue.seqInsertCode.strip()
-      sequenceCode = '%s%s' % (seqCode, insertCode)
-      resonanceGroup = (nmrChain.findFirstResonanceGroup(seqCode=seqCode,
-                                                         seqInsertCode=insertCode or None)
-                        or nmrProject.newResonanceGroup(sequenceCode=sequenceCode,
-                                                        directNmrChain=nmrChain))
+      residue, name = tt
+      if residue is not None and not resonance.isDeleted:
+        # Get target ResonanceGroup
+        chainCode = residue.chain.code
+        nmrChain = (nmrProject.findFirstNmrChain(code=chainCode) or
+                    nmrProject.newNmrChain(code=chainCode))
+        seqCode = residue.seqCode
+        insertCode = residue.seqInsertCode.strip()
+        sequenceCode = '%s%s' % (seqCode, insertCode)
+        resonanceGroup = (nmrChain.findFirstResonanceGroup(seqCode=seqCode,
+                                                           seqInsertCode=insertCode or None)
+                          or nmrProject.newResonanceGroup(sequenceCode=sequenceCode,
+                                                          directNmrChain=nmrChain))
 
-      if resonance.resonanceGroup not in (None, resonanceGroup):
-        print ('WARNING, %s ResonanceGroup %s does not match assignment to %s.%s' %
-               (resonance, resonance.resonanceGroup, chainCode, sequenceCode))
-      # Move or merge resonance in position
-      ll = sorted(x for x in resonanceGroup.findAllResonances(name=name) if x is not resonance)
-      if ll and ll[0].serial < resonance.serial:
-        # There is a name clash - must arise from double assignment in input data.
-        # MERGE into earlier resonance
-        ll[0].absorbResonance(resonance)
-      else:
-        # NB. Name clashes with later Resonances (if any)
-        # will be resolved when second clashing resonance comes up.
-        resonance.resonanceGroup = resonanceGroup
-        resonance.name = name
-        if resonance.isotopeCode in ('?', 'unknown', None):
-          resonance.isotopeCode = spectrumLib.name2IsotopeCode(name) or '?'
+        if resonance.resonanceGroup not in (None, resonanceGroup):
+          print ('WARNING, %s ResonanceGroup %s does not match assignment to %s.%s' %
+                 (resonance, resonance.resonanceGroup, chainCode, sequenceCode))
+        # Move or merge resonance in position
+        ll = sorted(x for x in resonanceGroup.findAllResonances(name=name) if x is not resonance)
+        # print ('@~@~',resonance, resonance.name, [(x,x.name) for x in ll])
+        if ll:
+          # Clashing resonances. In theory should be merged, but better keep them separate
+          # As they are likely caused by error and might be at different freqs
+          if ll[0].serial < resonance.serial:
+            # Keep the resonance with the lowest serial and rename this one
+            ll = [resonance]
+            convertResonance = None
+          else:
+            # Keep this one, but wait till we have renamed the others
+            convertResonance = resonance
+
+          for rs in ll:
+            # Remove from assigned dictionary and treat as unassigned
+            ss = V2Upgrade.regularisedResonanceName(rs)
+            if ss == name:
+              ss = '%s@%s' % (name, rs.serial)
+
+            if any(x for x in resonanceGroup.findAllResonances(name=ss) if x is not rs):
+              # Name clash. Should never happen here, but to avoid trouble, ...
+                ss = None
+            # print ('@~@~ reste name', rs, ss)
+            rs.name = ss
+            resonance2Assignment[rs] = (residue, ss)
+
+          if convertResonance is not None:
+            # Now others are renamed, assign this one
+            convertResonance.resonanceGroup = resonanceGroup
+            # print ('@~@~', resonanceGroup, residue, convertResonance, convertResonance.name,
+            #        [(x, x.name) for x in resonanceGroup.findAllResonances(name=name)])
+            convertResonance.name = name
+            if convertResonance.isotopeCode in ('?', 'unknown', None):
+              convertResonance.isotopeCode = spectrumLib.name2IsotopeCode(name) or '?'
+
+        else:
+          # No clashes, just assign resonance
+          resonance.resonanceGroup = resonanceGroup
+          resonance.name = name
+          if resonance.isotopeCode in ('?', 'unknown', None):
+            resonance.isotopeCode = spectrumLib.name2IsotopeCode(name) or '?'
+
 
   # Now do unassigned resonances:
   for resonance in nmrProject.sortedResonances():
     if resonance not in resonance2Assignment:
-      resonanceGroup = resonance.resonanceGroup or defaultResonanceGroup
       name = V2Upgrade.regularisedResonanceName(resonance)
       oldResonance = resonanceGroup.findFirstResonance(name=name)
       if oldResonance not in (None, resonance):
-        # Name clash. Disambiguate
-        name = None
-        # serial = resonance.serial
-        # ss = '@%s' % serial
-        # if ss in name:
-        #   oldResonance.name = None
-        # else:
-        #   name = None
+        # Name clash. Should never happen here, but to avoid trouble, ...
+          name = None
 
       resonance.name = name
       resonance.resonanceGroup = resonanceGroup
-      if resonance.isotopeCode in ('?', 'unknown', None):
+      if name and resonance.isotopeCode in ('?', 'unknown', None):
         resonance.isotopeCode = spectrumLib.name2IsotopeCode(name) or '?'
 
   #
@@ -1012,7 +1037,7 @@ def getNmrMolSystems(nmrProject):
 
     # ResidueProbs
     for residueProb in resonanceGroup.residueProbs:
-      molSystem = residueProb.residue.topObject
+      molSystem = residueProb.possibility.topObject
       count = molSystemCounts.get(molSystem, 0)
       molSystemCounts[molSystem] = count + 1
 
