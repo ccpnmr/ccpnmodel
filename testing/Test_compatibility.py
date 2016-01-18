@@ -34,8 +34,9 @@ def doTest(target=None, workDir=None, maskErrors=True):
     # workDir = os.environ['HOME']
     workDir = defaultDir
 
-  xx = datetime.date.today()
-  today = '%02d%02d%02d' % (xx.year, xx.month, xx.day)
+  tt = tuple(datetime.datetime.now().timetuple())
+  # today = '%02d%02d%02d' % (xx.year, xx.month, xx.day)
+  today = '%02d%02d%02d_%02d%02d%02d' % tt[:6]
   testDir = 'compatibility_test_%s' % today
   testDir = os.path.join(workDir, testDir)
   if not os.path.exists(testDir):
