@@ -196,7 +196,7 @@ def correctFinalResult(memopsRoot):
     # Fix peak intensities and assignments storage
     fixPeaks(nmrProject)
 
-    # Remove ResonanceGroup.residue - no longer needed, and suprseded in new model
+    # Remove ResonanceGroup.residue - no longer needed, and superseded in new model
     for resonanceGroup in nmrProject.resonanceGroups:
       resonanceGroup.residue = None
 
@@ -474,6 +474,8 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
       # Set up to merge duplicates
       groupsToMerge[resonanceGroup] = useResonanceGroup
       handledResonanceGroups.add(resonanceGroup)
+      print ('@~@~ +++ WARNING clashing assigned ResonanceGroups %s %s %s'
+             % (useResonanceGroup.sequenceCode, useResonanceGroup.serial, resonanceGroup.serial))
       # Set to default naming to avoid potential clashes
       resonanceGroup.sequenceCode = None
       resonanceGroup.directNmrChain = defaultNmrChain
@@ -712,6 +714,12 @@ def copyMolSystemContents(molSystem, toMolSystem, chainMap):
     finally:
       molSystem.root.override = False
 
+    # Fix Haddock Partners
+    for haddock in molSystem.root.sortedHaddockProjects():
+      for partner in haddock.sortedHaddockPartners():
+        if partner.structureEnsemble is structureEnsemble:
+          partner.nolSystem = toMolSystem
+
   # Fix NmrCalc instances
   for nmrCalcStore in molSystem.root.sortedNmrCalcStores():
     for run in nmrCalcStore.sortedRuns():
@@ -727,6 +735,7 @@ def copyMolSystemContents(molSystem, toMolSystem, chainMap):
           obj.residues = newResidues
         elif className == 'StructureEnsembleData':
           obj.molSystemCode = toMolSystem.code
+
 
 def getNmrMolSystems(nmrProject):
   """Find MolSystems referred to in Nmr and dependent packages (NmrConstraint, NmrCalc, ...)

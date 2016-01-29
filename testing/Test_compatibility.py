@@ -15,7 +15,7 @@ stdOutDir='out'
 
 # This is BAD, but it seems to be the only way to get the bloody thing to run off the main
 # system disk from the VM without permission errors from copyin the files
-defaultDir = '/home/rhf22/rhf22'
+defaultDir = '/suseq/testing'
 
 # Gobal variable to distinguish temporary unzip directory names
 global dirIndex
@@ -45,16 +45,18 @@ def doTest(target=None, workDir=None, maskErrors=True):
     
   if target:
     target = corePath.normalisePath(target)
+    removeTarget=False
   else:
     # We are testing all projects.
     target = modelPath.getDirectoryFromTop(testDataPath)
+    removeTarget=True
   
   if os.path.isfile(target):
   
     if target.endswith('.tgz'):
       newTarget = unzipFile(target, testDir)
       print('@~@~ testing', newTarget)
-      testProjects(newTarget, testDir, maskErrors=maskErrors)
+      testProjects(newTarget, testDir, maskErrors=maskErrors, removeTarget=removeTarget)
                  
     elif target.endswith('.xml'):
       outDir = corePath.joinPath(testDir, stdOutDir)
@@ -65,7 +67,7 @@ def doTest(target=None, workDir=None, maskErrors=True):
       print('Not a valid testing target: ', target)
   
   else:
-    testProjects(target=target, workDir=testDir, maskErrors=maskErrors)
+    testProjects(target=target, workDir=testDir, maskErrors=maskErrors, removeTarget=removeTarget)
 
 def unzipFile(target, workDir):
   print("@~@~ unzipping", target, workDir)
@@ -84,7 +86,7 @@ def unzipFile(target, workDir):
   return tempDir
 
 
-def testProjects(target, workDir, extraDirs=None, maskErrors=True):
+def testProjects(target, workDir, extraDirs=None, maskErrors=True, removeTarget=False):
   """ Test all potential projects (.../memops/Implementation/*.xml or *.tgz)
   within directory target, putting temporary directories in workDir
   """
@@ -130,7 +132,8 @@ def testProjects(target, workDir, extraDirs=None, maskErrors=True):
             if extraDirs:
               xx = os.path.join(extraDirs, xx)
             testProjects(newTarget, workDir, extraDirs=xx,
-                         maskErrors=maskErrors)
+                         maskErrors=maskErrors, removeTarget=removeTarget)
+            shutil.rmtree(newTarget)
           except:
             print("Error in test of %s" % targetFile, fn)
             if maskErrors:
@@ -173,13 +176,15 @@ def testProject(target, outDir):
 
     logger = Logging.getLogger()
 
-    newPath = outDir
+    newPath = os.path.join(outDir, stdTempDir % dirIndex)
     for extra in (os.path.basename(target), ccpnProject.name):
       if extra not in newPath:
         newPath = corePath.joinPath(newPath, extra)
     logger.info('### saving %s to %s' % (ccpnProject.name, newPath))
     utilIo.saveProject(ccpnProject, newPath=newPath, newProjectName=ccpnProject.name,
                        overwriteExisting=True)
+    shutil.make_archive(newPath, 'gztar', newPath)
+    shutil.rmtree(newPath)
     t4 = time.time()
     #print ('+++ Project Load ', t1-t0)
     #print ('+++ AllData Load ', t2-t1)
