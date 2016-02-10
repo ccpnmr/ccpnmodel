@@ -474,8 +474,8 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
       # Set up to merge duplicates
       groupsToMerge[resonanceGroup] = useResonanceGroup
       handledResonanceGroups.add(resonanceGroup)
-      print ('@~@~ +++ WARNING clashing assigned ResonanceGroups %s %s %s'
-             % (useResonanceGroup.sequenceCode, useResonanceGroup.serial, resonanceGroup.serial))
+      # print ('@~@~ +++ WARNING clashing assigned ResonanceGroups %s %s %s'
+      #        % (useResonanceGroup.sequenceCode, useResonanceGroup.serial, resonanceGroup.serial))
       # Set to default naming to avoid potential clashes
       resonanceGroup.sequenceCode = None
       resonanceGroup.directNmrChain = defaultNmrChain
