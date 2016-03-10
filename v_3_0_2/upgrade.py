@@ -27,6 +27,7 @@ from ccpncore.lib import V2Upgrade
 from ccpncore.lib import Constants
 from ccpncore.memops.ApiError import ApiError
 from ccpncore.util import Common as commonUtil
+from ccpncore.util import Sorting
 from ccpncore.lib.spectrum import Spectrum as spectrumLib
 # from ccpncore.lib.molecule import MoleculeModify
 
@@ -292,6 +293,10 @@ def fixNmrConstraintStore(nmrConstraintStore, molSystem, chainMap):
 
     # First fix FixedResonances (so we can remap them below)
     # Map unassigned, then assigned resonances
+
+
+    sortKey = Sorting.universalNaturalSortKey
+
     assignmentMap = V2Upgrade.mapUnAssignedFixedResonances(nmrConstraintStore)
     for resonance, tt in V2Upgrade.mapAssignedResonances(nmrConstraintStore, chainMap=chainMap,
                                                          molSystem=molSystem).items():
@@ -345,7 +350,6 @@ def fixNmrConstraintStore(nmrConstraintStore, molSystem, chainMap):
 
       if restraintType in ('Distance', 'HBond', 'JCoupling', 'Rdc',):
         #ix pairwise restraints
-        kf = commonUtil.numericStringSortKey
         for constraint in constraintList.sortedConstraints():
 
           # Make new Contribution
@@ -355,9 +359,10 @@ def fixNmrConstraintStore(nmrConstraintStore, molSystem, chainMap):
 
           # Transfer resonances to new Items objects and delete old ones.
           for constraintItem in constraint.sortedItems():
-            assignments = [assignmentMap[resonanceMap.get(x,x)] for x in constraintItem.resonances]
+            assignments = (assignmentMap[resonanceMap.get(x,x)] for x in constraintItem.resonances)
             getattr(contribution, newItem)(resonances=tuple(assignment2Resonance[x]
-                                                            for x in sorted(assignments, key=kf)))
+                                                            for x in sorted(assignments,
+                                                                            key=sortKey)))
             constraintItem.delete()
 
       elif restraintType in ('Csa', 'ChemicalShift'):
