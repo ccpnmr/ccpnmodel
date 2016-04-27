@@ -55,12 +55,10 @@ def doTest(target=None, workDir=None, maskErrors=True):
   
     if target.endswith('.tgz'):
       newTarget = unzipFile(target, testDir)
-      print('@~@~ testing', newTarget)
       testProjects(newTarget, testDir, maskErrors=maskErrors, removeTarget=removeTarget)
                  
     elif target.endswith('.xml'):
       outDir = corePath.joinPath(testDir, stdOutDir)
-      print('@~@~ testing xml', target, outDir)
       testProject(target, outDir)
     
     else:
@@ -70,7 +68,6 @@ def doTest(target=None, workDir=None, maskErrors=True):
     testProjects(target=target, workDir=testDir, maskErrors=maskErrors, removeTarget=removeTarget)
 
 def unzipFile(target, workDir):
-  print("@~@~ unzipping", target, workDir)
   global dirIndex
   dirIndex += 1
   logger = Logging.getLogger()
@@ -81,7 +78,6 @@ def unzipFile(target, workDir):
   # # subprocess.call(['tar', '-xzf', target, '-C', tempDir])
   # subprocess.call(['tar', '-xzf', target, '--no-overwrite-dir', '-C', tempDir])
   shutil.unpack_archive(target, tempDir)
-  print("@~@~ Done unzipping to", tempDir)
   #
   return tempDir
 
@@ -180,6 +176,8 @@ def testProject(target, outDir):
     for extra in (os.path.basename(target), ccpnProject.name):
       if extra not in newPath:
         newPath = corePath.joinPath(newPath, extra)
+    if not newPath.endswith('.ccpn.'):
+      newPath += '.ccpn'
     logger.info('### saving %s to %s' % (ccpnProject.name, newPath))
     utilIo.saveProject(ccpnProject, newPath=newPath, newProjectName=ccpnProject.name,
                        overwriteExisting=True)

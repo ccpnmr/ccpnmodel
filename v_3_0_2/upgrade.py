@@ -213,7 +213,7 @@ def fixExperiments(nmrProject):
       # Use experiment or dataSource name as default
       name = name1 or name2
 
-      if name1 and name2:
+      if name1 and name2 and name1 != name2:
         # We had both experiment and dataSource name. Combine them
         name = '%s-%s' % (name1, name2)
 
