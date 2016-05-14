@@ -59,7 +59,7 @@ software development. Bioinformatics 21, 1678-1684.
 __author__ = 'rhf22'
 
 import os
-from ccpncore.util import Path as corePath
+from ccpn.util import Path as corePath
 from ccpncore.memops import Version
 
 baseDir = 'versions'

@@ -166,7 +166,7 @@ def fixImplementation(topObj, delayDataDict):
   NB when this is called PackageLocators and Repositories
   have already had their child links and crosslinks set.
   """
-  from ccpncore.util import Path
+  from ccpn.util import Path
   from ccpncore.api.memops.Implementation import Url
   import os.path
 

@@ -22,12 +22,12 @@ __version__ = "$Revision$"
 # Start of code
 #=========================================================================================
 
-from ccpncore.util import CopyData
+from ccpn.util import CopyData
 from ccpncore.lib import V2Upgrade
 from ccpncore.lib import Constants
 from ccpncore.memops.ApiError import ApiError
-from ccpncore.util import Common as commonUtil
-from ccpncore.util import Sorting
+from ccpn.util import Common as commonUtil
+from ccpn.util import Sorting
 from ccpncore.lib.spectrum import Spectrum as spectrumLib
 # from ccpncore.lib.molecule import MoleculeModify
 

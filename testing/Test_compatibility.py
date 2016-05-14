@@ -1,11 +1,11 @@
 import sys, os, traceback, time, subprocess, datetime
 
 from ccpnmodel.util import Path as modelPath
-from ccpncore.util import Path as corePath
+from ccpn.util import Path as corePath
 
-from ccpncore.util import Io as utilIo
-from ccpncore.util import LocalShutil as shutil
-# from ccpncore.util import Logging
+from ccpn.util import Io as utilIo
+from ccpn.util import LocalShutil as shutil
+# from ccpn.util import Logging
 
 testDataPath = 'testdata/upgrade/'
 
@@ -205,7 +205,7 @@ def testProject(target, outDir):
 if __name__ == '__main__':
 
   import logging
-  from ccpncore.util import Logging
+  from ccpn.util import Logging
   Logging.defaultLogLevel = logging.DEBUG
 
   dirIndex = 0

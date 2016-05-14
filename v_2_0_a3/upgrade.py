@@ -146,8 +146,8 @@ def fullLoadValidationStore(topObj):
   """hard load ValidationStore from old location
   """
 
-  from ccpncore.util import ApiPath
-  from ccpncore.util import Path
+  from ccpn.util import ApiPath
+  from ccpn.util import Path
   from ccpncore.memops.format.xml import XmlIO
   root = topObj.memopsRoot
   locator = (root.findFirstPackageLocator(targetName='ccp.molecule.Validation')
