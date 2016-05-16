@@ -27,7 +27,7 @@ __author__ = 'rhf22'
 # Import the Implementation package - this is the root package
 #
 
-from ccpn.util import Io as ioUtil
+from ccpnmodel.ccpncore.lib.Io import Api as apiIo
 
 # Put project inside this directory
 projectPath = './local.'
@@ -46,14 +46,14 @@ def doTest():
   project.saveModified()
   del project
 
-  project2 = ioUtil.loadProject(path=projectPath, projectName=projectName)
-  ioUtil.saveProject(project2, newProjectName=projectName+'_out')
+  project2 = apiIo.loadProject(path=projectPath, projectName=projectName)
+  apiIo.saveProject(project2, newProjectName=projectName+'_out')
 
 
 
 def newProject():
 
-  project = ioUtil.newProject(projectName=projectName, overwriteExisting=True)
+  project = apiIo.newProject(projectName=projectName, overwriteExisting=True)
 
   # Make molecule using API
 

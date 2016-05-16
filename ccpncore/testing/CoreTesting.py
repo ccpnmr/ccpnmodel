@@ -29,7 +29,7 @@ import unittest
 import contextlib
 
 from ccpn.util import Path
-from ccpn.util import Io
+from ccpnmodel.ccpncore.lib.Io import Api as apiIo
 from ccpn.util import Undo
 
 TEST_PROJECTS_PATH = os.path.join(Path.getTopDirectory(), 'internal', 'data', 'testProjects')
@@ -43,10 +43,10 @@ class CoreTesting(unittest.TestCase):
   @contextlib.contextmanager
   def initialSetup(self):
     if self.projectPath is None:
-      project = self.project = Io.newProject('default', overwriteExisting=True)
+      project = self.project = apiIo.newProject('default', overwriteExisting=True)
       self.nmrProject = project.newNmrProject(name='default')
     else:
-      project = self.project = Io.loadProject(os.path.join(TEST_PROJECTS_PATH, self.projectPath))
+      project = self.project = apiIo.loadProject(os.path.join(TEST_PROJECTS_PATH, self.projectPath))
       nmrProject = project.currentNmrProject
       if not nmrProject:
         nmrProject = project.currentNmrProject = project.findFirstNmrProject()

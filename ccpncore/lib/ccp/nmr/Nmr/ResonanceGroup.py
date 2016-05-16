@@ -37,7 +37,7 @@ def resetResidueType(self, value:str=None):
     if tt is not None:
       self.molType, self.ccpCode = tt
 
-def resetNmrChain(self, newNmrChain:'NmrChain'=None):
+def moveToNmrChain(self, newNmrChain:'NmrChain'=None):
   """Remove ResonanceGroup from NmrChain, breaking up connected NmrChain if necessary
   and move to newNmrChain (or default NmrChain if not set)"""
 

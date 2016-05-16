@@ -24,7 +24,7 @@ __version__ = "$Revision$"
 #=========================================================================================
 
 from typing import Tuple
-from ccpn.util import MergeObjects
+from ccpnmodel.ccpncore.lib import MergeObjects
 from ccpnmodel.ccpncore.lib.assignment import Assignment
 from ccpnmodel.ccpncore.memops.ApiError import ApiError
 

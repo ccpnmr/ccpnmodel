@@ -27,7 +27,7 @@ __author__ = 'rhf22'
 # Import the Implementation package - this is the root package
 #
 
-# from ccpn.util import Io as ioUtil
+# from ccpnmodel.ccpncore.lib.Io import Api as apiIo
 from ccpnmodel.ccpncore.testing.CoreTesting import CoreTesting
 # from ccpn.testing.WrapperTesting import WrapperTesting
 from ccpnmodel.ccpncore.lib.molecule import MoleculeModify

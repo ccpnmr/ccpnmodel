@@ -30,7 +30,7 @@ from ccpnmodel.ccpncore.lib.spectrum import Spectrum as spectrumLib
 from ccpnmodel.ccpncore.lib.spectrum.formats import Azara, Bruker, Felix, NmrPipe, NmrView, Ucsf, Varian, Xeasy
 from ccpnmodel.ccpncore.lib.Io.Formats import AZARA, BRUKER, FELIX, NMRPIPE, NMRVIEW, UCSF, VARIAN, XEASY
 from ccpn.util.Path import checkFilePath
-# from ccpn.util import Io as ioUtil
+# from ccpnmodel.ccpncore.lib.Io import Api as apiIo
 
 # from ccpnmodel.ccpncore.api.memops.Implementation import Url
 # from ccpnmodel.ccpncore.lib.spectrum.Spectrum import createBlockedMatrix

@@ -63,7 +63,6 @@ from ccpnmodel.ccpncore.memops import Version
 
 baseDir = 'versions'
 
-
 def getPythonDirectory():
   """
   Returns the 'top' python directory, the one on the python path.
@@ -93,3 +92,35 @@ def getCcpnmodelDirectory():
   """get path to ccpnmodel directory"""#
   func = os.path.dirname
   return func(func(func(__file__)))
+
+
+def _addModuleFunctionsToApiClass(relModuleName, apiClass, rootModuleName='ccpnmodel.ccpncore.lib'):
+
+  # iomport must be here, as importlib is not known in Python 2.1
+  import importlib
+
+  moduleName = '%s.%s' % (rootModuleName, relModuleName)
+  try:
+    module = importlib.import_module(moduleName)
+  except ImportError:
+    ll = moduleName.split('.')
+    ll[-1] += '.py'
+    if os.path.exists(os.path.join(getPythonDirectory(), *ll)):
+      # The file exists, so there must be an error we should know about
+      raise
+    else:
+      # This happens when there is just no library code for a class - quite common
+      pass
+    return
+
+  for key in dir(module):
+
+    if key.startswith('_'):
+      continue
+
+    value = getattr(module, key)
+    # second condition below excludes functions defined in imported modules (like os, etc.)
+    # third condition checks whether this is a function (rather than a class, etc.)
+    if hasattr(value, '__module__') and value.__module__ == moduleName and callable(value):
+      setattr(apiClass, key, value)
+

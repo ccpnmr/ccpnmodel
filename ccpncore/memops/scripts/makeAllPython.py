@@ -89,7 +89,7 @@ import importlib
 import time
 
 from ccpnmodel.ccpncore.lib import Path
-from ccpn.util.recursive_import_test import importAllPyfiles
+from ccpn.util.recursive_import import importAllPyfiles
 from ccpnmodel.ccpncore.memops import Version
 from ccpnmodel.ccpncore.memops.scripts import makePython
 from ccpnmodel.ccpncore.memops.scripts.xmlio import CompatibilityGen

@@ -146,7 +146,7 @@ def fullLoadValidationStore(topObj):
   """hard load ValidationStore from old location
   """
 
-  from ccpn.util import ApiPath
+  from ccpnmodel.ccpncore.lib import ApiPath
   from ccpn.util import Path
   from ccpnmodel.ccpncore.memops.format.xml import XmlIO
   root = topObj.memopsRoot

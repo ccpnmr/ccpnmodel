@@ -31,8 +31,7 @@ import os
 import re
 from urllib.request import urlopen
 
-from ccpn.util import Logging
-from ccpn.util import Io as utilIo
+from ccpnmodel.ccpncore.lib.Io import Api as apiIo
 from ccpn.util import Common as commonUtil
 from ccpn.util import Path as corePath
 # from ccpnmodel.ccpncore.memops.ApiError import ApiError
@@ -69,7 +68,7 @@ def fetchChemComp(project, molType, ccpCode, download=True, partialLoad=False):
     packageName = 'ccp.molecule.ChemComp'  
     chemCompFileSearchString = "%s+%s+*.xml" % (molType,commonUtil.getCcpFileString(ccpCode))
     
-    chemCompXmlFile = utilIo.findCcpXmlFile(project, packageName, chemCompFileSearchString)
+    chemCompXmlFile = apiIo.findCcpXmlFile(project, packageName, chemCompFileSearchString)
     if chemCompXmlFile:
       chemComp = XmlIO.loadFromFile(project, chemCompXmlFile, partialLoad=partialLoad)
 
@@ -227,7 +226,7 @@ def fetchChemCompCoord(project, sourceName, molType, ccpCode, download=True, par
     chemCompCoordFileSearchString = "%s+%s+%s+*.xml" % (commonUtil.getCcpFileString(sourceName),
                                                         molType, commonUtil.getCcpFileString(ccpCode))
     
-    chemCompCoordXmlFile = utilIo.findCcpXmlFile(project, packageName,
+    chemCompCoordXmlFile = apiIo.findCcpXmlFile(project, packageName,
                                                  chemCompCoordFileSearchString)
     if chemCompCoordXmlFile:
       chemCompCoord = XmlIO.loadFromFile(project, chemCompCoordXmlFile,

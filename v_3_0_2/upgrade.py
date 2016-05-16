@@ -22,7 +22,7 @@ __version__ = "$Revision$"
 # Start of code
 #=========================================================================================
 
-from ccpn.util import CopyData
+from ccpnmodel.ccpncore.lib import CopyData
 from ccpnmodel.ccpncore.lib import V2Upgrade
 from ccpnmodel.ccpncore.lib import Constants
 from ccpnmodel.ccpncore.memops.ApiError import ApiError

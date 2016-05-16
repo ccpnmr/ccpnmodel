@@ -214,7 +214,7 @@ if (repository in activeRepositories and len(activeRepositories) &lt;= 1
     and not self.isDeleted):
     raise ApiError("%s: cannot remove TopObject from last repository %s" % (self, repository))
 
-from ccpn.util import ApiPath
+from ccpnmodel.ccpncore.lib import ApiPath
 fileLocation = ApiPath.findTopObjectPath(repository.url.getDataLocation(), self)
 import os
 try:

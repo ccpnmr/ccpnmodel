@@ -2,7 +2,7 @@ import sys, os, traceback, time, datetime
 
 from ccpn.util import Path as corePath
 
-from ccpn.util import Io as utilIo
+from ccpnmodel.ccpncore.lib.Io import Api as apiIo
 from ccpn.util import LocalShutil as shutil
 # from ccpn.util import Logging
 
@@ -90,7 +90,7 @@ def testProjects(target, workDir, extraDirs=None, maskErrors=True, removeTarget=
 
   # # Make dummy project as location for logs
   # now ='_'.join((str(x) for x in datetime.datetime.now().timetuple()[:6]))
-  # dummyProject = utilIo.newProject('Logs_%s' % now, path=workDir, overwriteExisting=True)
+  # dummyProject = apiIo.newProject('Logs_%s' % now, path=workDir, overwriteExisting=True)
   logger = Logging.getLogger()
 
   outDir = corePath.joinPath(workDir, stdOutDir)
@@ -160,9 +160,9 @@ def testProject(target, outDir):
   try:
     t0 = time.time()
     ccpnProject = None
-    ccpnProject = utilIo.loadProject(target, projectName=projectName)
+    ccpnProject = apiIo.loadProject(target, projectName=projectName)
     # t1 = time.time()
-    utilIo.loadAllData(ccpnProject)
+    apiIo.loadAllData(ccpnProject)
     # t2 = time.time()
     ccpnProject.checkAllValid(complete=True)
     # t3 = time.time()
@@ -178,7 +178,7 @@ def testProject(target, outDir):
     if not newPath.endswith('.ccpn.'):
       newPath += '.ccpn'
     logger.info('### saving %s to %s' % (ccpnProject.name, newPath))
-    utilIo.saveProject(ccpnProject, newPath=newPath, newProjectName=ccpnProject.name,
+    apiIo.saveProject(ccpnProject, newPath=newPath, newProjectName=ccpnProject.name,
                        overwriteExisting=True)
     shutil.make_archive(newPath, 'gztar', newPath)
     shutil.rmtree(newPath)
@@ -197,7 +197,7 @@ def testProject(target, outDir):
     # logger.info(message)
     print(message)
     if ccpnProject:
-      utilIo.cleanupProject(ccpnProject)
+      apiIo.cleanupProject(ccpnProject)
       del ccpnProject
   
 

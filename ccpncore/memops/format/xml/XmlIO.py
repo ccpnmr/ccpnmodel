@@ -125,11 +125,11 @@ CCPN project: An interim report on a data model for the NMR community
  
 """
 
-import os
 import gc
+import os
 
+from ccpnmodel.ccpncore.lib import ApiPath
 from ccpnmodel.ccpncore.memops.ApiError import ApiError
-from ccpn.util import ApiPath
 
 implPrefix = 'IMPL'
 originatorString = "CCPN Python XmlIO"

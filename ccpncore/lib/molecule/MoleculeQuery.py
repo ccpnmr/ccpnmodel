@@ -638,8 +638,8 @@ def fetchStdResNameMap(project:'MemopsRoot', reset:bool=False, debug:bool=False)
 
 
 if __name__ == '__main__':
-  from ccpn.util import Io as ioUtil
-  project = ioUtil.newProject('ChemCompNameTest')
+  from ccpnmodel.ccpncore.lib.Io import Api as apiIo
+  project = apiIo.newProject('ChemCompNameTest')
   # printCcpCodeStats(project)
   dd = fetchStdResNameMap(project, reset=True, debug=True)
   for key,val in sorted(dd.items()):
