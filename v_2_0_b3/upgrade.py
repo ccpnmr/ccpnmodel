@@ -44,7 +44,7 @@ automated software development. Bioinformatics 21, 1678-1684.
 ===========================REFERENCE END===============================
 
 """
-from ccpnmodel.util import Conversion
+from ccpnmodel.ccpncore.lib import Conversion
 
 __author__ = 'rhf22'
 
@@ -183,13 +183,13 @@ def fixNmr(topObj, delayDataDict):
 
     # fix NmrExpPrototype mapping for defunct types
     Conversion.setNmrExpPrototypeLink(xpr, 'refExperiment', topObjByGuid, delayDataDict,
-                           remapPrototypeLink)
+                                      remapPrototypeLink)
     for xd in expDict.get('expDims', emptyList):
       Conversion.setNmrExpPrototypeLink(xd, 'refExpDim', topObjByGuid, delayDataDict,
-                             remapPrototypeLink)
+                                        remapPrototypeLink)
       for xdr in doGet(xd, emptyDict).get('expDimRefs', emptyList):
         Conversion.setNmrExpPrototypeLink(xdr, 'refExpDimRef', topObjByGuid, delayDataDict,
-                               remapPrototypeLink)
+                                          remapPrototypeLink)
 
 
 def remapPrototypeLink(keyList):
@@ -255,5 +255,5 @@ def fixAnalysis(topObj, delayDataDict, toNewObjDict, mapping):
       setattr(sw, tag, [toNewObjDict.get(x) for x in vals])
 
     # set children, recursively
-    from ccpncore.xml.memops.Implementation import linkChildData
+    from ccpnmodel.ccpncore.xml.memops.Implementation import linkChildData
     linkChildData(delayDataDict, sw, mapping, linkTopToParent=2)

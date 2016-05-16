@@ -46,8 +46,6 @@ automated software development. Bioinformatics 21, 1678-1684.
 """
 __author__ = 'rhf22'
 
-from ccpnmodel.util import Path as modelPath
-
 versionSequence = ['2.0.a0', '2.0.a1', '2.0.a2', '2.0.a3', '2.0.b1', '2.0.b2', '2.0.b3',
                    '2.0.4',  '2.0.5',  '2.1.0',  '2.1.1', '2.1.2', '3.0.a1']
 # NBNB version 2.0.6 is a side branch, not on the main version sequence

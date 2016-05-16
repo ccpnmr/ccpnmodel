@@ -1,0 +1,2908 @@
+ObjectDomain_Model 15
+{-ay8ldh_-8xx_co4lxoon_-p8v 0
+}[objectdomain.uml.core.TypeExpression $27
+objectdomain.uml.mechanisms.UmlPackage-owns $9
+objectdomain.uml.core.Generalization-owns $13
+objectdomain.uml.core.Dependency-owns $19
+objectdomain.uml.core.Projection $25
+objectdomain.uml.core.UmlAttribute-features $11
+objectdomain.uml.core.UmlAssociationEnd-connections $17
+objectdomain.uml.view.style.BaseViewElementStyle-owns $23
+objectdomain.uml.view.ClassView-owns $4
+objectdomain.uml.view.DependencyView-owns $8
+objectdomain.uml.core.UmlTaggedValue-taggedValues $12
+objectdomain.uml.core.UmlConstraint-constraints $18
+objectdomain.uml.core.UmlParameter-parameters $15
+objectdomain.uml.core.UmlAssociation-owns $16
+objectdomain.uml.view.Diagram-owns $3
+objectdomain.uml.core.UmlOperation-features $14
+objectdomain.domain.ModelEnvironment-owns $2
+objectdomain.uml.mechanisms.StylePackage-owns $22
+objectdomain.uml.mechanisms.StereotypePackage-owns $20
+objectdomain.uml.view.GeneralizationView-owns $5
+objectdomain.uml.view.PackageView-owns $7
+objectdomain.uml.core.UmlMultiplicity $26
+objectdomain.uml.core.UmlClass-owns $10
+objectdomain.uml.mechanisms.UmlComponent-owns $24
+objectdomain.domain.DomainLockObject $28
+objectdomain.uml.view.AssociationView-owns $6
+objectdomain.uml.mechanisms.UmlModel-models $1
+objectdomain.uml.core.Stereotype-owns $21
+]
+($1 1 > -ay8ldh_-8xx_co4lxoon_-p8v 0
+(name "Model"
+)
+(namespaceRoot true)
+(uid "-ay8ldh_-8xx_co4lxoon_-p8v"))
+($2 2 < -yk94ms_n98_e52gs3rh_-p98 "ModelEnvironment" 1
+(uid "-yk94ms_n98_e52gs3rh_-p98"))
+($9 56 < -yk94ms_n98_e52gs3rh_-p97 "Logical" 1
+(name "Logical"
+)
+(namespaceRoot true)
+(uid "-yk94ms_n98_e52gs3rh_-p97"))
+($9 57 < -yk94ms_n98_e52gs3rh_-p4n "memops" 56
+(name "memops"
+)
+(uid "-yk94ms_n98_e52gs3rh_-p4n"))
+($9 58 < -yk94ms_n98_e52gs3rh_-p4m "Implementation" 57
+(name "Implementation"
+)
+(uid "-yk94ms_n98_e52gs3rh_-p4m"))
+($3 3 < -yk94ms_n98_e52gs3rh_-p4l "_Implementation-details" 58
+(name "_Implementation-details"
+)
+(uid "-yk94ms_n98_e52gs3rh_-p4l")
+(diagramType "class"))
+($4 4 < -yk94ms_n98_e52gs3rh_-p4k "MemopsBaseClass" 3
+(uid "-yk94ms_n98_e52gs3rh_-p4k")
+(bbx 290 10 150 290))
+($4 5 < -yk94ms_n98_e52gs3rh_-p4j "ApplicationData" 3
+(uid "-yk94ms_n98_e52gs3rh_-p4j")
+(bbx 660 80 130 130))
+($4 6 < -yk94ms_n98_e52gs3rh_-p4h "Project" 3
+(uid "-yk94ms_n98_e52gs3rh_-p4h")
+(bbx 440 600 260 190))
+($5 7 < -yk94ms_n98_e52gs3rh_-p47 "" 3
+(uid "-yk94ms_n98_e52gs3rh_-p47")
+(points 850 210 830 210 830 135 780 135))
+($5 8 < -yk94ms_n98_e52gs3rh_-p45 "" 3
+(uid "-yk94ms_n98_e52gs3rh_-p45")
+(points 850 450 830 450 830 135 780 135))
+($6 9 < -yk94ms_n98_e52gs3rh_-p44 "" 3
+(toMultiplicityPosition 710 655)
+(toRolePosition 730 655)
+(uid "-yk94ms_n98_e52gs3rh_-p44")
+(points 440 20 810 20 810 645 700 645))
+($4 10 < -yk94ms_n98_e52gs3rh_-p42 "Url" 3
+(uid "-yk94ms_n98_e52gs3rh_-p42")
+(bbx 450 330 140 190))
+($6 11 < -yk94ms_n98_e52gs3rh_-p41 "" 3
+(toMultiplicityPosition 500 525)
+(uid "-yk94ms_n98_e52gs3rh_-p41")
+(points 515 600 515 520)
+(fromMultiplicityPosition 530 575))
+($4 12 < -yk94ms_n98_e52gs3rh_-p40 "AbstractStorage" 3
+(uid "-yk94ms_n98_e52gs3rh_-p40")
+(bbx 170 340 190 330))
+($6 13 < -yk94ms_n98_e52gs3rh_-p3z "" 3
+(toMultiplicityPosition 435 410)
+(uid "-yk94ms_n98_e52gs3rh_-p3z")
+(points 360 435 450 435)
+(fromRolePosition 320 440)
+(fromMultiplicityPosition 365 440))
+($4 14 < -yk94ms_n98_e52gs3rh_-p3w "NormalStored" 3
+(uid "-yk94ms_n98_e52gs3rh_-p3w")
+(bbx 470 180 100 50))
+($5 15 < -yk94ms_n98_e52gs3rh_-p3u "" 3
+(uid "-yk94ms_n98_e52gs3rh_-p3u")
+(points 280 340 280 320 520 320 520 230))
+($5 16 < -yk94ms_n98_e52gs3rh_-p3t "" 3
+(uid "-yk94ms_n98_e52gs3rh_-p3t")
+(points 510 330 510 320 520 320 520 230))
+($4 17 < -yk94ms_n98_e52gs3rh_-p3r "NormalStorage" 3
+(uid "-yk94ms_n98_e52gs3rh_-p3r")
+(bbx 200 720 100 130))
+($5 18 < -yk94ms_n98_e52gs3rh_-p3q "" 3
+(uid "-yk94ms_n98_e52gs3rh_-p3q")
+(points 245 720 245 670))
+($5 19 < -yk94ms_n98_e52gs3rh_-p3o "" 3
+(uid "-yk94ms_n98_e52gs3rh_-p3o")
+(points 440 700 245 700 245 670))
+($6 20 < -yk94ms_n98_e52gs3rh_-p3n "" 3
+(toMultiplicityPosition 310 770)
+(uid "-yk94ms_n98_e52gs3rh_-p3n")
+(points 440 765 300 765)
+(fromMultiplicityPosition 425 780))
+($5 21 < -yk94ms_n98_e52gs3rh_-p3j "" 3
+(uid "-yk94ms_n98_e52gs3rh_-p3j")
+(points 660 115 525 115 525 160 440 160))
+($6 22 < -yk94ms_n98_e52gs3rh_-p3i "" 3
+(toMultiplicityPosition 645 180)
+(toRolePosition 630 215)
+(uid "-yk94ms_n98_e52gs3rh_-p3i")
+(points 570 205 660 205)
+(fromRolePosition 580 215)
+(fromMultiplicityPosition 580 175))
+($5 23 < -yk94ms_n98_e52gs3rh_-p3h "" 3
+(uid "-yk94ms_n98_e52gs3rh_-p3h")
+(points 525 180 525 160 440 160))
+($6 24 < -yk94ms_n98_e52gs3rh_-p3b "" 3
+(toMultiplicityPosition 240 315)
+(toRolePosition 195 295)
+(uid "-yk94ms_n98_e52gs3rh_-p3b")
+(points 290 125 255 125 255 340))
+($3 25 < -yk94ms_n98_e52gs3rh_-h39 "_Implementation" 58
+(name "_Implementation"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h39")
+(diagramType "class"))
+($4 26 < -yk94ms_n98_e52gs3rh_-h38 "MemopsBaseClass" 25
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_n98_e52gs3rh_-h38")
+(bbx 450 30 130 30))
+($4 27 < -yk94ms_n98_e52gs3rh_-h37 "ApplicationData" 25
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_n98_e52gs3rh_-h37")
+(bbx 560 130 110 30))
+($4 28 < -yk94ms_n98_e52gs3rh_-h35 "Project" 25
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_n98_e52gs3rh_-h35")
+(bbx 460 320 50 30))
+($6 29 < -yk94ms_n98_e52gs3rh_-h2s "" 25
+(toMultiplicityPosition 520 350)
+(toRolePosition 545 350)
+(uid "-yk94ms_n98_e52gs3rh_-h2s")
+(points 550 30 550 10 700 10 700 345 510 345))
+($4 30 < -yk94ms_n98_e52gs3rh_-h2q "Url" 25
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_n98_e52gs3rh_-h2q")
+(bbx 460 230 50 30))
+($6 31 < -yk94ms_n98_e52gs3rh_-h2p "" 25
+(toMultiplicityPosition 515 255)
+(uid "-yk94ms_n98_e52gs3rh_-h2p")
+(points 510 325 545 325 545 250 510 250)
+(fromMultiplicityPosition 525 300))
+($4 32 < -yk94ms_n98_e52gs3rh_-h2o "AbstractStorage" 25
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_n98_e52gs3rh_-h2o")
+(bbx 240 240 110 30))
+($6 33 < -yk94ms_n98_e52gs3rh_-h2n "" 25
+(toMultiplicityPosition 445 220)
+(uid "-yk94ms_n98_e52gs3rh_-h2n")
+(points 350 245 460 245)
+(fromRolePosition 365 250)
+(fromMultiplicityPosition 355 250))
+($4 34 < -yk94ms_n98_e52gs3rh_-h2k "NormalStored" 25
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_n98_e52gs3rh_-h2k")
+(bbx 290 80 100 30))
+($5 35 < -yk94ms_n98_e52gs3rh_-h2i "" 25
+(uid "-yk94ms_n98_e52gs3rh_-h2i")
+(points 270 240 270 170 320 170 320 110))
+($5 36 < -yk94ms_n98_e52gs3rh_-h2h "" 25
+(uid "-yk94ms_n98_e52gs3rh_-h2h")
+(points 485 230 485 170 320 170 320 110))
+($4 37 < -yk94ms_n98_e52gs3rh_-h2g "NormalStorage" 25
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_n98_e52gs3rh_-h2g")
+(bbx 180 330 100 30))
+($5 38 < -yk94ms_n98_e52gs3rh_-h2f "" 25
+(uid "-yk94ms_n98_e52gs3rh_-h2f")
+(points 210 330 210 300 300 300 300 270))
+($5 39 < -yk94ms_n98_e52gs3rh_-h2d "" 25
+(uid "-yk94ms_n98_e52gs3rh_-h2d")
+(points 485 320 485 300 300 300 300 270))
+($6 40 < -yk94ms_n98_e52gs3rh_-h2c "" 25
+(toMultiplicityPosition 285 340)
+(uid "-yk94ms_n98_e52gs3rh_-h2c")
+(points 460 335 280 335)
+(fromMultiplicityPosition 450 305))
+($5 41 < -yk94ms_n98_e52gs3rh_-h29 "" 25
+(uid "-yk94ms_n98_e52gs3rh_-h29")
+(points 620 130 620 95 510 95 510 60))
+($6 42 < -yk94ms_n98_e52gs3rh_-h28 "" 25
+(toMultiplicityPosition 550 150)
+(toRolePosition 450 120)
+(uid "-yk94ms_n98_e52gs3rh_-h28")
+(points 360 110 360 145 560 145)
+(fromRolePosition 380 115)
+(fromMultiplicityPosition 370 115))
+($5 43 < -yk94ms_n98_e52gs3rh_-h27 "" 25
+(uid "-yk94ms_n98_e52gs3rh_-h27")
+(points 390 95 510 95 510 60))
+($6 44 < -yk94ms_n98_e52gs3rh_-h21 "" 25
+(toMultiplicityPosition 290 220)
+(toRolePosition 285 190)
+(uid "-yk94ms_n98_e52gs3rh_-h21")
+(points 480 30 480 10 280 10 280 240))
+($3 45 < -yk94ms_n98_e52gs3rh_-p3a "_BasicDataTypes" 58
+(name "_BasicDataTypes"
+)
+(uid "-yk94ms_n98_e52gs3rh_-p3a")
+(diagramType "class"))
+($4 46 < -yk94ms_n98_e52gs3rh_-p39 "Boolean" 45
+(uid "-yk94ms_n98_e52gs3rh_-p39")
+(bbx 10 40 80 70))
+($4 47 < -yk94ms_n98_e52gs3rh_-p38 "Int" 45
+(uid "-yk94ms_n98_e52gs3rh_-p38")
+(bbx 10 220 80 70))
+($4 48 < -yk94ms_n98_e52gs3rh_-p37 "Float" 45
+(uid "-yk94ms_n98_e52gs3rh_-p37")
+(bbx 10 330 80 70))
+($4 49 < -yk94ms_n98_e52gs3rh_-p36 "String" 45
+(uid "-yk94ms_n98_e52gs3rh_-p36")
+(bbx 10 130 80 70))
+($9 320 < -yk94ms_n98_e56ijf25_-p98 "testing" 56
+(name "testing"
+)
+(uid "-yk94ms_n98_e56ijf25_-p98"))
+($9 321 < -yk94ms_n98_e56ijf25_-p96 "Test" 320
+(name "Test"
+)
+(uid "-yk94ms_n98_e56ijf25_-p96"))
+($3 50 < -yk94ms_n98_e56ijf25_-p94 "_Test-details" 321
+(name "_Test-details"
+)
+(uid "-yk94ms_n98_e56ijf25_-p94")
+(diagramType "class"))
+($4 51 < -yk94ms_n98_e56ijf25_-p93 "Project" 50
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_n98_e56ijf25_-p93")
+(bbx 290 10 210 30))
+($3 52 < -yk94ms_n98_e52gs3rh_-gl7 "_PackageImport" 57
+(name "_PackageImport"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gl7")
+(diagramType "class"))
+($7 53 < -yk94ms_n98_e56ijf25_-p91 "Implementation" 52
+(uid "-yk94ms_n98_e56ijf25_-p91")
+(bbx 200 60 110 80))
+($7 54 < -yk94ms_n98_e56ijf25_-p90 "Test" 52
+(uid "-yk94ms_n98_e56ijf25_-p90")
+(bbx 190 220 110 80))
+($8 55 < -yk94ms_n98_e56ijf25_-p8z "" 52
+(showStereotypeLabel false)
+(stereotypePosition 250 200)
+(uid "-yk94ms_n98_e56ijf25_-p8z")
+(points 250 220 250 140))
+($10 59 < -yk94ms_n98_e52gs3rh_-h20 "ApplicationData" 58
+(name "ApplicationData"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h20"))
+($11 60 < -yk94ms_n98_e52gs3rh_-h1z "serial" 59
+(changeability "frozen")
+(name "serial"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h1z")
+(multiplicity "1"))
+($12 61 < -yk94ms_n98_e52gs3rh_-h1y "isAutomatic" 60
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h1y"))
+($11 62 < -yk94ms_n98_e52gs3rh_-h1x "application" 59
+(changeability "frozen")
+(name "application"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h1x")
+(multiplicity "1"))
+($12 63 < -yk94ms_n98_e52gs3rh_-h1w "documentation" 62
+(name "documentation"
+)
+(value "Name of application owning the data."
+)
+(uid "-yk94ms_n98_e52gs3rh_-h1w"))
+($11 64 < -yk94ms_n98_e52gs3rh_-h1v "keyword" 59
+(changeability "frozen")
+(name "keyword"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h1v")
+(multiplicity "1"))
+($12 65 < -yk94ms_n98_e52gs3rh_-h1u "documentation" 64
+(name "documentation"
+)
+(value "keyword or name of variable"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h1u"))
+($11 66 < -yk94ms_-kkx_e52gwr3f_-p98 "value" 59
+(name "value"
+)
+(uid "-yk94ms_-kkx_e52gwr3f_-p98")
+(multiplicity "1"))
+($12 67 < -yk94ms_-kkx_e52gwr3f_-p97 "documentation" 66
+(name "documentation"
+)
+(value "value of ApplicationData"
+)
+(uid "-yk94ms_-kkx_e52gwr3f_-p97"))
+($13 68 < -yk94ms_n98_e52gs3rh_-h1t "#<anon> (ApplicationData, MemopsBaseClass)" 59
+(uid "-yk94ms_n98_e52gs3rh_-h1t"))
+($12 69 < -yk94ms_n98_e52gs3rh_-h1s "documentation" 59
+(name "documentation"
+)
+(value "Stores program-specific data. Intended for application-specific extensions to the data model. ApplicationData objects should be used only by the application that wrote them originally. "
+"ApplicationData objects all have an attribute 'value' holding the data value. The data type of the value differs between the different subclasses of ApplicationData"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h1s"))
+($12 70 < -yk94ms_n98_e52gs3rh_-h1r "mainkey" 59
+(name "mainkey"
+)
+(value "serial"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h1r"))
+($10 71 < -yk94ms_n98_e52gs3rh_-h1q "MemopsBaseClass" 58
+(name "MemopsBaseClass"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h1q")
+(isAbstract true))
+($14 72 < -yk94ms_n98_e52gs3rh_-h1p "getRoot##Project" 71
+(name "getRoot"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h1p")
+(isQuery true))
+($15 73 < -yk94ms_n98_e52gs3rh_-h1o "result" 72
+(name "result"
+)
+(kind "return")
+(uid "-yk94ms_n98_e52gs3rh_-h1o"))
+($12 74 < -yk94ms_n98_e52gs3rh_-h1n "documentation" 72
+(name "documentation"
+)
+(value "getter for derived link root. "
+)
+(uid "-yk94ms_n98_e52gs3rh_-h1n"))
+($12 75 < -yk94ms_n98_e52gs3rh_-h1m "pythonCode" 72
+(name "pythonCode"
+)
+(value "storage = self.__dict__['storage']"
+"return storage.__dict__.get('project') or storage"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h1m"))
+($12 76 < -yk94ms_n98_e52gs3rh_-h1l "opType" 72
+(name "opType"
+)
+(value "get"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h1l"))
+($12 77 < -yk94ms_n98_e52gs3rh_-h1k "javaCode" 72
+(name "javaCode"
+)
+(value "try"
+"{"
+"  memops.api.Implementation.Storage s = (memops.api.Implementation.Storage) _storage;"
+""
+"  return s.getProject();"
+"}"
+"catch (java.lang.ClassCastException e)"
+"{"
+"  return (memops.api.Implementation.Project) _storage;"
+"}"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h1k"))
+($14 78 < -yk94ms_n98_e52gs3rh_-h1j "getClassName##String" 71
+(name "getClassName"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h1j")
+(isQuery true))
+($15 79 < -yk94ms_n98_e52gs3rh_-h1i "result" 78
+(name "result"
+)
+(kind "return")
+(uid "-yk94ms_n98_e52gs3rh_-h1i"))
+($12 80 < -yk94ms_n98_e52gs3rh_-h1h "documentation" 78
+(name "documentation"
+)
+(value "getter for derived attribute className"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h1h"))
+($12 81 < -yk94ms_n98_e52gs3rh_-h1g "opType" 78
+(name "opType"
+)
+(value "get"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h1g"))
+($12 82 < -yk94ms_n98_e52gs3rh_-h1f "pythonCode" 78
+(name "pythonCode"
+)
+(value "return self.__class__.__name__"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h1f"))
+($12 83 < -yk94ms_n98_e52gs3rh_-h1e "javaCode" 78
+(name "javaCode"
+)
+(value "return _className;"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h1e"))
+($11 84 < -yk94ms_n98_e52gs3rh_-h1d "className" 71
+(changeability "frozen")
+(name "className"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h1d")
+(multiplicity "1"))
+($12 85 < -yk94ms_n98_e52gs3rh_-h1c "documentation" 84
+(name "documentation"
+)
+(value "Name of class of object. If class names differ for different implementations, name of the coresponding Python class. This is really a class attribute and may be implemented as such by languages that support the concept."
+)
+(uid "-yk94ms_n98_e52gs3rh_-h1c"))
+($12 86 < -yk94ms_n98_e52gs3rh_-h1b "isDerived" 84
+(name "isDerived"
+)
+(value "True"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h1b"))
+($11 87 < -yk94ms_n98_e52gs3rh_-h1a "packageName" 71
+(changeability "frozen")
+(name "packageName"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h1a")
+(multiplicity "1"))
+($12 88 < -yk94ms_n98_e52gs3rh_-h19 "documentation" 87
+(name "documentation"
+)
+(value "Name of package containing class, as a dot-separated string. E.g. 'ccp.Nmr'. This is really a class attribute and may be implemented as such by languages that support the concept."
+)
+(uid "-yk94ms_n98_e52gs3rh_-h19"))
+($12 89 < -yk94ms_n98_e52gs3rh_-h18 "isDerived" 87
+(name "isDerived"
+)
+(value "True"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h18"))
+($14 90 < -yk94ms_n98_e52gs3rh_-h17 "getPackageName##String" 71
+(name "getPackageName"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h17")
+(isQuery true))
+($15 91 < -yk94ms_n98_e52gs3rh_-h16 "result" 90
+(name "result"
+)
+(kind "return")
+(uid "-yk94ms_n98_e52gs3rh_-h16"))
+($12 92 < -yk94ms_n98_e52gs3rh_-h15 "documentation" 90
+(name "documentation"
+)
+(value "getter for derived attribute packageName. "
+)
+(uid "-yk94ms_n98_e52gs3rh_-h15"))
+($12 93 < -yk94ms_n98_e52gs3rh_-h14 "opType" 90
+(name "opType"
+)
+(value "get"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h14"))
+($12 94 < -yk94ms_n98_e52gs3rh_-h13 "pythonCode" 90
+(name "pythonCode"
+)
+(value "return self.__class__._packageName"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h13"))
+($12 95 < -yk94ms_n98_e52gs3rh_-h12 "javaCode" 90
+(name "javaCode"
+)
+(value "return _packageName;"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h12"))
+($11 96 < -yk94ms_n98_e52gs3rh_-h11 "qualifiedName" 71
+(changeability "frozen")
+(name "qualifiedName"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h11")
+(multiplicity "1"))
+($12 97 < -yk94ms_n98_e52gs3rh_-h10 "documentation" 96
+(name "documentation"
+)
+(value "Fully qualified name of class, equal to (packageName + '.' + className). If class names differ between implementations, name of corresponding Python class. This is really a class attribute and may be implemented as such by languages that support the concept."
+)
+(uid "-yk94ms_n98_e52gs3rh_-h10"))
+($12 98 < -yk94ms_n98_e52gs3rh_-h0z "isDerived" 96
+(name "isDerived"
+)
+(value "True"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h0z"))
+($14 99 < -yk94ms_n98_e52gs3rh_-h0y "getQualifiedName##String" 71
+(name "getQualifiedName"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h0y")
+(isQuery true))
+($15 100 < -yk94ms_n98_e52gs3rh_-h0x "result" 99
+(name "result"
+)
+(kind "return")
+(uid "-yk94ms_n98_e52gs3rh_-h0x"))
+($12 101 < -yk94ms_n98_e52gs3rh_-h0w "documentation" 99
+(name "documentation"
+)
+(value "getter for derived attribute qualifiedName. "
+)
+(uid "-yk94ms_n98_e52gs3rh_-h0w"))
+($12 102 < -yk94ms_n98_e52gs3rh_-h0v "opType" 99
+(name "opType"
+)
+(value "get"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h0v"))
+($12 103 < -yk94ms_n98_e52gs3rh_-h0u "pythonCode" 99
+(name "pythonCode"
+)
+(value "return '.'.join((self.__class__._packageName,self.__class__.__name__))"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h0u"))
+($12 104 < -yk94ms_n98_e52gs3rh_-h0t "javaCode" 99
+(name "javaCode"
+)
+(value "return _qualifiedName;"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h0t"))
+($11 105 < -yk94ms_n98_e52gs3rh_-h0s "isDeleted" 71
+(changeability "frozen")
+(name "isDeleted"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h0s")
+(multiplicity "1"))
+($12 106 < -yk94ms_n98_e52gs3rh_-h0r "isDerived" 105
+(name "isDerived"
+)
+(value "True"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h0r"))
+($12 107 < -yk94ms_n98_e52gs3rh_-h0q "documentation" 105
+(name "documentation"
+)
+(value "Implementation attribute, set automatically. If True the object has been deleted. Deleted objects are never returned by any API call, so there is normally no need to check this attribute. But if you keep your own lists (or other data structures) containing CCP objects, you may need to look."
+)
+(uid "-yk94ms_n98_e52gs3rh_-h0q"))
+($14 108 < -yk94ms_n98_e52gs3rh_-h0p "getIsDeleted##Boolean" 71
+(name "getIsDeleted"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h0p")
+(isQuery true))
+($15 109 < -yk94ms_n98_e52gs3rh_-h0o "result" 108
+(name "result"
+)
+(kind "return")
+(uid "-yk94ms_n98_e52gs3rh_-h0o"))
+($12 110 < -yk94ms_n98_e52gs3rh_-h0n "documentation" 108
+(name "documentation"
+)
+(value "getter for derived attribute isDeleted."
+)
+(uid "-yk94ms_n98_e52gs3rh_-h0n"))
+($12 111 < -yk94ms_n98_e52gs3rh_-h0m "opType" 108
+(name "opType"
+)
+(value "get"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h0m"))
+($12 112 < -yk94ms_n98_e52gs3rh_-h0l "pythonCode" 108
+(name "pythonCode"
+)
+(value "return self.__dict__.get('isDeleted') and True or False"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h0l"))
+($12 113 < -yk94ms_n98_e52gs3rh_-h0k "javaCode" 108
+(name "javaCode"
+)
+(value "return new java.lang.Boolean(deletedSet.contains(this));"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h0k"))
+($14 114 < -yk94ms_n98_e52gs3rh_-h0j "getStorage##AbstractStorage" 71
+(name "getStorage"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h0j")
+(isQuery true))
+($15 115 < -yk94ms_n98_e52gs3rh_-h0i "result" 114
+(name "result"
+)
+(kind "return")
+(uid "-yk94ms_n98_e52gs3rh_-h0i"))
+($12 116 < -yk94ms_n98_e52gs3rh_-h0h "opType" 114
+(name "opType"
+)
+(value "get"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h0h"))
+($12 117 < -yk94ms_n98_e52gs3rh_-h0g "documentation" 114
+(name "documentation"
+)
+(value "getter for derived link 'storage'. The link is set automatically by the implementation - getStorage simply returns the preset value."
+)
+(uid "-yk94ms_n98_e52gs3rh_-h0g"))
+($12 118 < -yk94ms_n98_e52gs3rh_-h0f "pythonCode" 114
+(name "pythonCode"
+)
+(value "return self.__dict__['storage']"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h0f"))
+($12 119 < -yk94ms_n98_e52gs3rh_-h0e "javaCode" 114
+(name "javaCode"
+)
+(value "return _storage;"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h0e"))
+($11 120 < -yk94ms_n98_e52gs3rh_-h0d "dbId" 71
+(changeability "frozen")
+(name "dbId"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h0d"))
+($12 121 < -yk94ms_n98_e52gs3rh_-h0c "documentation" 120
+(name "documentation"
+)
+(value "Database ID. Can not be set by user and is not stored (in XML). Is not persistent, but always reflects the integer database ID currently corresponding to an object in memory (if any)."
+)
+(uid "-yk94ms_n98_e52gs3rh_-h0c"))
+($12 122 < -yk94ms_n98_e52gs3rh_-h0b "isDerived" 120
+(name "isDerived"
+)
+(value "True"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h0b"))
+($14 123 < -yk94ms_n98_e52gs3rh_-h0a "getDbId##Int" 71
+(name "getDbId"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h0a")
+(isQuery true))
+($15 124 < -yk94ms_n98_e52gs3rh_-h09 "result" 123
+(name "result"
+)
+(kind "return")
+(uid "-yk94ms_n98_e52gs3rh_-h09"))
+($12 125 < -yk94ms_n98_e52gs3rh_-h08 "documentation" 123
+(name "documentation"
+)
+(value "getter for derived attribute dbId"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h08"))
+($12 126 < -yk94ms_n98_e52gs3rh_-h07 "opType" 123
+(name "opType"
+)
+(value "get"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h07"))
+($12 127 < -yk94ms_n98_e52gs3rh_-h06 "pythonCode" 123
+(name "pythonCode"
+)
+(value "return self.__dict__.get('dbId')"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h06"))
+($12 128 < -yk94ms_n98_e52gs3rh_-h05 "javaCode" 123
+(name "javaCode"
+)
+(value "return _dbId;"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h05"))
+($16 129 < -yk94ms_n98_e52gs3rh_-h04 "#<anon> (MemopsBaseClass, Project)" 71
+(name "")
+(uid "-yk94ms_n98_e52gs3rh_-h04"))
+($17 130 < -yk94ms_n98_e52gs3rh_-h03 "#0" 129
+(uid "-yk94ms_n98_e52gs3rh_-h03")
+(isNavigable false))
+($17 131 < -yk94ms_n98_e52gs3rh_-h02 "root#1" 129
+(changeability "frozen")
+(name "root"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h02")
+(multiplicity "1"))
+($12 132 < -yk94ms_n98_e52gs3rh_-h01 "documentation" 131
+(name "documentation"
+)
+(value "Root object - the Project ultimately containing the object. This is a derived attribute, in practice set by the implementation. Root objects have themselves as root."
+)
+(uid "-yk94ms_n98_e52gs3rh_-h01"))
+($12 133 < -yk94ms_n98_e52gs3rh_-h00 "isDerived" 129
+(name "isDerived"
+)
+(value "True"
+)
+(uid "-yk94ms_n98_e52gs3rh_-h00"))
+($16 134 < -yk94ms_n98_e52gs3rh_-gzz "#<anon> (MemopsBaseClass, AbstractStorage)" 71
+(name "")
+(uid "-yk94ms_n98_e52gs3rh_-gzz"))
+($17 135 < -yk94ms_n98_e52gs3rh_-gzy "#0" 134
+(uid "-yk94ms_n98_e52gs3rh_-gzy")
+(isNavigable false))
+($17 136 < -yk94ms_n98_e52gs3rh_-gzx "storage#1" 134
+(changeability "frozen")
+(name "storage"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gzx")
+(multiplicity "1"))
+($12 137 < -yk94ms_n98_e52gs3rh_-gzw "documentation" 136
+(name "documentation"
+)
+(value "The storage object describing where the object is stored. This link is set by the implementation, and is used to track information relative to object storage."
+)
+(uid "-yk94ms_n98_e52gs3rh_-gzw"))
+($12 138 < -yk94ms_n98_e52gs3rh_-gzv "isDerived" 134
+(name "isDerived"
+)
+(value "True"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gzv"))
+($12 139 < -yk94ms_n98_e52gs3rh_-gzu "documentation" 71
+(name "documentation"
+)
+(value "Base class for Memops data model classes. "
+"Contains elements common to all classes, e.g. the link to ApplicationData, and the root and parent links. "
+)
+(uid "-yk94ms_n98_e52gs3rh_-gzu"))
+($10 140 < -yk94ms_n98_e52gs3rh_-gzt "Boolean" 58
+(name "Boolean"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gzt"))
+($12 141 < -yk94ms_n98_e52gs3rh_-gzs "documentation" 140
+(name "documentation"
+)
+(value "Basic data type handling Boolean (true/false) values."
+)
+(uid "-yk94ms_n98_e52gs3rh_-gzs"))
+($12 142 < -yk94ms_n98_e52gs3rh_-gzr "isOpen" 140
+(name "isOpen"
+)
+(value "False"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gzr"))
+($12 143 < -yk94ms_n98_e52gs3rh_-gzq "enumeration" 140
+(name "enumeration"
+)
+(value "('True','False')"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gzq"))
+($12 144 < -yk94ms_n98_e52gs3rh_-gzp "typeCode" 140
+(name "typeCode"
+)
+(value "Boolean"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gzp"))
+($12 145 < -yk94ms_n98_e52gs3rh_-gzo "jdbcTypeCode" 140
+(name "jdbcTypeCode"
+)
+(value "BIT"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gzo"))
+($12 146 < -yk94ms_n98_e52gs3rh_-gzn "xmlTypeCode" 140
+(name "xmlTypeCode"
+)
+(value "boolean"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gzn"))
+($12 147 < -yk94ms_n98_e52gs3rh_-gzm "javaTypeCode" 140
+(name "javaTypeCode"
+)
+(value "java.lang.Boolean"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gzm"))
+($12 148 < -yk94ms_n98_e52gs3rh_-gzl "javaSimpleTypeCode" 140
+(name "javaSimpleTypeCode"
+)
+(value "boolean"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gzl"))
+($10 149 < -yk94ms_n98_e52gs3rh_-gz9 "Float" 58
+(name "Float"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gz9"))
+($12 150 < -yk94ms_n98_e52gs3rh_-gz8 "documentation" 149
+(name "documentation"
+)
+(value "Basic data type, handling single precision (32 bit) floating point numbers."
+)
+(uid "-yk94ms_n98_e52gs3rh_-gz8"))
+($12 151 < -yk94ms_n98_e52gs3rh_-gz7 "typeCode" 149
+(name "typeCode"
+)
+(value "Float"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gz7"))
+($12 152 < -yk94ms_n98_e52gs3rh_-gz6 "jdbcTypeCode" 149
+(name "jdbcTypeCode"
+)
+(value "FLOAT"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gz6"))
+($12 153 < -yk94ms_n98_e52gs3rh_-gz5 "xmlTypeCode" 149
+(name "xmlTypeCode"
+)
+(value "float"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gz5"))
+($12 154 < -yk94ms_n98_e52gs3rh_-gz4 "javaTypeCode" 149
+(name "javaTypeCode"
+)
+(value "java.lang.Float"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gz4"))
+($12 155 < -yk94ms_n98_e52gs3rh_-gz3 "javaSimpleTypeCode" 149
+(name "javaSimpleTypeCode"
+)
+(value "float"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gz3"))
+($10 156 < -yk94ms_n98_e52gs3rh_-gz2 "Int" 58
+(name "Int"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gz2"))
+($12 157 < -yk94ms_n98_e52gs3rh_-gz1 "documentation" 156
+(name "documentation"
+)
+(value "Basic data type, handling single precision (32 bit) integer."
+)
+(uid "-yk94ms_n98_e52gs3rh_-gz1"))
+($12 158 < -yk94ms_n98_e52gs3rh_-gz0 "typeCode" 156
+(name "typeCode"
+)
+(value "Int"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gz0"))
+($12 159 < -yk94ms_n98_e52gs3rh_-gyz "jdbcTypeCode" 156
+(name "jdbcTypeCode"
+)
+(value "INTEGER"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gyz"))
+($12 160 < -yk94ms_n98_e52gs3rh_-gyy "xmlTypeCode" 156
+(name "xmlTypeCode"
+)
+(value "int"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gyy"))
+($12 161 < -yk94ms_n98_e52gs3rh_-gyx "javaTypeCode" 156
+(name "javaTypeCode"
+)
+(value "java.lang.Integer"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gyx"))
+($12 162 < -yk94ms_n98_e52gs3rh_-gyw "javaSimpleTypeCode" 156
+(name "javaSimpleTypeCode"
+)
+(value "int"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gyw"))
+($10 163 < -yk94ms_n98_e52gs3rh_-gyj "String" 58
+(name "String"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gyj"))
+($12 164 < -yk94ms_n98_e52gs3rh_-gyi "documentation" 163
+(name "documentation"
+)
+(value "Basic data type, handling strings. Unicode not supported. "
+)
+(uid "-yk94ms_n98_e52gs3rh_-gyi"))
+($12 165 < -yk94ms_n98_e52gs3rh_-gyh "typeCode" 163
+(name "typeCode"
+)
+(value "String"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gyh"))
+($12 166 < -yk94ms_n98_e52gs3rh_-gyg "jdbcTypeCode" 163
+(name "jdbcTypeCode"
+)
+(value "CLOB"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gyg"))
+($12 167 < -yk94ms_n98_e52gs3rh_-gyf "xmlTypeCode" 163
+(name "xmlTypeCode"
+)
+(value "string"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gyf"))
+($12 168 < -yk94ms_n98_e52gs3rh_-gye "javaTypeCode" 163
+(name "javaTypeCode"
+)
+(value "java.lang.String"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gye"))
+($10 169 < -yk94ms_n98_e52gs3rh_-gwp "Project" 58
+(name "Project"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gwp"))
+($11 170 < -yk94ms_n98_e52gs3rh_-gwo "name" 169
+(changeability "frozen")
+(name "name"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gwo")
+(multiplicity "1"))
+($12 171 < -yk94ms_n98_e52gs3rh_-gwn "documentation" 170
+(name "documentation"
+)
+(value "Name of project - serves as project key. The project name is also used as the default name for the project xml file, and as the directory name for the default Url containing the data."
+)
+(uid "-yk94ms_n98_e52gs3rh_-gwn"))
+($11 172 < -yk94ms_n98_e52gs3rh_-gwm "details" 169
+(name "details"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gwm"))
+($11 173 < -yk94ms_n98_e52gs3rh_-gwl "archiveDetails" 169
+(name "archiveDetails"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gwl"))
+($12 174 < -yk94ms_n98_e52gs3rh_-gwk "documentation" 173
+(name "documentation"
+)
+(value "Remarks, details, notes, etc. that should appear in data archives. E.g. PDB REMARK 210"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gwk"))
+($11 175 < -yk94ms_n98_e52gs3rh_-gwj "package" 169
+(initialValue "memops.Implementation"
+)
+(changeability "frozen")
+(name "package"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gwj")
+(multiplicity "1"))
+($12 176 < -yk94ms_n98_e52gs3rh_-gwi "documentation" 175
+(name "documentation"
+)
+(value "Qualified name of package whose data the storage object holds. Frozen as 'memops.Implementation'."
+)
+(uid "-yk94ms_n98_e52gs3rh_-gwi"))
+($18 177 < -yk94ms_n98_e52gs3rh_-gwh "value_is_memops_Implementation" 175
+(name "value_is_memops_Implementation"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gwh")
+(body "pythonCode"
+"_"
+"value == 'memops.Implementation'"
+"_"
+"javaCode"
+"_"
+"value.equals(\"memops.Implementation\")"
+))
+($14 178 < -yk94ms_n98_e52gs3rh_-gwg "save" 169
+(name "save"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gwg"))
+($12 179 < -yk94ms_n98_e52gs3rh_-gwf "opType" 178
+(name "opType"
+)
+(value "other"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gwf"))
+($12 180 < -yk94ms_n98_e52gs3rh_-gwe "pythonCode" 178
+(name "pythonCode"
+)
+(value "if not self.isModifiable:"
+"  raise ApiError(\"Cannot store %s data - storage is not modifiable\" % self.package)"
+"else:"
+"  stream = self.url.getStream(self.package, path=self.path, headObject=self, writeable=True)"
+""
+"  if self.format == 'xml':"
+"    ioModule = __import__('memops.xml.Implementation', {}, {}, ['save', 'load'])"
+"  else:"
+"    raise ApiError(\"Non-XML I/O not implemented yet\")"
+"  "
+"  wasStored = self.isStored"
+"  try:"
+"    self.__dict__['isStored'] = True"
+"    ioModule.save(stream,self)"
+"    self.__dict__['isModified'] = False"
+"  except:"
+"    self.__dict__['isStored'] = wasStored"
+"    print \"ERROR saving %s %s %s\" % (self.format, self.package, self.path)"
+"    stream.close()"
+"    raise"
+"  stream.close()"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gwe"))
+($12 181 < -yk94ms_n98_e52gs3rh_-gwd "javaCode" 178
+(name "javaCode"
+)
+(value "if (!_isModifiable.booleanValue())"
+"{"
+"  throw new memops.general.ApiException(\"Cannot store \" + _package + \" data - storage is not modifiable\");"
+"}"
+"else"
+"{"
+"  java.io.PrintWriter stream = _url.getWriterStream(_package, _path, this);"
+""
+"  java.lang.reflect.Method method = null;"
+""
+"  if (_format.equals(\"xml\"))"
+"  {"
+"    java.lang.String className = \"memops.xml.Implementation\";"
+"    java.lang.Class clazz = memops.general.Util.getClass(className);"
+"    java.lang.String methodName = \"save\";"
+"    java.lang.Class[] paramTypes = { stream.getClass(), getClass() };"
+"    method = memops.general.Util.getMethod(clazz, methodName, paramTypes);"
+"  }"
+""
+"  java.lang.Boolean wasStored = _isStored;"
+"  try"
+"  {"
+"    _isStored = java.lang.Boolean.TRUE;"
+"    java.lang.Object[] args = { stream, this };"
+"    memops.general.Util.invokeMethod(method, args);"
+"    _isModified = java.lang.Boolean.FALSE;"
+"  }"
+"  catch (memops.general.ApiException e)"
+"  {"
+"    _isStored = wasStored;"
+"    java.lang.System.out.println(\"ERROR saving \" + _format + \" \" + _package + \" \" + _path);"
+"    stream.close();"
+"    throw e;"
+"  }"
+""
+"  stream.close();"
+"}"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gwd"))
+($14 182 < -yk94ms_n98_e52gs3rh_-gwc "saveModified" 169
+(name "saveModified"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gwc"))
+($12 183 < -yk94ms_n98_e52gs3rh_-gwb "documentation" 182
+(name "documentation"
+)
+(value "Save all modified data"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gwb"))
+($12 184 < -yk94ms_n98_e52gs3rh_-gwa "opType" 182
+(name "opType"
+)
+(value "other"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gwa"))
+($12 185 < -yk94ms_n98_e52gs3rh_-gw9 "pythonCode" 182
+(name "pythonCode"
+)
+(value "for storage in self.__dict__['storages'] + [self]:"
+"  if storage.__dict__['isModified']:"
+"    storage.save()"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gw9"))
+($12 186 < -yk94ms_n98_e52gs3rh_-gw8 "javaCode" 182
+(name "javaCode"
+)
+(value "java.util.Iterator iter = _storages.iterator();"
+"while (iter.hasNext())"
+"{"
+"  memops.api.Implementation.AbstractStorage storage = (memops.api.Implementation.AbstractStorage) iter.next();"
+"  if (storage._isModified.booleanValue())"
+"    storage.save();"
+"}"
+""
+"if (_isModified.booleanValue())"
+"  save();"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gw8"))
+($14 187 < -yk94ms_n98_e52gs3rh_-gw7 "saveAll" 169
+(name "saveAll"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gw7"))
+($12 188 < -yk94ms_n98_e52gs3rh_-gw6 "documentation" 187
+(name "documentation"
+)
+(value "Save all saveable data, whether modified or not"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gw6"))
+($12 189 < -yk94ms_n98_e52gs3rh_-gw5 "opType" 187
+(name "opType"
+)
+(value "other"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gw5"))
+($12 190 < -yk94ms_n98_e52gs3rh_-gw4 "pythonCode" 187
+(name "pythonCode"
+)
+(value "for storage in self.__dict__['storages'] + [self]:"
+"  if storage.__dict__['isModifiable'] and storage.__dict__['isLoaded']:"
+"    storage.save()"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gw4"))
+($12 191 < -yk94ms_n98_e52gs3rh_-gw3 "javaCode" 187
+(name "javaCode"
+)
+(value "java.util.Iterator iter = _storages.iterator();"
+"while (iter.hasNext())"
+"{"
+"  memops.api.Implementation.AbstractStorage storage = (memops.api.Implementation.AbstractStorage) iter.next();"
+"  if (storage._isModifiable.booleanValue() && storage._isLoaded.booleanValue())"
+"    storage.save();"
+"}"
+""
+"if (_isModifiable.booleanValue() && _isLoaded.booleanValue())"
+"  save();"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gw3"))
+($16 192 < -yk94ms_n98_e52gs3rh_-gw2 "#<anon> (Project, Url)" 169
+(name "")
+(uid "-yk94ms_n98_e52gs3rh_-gw2"))
+($17 193 < -yk94ms_n98_e52gs3rh_-gw1 "#0" 192
+(changeability "frozen")
+(aggregation "composite")
+(uid "-yk94ms_n98_e52gs3rh_-gw1")
+(multiplicity "1"))
+($17 194 < -yk94ms_n98_e52gs3rh_-gw0 "#1" 192
+(uid "-yk94ms_n98_e52gs3rh_-gw0")
+(multiplicity "*"))
+($13 195 < -yk94ms_n98_e52gs3rh_-gt3 "#<anon> (Project, AbstractStorage)" 169
+(uid "-yk94ms_n98_e52gs3rh_-gt3"))
+($16 196 < -yk94ms_n98_e52gs3rh_-gt2 "#<anon> (Project, NormalStorage)" 169
+(name "")
+(uid "-yk94ms_n98_e52gs3rh_-gt2"))
+($17 197 < -yk94ms_n98_e52gs3rh_-gt1 "#0" 196
+(changeability "frozen")
+(aggregation "composite")
+(uid "-yk94ms_n98_e52gs3rh_-gt1")
+(multiplicity "1"))
+($17 198 < -yk94ms_n98_e52gs3rh_-gt0 "#1" 196
+(uid "-yk94ms_n98_e52gs3rh_-gt0")
+(multiplicity "*"))
+($12 199 < -yk94ms_n98_e52gs3rh_-gqf "documentation" 169
+(name "documentation"
+)
+(value "Unique root class, located at the top of the parent-child tree of objects. A Project acts as its own Storage. Storage objects for all storageClass: normal packages are generated automatically when a new project is created. Likewise, two Url objects are generated: One, named 'project', pointing to the current directory, one, named 'data', pointing to 'current-directory/projectname'"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gqf"))
+($12 200 < -yk94ms_n98_e52gs3rh_-gqe "mainkey" 169
+(name "mainkey"
+)
+(value "name"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gqe"))
+($12 201 < -yk94ms_n98_e52gs3rh_-gqd "pythonConstructorCode" 169
+(name "pythonConstructorCode"
+)
+(value "if self.__dict__.get('path') is None:"
+"  self.__dict__['path'] = self.__dict__['name'] + '.xml'"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gqd"))
+($12 202 < -yk94ms_n98_e52gs3rh_-gqc "hasSpecialConstructor" 169
+(name "hasSpecialConstructor"
+)
+(value "True"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gqc"))
+($12 203 < -yk94ms_n98_e52gs3rh_-gqb "javaConstructorCode" 169
+(name "javaConstructorCode"
+)
+(value "if (_path == null)"
+"  _path = _name + \".xml\";"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gqb"))
+($10 204 < -yk94ms_n98_e52gs3rh_-gqa "AbstractStorage" 58
+(name "AbstractStorage"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gqa")
+(isAbstract true))
+($11 205 < -yk94ms_n98_e52gs3rh_-gq9 "package" 204
+(changeability "frozen")
+(name "package"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gq9")
+(multiplicity "1"))
+($12 206 < -yk94ms_n98_e52gs3rh_-gq8 "documentation" 205
+(name "documentation"
+)
+(value "Qualified name of package whose data the storage object holds."
+)
+(uid "-yk94ms_n98_e52gs3rh_-gq8"))
+($11 207 < -yk94ms_n98_e52gs3rh_-gq7 "format" 204
+(initialValue "xml"
+)
+(name "format"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gq7")
+(multiplicity "1"))
+($12 208 < -yk94ms_n98_e52gs3rh_-gq6 "documentation" 207
+(name "documentation"
+)
+(value "Format the data are delivered in. A remote database might have format 'xml' if data were sent as xml."
+)
+(uid "-yk94ms_n98_e52gs3rh_-gq6"))
+($11 209 < -yk94ms_n98_e52gs3rh_-gq5 "path" 204
+(name "path"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gq5")
+(multiplicity "1"))
+($12 210 < -yk94ms_n98_e52gs3rh_-gq4 "documentation" 209
+(name "documentation"
+)
+(value "Local part of path to data, to be added to the general part taken from the Url."
+)
+(uid "-yk94ms_n98_e52gs3rh_-gq4"))
+($18 211 < -yk94ms_n98_e52gs3rh_-gq3 "may_not_start_with_slash" 209
+(name "may_not_start_with_slash"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gq3")
+(body "pythonCode"
+"_"
+"not value or value[0] != '/'"
+"_"
+"javaCode"
+"_"
+"(value.length() == 0) || (value.charAt(0) != '/')"
+))
+($11 212 < -yk94ms_n98_e52gs3rh_-gq2 "isLoaded" 204
+(changeability "frozen")
+(name "isLoaded"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gq2")
+(multiplicity "1"))
+($12 213 < -yk94ms_n98_e52gs3rh_-gq1 "isDerived" 212
+(name "isDerived"
+)
+(value "True"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gq1"))
+($12 214 < -yk94ms_n98_e52gs3rh_-gq0 "documentation" 212
+(name "documentation"
+)
+(value "Implementation attribute, set automatically. True if the data in the Storage are loaded into memory. As data are loaded automatically, this attribute should be of interest only for the implementation."
+)
+(uid "-yk94ms_n98_e52gs3rh_-gq0"))
+($11 215 < -yk94ms_n98_e52gs3rh_-gpz "isModified" 204
+(changeability "frozen")
+(name "isModified"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gpz")
+(multiplicity "1"))
+($12 216 < -yk94ms_n98_e52gs3rh_-gpy "isDerived" 215
+(name "isDerived"
+)
+(value "True"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gpy"))
+($12 217 < -yk94ms_n98_e52gs3rh_-gpx "documentation" 215
+(name "documentation"
+)
+(value "Implementation attribute. True if the data corresponding to the Storage have been modified since being loaded. Serves to indicate which data need to be saved."
+)
+(uid "-yk94ms_n98_e52gs3rh_-gpx"))
+($14 218 < -yk94ms_n98_e52gs3rh_-gpw "getIsLoaded##Boolean" 204
+(name "getIsLoaded"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gpw")
+(isQuery true))
+($15 219 < -yk94ms_n98_e52gs3rh_-gpv "result" 218
+(name "result"
+)
+(kind "return")
+(uid "-yk94ms_n98_e52gs3rh_-gpv"))
+($12 220 < -yk94ms_n98_e52gs3rh_-gpu "documentation" 218
+(name "documentation"
+)
+(value "getter for derived attribute isLoaded. The attribute is set automatically by the implementation - the getter merely returns the preset value."
+)
+(uid "-yk94ms_n98_e52gs3rh_-gpu"))
+($12 221 < -yk94ms_n98_e52gs3rh_-gpt "opType" 218
+(name "opType"
+)
+(value "get"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gpt"))
+($12 222 < -yk94ms_n98_e52gs3rh_-gps "pythonCode" 218
+(name "pythonCode"
+)
+(value "return self.__dict__['isLoaded']"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gps"))
+($12 223 < -yk94ms_n98_e52gs3rh_-gpr "javaCode" 218
+(name "javaCode"
+)
+(value "return _isLoaded;"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gpr"))
+($14 224 < -yk94ms_n98_e52gs3rh_-gpq "getIsModified##Boolean" 204
+(name "getIsModified"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gpq")
+(isQuery true))
+($15 225 < -yk94ms_n98_e52gs3rh_-gpp "result" 224
+(name "result"
+)
+(kind "return")
+(uid "-yk94ms_n98_e52gs3rh_-gpp"))
+($12 226 < -yk94ms_n98_e52gs3rh_-gpo "documentation" 224
+(name "documentation"
+)
+(value "getter for derived attribute isModified. The attribute is set automatically by the implementation - the getter merely returns the preset value."
+)
+(uid "-yk94ms_n98_e52gs3rh_-gpo"))
+($12 227 < -yk94ms_n98_e52gs3rh_-gpn "opType" 224
+(name "opType"
+)
+(value "get"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gpn"))
+($12 228 < -yk94ms_n98_e52gs3rh_-gpm "pythonCode" 224
+(name "pythonCode"
+)
+(value "return self.__dict__['isModified']"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gpm"))
+($12 229 < -yk94ms_n98_e52gs3rh_-gpl "javaCode" 224
+(name "javaCode"
+)
+(value "return _isModified;"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gpl"))
+($14 230 < -yk94ms_n98_e52gs3rh_-gpk "getIsReading##Boolean" 204
+(name "getIsReading"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gpk")
+(isQuery true))
+($15 231 < -yk94ms_n98_e52gs3rh_-gpj "result" 230
+(name "result"
+)
+(kind "return")
+(uid "-yk94ms_n98_e52gs3rh_-gpj"))
+($12 232 < -yk94ms_n98_e52gs3rh_-gpi "documentation" 230
+(name "documentation"
+)
+(value "getter for derived attribute isReading. The attribute is set automatically by the implementation - the getter merely returns the preset value."
+)
+(uid "-yk94ms_n98_e52gs3rh_-gpi"))
+($12 233 < -yk94ms_n98_e52gs3rh_-gph "opType" 230
+(name "opType"
+)
+(value "get"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gph"))
+($12 234 < -yk94ms_n98_e52gs3rh_-gpg "pythonCode" 230
+(name "pythonCode"
+)
+(value "return self.__dict__['isReading']"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gpg"))
+($12 235 < -yk94ms_n98_e52gs3rh_-gpf "javaCode" 230
+(name "javaCode"
+)
+(value "return _isReading;"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gpf"))
+($14 236 < -yk94ms_n98_e52gs3rh_-gpe "save" 204
+(name "save"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gpe")
+(isAbstract true))
+($12 237 < -yk94ms_n98_e52gs3rh_-gpd "documentation" 236
+(name "documentation"
+)
+(value "Save data corresponding to Storage"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gpd"))
+($12 238 < -yk94ms_n98_e52gs3rh_-gpc "opType" 236
+(name "opType"
+)
+(value "other"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gpc"))
+($12 239 < -yk94ms_n98_e52gs3rh_-gpb "pythonCode" 236
+(name "pythonCode"
+)
+(value "raise ApiError(\"Abstract Operation - should have been overridden\")"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gpb"))
+($12 240 < -yk94ms_n98_e52gs3rh_-gpa "javaCode" 236
+(name "javaCode"
+)
+(value "throw new memops.general.ApiException(\"Abstract Operation - should have been overridden\");"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gpa"))
+($11 241 < -yk94ms_n98_e52gs3rh_-gp9 "isReading" 204
+(changeability "frozen")
+(name "isReading"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gp9")
+(multiplicity "1"))
+($12 242 < -yk94ms_n98_e52gs3rh_-gp8 "isDerived" 241
+(name "isDerived"
+)
+(value "True"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gp8"))
+($12 243 < -yk94ms_n98_e52gs3rh_-gp7 "documentation" 241
+(name "documentation"
+)
+(value "Implementation attribute, set automatically. True if the data corresponding to the Storage are in the process of being read. As data loading is handled automatically, this attribute should be relevant only for the implementation, or possibly for programmers of multithreaded programs. Serves to suppress notifiers and validity checking during reading. Note that objects are not valid until the data loading is completed."
+)
+(uid "-yk94ms_n98_e52gs3rh_-gp7"))
+($11 244 < -yk94ms_n98_e52gs3rh_-gp6 "isStored" 204
+(initialValue "False"
+)
+(changeability "frozen")
+(name "isStored"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gp6")
+(multiplicity "1"))
+($12 245 < -yk94ms_n98_e52gs3rh_-gp5 "documentation" 244
+(name "documentation"
+)
+(value "Flag determining if the Storage contents have ever been stored. Used to determine if data should be loaded. Defaults to False for new Storages, and automatically set to True when the data are saved. Can be set to True by the setToStored() method, for cases when you want to read data in from a pre-existing data storage."
+)
+(uid "-yk94ms_n98_e52gs3rh_-gp5"))
+($14 246 < -yk94ms_n98_e52gs3rh_-gp4 "touch" 204
+(name "touch"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gp4"))
+($12 247 < -yk94ms_n98_e52gs3rh_-gp3 "documentation" 246
+(name "documentation"
+)
+(value "Set storage.isModified to True, so that the storage is saved at the next saveModified command. Fails if the storage is not loaded or not modifiable."
+)
+(uid "-yk94ms_n98_e52gs3rh_-gp3"))
+($12 248 < -yk94ms_n98_e52gs3rh_-gp2 "opType" 246
+(name "opType"
+)
+(value "other"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gp2"))
+($12 249 < -yk94ms_n98_e52gs3rh_-gp1 "pythonCode" 246
+(name "pythonCode"
+)
+(value "if not self.isLoaded:"
+"  raise ApiError(\"Attempt to touch non-loaded %s storage\" % self.package)"
+""
+"if not self.isModifiable:"
+"  raise ApiError(\"Attempt to touch non-modifiable %s storage\" % self.package)"
+""
+"self.__dict__['isModified'] = True"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gp1"))
+($12 250 < -yk94ms_n98_e52gs3rh_-gp0 "javaCode" 246
+(name "javaCode"
+)
+(value "if (!_isLoaded.booleanValue())"
+"  throw new memops.general.ApiException(\"Attempt to touch non-loaded \" + _package + \" storage\");"
+""
+"if (!_isModifiable.booleanValue())"
+"  throw new memops.general.ApiException(\"Attempt to touch non-modifiable \" + _package + \" storage\");"
+""
+"_isModified = java.lang.Boolean.TRUE;"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gp0"))
+($11 251 < -yk94ms_n98_e52gs3rh_-goz "isModifiable" 204
+(initialValue "True"
+)
+(name "isModifiable"
+)
+(uid "-yk94ms_n98_e52gs3rh_-goz")
+(multiplicity "1"))
+($12 252 < -yk94ms_n98_e52gs3rh_-goy "documentation" 251
+(name "documentation"
+)
+(value "True if the data corresponding to the storage may be modified. If isModifiable is false for a given package, attemps to modify the data will raise an error. Note that isModifiable can be set to true even if the corresponding file is read-only. "
+""
+"For a Project, this atribute defines whether the Implementation package (not the entire project contents) can be modified. If the Implementation package is Read-Only, this will prohibit many changes in the other packages as well."
+""
+"This parameter can be freely modified by users, so it is not a security feature, but rather a protection against accidental changes. "
+)
+(uid "-yk94ms_n98_e52gs3rh_-goy"))
+($14 253 < -yk94ms_n98_e52gs3rh_-gox "setIsModifiable#Boolean" 204
+(name "setIsModifiable"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gox"))
+($15 254 < -yk94ms_n98_e52gs3rh_-gow "value" 253
+(name "value"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gow"))
+($12 255 < -yk94ms_n98_e52gs3rh_-gov "opType" 253
+(name "opType"
+)
+(value "set"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gov"))
+($12 256 < -yk94ms_n98_e52gs3rh_-gou "pythonCode" 253
+(name "pythonCode"
+)
+(value "dataDict = self.__dict__"
+"if value == dataDict['isModifiable']:"
+"  return"
+""
+"if value not in (True,False):"
+"  raise ApiError(\"memops.Implementation.AbstractStorage.isModifiable set to illegal value: %s\" % `value`)"
+""
+"if value == False and dataDict['isModified']:"
+"  raise ApiError(\"Modified and unsaved Storage can not be set to non-modifiable\")"
+""
+"if (not dataDict.get('override')):"
+"  storage = dataDict['storage']"
+"      "
+"  if storage.__dict__['isModifiable'] or storage is self:"
+"    storage.__dict__['isModified'] = True"
+"  else:"
+"    if storage.storage is storage:"
+"      ss = 'Implementation package'"
+"    else:"
+"      ss = 'Storage serial %s' % storage.__dict__.get('serial')"
+"    raise ApiError("
+"     \"memops.Implementation.AbstractStorage.isModifiable cannot be set: %s data not modifiable\""
+"     % ss"
+"    ) "
+""
+"dataDict['isModifiable'] = value"
+""
+"if not dataDict.get('override'):"
+""
+"  # in-lined doNotifies(name,object)"
+"  notifies = self.__class__.notifies"
+"    "
+"  ll1 = notifies['']"
+"  for notify in ll1:"
+"    notify(self)"
+"    "
+"  ll = notifies.get('setIsModifiable')"
+"  if ll:"
+"    for notify in ll:"
+"      if notify not in ll1:"
+"        notify(self)"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gou"))
+($12 257 < -yk94ms_n98_e52gs3rh_-got "documentation" 253
+(name "documentation"
+)
+(value "Special setter for isModifiable. For Project allows isModifiable to be set to True even when isModifiable is False!"
+)
+(uid "-yk94ms_n98_e52gs3rh_-got"))
+($12 258 < -yk94ms_n98_e52gs3rh_-gos "javaCode" 253
+(name "javaCode"
+)
+(value "if (value == null)"
+"  if (_isModifiable == null)"
+"    return;"
+"else if (value.equals(_isModifiable))"
+"  return;"
+""
+"if (value == null)"
+"  throw new memops.general.ApiException(\"memops.Implementation.AbstractStorage.isModifiable cannot be set null\");"
+""
+"if (!value.booleanValue() && _isModified.booleanValue())"
+"  throw new memops.general.ApiException(\"Modified and unsaved Storage can not be set to non-modifiable\");"
+""
+"if (!_storage.getIsReading().booleanValue() && !overrideSet.contains(this))"
+"{"
+"  memops.api.Implementation.AbstractStorage storage = getStorage();"
+"  if (storage._isModifiable.booleanValue() || (storage == this))"
+"  {"
+"    storage._isModified = java.lang.Boolean.TRUE;"
+"  }"
+"  else"
+"  {"
+"    java.lang.String ss;"
+"    if (storage.getStorage() == storage)"
+"      ss = \"Implementation package\";"
+"    else"
+"      ss = \"Storage serial \" + ((memops.api.Implementation.Storage) this)._serial;"
+"    throw new memops.general.ApiException("
+"     \"memops.Implementation.AbstractStorage.isModifiable cannot be set: \" + ss + \" data not modifiable\");"
+"  }"
+"}"
+""
+"_isModifiable = value;"
+""
+"if (!overrideSet.contains(this))"
+"{"
+"  doNotifies(\"\");"
+"  doNotifies(\"setIsModifiable\");"
+"}"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gos"))
+($16 259 < -yk94ms_n98_e52gs3rh_-gor "#<anon> (AbstractStorage, Url)" 204
+(name "")
+(uid "-yk94ms_n98_e52gs3rh_-gor"))
+($17 260 < -yk94ms_n98_e52gs3rh_-goq "storages#0" 259
+(name "storages"
+)
+(uid "-yk94ms_n98_e52gs3rh_-goq")
+(multiplicity "*"))
+($12 261 < -yk94ms_n98_e52gs3rh_-gop "baseName" 260
+(name "baseName"
+)
+(value "storage"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gop"))
+($12 262 < -yk94ms_n98_e52gs3rh_-goo "documentation" 260
+(name "documentation"
+)
+(value "The storages that are stored under a given Url."
+)
+(uid "-yk94ms_n98_e52gs3rh_-goo"))
+($17 263 < -yk94ms_n98_e52gs3rh_-gon "#1" 259
+(uid "-yk94ms_n98_e52gs3rh_-gon")
+(multiplicity "1"))
+($12 264 < -yk94ms_n98_e52gs3rh_-gom "documentation" 263
+(name "documentation"
+)
+(value "Location in which data for a Storage are stored. For file-type Storages typically a directory, for database-type Storages the URL of the database."
+)
+(uid "-yk94ms_n98_e52gs3rh_-gom"))
+($13 265 < -yk94ms_n98_e52gs3rh_-gol "#<anon> (AbstractStorage, NormalStored)" 204
+(uid "-yk94ms_n98_e52gs3rh_-gol"))
+($12 266 < -yk94ms_n98_e52gs3rh_-gok "documentation" 204
+(name "documentation"
+)
+(value "Object to hold file and URL information for a package"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gok"))
+($10 267 < -yk94ms_n98_e52gs3rh_-goj "Url" 58
+(name "Url"
+)
+(uid "-yk94ms_n98_e52gs3rh_-goj"))
+($11 268 < -yk94ms_n98_e52gs3rh_-goi "serial" 267
+(changeability "frozen")
+(name "serial"
+)
+(uid "-yk94ms_n98_e52gs3rh_-goi")
+(multiplicity "1"))
+($12 269 < -yk94ms_n98_e52gs3rh_-goh "isAutomatic" 268
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "-yk94ms_n98_e52gs3rh_-goh"))
+($11 270 < -yk94ms_n98_e52gs3rh_-gog "name" 267
+(name "name"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gog")
+(multiplicity "1"))
+($12 271 < -yk94ms_n98_e52gs3rh_-gof "documentation" 270
+(name "documentation"
+)
+(value "Name of Url - for convenience only."
+)
+(uid "-yk94ms_n98_e52gs3rh_-gof"))
+($11 272 < -yk94ms_n98_e52gs3rh_-goe "protocol" 267
+(initialValue "file"
+)
+(name "protocol"
+)
+(uid "-yk94ms_n98_e52gs3rh_-goe")
+(multiplicity "1"))
+($12 273 < -yk94ms_n98_e52gs3rh_-god "documentation" 272
+(name "documentation"
+)
+(value "URL transfer protocol. Possible values to be expanded to cover 'file', 'ftp', 'http', 'shttp', and suitable tags for database access.."
+)
+(uid "-yk94ms_n98_e52gs3rh_-god"))
+($11 274 < -yk94ms_n98_e52gs3rh_-goc "user" 267
+(name "user"
+)
+(uid "-yk94ms_n98_e52gs3rh_-goc"))
+($12 275 < -yk94ms_n98_e52gs3rh_-gob "documentation" 274
+(name "documentation"
+)
+(value "User ID for URL"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gob"))
+($11 276 < -yk94ms_n98_e52gs3rh_-goa "password" 267
+(name "password"
+)
+(uid "-yk94ms_n98_e52gs3rh_-goa"))
+($12 277 < -yk94ms_n98_e52gs3rh_-go9 "documentation" 276
+(name "documentation"
+)
+(value "User password for URL"
+)
+(uid "-yk94ms_n98_e52gs3rh_-go9"))
+($11 278 < -yk94ms_n98_e52gs3rh_-go8 "host" 267
+(name "host"
+)
+(uid "-yk94ms_n98_e52gs3rh_-go8"))
+($12 279 < -yk94ms_n98_e52gs3rh_-go7 "documentation" 278
+(name "documentation"
+)
+(value "Host computer or web site."
+)
+(uid "-yk94ms_n98_e52gs3rh_-go7"))
+($11 280 < -yk94ms_n98_e52gs3rh_-go6 "path" 267
+(name "path"
+)
+(uid "-yk94ms_n98_e52gs3rh_-go6")
+(multiplicity "1"))
+($12 281 < -yk94ms_n98_e52gs3rh_-go5 "documentation" 280
+(name "documentation"
+)
+(value "URL path. "
+)
+(uid "-yk94ms_n98_e52gs3rh_-go5"))
+($18 282 < -yk94ms_n98_e52gs3rh_-go4 "path_must_start_with_slash" 280
+(name "path_must_start_with_slash"
+)
+(uid "-yk94ms_n98_e52gs3rh_-go4")
+(body "pythonCode"
+"_"
+"not value or value[0] == '/'"
+"_"
+"javaCode"
+"_"
+"(value.length() == 0) || (value.charAt(0) == '/')"
+))
+($13 283 < -yk94ms_n98_e52gs3rh_-go3 "#<anon> (Url, NormalStored)" 267
+(uid "-yk94ms_n98_e52gs3rh_-go3"))
+($12 284 < -yk94ms_n98_e52gs3rh_-gnx "documentation" 267
+(name "documentation"
+)
+(value "URl for data location. Example: directory name. To be combined with information in Storage to generate exact data location. When a Project is first created two default Url objects are generated: One, named 'project', pointing to the current directory, one, named 'data', pointing to 'current-directory/projectname'"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gnx"))
+($12 285 < -yk94ms_n98_e52gs3rh_-gnw "mainkey" 267
+(name "mainkey"
+)
+(value "serial"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gnw"))
+($12 286 < -yk94ms_n98_e52gs3rh_-gnv "hasSpecialDestructor" 267
+(name "hasSpecialDestructor"
+)
+(value "True"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gnv"))
+($12 287 < -yk94ms_n98_e52gs3rh_-gnu "pythonDestructorCode" 267
+(name "pythonDestructorCode"
+)
+(value "if self.__dict__['storages']:"
+"  raise ApiError("
+"   \"Url objects cannot be deleted while they have links to storages.\""
+"  )"
+"  "
+"if self.__dict__['dataLocations']:"
+"  raise ApiError("
+"   \"Url objects cannot be deleted while they have links to dataLocations.\""
+"  )"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gnu"))
+($12 288 < -yk94ms_n98_e52gs3rh_-gnt "javaDestructorCode" 267
+(name "javaDestructorCode"
+)
+(value "if (_storages.size() > 0)"
+"  throw new memops.general.ApiException( \"Url objects cannot be deleted while they have links to storages.\");"
+"  "
+"if (_dataLocations.size() > 0)"
+"  throw new memops.general.ApiException(\"Url objects cannot be deleted while they have links to dataLocations.\");"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gnt"))
+($10 289 < -yk94ms_n98_e52gs3rh_-gnn "NormalStored" 58
+(name "NormalStored"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gnn")
+(isAbstract true))
+($16 290 < -yk94ms_n98_e52gs3rh_-gnm "#<anon> (NormalStored, ApplicationData)" 289
+(name "")
+(uid "-yk94ms_n98_e52gs3rh_-gnm"))
+($17 291 < -yk94ms_n98_e52gs3rh_-gnl "owner#0" 290
+(changeability "frozen")
+(aggregation "composite")
+(name "owner"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gnl")
+(multiplicity "1"))
+($17 292 < -yk94ms_n98_e52gs3rh_-gnk "applicationData#1" 290
+(name "applicationData"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gnk")
+(multiplicity "*"))
+($12 293 < -yk94ms_n98_e52gs3rh_-gnj "baseName" 292
+(name "baseName"
+)
+(value "applicationData"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gnj"))
+($13 294 < -yk94ms_n98_e52gs3rh_-gni "#<anon> (NormalStored, MemopsBaseClass)" 289
+(uid "-yk94ms_n98_e52gs3rh_-gni"))
+($12 295 < -yk94ms_n98_e52gs3rh_-gnh "documentation" 289
+(name "documentation"
+)
+(value "Base class for all classes except ApplicationData and MemopsBaseClass"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gnh"))
+($10 296 < -yk94ms_n98_e52gs3rh_-gng "NormalStorage" 58
+(name "NormalStorage"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gng"))
+($11 297 < -yk94ms_n98_e52gs3rh_-gnf "serial" 296
+(changeability "frozen")
+(name "serial"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gnf")
+(multiplicity "1"))
+($12 298 < -yk94ms_n98_e52gs3rh_-gne "isAutomatic" 297
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gne"))
+($14 299 < -yk94ms_n98_e52gs3rh_-gnd "load" 296
+(name "load"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gnd"))
+($12 300 < -yk94ms_n98_e52gs3rh_-gnc "documentation" 299
+(name "documentation"
+)
+(value "Load all data corresponding to storage."
+)
+(uid "-yk94ms_n98_e52gs3rh_-gnc"))
+($12 301 < -yk94ms_n98_e52gs3rh_-gnb "opType" 299
+(name "opType"
+)
+(value "other"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gnb"))
+($12 302 < -yk94ms_n98_e52gs3rh_-gna "pythonCode" 299
+(name "pythonCode"
+)
+(value "if self.isModified:"
+"  raise ApiError(\"Cannot load - %s data already loaded and modified\" % self.package)"
+"elif self.isLoaded or not self.isStored:"
+"  return"
+"else:"
+"  stream = self.url.getStream(self.package, path=self.path, headObject=self.project)"
+""
+"  if self.format == 'xml':"
+"    ll = self.package.split('.')"
+"    ll[1:1] = ['xml']"
+"    ss = '.'.join(ll)"
+"    ioModule = __import__(ss, {}, {}, ['load','save'])"
+"  else:"
+"    raise ApiError(\"Non-XML I/O not implemented yet\")"
+""
+"  try:"
+"    self.__dict__['isLoaded'] = True"
+"    ioModule.load(stream,self.project)"
+"  except:"
+"    print \"ERROR loading %s %s %s\" % (self.format, self.package, self.path)"
+"    stream.close()"
+"    raise"
+"  stream.close()"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gna"))
+($12 303 < -yk94ms_n98_e52gs3rh_-gn9 "javaCode" 299
+(name "javaCode"
+)
+(value "if (_isModified.booleanValue())"
+"{"
+"  throw new memops.general.ApiException(\"Cannot load - \" + _package + \" data already loaded and modified\");"
+"}"
+"else if (_isLoaded.booleanValue() || !_isStored.booleanValue())"
+"{"
+"  return;"
+"}"
+"else"
+"{"
+"  java.io.BufferedReader stream = _url.getReaderStream(_package, _path, _project);"
+""
+"  java.lang.reflect.Method method = null;"
+""
+"  if (_format.equals(\"xml\"))"
+"  {"
+"    int n = _package.indexOf('.');"
+"    java.lang.String className = _package.substring(0, n) + \".xml\" + _package.substring(n);"
+"    java.lang.Class clazz = memops.general.Util.getClass(className);"
+"    java.lang.String methodName = \"load\";"
+"    java.lang.Class[] paramTypes = { stream.getClass(), _project.getClass() };"
+"    method = memops.general.Util.getMethod(clazz, methodName, paramTypes);"
+"  }"
+"  try"
+"  {"
+"    _isLoaded = java.lang.Boolean.TRUE;"
+"    java.lang.Object[] args = { stream, _project };"
+"    memops.general.Util.invokeMethod(method, args);"
+"  }"
+"  catch (memops.general.ApiException e)"
+"  {"
+"    java.lang.System.out.println(\"ERROR loading \" + _format + \" \" + _package + \" \" + _path);"
+"    throw e;"
+"  }"
+" finally"
+"  {"
+"    try"
+"    {"
+"      stream.close();"
+"    }"
+"    catch (java.io.IOException ee)"
+"    {"
+"    }"
+"  }"
+"}"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gn9"))
+($14 304 < -yk94ms_-kkx_e55jjxi7_-p98 "save" 296
+(name "save"
+)
+(uid "-yk94ms_-kkx_e55jjxi7_-p98"))
+($12 305 < -yk94ms_-kkx_e55jjxi7_-p97 "opType" 304
+(name "opType"
+)
+(value "other"
+)
+(uid "-yk94ms_-kkx_e55jjxi7_-p97"))
+($12 306 < -yk94ms_-kkx_e55jjxi7_-p96 "pythonCode" 304
+(name "pythonCode"
+)
+(value "if not self.isModifiable:"
+"  raise ApiError(\"Cannot store %s data - storage is not modifiable\" % self.package)"
+"elif self.isStored and not self.isLoaded:"
+" raise ApiError(\"Cannot store %s data - existing data have not been loaded\" % self.package)"
+"else:"
+"  stream = self.url.getStream(self.package, path=self.path, headObject=self.project, writeable=True)"
+""
+"  if self.format == 'xml':"
+"    ll = self.package.split('.')"
+"    ll[1:1] = ['xml']"
+"    ss = '.'.join(ll)"
+"    ioModule = __import__(ss, {}, {}, ['load','save'])"
+"  else:"
+"    raise ApiError(\"Non-XML I/O not implemented yet\")"
+""
+"  wasStored = self.isStored"
+"  try:"
+"    self.__dict__['isStored'] = True"
+"    ioModule.save(stream,self.project)"
+"    self.__dict__['isModified'] = False"
+"    if not wasStored:"
+"      self.root.__dict__['isModified'] = True"
+"  except:"
+"    self.__dict__['isStored'] = wasStored"
+"    print \"ERROR saving %s %s %s\" % (self.format, self.package, self.path)"
+"    stream.close()"
+"    raise"
+"  stream.close()"
+)
+(uid "-yk94ms_-kkx_e55jjxi7_-p96"))
+($12 307 < -yk94ms_-kkx_e55jjxi7_-p95 "javaCode" 304
+(name "javaCode"
+)
+(value "if (!_isModifiable.booleanValue())"
+"{"
+"  throw new memops.general.ApiException(\"Cannot store \" + _package + \" data - storage is not modifiable\");"
+"}"
+"else if (_isStored.booleanValue() && !_isLoaded.booleanValue())"
+"{"
+"  throw new memops.general.ApiException(\"Cannot store \" + _package + \" data - existing data have not been loaded\");"
+"}"
+"else"
+"{"
+"  java.io.PrintWriter stream = _url.getWriterStream(_package, _path, _project);"
+""
+" java.lang.reflect.Method method = null;"
+""
+"  if (_format.equals(\"xml\"))"
+"  {"
+"    int n = _package.indexOf('.');"
+"    java.lang.String className = _package.substring(0, n) + \".xml\" + _package.substring(n);"
+"    java.lang.Class clazz = memops.general.Util.getClass(className);"
+"    java.lang.String methodName = \"save\";"
+"    java.lang.Class[] paramTypes = { stream.getClass(), _project.getClass() };"
+"    method = memops.general.Util.getMethod(clazz, methodName, paramTypes);"
+"  }"
+""
+"  java.lang.Boolean wasStored = _isStored;"
+"  try"
+"  {"
+"    _isStored = java.lang.Boolean.TRUE;"
+"    java.lang.Object[] args = { stream, _project };"
+"    memops.general.Util.invokeMethod(method, args);"
+"    _isModified = java.lang.Boolean.FALSE;"
+"    if (!wasStored.booleanValue())"
+"      getRoot()._isModified = java.lang.Boolean.TRUE;"
+"  }"
+"  catch (memops.general.ApiException e)"
+"  {"
+"    _isStored = wasStored;"
+"    java.lang.System.out.println(\"ERROR saving \" + _format + \" \" + _package + \" \" + _path);"
+"    stream.close();"
+"    throw e;"
+"  }"
+""
+"  stream.close();"
+"}"
+)
+(uid "-yk94ms_-kkx_e55jjxi7_-p95"))
+($14 308 < -yk94ms_n98_e52gs3rh_-gn8 "setToStored" 296
+(name "setToStored"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gn8"))
+($12 309 < -yk94ms_n98_e52gs3rh_-gn7 "documentation" 308
+(name "documentation"
+)
+(value "Sets isStored to True (and isLoaded to False). Throws an error if called when isModified is true. Changes storage state from 'newly created, empty, never stored' to 'data exist on disk'. Serves for cases when you want to create a storage and take the data from an already existing file rather than creating its contents."
+)
+(uid "-yk94ms_n98_e52gs3rh_-gn7"))
+($12 310 < -yk94ms_n98_e52gs3rh_-gn6 "opType" 308
+(name "opType"
+)
+(value "other"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gn6"))
+($12 311 < -yk94ms_n98_e52gs3rh_-gn5 "pythonCode" 308
+(name "pythonCode"
+)
+(value "if self.isStored:"
+"  print \"WARNING, %s Storage had already been stored\" % self.package"
+"elif self.isModified:"
+"  raise ApiError(\" %s Storage has been modified, cannot be reset to isStored\" % self.package)"
+"else:"
+"  self.__dict__['isStored'] = True"
+"  self.__dict__['isLoaded'] = False"
+"  self.root.__dict__['isModified'] = True"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gn5"))
+($12 312 < -yk94ms_n98_e52gs3rh_-gn4 "javaCode" 308
+(name "javaCode"
+)
+(value "if (_isStored.booleanValue())"
+"{"
+"  java.lang.System.out.println(\"WARNING, \" + _package + \" Storage had already been stored\");"
+"}"
+"else if (_isModified.booleanValue())"
+"{"
+"  throw new memops.general.ApiException(_package + \" storage has been modified, cannot be reset to isStored\");"
+"}"
+"else"
+"{"
+"  _isStored = java.lang.Boolean.TRUE;"
+"  _isLoaded = java.lang.Boolean.FALSE;"
+"  _isModified = java.lang.Boolean.TRUE;"
+"}"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gn4"))
+($13 313 < -yk94ms_n98_e52gs3rh_-gn3 "#<anon> (NormalStorage, AbstractStorage)" 296
+(uid "-yk94ms_n98_e52gs3rh_-gn3"))
+($12 314 < -yk94ms_n98_e52gs3rh_-gn2 "mainkey" 296
+(name "mainkey"
+)
+(value "serial"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gn2"))
+($12 315 < -yk94ms_n98_e52gs3rh_-gn1 "documentation" 296
+(name "documentation"
+)
+(value "Abstract superclass for all Storage objects except class Project"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gn1"))
+($12 316 < -yk94ms_n98_e52gs3rh_-gl9 "shortName" 58
+(name "shortName"
+)
+(value "IMPL"
+)
+(uid "-yk94ms_n98_e52gs3rh_-gl9"))
+($12 317 < -yk94ms_n98_e52gs3rh_-gl8 "documentation" 58
+(name "documentation"
+)
+(value "The memops implementation - the basic machinery that makes the various subroutine libraries function."
+)
+(uid "-yk94ms_n98_e52gs3rh_-gl8"))
+($12 318 < -yk94ms_-kkx_e52gwr3f_-p84 "isTestVersion" 58
+(name "isTestVersion"
+)
+(value "True"
+)
+(uid "-yk94ms_-kkx_e52gwr3f_-p84"))
+($12 319 < -yk94ms_n98_e52gs3rh_-gi1 "documentation" 57
+(name "documentation"
+)
+(value "Modelling for the memops framework, generally applicable to any data model from any field."
+)
+(uid "-yk94ms_n98_e52gs3rh_-gi1"))
+($19 322 < -yk94ms_n98_e56ijf25_-p92 "#<anon> (Test, Implementation)" 321
+(uid "-yk94ms_n98_e56ijf25_-p92"))
+($12 323 < -yk94ms_n98_e56ijf25_-p95 "shortName" 321
+(name "shortName"
+)
+(value "TEST"
+)
+(uid "-yk94ms_n98_e56ijf25_-p95"))
+($12 324 < -yk94ms_n98_e56ijf25_-p97 "documentation" 320
+(name "documentation"
+)
+(value "test container package, for data model testing"
+)
+(uid "-yk94ms_n98_e56ijf25_-p97"))
+($12 325 < -yk94ms_n98_e52gs3rh_-fvp "Rose::global" 56
+(name "Rose::global"
+)
+(value "TRUE"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fvp"))
+($20 326 < -yk94ms_n98_e52gs3rh_-fvo "stereotypes" 1
+(uid "-yk94ms_n98_e52gs3rh_-fvo"))
+($21 327 < -yk94ms_n98_e52gs3rh_-fvn "_odPackage" 326
+(name "_odPackage"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fvn")
+(baseClass "Package"))
+($21 328 < -yk94ms_n98_e52gs3rh_-fvm "odStub" 326
+(name "odStub"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fvm"))
+($21 329 < -yk94ms_n98_e52gs3rh_-fvl "access" 326
+(name "access"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fvl")
+(baseClass "Dependency"))
+($21 330 < -yk94ms_n98_e52gs3rh_-fvk "association" 326
+(name "association"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fvk")
+(baseClass "AssociationEnd"))
+($21 331 < -yk94ms_n98_e52gs3rh_-fvj "create" 326
+(name "create"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fvj")
+(baseClass "BehavioralFeature"))
+($21 332 < -yk94ms_n98_e52gs3rh_-fvi "destroy" 326
+(name "destroy"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fvi")
+(baseClass "BehavioralFeature"))
+($21 333 < -yk94ms_n98_e52gs3rh_-fvh "document" 326
+(name "document"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fvh")
+(baseClass "Component"))
+($21 334 < -yk94ms_n98_e52gs3rh_-fvg "executable" 326
+(name "executable"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fvg")
+(baseClass "Component"))
+($21 335 < -yk94ms_n98_e52gs3rh_-fvf "extend" 326
+(name "extend"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fvf")
+(baseClass "Dependency"))
+($21 336 < -yk94ms_n98_e52gs3rh_-fve "facade" 326
+(name "facade"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fve")
+(baseClass "Package"))
+($21 337 < -yk94ms_n98_e52gs3rh_-fvd "file" 326
+(name "file"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fvd")
+(baseClass "Component"))
+($21 338 < -yk94ms_n98_e52gs3rh_-fvc "framework" 326
+(name "framework"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fvc")
+(baseClass "Package"))
+($21 339 < -yk94ms_n98_e52gs3rh_-fvb "friend" 326
+(name "friend"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fvb")
+(baseClass "Dependency"))
+($21 340 < -yk94ms_n98_e52gs3rh_-fva "global" 326
+(name "global"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fva")
+(baseClass "AssociationEnd"))
+($21 341 < -yk94ms_n98_e52gs3rh_-fv9 "implementation" 326
+(name "implementation"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fv9")
+(baseClass "Generalization"))
+($21 342 < -yk94ms_n98_e52gs3rh_-fv8 "implementationClass" 326
+(name "implementationClass"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fv8")
+(baseClass "Class"))
+($21 343 < -yk94ms_n98_e52gs3rh_-fv7 "import" 326
+(name "import"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fv7")
+(baseClass "Dependency"))
+($21 344 < -yk94ms_n98_e52gs3rh_-fv6 "include" 326
+(name "include"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fv6")
+(baseClass "Dependency"))
+($21 345 < -yk94ms_n98_e52gs3rh_-fv5 "invariant" 326
+(name "invariant"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fv5")
+(baseClass "Constraint"))
+($21 346 < -yk94ms_n98_e52gs3rh_-fv4 "library" 326
+(name "library"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fv4")
+(baseClass "Component"))
+($21 347 < -yk94ms_n98_e52gs3rh_-fv3 "local" 326
+(name "local"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fv3")
+(baseClass "AssociationEnd"))
+($21 348 < -yk94ms_n98_e52gs3rh_-fv2 "metaclass" 326
+(name "metaclass"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fv2")
+(baseClass "Classifier"))
+($21 349 < -yk94ms_n98_e52gs3rh_-fv1 "metamodel" 326
+(name "metamodel"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fv1")
+(baseClass "Package"))
+($21 350 < -yk94ms_n98_e52gs3rh_-fv0 "parameter" 326
+(name "parameter"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fv0")
+(baseClass "AssociationEnd"))
+($21 351 < -yk94ms_n98_e52gs3rh_-fuz "postcondition" 326
+(name "postcondition"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fuz")
+(baseClass "Constraint"))
+($21 352 < -yk94ms_n98_e52gs3rh_-fuy "powertype" 326
+(name "powertype"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fuy")
+(baseClass "Classifier"))
+($21 353 < -yk94ms_n98_e52gs3rh_-fux "precondition" 326
+(name "precondition"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fux")
+(baseClass "Constraint"))
+($21 354 < -yk94ms_n98_e52gs3rh_-fuw "process" 326
+(name "process"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fuw")
+(baseClass "Classifier"))
+($21 355 < -yk94ms_n98_e52gs3rh_-fuv "requirement" 326
+(name "requirement"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fuv")
+(baseClass "Comment"))
+($21 356 < -yk94ms_n98_e52gs3rh_-fuu "responsibility" 326
+(name "responsibility"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fuu")
+(baseClass "Comment"))
+($21 357 < -yk94ms_n98_e52gs3rh_-fut "self" 326
+(name "self"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fut")
+(baseClass "AssociationEnd"))
+($21 358 < -yk94ms_n98_e52gs3rh_-fus "stub" 326
+(name "stub"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fus")
+(baseClass "Package"))
+($21 359 < -yk94ms_n98_e52gs3rh_-fur "systemModel" 326
+(name "systemModel"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fur")
+(baseClass "Package"))
+($21 360 < -yk94ms_n98_e52gs3rh_-fuq "table" 326
+(name "table"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fuq")
+(baseClass "Component"))
+($21 361 < -yk94ms_n98_e52gs3rh_-fup "thread" 326
+(name "thread"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fup")
+(baseClass "Classifier"))
+($21 362 < -yk94ms_n98_e52gs3rh_-fuo "topLevel" 326
+(name "topLevel"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fuo")
+(baseClass "Package"))
+($21 363 < -yk94ms_n98_e52gs3rh_-fun "type" 326
+(name "type"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fun")
+(baseClass "Class"))
+($21 364 < -yk94ms_n98_e52gs3rh_-fum "utility" 326
+(name "utility"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fum")
+(baseClass "Classifier"))
+($21 365 < -yk94ms_n98_e52gs3rh_-ful "boundary" 326
+(smallImageFile stereotype/image/small/boundary.gif)
+(name "boundary"
+)
+(defaultIconWidth 65)
+(iconFile stereotype/icon/boundary.wmf)
+(uid "-yk94ms_n98_e52gs3rh_-ful")
+(baseClass "Class"))
+($21 366 < -yk94ms_n98_e52gs3rh_-fuk "entity" 326
+(smallImageFile stereotype/image/small/entity.gif)
+(name "entity"
+)
+(iconFile stereotype/icon/entity.wmf)
+(uid "-yk94ms_n98_e52gs3rh_-fuk")
+(baseClass "Class"))
+($21 367 < -yk94ms_n98_e52gs3rh_-fuj "control" 326
+(smallImageFile stereotype/image/small/control.gif)
+(name "control"
+)
+(defaultIconWidth 60)
+(iconFile stereotype/icon/control.wmf)
+(uid "-yk94ms_n98_e52gs3rh_-fuj")
+(defaultIconHeight 60)
+(baseClass "Class"))
+($21 368 < -yk94ms_n98_e52gs3rh_-fui "interface" 326
+(name "interface"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fui")
+(baseClass "Class"))
+($21 369 < -yk94ms_n98_e52gs3rh_-fuh "body" 326
+(name "body"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fuh")
+(baseClass "Component"))
+($21 370 < -yk94ms_n98_e52gs3rh_-fug "DataType" 326
+(name "DataType"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fug")
+(baseClass "Classifier"))
+($21 371 < -yk94ms_n98_e52gs3rh_-fuf "Cluster" 326
+(name "Cluster"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fuf")
+(baseClass "Dependency"))
+($22 372 < -yk94ms_n98_e52gs3rh_-fue "styles" 1
+(uid "-yk94ms_n98_e52gs3rh_-fue"))
+($23 373 < -yk94ms_n98_e52gs3rh_-fud "People" 372
+(fillColor 255 204 153)
+(name "People"
+)
+(font "SansSerif" 12 BOLD)
+(uid "-yk94ms_n98_e52gs3rh_-fud"))
+($23 374 < -yk94ms_n98_e52gs3rh_-fuc "Experiment" 372
+(fillColor 255 153 0)
+(name "Experiment"
+)
+(font "SansSerif" 12 BOLD)
+(uid "-yk94ms_n98_e52gs3rh_-fuc"))
+($23 375 < -yk94ms_n98_e52gs3rh_-fub "exp-io" 372
+(fillColor 153 255 153)
+(name "exp-io"
+)
+(font "Serif" 10 ITALIC)
+(stereotypeFont "SansSerif" 10 PLAIN)
+(uid "-yk94ms_n98_e52gs3rh_-fub"))
+($23 376 < -yk94ms_n98_e52gs3rh_-fua "Sample" 372
+(fillColor 0 204 51)
+(name "Sample"
+)
+(font "SansSerif" 12 BOLD)
+(uid "-yk94ms_n98_e52gs3rh_-fua"))
+($23 377 < -yk94ms_n98_e52gs3rh_-fu9 "SampleComponent" 372
+(fillColor 153 255 153)
+(name "SampleComponent"
+)
+(font "SansSerif" 12 BOLD)
+(uid "-yk94ms_n98_e52gs3rh_-fu9"))
+($23 378 < -yk94ms_n98_e52gs3rh_-fu8 "Molecule" 372
+(fillColor 153 204 255)
+(name "Molecule"
+)
+(font "SansSerif" 12 BOLD)
+(uid "-yk94ms_n98_e52gs3rh_-fu8"))
+($23 379 < -yk94ms_n98_e52gs3rh_-fu7 "ExpBlueprint" 372
+(fillColor 102 153 255)
+(name "ExpBlueprint"
+)
+(font "SansSerif" 12 BOLD)
+(uid "-yk94ms_n98_e52gs3rh_-fu7"))
+($23 380 < -yk94ms_n98_e52gs3rh_-fu6 "Instrument" 372
+(fillColor 204 153 0)
+(name "Instrument"
+)
+(font "SansSerif" 12 BOLD)
+(uid "-yk94ms_n98_e52gs3rh_-fu6"))
+($23 381 < -yk94ms_n98_e52gs3rh_-fu5 "memops.Implementation" 372
+(fillColor 204 204 204)
+(name "memops.Implementation"
+)
+(fontColor 0 0 0)
+(penColor 255 255 255)
+(font "SansSerif" 12 BOLD)
+(uid "-yk94ms_n98_e52gs3rh_-fu5")
+(stereotypeColor 255 255 255))
+($23 382 < -yk94ms_n98_e52gs3rh_-fu4 "Annotation" 372
+(fillColor 102 204 255)
+(name "Annotation"
+)
+(font "SansSerif" 12 BOLD)
+(uid "-yk94ms_n98_e52gs3rh_-fu4"))
+($23 383 < -yk94ms_n98_e52gs3rh_-fu3 "ChemComp" 372
+(fillColor 0 204 204)
+(name "ChemComp"
+)
+(font "SansSerif" 12 BOLD)
+(uid "-yk94ms_n98_e52gs3rh_-fu3"))
+($23 384 < -yk94ms_n98_e52gs3rh_-fu2 "Citation" 372
+(fillColor 255 153 102)
+(name "Citation"
+)
+(font "SansSerif" 12 BOLD)
+(uid "-yk94ms_n98_e52gs3rh_-fu2"))
+($23 385 < -yk94ms_n98_e52gs3rh_-fu1 "Coordinates" 372
+(fillColor 255 255 102)
+(name "Coordinates"
+)
+(font "SansSerif" 12 BOLD)
+(uid "-yk94ms_n98_e52gs3rh_-fu1"))
+($23 386 < -yk94ms_n98_e52gs3rh_-fu0 "DbRef" 372
+(fillColor 0 204 153)
+(name "DbRef"
+)
+(font "SansSerif" 12 BOLD)
+(uid "-yk94ms_n98_e52gs3rh_-fu0"))
+($23 387 < -yk94ms_n98_e52gs3rh_-ftz "Entry" 372
+(fillColor 255 51 51)
+(name "Entry"
+)
+(font "SansSerif" 12 BOLD)
+(uid "-yk94ms_n98_e52gs3rh_-ftz"))
+($23 388 < -yk94ms_n98_e52gs3rh_-fty "Location" 372
+(fillColor 102 255 102)
+(name "Location"
+)
+(font "SansSerif" 12 BOLD)
+(uid "-yk94ms_n98_e52gs3rh_-fty"))
+($23 389 < -yk94ms_n98_e52gs3rh_-ftx "Method" 372
+(fillColor 255 204 102)
+(name "Method"
+)
+(font "SansSerif" 12 BOLD)
+(uid "-yk94ms_n98_e52gs3rh_-ftx"))
+($23 390 < -yk94ms_n98_e52gs3rh_-ftw "MolSystem" 372
+(fillColor 204 255 255)
+(name "MolSystem"
+)
+(font "SansSerif" 12 BOLD)
+(uid "-yk94ms_n98_e52gs3rh_-ftw"))
+($23 391 < -yk94ms_n98_e52gs3rh_-ftv "Nmr" 372
+(fillColor 255 204 0)
+(name "Nmr"
+)
+(font "SansSerif" 12 BOLD)
+(uid "-yk94ms_n98_e52gs3rh_-ftv"))
+($23 392 < -yk94ms_n98_e52gs3rh_-ftu "NmrReference" 372
+(fillColor 204 0 0)
+(name "NmrReference"
+)
+(font "SansSerif" 12 BOLD)
+(uid "-yk94ms_n98_e52gs3rh_-ftu"))
+($23 393 < -yk94ms_n98_e52gs3rh_-ftt "Nucleus" 372
+(fillColor 255 51 102)
+(name "Nucleus"
+)
+(font "SansSerif" 12 BOLD)
+(uid "-yk94ms_n98_e52gs3rh_-ftt"))
+($23 394 < -yk94ms_n98_e52gs3rh_-fts "RefContainer" 372
+(fillColor 204 255 153)
+(name "RefContainer"
+)
+(font "SansSerif" 12 BOLD)
+(uid "-yk94ms_n98_e52gs3rh_-fts"))
+($23 395 < -yk94ms_n98_e52gs3rh_-ftr "Target" 372
+(fillColor 0 153 204)
+(name "Target"
+)
+(font "SansSerif" 12 BOLD)
+(uid "-yk94ms_n98_e52gs3rh_-ftr"))
+($23 396 < -yk94ms_n98_e52gs3rh_-ftq "Taxonomy" 372
+(fillColor 220 153 100)
+(name "Taxonomy"
+)
+(font "SansSerif" 12 BOLD)
+(uid "-yk94ms_n98_e52gs3rh_-ftq"))
+($23 397 < -yk94ms_n98_e52gs3rh_-ftp "NmrExpPrototype" 372
+(fillColor 255 102 51)
+(name "NmrExpPrototype"
+)
+(font "SansSerif" 12 BOLD)
+(uid "-yk94ms_n98_e52gs3rh_-ftp"))
+($23 398 < -yk94ms_n98_e52gs3rh_-fto "NmrConstraints" 372
+(fillColor 255 130 201)
+(name "NmrConstraints"
+)
+(font "SansSerif" 12 BOLD)
+(uid "-yk94ms_n98_e52gs3rh_-fto"))
+($23 399 < -yk94ms_n98_e52gs3rh_-ftn "Protocol" 372
+(fillColor 255 85 168)
+(name "Protocol"
+)
+(font "SansSerif" 12 BOLD)
+(uid "-yk94ms_n98_e52gs3rh_-ftn"))
+($23 400 < -yk94ms_n98_e52gs3rh_-ftm "ChemCompCoord" 372
+(fillColor 0 185 225)
+(name "ChemCompCoord"
+)
+(font "SansSerif" 12 BOLD)
+(uid "-yk94ms_n98_e52gs3rh_-ftm"))
+($9 401 < -yk94ms_n98_e52gs3rh_-ftl "Component" 1
+(name "Component"
+)
+(namespaceRoot true)
+(uid "-yk94ms_n98_e52gs3rh_-ftl"))
+($9 402 < -yk94ms_n98_e52gs3rh_-ftk "Abstract Logical Model" 401
+(name "Abstract Logical Model"
+)
+(uid "-yk94ms_n98_e52gs3rh_-ftk"))
+($24 403 < -yk94ms_n98_e52gs3rh_-ftj "NmrDataModel" 402
+(name "NmrDataModel"
+)
+(uid "-yk94ms_n98_e52gs3rh_-ftj"))
+($12 404 < -yk94ms_n98_e52gs3rh_-fti "modelName" 403
+(name "modelName"
+)
+(value "AnsigTest"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fti"))
+($12 405 < -yk94ms_n98_e52gs3rh_-fth "modelVersion" 403
+(name "modelVersion"
+)
+(value "0_1_1"
+)
+(uid "-yk94ms_n98_e52gs3rh_-fth"))
+($24 406 < -yk94ms_n98_e52gs3rh_-ftg "NmrRefModel" 402
+(name "NmrRefModel"
+)
+(uid "-yk94ms_n98_e52gs3rh_-ftg"))
+($3 407 < -yk94ms_n98_e52gs3rh_-ftf "Main" 401
+(name "Main"
+)
+(width 6480)
+(uid "-yk94ms_n98_e52gs3rh_-ftf")
+(height 8505)
+(diagramType "component"))
+($9 408 < -yk94ms_n98_e52gs3rh_-fte "Usecase" 1
+(name "Usecase"
+)
+(namespaceRoot true)
+(uid "-yk94ms_n98_e52gs3rh_-fte"))
+($12 409 < -yk94ms_n98_e52gs3rh_-ftd "Rose::global" 408
+(name "Rose::global"
+)
+(value "TRUE"
+)
+(uid "-yk94ms_n98_e52gs3rh_-ftd"))
+($9 410 < -yk94ms_n98_e52gs3rh_-ftc "Deployment" 1
+(name "Deployment"
+)
+(namespaceRoot true)
+(uid "-yk94ms_n98_e52gs3rh_-ftc"))
+($3 411 < -yk94ms_n98_e52gs3rh_-ftb "Deployment View" 410
+(name "Deployment View"
+)
+(width 6480)
+(uid "-yk94ms_n98_e52gs3rh_-ftb")
+(height 8505)
+(diagramType "deployment"))
+($25 412)
+($27 413)
+($27 414)
+($27 415)
+($27 416)
+($27 417)
+($27 418)
+($27 419)
+($27 420)
+($27 421)
+($27 422)
+($27 423)
+($27 424)
+($27 425)
+($27 426)
+($27 427)
+($27 428)
+($27 429)
+($25 430)
+($25 431)
+($25 432)
+($25 433)
+($25 434)
+($25 435)
+($25 436)
+($25 437)
+($25 438)
+($25 439)
+($25 440)
+($25 441)
+($25 442)
+($25 443)
+($25 444)
+($25 445)
+($25 446)
+($25 447)
+($25 448)
+($25 449)
+($25 450)
+($25 451)
+($25 452)
+($25 453)
+($25 454)
+($25 455)
+($25 456)
+($25 457)
+($25 458)
+($25 459)
+($25 460)
+($25 461)
+($25 462)
+($25 463)
+($25 464)
+($25 465)
+($25 466)
+($25 467)
+($25 468)
+($25 469)
+($25 470)
+($25 471)
+($25 472)
+($25 473)
+($25 474)
+($28 475
+(name "DomainLockObject"
+)
+(uid "64m3b9_4p5_bqjok6kd_-p8j"))
+(styleAssn 4 381)
+(typeAssn 130 71)
+(assocEndAssn 71 130)
+(typeAssn 135 71)
+(assocEndAssn 71 135)
+(typeAssn 193 169)
+(assocEndAssn 169 193)
+(typeAssn 197 169)
+(assocEndAssn 169 197)
+(typeAssn 131 169)
+(assocEndAssn 169 131)
+(subtypeAssn 195 169)
+(typeAssn 260 204)
+(assocEndAssn 204 260)
+(typeAssn 136 204)
+(assocEndAssn 204 136)
+(subtypeAssn 265 204)
+(typeAssn 291 289)
+(assocEndAssn 289 291)
+(subtypeAssn 294 289)
+(supertypeAssn 294 71)
+(generalizationAssn 289 294)
+(assocEndAssn 59 292)
+(subtypeAssn 68 59)
+(supertypeAssn 68 71)
+(generalizationAssn 59 68)
+(stereotypeAssn 156 370)
+(typeRefAssn 60 156)
+(typeExpression 60 413)
+(stereotypeAssn 163 370)
+(typeRefAssn 62 163)
+(typeExpression 62 414)
+(typeRefAssn 64 163)
+(typeExpression 64 414)
+(typeRefAssn 66 163)
+(typeExpression 66 415)
+(typeAssn 292 59)
+(supertypeAssn 265 289)
+(generalizationAssn 204 265)
+(typeRefAssn 205 163)
+(typeExpression 205 416)
+(typeRefAssn 207 163)
+(typeExpression 207 417)
+(typeRefAssn 209 163)
+(typeExpression 209 416)
+(stereotypeAssn 140 370)
+(typeRefAssn 212 140)
+(typeExpression 212 418)
+(typeRefAssn 215 140)
+(typeExpression 215 418)
+(typeAssn 219 140)
+(typeExpression 219 418)
+(typeAssn 225 140)
+(typeExpression 225 418)
+(typeAssn 231 140)
+(typeExpression 231 419)
+(typeRefAssn 241 140)
+(typeExpression 241 419)
+(typeRefAssn 244 140)
+(typeExpression 244 420)
+(typeRefAssn 251 140)
+(typeExpression 251 421)
+(typeAssn 254 140)
+(typeExpression 254 421)
+(assocEndAssn 267 263)
+(typeAssn 194 267)
+(assocEndAssn 267 194)
+(subtypeAssn 283 267)
+(supertypeAssn 283 289)
+(generalizationAssn 267 283)
+(typeRefAssn 268 156)
+(typeExpression 268 416)
+(typeRefAssn 270 163)
+(typeExpression 270 422)
+(typeRefAssn 272 163)
+(typeExpression 272 416)
+(typeRefAssn 274 163)
+(typeExpression 274 416)
+(typeRefAssn 276 163)
+(typeExpression 276 416)
+(typeRefAssn 278 163)
+(typeExpression 278 416)
+(typeRefAssn 280 163)
+(typeExpression 280 416)
+(typeAssn 263 267)
+(supertypeAssn 195 204)
+(generalizationAssn 169 195)
+(typeRefAssn 170 163)
+(typeExpression 170 423)
+(typeRefAssn 172 163)
+(typeExpression 172 423)
+(typeRefAssn 173 163)
+(typeExpression 173 423)
+(typeRefAssn 175 163)
+(typeExpression 175 424)
+(assocEndAssn 296 198)
+(subtypeAssn 313 296)
+(supertypeAssn 313 204)
+(generalizationAssn 296 313)
+(typeRefAssn 297 156)
+(typeExpression 297 425)
+(typeAssn 198 296)
+(typeAssn 73 169)
+(typeExpression 73 426)
+(typeAssn 79 163)
+(typeExpression 79 427)
+(typeRefAssn 84 163)
+(typeExpression 84 427)
+(typeRefAssn 87 163)
+(typeExpression 87 428)
+(typeAssn 91 163)
+(typeExpression 91 428)
+(typeRefAssn 96 163)
+(typeExpression 96 419)
+(typeAssn 100 163)
+(typeExpression 100 419)
+(typeRefAssn 105 140)
+(typeExpression 105 419)
+(typeAssn 109 140)
+(typeExpression 109 419)
+(typeAssn 115 204)
+(typeExpression 115 421)
+(typeRefAssn 120 156)
+(typeExpression 120 429)
+(typeAssn 124 156)
+(typeExpression 124 429)
+(projectionAssn 4 71 412)
+(styleAssn 5 381)
+(projectionAssn 5 59 430)
+(styleAssn 6 381)
+(projectionAssn 6 169 431)
+(to 7 5)
+(to 8 5)
+(to 9 6)
+(from 9 4)
+(projectionAssn 9 129 432)
+(styleAssn 10 381)
+(projectionAssn 10 267 433)
+(to 11 10)
+(from 11 6)
+(projectionAssn 11 192 434)
+(styleAssn 12 381)
+(projectionAssn 12 204 435)
+(to 13 10)
+(from 13 12)
+(projectionAssn 13 259 436)
+(styleAssn 14 381)
+(projectionAssn 14 289 437)
+(to 15 14)
+(from 15 12)
+(projectionAssn 15 265 438)
+(to 16 14)
+(from 16 10)
+(projectionAssn 16 283 439)
+(styleAssn 17 381)
+(projectionAssn 17 296 440)
+(to 18 12)
+(from 18 17)
+(projectionAssn 18 313 441)
+(to 19 12)
+(from 19 6)
+(projectionAssn 19 195 442)
+(to 20 17)
+(from 20 6)
+(projectionAssn 20 196 443)
+(to 21 4)
+(from 21 5)
+(projectionAssn 21 68 444)
+(to 22 5)
+(from 22 14)
+(projectionAssn 22 290 445)
+(to 23 4)
+(from 23 14)
+(projectionAssn 23 294 446)
+(to 24 12)
+(from 24 4)
+(projectionAssn 24 134 447)
+(openDiagrams 2 3)
+(styleAssn 26 381)
+(projectionAssn 26 71 448)
+(styleAssn 27 381)
+(projectionAssn 27 59 449)
+(styleAssn 28 381)
+(projectionAssn 28 169 450)
+(to 29 28)
+(from 29 26)
+(projectionAssn 29 129 451)
+(styleAssn 30 381)
+(projectionAssn 30 267 452)
+(to 31 30)
+(from 31 28)
+(projectionAssn 31 192 453)
+(styleAssn 32 381)
+(projectionAssn 32 204 454)
+(to 33 30)
+(from 33 32)
+(projectionAssn 33 259 455)
+(styleAssn 34 381)
+(projectionAssn 34 289 456)
+(to 35 34)
+(from 35 32)
+(projectionAssn 35 265 457)
+(to 36 34)
+(from 36 30)
+(projectionAssn 36 283 458)
+(styleAssn 37 381)
+(projectionAssn 37 296 459)
+(to 38 32)
+(from 38 37)
+(projectionAssn 38 313 460)
+(to 39 32)
+(from 39 28)
+(projectionAssn 39 195 461)
+(to 40 37)
+(from 40 28)
+(projectionAssn 40 196 462)
+(to 41 26)
+(from 41 27)
+(projectionAssn 41 68 463)
+(to 42 27)
+(from 42 34)
+(projectionAssn 42 290 464)
+(to 43 26)
+(from 43 34)
+(projectionAssn 43 294 465)
+(to 44 32)
+(from 44 26)
+(projectionAssn 44 134 466)
+(openDiagrams 2 25)
+(projectionAssn 46 140 467)
+(projectionAssn 47 156 468)
+(stereotypeAssn 149 370)
+(projectionAssn 48 149 469)
+(projectionAssn 49 163 470)
+(openDiagrams 2 45)
+(styleAssn 51 381)
+(projectionAssn 51 169 471)
+(openDiagrams 2 50)
+(projectionAssn 53 58 472)
+(stereotypeAssn 322 343)
+(clientAssn 322 321)
+(supplierAssn 322 58)
+(projectionAssn 54 321 473)
+(to 55 53)
+(from 55 54)
+(projectionAssn 55 322 474)
+(openDiagrams 2 52)
+(selection 2 68)
+(lockedBy 327 475)
+(stereotypeAssn 56 327)
+(lockedBy 56 475)
+(lockedBy 326 475)
+(lockedBy 372 475)
+(stereotypeAssn 401 327)
+(modelElementAssn 403 59)
+(modelElementAssn 403 71)
+(modelElementAssn 403 140)
+(modelElementAssn 403 149)
+(modelElementAssn 403 156)
+(modelElementAssn 403 163)
+(lockedBy 401 475)
+(stereotypeAssn 408 327)
+(lockedBy 408 475)
+(stereotypeAssn 410 327)
+(lockedBy 410 475)
+(lockedBy 1 475)

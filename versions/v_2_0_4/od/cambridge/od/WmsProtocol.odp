@@ -1,0 +1,978 @@
+ObjectDomain_Shared_Package 15
+{z8kfsx_-9el_g8u3kgqo_-p74 3 "Logical" objectdomain.uml.mechanisms.UmlPackage-owns "cambridge" objectdomain.uml.mechanisms.UmlPackage-owns "WmsProtocol" objectdomain.uml.mechanisms.UmlPackage-owns
+}[objectdomain.uml.core.TypeExpression $17
+objectdomain.uml.mechanisms.UmlPackage-owns $1
+objectdomain.uml.core.Generalization-owns $10
+objectdomain.uml.core.Dependency-owns $13
+objectdomain.uml.core.Projection $15
+objectdomain.uml.core.UmlAttribute-features $6
+objectdomain.uml.core.UmlAssociationEnd-connections $9
+objectdomain.uml.view.style.BaseViewElementStyle-owns $14
+objectdomain.uml.view.ClassView-owns $3
+objectdomain.uml.core.UmlTaggedValue-taggedValues $7
+objectdomain.uml.core.UmlConstraint-constraints $11
+objectdomain.uml.core.UmlAssociation-owns $8
+objectdomain.uml.view.Diagram-owns $2
+objectdomain.uml.core.UmlOperation-features $12
+objectdomain.uml.core.UmlMultiplicity $16
+objectdomain.uml.core.UmlClass-owns $5
+objectdomain.uml.view.AssociationView-owns $4
+objectdomain.uml.core.Stereotype-owns $18
+]
+($1 1 > z8kfsx_-9el_g8u3kgqo_-p74 3 "Logical" $1 "cambridge" $1 "WmsProtocol" $1
+(name "WmsProtocol"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p74"))
+($2 2 < z8kfsx_-9el_g8u3kgqo_-p71 "_WmsProtocol-details" 1
+(name "_WmsProtocol-details"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p71")
+(diagramType "class"))
+($3 3 < z8kfsx_-9el_g8u3kgqo_-p5r "MemopsRoot" 2
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "z8kfsx_-9el_g8u3kgqo_-p5r")
+(bbx 240 10 250 30))
+($3 4 < z8kfsx_-9el_g8u3kgqo_-p5q "WmsProtocol" 2
+(uid "z8kfsx_-9el_g8u3kgqo_-p5q")
+(bbx 310 100 100 80))
+($4 5 < z8kfsx_-9el_g8u3kgqo_-p5p "" 2
+(toMultiplicityPosition 370 80)
+(uid "z8kfsx_-9el_g8u3kgqo_-p5p")
+(points 365 40 365 100)
+(fromMultiplicityPosition 350 45))
+($3 6 < z8kfsx_-9el_g8u3kgqo_-p5o "ProtocolParam" 2
+(uid "z8kfsx_-9el_g8u3kgqo_-p5o")
+(bbx 530 10 180 270))
+($4 7 < z8kfsx_-9el_g8u3kgqo_-p5n "" 2
+(toMultiplicityPosition 520 115)
+(uid "z8kfsx_-9el_g8u3kgqo_-p5n")
+(points 410 110 530 110)
+(fromMultiplicityPosition 415 85))
+($3 8 < z8kfsx_-9el_g8u3kgqo_-p5m "ProtocolService" 2
+(uid "z8kfsx_-9el_g8u3kgqo_-p5m")
+(bbx 300 250 140 140))
+($4 9 < z8kfsx_-9el_g8u3kgqo_-p5l "" 2
+(toMultiplicityPosition 360 230)
+(uid "z8kfsx_-9el_g8u3kgqo_-p5l")
+(points 370 180 370 250)
+(fromMultiplicityPosition 380 185))
+($3 10 < z8kfsx_-9el_g8u3kgqo_-p5k "ProtocolAccess" 2
+(autoSizeToFit true)
+(uid "z8kfsx_-9el_g8u3kgqo_-p5k")
+(bbx 530 310 140 130))
+($4 11 < z8kfsx_-9el_g8u3kgqo_-p5s "" 2
+(toMultiplicityPosition 520 345)
+(uid "z8kfsx_-9el_g8u3kgqo_-p5s")
+(points 440 340 530 340)
+(fromMultiplicityPosition 445 315))
+($3 12 < z8kfsx_-fvi_g8vcq3f8_-p89 "Task" 2
+(uid "z8kfsx_-fvi_g8vcq3f8_-p89")
+(bbx 10 10 190 250))
+($4 13 < z8kfsx_-fvi_g8vcq3f8_-p8p "" 2
+(uid "z8kfsx_-fvi_g8vcq3f8_-p8p")
+(points 200 145 310 145)
+(fromMultiplicityPosition 315 135))
+($3 14 < z8kfsx_-fvi_g8vcq3f8_-p7l "User" 2
+(uid "z8kfsx_-fvi_g8vcq3f8_-p7l")
+(bbx 20 330 190 90))
+($4 15 < z8kfsx_-fvi_g8vcq3f8_-p7v "" 2
+(toRolePosition 50 310)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p7v")
+(points 120 260 120 330))
+($4 16 < z8kfsx_-fvi_g8vcq3f8_-p7t "" 2
+(toMultiplicityPosition 360 335)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p7t")
+(points 210 415 530 415)
+(fromRolePosition 220 395))
+($4 17 < z8kfsx_-9el_g9fdmyol_-p92 "" 2
+(toMultiplicityPosition 715 195)
+(toRolePosition 715 200)
+(uid "z8kfsx_-9el_g9fdmyol_-p92")
+(points 710 115 760 115 760 195 710 195)
+(fromRolePosition 715 95))
+($5 18 < z8kfsx_-9el_g8u3kgqo_-p70 "WmsProtocol" 1
+(name "WmsProtocol"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p70"))
+($6 19 < z8kfsx_-9el_g8u3kgqo_-p6y "name" 18
+(changeability "frozen")
+(name "name"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p6y")
+(multiplicity "1"))
+($7 20 < z8kfsx_-9el_g8u3kgqo_-p6x "documentation" 19
+(name "documentation"
+)
+(value "name of protocol (unique key)"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p6x"))
+($7 21 < z8kfsx_-fvi_g8vcq3f8_-p2b "guid" 19
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-12:26:57_00014"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p2b"))
+($6 22 < z8kfsx_-fvi_g8vcq3f8_-p8s "details" 18
+(name "details"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p8s"))
+($7 23 < z8kfsx_-fvi_g8vcq3f8_-p2a "guid" 22
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-12:26:57_00015"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p2a"))
+($8 24 < z8kfsx_-9el_g8u3kgqo_-p6p "#<anon> (WmsProtocol, ProtocolParam)##," 18
+(name "")
+(uid "z8kfsx_-9el_g8u3kgqo_-p6p"))
+($9 25 < z8kfsx_-9el_g8u3kgqo_-p6o "#0" 24
+(changeability "frozen")
+(aggregation "composite")
+(uid "z8kfsx_-9el_g8u3kgqo_-p6o")
+(multiplicity "1"))
+($7 26 < z8kfsx_-fvi_g8vcq3f8_-p29 "guid" 25
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-12:26:57_00010"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p29"))
+($9 27 < z8kfsx_-9el_g8u3kgqo_-p6n "#1" 24
+(uid "z8kfsx_-9el_g8u3kgqo_-p6n")
+(multiplicity "*"))
+($7 28 < z8kfsx_-fvi_g8vcq3f8_-p28 "guid" 27
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-12:26:57_00011"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p28"))
+($8 29 < z8kfsx_-9el_g8u3kgqo_-p6l "#<anon> (WmsProtocol, ProtocolService)##," 18
+(name "")
+(uid "z8kfsx_-9el_g8u3kgqo_-p6l"))
+($9 30 < z8kfsx_-9el_g8u3kgqo_-p6k "#0" 29
+(changeability "frozen")
+(aggregation "composite")
+(uid "z8kfsx_-9el_g8u3kgqo_-p6k")
+(multiplicity "1"))
+($7 31 < z8kfsx_-fvi_g8vcq3f8_-p27 "guid" 30
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-12:26:57_00012"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p27"))
+($9 32 < z8kfsx_-9el_g8u3kgqo_-p6j "#1" 29
+(uid "z8kfsx_-9el_g8u3kgqo_-p6j")
+(multiplicity "*"))
+($7 33 < z8kfsx_-fvi_g8vcq3f8_-p26 "guid" 32
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-12:26:57_00013"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p26"))
+($10 34 < z8kfsx_-9el_g8u3kgqo_-p6g "#<anon> (WmsProtocol, TopObject)" 18
+(uid "z8kfsx_-9el_g8u3kgqo_-p6g"))
+($7 35 < z8kfsx_-9el_g8u3kgqo_-p6z "documentation" 18
+(name "documentation"
+)
+(value "WMS calculation protocol. Includes graphical representation."
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p6z"))
+($7 36 < z8kfsx_-9el_g8u3kgqo_-p6w "keyNames" 18
+(name "keyNames"
+)
+(value "name"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p6w"))
+($7 37 < z8kfsx_-fvi_g8vcq3f8_-p25 "guid" 18
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-12:26:54_00002"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p25"))
+($5 38 < z8kfsx_-9el_g8u3kgqo_-p6q "ProtocolParam" 1
+(name "ProtocolParam"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p6q"))
+($6 39 < z8kfsx_-9el_g8u3kgqo_-p6e "serial" 38
+(changeability "frozen")
+(name "serial"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p6e")
+(multiplicity "1"))
+($7 40 < z8kfsx_-9el_g8u3kgqo_-p6d "isAutomatic" 39
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p6d"))
+($7 41 < z8kfsx_-fvi_g8vcq3f8_-p24 "guid" 39
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-12:26:57_00019"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p24"))
+($6 42 < z8kfsx_-fvi_g8vcq3f8_-p8e "name" 38
+(name "name"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p8e"))
+($7 43 < z8kfsx_-fvi_g8vcq3f8_-p8d "documentation" 42
+(name "documentation"
+)
+(value "User-specified name. Used as layout label"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p8d"))
+($7 44 < z8kfsx_-fvi_g8vcq3f8_-p1d "guid" 42
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-13:30:17_00009"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p1d"))
+($6 45 < z8kfsx_-9el_g9fdmyol_-p98 "code" 38
+(name "code"
+)
+(uid "z8kfsx_-9el_g9fdmyol_-p98"))
+($7 46 < z8kfsx_-9el_g9fdmyol_-p97 "documentation" 45
+(name "documentation"
+)
+(value "Unique identifier for the parameter within the context of the application being run "
+)
+(uid "z8kfsx_-9el_g9fdmyol_-p97"))
+($7 47 < z8kfsx_-9el_g9fdmyol_-p96 "guid" 45
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-20-10:42:03_00001"
+)
+(uid "z8kfsx_-9el_g9fdmyol_-p96"))
+($6 48 < z8kfsx_-9el_g8u3kgqo_-p6b "paramType" 38
+(name "paramType"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p6b"))
+($7 49 < z8kfsx_-9el_g8u3kgqo_-p6a "documentation" 48
+(name "documentation"
+)
+(value "Parameter type, corresponding to NmrCalc Data or RunParameter types."
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p6a"))
+($7 50 < z8kfsx_-fvi_g8vcq3f8_-p1l "guid" 48
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-13:30:17_00001"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p1l"))
+($6 51 < z8kfsx_-9el_g9fdmyol_-p8u "groupId" 38
+(name "groupId"
+)
+(uid "z8kfsx_-9el_g9fdmyol_-p8u"))
+($7 52 < z8kfsx_-9el_g9fdmyol_-p8q "documentation" 51
+(name "documentation"
+)
+(value "Integer, grouping related parameters within the context of the application being run "
+)
+(uid "z8kfsx_-9el_g9fdmyol_-p8q"))
+($7 53 < z8kfsx_-9el_g9fdmyol_-p8n "guid" 51
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-20-14:35:13_00004"
+)
+(uid "z8kfsx_-9el_g9fdmyol_-p8n"))
+($6 54 < z8kfsx_-9el_g9fdmyol_-p8t "ioRole" 38
+(name "ioRole"
+)
+(uid "z8kfsx_-9el_g9fdmyol_-p8t"))
+($7 55 < z8kfsx_-9el_g9fdmyol_-p8p "documentation" 54
+(name "documentation"
+)
+(value "Role of data in calculation (input / output)."
+)
+(uid "z8kfsx_-9el_g9fdmyol_-p8p"))
+($7 56 < z8kfsx_-9el_g9fdmyol_-p8m "guid" 54
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-20-14:35:13_00005"
+)
+(uid "z8kfsx_-9el_g9fdmyol_-p8m"))
+($6 57 < z8kfsx_-9el_g9fdmyol_-p8s "weight" 38
+(initialValue "1.0"
+)
+(name "weight"
+)
+(uid "z8kfsx_-9el_g9fdmyol_-p8s")
+(multiplicity "1"))
+($7 58 < z8kfsx_-9el_g9fdmyol_-p8o "documentation" 57
+(name "documentation"
+)
+(value "Weight given to data"
+)
+(uid "z8kfsx_-9el_g9fdmyol_-p8o"))
+($7 59 < z8kfsx_-9el_g9fdmyol_-p8l "guid" 57
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-20-14:35:13_00006"
+)
+(uid "z8kfsx_-9el_g9fdmyol_-p8l"))
+($6 60 < z8kfsx_-fvi_g8vcq3f8_-p8h "hicard" 38
+(initialValue "1"
+)
+(name "hicard"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p8h")
+(multiplicity "1"))
+($7 61 < z8kfsx_-fvi_g8vcq3f8_-p8c "documentation" 60
+(name "documentation"
+)
+(value "High cardinality (maximum number of parameter values)"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p8c"))
+($7 62 < z8kfsx_-fvi_g8vcq3f8_-p1k "guid" 60
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-13:30:17_00002"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p1k"))
+($6 63 < z8kfsx_-fvi_g8vcq3f8_-p8g "locard" 38
+(initialValue "0"
+)
+(name "locard"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p8g")
+(multiplicity "1"))
+($7 64 < z8kfsx_-fvi_g8vcq3f8_-p8b "documentation" 63
+(name "documentation"
+)
+(value "Low cardinality (minimum number of parameter values)"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p8b"))
+($7 65 < z8kfsx_-fvi_g8vcq3f8_-p1j "guid" 63
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-13:30:17_00003"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p1j"))
+($6 66 < z8kfsx_-fvi_g8vcq3f8_-p8f "isOrdered" 38
+(initialValue "False"
+)
+(name "isOrdered"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p8f")
+(multiplicity "1"))
+($7 67 < z8kfsx_-fvi_g8vcq3f8_-p8a "documentation" 66
+(name "documentation"
+)
+(value "Are parameter values ordered"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p8a"))
+($7 68 < z8kfsx_-fvi_g8vcq3f8_-p1i "guid" 66
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-13:30:17_00004"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p1i"))
+($6 69 < z8kfsx_-9el_g8u3kgqo_-p69 "row" 38
+(initialValue "0"
+)
+(name "row"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p69")
+(multiplicity "1"))
+($7 70 < z8kfsx_-fvi_g8vcq3f8_-p8k "documentation" 69
+(name "documentation"
+)
+(value "Lay-out row number"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p8k"))
+($7 71 < z8kfsx_-fvi_g8vcq3f8_-p1h "guid" 69
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-13:30:17_00005"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p1h"))
+($6 72 < z8kfsx_-9el_g8u3kgqo_-p68 "col" 38
+(initialValue "0"
+)
+(name "col"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p68")
+(multiplicity "1"))
+($7 73 < z8kfsx_-fvi_g8vcq3f8_-p8j "documentation" 72
+(name "documentation"
+)
+(value "Lay-out column number"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p8j"))
+($7 74 < z8kfsx_-fvi_g8vcq3f8_-p1g "guid" 72
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-13:30:17_00006"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p1g"))
+($6 75 < z8kfsx_-9el_g8u3kgqo_-p67 "rowspan" 38
+(initialValue "1"
+)
+(name "rowspan"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p67")
+(multiplicity "1"))
+($7 76 < z8kfsx_-fvi_g8vcq3f8_-p1f "guid" 75
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-13:30:17_00007"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p1f"))
+($6 77 < z8kfsx_-9el_g8u3kgqo_-p66 "colspan" 38
+(initialValue "1"
+)
+(name "colspan"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p66")
+(multiplicity "1"))
+($7 78 < z8kfsx_-fvi_g8vcq3f8_-p8i "documentation" 77
+(name "documentation"
+)
+(value "Lay-out column span"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p8i"))
+($7 79 < z8kfsx_-fvi_g8vcq3f8_-p1e "guid" 77
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-13:30:17_00008"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p1e"))
+($10 80 < z8kfsx_-9el_g8u3kgqo_-p6h "#<anon> (ProtocolParam, DataObject)" 38
+(uid "z8kfsx_-9el_g8u3kgqo_-p6h"))
+($8 81 < z8kfsx_-9el_g9fdmyol_-p93 "#<anon> (ProtocolParam, )##relatesTo,dependentParams" 38
+(name "")
+(uid "z8kfsx_-9el_g9fdmyol_-p93"))
+($9 82 < z8kfsx_-9el_g9fdmyol_-p91 "relatesTo#0" 81
+(name "relatesTo"
+)
+(uid "z8kfsx_-9el_g9fdmyol_-p91"))
+($7 83 < z8kfsx_-9el_g9fdmyol_-p90 "documentation" 82
+(name "documentation"
+)
+(value "ProtocolParam that this Param depends on, e.g. because this is a parameter relating to a data object or a data object reatled to another"
+)
+(uid "z8kfsx_-9el_g9fdmyol_-p90"))
+($7 84 < z8kfsx_-9el_g9fdmyol_-p8k "guid" 82
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-20-14:35:13_00001"
+)
+(uid "z8kfsx_-9el_g9fdmyol_-p8k"))
+($11 85 < z8kfsx_-9el_g9fdmyol_-p8w "No_cyclical_ProtocolParam_dependency" 82
+(name "No_cyclical_ProtocolParam_dependency"
+)
+(uid "z8kfsx_-9el_g9fdmyol_-p8w")
+(body "code:python"
+"_"
+"isValid = True"
+"obj = self"
+"while obj is not None:"
+"  obj = obj.relatesTo"
+"  if obj is self:"
+"    isValid = False"
+"    break"
+"_"
+"code:java"
+"_"
+"/* NBNB TBD */"
+))
+($7 86 < z8kfsx_-9el_g9fdmyol_-p8j "guid" 85
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-20-14:35:13_00003"
+)
+(uid "z8kfsx_-9el_g9fdmyol_-p8j"))
+($9 87 < z8kfsx_-9el_g9fdmyol_-p8z "dependentParams#1" 81
+(name "dependentParams"
+)
+(uid "z8kfsx_-9el_g9fdmyol_-p8z")
+(multiplicity "*"))
+($7 88 < z8kfsx_-9el_g9fdmyol_-p8y "baseName" 87
+(name "baseName"
+)
+(value "dependentParam"
+)
+(uid "z8kfsx_-9el_g9fdmyol_-p8y"))
+($7 89 < z8kfsx_-9el_g9fdmyol_-p8x "documentation" 87
+(name "documentation"
+)
+(value "ProtocolParams that depend on this one be they run parameters or related pieces of data"
+)
+(uid "z8kfsx_-9el_g9fdmyol_-p8x"))
+($7 90 < z8kfsx_-9el_g9fdmyol_-p8i "guid" 87
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-20-14:35:13_00002"
+)
+(uid "z8kfsx_-9el_g9fdmyol_-p8i"))
+($7 91 < z8kfsx_-9el_g8u3kgqo_-p6i "documentation" 38
+(name "documentation"
+)
+(value "WMS parameter, its identification, type, and display instructions (widget)"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p6i"))
+($7 92 < z8kfsx_-9el_g8u3kgqo_-p6c "keyNames" 38
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p6c"))
+($7 93 < z8kfsx_-fvi_g8vcq3f8_-p23 "guid" 38
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-12:26:54_00003"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p23"))
+($5 94 < z8kfsx_-9el_g8u3kgqo_-p6m "ProtocolService" 1
+(name "ProtocolService"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p6m"))
+($6 95 < z8kfsx_-9el_g8u3kgqo_-p65 "serial" 94
+(changeability "frozen")
+(name "serial"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p65")
+(multiplicity "1"))
+($7 96 < z8kfsx_-9el_g8u3kgqo_-p64 "isAutomatic" 95
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p64"))
+($7 97 < z8kfsx_-fvi_g8vcq3f8_-p1c "guid" 95
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-13:30:17_00012"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p1c"))
+($6 98 < z8kfsx_-fvi_g8vcq3f8_-p88 "url" 94
+(name "url"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p88"))
+($7 99 < z8kfsx_-fvi_g8vcq3f8_-p83 "documentation" 98
+(name "documentation"
+)
+(value "Url of calculation service"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p83"))
+($7 100 < z8kfsx_-fvi_g8vcq3f8_-p1b "guid" 98
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-13:30:17_00013"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p1b"))
+($6 101 < z8kfsx_-fvi_g8vcq3f8_-p86 "login" 94
+(name "login"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p86"))
+($7 102 < z8kfsx_-fvi_g8vcq3f8_-p82 "documentation" 101
+(name "documentation"
+)
+(value "Login string for service"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p82"))
+($7 103 < z8kfsx_-fvi_g8vcq3f8_-p1a "guid" 101
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-13:30:17_00014"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p1a"))
+($6 104 < z8kfsx_-fvi_g8vcq3f8_-p87 "run" 94
+(name "run"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p87"))
+($7 105 < z8kfsx_-fvi_g8vcq3f8_-p81 "documentation" 104
+(name "documentation"
+)
+(value "String describing the run"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p81"))
+($7 106 < z8kfsx_-fvi_g8vcq3f8_-p19 "guid" 104
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-13:30:17_00015"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p19"))
+($6 107 < z8kfsx_-fvi_g8vcq3f8_-p85 "status" 94
+(name "status"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p85"))
+($7 108 < z8kfsx_-fvi_g8vcq3f8_-p80 "documentation" 107
+(name "documentation"
+)
+(value "String describing run status"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p80"))
+($7 109 < z8kfsx_-fvi_g8vcq3f8_-p18 "guid" 107
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-13:30:17_00016"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p18"))
+($6 110 < z8kfsx_-fvi_g8vcq3f8_-p84 "result" 94
+(name "result"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p84"))
+($7 111 < z8kfsx_-fvi_g8vcq3f8_-p7z "documentation" 110
+(name "documentation"
+)
+(value "Text describing the run result"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p7z"))
+($7 112 < z8kfsx_-fvi_g8vcq3f8_-p17 "guid" 110
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-13:30:17_00017"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p17"))
+($10 113 < z8kfsx_-9el_g8u3kgqo_-p6f "#<anon> (ProtocolService, DataObject)" 94
+(uid "z8kfsx_-9el_g8u3kgqo_-p6f"))
+($8 114 < z8kfsx_-9el_g8u3kgqo_-p5v "#<anon> (ProtocolService, ProtocolAccess)##," 94
+(name "")
+(uid "z8kfsx_-9el_g8u3kgqo_-p5v"))
+($9 115 < z8kfsx_-9el_g8u3kgqo_-p5u "#0" 114
+(changeability "frozen")
+(aggregation "composite")
+(uid "z8kfsx_-9el_g8u3kgqo_-p5u")
+(multiplicity "1"))
+($7 116 < z8kfsx_-fvi_g8vcq3f8_-p16 "guid" 115
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-13:30:17_00010"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p16"))
+($9 117 < z8kfsx_-9el_g8u3kgqo_-p5t "#1" 114
+(uid "z8kfsx_-9el_g8u3kgqo_-p5t")
+(multiplicity "*"))
+($7 118 < z8kfsx_-fvi_g8vcq3f8_-p15 "guid" 117
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-13:30:17_00011"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p15"))
+($7 119 < z8kfsx_-9el_g8u3kgqo_-p63 "keyNames" 94
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p63"))
+($7 120 < z8kfsx_-9el_g8u3kgqo_-p62 "documentation" 94
+(name "documentation"
+)
+(value "WMS calcuoation service description"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p62"))
+($7 121 < z8kfsx_-fvi_g8vcq3f8_-p22 "guid" 94
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-12:26:54_00004"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p22"))
+($5 122 < z8kfsx_-9el_g8u3kgqo_-p61 "ProtocolAccess" 1
+(name "ProtocolAccess"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p61"))
+($6 123 < z8kfsx_-9el_g8u3kgqo_-p60 "serial" 122
+(changeability "frozen")
+(name "serial"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p60")
+(multiplicity "1"))
+($7 124 < z8kfsx_-9el_g8u3kgqo_-p5z "isAutomatic" 123
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p5z"))
+($7 125 < z8kfsx_-fvi_g8vcq3f8_-p21 "guid" 123
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-12:26:57_00016"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p21"))
+($6 126 < z8kfsx_-fvi_g913cbxz_-p98 "localUserName" 122
+(name "localUserName"
+)
+(uid "z8kfsx_-fvi_g913cbxz_-p98")
+(multiplicity "1"))
+($7 127 < z8kfsx_-fvi_g913cbxz_-p96 "documentation" 126
+(name "documentation"
+)
+(value "User name on liocal system - key for derived ilnk to User object"
+)
+(uid "z8kfsx_-fvi_g913cbxz_-p96"))
+($7 128 < z8kfsx_-fvi_g913cbxz_-p6y "guid" 126
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-10-13:46:55_00003"
+)
+(uid "z8kfsx_-fvi_g913cbxz_-p6y"))
+($6 129 < z8kfsx_-fvi_g8vcq3f8_-p7s "userName" 122
+(name "userName"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p7s")
+(multiplicity "1"))
+($7 130 < z8kfsx_-fvi_g8vcq3f8_-p20 "guid" 129
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-12:26:57_00017"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p20"))
+($7 131 < z8kfsx_-fvi_g913cbxz_-p97 "documentation" 129
+(name "documentation"
+)
+(value "User name for accessing protocol"
+)
+(uid "z8kfsx_-fvi_g913cbxz_-p97"))
+($6 132 < z8kfsx_-fvi_g8vcq3f8_-p7r "password" 122
+(name "password"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p7r"))
+($7 133 < z8kfsx_-fvi_g8vcq3f8_-p7q "documentation" 132
+(name "documentation"
+)
+(value "Password name for protocol access"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p7q"))
+($7 134 < z8kfsx_-fvi_g8vcq3f8_-p1z "guid" 132
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-12:26:57_00018"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p1z"))
+($12 135 < z8kfsx_-fvi_g913cbxz_-p94 "getLocalUser" 122
+(name "getLocalUser"
+)
+(uid "z8kfsx_-fvi_g913cbxz_-p94")
+(isQuery true))
+($7 136 < z8kfsx_-fvi_g913cbxz_-p93 "documentation" 135
+(name "documentation"
+)
+(value "getter for derived link localUser"
+)
+(uid "z8kfsx_-fvi_g913cbxz_-p93"))
+($7 137 < z8kfsx_-fvi_g913cbxz_-p92 "opType" 135
+(name "opType"
+)
+(value "get"
+)
+(uid "z8kfsx_-fvi_g913cbxz_-p92"))
+($7 138 < z8kfsx_-fvi_g913cbxz_-p91 "code:python" 135
+(name "code:python"
+)
+(value "result = self.root.currentAccessControlStore"
+"if result is not None:"
+"  result = result.findFirstUser(name=self.localUserIName)"
+)
+(uid "z8kfsx_-fvi_g913cbxz_-p91"))
+($7 139 < z8kfsx_-fvi_g913cbxz_-p90 "code:java" 135
+(name "code:java"
+)
+(value "memops.api.AccessControl.AccessControlStore controlStore = getRoot().getCurrentAccessControlStore();"
+"result = null;"
+"if (controlStore != null) result = controlStore.findFirstUser(\"name\", getLocalUserName());"
+)
+(uid "z8kfsx_-fvi_g913cbxz_-p90"))
+($7 140 < z8kfsx_-fvi_g913cbxz_-p6x "guid" 135
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-10-13:46:55_00004"
+)
+(uid "z8kfsx_-fvi_g913cbxz_-p6x"))
+($10 141 < z8kfsx_-9el_g8u3kgqo_-p5w "#<anon> (ProtocolAccess, DataObject)" 122
+(uid "z8kfsx_-9el_g8u3kgqo_-p5w"))
+($7 142 < z8kfsx_-9el_g8u3kgqo_-p5y "documentation" 122
+(name "documentation"
+)
+(value "Connection information for specific user"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p5y"))
+($7 143 < z8kfsx_-9el_g8u3kgqo_-p5x "keyNames" 122
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p5x"))
+($7 144 < z8kfsx_-fvi_g8vcq3f8_-p1y "guid" 122
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-12:26:54_00005"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p1y"))
+($13 145 < z8kfsx_-9el_g9fdmyol_-p8v "#<anon> (WmsProtocol, NmrCalc)" 1
+(uid "z8kfsx_-9el_g9fdmyol_-p8v"))
+($7 146 < z8kfsx_-9el_g8u3kgqo_-p73 "shortName" 1
+(name "shortName"
+)
+(value "WMSP"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p73"))
+($7 147 < z8kfsx_-9el_g8u3kgqo_-p72 "documentation" 1
+(name "documentation"
+)
+(value "WMS protocol description"
+)
+(uid "z8kfsx_-9el_g8u3kgqo_-p72"))
+($7 148 < z8kfsx_-fvi_g8vcq3f8_-p1x "guid" 1
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-12:26:54_00001"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-p1x"))
+($15 150)
+($15 152)
+($17 155)
+($17 157)
+($17 161)
+($17 167)
+($15 168)
+($15 170)
+($15 171)
+($15 172)
+($15 173)
+($15 174)
+($15 175)
+($15 176)
+($15 178)
+($15 180)
+($15 182)
+($15 184)
+($15 186)
+($14 149 @ -yk94ms_-e3s_e41656c6_-fvw 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "memops.Implementation" $14)
+($5 151 @ -yk94ms_-e3s_e41656c6_-gyg 4 "Logical" $1 "memops" $1 "Implementation" $1 "MemopsRoot" $5)
+($5 153 @ z8kflu_63g_errlz7sn_-p8u 4 "Logical" $1 "memops" $1 "Implementation" $1 "TopObject" $5)
+($5 154 @ -yk94ms_-e3s_e41656c6_-gzz 4 "Logical" $1 "memops" $1 "Implementation" $1 "Word" $5)
+($5 156 @ -yk94ms_-e3s_e41656c6_-h04 4 "Logical" $1 "memops" $1 "Implementation" $1 "Text" $5)
+($5 158 @ -yk94ms_-e3s_e41656c6_-gpe 4 "Logical" $1 "memops" $1 "Implementation" $1 "DataObject" $5)
+($5 159 @ -yk94ms_-e3s_e41656c6_-h0t 4 "Logical" $1 "memops" $1 "Implementation" $1 "Int" $5)
+($5 160 @ -yk94ms_-e3s_e41656c6_-h0m 4 "Logical" $1 "memops" $1 "Implementation" $1 "Line" $5)
+($5 162 @ z8kfsx_-fvi_fuv25qf3_-p44 5 "Logical" $1 "ccp" $1 "nmr" $1 "NmrCalc" $1 "IoRole" $5)
+($5 163 @ -yk94ms_-e3s_e41656c6_-gnv 4 "Logical" $1 "memops" $1 "Implementation" $1 "FloatRatio" $5)
+($5 164 @ -yk94ms_-e3s_e41656c6_-h1k 4 "Logical" $1 "memops" $1 "Implementation" $1 "Boolean" $5)
+($5 165 @ -yk94ms_-e3s_e41656c6_-gqa 4 "Logical" $1 "memops" $1 "Implementation" $1 "Url" $5)
+($5 166 @ -yk94ms_-e3s_e41656c6_-h0a 4 "Logical" $1 "memops" $1 "Implementation" $1 "String" $5)
+($8 169 @ z8kfsx_-9el_g8u3kgqo_-p6t 5 "Logical" $1 "memops" $1 "Implementation" $1 "MemopsRoot" $5 "#<anon> (MemopsRoot, WmsProtocol)##," $8)
+($5 177 @ z8kfsx_-fvi_fqjirlib_-p7b 4 "Logical" $1 "cambridge" $1 "Wms" $1 "Task" $5)
+($8 179 @ z8kfsx_-fvi_g8vcq3f8_-p8q 5 "Logical" $1 "cambridge" $1 "Wms" $1 "Task" $5 "#<anon> (Task, WmsProtocol)##," $8)
+($5 181 @ -na6ls1_77l_echf85hk_-p92 4 "Logical" $1 "memops" $1 "AccessControl" $1 "User" $5)
+($8 183 @ z8kfsx_-9el_g8u3kgqo_-p4u 5 "Logical" $1 "cambridge" $1 "Wms" $1 "Task" $5 "#<anon> (Task, User)##,operator" $8)
+($8 185 @ z8kfsx_-fvi_g8vcq3f8_-p7u 5 "Logical" $1 "memops" $1 "AccessControl" $1 "User" $5 "#<anon> (User, ProtocolAccess)##localUser," $8)
+($18 187 @ -yk94ms_-e3s_e41656c6_-fwy 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "import" $18)
+($1 188 @ z8kfsx_-o65_ftli6gtq_-p98 4 "Logical" $1 "ccp" $1 "nmr" $1 "NmrCalc" $1)
+(styleAssn 3 149)
+(projectionAssn 3 151 150)
+(typeAssn 25 18)
+(assocEndAssn 18 25)
+(typeAssn 30 18)
+(assocEndAssn 18 30)
+(subtypeAssn 34 18)
+(supertypeAssn 34 153)
+(generalizationAssn 18 34)
+(typeRefAssn 19 154)
+(typeExpression 19 155)
+(typeRefAssn 22 156)
+(typeExpression 22 157)
+(assocEndAssn 38 27)
+(typeAssn 82 38)
+(assocEndAssn 38 82)
+(typeAssn 87 38)
+(assocEndAssn 38 87)
+(subtypeAssn 80 38)
+(supertypeAssn 80 158)
+(generalizationAssn 38 80)
+(typeRefAssn 39 159)
+(typeExpression 39 155)
+(typeRefAssn 42 160)
+(typeExpression 42 157)
+(typeRefAssn 45 154)
+(typeExpression 45 161)
+(typeRefAssn 48 154)
+(typeExpression 48 155)
+(typeRefAssn 51 159)
+(typeExpression 51 161)
+(typeRefAssn 54 162)
+(typeExpression 54 161)
+(typeRefAssn 57 163)
+(typeExpression 57 161)
+(typeRefAssn 60 159)
+(typeExpression 60 157)
+(typeRefAssn 63 159)
+(typeExpression 63 157)
+(typeRefAssn 66 164)
+(typeExpression 66 157)
+(typeRefAssn 69 159)
+(typeExpression 69 155)
+(typeRefAssn 72 159)
+(typeExpression 72 155)
+(typeRefAssn 75 159)
+(typeExpression 75 155)
+(typeRefAssn 77 159)
+(typeExpression 77 155)
+(typeAssn 27 38)
+(assocEndAssn 94 32)
+(typeAssn 115 94)
+(assocEndAssn 94 115)
+(subtypeAssn 113 94)
+(supertypeAssn 113 158)
+(generalizationAssn 94 113)
+(typeRefAssn 95 159)
+(typeExpression 95 155)
+(typeRefAssn 98 165)
+(typeExpression 98 157)
+(typeRefAssn 101 160)
+(typeExpression 101 157)
+(typeRefAssn 104 160)
+(typeExpression 104 157)
+(typeRefAssn 107 160)
+(typeExpression 107 157)
+(typeRefAssn 110 166)
+(typeExpression 110 157)
+(assocEndAssn 122 117)
+(subtypeAssn 141 122)
+(supertypeAssn 141 158)
+(generalizationAssn 122 141)
+(typeRefAssn 123 159)
+(typeExpression 123 155)
+(typeRefAssn 126 160)
+(typeExpression 126 167)
+(typeRefAssn 129 160)
+(typeExpression 129 157)
+(typeRefAssn 132 160)
+(typeExpression 132 157)
+(typeAssn 117 122)
+(typeAssn 32 94)
+(projectionAssn 4 18 152)
+(to 5 4)
+(from 5 3)
+(projectionAssn 5 169 168)
+(projectionAssn 6 38 170)
+(to 7 6)
+(from 7 4)
+(projectionAssn 7 24 171)
+(projectionAssn 8 94 172)
+(to 9 8)
+(from 9 4)
+(projectionAssn 9 29 173)
+(projectionAssn 10 122 174)
+(to 11 10)
+(from 11 8)
+(projectionAssn 11 114 175)
+(projectionAssn 12 177 176)
+(to 13 4)
+(from 13 12)
+(projectionAssn 13 179 178)
+(styleAssn 14 149)
+(projectionAssn 14 181 180)
+(to 15 14)
+(from 15 12)
+(projectionAssn 15 183 182)
+(to 16 10)
+(from 16 14)
+(projectionAssn 16 185 184)
+(to 17 6)
+(from 17 6)
+(projectionAssn 17 81 186)
+(stereotypeAssn 145 187)
+(clientAssn 145 1)
+(supplierAssn 145 188)

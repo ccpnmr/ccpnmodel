@@ -1,0 +1,1762 @@
+ObjectDomain_Shared_Package 15
+{-yk94ms_-e3s_e41656c6_-hgs 4 "Logical" objectdomain.uml.mechanisms.UmlPackage-owns "ccp" objectdomain.uml.mechanisms.UmlPackage-owns "nmr" objectdomain.uml.mechanisms.UmlPackage-owns "NmrEntry" objectdomain.uml.mechanisms.UmlPackage-owns
+}[objectdomain.uml.core.TypeExpression $15
+objectdomain.uml.mechanisms.UmlPackage-owns $1
+objectdomain.uml.core.Generalization-owns $10
+objectdomain.uml.core.Dependency-owns $11
+objectdomain.uml.core.Projection $13
+objectdomain.uml.core.UmlAttribute-features $6
+objectdomain.uml.core.UmlAssociationEnd-connections $9
+objectdomain.uml.view.style.BaseViewElementStyle-owns $12
+objectdomain.uml.view.ClassView-owns $3
+objectdomain.uml.core.UmlTaggedValue-taggedValues $7
+objectdomain.uml.core.UmlAssociation-owns $8
+objectdomain.uml.view.Diagram-owns $2
+objectdomain.uml.core.UmlMultiplicity $14
+objectdomain.uml.core.UmlClass-owns $5
+objectdomain.uml.view.AssociationView-owns $4
+objectdomain.uml.core.Stereotype-owns $16
+]
+($1 1 > -yk94ms_-e3s_e41656c6_-hgs 4 "Logical" $1 "ccp" $1 "nmr" $1 "NmrEntry" $1
+(name "NmrEntry"
+)
+(uid "-yk94ms_-e3s_e41656c6_-hgs"))
+($2 2 < -yk94ms_85r_eqyymv3f_-flm "_NmrEntry-details" 1
+(name "_NmrEntry-details"
+)
+(uid "-yk94ms_85r_eqyymv3f_-flm")
+(diagramType "class"))
+($3 3 < -yk94ms_85r_eqyymv3f_-fll "Entry" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-fll")
+(bbx 350 350 150 110))
+($3 4 < -yk94ms_85r_eqyymv3f_-flk "Person" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-flk")
+(bbx 670 380 190 170))
+($4 5 < -yk94ms_85r_eqyymv3f_-flj "" 2
+(toMultiplicityPosition 660 435)
+(toRolePosition 565 400)
+(uid "-yk94ms_85r_eqyymv3f_-flj")
+(points 500 425 670 425)
+(fromRolePosition 505 430)
+(fromMultiplicityPosition 505 415))
+($3 6 < -yk94ms_85r_eqyymv3f_-fli "Study" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-fli")
+(bbx 750 30 110 110))
+($4 7 < -yk94ms_85r_eqyymv3f_-flh "" 2
+(toMultiplicityPosition 505 335)
+(toRolePosition 530 335)
+(uid "-yk94ms_85r_eqyymv3f_-flh")
+(points 840 140 840 355 500 355))
+($3 8 < -yk94ms_85r_eqyymv3f_-flg "RelatedEntry" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-flg")
+(bbx 250 740 220 90))
+($4 9 < -yk94ms_85r_eqyymv3f_-flf "" 2
+(toMultiplicityPosition 355 720)
+(toRolePosition 310 700)
+(uid "-yk94ms_85r_eqyymv3f_-flf")
+(points 365 460 365 740)
+(fromMultiplicityPosition 375 465))
+($3 10 < -yk94ms_85r_eqyymv3f_-fle "Experiment" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-fle")
+(bbx 40 600 190 250))
+($3 11 < -yk94ms_85r_eqyymv3f_-fld "MolSystem" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-fld")
+(bbx 1240 10 230 250))
+($3 12 < -yk94ms_85r_eqyymv3f_-flc "StructureGroup" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-flc")
+(bbx 1160 390 260 90))
+($3 13 < -yk94ms_85r_eqyymv3f_-flb "AbstractMeasurementList" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-flb")
+(bbx 50 30 250 130))
+($3 14 < -yk94ms_85r_eqyymv3f_-fla "DerivedDataList" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-fla")
+(bbx 50 310 190 80))
+($4 15 < -yk94ms_85r_eqyymv3f_-fl9 "" 2
+(toMultiplicityPosition 1225 490)
+(uid "-yk94ms_85r_eqyymv3f_-fl9")
+(points 430 460 430 715 1215 715 1215 480)
+(fromRolePosition 405 555)
+(fromMultiplicityPosition 420 470))
+($4 16 < -yk94ms_85r_eqyymv3f_-fl8 "" 2
+(toMultiplicityPosition 895 845)
+(uid "-yk94ms_85r_eqyymv3f_-fl8")
+(points 410 460 410 730 1435 730 1435 260)
+(fromRolePosition 385 530)
+(fromMultiplicityPosition 395 470))
+($4 17 < -yk94ms_85r_eqyymv3f_-fl7 "" 2
+(toMultiplicityPosition 340 370)
+(toRolePosition 290 370)
+(uid "-yk94ms_85r_eqyymv3f_-fl7")
+(points 65 600 65 390 350 390)
+(fromMultiplicityPosition 50 580))
+($4 18 < -yk94ms_85r_eqyymv3f_-fl6 "" 2
+(toMultiplicityPosition 340 355)
+(toRolePosition 285 330)
+(uid "-yk94ms_85r_eqyymv3f_-fl6")
+(points 240 350 350 350)
+(fromMultiplicityPosition 250 360))
+($4 19 < -yk94ms_85r_eqyymv3f_-fl5 "" 2
+(toMultiplicityPosition 400 330)
+(toRolePosition 385 315)
+(uid "-yk94ms_85r_eqyymv3f_-fl5")
+(points 300 100 410 100 410 350)
+(fromRolePosition 310 75)
+(fromMultiplicityPosition 305 110))
+($3 20 < -yk94ms_85r_eqyymv3f_-fl4 "NaturalSource" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-fl4")
+(bbx 880 30 240 430))
+($4 21 < -yk94ms_85r_eqyymv3f_-fl3 "" 2
+(uid "-yk94ms_85r_eqyymv3f_-fl3")
+(points 465 460 465 680 1100 680 1100 460)
+(fromRolePosition 435 505)
+(fromMultiplicityPosition 455 470))
+($4 22 < -yk94ms_85r_eqyymv3f_-fl0 "" 2
+(toMultiplicityPosition 1300 370)
+(uid "-yk94ms_85r_eqyymv3f_-fl0")
+(points 1325 260 1325 390)
+(fromMultiplicityPosition 1300 270))
+($4 23 < -yk94ms_85r_eqyymv3f_-fky "" 2
+(toMultiplicityPosition 660 395)
+(toRolePosition 605 370)
+(uid "-yk94ms_85r_eqyymv3f_-fky")
+(points 500 390 670 390)
+(fromRolePosition 505 395)
+(toOrderedPosition 670 365)
+(fromMultiplicityPosition 505 365))
+($3 24 < -yk94ms_85r_eqyymv3f_-fkx "StructureGeneration" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-fkx")
+(bbx 50 180 320 110))
+($4 25 < -yk94ms_85r_eqyymv3f_-fkw "" 2
+(toMultiplicityPosition 370 330)
+(toRolePosition 325 315)
+(uid "-yk94ms_85r_eqyymv3f_-fkw")
+(points 365 290 365 350)
+(fromMultiplicityPosition 355 300))
+($4 26 < -yk94ms_85r_eqyymv3f_-fku "" 2
+(toMultiplicityPosition 340 850)
+(toRolePosition 235 845)
+(uid "-yk94ms_85r_eqyymv3f_-fku")
+(points 1465 260 1465 835 230 835)
+(fromMultiplicityPosition 1470 265))
+($3 27 < -yk94ms_85r_eqyymv3f_-fkt "Software" 2
+(uid "-yk94ms_85r_eqyymv3f_-fkt")
+(bbx 890 500 190 160))
+($4 28 < -yk94ms_85r_eqyymv3f_-fks "" 2
+(toMultiplicityPosition 880 630)
+(toRolePosition 810 630)
+(uid "-yk94ms_85r_eqyymv3f_-fks")
+(points 490 460 490 655 890 655)
+(fromRolePosition 470 530)
+(fromMultiplicityPosition 480 465))
+($3 29 < -yk94ms_85r_eqyymv3f_-fkr "Group" 2
+(uid "-yk94ms_85r_eqyymv3f_-fkr")
+(bbx 540 560 190 90))
+($4 30 < -yk94ms_85r_eqyymv3f_-fkp "" 2
+(toMultiplicityPosition 525 560)
+(toRolePosition 545 540)
+(uid "-yk94ms_85r_eqyymv3f_-fkp")
+(points 500 460 500 560 540 560)
+(fromRolePosition 500 485)
+(fromMultiplicityPosition 510 470))
+($3 31 < -yk94ms_85r_eqyymv3f_-fko "Citation" 2
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fko")
+(bbx 100 500 190 30))
+($4 32 < -yk94ms_85r_eqyymv3f_-fkn "" 2
+(toMultiplicityPosition 340 435)
+(toRolePosition 220 410)
+(uid "-yk94ms_85r_eqyymv3f_-fkn")
+(points 115 500 115 430 350 430)
+(fromRolePosition 90 470)
+(toOrderedPosition 155 410))
+($4 33 < -yk94ms_85r_eqyymv3f_-fkm "" 2
+(toMultiplicityPosition 345 465)
+(toRolePosition 265 450)
+(uid "-yk94ms_85r_eqyymv3f_-fkm")
+(points 290 505 355 505 355 460)
+(fromRolePosition 245 480)
+(fromMultiplicityPosition 295 510))
+($3 34 < -yk94ms_85r_eqyymv3f_-fkl "NmrEntryStore" 2
+(uid "-yk94ms_85r_eqyymv3f_-fkl")
+(bbx 450 30 110 60))
+($4 35 < -yk94ms_85r_eqyymv3f_-fkk "" 2
+(toMultiplicityPosition 445 330)
+(toRolePosition 425 285)
+(uid "-yk94ms_85r_eqyymv3f_-fkk")
+(points 455 90 455 350)
+(fromMultiplicityPosition 465 95))
+($4 36 < -yk94ms_85r_eqyymv3f_-fkj "" 2
+(toMultiplicityPosition 740 50)
+(toRolePosition 675 50)
+(uid "-yk94ms_85r_eqyymv3f_-fkj")
+(points 560 45 750 45)
+(fromMultiplicityPosition 575 55))
+($4 37 < -yk94ms_l0q_evqpurmn_-p5k "" 2
+(toMultiplicityPosition 175 535)
+(uid "-yk94ms_l0q_evqpurmn_-p5k")
+(points 170 600 170 530)
+(fromMultiplicityPosition 160 585))
+($4 38 < -hkpzxr_-iih_f3zymwjl_-p6g "" 2
+(toMultiplicityPosition 195 860)
+(toRolePosition 165 885)
+(uid "-hkpzxr_-iih_f3zymwjl_-p6g")
+(points 145 850 145 880 210 880 210 850)
+(fromRolePosition 50 860)
+(fromMultiplicityPosition 155 860))
+($4 39 < -hkpzxr_v5_f8ok98qm_-p97 "" 2
+(toRolePosition 1130 265)
+(uid "-hkpzxr_v5_f8ok98qm_-p97")
+(points 445 460 445 700 1150 700 1150 255 1120 255)
+(fromRolePosition 410 490)
+(fromMultiplicityPosition 460 475))
+($3 40 < -hkpzxr_-li2_fdhn8hms_-p8b "StructureAnalysis" 2
+(autoSizeToFit true)
+(uid "-hkpzxr_-li2_fdhn8hms_-p8b")
+(bbx 590 190 200 90))
+($4 41 < -hkpzxr_-li2_fdhn8hms_-p8i "" 2
+(toMultiplicityPosition 570 245)
+(toRolePosition 465 200)
+(uid "-hkpzxr_-li2_fdhn8hms_-p8i")
+(points 485 350 485 230 590 230)
+(fromRolePosition 500 320)
+(fromMultiplicityPosition 465 320))
+($3 42 < z8kfsx_-9el_fiirusa0_-p91 "DataBaseName" 2
+(uid "z8kfsx_-9el_fiirusa0_-p91")
+(bbx 500 760 110 60))
+($2 43 < -yk94ms_85r_eqyymv3f_-fkh "_NmrEntry" 1
+(name "_NmrEntry"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fkh")
+(diagramType "class"))
+($3 44 < -yk94ms_85r_eqyymv3f_-fkg "Entry" 43
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fkg")
+(bbx 480 180 50 30))
+($3 45 < -yk94ms_85r_eqyymv3f_-fkf "Person" 43
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fkf")
+(bbx 710 180 190 30))
+($4 46 < -yk94ms_85r_eqyymv3f_-fke "" 43
+(toMultiplicityPosition 700 180)
+(toRolePosition 660 150)
+(uid "-yk94ms_85r_eqyymv3f_-fke")
+(points 530 180 530 170 710 170 710 180)
+(fromRolePosition 545 175)
+(fromMultiplicityPosition 535 175))
+($4 47 < -yk94ms_85r_eqyymv3f_-fkd "" 43
+(toMultiplicityPosition 700 195)
+(toRolePosition 715 215)
+(uid "-yk94ms_85r_eqyymv3f_-fkd")
+(points 530 210 530 215 710 215 710 210)
+(fromRolePosition 545 195)
+(toOrderedPosition 645 220)
+(fromMultiplicityPosition 535 195))
+($3 48 < -yk94ms_85r_eqyymv3f_-fkc "Study" 43
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fkc")
+(bbx 470 60 50 30))
+($4 49 < -yk94ms_85r_eqyymv3f_-fkb "" 43
+(toMultiplicityPosition 485 160)
+(toRolePosition 435 130)
+(uid "-yk94ms_85r_eqyymv3f_-fkb")
+(points 480 90 480 180))
+($3 50 < -yk94ms_85r_eqyymv3f_-fka "RelatedEntry" 43
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fka")
+(bbx 670 370 90 30))
+($4 51 < -yk94ms_85r_eqyymv3f_-fk9 "" 43
+(toMultiplicityPosition 660 390)
+(toRolePosition 560 395)
+(uid "-yk94ms_85r_eqyymv3f_-fk9")
+(points 485 210 485 385 670 385)
+(fromMultiplicityPosition 470 220))
+($3 52 < -yk94ms_85r_eqyymv3f_-fk7 "Experiment" 43
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fk7")
+(bbx 110 300 160 30))
+($3 53 < -yk94ms_85r_eqyymv3f_-fk6 "MolSystem" 43
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fk6")
+(bbx 830 340 230 30))
+($3 54 < -yk94ms_85r_eqyymv3f_-fk5 "StructureGroup" 43
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fk5")
+(bbx 50 370 260 30))
+($3 55 < -yk94ms_85r_eqyymv3f_-fk4 "AbstractMeasurementList" 43
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fk4")
+(bbx 20 80 250 30))
+($3 56 < -yk94ms_85r_eqyymv3f_-fk3 "DerivedDataList" 43
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fk3")
+(bbx 80 230 190 30))
+($4 57 < -yk94ms_85r_eqyymv3f_-fk2 "" 43
+(toMultiplicityPosition 315 365)
+(uid "-yk94ms_85r_eqyymv3f_-fk2")
+(points 480 180 310 180 310 370)
+(fromRolePosition 415 160)
+(fromMultiplicityPosition 470 190))
+($4 58 < -yk94ms_85r_eqyymv3f_-fk1 "" 43
+(toMultiplicityPosition 735 340)
+(uid "-yk94ms_85r_eqyymv3f_-fk1")
+(points 500 210 500 355 830 355)
+(fromRolePosition 495 250)
+(fromMultiplicityPosition 510 215))
+($4 59 < -yk94ms_85r_eqyymv3f_-fk0 "" 43
+(toMultiplicityPosition 470 185)
+(toRolePosition 415 160)
+(uid "-yk94ms_85r_eqyymv3f_-fk0")
+(points 270 315 310 315 310 180 480 180)
+(fromMultiplicityPosition 275 290))
+($4 60 < -yk94ms_85r_eqyymv3f_-fjz "" 43
+(toMultiplicityPosition 470 185)
+(toRolePosition 415 160)
+(uid "-yk94ms_85r_eqyymv3f_-fjz")
+(points 270 245 310 245 310 180 480 180)
+(fromMultiplicityPosition 275 220))
+($4 61 < -yk94ms_85r_eqyymv3f_-fjy "" 43
+(toMultiplicityPosition 470 185)
+(toRolePosition 415 155)
+(uid "-yk94ms_85r_eqyymv3f_-fjy")
+(points 270 110 310 110 310 180 480 180)
+(fromRolePosition 190 115)
+(fromMultiplicityPosition 275 90))
+($3 62 < -yk94ms_85r_eqyymv3f_-fjx "NaturalSource" 43
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fjx")
+(bbx 790 110 240 30))
+($4 63 < -yk94ms_85r_eqyymv3f_-fjw "" 43
+(uid "-yk94ms_85r_eqyymv3f_-fjw")
+(points 520 210 520 330 1010 330 1010 140)
+(fromRolePosition 500 265)
+(fromMultiplicityPosition 510 215))
+($4 64 < -yk94ms_85r_eqyymv3f_-fjt "" 43
+(toMultiplicityPosition 195 410)
+(uid "-yk94ms_85r_eqyymv3f_-fjt")
+(points 920 370 920 440 205 440 205 400)
+(fromMultiplicityPosition 930 375))
+($3 65 < -yk94ms_85r_eqyymv3f_-fjr "StructureGeneration" 43
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fjr")
+(bbx 50 150 220 30))
+($4 66 < -yk94ms_85r_eqyymv3f_-fjp "" 43
+(toMultiplicityPosition 470 185)
+(toRolePosition 415 160)
+(uid "-yk94ms_85r_eqyymv3f_-fjp")
+(points 270 160 310 160 310 180 480 180)
+(fromMultiplicityPosition 275 165))
+($4 67 < -yk94ms_85r_eqyymv3f_-fjo "" 43
+(toMultiplicityPosition 100 310)
+(toRolePosition 45 330)
+(uid "-yk94ms_85r_eqyymv3f_-fjo")
+(points 965 370 965 450 20 450 20 330 110 330)
+(fromMultiplicityPosition 970 375))
+($3 68 < -yk94ms_85r_eqyymv3f_-fjn "Group" 43
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fjn")
+(bbx 590 290 190 30))
+($4 69 < -yk94ms_85r_eqyymv3f_-fjk "" 43
+(toMultiplicityPosition 685 255)
+(toRolePosition 645 270)
+(uid "-yk94ms_85r_eqyymv3f_-fjk")
+(points 525 210 525 240 680 240 680 290)
+(fromRolePosition 530 220)
+(fromMultiplicityPosition 505 215))
+($3 70 < -yk94ms_85r_eqyymv3f_-fjj "Citation" 43
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fjj")
+(bbx 340 390 190 30))
+($4 71 < -yk94ms_85r_eqyymv3f_-fji "" 43
+(toMultiplicityPosition 440 200)
+(toRolePosition 320 250)
+(uid "-yk94ms_85r_eqyymv3f_-fji")
+(points 350 390 350 195 480 195)
+(fromRolePosition 240 345)
+(toOrderedPosition 420 145))
+($4 72 < -yk94ms_85r_eqyymv3f_-fjh "" 43
+(toMultiplicityPosition 465 215)
+(toRolePosition 380 225)
+(uid "-yk94ms_85r_eqyymv3f_-fjh")
+(points 455 390 455 210 480 210)
+(fromRolePosition 385 345)
+(fromMultiplicityPosition 460 370))
+($3 73 < -yk94ms_85r_eqyymv3f_-fjg "NmrEntryStore" 43
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fjg")
+(bbx 630 90 110 30))
+($4 74 < -yk94ms_85r_eqyymv3f_-fjf "" 43
+(toMultiplicityPosition 510 155)
+(toRolePosition 535 140)
+(uid "-yk94ms_85r_eqyymv3f_-fjf")
+(points 630 115 520 115 520 180)
+(fromMultiplicityPosition 615 130))
+($4 75 < -yk94ms_85r_eqyymv3f_-fje "" 43
+(toMultiplicityPosition 525 95)
+(toRolePosition 525 70)
+(uid "-yk94ms_85r_eqyymv3f_-fje")
+(points 630 90 520 90)
+(fromMultiplicityPosition 615 60))
+($3 76 < z8kfsx_-fvi_ffpcprzj_-p8t "StructureAnalysis" 43
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "z8kfsx_-fvi_ffpcprzj_-p8t")
+(bbx 60 10 200 30))
+($4 77 < z8kfsx_-fvi_ffpcprzj_-p8u "" 43
+(toMultiplicityPosition 265 35)
+(toRolePosition 265 10)
+(uid "z8kfsx_-fvi_ffpcprzj_-p8u")
+(points 480 180 310 180 310 30 260 30)
+(fromRolePosition 415 160)
+(fromMultiplicityPosition 470 185))
+($5 78 < -yk94ms_85r_eqyymv3f_-fjc "Entry" 1
+(name "Entry"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fjc"))
+($6 79 < -yk94ms_85r_eqyymv3f_-fjb "name" 78
+(changeability "frozen")
+(name "name"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fjb")
+(multiplicity "1"))
+($7 80 < -yk94ms_85r_eqyymv3f_-fja "documentation" 79
+(name "documentation"
+)
+(value "name of Entry"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fja"))
+($7 81 < -yk94ms_85r_eqyymv3f_-fj9 "guid" 79
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00050"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fj9"))
+($6 82 < -yk94ms_85r_eqyymv3f_-fj8 "title" 78
+(name "title"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fj8"))
+($7 83 < -yk94ms_85r_eqyymv3f_-fj7 "documentation" 82
+(name "documentation"
+)
+(value "Official title of Entry"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fj7"))
+($7 84 < -yk94ms_85r_eqyymv3f_-fj6 "guid" 82
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00051"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fj6"))
+($6 85 < -yk94ms_85r_eqyymv3f_-fj5 "bmrbProcessing" 78
+(name "bmrbProcessing"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fj5"))
+($7 86 < -yk94ms_85r_eqyymv3f_-fj4 "documentation" 85
+(name "documentation"
+)
+(value "BioMagResBank processing information"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fj4"))
+($7 87 < -yk94ms_85r_eqyymv3f_-fj3 "guid" 85
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00052"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fj3"))
+($6 88 < -yk94ms_85r_eqyymv3f_-fj2 "details" 78
+(name "details"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fj2"))
+($7 89 < -yk94ms_85r_eqyymv3f_-fj1 "guid" 88
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00053"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fj1"))
+($8 90 < -yk94ms_85r_eqyymv3f_-fj0 "#<anon> (Entry, Person)##contactEntries,contactPersons" 78
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-fj0"))
+($9 91 < -yk94ms_85r_eqyymv3f_-fiz "contactEntries#0" 90
+(name "contactEntries"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fiz")
+(multiplicity "*"))
+($7 92 < -yk94ms_85r_eqyymv3f_-fiy "baseName" 91
+(name "baseName"
+)
+(value "contactEntry"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fiy"))
+($7 93 < -yk94ms_85r_eqyymv3f_-fix "documentation" 91
+(name "documentation"
+)
+(value "BMRBentries where person is contact person"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fix"))
+($7 94 < -yk94ms_85r_eqyymv3f_-fiw "guid" 91
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00034"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fiw"))
+($9 95 < -yk94ms_85r_eqyymv3f_-fiv "contactPersons#1" 90
+(name "contactPersons"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fiv")
+(multiplicity "*"))
+($7 96 < -yk94ms_85r_eqyymv3f_-fiu "baseName" 95
+(name "baseName"
+)
+(value "contactPerson"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fiu"))
+($7 97 < -yk94ms_85r_eqyymv3f_-fit "documentation" 95
+(name "documentation"
+)
+(value "Contact persons for entry"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fit"))
+($7 98 < -yk94ms_85r_eqyymv3f_-fis "guid" 95
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00035"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fis"))
+($8 99 < -yk94ms_85r_eqyymv3f_-fir "#<anon> (Entry, Person)##authoredEntries,authors" 78
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-fir"))
+($9 100 < -yk94ms_85r_eqyymv3f_-fiq "authoredEntries#0" 99
+(name "authoredEntries"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fiq")
+(multiplicity "*"))
+($7 101 < -yk94ms_85r_eqyymv3f_-fip "baseName" 100
+(name "baseName"
+)
+(value "authoredEntry"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fip"))
+($7 102 < -yk94ms_85r_eqyymv3f_-fio "documentation" 100
+(name "documentation"
+)
+(value "BMRBentries authored by person."
+)
+(uid "-yk94ms_85r_eqyymv3f_-fio"))
+($7 103 < -yk94ms_85r_eqyymv3f_-fin "guid" 100
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00036"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fin"))
+($9 104 < -yk94ms_85r_eqyymv3f_-fim "authors#1" 99
+(isOrdered true)
+(name "authors"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fim")
+(multiplicity "*"))
+($7 105 < -yk94ms_85r_eqyymv3f_-fil "baseName" 104
+(name "baseName"
+)
+(value "author"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fil"))
+($7 106 < -yk94ms_85r_eqyymv3f_-fik "documentation" 104
+(name "documentation"
+)
+(value "Authors of entry."
+)
+(uid "-yk94ms_85r_eqyymv3f_-fik"))
+($7 107 < -yk94ms_85r_eqyymv3f_-fij "guid" 104
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00037"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fij"))
+($8 108 < -yk94ms_85r_eqyymv3f_-fii "#<anon> (Entry, RelatedEntry)##,relatedEntries" 78
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-fii"))
+($9 109 < -yk94ms_85r_eqyymv3f_-fih "#0" 108
+(changeability "frozen")
+(aggregation "composite")
+(uid "-yk94ms_85r_eqyymv3f_-fih")
+(multiplicity "1"))
+($7 110 < -yk94ms_85r_eqyymv3f_-fig "guid" 109
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00038"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fig"))
+($9 111 < -yk94ms_85r_eqyymv3f_-fif "relatedEntries#1" 108
+(name "relatedEntries"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fif")
+(multiplicity "*"))
+($7 112 < -yk94ms_85r_eqyymv3f_-fie "baseName" 111
+(name "baseName"
+)
+(value "relatedEntry"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fie"))
+($7 113 < -yk94ms_85r_eqyymv3f_-fid "guid" 111
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00039"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fid"))
+($8 114 < -yk94ms_85r_eqyymv3f_-fic "#<anon> (Entry, StructureGroup)##entries," 78
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-fic"))
+($9 115 < -yk94ms_85r_eqyymv3f_-fib "entries#0" 114
+(name "entries"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fib")
+(multiplicity "*"))
+($7 116 < -yk94ms_85r_eqyymv3f_-fia "baseName" 115
+(name "baseName"
+)
+(value "entry"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fia"))
+($7 117 < -yk94ms_85r_eqyymv3f_-fi9 "documentation" 115
+(name "documentation"
+)
+(value "Bmrb Entries for StructureGroup"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fi9"))
+($7 118 < -yk94ms_85r_eqyymv3f_-fi8 "guid" 115
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00040"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fi8"))
+($9 119 < -yk94ms_85r_eqyymv3f_-fi7 "#1" 114
+(uid "-yk94ms_85r_eqyymv3f_-fi7")
+(multiplicity "*"))
+($7 120 < -yk94ms_85r_eqyymv3f_-fi6 "documentation" 119
+(name "documentation"
+)
+(value "Groups of structures included in Entry."
+)
+(uid "-yk94ms_85r_eqyymv3f_-fi6"))
+($7 121 < -yk94ms_85r_eqyymv3f_-fi5 "guid" 119
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00041"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fi5"))
+($8 122 < -yk94ms_85r_eqyymv3f_-fi4 "#<anon> (Entry, MolSystem)##entries," 78
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-fi4"))
+($9 123 < -yk94ms_85r_eqyymv3f_-fi3 "entries#0" 122
+(name "entries"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fi3")
+(multiplicity "*"))
+($7 124 < -yk94ms_85r_eqyymv3f_-fi2 "baseName" 123
+(name "baseName"
+)
+(value "entry"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fi2"))
+($7 125 < -yk94ms_85r_eqyymv3f_-fi1 "documentation" 123
+(name "documentation"
+)
+(value "Bmrb Entries for MolSystem"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fi1"))
+($7 126 < -yk94ms_85r_eqyymv3f_-fi0 "guid" 123
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00042"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fi0"))
+($9 127 < -yk94ms_85r_eqyymv3f_-fhz "#1" 122
+(uid "-yk94ms_85r_eqyymv3f_-fhz"))
+($7 128 < -yk94ms_85r_eqyymv3f_-fhy "documentation" 127
+(name "documentation"
+)
+(value "MolSystem definign the entry"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fhy"))
+($7 129 < -yk94ms_85r_eqyymv3f_-fhx "guid" 127
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00043"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fhx"))
+($8 130 < -yk94ms_85r_eqyymv3f_-fhw "#<anon> (Entry, NaturalSource)##entries," 78
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-fhw"))
+($9 131 < -yk94ms_85r_eqyymv3f_-fhv "entries#0" 130
+(name "entries"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fhv")
+(multiplicity "*"))
+($7 132 < -yk94ms_85r_eqyymv3f_-fhu "baseName" 131
+(name "baseName"
+)
+(value "entry"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fhu"))
+($7 133 < -yk94ms_85r_eqyymv3f_-fht "documentation" 131
+(name "documentation"
+)
+(value "Bmrb Entries for NaturalSource"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fht"))
+($7 134 < -yk94ms_85r_eqyymv3f_-fhs "guid" 131
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00044"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fhs"))
+($9 135 < -yk94ms_85r_eqyymv3f_-fhr "#1" 130
+(uid "-yk94ms_85r_eqyymv3f_-fhr"))
+($7 136 < -yk94ms_85r_eqyymv3f_-fhq "documentation" 135
+(name "documentation"
+)
+(value "Natural Source of MolSystem being deposited in entry"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fhq"))
+($7 137 < -yk94ms_85r_eqyymv3f_-fhp "guid" 135
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00045"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fhp"))
+($10 138 < -yk94ms_85r_eqyymv3f_-fho "#<anon> (Entry, DataObject)" 78
+(uid "-yk94ms_85r_eqyymv3f_-fho"))
+($8 139 < -yk94ms_85r_eqyymv3f_-fhn "#<anon> (Entry, Software)##entries,software" 78
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-fhn"))
+($9 140 < -yk94ms_85r_eqyymv3f_-fhm "entries#0" 139
+(name "entries"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fhm")
+(multiplicity "*"))
+($7 141 < -yk94ms_85r_eqyymv3f_-fhl "baseName" 140
+(name "baseName"
+)
+(value "entry"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fhl"))
+($7 142 < -yk94ms_85r_eqyymv3f_-fhk "documentation" 140
+(name "documentation"
+)
+(value "BMRB entries where software is used"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fhk"))
+($7 143 < -yk94ms_85r_eqyymv3f_-fhj "guid" 140
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00046"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fhj"))
+($9 144 < -yk94ms_85r_eqyymv3f_-fhi "software#1" 139
+(name "software"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fhi")
+(multiplicity "*"))
+($7 145 < -yk94ms_85r_eqyymv3f_-fhh "baseName" 144
+(name "baseName"
+)
+(value "software"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fhh"))
+($7 146 < -yk94ms_85r_eqyymv3f_-fhg "documentation" 144
+(name "documentation"
+)
+(value "software used for analysis in entry"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fhg"))
+($7 147 < -yk94ms_85r_eqyymv3f_-fhf "guid" 144
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00047"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fhf"))
+($8 148 < -yk94ms_85r_eqyymv3f_-fhe "#<anon> (Entry, Group)##nmrEntries,laboratories" 78
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-fhe"))
+($9 149 < -yk94ms_85r_eqyymv3f_-fhd "nmrEntries#0" 148
+(name "nmrEntries"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fhd")
+(multiplicity "*"))
+($7 150 < -yk94ms_85r_eqyymv3f_-fhc "documentation" 149
+(name "documentation"
+)
+(value "NMR entries originated by group"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fhc"))
+($7 151 < -yk94ms_85r_eqyymv3f_-fhb "baseName" 149
+(name "baseName"
+)
+(value "nmrEntry"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fhb"))
+($7 152 < -yk94ms_85r_eqyymv3f_-fha "guid" 149
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00048"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fha"))
+($9 153 < -yk94ms_85r_eqyymv3f_-fh9 "laboratories#1" 148
+(name "laboratories"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fh9")
+(multiplicity "*"))
+($7 154 < -yk94ms_85r_eqyymv3f_-fh8 "documentation" 153
+(name "documentation"
+)
+(value "Research groups originating the entry"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fh8"))
+($7 155 < -yk94ms_85r_eqyymv3f_-fh7 "baseName" 153
+(name "baseName"
+)
+(value "laboratory"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fh7"))
+($7 156 < -yk94ms_85r_eqyymv3f_-fh6 "guid" 153
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00049"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fh6"))
+($8 157 < -hkpzxr_v5_f8ok98qm_-p98 "#<anon> (Entry, NaturalSource)##expEntries,experimentalSource" 78
+(name "")
+(uid "-hkpzxr_v5_f8ok98qm_-p98"))
+($9 158 < -hkpzxr_v5_f8ok98qm_-p96 "expEntries#0" 157
+(name "expEntries"
+)
+(uid "-hkpzxr_v5_f8ok98qm_-p96")
+(multiplicity "*"))
+($7 159 < -hkpzxr_v5_f8ok98qm_-p93 "baseName" 158
+(name "baseName"
+)
+(value "expEntry"
+)
+(uid "-hkpzxr_v5_f8ok98qm_-p93"))
+($7 160 < -hkpzxr_v5_f8ok98qm_-p92 "documentation" 158
+(name "documentation"
+)
+(value "Nmr Entries that have this as their experimental source"
+)
+(uid "-hkpzxr_v5_f8ok98qm_-p92"))
+($7 161 < -hkpzxr_v5_f8ok98qm_-p8e "guid" 158
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-06-17:15:10_00001"
+)
+(uid "-hkpzxr_v5_f8ok98qm_-p8e"))
+($9 162 < -hkpzxr_v5_f8ok98qm_-p95 "experimentalSource#1" 157
+(name "experimentalSource"
+)
+(uid "-hkpzxr_v5_f8ok98qm_-p95"))
+($7 163 < -hkpzxr_v5_f8ok98qm_-p94 "documentation" 162
+(name "documentation"
+)
+(value "Organism source actually used to produce the molecule being investigated"
+)
+(uid "-hkpzxr_v5_f8ok98qm_-p94"))
+($7 164 < -hkpzxr_v5_f8ok98qm_-p8c "guid" 162
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-06-17:33:35_00001"
+)
+(uid "-hkpzxr_v5_f8ok98qm_-p8c"))
+($8 165 < -hkpzxr_-li2_fdhn8hms_-p8j "#<anon> (Entry, StructureAnalysis)##entries,structureAnalyses" 78
+(name "")
+(uid "-hkpzxr_-li2_fdhn8hms_-p8j"))
+($9 166 < -hkpzxr_-li2_fdhn8hms_-p8h "entries#0" 165
+(name "entries"
+)
+(uid "-hkpzxr_-li2_fdhn8hms_-p8h")
+(multiplicity "*"))
+($7 167 < -hkpzxr_-li2_fdhn8hms_-p8e "baseName" 166
+(name "baseName"
+)
+(value "entry"
+)
+(uid "-hkpzxr_-li2_fdhn8hms_-p8e"))
+($7 168 < -hkpzxr_-li2_fdhn8hms_-p8c "documentation" 166
+(name "documentation"
+)
+(value "Deposition Entries for StructureAnalysis"
+)
+(uid "-hkpzxr_-li2_fdhn8hms_-p8c"))
+($7 169 < -hkpzxr_-li2_fdhn8hms_-p7v "guid" 166
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-03-06-18:40:32_00005"
+)
+(uid "-hkpzxr_-li2_fdhn8hms_-p7v"))
+($9 170 < -hkpzxr_-li2_fdhn8hms_-p8g "structureAnalyses#1" 165
+(name "structureAnalyses"
+)
+(uid "-hkpzxr_-li2_fdhn8hms_-p8g")
+(multiplicity "*"))
+($7 171 < -hkpzxr_-li2_fdhn8hms_-p8f "baseName" 170
+(name "baseName"
+)
+(value "structureAnalysis"
+)
+(uid "-hkpzxr_-li2_fdhn8hms_-p8f"))
+($7 172 < -hkpzxr_-li2_fdhn8hms_-p8d "documentation" 170
+(name "documentation"
+)
+(value "StructureAnalyses being deposited in entry."
+)
+(uid "-hkpzxr_-li2_fdhn8hms_-p8d"))
+($7 173 < -hkpzxr_-li2_fdhn8hms_-p7u "guid" 170
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-03-06-18:40:33_00001"
+)
+(uid "-hkpzxr_-li2_fdhn8hms_-p7u"))
+($7 174 < -yk94ms_85r_eqyymv3f_-fh5 "documentation" 78
+(name "documentation"
+)
+(value "Deposition (entry) for deposition into BMRB (NB may be used also for other depositions?)."
+)
+(uid "-yk94ms_85r_eqyymv3f_-fh5"))
+($7 175 < -yk94ms_85r_eqyymv3f_-fh3 "guid" 78
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:25:09_00020"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fh3"))
+($7 176 < -yk94ms_15v_evqyosvg_-p4x "keyNames" 78
+(name "keyNames"
+)
+(value "name"
+)
+(uid "-yk94ms_15v_evqyosvg_-p4x"))
+($5 177 < -yk94ms_85r_eqyymv3f_-fh2 "Study" 1
+(name "Study"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fh2"))
+($6 178 < -yk94ms_85r_eqyymv3f_-fh1 "name" 177
+(changeability "frozen")
+(name "name"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fh1")
+(multiplicity "1"))
+($7 179 < -yk94ms_85r_eqyymv3f_-fh0 "documentation" 178
+(name "documentation"
+)
+(value "name of Study"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fh0"))
+($7 180 < -yk94ms_85r_eqyymv3f_-fgz "guid" 178
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00056"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fgz"))
+($6 181 < -yk94ms_85r_eqyymv3f_-fgy "studyType" 177
+(name "studyType"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fgy"))
+($7 182 < -yk94ms_85r_eqyymv3f_-fgx "documentation" 181
+(name "documentation"
+)
+(value "Type of Study. NB We need to get the allowed values from BMRB."
+)
+(uid "-yk94ms_85r_eqyymv3f_-fgx"))
+($7 183 < -yk94ms_85r_eqyymv3f_-fgw "guid" 181
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00057"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fgw"))
+($6 184 < -yk94ms_85r_eqyymv3f_-fgv "keywords" 177
+(name "keywords"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fgv")
+(multiplicity "*"))
+($7 185 < -yk94ms_85r_eqyymv3f_-fgu "baseName" 184
+(name "baseName"
+)
+(value "keyword"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fgu"))
+($7 186 < -yk94ms_85r_eqyymv3f_-fgt "documentation" 184
+(name "documentation"
+)
+(value "Keywords for searching on Study"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fgt"))
+($7 187 < -yk94ms_85r_eqyymv3f_-fgs "guid" 184
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00058"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fgs"))
+($6 188 < -yk94ms_85r_eqyymv3f_-fgr "details" 177
+(name "details"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fgr"))
+($7 189 < -yk94ms_85r_eqyymv3f_-fgq "guid" 188
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00059"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fgq"))
+($8 190 < -yk94ms_85r_eqyymv3f_-fgp "#<anon> (Study, Entry)##,entries" 177
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-fgp"))
+($9 191 < -yk94ms_85r_eqyymv3f_-fgo "#0" 190
+(uid "-yk94ms_85r_eqyymv3f_-fgo"))
+($7 192 < -yk94ms_85r_eqyymv3f_-fgn "documentation" 191
+(name "documentation"
+)
+(value "Study that Entry is part of"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fgn"))
+($7 193 < -yk94ms_85r_eqyymv3f_-fgm "guid" 191
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00054"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fgm"))
+($9 194 < -yk94ms_85r_eqyymv3f_-fgl "entries#1" 190
+(name "entries"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fgl")
+(multiplicity "*"))
+($7 195 < -yk94ms_85r_eqyymv3f_-fgk "baseName" 194
+(name "baseName"
+)
+(value "entry"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fgk"))
+($7 196 < -yk94ms_85r_eqyymv3f_-fgj "documentation" 194
+(name "documentation"
+)
+(value "Entries that are part of Study"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fgj"))
+($7 197 < -yk94ms_85r_eqyymv3f_-fgi "guid" 194
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00055"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fgi"))
+($10 198 < -yk94ms_85r_eqyymv3f_-fgh "#<anon> (Study, DataObject)" 177
+(uid "-yk94ms_85r_eqyymv3f_-fgh"))
+($7 199 < -yk94ms_85r_eqyymv3f_-fgg "documentation" 177
+(name "documentation"
+)
+(value "Group of Entries that belong together."
+)
+(uid "-yk94ms_85r_eqyymv3f_-fgg"))
+($7 200 < -yk94ms_85r_eqyymv3f_-fge "guid" 177
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:25:09_00021"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fge"))
+($7 201 < -yk94ms_15v_evqyosvg_-p4w "keyNames" 177
+(name "keyNames"
+)
+(value "name"
+)
+(uid "-yk94ms_15v_evqyosvg_-p4w"))
+($5 202 < -yk94ms_85r_eqyymv3f_-fgd "RelatedEntry" 1
+(name "RelatedEntry"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fgd"))
+($6 203 < z8kfsx_-9el_fiirusa0_-p98 "dbName" 202
+(initialValue "BMRB"
+)
+(changeability "frozen")
+(name "dbName"
+)
+(uid "z8kfsx_-9el_fiirusa0_-p98")
+(multiplicity "1"))
+($7 204 < z8kfsx_-9el_fiirusa0_-p97 "documentation" 203
+(name "documentation"
+)
+(value "Name of database containing related entry, ('BMRB', 'PDB, ...) "
+)
+(uid "z8kfsx_-9el_fiirusa0_-p97"))
+($7 205 < z8kfsx_-9el_fiirusa0_-p8w "guid" 203
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-07-11-16:03:08_00001"
+)
+(uid "z8kfsx_-9el_fiirusa0_-p8w"))
+($6 206 < -yk94ms_85r_eqyymv3f_-fgc "dbId" 202
+(changeability "frozen")
+(name "dbId"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fgc")
+(multiplicity "1"))
+($7 207 < -yk94ms_85r_eqyymv3f_-fgb "documentation" 206
+(name "documentation"
+)
+(value "Database identifier of related entry"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fgb"))
+($7 208 < -yk94ms_85r_eqyymv3f_-fga "guid" 206
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00060"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fga"))
+($6 209 < -yk94ms_85r_eqyymv3f_-fg9 "relationship" 202
+(name "relationship"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fg9"))
+($7 210 < -yk94ms_85r_eqyymv3f_-fg8 "documentation" 209
+(name "documentation"
+)
+(value "what is the relationship between the current entry and the cited one. NB Should probably be an open enum. E.g. 'supersedes', "
+)
+(uid "-yk94ms_85r_eqyymv3f_-fg8"))
+($7 211 < -yk94ms_85r_eqyymv3f_-fg7 "guid" 209
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00061"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fg7"))
+($10 212 < -yk94ms_85r_eqyymv3f_-fg6 "#<anon> (RelatedEntry, DataObject)" 202
+(uid "-yk94ms_85r_eqyymv3f_-fg6"))
+($7 213 < -yk94ms_85r_eqyymv3f_-fg5 "documentation" 202
+(name "documentation"
+)
+(value "Database entry related to the current entry."
+)
+(uid "-yk94ms_85r_eqyymv3f_-fg5"))
+($7 214 < -yk94ms_85r_eqyymv3f_-fg3 "guid" 202
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:25:09_00022"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fg3"))
+($7 215 < -yk94ms_15v_evqyosvg_-p4v "keyNames" 202
+(name "keyNames"
+)
+(value "dbName, dbId"
+)
+(uid "-yk94ms_15v_evqyosvg_-p4v"))
+($11 216 < -yk94ms_85r_eqyymv3f_-fg2 "#<anon> (NmrEntry, Nmr)" 1
+(uid "-yk94ms_85r_eqyymv3f_-fg2"))
+($11 217 < -yk94ms_85r_eqyymv3f_-fg1 "#<anon> (NmrEntry, Taxonomy)" 1
+(uid "-yk94ms_85r_eqyymv3f_-fg1"))
+($11 218 < -yk94ms_85r_eqyymv3f_-fg0 "#<anon> (NmrEntry, Citation)" 1
+(uid "-yk94ms_85r_eqyymv3f_-fg0"))
+($11 219 < -yk94ms_85r_eqyymv3f_-ffz "#<anon> (NmrEntry, MolSystem)" 1
+(uid "-yk94ms_85r_eqyymv3f_-ffz"))
+($11 220 < -yk94ms_85r_eqyymv3f_-ffy "#<anon> (NmrEntry, Affiliation)" 1
+(uid "-yk94ms_85r_eqyymv3f_-ffy"))
+($11 221 < -yk94ms_85r_eqyymv3f_-ffx "#<anon> (NmrEntry, Method)" 1
+(uid "-yk94ms_85r_eqyymv3f_-ffx"))
+($5 222 < -yk94ms_85r_eqyymv3f_-ffw "NmrEntryStore" 1
+(name "NmrEntryStore"
+)
+(uid "-yk94ms_85r_eqyymv3f_-ffw"))
+($6 223 < -yk94ms_85r_eqyymv3f_-ffv "name" 222
+(changeability "frozen")
+(name "name"
+)
+(uid "-yk94ms_85r_eqyymv3f_-ffv")
+(multiplicity "1"))
+($7 224 < -yk94ms_85r_eqyymv3f_-ffu "documentation" 223
+(name "documentation"
+)
+(value "name of NmrEntryStore"
+)
+(uid "-yk94ms_85r_eqyymv3f_-ffu"))
+($7 225 < -yk94ms_85r_eqyymv3f_-fft "guid" 223
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:12_00003"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fft"))
+($8 226 < -yk94ms_85r_eqyymv3f_-ffs "#<anon> (NmrEntryStore, Entry)##,entries" 222
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-ffs"))
+($9 227 < -yk94ms_85r_eqyymv3f_-ffr "#0" 226
+(changeability "frozen")
+(aggregation "composite")
+(uid "-yk94ms_85r_eqyymv3f_-ffr")
+(multiplicity "1"))
+($7 228 < -yk94ms_85r_eqyymv3f_-ffq "guid" 227
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00062"
+)
+(uid "-yk94ms_85r_eqyymv3f_-ffq"))
+($9 229 < -yk94ms_85r_eqyymv3f_-ffp "entries#1" 226
+(name "entries"
+)
+(uid "-yk94ms_85r_eqyymv3f_-ffp")
+(multiplicity "*"))
+($7 230 < -yk94ms_85r_eqyymv3f_-ffo "baseName" 229
+(name "baseName"
+)
+(value "entry"
+)
+(uid "-yk94ms_85r_eqyymv3f_-ffo"))
+($7 231 < -yk94ms_85r_eqyymv3f_-ffn "guid" 229
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:11_00063"
+)
+(uid "-yk94ms_85r_eqyymv3f_-ffn"))
+($8 232 < -yk94ms_85r_eqyymv3f_-ffm "#<anon> (NmrEntryStore, Study)##,studies" 222
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-ffm"))
+($9 233 < -yk94ms_85r_eqyymv3f_-ffl "#0" 232
+(changeability "frozen")
+(aggregation "composite")
+(uid "-yk94ms_85r_eqyymv3f_-ffl")
+(multiplicity "1"))
+($7 234 < -yk94ms_85r_eqyymv3f_-ffk "guid" 233
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:12_00001"
+)
+(uid "-yk94ms_85r_eqyymv3f_-ffk"))
+($9 235 < -yk94ms_85r_eqyymv3f_-ffj "studies#1" 232
+(name "studies"
+)
+(uid "-yk94ms_85r_eqyymv3f_-ffj")
+(multiplicity "*"))
+($7 236 < -yk94ms_85r_eqyymv3f_-ffi "baseName" 235
+(name "baseName"
+)
+(value "study"
+)
+(uid "-yk94ms_85r_eqyymv3f_-ffi"))
+($7 237 < -yk94ms_85r_eqyymv3f_-ffh "guid" 235
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:12_00002"
+)
+(uid "-yk94ms_85r_eqyymv3f_-ffh"))
+($10 238 < -yk94ms_l0q_evqpurmn_-p5m "#<anon> (NmrEntryStore, TopObject)" 222
+(uid "-yk94ms_l0q_evqpurmn_-p5m"))
+($7 239 < -yk94ms_85r_eqyymv3f_-fff "documentation" 222
+(name "documentation"
+)
+(value "Grouping of NmrEntry information"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fff"))
+($7 240 < -yk94ms_85r_eqyymv3f_-ffd "guid" 222
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:25:09_00023"
+)
+(uid "-yk94ms_85r_eqyymv3f_-ffd"))
+($7 241 < -yk94ms_15v_evqyosvg_-p4u "keyNames" 222
+(name "keyNames"
+)
+(value "name"
+)
+(uid "-yk94ms_15v_evqyosvg_-p4u"))
+($5 242 < z8kfsx_-9el_fiirusa0_-p96 "DataBaseName" 1
+(name "DataBaseName"
+)
+(uid "z8kfsx_-9el_fiirusa0_-p96"))
+($10 243 < z8kfsx_-9el_fiirusa0_-p8y "#<anon> (DataBaseName, Line)" 242
+(uid "z8kfsx_-9el_fiirusa0_-p8y"))
+($7 244 < z8kfsx_-9el_fiirusa0_-p95 "documentation" 242
+(name "documentation"
+)
+(value "Name of database where entries can be located (Closed enueration = ('BMRB', 'PDB')"
+)
+(uid "z8kfsx_-9el_fiirusa0_-p95"))
+($7 245 < z8kfsx_-9el_fiirusa0_-p90 "isOpen" 242
+(name "isOpen"
+)
+(value "False"
+)
+(uid "z8kfsx_-9el_fiirusa0_-p90"))
+($7 246 < z8kfsx_-9el_fiirusa0_-p8z "enumeration" 242
+(name "enumeration"
+)
+(value "('BMRB', 'PDB')"
+)
+(uid "z8kfsx_-9el_fiirusa0_-p8z"))
+($7 247 < z8kfsx_-9el_fiirusa0_-p8v "guid" 242
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-07-11-16:03:02_00001"
+)
+(uid "z8kfsx_-9el_fiirusa0_-p8v"))
+($7 248 < -yk94ms_85r_eqyymv3f_-ffc "shortName" 1
+(name "shortName"
+)
+(value "ENTR"
+)
+(uid "-yk94ms_85r_eqyymv3f_-ffc"))
+($7 249 < -yk94ms_85r_eqyymv3f_-ffb "documentation" 1
+(name "documentation"
+)
+(value "Entry of NMR data in databases, especially the BioMagResBank."
+)
+(uid "-yk94ms_85r_eqyymv3f_-ffb"))
+($7 250 < -yk94ms_85r_eqyymv3f_-ffa "packageGroup" 1
+(name "packageGroup"
+)
+(value "nmr"
+)
+(uid "-yk94ms_85r_eqyymv3f_-ffa"))
+($7 251 < -yk94ms_85r_eqyymv3f_-ff9 "isDraft" 1
+(name "isDraft"
+)
+(value "True"
+)
+(uid "-yk94ms_85r_eqyymv3f_-ff9"))
+($7 252 < -yk94ms_85r_eqyymv3f_-ff8 "guid" 1
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:25:09_00019"
+)
+(uid "-yk94ms_85r_eqyymv3f_-ff8"))
+($13 254)
+($15 257)
+($15 259)
+($15 263)
+($15 264)
+($13 272)
+($13 273)
+($13 274)
+($13 275)
+($13 276)
+($13 277)
+($13 279)
+($13 282)
+($13 283)
+($13 284)
+($13 286)
+($13 288)
+($13 289)
+($13 290)
+($13 292)
+($13 294)
+($13 297)
+($13 298)
+($13 299)
+($13 301)
+($13 302)
+($13 304)
+($13 306)
+($13 309)
+($13 310)
+($13 311)
+($13 312)
+($13 314)
+($13 316)
+($13 318)
+($13 320)
+($15 322)
+($13 323)
+($13 324)
+($13 325)
+($13 327)
+($13 329)
+($13 330)
+($13 331)
+($13 332)
+($13 333)
+($13 334)
+($13 335)
+($13 336)
+($13 337)
+($13 338)
+($13 339)
+($13 340)
+($13 341)
+($13 342)
+($13 343)
+($13 344)
+($13 345)
+($13 346)
+($13 347)
+($13 348)
+($13 349)
+($13 350)
+($13 351)
+($13 352)
+($13 353)
+($13 354)
+($13 355)
+($13 356)
+($13 357)
+($13 358)
+($13 359)
+($13 360)
+($13 361)
+($13 362)
+($13 363)
+($13 364)
+($13 365)
+($13 366)
+($12 253 @ -yk94ms_-e3s_e41656c6_-fvq 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Entry" $12)
+($5 255 @ -yk94ms_-e3s_e41656c6_-gpe 4 "Logical" $1 "memops" $1 "Implementation" $1 "DataObject" $5)
+($5 256 @ -yk94ms_-e3s_e41656c6_-h0m 4 "Logical" $1 "memops" $1 "Implementation" $1 "Line" $5)
+($5 258 @ -yk94ms_-e3s_e41656c6_-h04 4 "Logical" $1 "memops" $1 "Implementation" $1 "Text" $5)
+($5 260 @ -yk94ms_-e3s_e41656c6_-h0a 4 "Logical" $1 "memops" $1 "Implementation" $1 "String" $5)
+($5 261 @ -yk94ms_85r_eqyymv3f_-p7a 5 "Logical" $1 "ccp" $1 "general" $1 "Affiliation" $1 "Person" $5)
+($16 262 @ -yk94ms_-e3s_e41656c6_-fw7 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "DataType" $16)
+($5 265 @ -yk94ms_85r_eqyymv3f_-jg1 5 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "StructureGroup" $5)
+($5 266 @ -yk94ms_-e3s_e41656c6_-i8o 5 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "MolSystem" $5)
+($5 267 @ -yk94ms_85r_eqyymv3f_-o9n 5 "Logical" $1 "ccp" $1 "general" $1 "Taxonomy" $1 "NaturalSource" $5)
+($5 268 @ -yk94ms_85r_eqyymv3f_-och 5 "Logical" $1 "ccp" $1 "general" $1 "Method" $1 "Software" $5)
+($5 269 @ -yk94ms_85r_eqyymv3f_-p2x 5 "Logical" $1 "ccp" $1 "general" $1 "Affiliation" $1 "Group" $5)
+($5 270 @ 0_-epz_fdh4vudj_-p98 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "StructureAnalysis" $5)
+($12 271 @ -yk94ms_-e3s_e41656c6_-fw4 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "People" $12)
+($12 278 @ -yk94ms_-e3s_e41656c6_-fvm 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Nmr" $12)
+($5 280 @ -yk94ms_-e3s_e41656c6_-ntb 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "Experiment" $5)
+($12 281 @ -yk94ms_-e3s_e41656c6_-fvn 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "MolSystem" $12)
+($5 285 @ -yk94ms_-e3s_e41656c6_-o6t 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "AbstractMeasurementList" $5)
+($5 287 @ -yk94ms_-e3s_e41656c6_-nxm 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "DerivedDataList" $5)
+($8 291 @ -yk94ms_85r_eqyymv3f_-hu6 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "Experiment" $5 "#<anon> (Experiment, Entry)##,entries" $8)
+($8 293 @ -yk94ms_85r_eqyymv3f_-i10 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "DerivedDataList" $5 "#<anon> (DerivedDataList, Entry)##,entries" $8)
+($8 295 @ -yk94ms_85r_eqyymv3f_-ie1 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "AbstractMeasurementList" $5 "#<anon> (AbstractMeasurementList, Entry)##measurementLists,entries" $8)
+($12 296 @ -yk94ms_-e3s_e41656c6_-fvh 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Taxonomy" $12)
+($8 300 @ -yk94ms_85r_eqyymv3f_-joq 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "MolSystem" $5 "#<anon> (MolSystem, StructureGroup)##," $8)
+($5 303 @ -yk94ms_-e3s_e41656c6_-mt0 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "StructureGeneration" $5)
+($8 305 @ -yk94ms_85r_eqyymv3f_-ghe 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "StructureGeneration" $5 "#<anon> (StructureGeneration, Entry)##,entries" $8)
+($8 307 @ -yk94ms_-e3s_e41656c6_-i6s 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "MolSystem" $5 "#<anon> (MolSystem, Experiment)##,nmrExperiments" $8)
+($12 308 @ -yk94ms_-e3s_e41656c6_-fvo 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Method" $12)
+($12 313 @ -yk94ms_-e3s_e41656c6_-fvt 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Citation" $12)
+($5 315 @ -yk94ms_85r_eqyymv3f_-ovk 5 "Logical" $1 "ccp" $1 "general" $1 "Citation" $1 "Citation" $5)
+($8 317 @ -yk94ms_85r_eqyymv3f_-ou0 6 "Logical" $1 "ccp" $1 "general" $1 "Citation" $1 "Citation" $5 "#<anon> (Citation, Entry)##primaryCitation,nmrEntriesPrimary" $8)
+($8 319 @ -yk94ms_85r_eqyymv3f_-ots 6 "Logical" $1 "ccp" $1 "general" $1 "Citation" $1 "Citation" $5 "#<anon> (Citation, Entry)##otherCitations,nmrEntries" $8)
+($5 321 @ z8kflu_63g_errlz7sn_-p8u 4 "Logical" $1 "memops" $1 "Implementation" $1 "TopObject" $5)
+($8 326 @ -yk94ms_-e3s_e41656c6_-ns9 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "Experiment" $5 "#<anon> (Experiment, Citation)##," $8)
+($8 328 @ -yk94ms_jd_ews44umg_-p8k 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "Experiment" $5 "#<anon> (Experiment, )##derivedFrom,derivedTo" $8)
+($16 367 @ -yk94ms_-e3s_e41656c6_-fwy 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "import" $16)
+($1 368 @ -yk94ms_-e3s_e41656c6_-p95 4 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1)
+($1 369 @ -yk94ms_85r_eqyymv3f_-o9w 4 "Logical" $1 "ccp" $1 "general" $1 "Taxonomy" $1)
+($1 370 @ -yk94ms_-e3s_e41656c6_-iio 4 "Logical" $1 "ccp" $1 "general" $1 "Citation" $1)
+($1 371 @ -yk94ms_-e3s_e41656c6_-ibf 4 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1)
+($1 372 @ -yk94ms_-e3s_e41656c6_-jc4 4 "Logical" $1 "ccp" $1 "general" $1 "Affiliation" $1)
+($1 373 @ -yk94ms_-e3s_e41656c6_-kyd 4 "Logical" $1 "ccp" $1 "general" $1 "Method" $1)
+(styleAssn 3 253)
+(typeAssn 91 78)
+(assocEndAssn 78 91)
+(typeAssn 100 78)
+(assocEndAssn 78 100)
+(typeAssn 194 78)
+(assocEndAssn 78 194)
+(typeAssn 109 78)
+(assocEndAssn 78 109)
+(typeAssn 115 78)
+(assocEndAssn 78 115)
+(typeAssn 123 78)
+(assocEndAssn 78 123)
+(typeAssn 131 78)
+(assocEndAssn 78 131)
+(typeAssn 140 78)
+(assocEndAssn 78 140)
+(typeAssn 149 78)
+(assocEndAssn 78 149)
+(typeAssn 229 78)
+(assocEndAssn 78 229)
+(typeAssn 158 78)
+(assocEndAssn 78 158)
+(typeAssn 166 78)
+(assocEndAssn 78 166)
+(subtypeAssn 138 78)
+(supertypeAssn 138 255)
+(generalizationAssn 78 138)
+(typeRefAssn 79 256)
+(typeExpression 79 257)
+(typeRefAssn 82 258)
+(typeExpression 82 259)
+(typeRefAssn 85 258)
+(typeExpression 85 259)
+(typeRefAssn 88 260)
+(typeExpression 88 259)
+(typeAssn 95 261)
+(typeAssn 104 261)
+(assocEndAssn 202 111)
+(subtypeAssn 212 202)
+(supertypeAssn 212 255)
+(generalizationAssn 202 212)
+(stereotypeAssn 242 262)
+(subtypeAssn 243 242)
+(supertypeAssn 243 256)
+(generalizationAssn 242 243)
+(typeRefAssn 203 242)
+(typeExpression 203 263)
+(typeRefAssn 206 256)
+(typeExpression 206 264)
+(typeRefAssn 209 256)
+(typeExpression 209 264)
+(typeAssn 111 202)
+(typeAssn 119 265)
+(typeAssn 127 266)
+(typeAssn 135 267)
+(typeAssn 144 268)
+(typeAssn 153 269)
+(typeAssn 162 267)
+(typeAssn 170 270)
+(projectionAssn 3 78 254)
+(styleAssn 4 271)
+(projectionAssn 4 261 272)
+(to 5 4)
+(from 5 3)
+(projectionAssn 5 90 273)
+(styleAssn 6 253)
+(typeAssn 191 177)
+(assocEndAssn 177 191)
+(typeAssn 235 177)
+(assocEndAssn 177 235)
+(subtypeAssn 198 177)
+(supertypeAssn 198 255)
+(generalizationAssn 177 198)
+(typeRefAssn 178 256)
+(typeExpression 178 264)
+(typeRefAssn 181 256)
+(typeExpression 181 264)
+(typeRefAssn 184 256)
+(typeExpression 184 264)
+(typeRefAssn 188 260)
+(typeExpression 188 264)
+(projectionAssn 6 177 274)
+(to 7 3)
+(from 7 6)
+(projectionAssn 7 190 275)
+(styleAssn 8 253)
+(projectionAssn 8 202 276)
+(to 9 8)
+(from 9 3)
+(projectionAssn 9 108 277)
+(styleAssn 10 278)
+(projectionAssn 10 280 279)
+(styleAssn 11 281)
+(projectionAssn 11 266 282)
+(styleAssn 12 281)
+(projectionAssn 12 265 283)
+(styleAssn 13 278)
+(projectionAssn 13 285 284)
+(styleAssn 14 278)
+(projectionAssn 14 287 286)
+(to 15 12)
+(from 15 3)
+(projectionAssn 15 114 288)
+(to 16 11)
+(from 16 3)
+(projectionAssn 16 122 289)
+(to 17 3)
+(from 17 10)
+(projectionAssn 17 291 290)
+(to 18 3)
+(from 18 14)
+(projectionAssn 18 293 292)
+(to 19 3)
+(from 19 13)
+(projectionAssn 19 295 294)
+(styleAssn 20 296)
+(projectionAssn 20 267 297)
+(to 21 20)
+(from 21 3)
+(projectionAssn 21 130 298)
+(to 22 12)
+(from 22 11)
+(projectionAssn 22 300 299)
+(to 23 4)
+(from 23 3)
+(projectionAssn 23 99 301)
+(styleAssn 24 278)
+(projectionAssn 24 303 302)
+(to 25 3)
+(from 25 24)
+(projectionAssn 25 305 304)
+(to 26 10)
+(from 26 11)
+(projectionAssn 26 307 306)
+(styleAssn 27 308)
+(projectionAssn 27 268 309)
+(to 28 27)
+(from 28 3)
+(projectionAssn 28 139 310)
+(styleAssn 29 271)
+(projectionAssn 29 269 311)
+(to 30 29)
+(from 30 3)
+(projectionAssn 30 148 312)
+(styleAssn 31 313)
+(projectionAssn 31 315 314)
+(to 32 3)
+(from 32 31)
+(projectionAssn 32 317 316)
+(to 33 3)
+(from 33 31)
+(projectionAssn 33 319 318)
+(styleAssn 34 253)
+(typeAssn 227 222)
+(assocEndAssn 222 227)
+(typeAssn 233 222)
+(assocEndAssn 222 233)
+(subtypeAssn 238 222)
+(supertypeAssn 238 321)
+(generalizationAssn 222 238)
+(typeRefAssn 223 256)
+(typeExpression 223 322)
+(projectionAssn 34 222 320)
+(to 35 3)
+(from 35 34)
+(projectionAssn 35 226 323)
+(to 36 6)
+(from 36 34)
+(projectionAssn 36 232 324)
+(to 37 31)
+(from 37 10)
+(projectionAssn 37 326 325)
+(to 38 10)
+(from 38 10)
+(projectionAssn 38 328 327)
+(to 39 20)
+(from 39 3)
+(projectionAssn 39 157 329)
+(styleAssn 40 278)
+(projectionAssn 40 270 330)
+(to 41 40)
+(from 41 3)
+(projectionAssn 41 165 331)
+(styleAssn 42 253)
+(projectionAssn 42 242 332)
+(styleAssn 44 253)
+(projectionAssn 44 78 333)
+(styleAssn 45 271)
+(projectionAssn 45 261 334)
+(to 46 45)
+(from 46 44)
+(projectionAssn 46 90 335)
+(to 47 45)
+(from 47 44)
+(projectionAssn 47 99 336)
+(styleAssn 48 253)
+(projectionAssn 48 177 337)
+(to 49 44)
+(from 49 48)
+(projectionAssn 49 190 338)
+(styleAssn 50 253)
+(projectionAssn 50 202 339)
+(to 51 50)
+(from 51 44)
+(projectionAssn 51 108 340)
+(styleAssn 52 278)
+(projectionAssn 52 280 341)
+(styleAssn 53 281)
+(projectionAssn 53 266 342)
+(styleAssn 54 281)
+(projectionAssn 54 265 343)
+(styleAssn 55 278)
+(projectionAssn 55 285 344)
+(styleAssn 56 278)
+(projectionAssn 56 287 345)
+(to 57 54)
+(from 57 44)
+(projectionAssn 57 114 346)
+(to 58 53)
+(from 58 44)
+(projectionAssn 58 122 347)
+(to 59 44)
+(from 59 52)
+(projectionAssn 59 291 348)
+(to 60 44)
+(from 60 56)
+(projectionAssn 60 293 349)
+(to 61 44)
+(from 61 55)
+(projectionAssn 61 295 350)
+(styleAssn 62 296)
+(projectionAssn 62 267 351)
+(to 63 62)
+(from 63 44)
+(projectionAssn 63 130 352)
+(to 64 54)
+(from 64 53)
+(projectionAssn 64 300 353)
+(styleAssn 65 278)
+(projectionAssn 65 303 354)
+(to 66 44)
+(from 66 65)
+(projectionAssn 66 305 355)
+(to 67 52)
+(from 67 53)
+(projectionAssn 67 307 356)
+(styleAssn 68 271)
+(projectionAssn 68 269 357)
+(to 69 68)
+(from 69 44)
+(projectionAssn 69 148 358)
+(styleAssn 70 313)
+(projectionAssn 70 315 359)
+(to 71 44)
+(from 71 70)
+(projectionAssn 71 317 360)
+(to 72 44)
+(from 72 70)
+(projectionAssn 72 319 361)
+(styleAssn 73 253)
+(projectionAssn 73 222 362)
+(to 74 44)
+(from 74 73)
+(projectionAssn 74 226 363)
+(to 75 48)
+(from 75 73)
+(projectionAssn 75 232 364)
+(styleAssn 76 278)
+(projectionAssn 76 270 365)
+(to 77 76)
+(from 77 44)
+(projectionAssn 77 165 366)
+(stereotypeAssn 216 367)
+(clientAssn 216 1)
+(supplierAssn 216 368)
+(stereotypeAssn 217 367)
+(clientAssn 217 1)
+(supplierAssn 217 369)
+(stereotypeAssn 218 367)
+(clientAssn 218 1)
+(supplierAssn 218 370)
+(stereotypeAssn 219 367)
+(clientAssn 219 1)
+(supplierAssn 219 371)
+(stereotypeAssn 220 367)
+(clientAssn 220 1)
+(supplierAssn 220 372)
+(stereotypeAssn 221 367)
+(clientAssn 221 1)
+(supplierAssn 221 373)

@@ -1,0 +1,221 @@
+ObjectDomain_Shared_Package 15
+{-yk94ms_-e3s_e41656c6_-jt9 4 "Logical" objectdomain.uml.mechanisms.UmlPackage-owns "ccp" objectdomain.uml.mechanisms.UmlPackage-owns "general" objectdomain.uml.mechanisms.UmlPackage-owns "Template" objectdomain.uml.mechanisms.UmlPackage-owns
+}[objectdomain.uml.core.TypeExpression $10
+objectdomain.uml.mechanisms.UmlPackage-owns $1
+objectdomain.uml.core.Generalization-owns $8
+objectdomain.uml.core.Projection $9
+objectdomain.uml.core.UmlAttribute-features $6
+objectdomain.uml.view.style.BaseViewElementStyle-owns $12
+objectdomain.uml.view.ClassView-owns $3
+objectdomain.uml.core.UmlTaggedValue-taggedValues $7
+objectdomain.uml.view.Diagram-owns $2
+objectdomain.uml.view.GeneralizationView-owns $4
+objectdomain.uml.core.UmlMultiplicity $11
+objectdomain.uml.core.UmlClass-owns $5
+]
+($1 1 > -yk94ms_-e3s_e41656c6_-jt9 4 "Logical" $1 "ccp" $1 "general" $1 "Template" $1
+(name "Template"
+)
+(uid "-yk94ms_-e3s_e41656c6_-jt9"))
+($2 2 < -yk94ms_85r_eqyymv3f_-o75 "_Template" 1
+(name "_Template"
+)
+(uid "-yk94ms_85r_eqyymv3f_-o75")
+(diagramType "class"))
+($3 3 < -yk94ms_85r_eqyymv3f_-o74 "AbstractProbability" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-o74")
+(bbx 180 120 130 60))
+($3 4 < -yk94ms_85r_eqyymv3f_-o73 "DataObject" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-o73")
+(bbx 400 120 240 60))
+($4 5 < -yk94ms_85r_eqyymv3f_-o72 "" 2
+(uid "-yk94ms_85r_eqyymv3f_-o72")
+(points 310 150 400 150))
+($3 6 < -hkpzxr_nv3_ff3psu73_-p8t "MultiTypeValue" 2
+(uid "-hkpzxr_nv3_ff3psu73_-p8t")
+(bbx 450 250 150 110))
+($4 7 < -hkpzxr_nv3_ff3psu73_-p98 "" 2
+(uid "-hkpzxr_nv3_ff3psu73_-p98")
+(points 520 250 520 180))
+($5 8 < -yk94ms_85r_eqyymv3f_-o71 "AbstractProbability" 1
+(name "AbstractProbability"
+)
+(uid "-yk94ms_85r_eqyymv3f_-o71")
+(isAbstract true))
+($6 9 < -yk94ms_85r_eqyymv3f_-o70 "weight" 8
+(initialValue "1.0"
+)
+(name "weight"
+)
+(uid "-yk94ms_85r_eqyymv3f_-o70")
+(multiplicity "1"))
+($7 10 < -yk94ms_85r_eqyymv3f_-o6z "documentation" 9
+(name "documentation"
+)
+(value "weight (= non-normalised probability) that the parent is associated with this particular possibility. "
+)
+(uid "-yk94ms_85r_eqyymv3f_-o6z"))
+($7 11 < -yk94ms_85r_eqyymv3f_-o6y "guid" 9
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:38_00025"
+)
+(uid "-yk94ms_85r_eqyymv3f_-o6y"))
+($8 12 < -yk94ms_85r_eqyymv3f_-o6x "#<anon> (AbstractProbability, DataObject)" 8
+(uid "-yk94ms_85r_eqyymv3f_-o6x"))
+($7 13 < -yk94ms_85r_eqyymv3f_-o6w "documentation" 8
+(name "documentation"
+)
+(value "Abstract class defining classes used for probability lists. AbstractProbability objects have a parent that is the object that has the probability (e.g. a ResonanceGroup), a link 'possibility' to various possibilities (e.g. a ChemComp), and a weight to determine their relative probability. Probabilities are calculated by taking the weight of each AbstractProbability object and dividing by the sum of the weights in the (appropriate subset of) AbstractProbability objects linked to a given parent. "
+""
+"Implementation note: The presence of the 'possibility' link must be enforced by the data modeller, as it is not checked by the software. "
+)
+(uid "-yk94ms_85r_eqyymv3f_-o6w"))
+($7 14 < -yk94ms_85r_eqyymv3f_-o6v "guid" 8
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:19:50_00005"
+)
+(uid "-yk94ms_85r_eqyymv3f_-o6v"))
+($5 15 < -hkpzxr_-nsb_f8y6usm8_-p91 "MultiTypeValue" 1
+(name "MultiTypeValue"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p91")
+(isAbstract true))
+($6 16 < -hkpzxr_-nsb_f8y6usm8_-p8w "textValue" 15
+(name "textValue"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p8w"))
+($7 17 < -hkpzxr_-nsb_f8y6usm8_-p8v "documentation" 16
+(name "documentation"
+)
+(value "Text type value"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p8v"))
+($7 18 < -hkpzxr_-nsb_f8y6usm8_-p5i "guid" 16
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:55:55_00005"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p5i"))
+($6 19 < -hkpzxr_-nsb_f8y6usm8_-p8u "intValue" 15
+(name "intValue"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p8u"))
+($7 20 < -hkpzxr_-nsb_f8y6usm8_-p8t "documentation" 19
+(name "documentation"
+)
+(value "Integer type value"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p8t"))
+($7 21 < -hkpzxr_-nsb_f8y6usm8_-p5h "guid" 19
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:55:55_00006"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p5h"))
+($6 22 < -hkpzxr_-nsb_f8y6usm8_-p8s "floatValue" 15
+(name "floatValue"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p8s"))
+($7 23 < -hkpzxr_-nsb_f8y6usm8_-p8r "documentation" 22
+(name "documentation"
+)
+(value "Float type value"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p8r"))
+($7 24 < -hkpzxr_-nsb_f8y6usm8_-p5g "guid" 22
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:55:55_00007"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p5g"))
+($6 25 < -hkpzxr_-nsb_f8y6usm8_-p8q "booleanValue" 15
+(name "booleanValue"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p8q"))
+($7 26 < -hkpzxr_-nsb_f8y6usm8_-p8p "documentation" 25
+(name "documentation"
+)
+(value "Boolean type value"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p8p"))
+($7 27 < -hkpzxr_-nsb_f8y6usm8_-p5f "guid" 25
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:55:55_00008"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p5f"))
+($8 28 < -hkpzxr_v5_f8zng6fd_-p6t "#<anon> (MultiTypeValue, DataObject)" 15
+(uid "-hkpzxr_v5_f8zng6fd_-p6t"))
+($7 29 < -hkpzxr_-nsb_f8y6usm8_-p8x "documentation" 15
+(name "documentation"
+)
+(value "Typed value data"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p8x"))
+($7 30 < -hkpzxr_-nsb_f8y6usm8_-p5e "guid" 15
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:55:49_00003"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p5e"))
+($7 31 < -yk94ms_85r_eqyymv3f_-o6u "shortName" 1
+(name "shortName"
+)
+(value "TEMP"
+)
+(uid "-yk94ms_85r_eqyymv3f_-o6u"))
+($7 32 < -yk94ms_85r_eqyymv3f_-o6t "documentation" 1
+(name "documentation"
+)
+(value "Templates, i.e. abstract classes for general use in other parts of the data model."
+)
+(uid "-yk94ms_85r_eqyymv3f_-o6t"))
+($7 33 < -yk94ms_85r_eqyymv3f_-o6s "guid" 1
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:19:50_00004"
+)
+(uid "-yk94ms_85r_eqyymv3f_-o6s"))
+($9 34)
+($10 37)
+($9 39)
+($9 40)
+($9 41)
+($10 43)
+($9 46)
+($5 35 @ -yk94ms_-e3s_e41656c6_-gpe 4 "Logical" $1 "memops" $1 "Implementation" $1 "DataObject" $5)
+($5 36 @ -yk94ms_-e3s_e41656c6_-h10 4 "Logical" $1 "memops" $1 "Implementation" $1 "Float" $5)
+($12 38 @ -yk94ms_-e3s_e41656c6_-fvw 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "memops.Implementation" $12)
+($5 42 @ -yk94ms_-e3s_e41656c6_-h04 4 "Logical" $1 "memops" $1 "Implementation" $1 "Text" $5)
+($5 44 @ -yk94ms_-e3s_e41656c6_-h0t 4 "Logical" $1 "memops" $1 "Implementation" $1 "Int" $5)
+($5 45 @ -yk94ms_-e3s_e41656c6_-h1k 4 "Logical" $1 "memops" $1 "Implementation" $1 "Boolean" $5)
+(subtypeAssn 12 8)
+(supertypeAssn 12 35)
+(generalizationAssn 8 12)
+(typeRefAssn 9 36)
+(typeExpression 9 37)
+(projectionAssn 3 8 34)
+(styleAssn 4 38)
+(projectionAssn 4 35 39)
+(to 5 4)
+(from 5 3)
+(projectionAssn 5 12 40)
+(subtypeAssn 28 15)
+(supertypeAssn 28 35)
+(generalizationAssn 15 28)
+(typeRefAssn 16 42)
+(typeExpression 16 43)
+(typeRefAssn 19 44)
+(typeExpression 19 43)
+(typeRefAssn 22 36)
+(typeExpression 22 43)
+(typeRefAssn 25 45)
+(typeExpression 25 43)
+(projectionAssn 6 15 41)
+(to 7 4)
+(from 7 6)
+(projectionAssn 7 28 46)

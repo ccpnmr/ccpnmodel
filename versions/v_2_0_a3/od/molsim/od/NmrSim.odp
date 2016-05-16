@@ -1,0 +1,1493 @@
+ObjectDomain_Shared_Package 15
+{-hkpzxr_-cvb_f2ixo80k_-p96 3 "Logical" objectdomain.uml.mechanisms.UmlPackage-owns "molsim" objectdomain.uml.mechanisms.UmlPackage-owns "NmrSim" objectdomain.uml.mechanisms.UmlPackage-owns
+}[objectdomain.uml.core.TypeExpression $16
+objectdomain.uml.mechanisms.UmlPackage-owns $1
+objectdomain.uml.core.Generalization-owns $10
+objectdomain.uml.core.Dependency-owns $2
+objectdomain.uml.core.Projection $14
+objectdomain.uml.core.UmlAttribute-features $8
+objectdomain.uml.core.UmlAssociationEnd-connections $12
+objectdomain.uml.view.style.BaseViewElementStyle-owns $17
+objectdomain.uml.view.ClassView-owns $4
+objectdomain.uml.core.UmlTaggedValue-taggedValues $9
+objectdomain.uml.core.UmlAssociation-owns $11
+objectdomain.uml.view.Diagram-owns $3
+objectdomain.uml.view.GeneralizationView-owns $6
+objectdomain.uml.core.UmlMultiplicity $15
+objectdomain.uml.core.UmlClass-owns $7
+objectdomain.uml.view.AssociationView-owns $5
+objectdomain.uml.core.Stereotype-owns $13
+]
+($1 1 > -hkpzxr_-cvb_f2ixo80k_-p96 3 "Logical" $1 "molsim" $1 "NmrSim" $1
+(name "NmrSim"
+)
+(uid "-hkpzxr_-cvb_f2ixo80k_-p96"))
+($2 2 < -hkpzxr_-cvb_f2ixo80k_-p95 "#<anon> (NmrSim, AnnealProtocol)" 1
+(uid "-hkpzxr_-cvb_f2ixo80k_-p95"))
+($2 3 < -hkpzxr_-cvb_f2ixo80k_-p90 "#<anon> (NmrSim, MolSystem)" 1
+(uid "-hkpzxr_-cvb_f2ixo80k_-p90"))
+($2 4 < -hkpzxr_-cvb_f2ixo80k_-p8z "#<anon> (NmrSim, MolStructure)" 1
+(uid "-hkpzxr_-cvb_f2ixo80k_-p8z"))
+($2 5 < -hkpzxr_-cvb_f2ixo80k_-p8y "#<anon> (NmrSim, NmrConstraint)" 1
+(uid "-hkpzxr_-cvb_f2ixo80k_-p8y"))
+($3 6 < -hkpzxr_-cvb_f2ixo80k_-p8n "_NmrSim-details" 1
+(name "_NmrSim-details"
+)
+(uid "-hkpzxr_-cvb_f2ixo80k_-p8n")
+(diagramType "class"))
+($4 7 < -hkpzxr_v5_f2k5j2z5_-p8i "NmrSimStore" 6
+(uid "-hkpzxr_v5_f2k5j2z5_-p8i")
+(bbx 430 570 100 60))
+($4 8 < -hkpzxr_v5_f2k5j2z5_-p8h "Run" 6
+(uid "-hkpzxr_v5_f2k5j2z5_-p8h")
+(bbx 390 290 100 80))
+($5 9 < -hkpzxr_v5_f2k5j2z5_-p8l "" 6
+(toMultiplicityPosition 435 375)
+(uid "-hkpzxr_v5_f2k5j2z5_-p8l")
+(points 445 570 445 370)
+(fromMultiplicityPosition 425 550))
+($4 10 < -hkpzxr_v5_f2k5j2z5_-p6t "NmrSimEnergyTerm" 6
+(uid "-hkpzxr_v5_f2k5j2z5_-p6t")
+(bbx 370 650 140 110))
+($5 11 < -hkpzxr_v5_f2k5j2z5_-p82 "" 6
+(toMultiplicityPosition 405 630)
+(uid "-hkpzxr_v5_f2k5j2z5_-p82")
+(points 415 370 415 650)
+(fromMultiplicityPosition 395 375))
+($4 12 < -hkpzxr_v5_f2k5j2z5_-p6c "AnnealProtocol" 6
+(autoSizeToFit true)
+(uid "-hkpzxr_v5_f2k5j2z5_-p6c")
+(bbx 20 450 250 110))
+($4 13 < -hkpzxr_v5_f2k5j2z5_-p6b "EnergyTerm" 6
+(autoSizeToFit true)
+(uid "-hkpzxr_v5_f2k5j2z5_-p6b")
+(bbx 30 640 230 110))
+($5 14 < -hkpzxr_v5_f2k5j2z5_-p81 "" 6
+(toMultiplicityPosition 115 620)
+(uid "-hkpzxr_v5_f2k5j2z5_-p81")
+(points 125 560 125 640)
+(fromMultiplicityPosition 140 565))
+($4 15 < -hkpzxr_v5_f2k5j2z5_-p6a "AbstractConstraintList" 6
+(autoSizeToFit true)
+(uid "-hkpzxr_v5_f2k5j2z5_-p6a")
+(bbx 840 390 300 290))
+($4 16 < -hkpzxr_v5_f2k5j2z5_-p69 "NmrConstraintStore" 6
+(autoSizeToFit true)
+(uid "-hkpzxr_v5_f2k5j2z5_-p69")
+(bbx 850 270 280 60))
+($5 17 < -hkpzxr_v5_f2k5j2z5_-p80 "" 6
+(toMultiplicityPosition 1050 360)
+(toRolePosition 1165 360)
+(uid "-hkpzxr_v5_f2k5j2z5_-p80")
+(points 1070 330 1070 390)
+(fromMultiplicityPosition 1080 345))
+($4 18 < -hkpzxr_v5_f2k5j2z5_-p68 "MolSystem" 6
+(autoSizeToFit true)
+(uid "-hkpzxr_v5_f2k5j2z5_-p68")
+(bbx 40 40 230 250))
+($4 19 < -hkpzxr_v5_f2k5j2z5_-p67 "StructureEnsemble" 6
+(autoSizeToFit true)
+(uid "-hkpzxr_v5_f2k5j2z5_-p67")
+(bbx 370 20 290 110))
+($5 20 < -hkpzxr_v5_f2k5j2z5_-p7z "" 6
+(toMultiplicityPosition 360 75)
+(uid "-hkpzxr_v5_f2k5j2z5_-p7z")
+(points 270 95 370 95)
+(fromMultiplicityPosition 275 75))
+($5 21 < -hkpzxr_v5_f2k5j2z5_-p7s "" 6
+(toMultiplicityPosition 830 650)
+(toRolePosition 810 680)
+(uid "-hkpzxr_v5_f2k5j2z5_-p7s")
+(points 510 670 840 670)
+(fromMultiplicityPosition 515 650))
+($5 22 < -hkpzxr_v5_f2k5j2z5_-p6s "" 6
+(toMultiplicityPosition 350 695)
+(uid "-hkpzxr_v5_f2k5j2z5_-p6s")
+(points 260 680 370 680))
+($5 23 < -hkpzxr_v5_f2k5j2z5_-p7l "" 6
+(toMultiplicityPosition 370 375)
+(uid "-hkpzxr_v5_f2k5j2z5_-p7l")
+(points 245 450 245 370 390 370)
+(fromMultiplicityPosition 225 430))
+($5 24 < -hkpzxr_v5_f2k5j2z5_-p7e "" 6
+(toMultiplicityPosition 840 300)
+(toRolePosition 720 275)
+(uid "-hkpzxr_v5_f2k5j2z5_-p7e")
+(points 490 295 850 295)
+(fromRolePosition 505 275)
+(fromMultiplicityPosition 495 300))
+($5 25 < -hkpzxr_v5_f2k5j2z5_-p7c "" 6
+(toRolePosition 775 335)
+(uid "-hkpzxr_v5_f2k5j2z5_-p7c")
+(points 490 330 850 330)
+(fromRolePosition 495 310))
+($5 26 < -hkpzxr_v5_f2k5j2z5_-p6y "" 6
+(toMultiplicityPosition 380 295)
+(toRolePosition 290 295)
+(uid "-hkpzxr_v5_f2k5j2z5_-p6y")
+(points 270 290 390 290)
+(fromMultiplicityPosition 275 270))
+($5 27 < -hkpzxr_v5_f2k5j2z5_-p6z "" 6
+(toRolePosition 300 240)
+(uid "-hkpzxr_v5_f2k5j2z5_-p6z")
+(points 405 130 405 290)
+(fromRolePosition 295 135)
+(fromMultiplicityPosition 415 115))
+($4 28 < -hkpzxr_v5_f9ck4903_-p7h "Model" 6
+(autoSizeToFit true)
+(uid "-hkpzxr_v5_f9ck4903_-p7h")
+(bbx 20 330 210 90))
+($5 29 < -hkpzxr_v5_f9ck4903_-p7t "" 6
+(toMultiplicityPosition 40 310)
+(uid "-hkpzxr_v5_f9ck4903_-p7t")
+(points 370 25 30 25 30 330)
+(fromMultiplicityPosition 340 30))
+($5 30 < -hkpzxr_v5_f9ck4903_-p7j "" 6
+(toMultiplicityPosition 240 320)
+(toRolePosition 230 345)
+(uid "-hkpzxr_v5_f9ck4903_-p7j")
+(points 390 340 230 340)
+(fromRolePosition 270 320)
+(fromMultiplicityPosition 370 345))
+($4 31 < -hkpzxr_-li2_fcvq0su4_-p60 "EnergyTermParameter" 6
+(uid "-hkpzxr_-li2_fcvq0su4_-p60")
+(bbx 640 680 150 80))
+($5 32 < -hkpzxr_-li2_fcvq0su4_-p63 "" 6
+(toMultiplicityPosition 630 735)
+(uid "-hkpzxr_-li2_fcvq0su4_-p63")
+(points 510 725 640 725)
+(fromMultiplicityPosition 515 700))
+($4 33 < -hkpzxr_-li2_fdsuw0ej_-p8c "AbstractMeasurementList" 6
+(autoSizeToFit true)
+(uid "-hkpzxr_-li2_fdsuw0ej_-p8c")
+(bbx 540 450 250 130))
+($5 34 < -hkpzxr_-li2_fdsuw0ej_-p98 "" 6
+(toMultiplicityPosition 795 550)
+(toRolePosition 715 590)
+(uid "-hkpzxr_-li2_fdsuw0ej_-p98")
+(points 840 575 790 575))
+($4 35 < -hkpzxr_-li2_fdsuw0ej_-p8b "PeakList" 6
+(autoSizeToFit true)
+(uid "-hkpzxr_-li2_fdsuw0ej_-p8b")
+(bbx 790 130 190 110))
+($5 36 < -hkpzxr_-li2_fdsuw0ej_-p94 "" 6
+(toMultiplicityPosition 730 430)
+(toRolePosition 670 405)
+(uid "-hkpzxr_-li2_fdsuw0ej_-p94")
+(points 490 350 745 350 745 450)
+(fromRolePosition 505 355)
+(fromMultiplicityPosition 495 360))
+($5 37 < -hkpzxr_-li2_fdsuw0ej_-p95 "" 6
+(toMultiplicityPosition 530 455)
+(toRolePosition 480 430)
+(uid "-hkpzxr_-li2_fdsuw0ej_-p95")
+(points 470 370 470 450 540 450)
+(fromRolePosition 465 380))
+($5 38 < -hkpzxr_-li2_fdsuw0ej_-p8r "" 6
+(toMultiplicityPosition 435 270)
+(toRolePosition 450 200)
+(uid "-hkpzxr_-li2_fdsuw0ej_-p8r")
+(points 790 195 445 195 445 290)
+(fromRolePosition 680 175)
+(fromMultiplicityPosition 780 170))
+($5 39 < -hkpzxr_-li2_fdsuw0ej_-p8p "" 6
+(toRolePosition 490 260)
+(uid "-hkpzxr_-li2_fdsuw0ej_-p8p")
+(points 790 225 475 225 475 290)
+(fromRolePosition 665 230)
+(fromMultiplicityPosition 780 230))
+($4 40 < -hkpzxr_nv3_ff3psu73_-p8s "RunParameter" 6
+(uid "-hkpzxr_nv3_ff3psu73_-p8s")
+(bbx 300 480 100 80))
+($4 41 < -hkpzxr_nv3_ff3psu73_-p95 "MultiTypeValue" 6
+(uid "-hkpzxr_nv3_ff3psu73_-p95")
+(bbx 220 790 240 110))
+($6 42 < -hkpzxr_nv3_ff3psu73_-p94 "" 6
+(uid "-hkpzxr_nv3_ff3psu73_-p94")
+(points 335 560 335 790))
+($5 43 < -hkpzxr_nv3_ff3psu73_-p90 "" 6
+(toMultiplicityPosition 375 450)
+(uid "-hkpzxr_nv3_ff3psu73_-p90")
+(points 395 370 395 480)
+(fromMultiplicityPosition 380 390))
+($7 44 < -hkpzxr_v5_f2k5j2z5_-p98 "NmrSimStore" 1
+(name "NmrSimStore"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p98"))
+($8 45 < -hkpzxr_v5_f2k5j2z5_-p95 "name" 44
+(changeability "frozen")
+(name "name"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p95")
+(multiplicity "1"))
+($9 46 < -hkpzxr_v5_f2k5j2z5_-p94 "documentation" 45
+(name "documentation"
+)
+(value "Name of NmrSimStore"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p94"))
+($9 47 < -hkpzxr_v5_f2k5j2z5_-p4r "guid" 45
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-06-05-13:43:08_00009"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p4r"))
+($10 48 < -hkpzxr_v5_f2k5j2z5_-p96 "#<anon> (NmrSimStore, TopObject)" 44
+(uid "-hkpzxr_v5_f2k5j2z5_-p96"))
+($11 49 < -hkpzxr_v5_f2k5j2z5_-p8m "#<anon> (NmrSimStore, Run)##," 44
+(name "")
+(uid "-hkpzxr_v5_f2k5j2z5_-p8m"))
+($12 50 < -hkpzxr_v5_f2k5j2z5_-p8k "#0" 49
+(changeability "frozen")
+(aggregation "composite")
+(uid "-hkpzxr_v5_f2k5j2z5_-p8k")
+(multiplicity "1"))
+($9 51 < -hkpzxr_v5_f2k5j2z5_-p4q "guid" 50
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-06-05-13:43:08_00007"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p4q"))
+($12 52 < -hkpzxr_v5_f2k5j2z5_-p8j "#1" 49
+(uid "-hkpzxr_v5_f2k5j2z5_-p8j")
+(multiplicity "*"))
+($9 53 < -hkpzxr_v5_f2k5j2z5_-p4p "guid" 52
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-06-05-13:43:08_00008"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p4p"))
+($9 54 < -hkpzxr_v5_f2k5j2z5_-p97 "documentation" 44
+(name "documentation"
+)
+(value "Grouping of NmrSim data.The package describes simulations, structure generations etc. taht use NMR data."
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p97"))
+($9 55 < -hkpzxr_v5_f2k5j2z5_-p93 "keyNames" 44
+(name "keyNames"
+)
+(value "name"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p93"))
+($9 56 < -hkpzxr_v5_f2k5j2z5_-p53 "guid" 44
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-06-05-13:42:05_00011"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p53"))
+($7 57 < -hkpzxr_v5_f2k5j2z5_-p8t "Run" 1
+(name "Run"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p8t"))
+($8 58 < -hkpzxr_v5_f2k5j2z5_-p8p "serial" 57
+(changeability "frozen")
+(name "serial"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p8p")
+(multiplicity "1"))
+($9 59 < -hkpzxr_v5_f2k5j2z5_-p8o "isAutomatic" 58
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p8o"))
+($9 60 < -hkpzxr_v5_f2k5j2z5_-p48 "guid" 58
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-06-05-13:45:51_00005"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p48"))
+($8 61 < -hkpzxr_v5_f2k5j2z5_-p8n "details" 57
+(name "details"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p8n"))
+($9 62 < -hkpzxr_v5_f2k5j2z5_-p47 "guid" 61
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-06-05-13:45:51_00006"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p47"))
+($10 63 < -hkpzxr_v5_f2k5j2z5_-p8r "#<anon> (Run, DataObject)" 57
+(uid "-hkpzxr_v5_f2k5j2z5_-p8r"))
+($11 64 < -hkpzxr_v5_f2k5j2z5_-p85 "#<anon> (Run, NmrSimEnergyTerm)##," 57
+(name "")
+(uid "-hkpzxr_v5_f2k5j2z5_-p85"))
+($12 65 < -hkpzxr_v5_f2k5j2z5_-p84 "#0" 64
+(changeability "frozen")
+(aggregation "composite")
+(uid "-hkpzxr_v5_f2k5j2z5_-p84")
+(multiplicity "1"))
+($9 66 < -hkpzxr_v5_f2k5j2z5_-p4o "guid" 65
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-06-05-13:43:08_00014"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p4o"))
+($12 67 < -hkpzxr_v5_f2k5j2z5_-p83 "#1" 64
+(uid "-hkpzxr_v5_f2k5j2z5_-p83")
+(multiplicity "*"))
+($9 68 < -hkpzxr_v5_f2k5j2z5_-p4y "guid" 67
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-06-05-13:43:08_00015"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p4y"))
+($11 69 < -hkpzxr_v5_f2k5j2z5_-p7f "#<anon> (Run, NmrConstraintStore)##inputToNmrRuns,inputConstraintStore" 57
+(name "")
+(uid "-hkpzxr_v5_f2k5j2z5_-p7f"))
+($12 70 < -hkpzxr_v5_f2k5j2z5_-p79 "inputToNmrRuns#0" 69
+(name "inputToNmrRuns"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p79")
+(multiplicity "*"))
+($9 71 < -hkpzxr_v5_f2k5j2z5_-p77 "baseName" 70
+(name "baseName"
+)
+(value "inputToNmrRun"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p77"))
+($9 72 < -hkpzxr_v5_f2k5j2z5_-p46 "guid" 70
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-06-05-13:45:51_00001"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p46"))
+($9 73 < -hkpzxr_-iih_f527tox5_-p8t "documentation" 70
+(name "documentation"
+)
+(value "NmrSim.Runs that use this set of NmrConstraints as input"
+)
+(uid "-hkpzxr_-iih_f527tox5_-p8t"))
+($12 74 < -hkpzxr_v5_f2k5j2z5_-p78 "inputConstraintStore#1" 69
+(changeability "frozen")
+(name "inputConstraintStore"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p78")
+(multiplicity "1"))
+($9 75 < -hkpzxr_v5_f2k5j2z5_-p45 "guid" 74
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-06-05-13:45:51_00002"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p45"))
+($9 76 < -hkpzxr_-iih_f527tox5_-p8u "documentation" 74
+(name "documentation"
+)
+(value "NmrConstraintStore that defines Nmr Constraints used for input to this run"
+)
+(uid "-hkpzxr_-iih_f527tox5_-p8u"))
+($9 77 < -hkpzxr_v5_f2k5j2z5_-p76 "partitionsChildren" 69
+(name "partitionsChildren"
+)
+(value "True"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p76"))
+($11 78 < -hkpzxr_v5_f2k5j2z5_-p7d "#<anon> (Run, NmrConstraintStore)##outputFromNmrRun,outputConstraintStore" 57
+(name "")
+(uid "-hkpzxr_v5_f2k5j2z5_-p7d"))
+($12 79 < -hkpzxr_v5_f2k5j2z5_-p7b "outputFromNmrRun#0" 78
+(name "outputFromNmrRun"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p7b"))
+($9 80 < -hkpzxr_v5_f2k5j2z5_-p44 "guid" 79
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-06-05-13:45:51_00003"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p44"))
+($9 81 < -hkpzxr_-iih_f527tox5_-p8r "documentation" 79
+(name "documentation"
+)
+(value "NmrSim.Run that generated the constraints in the NmrConstraintStore"
+)
+(uid "-hkpzxr_-iih_f527tox5_-p8r"))
+($12 82 < -hkpzxr_v5_f2k5j2z5_-p7a "outputConstraintStore#1" 78
+(name "outputConstraintStore"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p7a"))
+($9 83 < -hkpzxr_v5_f2k5j2z5_-p43 "guid" 82
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-06-05-13:45:51_00004"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p43"))
+($9 84 < -hkpzxr_-iih_f527tox5_-p8s "documentation" 82
+(name "documentation"
+)
+(value "NmrConstraintStore used to store output constraitns from this run"
+)
+(uid "-hkpzxr_-iih_f527tox5_-p8s"))
+($11 85 < -hkpzxr_v5_f9ck4903_-p7s "#<anon> (Run, Model)##inputToNmrRuns,inputStructures" 57
+(name "")
+(uid "-hkpzxr_v5_f9ck4903_-p7s"))
+($12 86 < -hkpzxr_v5_f9ck4903_-p7r "inputToNmrRuns#0" 85
+(name "inputToNmrRuns"
+)
+(uid "-hkpzxr_v5_f9ck4903_-p7r")
+(multiplicity "*"))
+($9 87 < -hkpzxr_v5_f9ck4903_-p7n "documentation" 86
+(name "documentation"
+)
+(value "NmrSim.Runs where structure used as input"
+)
+(uid "-hkpzxr_v5_f9ck4903_-p7n"))
+($9 88 < -hkpzxr_v5_f9ck4903_-p7m "baseName" 86
+(name "baseName"
+)
+(value "inputToNmrRun"
+)
+(uid "-hkpzxr_v5_f9ck4903_-p7m"))
+($9 89 < -hkpzxr_v5_f9ck4903_-p6p "guid" 86
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-23-12:00:13_00001"
+)
+(uid "-hkpzxr_v5_f9ck4903_-p6p"))
+($12 90 < -hkpzxr_v5_f9ck4903_-p7q "inputStructures#1" 85
+(name "inputStructures"
+)
+(uid "-hkpzxr_v5_f9ck4903_-p7q")
+(multiplicity "*"))
+($9 91 < -hkpzxr_v5_f9ck4903_-p7p "documentation" 90
+(name "documentation"
+)
+(value "Structures used for Run input"
+)
+(uid "-hkpzxr_v5_f9ck4903_-p7p"))
+($9 92 < -hkpzxr_v5_f9ck4903_-p7o "baseName" 90
+(name "baseName"
+)
+(value "inputStructure"
+)
+(uid "-hkpzxr_v5_f9ck4903_-p7o"))
+($9 93 < -hkpzxr_v5_f9ck4903_-p6o "guid" 90
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-23-12:00:13_00002"
+)
+(uid "-hkpzxr_v5_f9ck4903_-p6o"))
+($11 94 < -hkpzxr_-li2_fdsuw0ej_-p97 "#<anon> (Run, AbstractMeasurementList)##inputToNmrRuns,inputMeasurementLists" 57
+(name "")
+(uid "-hkpzxr_-li2_fdsuw0ej_-p97"))
+($12 95 < -hkpzxr_-li2_fdsuw0ej_-p93 "inputToNmrRuns#0" 94
+(name "inputToNmrRuns"
+)
+(uid "-hkpzxr_-li2_fdsuw0ej_-p93")
+(multiplicity "*"))
+($9 96 < -hkpzxr_-li2_fdsuw0ej_-p92 "documentation" 95
+(name "documentation"
+)
+(value "NmrSim.Runs using MeasurementList as input"
+)
+(uid "-hkpzxr_-li2_fdsuw0ej_-p92"))
+($9 97 < -hkpzxr_-li2_fdsuw0ej_-p91 "baseName" 95
+(name "baseName"
+)
+(value "inputToNmrRun"
+)
+(uid "-hkpzxr_-li2_fdsuw0ej_-p91"))
+($9 98 < -hkpzxr_-li2_fdsuw0ej_-p89 "guid" 95
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-03-14-15:14:21_00001"
+)
+(uid "-hkpzxr_-li2_fdsuw0ej_-p89"))
+($12 99 < -hkpzxr_-li2_fdsuw0ej_-p90 "inputMeasurementLists#1" 94
+(name "inputMeasurementLists"
+)
+(uid "-hkpzxr_-li2_fdsuw0ej_-p90")
+(multiplicity "*"))
+($9 100 < -hkpzxr_-li2_fdsuw0ej_-p8z "documentation" 99
+(name "documentation"
+)
+(value "Measurement lists used as input for NmrSim.Run"
+)
+(uid "-hkpzxr_-li2_fdsuw0ej_-p8z"))
+($9 101 < -hkpzxr_-li2_fdsuw0ej_-p8y "baseName" 99
+(name "baseName"
+)
+(value "inputMeasurementList"
+)
+(uid "-hkpzxr_-li2_fdsuw0ej_-p8y"))
+($9 102 < -hkpzxr_-li2_fdsuw0ej_-p8a "guid" 99
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-03-14-15:14:21_00002"
+)
+(uid "-hkpzxr_-li2_fdsuw0ej_-p8a"))
+($11 103 < -hkpzxr_-li2_fdsuw0ej_-p96 "#<anon> (Run, AbstractMeasurementList)##outputFromNmrRun,outputMeasurementLists" 57
+(name "")
+(uid "-hkpzxr_-li2_fdsuw0ej_-p96"))
+($12 104 < -hkpzxr_-li2_fdsuw0ej_-p8x "outputFromNmrRun#0" 103
+(name "outputFromNmrRun"
+)
+(uid "-hkpzxr_-li2_fdsuw0ej_-p8x"))
+($9 105 < -hkpzxr_-li2_fdsuw0ej_-p8t "documentation" 104
+(name "documentation"
+)
+(value "NmrSim.Run from which Measuremnet list is produced."
+)
+(uid "-hkpzxr_-li2_fdsuw0ej_-p8t"))
+($9 106 < -hkpzxr_-li2_fdsuw0ej_-p84 "guid" 104
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-03-14-15:14:54_00001"
+)
+(uid "-hkpzxr_-li2_fdsuw0ej_-p84"))
+($12 107 < -hkpzxr_-li2_fdsuw0ej_-p8w "outputMeasurementLists#1" 103
+(name "outputMeasurementLists"
+)
+(uid "-hkpzxr_-li2_fdsuw0ej_-p8w")
+(multiplicity "*"))
+($9 108 < -hkpzxr_-li2_fdsuw0ej_-p8v "documentation" 107
+(name "documentation"
+)
+(value "MeasurementLists output form NmrSim.Run"
+)
+(uid "-hkpzxr_-li2_fdsuw0ej_-p8v"))
+($9 109 < -hkpzxr_-li2_fdsuw0ej_-p8u "baseName" 107
+(name "baseName"
+)
+(value "outputMeasurementList"
+)
+(uid "-hkpzxr_-li2_fdsuw0ej_-p8u"))
+($9 110 < -hkpzxr_-li2_fdsuw0ej_-p83 "guid" 107
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-03-14-15:14:54_00002"
+)
+(uid "-hkpzxr_-li2_fdsuw0ej_-p83"))
+($11 111 < -hkpzxr_nv3_ff3psu73_-p93 "#<anon> (Run, RunParameter)##," 57
+(name "")
+(uid "-hkpzxr_nv3_ff3psu73_-p93"))
+($12 112 < -hkpzxr_nv3_ff3psu73_-p92 "#0" 111
+(changeability "frozen")
+(aggregation "composite")
+(uid "-hkpzxr_nv3_ff3psu73_-p92")
+(multiplicity "1"))
+($9 113 < -hkpzxr_nv3_ff3psu73_-p8o "guid" 112
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-04-16-11:56:18_00001"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p8o"))
+($12 114 < -hkpzxr_nv3_ff3psu73_-p91 "#1" 111
+(uid "-hkpzxr_nv3_ff3psu73_-p91")
+(multiplicity "*"))
+($9 115 < -hkpzxr_nv3_ff3psu73_-p8n "guid" 114
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-04-16-11:56:18_00002"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p8n"))
+($9 116 < -hkpzxr_v5_f2k5j2z5_-p8s "documentation" 57
+(name "documentation"
+)
+(value "A single run, simulatuion, structure generation atempt etc. "
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p8s"))
+($9 117 < -hkpzxr_v5_f2k5j2z5_-p8q "keyNames" 57
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p8q"))
+($9 118 < -hkpzxr_v5_f2k5j2z5_-p52 "guid" 57
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-06-05-13:42:05_00012"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p52"))
+($7 119 < -hkpzxr_v5_f2k5j2z5_-p8c "NmrSimEnergyTerm" 1
+(name "NmrSimEnergyTerm"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p8c"))
+($8 120 < -hkpzxr_-li2_fcvq0su4_-p6h "code" 119
+(changeability "frozen")
+(name "code"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p6h")
+(multiplicity "1"))
+($9 121 < -hkpzxr_-li2_fcvq0su4_-p6g "documentation" 120
+(name "documentation"
+)
+(value "Code for (type of) energy term, as used in the application being run. Part of class key"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p6g"))
+($9 122 < -hkpzxr_-li2_fcvq0su4_-p5l "guid" 120
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-15:15:22_00005"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p5l"))
+($8 123 < -hkpzxr_-li2_fcvq0su4_-p6f "termId" 119
+(changeability "frozen")
+(name "termId"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p6f")
+(multiplicity "1"))
+($9 124 < -hkpzxr_-li2_fcvq0su4_-p6e "documentation" 123
+(name "documentation"
+)
+(value "Index of Energy Term. DIstinguishes this term from others with the same code. Part of the class key."
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p6e"))
+($9 125 < -hkpzxr_-li2_fcvq0su4_-p5k "guid" 123
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-15:15:22_00006"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p5k"))
+($8 126 < -hkpzxr_-li2_fcvq0su4_-p6d "name" 119
+(name "name"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p6d"))
+($9 127 < -hkpzxr_-li2_fcvq0su4_-p6c "documentation" 126
+(name "documentation"
+)
+(value "Usert-intelligible name of Energy Term"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p6c"))
+($9 128 < -hkpzxr_-li2_fcvq0su4_-p5m "guid" 126
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-15:15:22_00007"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p5m"))
+($8 129 < -hkpzxr_v5_f2k5j2z5_-p86 "details" 119
+(name "details"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p86"))
+($9 130 < -hkpzxr_v5_f2k5j2z5_-p4m "guid" 129
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-06-05-13:43:08_00013"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p4m"))
+($10 131 < -hkpzxr_v5_f2k5j2z5_-p89 "#<anon> (NmrSimEnergyTerm, DataObject)" 119
+(uid "-hkpzxr_v5_f2k5j2z5_-p89"))
+($11 132 < -hkpzxr_v5_f2k5j2z5_-p7y "#<anon> (NmrSimEnergyTerm, AbstractConstraintList)##,constraintLists" 119
+(name "")
+(uid "-hkpzxr_v5_f2k5j2z5_-p7y"))
+($12 133 < -hkpzxr_v5_f2k5j2z5_-p7x "#0" 132
+(uid "-hkpzxr_v5_f2k5j2z5_-p7x")
+(multiplicity "*"))
+($9 134 < -hkpzxr_v5_f2k5j2z5_-p7t "documentation" 133
+(name "documentation"
+)
+(value "RestraintGroups using ConstraintList"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p7t"))
+($9 135 < -hkpzxr_v5_f2k5j2z5_-p4l "guid" 133
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-06-05-13:43:08_00010"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p4l"))
+($12 136 < -hkpzxr_v5_f2k5j2z5_-p7w "constraintLists#1" 132
+(name "constraintLists"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p7w")
+(multiplicity "*"))
+($9 137 < -hkpzxr_v5_f2k5j2z5_-p7v "baseName" 136
+(name "baseName"
+)
+(value "constraintList"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p7v"))
+($9 138 < -hkpzxr_v5_f2k5j2z5_-p7u "documentation" 136
+(name "documentation"
+)
+(value "Constraint lists used in RestraintGroup"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p7u"))
+($9 139 < -hkpzxr_v5_f2k5j2z5_-p4k "guid" 136
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-06-05-13:43:08_00011"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p4k"))
+($11 140 < -hkpzxr_-li2_fcvq0su4_-p64 "#<anon> (NmrSimEnergyTerm, EnergyTermParameter)##," 119
+(name "")
+(uid "-hkpzxr_-li2_fcvq0su4_-p64"))
+($12 141 < -hkpzxr_-li2_fcvq0su4_-p62 "#0" 140
+(changeability "frozen")
+(aggregation "composite")
+(uid "-hkpzxr_-li2_fcvq0su4_-p62")
+(multiplicity "1"))
+($9 142 < -hkpzxr_-li2_fcvq0su4_-p5j "guid" 141
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-15:15:22_00003"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p5j"))
+($12 143 < -hkpzxr_-li2_fcvq0su4_-p61 "#1" 140
+(uid "-hkpzxr_-li2_fcvq0su4_-p61")
+(multiplicity "*"))
+($9 144 < -hkpzxr_-li2_fcvq0su4_-p5i "guid" 143
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-15:15:22_00004"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p5i"))
+($9 145 < -hkpzxr_v5_f2k5j2z5_-p8b "documentation" 119
+(name "documentation"
+)
+(value "Energy potential term used in Nmr simulation run"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p8b"))
+($9 146 < -hkpzxr_v5_f2k5j2z5_-p8a "keyNames" 119
+(name "keyNames"
+)
+(value "code, termId"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p8a"))
+($9 147 < -hkpzxr_v5_f2k5j2z5_-p51 "guid" 119
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-06-05-13:42:05_00013"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p51"))
+($3 148 < -hkpzxr_-iih_f42mtcpk_-p98 "_NmrSim" 1
+(name "_NmrSim"
+)
+(width 5000)
+(uid "-hkpzxr_-iih_f42mtcpk_-p98")
+(height 5000)
+(diagramType "class"))
+($4 149 < -hkpzxr_-iih_f42mtcpk_-p8u "NmrSimStore" 148
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-hkpzxr_-iih_f42mtcpk_-p8u")
+(bbx 290 120 90 30))
+($4 150 < -hkpzxr_-iih_f42mtcpk_-p8t "Run" 148
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-hkpzxr_-iih_f42mtcpk_-p8t")
+(bbx 540 200 150 30))
+($5 151 < -hkpzxr_-iih_f42mtcpk_-p8v "" 148
+(toMultiplicityPosition 520 180)
+(uid "-hkpzxr_-iih_f42mtcpk_-p8v")
+(points 380 148 563 200)
+(fromMultiplicityPosition 385 125)
+(lineStyle "oblique"))
+($4 152 < -hkpzxr_-iih_f42mtcpk_-p8s "NmrSimEnergyTerm" 148
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-hkpzxr_-iih_f42mtcpk_-p8s")
+(bbx 360 350 140 30))
+($5 153 < -hkpzxr_-iih_f42mtcpk_-p91 "" 148
+(toMultiplicityPosition 500 345)
+(uid "-hkpzxr_-iih_f42mtcpk_-p91")
+(points 540 230 480 230 480 350)
+(fromMultiplicityPosition 515 230))
+($4 154 < -hkpzxr_-iih_f42mtcpk_-p8r "AnnealProtocol" 148
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-hkpzxr_-iih_f42mtcpk_-p8r")
+(bbx 120 180 250 30))
+($5 155 < -hkpzxr_-iih_f42mtcpk_-p93 "" 148
+(toMultiplicityPosition 520 195)
+(uid "-hkpzxr_-iih_f42mtcpk_-p93")
+(points 370 205 540 205)
+(fromMultiplicityPosition 375 185))
+($4 156 < -hkpzxr_-iih_f42mtcpk_-p8q "EnergyTerm" 148
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-hkpzxr_-iih_f42mtcpk_-p8q")
+(bbx 40 330 270 30))
+($5 157 < -hkpzxr_-iih_f42mtcpk_-p8w "" 148
+(toMultiplicityPosition 355 335)
+(uid "-hkpzxr_-iih_f42mtcpk_-p8w")
+(points 310 355 360 355))
+($5 158 < -hkpzxr_-iih_f42mtcpk_-p92 "" 148
+(toMultiplicityPosition 130 310)
+(uid "-hkpzxr_-iih_f42mtcpk_-p92")
+(points 125 210 125 330)
+(fromMultiplicityPosition 110 215))
+($4 159 < -hkpzxr_-iih_f42mtcpk_-p8p "StructureEnsemble" 148
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-hkpzxr_-iih_f42mtcpk_-p8p")
+(bbx 470 30 290 30))
+($5 160 < -hkpzxr_-iih_f42mtcpk_-p94 "" 148
+(toRolePosition 555 145)
+(uid "-hkpzxr_-iih_f42mtcpk_-p94")
+(points 610 60 610 200)
+(fromRolePosition 610 60)
+(fromMultiplicityPosition 465 55))
+($4 161 < -hkpzxr_-iih_f42mtcpk_-p8o "MolSystem" 148
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-hkpzxr_-iih_f42mtcpk_-p8o")
+(bbx 880 30 230 30))
+($5 162 < -hkpzxr_-iih_f42mtcpk_-p97 "" 148
+(toMultiplicityPosition 765 25)
+(uid "-hkpzxr_-iih_f42mtcpk_-p97")
+(points 880 45 760 45)
+(fromMultiplicityPosition 870 25))
+($5 163 < -hkpzxr_-iih_f42mtcpk_-p96 "" 148
+(toMultiplicityPosition 635 180)
+(toRolePosition 690 145)
+(uid "-hkpzxr_-iih_f42mtcpk_-p96")
+(points 961 60 649 200)
+(fromMultiplicityPosition 960 65)
+(lineStyle "oblique"))
+($4 164 < -hkpzxr_-iih_f42mtcpk_-p8n "NmrConstraintStore" 148
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-hkpzxr_-iih_f42mtcpk_-p8n")
+(bbx 680 500 280 30))
+($5 165 < -hkpzxr_-iih_f42mtcpk_-p8y "" 148
+(toMultiplicityPosition 700 480)
+(toRolePosition 715 480)
+(uid "-hkpzxr_-iih_f42mtcpk_-p8y")
+(points 690 230 690 500)
+(fromRolePosition 675 265)
+(fromMultiplicityPosition 670 180))
+($5 166 < -hkpzxr_-iih_f42mtcpk_-p8x "" 148
+(toRolePosition 915 480)
+(uid "-hkpzxr_-iih_f42mtcpk_-p8x")
+(points 690 230 905 230 905 500)
+(fromRolePosition 700 240))
+($4 167 < -hkpzxr_-iih_f42mtcpk_-p8m "AbstractConstraintList" 148
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-hkpzxr_-iih_f42mtcpk_-p8m")
+(bbx 270 510 300 30))
+($5 168 < -hkpzxr_-iih_f42mtcpk_-p90 "" 148
+(toMultiplicityPosition 310 490)
+(toRolePosition 200 490)
+(uid "-hkpzxr_-iih_f42mtcpk_-p90")
+(points 385 380 385 435 300 435 300 510)
+(fromMultiplicityPosition 390 385))
+($5 169 < -hkpzxr_-iih_f42mtcpk_-p8z "" 148
+(toMultiplicityPosition 585 510)
+(toRolePosition 530 545)
+(uid "-hkpzxr_-iih_f42mtcpk_-p8z")
+(points 680 530 570 530)
+(fromMultiplicityPosition 655 545))
+($4 170 < z8kfsx_-m68_ffno1onp_-p8j "EnergyTermParameter" 148
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "z8kfsx_-m68_ffno1onp_-p8j")
+(bbx 130 380 150 30))
+($5 171 < z8kfsx_-m68_ffno1onp_-p8r "" 148
+(toMultiplicityPosition 290 385)
+(uid "z8kfsx_-m68_ffno1onp_-p8r")
+(points 360 380 280 380)
+(fromMultiplicityPosition 350 390))
+($4 172 < z8kfsx_-m68_ffno1onp_-p8i "RunParameter" 148
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "z8kfsx_-m68_ffno1onp_-p8i")
+(bbx 240 220 100 30))
+($5 173 < z8kfsx_-m68_ffno1onp_-p8q "" 148
+(toMultiplicityPosition 345 235)
+(uid "z8kfsx_-m68_ffno1onp_-p8q")
+(points 540 230 340 230)
+(fromMultiplicityPosition 515 230))
+($4 174 < z8kfsx_-m68_ffno1onp_-p8h "MultiTypeValue" 148
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "z8kfsx_-m68_ffno1onp_-p8h")
+(bbx 180 280 240 30))
+($6 175 < z8kfsx_-m68_ffno1onp_-p8p "" 148
+(uid "z8kfsx_-m68_ffno1onp_-p8p")
+(points 300 250 300 280))
+($4 176 < z8kfsx_-m68_ffno1onp_-p8g "Model" 148
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "z8kfsx_-m68_ffno1onp_-p8g")
+(bbx 130 30 210 30))
+($5 177 < z8kfsx_-m68_ffno1onp_-p8f "" 148
+(toMultiplicityPosition 275 70)
+(toRolePosition 170 60)
+(uid "z8kfsx_-m68_ffno1onp_-p8f")
+(points 581 200 269 60)
+(fromRolePosition 435 145)
+(fromMultiplicityPosition 550 235)
+(lineStyle "oblique"))
+($5 178 < z8kfsx_-m68_ffno1onp_-p8e "" 148
+(toMultiplicityPosition 350 45)
+(uid "z8kfsx_-m68_ffno1onp_-p8e")
+(points 470 45 340 45)
+(fromMultiplicityPosition 455 55)
+(lineStyle "oblique"))
+($4 179 < z8kfsx_-m68_ffno1onp_-p8d "PeakList" 148
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "z8kfsx_-m68_ffno1onp_-p8d")
+(bbx 990 190 140 30))
+($5 180 < z8kfsx_-m68_ffno1onp_-p8o "" 148
+(toMultiplicityPosition 790 185)
+(toRolePosition 680 185)
+(uid "z8kfsx_-m68_ffno1onp_-p8o")
+(points 990 205 690 205)
+(fromRolePosition 990 180)
+(fromMultiplicityPosition 975 185))
+($5 181 < z8kfsx_-m68_ffno1onp_-p8n "" 148
+(toRolePosition 720 210)
+(uid "z8kfsx_-m68_ffno1onp_-p8n")
+(points 990 215 690 215)
+(fromRolePosition 990 215)
+(fromMultiplicityPosition 985 220))
+($4 182 < z8kfsx_-m68_ffno1onp_-p8c "AbstractMeasurementList" 148
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "z8kfsx_-m68_ffno1onp_-p8c")
+(bbx 400 420 250 30))
+($5 183 < z8kfsx_-m68_ffno1onp_-p8l "" 148
+(toMultiplicityPosition 550 400)
+(toRolePosition 400 400)
+(uid "z8kfsx_-m68_ffno1onp_-p8l")
+(points 545 230 545 420)
+(fromRolePosition 505 285)
+(fromMultiplicityPosition 565 150))
+($5 184 < z8kfsx_-m68_ffno1onp_-p8m "" 148
+(toMultiplicityPosition 635 400)
+(toRolePosition 550 370)
+(uid "z8kfsx_-m68_ffno1onp_-p8m")
+(points 630 230 630 420)
+(fromRolePosition 630 170))
+($5 185 < z8kfsx_-m68_ffno1onp_-p8k "" 148
+(toMultiplicityPosition 520 455)
+(toRolePosition 375 455)
+(uid "z8kfsx_-m68_ffno1onp_-p8k")
+(points 500 510 500 450))
+($7 186 < -hkpzxr_-li2_fcvq0su4_-p6b "EnergyTermParameter" 1
+(name "EnergyTermParameter"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p6b"))
+($8 187 < -hkpzxr_-li2_fcvq0su4_-p68 "code" 186
+(changeability "frozen")
+(name "code"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p68")
+(multiplicity "1"))
+($9 188 < -hkpzxr_-li2_fcvq0su4_-p67 "documentation" 187
+(name "documentation"
+)
+(value "Code for energy term parameter, as used in its definition."
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p67"))
+($9 189 < -hkpzxr_-li2_fcvq0su4_-p5h "guid" 187
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-15:15:22_00001"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p5h"))
+($8 190 < -hkpzxr_-li2_fcvq0su4_-p66 "value" 186
+(name "value"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p66")
+(multiplicity "1"))
+($9 191 < -hkpzxr_-li2_fcvq0su4_-p65 "documentation" 190
+(name "documentation"
+)
+(value "Value of energy term parameter"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p65"))
+($9 192 < -hkpzxr_-li2_fcvq0su4_-p5g "guid" 190
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-15:15:22_00002"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p5g"))
+($10 193 < -hkpzxr_-li2_fcvq0su4_-p69 "#<anon> (EnergyTermParameter, DataObject)" 186
+(uid "-hkpzxr_-li2_fcvq0su4_-p69"))
+($9 194 < -hkpzxr_-li2_fcvq0su4_-p6a "documentation" 186
+(name "documentation"
+)
+(value "Parameter to further characterise energy term. E.g. correlation time for a restraint derived from relaxation measurements."
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p6a"))
+($9 195 < -hkpzxr_-li2_fcvq0su4_-p5n "guid" 186
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-15:13:03_00001"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p5n"))
+($9 196 < -hkpzxr_-li2_fcvq0su4_-p5f "keyNames" 186
+(name "keyNames"
+)
+(value "code"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p5f"))
+($2 197 < -hkpzxr_-li2_fdsuw0ej_-p82 "#<anon> (NmrSim, Nmr)" 1
+(uid "-hkpzxr_-li2_fdsuw0ej_-p82"))
+($7 198 < -hkpzxr_nv3_ff3psu73_-p97 "RunParameter" 1
+(name "RunParameter"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p97"))
+($8 199 < -hkpzxr_nv3_ff3psu73_-p8y "code" 198
+(changeability "frozen")
+(name "code"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p8y")
+(multiplicity "1"))
+($9 200 < -hkpzxr_nv3_ff3psu73_-p8v "documentation" 199
+(name "documentation"
+)
+(value "Code for (type of) parameter, as used in the application being run. Part of class key"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p8v"))
+($9 201 < -hkpzxr_nv3_ff3psu73_-p8m "guid" 199
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-04-16-11:56:18_00003"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p8m"))
+($8 202 < -hkpzxr_nv3_ff3psu73_-p8x "id" 198
+(changeability "frozen")
+(name "id"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p8x")
+(multiplicity "1"))
+($9 203 < -hkpzxr_nv3_ff3psu73_-p8u "documentation" 202
+(name "documentation"
+)
+(value "Index of RunPArameter. DIstinguishes this paramenter from others with the same code. Part of the class key."
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p8u"))
+($9 204 < -hkpzxr_nv3_ff3psu73_-p8l "guid" 202
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-04-16-11:56:18_00004"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p8l"))
+($10 205 < -hkpzxr_nv3_ff3psu73_-p96 "#<anon> (RunParameter, MultiTypeValue)" 198
+(uid "-hkpzxr_nv3_ff3psu73_-p96"))
+($9 206 < -hkpzxr_nv3_ff3psu73_-p8z "documentation" 198
+(name "documentation"
+)
+(value "Patrameter passed to run. Can be of different data types"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p8z"))
+($9 207 < -hkpzxr_nv3_ff3psu73_-p8w "keyNames" 198
+(name "keyNames"
+)
+(value "code, id"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p8w"))
+($9 208 < -hkpzxr_nv3_ff3psu73_-p8k "guid" 198
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-04-16-11:56:14_00001"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p8k"))
+($2 209 < -hkpzxr_nv3_ff3psu73_-p8q "#<anon> (NmrSim, Template)" 1
+(uid "-hkpzxr_nv3_ff3psu73_-p8q"))
+($9 210 < -hkpzxr_v5_f2k5j2z5_-p50 "guid" 1
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-06-05-13:42:05_00010"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p50"))
+($9 211 < -hkpzxr_v5_f2k5j2z5_-p4h "shortName" 1
+(name "shortName"
+)
+(value "NSIM"
+)
+(uid "-hkpzxr_v5_f2k5j2z5_-p4h"))
+($9 212 < -hkpzxr_-iih_f3d74cgx_-p96 "documentation" 1
+(name "documentation"
+)
+(value "Data Model for NMR simulation input"
+)
+(uid "-hkpzxr_-iih_f3d74cgx_-p96"))
+($14 218)
+($16 221)
+($16 225)
+($16 233)
+($14 234)
+($14 235)
+($14 236)
+($14 237)
+($14 238)
+($14 240)
+($14 242)
+($14 245)
+($14 246)
+($14 247)
+($14 250)
+($14 253)
+($14 255)
+($14 257)
+($14 258)
+($14 260)
+($14 262)
+($14 263)
+($14 264)
+($14 266)
+($14 268)
+($14 269)
+($14 271)
+($14 272)
+($14 273)
+($14 275)
+($14 276)
+($14 278)
+($14 280)
+($14 281)
+($14 282)
+($14 284)
+($14 286)
+($14 287)
+($14 288)
+($14 289)
+($14 290)
+($14 291)
+($14 292)
+($14 293)
+($14 294)
+($14 295)
+($14 296)
+($14 297)
+($14 298)
+($14 299)
+($14 300)
+($14 301)
+($14 302)
+($14 303)
+($14 304)
+($14 305)
+($14 306)
+($14 307)
+($14 308)
+($14 309)
+($14 310)
+($14 311)
+($14 312)
+($14 313)
+($14 314)
+($14 315)
+($14 316)
+($14 317)
+($14 318)
+($14 319)
+($14 320)
+($14 321)
+($14 322)
+($14 323)
+($14 324)
+($14 325)
+($14 326)
+($13 213 @ -yk94ms_-e3s_e41656c6_-fwy 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "import" $13)
+($1 214 @ -hkpzxr_-cvb_f2ixo80k_-p97 3 "Logical" $1 "molsim" $1 "AnnealProtocol" $1)
+($1 215 @ -yk94ms_-e3s_e41656c6_-ibf 4 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1)
+($1 216 @ -yk94ms_-e3s_e41656c6_-j6m 4 "Logical" $1 "ccp" $1 "molecule" $1 "MolStructure" $1)
+($1 217 @ -yk94ms_-e3s_e41656c6_-lll 4 "Logical" $1 "ccp" $1 "nmr" $1 "NmrConstraint" $1)
+($7 219 @ z8kflu_63g_errlz7sn_-p8u 4 "Logical" $1 "memops" $1 "Implementation" $1 "TopObject" $7)
+($7 220 @ -yk94ms_-e3s_e41656c6_-h0m 4 "Logical" $1 "memops" $1 "Implementation" $1 "Line" $7)
+($7 222 @ -yk94ms_-e3s_e41656c6_-gpe 4 "Logical" $1 "memops" $1 "Implementation" $1 "DataObject" $7)
+($7 223 @ -yk94ms_-e3s_e41656c6_-h0t 4 "Logical" $1 "memops" $1 "Implementation" $1 "Int" $7)
+($7 224 @ -yk94ms_-e3s_e41656c6_-h04 4 "Logical" $1 "memops" $1 "Implementation" $1 "Text" $7)
+($7 226 @ -yk94ms_-e3s_e41656c6_-gnr 4 "Logical" $1 "memops" $1 "Implementation" $1 "PositiveInt" $7)
+($7 227 @ -yk94ms_-e3s_e41656c6_-l73 5 "Logical" $1 "ccp" $1 "nmr" $1 "NmrConstraint" $1 "AbstractConstraintList" $7)
+($7 228 @ -yk94ms_-e3s_e41656c6_-h10 4 "Logical" $1 "memops" $1 "Implementation" $1 "Float" $7)
+($7 229 @ -yk94ms_85r_eqyymv3f_-guo 5 "Logical" $1 "ccp" $1 "nmr" $1 "NmrConstraint" $1 "NmrConstraintStore" $7)
+($7 230 @ -hkpzxr_v5_f9ck4903_-p98 5 "Logical" $1 "ccp" $1 "molecule" $1 "MolStructure" $1 "Model" $7)
+($7 231 @ -yk94ms_-e3s_e41656c6_-o6t 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "AbstractMeasurementList" $7)
+($7 232 @ -hkpzxr_-nsb_f8y6usm8_-p91 5 "Logical" $1 "ccp" $1 "general" $1 "Template" $1 "MultiTypeValue" $7)
+($7 239 @ -hkpzxr_-cvb_f2ixo80k_-p87 4 "Logical" $1 "molsim" $1 "AnnealProtocol" $1 "AnnealProtocol" $7)
+($7 241 @ -hkpzxr_-iih_f2izokhh_-p8n 4 "Logical" $1 "molsim" $1 "AnnealProtocol" $1 "EnergyTerm" $7)
+($11 243 @ -hkpzxr_-iih_f2izokhh_-p8f 5 "Logical" $1 "molsim" $1 "AnnealProtocol" $1 "AnnealProtocol" $7 "#<anon> (AnnealProtocol, EnergyTerm)##," $11)
+($17 244 @ -yk94ms_-e3s_e41656c6_-fvf 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "NmrConstraints" $17)
+($11 248 @ -yk94ms_85r_eqyymv3f_-gui 6 "Logical" $1 "ccp" $1 "nmr" $1 "NmrConstraint" $1 "NmrConstraintStore" $7 "#<anon> (NmrConstraintStore, AbstractConstraintList)##,constraintLists" $11)
+($17 249 @ -yk94ms_-e3s_e41656c6_-fvn 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "MolSystem" $17)
+($7 251 @ -yk94ms_-e3s_e41656c6_-i8o 5 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "MolSystem" $7)
+($17 252 @ -yk94ms_-e3s_e41656c6_-fvs 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Coordinates" $17)
+($7 254 @ -yk94ms_85r_eqyymv3f_-jgs 5 "Logical" $1 "ccp" $1 "molecule" $1 "MolStructure" $1 "StructureEnsemble" $7)
+($11 256 @ -yk94ms_-e3s_e41656c6_-i6z 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "MolSystem" $7 "#<anon> (MolSystem, StructureEnsemble)##," $11)
+($11 259 @ -hkpzxr_v5_f2k5j2z5_-p7r 5 "Logical" $1 "molsim" $1 "AnnealProtocol" $1 "EnergyTerm" $7 "#<anon> (EnergyTerm, NmrSimEnergyTerm)##," $11)
+($11 261 @ -hkpzxr_v5_f2k5j2z5_-p7m 5 "Logical" $1 "molsim" $1 "AnnealProtocol" $1 "AnnealProtocol" $7 "#<anon> (AnnealProtocol, Run)##," $11)
+($11 265 @ -hkpzxr_v5_f2k5j2z5_-p71 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "MolSystem" $7 "#<anon> (MolSystem, Run)##,nmrSimRuns" $11)
+($11 267 @ -hkpzxr_v5_f2k5j2z5_-p70 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolStructure" $1 "StructureEnsemble" $7 "#<anon> (StructureEnsemble, Run)##outputEnsemble,outputFromNmrRun" $11)
+($11 270 @ -hkpzxr_v5_f9ck4903_-p92 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolStructure" $1 "StructureEnsemble" $7 "#<anon> (StructureEnsemble, Model)##," $11)
+($17 274 @ -yk94ms_-e3s_e41656c6_-fvm 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Nmr" $17)
+($11 277 @ -yk94ms_-e3s_e41656c6_-l4t 6 "Logical" $1 "ccp" $1 "nmr" $1 "NmrConstraint" $1 "AbstractConstraintList" $7 "#<anon> (AbstractConstraintList, AbstractMeasurementList)##,measurementLists" $11)
+($7 279 @ -yk94ms_-e3s_e41656c6_-ngq 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "PeakList" $7)
+($11 283 @ -hkpzxr_-li2_fdsuw0ej_-p8s 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "PeakList" $7 "#<anon> (PeakList, Run)##inputPeakLists,inputToNmrRuns" $11)
+($11 285 @ -hkpzxr_-li2_fdsuw0ej_-p8q 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "PeakList" $7 "#<anon> (PeakList, Run)##outputPeakLists,outputFromNmrRun" $11)
+($1 327 @ -yk94ms_-e3s_e41656c6_-p95 4 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1)
+($1 328 @ -yk94ms_-e3s_e41656c6_-jt9 4 "Logical" $1 "ccp" $1 "general" $1 "Template" $1)
+(stereotypeAssn 2 213)
+(clientAssn 2 1)
+(supplierAssn 2 214)
+(stereotypeAssn 3 213)
+(clientAssn 3 1)
+(supplierAssn 3 215)
+(stereotypeAssn 4 213)
+(clientAssn 4 1)
+(supplierAssn 4 216)
+(stereotypeAssn 5 213)
+(clientAssn 5 1)
+(supplierAssn 5 217)
+(typeAssn 50 44)
+(assocEndAssn 44 50)
+(subtypeAssn 48 44)
+(supertypeAssn 48 219)
+(generalizationAssn 44 48)
+(typeRefAssn 45 220)
+(typeExpression 45 221)
+(assocEndAssn 57 52)
+(typeAssn 65 57)
+(assocEndAssn 57 65)
+(typeAssn 70 57)
+(assocEndAssn 57 70)
+(typeAssn 79 57)
+(assocEndAssn 57 79)
+(typeAssn 86 57)
+(assocEndAssn 57 86)
+(typeAssn 95 57)
+(assocEndAssn 57 95)
+(typeAssn 104 57)
+(assocEndAssn 57 104)
+(typeAssn 112 57)
+(assocEndAssn 57 112)
+(subtypeAssn 63 57)
+(supertypeAssn 63 222)
+(generalizationAssn 57 63)
+(typeRefAssn 58 223)
+(typeExpression 58 221)
+(typeRefAssn 61 224)
+(typeExpression 61 221)
+(assocEndAssn 119 67)
+(typeAssn 133 119)
+(assocEndAssn 119 133)
+(typeAssn 141 119)
+(assocEndAssn 119 141)
+(subtypeAssn 131 119)
+(supertypeAssn 131 222)
+(generalizationAssn 119 131)
+(typeRefAssn 120 220)
+(typeExpression 120 225)
+(typeRefAssn 123 226)
+(typeExpression 123 225)
+(typeRefAssn 126 220)
+(typeExpression 126 225)
+(typeRefAssn 129 224)
+(typeExpression 129 221)
+(typeAssn 136 227)
+(assocEndAssn 186 143)
+(subtypeAssn 193 186)
+(supertypeAssn 193 222)
+(generalizationAssn 186 193)
+(typeRefAssn 187 220)
+(typeExpression 187 225)
+(typeRefAssn 190 228)
+(typeExpression 190 225)
+(typeAssn 143 186)
+(typeAssn 67 119)
+(typeAssn 74 229)
+(typeAssn 82 229)
+(typeAssn 90 230)
+(typeAssn 99 231)
+(typeAssn 107 231)
+(assocEndAssn 198 114)
+(subtypeAssn 205 198)
+(supertypeAssn 205 232)
+(generalizationAssn 198 205)
+(typeRefAssn 199 220)
+(typeExpression 199 233)
+(typeRefAssn 202 226)
+(typeExpression 202 233)
+(typeAssn 114 198)
+(typeAssn 52 57)
+(projectionAssn 7 44 218)
+(projectionAssn 8 57 234)
+(to 9 8)
+(from 9 7)
+(projectionAssn 9 49 235)
+(projectionAssn 10 119 236)
+(to 11 10)
+(from 11 8)
+(projectionAssn 11 64 237)
+(projectionAssn 12 239 238)
+(projectionAssn 13 241 240)
+(to 14 13)
+(from 14 12)
+(projectionAssn 14 243 242)
+(styleAssn 15 244)
+(projectionAssn 15 227 245)
+(styleAssn 16 244)
+(projectionAssn 16 229 246)
+(to 17 15)
+(from 17 16)
+(projectionAssn 17 248 247)
+(styleAssn 18 249)
+(projectionAssn 18 251 250)
+(styleAssn 19 252)
+(projectionAssn 19 254 253)
+(to 20 19)
+(from 20 18)
+(projectionAssn 20 256 255)
+(to 21 15)
+(from 21 10)
+(projectionAssn 21 132 257)
+(to 22 10)
+(from 22 13)
+(projectionAssn 22 259 258)
+(to 23 8)
+(from 23 12)
+(projectionAssn 23 261 260)
+(to 24 16)
+(from 24 8)
+(projectionAssn 24 69 262)
+(to 25 16)
+(from 25 8)
+(projectionAssn 25 78 263)
+(to 26 8)
+(from 26 18)
+(projectionAssn 26 265 264)
+(to 27 8)
+(from 27 19)
+(projectionAssn 27 267 266)
+(styleAssn 28 252)
+(projectionAssn 28 230 268)
+(to 29 28)
+(from 29 19)
+(projectionAssn 29 270 269)
+(to 30 28)
+(from 30 8)
+(projectionAssn 30 85 271)
+(projectionAssn 31 186 272)
+(to 32 31)
+(from 32 10)
+(projectionAssn 32 140 273)
+(styleAssn 33 274)
+(projectionAssn 33 231 275)
+(to 34 33)
+(from 34 15)
+(projectionAssn 34 277 276)
+(styleAssn 35 274)
+(projectionAssn 35 279 278)
+(to 36 33)
+(from 36 8)
+(projectionAssn 36 94 280)
+(to 37 33)
+(from 37 8)
+(projectionAssn 37 103 281)
+(to 38 8)
+(from 38 35)
+(projectionAssn 38 283 282)
+(to 39 8)
+(from 39 35)
+(projectionAssn 39 285 284)
+(projectionAssn 40 198 286)
+(projectionAssn 41 232 287)
+(to 42 41)
+(from 42 40)
+(projectionAssn 42 205 288)
+(to 43 40)
+(from 43 8)
+(projectionAssn 43 111 289)
+(projectionAssn 149 44 290)
+(projectionAssn 150 57 291)
+(to 151 150)
+(from 151 149)
+(projectionAssn 151 49 292)
+(projectionAssn 152 119 293)
+(to 153 152)
+(from 153 150)
+(projectionAssn 153 64 294)
+(projectionAssn 154 239 295)
+(to 155 150)
+(from 155 154)
+(projectionAssn 155 261 296)
+(projectionAssn 156 241 297)
+(to 157 152)
+(from 157 156)
+(projectionAssn 157 259 298)
+(to 158 156)
+(from 158 154)
+(projectionAssn 158 243 299)
+(styleAssn 159 252)
+(projectionAssn 159 254 300)
+(to 160 150)
+(from 160 159)
+(projectionAssn 160 267 301)
+(styleAssn 161 249)
+(projectionAssn 161 251 302)
+(to 162 159)
+(from 162 161)
+(projectionAssn 162 256 303)
+(to 163 150)
+(from 163 161)
+(projectionAssn 163 265 304)
+(styleAssn 164 244)
+(projectionAssn 164 229 305)
+(to 165 164)
+(from 165 150)
+(projectionAssn 165 69 306)
+(to 166 164)
+(from 166 150)
+(projectionAssn 166 78 307)
+(styleAssn 167 244)
+(projectionAssn 167 227 308)
+(to 168 167)
+(from 168 152)
+(projectionAssn 168 132 309)
+(to 169 167)
+(from 169 164)
+(projectionAssn 169 248 310)
+(projectionAssn 170 186 311)
+(to 171 170)
+(from 171 152)
+(projectionAssn 171 140 312)
+(projectionAssn 172 198 313)
+(to 173 172)
+(from 173 150)
+(projectionAssn 173 111 314)
+(projectionAssn 174 232 315)
+(to 175 174)
+(from 175 172)
+(projectionAssn 175 205 316)
+(styleAssn 176 252)
+(projectionAssn 176 230 317)
+(to 177 176)
+(from 177 150)
+(projectionAssn 177 85 318)
+(to 178 176)
+(from 178 159)
+(projectionAssn 178 270 319)
+(styleAssn 179 274)
+(projectionAssn 179 279 320)
+(to 180 150)
+(from 180 179)
+(projectionAssn 180 283 321)
+(to 181 150)
+(from 181 179)
+(projectionAssn 181 285 322)
+(styleAssn 182 274)
+(projectionAssn 182 231 323)
+(to 183 182)
+(from 183 150)
+(projectionAssn 183 94 324)
+(to 184 182)
+(from 184 150)
+(projectionAssn 184 103 325)
+(to 185 182)
+(from 185 167)
+(projectionAssn 185 277 326)
+(stereotypeAssn 197 213)
+(clientAssn 197 1)
+(supplierAssn 197 327)
+(stereotypeAssn 209 213)
+(clientAssn 209 1)
+(supplierAssn 209 328)

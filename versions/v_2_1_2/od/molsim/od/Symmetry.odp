@@ -1,0 +1,663 @@
+ObjectDomain_Shared_Package 15
+{-hkpzxr_-li2_fcvq0su4_-p5d 3 "Logical" objectdomain.uml.mechanisms.UmlPackage-owns "molsim" objectdomain.uml.mechanisms.UmlPackage-owns "Symmetry" objectdomain.uml.mechanisms.UmlPackage-owns
+}[objectdomain.uml.core.TypeExpression $16
+objectdomain.uml.mechanisms.UmlPackage-owns $1
+objectdomain.uml.core.Generalization-owns $10
+objectdomain.uml.core.Dependency-owns $13
+objectdomain.uml.core.Projection $14
+objectdomain.uml.core.UmlAttribute-features $6
+objectdomain.uml.core.UmlAssociationEnd-connections $9
+objectdomain.uml.view.style.BaseViewElementStyle-owns $18
+objectdomain.uml.view.ClassView-owns $3
+objectdomain.uml.core.UmlTaggedValue-taggedValues $7
+objectdomain.uml.core.UmlConstraint-constraints $11
+objectdomain.uml.core.UmlAssociation-owns $8
+objectdomain.uml.view.Diagram-owns $2
+objectdomain.uml.core.UmlOperation-features $12
+objectdomain.uml.core.UmlMultiplicity $15
+objectdomain.uml.core.UmlClass-owns $5
+objectdomain.uml.view.AssociationView-owns $4
+objectdomain.uml.core.Stereotype-owns $17
+]
+($1 1 > -hkpzxr_-li2_fcvq0su4_-p5d 3 "Logical" $1 "molsim" $1 "Symmetry" $1
+(name "Symmetry"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p5d"))
+($2 2 < -hkpzxr_-li2_fcvq0su4_-p5a "_Symmetry-details" 1
+(name "_Symmetry-details"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p5a")
+(diagramType "class"))
+($3 3 < -hkpzxr_-li2_fcvq0su4_-p3d "MolSystemSymmetrySet" 2
+(uid "-hkpzxr_-li2_fcvq0su4_-p3d")
+(bbx 470 150 170 90))
+($3 4 < -hkpzxr_-li2_fcvq0su4_-p3c "MolSystem" 2
+(uid "-hkpzxr_-li2_fcvq0su4_-p3c")
+(bbx 40 50 230 250))
+($4 5 < -hkpzxr_-li2_fcvq0su4_-p4m "" 2
+(toMultiplicityPosition 275 155)
+(uid "-hkpzxr_-li2_fcvq0su4_-p4m")
+(points 470 175 270 175)
+(fromRolePosition 380 205)
+(fromMultiplicityPosition 460 155))
+($3 6 < -hkpzxr_-li2_fcvq0su4_-p3b "Symmetry" 2
+(uid "-hkpzxr_-li2_fcvq0su4_-p3b")
+(bbx 460 290 220 90))
+($4 7 < -hkpzxr_-li2_fcvq0su4_-p46 "" 2
+(toMultiplicityPosition 545 270)
+(toRolePosition 560 270)
+(uid "-hkpzxr_-li2_fcvq0su4_-p46")
+(points 555 240 555 290)
+(fromMultiplicityPosition 565 245))
+($3 8 < -hkpzxr_-li2_fcvq0su4_-p3a "Chain" 2
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-hkpzxr_-li2_fcvq0su4_-p3a")
+(bbx 60 350 200 30))
+($4 9 < -hkpzxr_-li2_fcvq0su4_-p41 "" 2
+(toMultiplicityPosition 165 335)
+(uid "-hkpzxr_-li2_fcvq0su4_-p41")
+(points 160 300 160 350)
+(fromMultiplicityPosition 145 305))
+($3 10 < -hkpzxr_-li2_fcvq0su4_-p39 "Residue" 2
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-hkpzxr_-li2_fcvq0su4_-p39")
+(bbx 60 440 210 30))
+($4 11 < -hkpzxr_-li2_fcvq0su4_-p42 "" 2
+(toMultiplicityPosition 165 425)
+(uid "-hkpzxr_-li2_fcvq0su4_-p42")
+(points 160 380 160 440)
+(fromMultiplicityPosition 145 385))
+($3 12 < -hkpzxr_-li2_fcvq0su4_-p38 "Segment" 2
+(uid "-hkpzxr_-li2_fcvq0su4_-p38")
+(bbx 510 440 110 90))
+($4 13 < -hkpzxr_-li2_fcvq0su4_-p3v "" 2
+(toMultiplicityPosition 550 420)
+(uid "-hkpzxr_-li2_fcvq0su4_-p3v")
+(points 560 380 560 440)
+(fromMultiplicityPosition 570 385))
+($3 14 < -hkpzxr_-li2_fcvq0su4_-p37 "SymmetryOpCode" 2
+(uid "-hkpzxr_-li2_fcvq0su4_-p37")
+(bbx 700 190 140 60))
+($4 15 < -hkpzxr_-li2_fcvq0su4_-p35 "" 2
+(fromOrderedPosition 285 430)
+(uid "-hkpzxr_-li2_fcvq0su4_-p35")
+(points 270 455 510 455)
+(fromMultiplicityPosition 280 465))
+($5 16 < -hkpzxr_-li2_fcvq0su4_-p4z "MolSystemSymmetrySet" 1
+(name "MolSystemSymmetrySet"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p4z"))
+($6 17 < -hkpzxr_-li2_fcvq0su4_-p4c "symmetrySetId" 16
+(changeability "frozen")
+(name "symmetrySetId"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p4c")
+(multiplicity "1"))
+($7 18 < -hkpzxr_-li2_fcvq0su4_-p4b "documentation" 17
+(name "documentation"
+)
+(value "Identifier of MolSystemSymmetrySet. Used to distinguish between objects that belong to the same MolSystem. Part of object key."
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p4b"))
+($7 19 < -hkpzxr_-li2_fcvq0su4_-p2j "guid" 17
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-18:17:58_00009"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p2j"))
+($6 20 < z8kfsx_fb8_gqxlz1gq_-p97 "name" 16
+(name "name"
+)
+(uid "z8kfsx_fb8_gqxlz1gq_-p97"))
+($7 21 < z8kfsx_fb8_gqxlz1gq_-p96 "documentation" 20
+(name "documentation"
+)
+(value "Human-readable name of MolSystemSymmetrySet"
+)
+(uid "z8kfsx_fb8_gqxlz1gq_-p96"))
+($7 22 < z8kfsx_-i16_gqz02wqv_-p8k "guid" 20
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-08-05-11:53:29_00001"
+)
+(uid "z8kfsx_-i16_gqz02wqv_-p8k"))
+($6 23 < z8kfsx_fb8_gqxlz1gq_-p95 "details" 16
+(name "details"
+)
+(uid "z8kfsx_fb8_gqxlz1gq_-p95"))
+($7 24 < z8kfsx_-i16_gqz02wqv_-p8j "guid" 23
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-08-05-11:53:29_00002"
+)
+(uid "z8kfsx_-i16_gqz02wqv_-p8j"))
+($8 25 < -hkpzxr_-li2_fcvq0su4_-p4n "#<anon> (MolSystemSymmetrySet, MolSystem)##," 16
+(name "")
+(uid "-hkpzxr_-li2_fcvq0su4_-p4n"))
+($9 26 < -hkpzxr_-li2_fcvq0su4_-p4l "#0" 25
+(uid "-hkpzxr_-li2_fcvq0su4_-p4l")
+(multiplicity "*"))
+($7 27 < -hkpzxr_-li2_fcvq0su4_-p4k "documentation" 26
+(name "documentation"
+)
+(value "MolSystemSymmetries that may apply to this MolSystem"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p4k"))
+($7 28 < -hkpzxr_-li2_fcvq0su4_-p2i "guid" 26
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-18:17:58_00005"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p2i"))
+($9 29 < -hkpzxr_-li2_fcvq0su4_-p4i "#1" 25
+(changeability "frozen")
+(uid "-hkpzxr_-li2_fcvq0su4_-p4i")
+(multiplicity "1"))
+($7 30 < -hkpzxr_-li2_fcvq0su4_-p4h "documentation" 29
+(name "documentation"
+)
+(value "MolSystem that symmetry applies to. Part of object key"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p4h"))
+($7 31 < -hkpzxr_-li2_fcvq0su4_-p2h "guid" 29
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-18:17:58_00006"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p2h"))
+($7 32 < -hkpzxr_-li2_fcvq0su4_-p4g "partitionsChildren" 25
+(name "partitionsChildren"
+)
+(value "True"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p4g"))
+($8 33 < -hkpzxr_-li2_fcvq0su4_-p47 "#<anon> (MolSystemSymmetrySet, Symmetry)##,symmetries" 16
+(name "")
+(uid "-hkpzxr_-li2_fcvq0su4_-p47"))
+($9 34 < -hkpzxr_-li2_fcvq0su4_-p45 "#0" 33
+(changeability "frozen")
+(aggregation "composite")
+(uid "-hkpzxr_-li2_fcvq0su4_-p45")
+(multiplicity "1"))
+($7 35 < -hkpzxr_-li2_fcvq0su4_-p2g "guid" 34
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-18:17:58_00007"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p2g"))
+($9 36 < -hkpzxr_-li2_fcvq0su4_-p44 "symmetries#1" 33
+(name "symmetries"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p44")
+(multiplicity "*"))
+($7 37 < -hkpzxr_-li2_fcvq0su4_-p43 "baseName" 36
+(name "baseName"
+)
+(value "symmetries"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p43"))
+($7 38 < -hkpzxr_-li2_fcvq0su4_-p2f "guid" 36
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-18:17:58_00008"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p2f"))
+($10 39 < -hkpzxr_-li2_fcvq0su4_-p1b "#<anon> (MolSystemSymmetrySet, TopObject)" 16
+(uid "-hkpzxr_-li2_fcvq0su4_-p1b"))
+($8 40 < z8kfsx_-9el_fuxwn7lb_-p82 "#<anon> (MolSystemSymmetrySet, MolSystemData)##symmetrySet," 16
+(name "")
+(uid "z8kfsx_-9el_fuxwn7lb_-p82"))
+($9 41 < z8kfsx_-9el_fuxwn7lb_-p7z "symmetrySet#0" 40
+(name "symmetrySet"
+)
+(uid "z8kfsx_-9el_fuxwn7lb_-p7z"))
+($7 42 < z8kfsx_-9el_fuxwn7lb_-p7p "documentation" 41
+(name "documentation"
+)
+(value "SymmetrySet that defines symmetry of MolSystem"
+)
+(uid "z8kfsx_-9el_fuxwn7lb_-p7p"))
+($7 43 < z8kfsx_-9el_fuxwn7lb_-p5a "guid" 41
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-05-20-16:32:14_00001"
+)
+(uid "z8kfsx_-9el_fuxwn7lb_-p5a"))
+($9 44 < z8kfsx_-9el_fuxwn7lb_-p7y "#1" 40
+(uid "z8kfsx_-9el_fuxwn7lb_-p7y")
+(isNavigable false))
+($7 45 < z8kfsx_-9el_fuxwn7lb_-p7x "isDerived" 40
+(name "isDerived"
+)
+(value "True"
+)
+(uid "z8kfsx_-9el_fuxwn7lb_-p7x"))
+($7 46 < -hkpzxr_-li2_fcvq0su4_-p4f "documentation" 16
+(name "documentation"
+)
+(value "Set of symmetry operations on a MolSystem"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p4f"))
+($7 47 < -hkpzxr_-li2_fcvq0su4_-p4a "keyNames" 16
+(name "keyNames"
+)
+(value "molSystem, symmetrySetId"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p4a"))
+($7 48 < -hkpzxr_-li2_fcvq0su4_-p2u "guid" 16
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-18:17:09_00001"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p2u"))
+($5 49 < -hkpzxr_-li2_fcvq0su4_-p4e "Symmetry" 1
+(name "Symmetry"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p4e"))
+($6 50 < -hkpzxr_-li2_fcvq0su4_-p3u "serial" 49
+(changeability "frozen")
+(name "serial"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p3u")
+(multiplicity "1"))
+($7 51 < -hkpzxr_-li2_fcvq0su4_-p3t "isAutomatic" 50
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p3t"))
+($7 52 < -hkpzxr_-li2_fcvq0su4_-p2e "guid" 50
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-18:17:59_00002"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p2e"))
+($6 53 < -hkpzxr_-li2_fcvq0su4_-p3m "symmetryCode" 49
+(name "symmetryCode"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p3m"))
+($7 54 < -hkpzxr_-li2_fcvq0su4_-p2d "guid" 53
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-18:17:59_00003"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p2d"))
+($6 55 < -hkpzxr_-li2_fcvq0su4_-p3k "segmentLength" 49
+(name "segmentLength"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p3k"))
+($7 56 < -hkpzxr_-li2_fcvq0su4_-p3j "documentation" 55
+(name "documentation"
+)
+(value "Length of segments that are symmetrical"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p3j"))
+($7 57 < -hkpzxr_-li2_fcvq0su4_-p2c "guid" 55
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-18:17:59_00004"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p2c"))
+($10 58 < -hkpzxr_-li2_fcvq0su4_-p48 "#<anon> (Symmetry, DataObject)" 49
+(uid "-hkpzxr_-li2_fcvq0su4_-p48"))
+($8 59 < -hkpzxr_-li2_fcvq0su4_-p3y "#<anon> (Symmetry, Segment)##," 49
+(name "")
+(uid "-hkpzxr_-li2_fcvq0su4_-p3y"))
+($9 60 < -hkpzxr_-li2_fcvq0su4_-p3x "#0" 59
+(changeability "frozen")
+(aggregation "composite")
+(uid "-hkpzxr_-li2_fcvq0su4_-p3x")
+(multiplicity "1"))
+($7 61 < -hkpzxr_-li2_fcvq0su4_-p2b "guid" 60
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-18:17:58_00013"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p2b"))
+($9 62 < -hkpzxr_-li2_fcvq0su4_-p3w "#1" 59
+(uid "-hkpzxr_-li2_fcvq0su4_-p3w")
+(multiplicity "*"))
+($7 63 < -hkpzxr_-li2_fcvq0su4_-p2a "guid" 62
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-18:17:59_00001"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p2a"))
+($7 64 < -hkpzxr_-li2_fcvq0su4_-p4d "documentation" 49
+(name "documentation"
+)
+(value "Single symmetry that applies to MolSystem.Each Symmetry describes a set of chain segents that are symmetric under some symmetry operation, such as C2 or C3. You would need several Symmetry objects to describe a Symmetry group such as C3v, or even to describe a simple C2 symmetry of a multichain MolSystem."
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p4d"))
+($7 65 < -hkpzxr_-li2_fcvq0su4_-p2t "guid" 49
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-18:17:09_00002"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p2t"))
+($7 66 < -hkpzxr_-li2_fcwepcks_-p98 "keyNames" 49
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "-hkpzxr_-li2_fcwepcks_-p98"))
+($11 67 < -hkpzxr_-li2_fcvq0su4_-p3i "segments_do_not_overlap" 49
+(name "segments_do_not_overlap"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p3i")
+(body "code:python"
+"_"
+"isValid = True"
+"segments = self.sortedSegments()"
+"if segments:"
+"  segLength = self.segmentLength"
+"  chainCodes = [x.chainCode for x in segments]"
+"  seqIds = [x.firstSeqId for x in segments]"
+"  for ii in range(len(segments) - 1):"
+"    if chainCodes[ii] == chainCodes[ii+1] and seqIds[ii+1] - seqIds[ii] < segLength:"
+"      isValid = False"
+"      break"
+"_"
+"code:java"
+"_"
+"true /* NBNB TBD */"
+))
+($7 68 < -hkpzxr_-li2_fcvq0su4_-p2s "guid" 67
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-18:17:09_00003"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p2s"))
+($5 69 < -hkpzxr_-li2_fcvq0su4_-p40 "Segment" 1
+(name "Segment"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p40"))
+($6 70 < -hkpzxr_-li2_fcvq0su4_-p3q "chainCode" 69
+(changeability "frozen")
+(name "chainCode"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p3q")
+(multiplicity "1"))
+($7 71 < -hkpzxr_-li2_fcvq0su4_-p3p "documentation" 70
+(name "documentation"
+)
+(value "chainCode for chain that segment belongs to. Part of class key"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p3p"))
+($7 72 < -hkpzxr_-li2_fcvq0su4_-p29 "guid" 70
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-18:17:58_00010"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p29"))
+($6 73 < -hkpzxr_-li2_fcvq0su4_-p3o "firstSeqId" 69
+(changeability "frozen")
+(name "firstSeqId"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p3o")
+(multiplicity "1"))
+($7 74 < -hkpzxr_-li2_fcvq0su4_-p3n "documentation" 73
+(name "documentation"
+)
+(value "seqId of first residue in segment. Part of class key"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p3n"))
+($7 75 < -hkpzxr_-li2_fcvq0su4_-p28 "guid" 73
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-18:17:58_00011"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p28"))
+($12 76 < -hkpzxr_-li2_fcvq0su4_-p30 "getResidues" 69
+(name "getResidues"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p30")
+(isQuery true))
+($7 77 < -hkpzxr_-li2_fcvq0su4_-p2z "documentation" 76
+(name "documentation"
+)
+(value "getter for derived link residues"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p2z"))
+($7 78 < -hkpzxr_-li2_fcvq0su4_-p2y "opType" 76
+(name "opType"
+)
+(value "get"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p2y"))
+($7 79 < -hkpzxr_-li2_fcvq0su4_-p2x "code:python" 76
+(name "code:python"
+)
+(value "minId = self.firstSeqId"
+"maxId = minId + self.symmetry.segmentLength"
+"chain = self.getByNavigation('symmetry', 'molSystemSymmetrySet', 'molSystem', ('chains', self.chainCode))"
+"if chain is None:"
+"  raise ApiError(\"No chain found for %s\" % self)"
+"result = tuple(x for x in chain.sortedResidues() if minId <= x.seqId < maxId)"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p2x"))
+($7 80 < -hkpzxr_-li2_fcvq0su4_-p27 "guid" 76
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-18:17:58_00012"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p27"))
+($7 81 < z8kfsx_-fvi_flht6sbx_-p98 "code:java" 76
+(name "code:java"
+)
+(value "int minId = getFirstSeqId();"
+"int maxId = minId + getSymmetry().getSegmentLength();"
+"ccp.api.molecule.MolSystem.Chain chain ="
+"getSymmetry().getMolSystemSymmetrySet().getMolSystem().findFirstChain(\"code\","
+"getChainCode());"
+"if (chain == null)"
+"  throw new memops.general.ApiException(\"No chain found for \" + this);"
+"result = new java.util.ArrayList<ccp.api.molecule.MolSystem.Residue>();"
+"for (ccp.api.molecule.MolSystem.Residue residue: chain.sortedResidues()) {"
+"  int seqId = residue.getSeqId();"
+"  if ((minId <= seqId) && (seqId <= maxId))"
+"    result.add(residue);"
+"}"
+)
+(uid "z8kfsx_-fvi_flht6sbx_-p98"))
+($10 82 < -hkpzxr_-li2_fcvq0su4_-p1a "#<anon> (Segment, DataObject)" 69
+(uid "-hkpzxr_-li2_fcvq0su4_-p1a"))
+($7 83 < -hkpzxr_-li2_fcvq0su4_-p3z "documentation" 69
+(name "documentation"
+)
+(value "Contiguous stretch of residues that enters into symmetry operation"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p3z"))
+($7 84 < -hkpzxr_-li2_fcvq0su4_-p3l "keyNames" 69
+(name "keyNames"
+)
+(value "chainCode, firstSeqId"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p3l"))
+($7 85 < -hkpzxr_-li2_fcvq0su4_-p2r "guid" 69
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-18:17:09_00004"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p2r"))
+($11 86 < -hkpzxr_-li2_fcvq0su4_-p2w "all_implied_residues_exist" 69
+(name "all_implied_residues_exist"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p2w")
+(body "code:python"
+"_"
+"len(self.residues) == self.symmetry.segmentLength"
+"_"
+"code:java"
+"_"
+"true /* NBNB TBD */"
+))
+($7 87 < -hkpzxr_-li2_fcvq0su4_-p2q "guid" 86
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-18:17:09_00005"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p2q"))
+($5 88 < -hkpzxr_-li2_fcvq0su4_-p3h "SymmetryOpCode" 1
+(name "SymmetryOpCode"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p3h"))
+($10 89 < -hkpzxr_-li2_fcvq0su4_-p2p "#<anon> (SymmetryOpCode, Word)" 88
+(uid "-hkpzxr_-li2_fcvq0su4_-p2p"))
+($7 90 < -hkpzxr_-li2_fcvq0su4_-p3g "isOpen" 88
+(name "isOpen"
+)
+(value "True"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p3g"))
+($7 91 < -hkpzxr_-li2_fcvq0su4_-p3f "enumeration" 88
+(name "enumeration"
+)
+(value "('ncs', 'C2', 'C3', 'C4', 'C5', 'C6')"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p3f"))
+($7 92 < -hkpzxr_-li2_fcvq0su4_-p3e "documentation" 88
+(name "documentation"
+)
+(value "Symmetry operation codes."
+"'ncs' is a non-crystallographic symmetry between exactly two segments"
+"'Cn' is a rotational symmetry between n segments."
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p3e"))
+($7 93 < -hkpzxr_-li2_fcvq0su4_-p2v "guid" 88
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-18:17:09_00006"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p2v"))
+($13 94 < -hkpzxr_-li2_fcvq0su4_-p26 "#<anon> (Symmetry, MolSystem)" 1
+(uid "-hkpzxr_-li2_fcvq0su4_-p26"))
+($7 95 < -hkpzxr_-li2_fcvq0su4_-p5c "documentation" 1
+(name "documentation"
+)
+(value "Molecular symmetry description and restraint"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p5c"))
+($7 96 < -hkpzxr_-li2_fcvq0su4_-p5b "shortName" 1
+(name "shortName"
+)
+(value "SYMM"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p5b"))
+($7 97 < -hkpzxr_-li2_fcvq0su4_-p51 "guid" 1
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-20-17:01:34_00001"
+)
+(uid "-hkpzxr_-li2_fcvq0su4_-p51"))
+($14 98)
+($16 101)
+($16 103)
+($14 112)
+($14 113)
+($14 114)
+($14 115)
+($14 116)
+($14 118)
+($14 120)
+($14 122)
+($14 124)
+($14 125)
+($14 126)
+($14 127)
+($5 99 @ z8kflu_63g_errlz7sn_-p8u 4 "Logical" $1 "memops" $1 "Implementation" $1 "TopObject" $5)
+($5 100 @ -yk94ms_-e3s_e41656c6_-gnr 4 "Logical" $1 "memops" $1 "Implementation" $1 "PositiveInt" $5)
+($5 102 @ -yk94ms_-e3s_e41656c6_-h0m 4 "Logical" $1 "memops" $1 "Implementation" $1 "Line" $5)
+($5 104 @ -yk94ms_-e3s_e41656c6_-h04 4 "Logical" $1 "memops" $1 "Implementation" $1 "Text" $5)
+($5 105 @ -yk94ms_-e3s_e41656c6_-i8o 5 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "MolSystem" $5)
+($5 106 @ -yk94ms_-e3s_e41656c6_-gpe 4 "Logical" $1 "memops" $1 "Implementation" $1 "DataObject" $5)
+($5 107 @ -yk94ms_-e3s_e41656c6_-h0t 4 "Logical" $1 "memops" $1 "Implementation" $1 "Int" $5)
+($17 108 @ -yk94ms_-e3s_e41656c6_-fw7 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "DataType" $17)
+($5 109 @ -yk94ms_-e3s_e41656c6_-gzz 4 "Logical" $1 "memops" $1 "Implementation" $1 "Word" $5)
+($5 110 @ z8kfsx_-fvi_fuv25qf3_-ozg 5 "Logical" $1 "ccp" $1 "nmr" $1 "NmrCalc" $1 "MolSystemData" $5)
+($18 111 @ -yk94ms_-e3s_e41656c6_-fvn 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "MolSystem" $18)
+($5 117 @ -yk94ms_85r_eqyymv3f_-jo5 5 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "Chain" $5)
+($8 119 @ -yk94ms_-e3s_e41656c6_-i7g 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "MolSystem" $5 "#<anon> (MolSystem, Chain)##," $8)
+($5 121 @ -yk94ms_85r_eqyymv3f_-jju 5 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "Residue" $5)
+($8 123 @ -yk94ms_85r_eqyymv3f_-jm9 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "Chain" $5 "#<anon> (Chain, Residue)##," $8)
+($8 128 @ -hkpzxr_-li2_fcvq0su4_-p36 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "Residue" $5 "#<anon> (Residue, Segment)##," $8)
+($17 129 @ -yk94ms_-e3s_e41656c6_-fwy 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "import" $17)
+($1 130 @ -yk94ms_-e3s_e41656c6_-ibf 4 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1)
+(typeAssn 26 16)
+(assocEndAssn 16 26)
+(typeAssn 34 16)
+(assocEndAssn 16 34)
+(typeAssn 41 16)
+(assocEndAssn 16 41)
+(subtypeAssn 39 16)
+(supertypeAssn 39 99)
+(generalizationAssn 16 39)
+(typeRefAssn 17 100)
+(typeExpression 17 101)
+(typeRefAssn 20 102)
+(typeExpression 20 103)
+(typeRefAssn 23 104)
+(typeExpression 23 103)
+(typeAssn 29 105)
+(assocEndAssn 49 36)
+(typeAssn 60 49)
+(assocEndAssn 49 60)
+(subtypeAssn 58 49)
+(supertypeAssn 58 106)
+(generalizationAssn 49 58)
+(typeRefAssn 50 107)
+(typeExpression 50 101)
+(stereotypeAssn 88 108)
+(subtypeAssn 89 88)
+(supertypeAssn 89 109)
+(generalizationAssn 88 89)
+(typeRefAssn 53 88)
+(typeExpression 53 101)
+(typeRefAssn 55 100)
+(typeExpression 55 101)
+(assocEndAssn 69 62)
+(subtypeAssn 82 69)
+(supertypeAssn 82 106)
+(generalizationAssn 69 82)
+(typeRefAssn 70 102)
+(typeExpression 70 101)
+(typeRefAssn 73 107)
+(typeExpression 73 101)
+(typeAssn 62 69)
+(typeAssn 36 49)
+(typeAssn 44 110)
+(projectionAssn 3 16 98)
+(styleAssn 4 111)
+(projectionAssn 4 105 112)
+(to 5 4)
+(from 5 3)
+(projectionAssn 5 25 113)
+(projectionAssn 6 49 114)
+(to 7 6)
+(from 7 3)
+(projectionAssn 7 33 115)
+(styleAssn 8 111)
+(projectionAssn 8 117 116)
+(to 9 8)
+(from 9 4)
+(projectionAssn 9 119 118)
+(styleAssn 10 111)
+(projectionAssn 10 121 120)
+(to 11 10)
+(from 11 8)
+(projectionAssn 11 123 122)
+(projectionAssn 12 69 124)
+(to 13 12)
+(from 13 6)
+(projectionAssn 13 59 125)
+(projectionAssn 14 88 126)
+(to 15 12)
+(from 15 10)
+(projectionAssn 15 128 127)
+(stereotypeAssn 94 129)
+(clientAssn 94 1)
+(supplierAssn 94 130)

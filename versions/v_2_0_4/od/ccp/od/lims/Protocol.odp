@@ -1,0 +1,3579 @@
+ObjectDomain_Shared_Package 15
+{-yk94ms_-e3s_e41656c6_-jm7 4 "Logical" objectdomain.uml.mechanisms.UmlPackage-owns "ccp" objectdomain.uml.mechanisms.UmlPackage-owns "lims" objectdomain.uml.mechanisms.UmlPackage-owns "Protocol" objectdomain.uml.mechanisms.UmlPackage-owns
+}[objectdomain.uml.core.TypeExpression $17
+objectdomain.uml.mechanisms.UmlPackage-owns $1
+objectdomain.uml.core.Generalization-owns $9
+objectdomain.uml.core.Dependency-owns $13
+objectdomain.uml.core.Projection $15
+objectdomain.uml.core.UmlAttribute-features $7
+objectdomain.uml.core.UmlAssociationEnd-connections $11
+objectdomain.uml.view.style.BaseViewElementStyle-owns $14
+objectdomain.uml.view.ClassView-owns $3
+objectdomain.uml.core.UmlTaggedValue-taggedValues $8
+objectdomain.uml.core.UmlConstraint-constraints $12
+objectdomain.uml.core.UmlAssociation-owns $10
+objectdomain.uml.view.Diagram-owns $2
+objectdomain.uml.view.GeneralizationView-owns $5
+objectdomain.uml.core.UmlMultiplicity $16
+objectdomain.uml.core.UmlClass-owns $6
+objectdomain.uml.view.AssociationView-owns $4
+objectdomain.uml.core.Stereotype-owns $18
+]
+($1 1 > -yk94ms_-e3s_e41656c6_-jm7 4 "Logical" $1 "ccp" $1 "lims" $1 "Protocol" $1
+(name "Protocol"
+)
+(uid "-yk94ms_-e3s_e41656c6_-jm7"))
+($2 2 < -yk94ms_85r_eqyymv3f_-n9x "_Protocol-details" 1
+(name "_Protocol-details"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n9x")
+(diagramType "class"))
+($3 3 < -yk94ms_85r_eqyymv3f_-n9w "Protocol" 2
+(uid "-yk94ms_85r_eqyymv3f_-n9w")
+(bbx 320 180 170 160))
+($3 4 < -yk94ms_85r_eqyymv3f_-n9v "Citation" 2
+(uid "-yk94ms_85r_eqyymv3f_-n9v")
+(bbx 1270 20 190 240))
+($3 5 < -yk94ms_85r_eqyymv3f_-n9u "Person" 2
+(uid "-yk94ms_85r_eqyymv3f_-n9u")
+(bbx 770 50 190 170))
+($4 6 < -yk94ms_85r_eqyymv3f_-n9t "" 2
+(toMultiplicityPosition 970 160)
+(toRolePosition 990 165)
+(uid "-yk94ms_85r_eqyymv3f_-n9t")
+(points 1270 185 960 185)
+(fromRolePosition 1165 190)
+(toOrderedPosition 965 195)
+(fromMultiplicityPosition 1260 165))
+($4 7 < -yk94ms_85r_eqyymv3f_-n9s "" 2
+(toMultiplicityPosition 970 80)
+(toRolePosition 985 85)
+(uid "-yk94ms_85r_eqyymv3f_-n9s")
+(points 1270 105 960 105)
+(fromRolePosition 1170 85)
+(toOrderedPosition 980 110)
+(fromMultiplicityPosition 1260 115))
+($4 8 < -yk94ms_85r_eqyymv3f_-n9r "" 2
+(toMultiplicityPosition 490 320)
+(toRolePosition 710 165)
+(uid "-yk94ms_85r_eqyymv3f_-n9r")
+(points 490 185 770 185)
+(fromRolePosition 510 165)
+(fromMultiplicityPosition 495 165))
+($4 9 < -yk94ms_85r_eqyymv3f_-n9q "" 2
+(toMultiplicityPosition 555 320)
+(toRolePosition 705 200)
+(uid "-yk94ms_85r_eqyymv3f_-n9q")
+(points 490 220 770 220)
+(fromRolePosition 510 200)
+(fromMultiplicityPosition 495 200))
+($4 10 < -yk94ms_85r_eqyymv3f_-n9p "" 2
+(toMultiplicityPosition 1260 45)
+(toRolePosition 1190 15)
+(uid "-yk94ms_85r_eqyymv3f_-n9p")
+(points 425 180 425 35 1270 35)
+(fromMultiplicityPosition 410 160))
+($3 11 < -yk94ms_85r_eqyymv3f_-n9o "Procedure" 2
+(uid "-yk94ms_85r_eqyymv3f_-n9o")
+(bbx 220 440 130 160))
+($4 12 < -yk94ms_85r_eqyymv3f_-n9n "" 2
+(toMultiplicityPosition 340 420)
+(uid "-yk94ms_85r_eqyymv3f_-n9n")
+(points 350 340 350 440)
+(toOrderedPosition 255 675)
+(fromMultiplicityPosition 360 345))
+($3 13 < -yk94ms_85r_eqyymv3f_-n9m "Step" 2
+(uid "-yk94ms_85r_eqyymv3f_-n9m")
+(bbx 300 700 170 160))
+($4 14 < -yk94ms_85r_eqyymv3f_-n9l "" 2
+(toMultiplicityPosition 310 680)
+(uid "-yk94ms_85r_eqyymv3f_-n9l")
+(points 320 600 320 700)
+(toOrderedPosition 260 930)
+(fromMultiplicityPosition 335 615))
+($3 15 < -yk94ms_85r_eqyymv3f_-n9k "AddStep" 2
+(uid "-yk94ms_85r_eqyymv3f_-n9k")
+(bbx 580 770 170 90))
+($3 16 < -yk94ms_85r_eqyymv3f_-n9j "WaitStep" 2
+(uid "-yk94ms_85r_eqyymv3f_-n9j")
+(bbx 710 590 150 90))
+($3 17 < -yk94ms_85r_eqyymv3f_-n9i "PressStep" 2
+(uid "-yk94ms_85r_eqyymv3f_-n9i")
+(bbx 1280 570 180 110))
+($3 18 < -yk94ms_85r_eqyymv3f_-n9h "FiltrationStep" 2
+(uid "-yk94ms_85r_eqyymv3f_-n9h")
+(bbx 880 540 190 140))
+($3 19 < -yk94ms_85r_eqyymv3f_-n9g "CentrifugationStep" 2
+(uid "-yk94ms_85r_eqyymv3f_-n9g")
+(bbx 980 720 170 140))
+($3 20 < -yk94ms_85r_eqyymv3f_-n9f "FlowStep" 2
+(uid "-yk94ms_85r_eqyymv3f_-n9f")
+(bbx 1090 550 170 130))
+($3 21 < -yk94ms_85r_eqyymv3f_-n9e "SonicationStep" 2
+(uid "-yk94ms_85r_eqyymv3f_-n9e")
+(bbx 1190 730 150 130))
+($3 22 < -yk94ms_85r_eqyymv3f_-n9d "TemperatureStep" 2
+(uid "-yk94ms_85r_eqyymv3f_-n9d")
+(bbx 780 770 160 90))
+($5 23 < -yk94ms_85r_eqyymv3f_-n9c "" 2
+(uid "-yk94ms_85r_eqyymv3f_-n9c")
+(points 655 860 655 885 380 885 380 860))
+($5 24 < -yk94ms_85r_eqyymv3f_-n9b "" 2
+(uid "-yk94ms_85r_eqyymv3f_-n9b")
+(points 765 680 765 885 380 885 380 860))
+($5 25 < -yk94ms_85r_eqyymv3f_-n9a "" 2
+(uid "-yk94ms_85r_eqyymv3f_-n9a")
+(points 860 860 860 885 380 885 380 860))
+($5 26 < -yk94ms_85r_eqyymv3f_-n99 "" 2
+(uid "-yk94ms_85r_eqyymv3f_-n99")
+(points 960 680 960 885 380 885 380 860))
+($5 27 < -yk94ms_85r_eqyymv3f_-n98 "" 2
+(uid "-yk94ms_85r_eqyymv3f_-n98")
+(points 1070 860 1070 885 380 885 380 860))
+($5 28 < -yk94ms_85r_eqyymv3f_-n97 "" 2
+(uid "-yk94ms_85r_eqyymv3f_-n97")
+(points 1170 680 1170 885 380 885 380 860))
+($5 29 < -yk94ms_85r_eqyymv3f_-n96 "" 2
+(uid "-yk94ms_85r_eqyymv3f_-n96")
+(points 1270 860 1270 885 380 885 380 860))
+($5 30 < -yk94ms_85r_eqyymv3f_-n95 "" 2
+(uid "-yk94ms_85r_eqyymv3f_-n95")
+(points 1360 680 1360 885 380 885 380 860))
+($3 31 < -yk94ms_85r_eqyymv3f_-n94 "FlowType" 2
+(uid "-yk94ms_85r_eqyymv3f_-n94")
+(bbx 1330 350 80 60))
+($4 32 < -yk94ms_85r_eqyymv3f_-n93 "" 2
+(toMultiplicityPosition 685 745)
+(uid "-yk94ms_85r_eqyymv3f_-n93")
+(points 1110 410 700 410 700 770)
+(fromMultiplicityPosition 1090 415))
+($4 33 < -yk94ms_85r_eqyymv3f_-n92 "" 2
+(toMultiplicityPosition 1125 530)
+(toRolePosition 1085 515)
+(uid "-yk94ms_85r_eqyymv3f_-n92")
+(points 1140 420 1140 550)
+(fromRolePosition 1110 435)
+(fromMultiplicityPosition 485 715))
+($4 34 < -yk94ms_85r_eqyymv3f_-n91 "" 2
+(toMultiplicityPosition 1205 530)
+(toRolePosition 1195 515)
+(uid "-yk94ms_85r_eqyymv3f_-n91")
+(points 1220 420 1220 550)
+(fromRolePosition 1190 435)
+(fromMultiplicityPosition 485 675))
+($3 35 < -yk94ms_85r_eqyymv3f_-n90 "RefSample" 2
+(uid "-yk94ms_85r_eqyymv3f_-n90")
+(bbx 860 280 180 50))
+($3 36 < -yk94ms_85r_eqyymv3f_-n8z "SampleCategory" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-n8z")
+(bbx 20 200 250 50))
+($3 37 < -yk94ms_85r_eqyymv3f_-n8y "InstrumentType" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-n8y")
+(bbx 20 740 250 50))
+($4 38 < -yk94ms_85r_eqyymv3f_-n8x "" 2
+(toMultiplicityPosition 225 610)
+(uid "-yk94ms_85r_eqyymv3f_-n8x")
+(points 220 740 220 600)
+(fromMultiplicityPosition 205 720))
+($3 39 < -yk94ms_85r_eqyymv3f_-n8w "ExperimentType" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-n8w")
+(bbx 20 320 250 50))
+($4 40 < -yk94ms_85r_eqyymv3f_-n8v "" 2
+(toMultiplicityPosition 310 315)
+(uid "-yk94ms_85r_eqyymv3f_-n8v")
+(points 270 335 320 335)
+(fromMultiplicityPosition 275 340))
+($4 41 < -yk94ms_85r_eqyymv3f_-n8u "" 2
+(toMultiplicityPosition 50 255)
+(toRolePosition 70 255)
+(uid "-yk94ms_85r_eqyymv3f_-n8u")
+(points 60 320 60 250)
+(fromMultiplicityPosition 50 300))
+($4 42 < -yk94ms_85r_eqyymv3f_-n8t "" 2
+(toMultiplicityPosition 80 720)
+(uid "-yk94ms_85r_eqyymv3f_-n8t")
+(points 90 370 90 740)
+(fromMultiplicityPosition 100 375))
+($3 43 < -yk94ms_85r_eqyymv3f_-n8s "ParamDefType" 2
+(uid "-yk94ms_85r_eqyymv3f_-n8s")
+(bbx 740 460 100 60))
+($3 44 < -yk94ms_85r_eqyymv3f_-n8r "RefInputSample" 2
+(uid "-yk94ms_85r_eqyymv3f_-n8r")
+(bbx 1110 290 120 130))
+($4 45 < -yk94ms_85r_eqyymv3f_-n8q "" 2
+(uid "-yk94ms_85r_eqyymv3f_-n8q")
+(points 1110 390 680 390 680 750 470 750)
+(fromMultiplicityPosition 1100 370))
+($4 46 < -yk94ms_85r_eqyymv3f_-n8p "" 2
+(toMultiplicityPosition 1165 270)
+(uid "-yk94ms_85r_eqyymv3f_-n8p")
+(points 490 240 1175 240 1175 290)
+(fromMultiplicityPosition 495 250))
+($3 47 < -yk94ms_85r_eqyymv3f_-n8o "RefOutputSample" 2
+(uid "-yk94ms_85r_eqyymv3f_-n8o")
+(bbx 650 250 120 130))
+($4 48 < -yk94ms_85r_eqyymv3f_-n8n "" 2
+(uid "-yk94ms_85r_eqyymv3f_-n8n")
+(points 660 380 660 730 470 730)
+(fromMultiplicityPosition 650 385))
+($4 49 < -yk94ms_85r_eqyymv3f_-n8m "" 2
+(toMultiplicityPosition 640 260)
+(uid "-yk94ms_85r_eqyymv3f_-n8m")
+(points 490 280 650 280)
+(fromMultiplicityPosition 495 290))
+($3 50 < -yk94ms_85r_eqyymv3f_-n8l "ParameterDefinition" 2
+(uid "-yk94ms_85r_eqyymv3f_-n8l")
+(bbx 440 380 180 220))
+($4 51 < -yk94ms_85r_eqyymv3f_-n8k "" 2
+(uid "-yk94ms_85r_eqyymv3f_-n8k")
+(points 550 600 550 710 470 710)
+(fromMultiplicityPosition 555 605))
+($4 52 < -yk94ms_85r_eqyymv3f_-n8j "" 2
+(toMultiplicityPosition 535 360)
+(uid "-yk94ms_85r_eqyymv3f_-n8j")
+(points 490 315 525 315 525 380)
+(fromMultiplicityPosition 495 325))
+($4 53 < -yk94ms_85r_eqyymv3f_-n8i "" 2
+(uid "-yk94ms_85r_eqyymv3f_-n8i")
+(points 1110 300 1040 300)
+(fromMultiplicityPosition 1095 305))
+($4 54 < -yk94ms_85r_eqyymv3f_-n8h "" 2
+(uid "-yk94ms_85r_eqyymv3f_-n8h")
+(points 770 300 860 300)
+(fromMultiplicityPosition 780 305))
+($3 55 < 0_om1_erq4w1i4_-p5p "ProtocolStore" 2
+(autoSizeToFit true)
+(uid "0_om1_erq4w1i4_-p5p")
+(bbx 270 30 100 60))
+($4 56 < 0_om1_erq4w1i4_-p5q "" 2
+(toMultiplicityPosition 365 155)
+(uid "0_om1_erq4w1i4_-p5q")
+(points 360 90 360 180)
+(fromMultiplicityPosition 340 95))
+($3 57 < -yk94ms_l0q_evqpurmn_-p7c "MemopsRoot" 2
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-yk94ms_l0q_evqpurmn_-p7c")
+(bbx 20 130 250 30))
+($2 58 < -yk94ms_85r_eqyymv3f_-n8g "_Protocol" 1
+(name "_Protocol"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n8g")
+(diagramType "class"))
+($3 59 < -yk94ms_85r_eqyymv3f_-n8f "Protocol" 58
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-n8f")
+(bbx 150 240 60 30))
+($3 60 < -yk94ms_85r_eqyymv3f_-n8e "Citation" 58
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-n8e")
+(bbx 80 110 190 30))
+($3 61 < -yk94ms_85r_eqyymv3f_-n8d "Person" 58
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-n8d")
+(bbx 330 110 190 30))
+($4 62 < -yk94ms_85r_eqyymv3f_-n8c "" 58
+(toMultiplicityPosition 165 150)
+(toRolePosition 80 145)
+(uid "-yk94ms_85r_eqyymv3f_-n8c")
+(points 155 240 155 140)
+(fromMultiplicityPosition 140 220))
+($3 63 < -yk94ms_85r_eqyymv3f_-n8b "Procedure" 58
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-n8b")
+(bbx 80 340 70 30))
+($4 64 < -yk94ms_85r_eqyymv3f_-n8a "" 58
+(toMultiplicityPosition 155 335)
+(uid "-yk94ms_85r_eqyymv3f_-n8a")
+(points 180 270 180 355 150 355)
+(toOrderedPosition 140 335)
+(fromMultiplicityPosition 190 275))
+($3 65 < -yk94ms_85r_eqyymv3f_-n89 "Step" 58
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-n89")
+(bbx 130 500 50 30))
+($4 66 < -yk94ms_85r_eqyymv3f_-n88 "" 58
+(toMultiplicityPosition 130 480)
+(uid "-yk94ms_85r_eqyymv3f_-n88")
+(points 140 370 140 500)
+(toOrderedPosition 140 460)
+(fromMultiplicityPosition 150 375))
+($3 67 < -yk94ms_85r_eqyymv3f_-n87 "AddStep" 58
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-n87")
+(bbx 370 470 60 30))
+($3 68 < -yk94ms_85r_eqyymv3f_-n86 "WaitStep" 58
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-n86")
+(bbx 230 520 70 30))
+($3 69 < -yk94ms_85r_eqyymv3f_-n85 "PressStep" 58
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-n85")
+(bbx 620 520 70 30))
+($3 70 < -yk94ms_85r_eqyymv3f_-n84 "FiltrationStep" 58
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-n84")
+(bbx 330 520 100 30))
+($3 71 < -yk94ms_85r_eqyymv3f_-n83 "CentrifugationStep" 58
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-n83")
+(bbx 460 520 130 30))
+($3 72 < -yk94ms_85r_eqyymv3f_-n82 "FlowStep" 58
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-n82")
+(bbx 590 470 70 30))
+($3 73 < -yk94ms_85r_eqyymv3f_-n81 "SonicationStep" 58
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-n81")
+(bbx 460 470 100 30))
+($3 74 < -yk94ms_85r_eqyymv3f_-n80 "TemperatureStep" 58
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-n80")
+(bbx 220 470 120 30))
+($5 75 < -yk94ms_85r_eqyymv3f_-n7z "" 58
+(uid "-yk94ms_85r_eqyymv3f_-n7z")
+(points 395 500 395 510 180 510))
+($5 76 < -yk94ms_85r_eqyymv3f_-n7y "" 58
+(uid "-yk94ms_85r_eqyymv3f_-n7y")
+(points 260 520 260 510 180 510))
+($5 77 < -yk94ms_85r_eqyymv3f_-n7x "" 58
+(uid "-yk94ms_85r_eqyymv3f_-n7x")
+(points 260 500 260 510 180 510))
+($5 78 < -yk94ms_85r_eqyymv3f_-n7w "" 58
+(uid "-yk94ms_85r_eqyymv3f_-n7w")
+(points 395 520 395 510 180 510))
+($5 79 < -yk94ms_85r_eqyymv3f_-n7v "" 58
+(uid "-yk94ms_85r_eqyymv3f_-n7v")
+(points 505 520 505 510 180 510))
+($5 80 < -yk94ms_85r_eqyymv3f_-n7u "" 58
+(uid "-yk94ms_85r_eqyymv3f_-n7u")
+(points 625 500 625 510 180 510))
+($5 81 < -yk94ms_85r_eqyymv3f_-n7t "" 58
+(uid "-yk94ms_85r_eqyymv3f_-n7t")
+(points 505 500 505 510 180 510))
+($5 82 < -yk94ms_85r_eqyymv3f_-n7s "" 58
+(uid "-yk94ms_85r_eqyymv3f_-n7s")
+(points 625 520 625 510 180 510))
+($3 83 < -yk94ms_85r_eqyymv3f_-n7r "RefSample" 58
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-n7r")
+(bbx 620 310 180 30))
+($4 84 < -yk94ms_85r_eqyymv3f_-n7q "" 58
+(toRolePosition 400 145)
+(uid "-yk94ms_85r_eqyymv3f_-n7q")
+(points 200 240 200 200 420 200 420 140)
+(fromRolePosition 205 180)
+(fromMultiplicityPosition 185 220))
+($4 85 < -yk94ms_85r_eqyymv3f_-n7p "" 58
+(toRolePosition 325 145)
+(uid "-yk94ms_85r_eqyymv3f_-n7p")
+(points 175 240 175 180 345 180 345 140)
+(fromRolePosition 180 160)
+(fromMultiplicityPosition 165 220))
+($4 86 < -yk94ms_85r_eqyymv3f_-n7o "" 58
+(toMultiplicityPosition 350 90)
+(toRolePosition 285 70)
+(uid "-yk94ms_85r_eqyymv3f_-n7o")
+(points 200 110 200 65 345 65 345 110)
+(fromRolePosition 180 75)
+(toOrderedPosition 285 90)
+(fromMultiplicityPosition 190 90))
+($4 87 < -yk94ms_85r_eqyymv3f_-n7n "" 58
+(toMultiplicityPosition 400 90)
+(toRolePosition 400 70)
+(uid "-yk94ms_85r_eqyymv3f_-n7n")
+(points 110 110 110 40 395 40 395 110)
+(fromRolePosition 75 75)
+(toOrderedPosition 410 85)
+(fromMultiplicityPosition 100 90))
+($3 88 < -yk94ms_85r_eqyymv3f_-n7m "ExperimentType" 58
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-n7m")
+(bbx 310 240 250 30))
+($4 89 < -yk94ms_85r_eqyymv3f_-n7l "" 58
+(toMultiplicityPosition 215 235)
+(uid "-yk94ms_85r_eqyymv3f_-n7l")
+(points 310 255 210 255)
+(fromMultiplicityPosition 295 260))
+($3 90 < -yk94ms_85r_eqyymv3f_-n7k "InstrumentType" 58
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-n7k")
+(bbx 580 140 250 30))
+($4 91 < -yk94ms_85r_eqyymv3f_-n7j "" 58
+(toMultiplicityPosition 80 375)
+(uid "-yk94ms_85r_eqyymv3f_-n7j")
+(points 830 155 900 155 900 630 90 630 90 370)
+(fromMultiplicityPosition 835 160))
+($4 92 < -yk94ms_85r_eqyymv3f_-n7i "" 58
+(toMultiplicityPosition 700 180)
+(uid "-yk94ms_85r_eqyymv3f_-n7i")
+(points 370 240 370 215 690 215 690 170)
+(fromMultiplicityPosition 360 220))
+($3 93 < -yk94ms_85r_eqyymv3f_-n7h "SampleCategory" 58
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-n7h")
+(bbx 620 240 250 30))
+($4 94 < -yk94ms_85r_eqyymv3f_-n7g "" 58
+(toMultiplicityPosition 610 250)
+(toRolePosition 490 225)
+(uid "-yk94ms_85r_eqyymv3f_-n7g")
+(points 560 245 620 245)
+(fromMultiplicityPosition 565 250))
+($3 95 < -yk94ms_85r_eqyymv3f_-n7f "RefInputSample" 58
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-n7f")
+(bbx 570 370 110 30))
+($4 96 < -yk94ms_85r_eqyymv3f_-n7e "" 58
+(uid "-yk94ms_85r_eqyymv3f_-n7e")
+(points 680 385 840 385 840 570 170 570 170 530)
+(fromMultiplicityPosition 690 390))
+($4 97 < -yk94ms_85r_eqyymv3f_-n7d "" 58
+(toMultiplicityPosition 560 375)
+(uid "-yk94ms_85r_eqyymv3f_-n7d")
+(points 180 270 180 370 570 370)
+(fromMultiplicityPosition 190 275))
+($3 98 < -yk94ms_85r_eqyymv3f_-n7c "RefOutputSample" 58
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-n7c")
+(bbx 450 310 120 30))
+($4 99 < -yk94ms_85r_eqyymv3f_-n7b "" 58
+(uid "-yk94ms_85r_eqyymv3f_-n7b")
+(points 510 310 510 280 870 280 870 600 140 600 140 530)
+(fromMultiplicityPosition 520 290))
+($4 100 < -yk94ms_85r_eqyymv3f_-n7a "" 58
+(toMultiplicityPosition 440 315)
+(uid "-yk94ms_85r_eqyymv3f_-n7a")
+(points 180 270 180 335 450 335)
+(fromMultiplicityPosition 190 275))
+($3 101 < -yk94ms_85r_eqyymv3f_-n79 "ParameterDefinition" 58
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-n79")
+(bbx 200 400 140 30))
+($4 102 < -yk94ms_85r_eqyymv3f_-n78 "" 58
+(uid "-yk94ms_85r_eqyymv3f_-n78")
+(points 200 430 170 430 170 500)
+(fromMultiplicityPosition 190 435))
+($4 103 < -yk94ms_85r_eqyymv3f_-n77 "" 58
+(toMultiplicityPosition 190 405)
+(uid "-yk94ms_85r_eqyymv3f_-n77")
+(points 180 270 180 400 200 400)
+(fromMultiplicityPosition 190 275))
+($4 104 < -yk94ms_85r_eqyymv3f_-n76 "" 58
+(toMultiplicityPosition 410 450)
+(uid "-yk94ms_85r_eqyymv3f_-n76")
+(points 570 400 400 400 400 470)
+(fromMultiplicityPosition 560 405))
+($4 105 < -yk94ms_85r_eqyymv3f_-n75 "" 58
+(toMultiplicityPosition 580 460)
+(toRolePosition 550 445)
+(uid "-yk94ms_85r_eqyymv3f_-n75")
+(points 590 400 590 470)
+(fromRolePosition 585 405))
+($4 106 < -yk94ms_85r_eqyymv3f_-n74 "" 58
+(toMultiplicityPosition 670 460)
+(toRolePosition 645 445)
+(uid "-yk94ms_85r_eqyymv3f_-n74")
+(points 660 400 660 470)
+(fromRolePosition 655 405))
+($4 107 < -yk94ms_85r_eqyymv3f_-n73 "" 58
+(uid "-yk94ms_85r_eqyymv3f_-n73")
+(points 665 370 665 340)
+(fromMultiplicityPosition 655 355))
+($4 108 < -yk94ms_85r_eqyymv3f_-n72 "" 58
+(uid "-yk94ms_85r_eqyymv3f_-n72")
+(points 570 325 620 325)
+(fromMultiplicityPosition 575 330))
+($6 109 < -yk94ms_85r_eqyymv3f_-n71 "Protocol" 1
+(name "Protocol"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n71"))
+($7 110 < -yk94ms_85r_eqyymv3f_-n70 "serial" 109
+(changeability "frozen")
+(name "serial"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n70")
+(multiplicity "1"))
+($8 111 < -yk94ms_85r_eqyymv3f_-n6z "documentation" 110
+(name "documentation"
+)
+(value "Unique identifier."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n6z"))
+($8 112 < -yk94ms_85r_eqyymv3f_-n6y "isAutomatic" 110
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n6y"))
+($8 113 < -yk94ms_85r_eqyymv3f_-n6x "guid" 110
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:52_00001"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n6x"))
+($7 114 < -yk94ms_85r_eqyymv3f_-n6w "name" 109
+(name "name"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n6w")
+(multiplicity "1"))
+($8 115 < -yk94ms_85r_eqyymv3f_-n6v "documentation" 114
+(name "documentation"
+)
+(value "The name of the protocol."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n6v"))
+($8 116 < -yk94ms_85r_eqyymv3f_-n6u "guid" 114
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:52_00002"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n6u"))
+($7 117 < -yk94ms_85r_eqyymv3f_-n6t "objective" 109
+(name "objective"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n6t"))
+($8 118 < -yk94ms_85r_eqyymv3f_-n6s "documentation" 117
+(name "documentation"
+)
+(value "The objective of the protocol."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n6s"))
+($8 119 < -yk94ms_85r_eqyymv3f_-n6r "guid" 117
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:52_00003"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n6r"))
+($7 120 < -yk94ms_85r_eqyymv3f_-n6q "creationDate" 109
+(name "creationDate"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n6q"))
+($8 121 < -yk94ms_85r_eqyymv3f_-n6p "documentation" 120
+(name "documentation"
+)
+(value "The creation date of the protocol."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n6p"))
+($8 122 < -yk94ms_85r_eqyymv3f_-n6o "guid" 120
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:52_00004"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n6o"))
+($7 123 < -yk94ms_85r_eqyymv3f_-n6n "lastEditedDate" 109
+(name "lastEditedDate"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n6n"))
+($8 124 < -yk94ms_85r_eqyymv3f_-n6m "documentation" 123
+(name "documentation"
+)
+(value "Last date protocol was edited."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n6m"))
+($8 125 < -yk94ms_85r_eqyymv3f_-n6l "guid" 123
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:52_00005"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n6l"))
+($7 126 < -yk94ms_85r_eqyymv3f_-n6k "remarks" 109
+(name "remarks"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n6k")
+(multiplicity "*"))
+($8 127 < -yk94ms_85r_eqyymv3f_-n6j "documentation" 126
+(name "documentation"
+)
+(value "Some remarks on the reason why the protocol has been updated."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n6j"))
+($8 128 < -yk94ms_85r_eqyymv3f_-n6i "baseName" 126
+(name "baseName"
+)
+(value "remark"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n6i"))
+($8 129 < -yk94ms_85r_eqyymv3f_-n6h "guid" 126
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:52_00006"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n6h"))
+($7 130 < -yk94ms_85r_eqyymv3f_-n6g "details" 109
+(name "details"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n6g"))
+($8 131 < -yk94ms_85r_eqyymv3f_-n6f "documentation" 130
+(name "documentation"
+)
+(value "Details field for comments."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n6f"))
+($8 132 < -yk94ms_85r_eqyymv3f_-n6e "guid" 130
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:52_00007"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n6e"))
+($9 133 < -yk94ms_85r_eqyymv3f_-n6d "#<anon> (Protocol, DataObject)" 109
+(uid "-yk94ms_85r_eqyymv3f_-n6d"))
+($10 134 < -yk94ms_85r_eqyymv3f_-n6c "#<anon> (Protocol, Experiment)##," 109
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-n6c"))
+($11 135 < -yk94ms_85r_eqyymv3f_-n6b "#0" 134
+(uid "-yk94ms_85r_eqyymv3f_-n6b"))
+($8 136 < -yk94ms_85r_eqyymv3f_-n6a "documentation" 135
+(name "documentation"
+)
+(value "The protocol used by the experiment."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n6a"))
+($8 137 < -yk94ms_85r_eqyymv3f_-n69 "guid" 135
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:50_00020"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n69"))
+($11 138 < -yk94ms_85r_eqyymv3f_-n68 "#1" 134
+(uid "-yk94ms_85r_eqyymv3f_-n68")
+(multiplicity "*"))
+($8 139 < -yk94ms_85r_eqyymv3f_-n67 "documentation" 138
+(name "documentation"
+)
+(value "The list of experiments associated to a given protocol."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n67"))
+($8 140 < -yk94ms_85r_eqyymv3f_-n66 "guid" 138
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:51_00001"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n66"))
+($10 141 < -yk94ms_85r_eqyymv3f_-n65 "#<anon> (Protocol, Person)##createdProtocols,creator" 109
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-n65"))
+($11 142 < -yk94ms_85r_eqyymv3f_-n64 "createdProtocols#0" 141
+(name "createdProtocols"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n64")
+(multiplicity "*"))
+($8 143 < -yk94ms_85r_eqyymv3f_-n63 "baseName" 142
+(name "baseName"
+)
+(value "createdProtocol"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n63"))
+($8 144 < -yk94ms_85r_eqyymv3f_-n62 "documentation" 142
+(name "documentation"
+)
+(value "Protocols created by Person."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n62"))
+($8 145 < -yk94ms_85r_eqyymv3f_-n61 "guid" 142
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:51_00002"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n61"))
+($11 146 < -yk94ms_85r_eqyymv3f_-n60 "creator#1" 141
+(name "creator"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n60"))
+($8 147 < -yk94ms_85r_eqyymv3f_-n5z "documentation" 146
+(name "documentation"
+)
+(value "The person who is in charge for this protocol or who created this protocol."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n5z"))
+($8 148 < -yk94ms_85r_eqyymv3f_-n5y "guid" 146
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:51_00003"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n5y"))
+($10 149 < -yk94ms_85r_eqyymv3f_-n5x "#<anon> (Protocol, Person)##editedProtocols,lastEditor" 109
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-n5x"))
+($11 150 < -yk94ms_85r_eqyymv3f_-n5w "editedProtocols#0" 149
+(name "editedProtocols"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n5w")
+(multiplicity "*"))
+($8 151 < -yk94ms_85r_eqyymv3f_-n5v "baseName" 150
+(name "baseName"
+)
+(value "editedProtocol"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n5v"))
+($8 152 < -yk94ms_85r_eqyymv3f_-n5u "documentation" 150
+(name "documentation"
+)
+(value "Protocols last modified by Person."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n5u"))
+($8 153 < -yk94ms_85r_eqyymv3f_-n5t "guid" 150
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:51_00004"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n5t"))
+($11 154 < -yk94ms_85r_eqyymv3f_-n5s "lastEditor#1" 149
+(name "lastEditor"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n5s"))
+($8 155 < -yk94ms_85r_eqyymv3f_-n5r "documentation" 154
+(name "documentation"
+)
+(value "Person who last modified Protocol."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n5r"))
+($8 156 < -yk94ms_85r_eqyymv3f_-n5q "guid" 154
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:51_00005"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n5q"))
+($10 157 < -yk94ms_85r_eqyymv3f_-n5p "#<anon> (Protocol, Citation)##,references" 109
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-n5p"))
+($11 158 < -yk94ms_85r_eqyymv3f_-n5o "#0" 157
+(uid "-yk94ms_85r_eqyymv3f_-n5o")
+(multiplicity "*"))
+($8 159 < -yk94ms_85r_eqyymv3f_-n5n "documentation" 158
+(name "documentation"
+)
+(value "Protocol where Citation refers to."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n5n"))
+($8 160 < -yk94ms_85r_eqyymv3f_-n5m "guid" 158
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:51_00006"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n5m"))
+($11 161 < -yk94ms_85r_eqyymv3f_-n5l "references#1" 157
+(name "references"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n5l")
+(multiplicity "*"))
+($8 162 < -yk94ms_85r_eqyymv3f_-n5k "baseName" 161
+(name "baseName"
+)
+(value "reference"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n5k"))
+($8 163 < -yk94ms_85r_eqyymv3f_-n5j "documentation" 161
+(name "documentation"
+)
+(value "Reference where Protocol is citated."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n5j"))
+($8 164 < -yk94ms_85r_eqyymv3f_-n5i "guid" 161
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:51_00007"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n5i"))
+($10 165 < -yk94ms_85r_eqyymv3f_-n5h "#<anon> (Protocol, Procedure)##," 109
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-n5h"))
+($11 166 < -yk94ms_85r_eqyymv3f_-n5g "#0" 165
+(changeability "frozen")
+(aggregation "composite")
+(uid "-yk94ms_85r_eqyymv3f_-n5g")
+(multiplicity "1"))
+($8 167 < -yk94ms_85r_eqyymv3f_-n5f "guid" 166
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:51_00008"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n5f"))
+($11 168 < -yk94ms_85r_eqyymv3f_-n5e "#1" 165
+(uid "-yk94ms_85r_eqyymv3f_-n5e")
+(multiplicity "*"))
+($8 169 < -yk94ms_85r_eqyymv3f_-n5d "guid" 168
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:51_00009"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n5d"))
+($10 170 < -yk94ms_85r_eqyymv3f_-n5c "#<anon> (Protocol, RefInputSample)##," 109
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-n5c"))
+($11 171 < -yk94ms_85r_eqyymv3f_-n5b "#0" 170
+(changeability "frozen")
+(aggregation "composite")
+(uid "-yk94ms_85r_eqyymv3f_-n5b")
+(multiplicity "1"))
+($8 172 < -yk94ms_85r_eqyymv3f_-n5a "guid" 171
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:51_00010"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n5a"))
+($11 173 < -yk94ms_85r_eqyymv3f_-n59 "#1" 170
+(uid "-yk94ms_85r_eqyymv3f_-n59")
+(multiplicity "*"))
+($8 174 < -yk94ms_85r_eqyymv3f_-n58 "guid" 173
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:51_00011"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n58"))
+($10 175 < -yk94ms_85r_eqyymv3f_-n57 "#<anon> (Protocol, RefOutputSample)##," 109
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-n57"))
+($11 176 < -yk94ms_85r_eqyymv3f_-n56 "#0" 175
+(changeability "frozen")
+(aggregation "composite")
+(uid "-yk94ms_85r_eqyymv3f_-n56")
+(multiplicity "1"))
+($8 177 < -yk94ms_85r_eqyymv3f_-n55 "guid" 176
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:51_00012"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n55"))
+($11 178 < -yk94ms_85r_eqyymv3f_-n54 "#1" 175
+(uid "-yk94ms_85r_eqyymv3f_-n54")
+(multiplicity "*"))
+($8 179 < -yk94ms_85r_eqyymv3f_-n53 "guid" 178
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:51_00013"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n53"))
+($10 180 < -yk94ms_85r_eqyymv3f_-n52 "#<anon> (Protocol, ParameterDefinition)##," 109
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-n52"))
+($11 181 < -yk94ms_85r_eqyymv3f_-n51 "#0" 180
+(changeability "frozen")
+(aggregation "composite")
+(uid "-yk94ms_85r_eqyymv3f_-n51")
+(multiplicity "1"))
+($8 182 < -yk94ms_85r_eqyymv3f_-n50 "guid" 181
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:51_00014"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n50"))
+($11 183 < -yk94ms_85r_eqyymv3f_-n4z "#1" 180
+(uid "-yk94ms_85r_eqyymv3f_-n4z")
+(multiplicity "*"))
+($8 184 < -yk94ms_85r_eqyymv3f_-n4y "guid" 183
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:51_00015"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n4y"))
+($8 185 < -yk94ms_85r_eqyymv3f_-n4x "documentation" 109
+(name "documentation"
+)
+(value "The information on the protocol. A protocol is a series of procedures that contain steps."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n4x"))
+($8 186 < -yk94ms_85r_eqyymv3f_-n4v "guid" 109
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:44_00018"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n4v"))
+($8 187 < -yk94ms_15v_evqyosvg_-p36 "keyNames" 109
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "-yk94ms_15v_evqyosvg_-p36"))
+($12 188 < -yk94ms_85r_eqyymv3f_-n4u "procNumber_is_secondary_key_for_Procedure" 109
+(name "procNumber_is_secondary_key_for_Procedure"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n4u")
+(body "code:python"
+"_"
+"ll = self.procedures"
+"aSet = frozenset(x.procNumber for x in ll)"
+"isValid = (len(aSet) == len(ll))"
+"_"
+"code:java"
+"_"
+"java.util.Set<java.lang.Integer> dd = new java.util.HashSet<java.lang.Integer>();"
+"int nn = 0;"
+"for (ccp.api.lims.Protocol.Procedure procedure: getProcedures()) {"
+"  java.lang.Integer number = procedure.getProcNumber();"
+"  dd.add(number);"
+"  nn++;"
+"}"
+"if (dd.size() == nn)"
+"  isValid = true;"
+"else"
+"  isValid = false;"
+))
+($8 189 < -yk94ms_85r_eqyymv3f_-n4t "guid" 188
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00001"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n4t"))
+($13 190 < -yk94ms_85r_eqyymv3f_-n4s "#<anon> (Protocol, Affiliation)" 1
+(uid "-yk94ms_85r_eqyymv3f_-n4s"))
+($13 191 < -yk94ms_85r_eqyymv3f_-n4r "#<anon> (Protocol, Citation)" 1
+(uid "-yk94ms_85r_eqyymv3f_-n4r"))
+($6 192 < -yk94ms_85r_eqyymv3f_-n4q "Procedure" 1
+(name "Procedure"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n4q"))
+($7 193 < -yk94ms_85r_eqyymv3f_-n4p "serial" 192
+(changeability "frozen")
+(name "serial"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n4p")
+(multiplicity "1"))
+($8 194 < -yk94ms_85r_eqyymv3f_-n4o "documentation" 193
+(name "documentation"
+)
+(value "Unique identifier."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n4o"))
+($8 195 < -yk94ms_85r_eqyymv3f_-n4n "isAutomatic" 193
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n4n"))
+($8 196 < -yk94ms_85r_eqyymv3f_-n4m "guid" 193
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:52_00010"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n4m"))
+($7 197 < -yk94ms_85r_eqyymv3f_-n4l "name" 192
+(name "name"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n4l"))
+($8 198 < -yk94ms_85r_eqyymv3f_-n4k "documentation" 197
+(name "documentation"
+)
+(value "The name of the procedure."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n4k"))
+($8 199 < -yk94ms_85r_eqyymv3f_-n4j "guid" 197
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:52_00011"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n4j"))
+($7 200 < -yk94ms_85r_eqyymv3f_-n4i "procNumber" 192
+(name "procNumber"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n4i")
+(multiplicity "1"))
+($8 201 < -yk94ms_85r_eqyymv3f_-n4h "documentation" 200
+(name "documentation"
+)
+(value "The place of the procedure in the order of procedures of the protocol. Need not be sequential, successive procdedures could be numbered (-10,0,10,12,17,20,...). The procedures are performed according to increasing value of this attribute."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n4h"))
+($8 202 < -yk94ms_85r_eqyymv3f_-n4g "guid" 200
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:52_00012"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n4g"))
+($7 203 < -yk94ms_85r_eqyymv3f_-n4f "numCycles" 192
+(initialValue "1"
+)
+(name "numCycles"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n4f")
+(multiplicity "1"))
+($8 204 < -yk94ms_85r_eqyymv3f_-n4e "documentation" 203
+(name "documentation"
+)
+(value "The number of times the procedure is repeated."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n4e"))
+($8 205 < -yk94ms_85r_eqyymv3f_-n4d "guid" 203
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:52_00013"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n4d"))
+($7 206 < -yk94ms_85r_eqyymv3f_-n4c "role" 192
+(name "role"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n4c"))
+($8 207 < -yk94ms_85r_eqyymv3f_-n4b "documentation" 206
+(name "documentation"
+)
+(value "The role of the procedure that it takes for a protocol ."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n4b"))
+($8 208 < -yk94ms_85r_eqyymv3f_-n4a "guid" 206
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:52_00014"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n4a"))
+($7 209 < -yk94ms_85r_eqyymv3f_-n49 "remarks" 192
+(name "remarks"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n49")
+(multiplicity "*"))
+($8 210 < -yk94ms_85r_eqyymv3f_-n48 "documentation" 209
+(name "documentation"
+)
+(value "Some remarks."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n48"))
+($8 211 < -yk94ms_85r_eqyymv3f_-n47 "baseName" 209
+(name "baseName"
+)
+(value "remark"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n47"))
+($8 212 < -yk94ms_85r_eqyymv3f_-n46 "guid" 209
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:52_00015"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n46"))
+($7 213 < -yk94ms_85r_eqyymv3f_-n45 "details" 192
+(name "details"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n45"))
+($8 214 < -yk94ms_85r_eqyymv3f_-n44 "documentation" 213
+(name "documentation"
+)
+(value "Details field for comments."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n44"))
+($8 215 < -yk94ms_85r_eqyymv3f_-n43 "guid" 213
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:52_00016"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n43"))
+($9 216 < -yk94ms_85r_eqyymv3f_-n42 "#<anon> (Procedure, DataObject)" 192
+(uid "-yk94ms_85r_eqyymv3f_-n42"))
+($10 217 < -yk94ms_85r_eqyymv3f_-n41 "#<anon> (Procedure, Step)##," 192
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-n41"))
+($11 218 < -yk94ms_85r_eqyymv3f_-n40 "#0" 217
+(changeability "frozen")
+(aggregation "composite")
+(uid "-yk94ms_85r_eqyymv3f_-n40")
+(multiplicity "1"))
+($8 219 < -yk94ms_85r_eqyymv3f_-n3z "guid" 218
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:52_00008"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n3z"))
+($11 220 < -yk94ms_85r_eqyymv3f_-n3y "#1" 217
+(uid "-yk94ms_85r_eqyymv3f_-n3y")
+(multiplicity "*"))
+($8 221 < -yk94ms_85r_eqyymv3f_-n3x "guid" 220
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:52_00009"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n3x"))
+($8 222 < -yk94ms_85r_eqyymv3f_-n3w "documentation" 192
+(name "documentation"
+)
+(value "A procedure is a list of steps that can be repeated."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n3w"))
+($8 223 < -yk94ms_85r_eqyymv3f_-n3u "guid" 192
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00002"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n3u"))
+($8 224 < -yk94ms_15v_evqyosvg_-p35 "keyNames" 192
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "-yk94ms_15v_evqyosvg_-p35"))
+($12 225 < -yk94ms_85r_eqyymv3f_-n3t "stepNumber_is_secondary_key_for_Step" 192
+(name "stepNumber_is_secondary_key_for_Step"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n3t")
+(body "code:python"
+"_"
+"ll = self.steps"
+"aSet = frozenset(x.stepNumber for x in ll)"
+"isValid = (len(aSet) == len(ll))"
+"_"
+"code:java"
+"_"
+"java.util.HashSet<java.lang.Integer> dd = new java.util.HashSet<java.lang.Integer>();"
+"int nn = 0;"
+"for (ccp.api.lims.Protocol.Step step: getSteps()) {"
+"  java.lang.Integer number = step.getStepNumber();"
+"  dd.add(number);"
+"  nn++;"
+"}"
+"if (dd.size() == nn)"
+"  isValid = true;"
+"else"
+"  isValid = false;"
+))
+($8 226 < -yk94ms_85r_eqyymv3f_-n3s "guid" 225
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00003"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n3s"))
+($6 227 < -yk94ms_85r_eqyymv3f_-n3r "Step" 1
+(name "Step"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n3r"))
+($7 228 < -yk94ms_85r_eqyymv3f_-n3q "serial" 227
+(changeability "frozen")
+(name "serial"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n3q")
+(multiplicity "1"))
+($8 229 < -yk94ms_85r_eqyymv3f_-n3p "documentation" 228
+(name "documentation"
+)
+(value "Unique identifier."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n3p"))
+($8 230 < -yk94ms_85r_eqyymv3f_-n3o "isAutomatic" 228
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n3o"))
+($8 231 < -yk94ms_85r_eqyymv3f_-n3n "guid" 228
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:52_00017"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n3n"))
+($7 232 < -yk94ms_85r_eqyymv3f_-n3m "name" 227
+(name "name"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n3m"))
+($8 233 < -yk94ms_85r_eqyymv3f_-n3l "documentation" 232
+(name "documentation"
+)
+(value "The name of the step."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n3l"))
+($8 234 < -yk94ms_85r_eqyymv3f_-n3k "guid" 232
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:52_00018"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n3k"))
+($7 235 < -yk94ms_85r_eqyymv3f_-n3j "stepNumber" 227
+(name "stepNumber"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n3j")
+(multiplicity "1"))
+($8 236 < -yk94ms_85r_eqyymv3f_-n3i "documentation" 235
+(name "documentation"
+)
+(value "The place of the step in the order of step of the procedure. Need not be sequential, successive steps could be numbered (-10,0,10,12,17,20,...). The steps are performed according to increasing value of this attribute."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n3i"))
+($8 237 < -yk94ms_85r_eqyymv3f_-n3h "guid" 235
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:52_00019"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n3h"))
+($7 238 < -yk94ms_85r_eqyymv3f_-n3g "duration" 227
+(name "duration"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n3g"))
+($8 239 < -yk94ms_85r_eqyymv3f_-n3f "documentation" 238
+(name "documentation"
+)
+(value "The duration in second (s) of the step."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n3f"))
+($8 240 < -yk94ms_85r_eqyymv3f_-n3e "guid" 238
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:52_00020"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n3e"))
+($7 241 < -yk94ms_85r_eqyymv3f_-n3d "durationDisplayUnit" 227
+(name "durationDisplayUnit"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n3d"))
+($8 242 < -yk94ms_85r_eqyymv3f_-n3c "documentation" 241
+(name "documentation"
+)
+(value "This is the unit entered by user and used for display."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n3c"))
+($8 243 < -yk94ms_85r_eqyymv3f_-n3b "guid" 241
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:52_00021"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n3b"))
+($7 244 < -yk94ms_85r_eqyymv3f_-n3a "role" 227
+(name "role"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n3a"))
+($8 245 < -yk94ms_85r_eqyymv3f_-n39 "documentation" 244
+(name "documentation"
+)
+(value "The role of the step that it takes within a procedure or simply its classification number."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n39"))
+($8 246 < -yk94ms_85r_eqyymv3f_-n38 "guid" 244
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:52_00022"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n38"))
+($7 247 < -yk94ms_85r_eqyymv3f_-n37 "details" 227
+(name "details"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n37"))
+($8 248 < -yk94ms_85r_eqyymv3f_-n36 "documentation" 247
+(name "documentation"
+)
+(value "Details field for comments."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n36"))
+($8 249 < -yk94ms_85r_eqyymv3f_-n35 "guid" 247
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:52_00023"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n35"))
+($9 250 < -yk94ms_85r_eqyymv3f_-n34 "#<anon> (Step, DataObject)" 227
+(uid "-yk94ms_85r_eqyymv3f_-n34"))
+($8 251 < -yk94ms_85r_eqyymv3f_-n32 "documentation" 227
+(name "documentation"
+)
+(value "Description of a general step contained within a procedure during a certain time (duration)."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n32"))
+($8 252 < -yk94ms_85r_eqyymv3f_-n31 "guid" 227
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00004"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n31"))
+($8 253 < -yk94ms_15v_evqyosvg_-p34 "keyNames" 227
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "-yk94ms_15v_evqyosvg_-p34"))
+($6 254 < -yk94ms_85r_eqyymv3f_-n30 "AddStep" 1
+(name "AddStep"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n30"))
+($7 255 < -yk94ms_85r_eqyymv3f_-n2z "amount" 254
+(name "amount"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n2z"))
+($8 256 < -yk94ms_85r_eqyymv3f_-n2y "documentation" 255
+(name "documentation"
+)
+(value "The amount of the material used by this step."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n2y"))
+($8 257 < -yk94ms_85r_eqyymv3f_-n2x "guid" 255
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:52_00024"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n2x"))
+($7 258 < -yk94ms_85r_eqyymv3f_-n2w "amountUnit" 254
+(name "amountUnit"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n2w"))
+($8 259 < -yk94ms_85r_eqyymv3f_-n2v "documentation" 258
+(name "documentation"
+)
+(value "One of the three possible units: kg, m3 or nmber."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n2v"))
+($8 260 < -yk94ms_85r_eqyymv3f_-n2u "guid" 258
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:52_00025"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n2u"))
+($7 261 < -yk94ms_85r_eqyymv3f_-n2t "amountDisplayUnit" 254
+(name "amountDisplayUnit"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n2t"))
+($8 262 < -yk94ms_85r_eqyymv3f_-n2s "documentation" 261
+(name "documentation"
+)
+(value "This is the unit entered by user and used for display."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n2s"))
+($8 263 < -yk94ms_85r_eqyymv3f_-n2r "guid" 261
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:53_00001"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n2r"))
+($9 264 < -yk94ms_85r_eqyymv3f_-n2q "#<anon> (AddStep, Step)" 254
+(uid "-yk94ms_85r_eqyymv3f_-n2q"))
+($8 265 < -yk94ms_85r_eqyymv3f_-n2p "documentation" 254
+(name "documentation"
+)
+(value "Step for adding a certain amount of materiel."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n2p"))
+($8 266 < -yk94ms_85r_eqyymv3f_-n2o "guid" 254
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00005"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n2o"))
+($6 267 < -yk94ms_85r_eqyymv3f_-n2n "WaitStep" 1
+(name "WaitStep"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n2n"))
+($7 268 < -yk94ms_85r_eqyymv3f_-n2m "temperature" 267
+(name "temperature"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n2m"))
+($8 269 < -yk94ms_85r_eqyymv3f_-n2l "documentation" 268
+(name "documentation"
+)
+(value "The temperature in kelvin (K)."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n2l"))
+($8 270 < -yk94ms_85r_eqyymv3f_-n2k "guid" 268
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:55_00001"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n2k"))
+($7 271 < -yk94ms_85r_eqyymv3f_-n2j "tempDisplayUnit" 267
+(name "tempDisplayUnit"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n2j"))
+($8 272 < -yk94ms_85r_eqyymv3f_-n2i "documentation" 271
+(name "documentation"
+)
+(value "This is the unit entered by user and used for display."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n2i"))
+($8 273 < -yk94ms_85r_eqyymv3f_-n2h "guid" 271
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:55_00002"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n2h"))
+($7 274 < -yk94ms_85r_eqyymv3f_-n2g "location" 267
+(name "location"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n2g"))
+($8 275 < -yk94ms_85r_eqyymv3f_-n2f "documentation" 274
+(name "documentation"
+)
+(value "The information on a location used for the wait step."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n2f"))
+($8 276 < -yk94ms_85r_eqyymv3f_-n2e "guid" 274
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:55_00003"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n2e"))
+($9 277 < -yk94ms_85r_eqyymv3f_-n2d "#<anon> (WaitStep, Step)" 267
+(uid "-yk94ms_85r_eqyymv3f_-n2d"))
+($8 278 < -yk94ms_85r_eqyymv3f_-n2c "documentation" 267
+(name "documentation"
+)
+(value "Step for waiting."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n2c"))
+($8 279 < -yk94ms_85r_eqyymv3f_-n2b "guid" 267
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00006"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n2b"))
+($6 280 < -yk94ms_85r_eqyymv3f_-n2a "PressStep" 1
+(name "PressStep"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n2a"))
+($7 281 < -yk94ms_85r_eqyymv3f_-n29 "temperature" 280
+(name "temperature"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n29"))
+($8 282 < -yk94ms_85r_eqyymv3f_-n28 "documentation" 281
+(name "documentation"
+)
+(value "The temperature in kelvin (K)."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n28"))
+($8 283 < -yk94ms_85r_eqyymv3f_-n27 "guid" 281
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:55_00004"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n27"))
+($7 284 < -yk94ms_85r_eqyymv3f_-n26 "tempDisplayUnit" 280
+(name "tempDisplayUnit"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n26"))
+($8 285 < -yk94ms_85r_eqyymv3f_-n25 "documentation" 284
+(name "documentation"
+)
+(value "This is the unit entered by user and used for display."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n25"))
+($8 286 < -yk94ms_85r_eqyymv3f_-n24 "guid" 284
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:55_00005"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n24"))
+($7 287 < -yk94ms_85r_eqyymv3f_-n23 "pressure" 280
+(name "pressure"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n23"))
+($8 288 < -yk94ms_85r_eqyymv3f_-n22 "documentation" 287
+(name "documentation"
+)
+(value "The pressure applied."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n22"))
+($8 289 < -yk94ms_85r_eqyymv3f_-n21 "guid" 287
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:56_00001"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n21"))
+($7 290 < -yk94ms_85r_eqyymv3f_-n20 "pressureDisplayUnit" 280
+(name "pressureDisplayUnit"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n20"))
+($8 291 < -yk94ms_85r_eqyymv3f_-n1z "documentation" 290
+(name "documentation"
+)
+(value "This is the unit entered by user and used for display."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n1z"))
+($8 292 < -yk94ms_85r_eqyymv3f_-n1y "guid" 290
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:56_00002"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n1y"))
+($9 293 < -yk94ms_85r_eqyymv3f_-n1x "#<anon> (PressStep, Step)" 280
+(uid "-yk94ms_85r_eqyymv3f_-n1x"))
+($8 294 < -yk94ms_85r_eqyymv3f_-n1w "documentation" 280
+(name "documentation"
+)
+(value "Press step."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n1w"))
+($8 295 < -yk94ms_85r_eqyymv3f_-n1v "guid" 280
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00007"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n1v"))
+($6 296 < -yk94ms_85r_eqyymv3f_-n1u "FiltrationStep" 1
+(name "FiltrationStep"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n1u"))
+($7 297 < -yk94ms_85r_eqyymv3f_-n1t "temperature" 296
+(name "temperature"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n1t"))
+($8 298 < -yk94ms_85r_eqyymv3f_-n1s "documentation" 297
+(name "documentation"
+)
+(value "The temperature in kelvin (K)."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n1s"))
+($8 299 < -yk94ms_85r_eqyymv3f_-n1r "guid" 297
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:56_00003"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n1r"))
+($7 300 < -yk94ms_85r_eqyymv3f_-n1q "tempDisplayUnit" 296
+(name "tempDisplayUnit"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n1q"))
+($8 301 < -yk94ms_85r_eqyymv3f_-n1p "documentation" 300
+(name "documentation"
+)
+(value "This is the unit entered by user and used for display."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n1p"))
+($8 302 < -yk94ms_85r_eqyymv3f_-n1o "guid" 300
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:56_00004"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n1o"))
+($7 303 < -yk94ms_85r_eqyymv3f_-n1n "membraneName" 296
+(name "membraneName"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n1n"))
+($8 304 < -yk94ms_85r_eqyymv3f_-n1m "documentation" 303
+(name "documentation"
+)
+(value "The name of the membrane."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n1m"))
+($8 305 < -yk94ms_85r_eqyymv3f_-n1l "guid" 303
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:56_00005"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n1l"))
+($7 306 < -yk94ms_85r_eqyymv3f_-n1k "membraneCutoff" 296
+(name "membraneCutoff"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n1k"))
+($8 307 < -yk94ms_85r_eqyymv3f_-n1j "documentation" 306
+(name "documentation"
+)
+(value "The membrane cutoff in meter (m)."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n1j"))
+($8 308 < -yk94ms_85r_eqyymv3f_-n1i "guid" 306
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:56_00006"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n1i"))
+($7 309 < -yk94ms_85r_eqyymv3f_-n1h "memCutoffDisplayUnit" 296
+(name "memCutoffDisplayUnit"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n1h"))
+($8 310 < -yk94ms_85r_eqyymv3f_-n1g "documentation" 309
+(name "documentation"
+)
+(value "This is the unit entered by user and used for display."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n1g"))
+($8 311 < -yk94ms_85r_eqyymv3f_-n1f "guid" 309
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:56_00007"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n1f"))
+($7 312 < -yk94ms_85r_eqyymv3f_-n1e "methodName" 296
+(name "methodName"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n1e"))
+($8 313 < -yk94ms_85r_eqyymv3f_-n1d "documentation" 312
+(name "documentation"
+)
+(value "The name of the method applied for filtration step."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n1d"))
+($8 314 < -yk94ms_85r_eqyymv3f_-n1c "guid" 312
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:56_00008"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n1c"))
+($9 315 < -yk94ms_85r_eqyymv3f_-n1b "#<anon> (FiltrationStep, Step)" 296
+(uid "-yk94ms_85r_eqyymv3f_-n1b"))
+($8 316 < -yk94ms_85r_eqyymv3f_-n1a "documentation" 296
+(name "documentation"
+)
+(value "Step for filtration."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n1a"))
+($8 317 < -yk94ms_85r_eqyymv3f_-n19 "guid" 296
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00008"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n19"))
+($6 318 < -yk94ms_85r_eqyymv3f_-n18 "CentrifugationStep" 1
+(name "CentrifugationStep"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n18"))
+($7 319 < -yk94ms_85r_eqyymv3f_-n17 "temperature" 318
+(name "temperature"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n17"))
+($8 320 < -yk94ms_85r_eqyymv3f_-n16 "documentation" 319
+(name "documentation"
+)
+(value "The temperature in kelvin (K)."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n16"))
+($8 321 < -yk94ms_85r_eqyymv3f_-n15 "guid" 319
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:56_00009"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n15"))
+($7 322 < -yk94ms_85r_eqyymv3f_-n14 "tempDisplayUnit" 318
+(name "tempDisplayUnit"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n14"))
+($8 323 < -yk94ms_85r_eqyymv3f_-n13 "documentation" 322
+(name "documentation"
+)
+(value "This is the unit entered by user and used for display."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n13"))
+($8 324 < -yk94ms_85r_eqyymv3f_-n12 "guid" 322
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:56_00010"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n12"))
+($7 325 < -yk94ms_85r_eqyymv3f_-n11 "centrifugationSpeed" 318
+(name "centrifugationSpeed"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n11"))
+($8 326 < -yk94ms_85r_eqyymv3f_-n10 "documentation" 325
+(name "documentation"
+)
+(value "Centrifugation speed in rad/s."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n10"))
+($8 327 < -yk94ms_85r_eqyymv3f_-n0z "guid" 325
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:56_00011"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n0z"))
+($7 328 < -yk94ms_85r_eqyymv3f_-n0y "distFromAxis" 318
+(name "distFromAxis"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n0y"))
+($8 329 < -yk94ms_85r_eqyymv3f_-n0x "documentation" 328
+(name "documentation"
+)
+(value "Distance from axis in meter (m)."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n0x"))
+($8 330 < -yk94ms_85r_eqyymv3f_-n0w "guid" 328
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:56_00012"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n0w"))
+($7 331 < -yk94ms_85r_eqyymv3f_-n0v "gnum" 318
+(name "gnum"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n0v"))
+($8 332 < -yk94ms_85r_eqyymv3f_-n0u "documentation" 331
+(name "documentation"
+)
+(value "Acceleration (g number) due to gravity in m/s2."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n0u"))
+($8 333 < -yk94ms_85r_eqyymv3f_-n0t "guid" 331
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:56_00013"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n0t"))
+($7 334 < -yk94ms_85r_eqyymv3f_-n0s "centrifugeModel" 318
+(name "centrifugeModel"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n0s"))
+($8 335 < -yk94ms_85r_eqyymv3f_-n0r "documentation" 334
+(name "documentation"
+)
+(value "The centrifuge model."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n0r"))
+($8 336 < -yk94ms_85r_eqyymv3f_-n0q "guid" 334
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:56_00014"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n0q"))
+($9 337 < -yk94ms_85r_eqyymv3f_-n0p "#<anon> (CentrifugationStep, Step)" 318
+(uid "-yk94ms_85r_eqyymv3f_-n0p"))
+($8 338 < -yk94ms_85r_eqyymv3f_-n0o "documentation" 318
+(name "documentation"
+)
+(value "Step for centrifugation."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n0o"))
+($8 339 < -yk94ms_85r_eqyymv3f_-n0n "guid" 318
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00009"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n0n"))
+($6 340 < -yk94ms_85r_eqyymv3f_-n0m "FlowStep" 1
+(name "FlowStep"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n0m"))
+($7 341 < -yk94ms_85r_eqyymv3f_-n0l "flowType" 340
+(name "flowType"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n0l"))
+($8 342 < -yk94ms_85r_eqyymv3f_-n0k "documentation" 341
+(name "documentation"
+)
+(value "The type of flow e.g. 'fixed volume', 'one solution flow', '2solutions gradient', ..."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n0k"))
+($8 343 < -yk94ms_85r_eqyymv3f_-n0j "guid" 341
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:56_00015"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n0j"))
+($7 344 < -yk94ms_85r_eqyymv3f_-n0i "flowrate" 340
+(name "flowrate"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n0i"))
+($8 345 < -yk94ms_85r_eqyymv3f_-n0h "documentation" 344
+(name "documentation"
+)
+(value "The volume of material passing a fixed point per unit of time in L/s."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n0h"))
+($8 346 < -yk94ms_85r_eqyymv3f_-n0g "guid" 344
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:56_00016"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n0g"))
+($7 347 < -yk94ms_85r_eqyymv3f_-n0f "flowrateDisplayUnit" 340
+(name "flowrateDisplayUnit"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n0f"))
+($8 348 < -yk94ms_85r_eqyymv3f_-n0e "documentation" 347
+(name "documentation"
+)
+(value "This is the unit entered by user and used for display."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n0e"))
+($8 349 < -yk94ms_85r_eqyymv3f_-n0d "guid" 347
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:56_00017"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n0d"))
+($7 350 < -yk94ms_85r_eqyymv3f_-n0c "beginProportionSolA" 340
+(name "beginProportionSolA"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n0c"))
+($8 351 < -yk94ms_85r_eqyymv3f_-n0b "documentation" 350
+(name "documentation"
+)
+(value "The proportion of solution A at the begining in percent (%)."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n0b"))
+($8 352 < -yk94ms_85r_eqyymv3f_-n0a "guid" 350
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:56_00018"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n0a"))
+($7 353 < -yk94ms_85r_eqyymv3f_-n09 "endProportionSolA" 340
+(name "endProportionSolA"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n09"))
+($8 354 < -yk94ms_85r_eqyymv3f_-n08 "documentation" 353
+(name "documentation"
+)
+(value "The proportion of solution A at the end in percent (%)."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n08"))
+($8 355 < -yk94ms_85r_eqyymv3f_-n07 "guid" 353
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:56_00019"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n07"))
+($9 356 < -yk94ms_85r_eqyymv3f_-n06 "#<anon> (FlowStep, Step)" 340
+(uid "-yk94ms_85r_eqyymv3f_-n06"))
+($8 357 < -yk94ms_85r_eqyymv3f_-n05 "documentation" 340
+(name "documentation"
+)
+(value "Flow step."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n05"))
+($8 358 < -yk94ms_85r_eqyymv3f_-n04 "guid" 340
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00010"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n04"))
+($6 359 < -yk94ms_85r_eqyymv3f_-n03 "SonicationStep" 1
+(name "SonicationStep"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n03"))
+($7 360 < -yk94ms_85r_eqyymv3f_-n02 "temperature" 359
+(name "temperature"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n02"))
+($8 361 < -yk94ms_85r_eqyymv3f_-n01 "documentation" 360
+(name "documentation"
+)
+(value "The temperature in kelvin (K)."
+)
+(uid "-yk94ms_85r_eqyymv3f_-n01"))
+($8 362 < -yk94ms_85r_eqyymv3f_-n00 "guid" 360
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:56_00020"
+)
+(uid "-yk94ms_85r_eqyymv3f_-n00"))
+($7 363 < -yk94ms_85r_eqyymv3f_-mzz "tempDisplayUnit" 359
+(name "tempDisplayUnit"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mzz"))
+($8 364 < -yk94ms_85r_eqyymv3f_-mzy "documentation" 363
+(name "documentation"
+)
+(value "This is the unit entered by user and used for display."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mzy"))
+($8 365 < -yk94ms_85r_eqyymv3f_-mzx "guid" 363
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:56_00021"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mzx"))
+($7 366 < -yk94ms_85r_eqyymv3f_-mzw "probeSize" 359
+(name "probeSize"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mzw"))
+($8 367 < -yk94ms_85r_eqyymv3f_-mzv "documentation" 366
+(name "documentation"
+)
+(value "The size of the probe. e.g. 'small', 'large',..."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mzv"))
+($8 368 < -yk94ms_85r_eqyymv3f_-mzu "guid" 366
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:56_00022"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mzu"))
+($7 369 < -yk94ms_85r_eqyymv3f_-mzt "probePower" 359
+(name "probePower"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mzt"))
+($8 370 < -yk94ms_85r_eqyymv3f_-mzs "documentation" 369
+(name "documentation"
+)
+(value "The probe power in %."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mzs"))
+($8 371 < -yk94ms_85r_eqyymv3f_-mzr "guid" 369
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:56_00023"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mzr"))
+($7 372 < -yk94ms_85r_eqyymv3f_-mzq "probePulseMode" 359
+(name "probePulseMode"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mzq"))
+($8 373 < -yk94ms_85r_eqyymv3f_-mzp "documentation" 372
+(name "documentation"
+)
+(value "The probe pulse mode. e.g. '10min 5'' pulses, 10'' stop',..."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mzp"))
+($8 374 < -yk94ms_85r_eqyymv3f_-mzo "guid" 372
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:56_00024"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mzo"))
+($9 375 < -yk94ms_85r_eqyymv3f_-mzn "#<anon> (SonicationStep, Step)" 359
+(uid "-yk94ms_85r_eqyymv3f_-mzn"))
+($8 376 < -yk94ms_85r_eqyymv3f_-mzm "documentation" 359
+(name "documentation"
+)
+(value "The sonication step."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mzm"))
+($8 377 < -yk94ms_85r_eqyymv3f_-mzl "guid" 359
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00011"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mzl"))
+($6 378 < -yk94ms_85r_eqyymv3f_-mzk "TemperatureStep" 1
+(name "TemperatureStep"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mzk"))
+($7 379 < -yk94ms_85r_eqyymv3f_-mzj "initialTemperature" 378
+(name "initialTemperature"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mzj")
+(multiplicity "1"))
+($8 380 < -yk94ms_85r_eqyymv3f_-mzi "documentation" 379
+(name "documentation"
+)
+(value "The initial temperature in kelvin (K)."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mzi"))
+($8 381 < -yk94ms_85r_eqyymv3f_-mzh "guid" 379
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:56_00025"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mzh"))
+($7 382 < -yk94ms_85r_eqyymv3f_-mzg "finalTemperature" 378
+(name "finalTemperature"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mzg")
+(multiplicity "1"))
+($8 383 < -yk94ms_85r_eqyymv3f_-mzf "documentation" 382
+(name "documentation"
+)
+(value "The final temperature in kelvin (K)."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mzf"))
+($8 384 < -yk94ms_85r_eqyymv3f_-mze "guid" 382
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:56_00026"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mze"))
+($7 385 < -yk94ms_85r_eqyymv3f_-mzd "tempDisplayUnit" 378
+(name "tempDisplayUnit"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mzd"))
+($8 386 < -yk94ms_85r_eqyymv3f_-mzc "documentation" 385
+(name "documentation"
+)
+(value "This is the unit entered by user and used for display."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mzc"))
+($8 387 < -yk94ms_85r_eqyymv3f_-mzb "guid" 385
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:56_00027"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mzb"))
+($9 388 < -yk94ms_85r_eqyymv3f_-mza "#<anon> (TemperatureStep, Step)" 378
+(uid "-yk94ms_85r_eqyymv3f_-mza"))
+($8 389 < -yk94ms_85r_eqyymv3f_-mz9 "documentation" 378
+(name "documentation"
+)
+(value "Temperature step."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mz9"))
+($8 390 < -yk94ms_85r_eqyymv3f_-mz8 "guid" 378
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00012"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mz8"))
+($6 391 < -yk94ms_85r_eqyymv3f_-mz7 "FlowType" 1
+(name "FlowType"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mz7"))
+($9 392 < -yk94ms_85r_eqyymv3f_-mz6 "#<anon> (FlowType, Line)" 391
+(uid "-yk94ms_85r_eqyymv3f_-mz6"))
+($8 393 < -yk94ms_85r_eqyymv3f_-mz5 "isOpen" 391
+(name "isOpen"
+)
+(value "True"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mz5"))
+($8 394 < -yk94ms_85r_eqyymv3f_-mz4 "enumeration" 391
+(name "enumeration"
+)
+(value "('fixed volume','one solution flow','2solutions gradient',)"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mz4"))
+($8 395 < -yk94ms_85r_eqyymv3f_-mz3 "documentation" 391
+(name "documentation"
+)
+(value "The possible type of flow."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mz3"))
+($8 396 < -yk94ms_85r_eqyymv3f_-mz2 "guid" 391
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00013"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mz2"))
+($13 397 < -yk94ms_85r_eqyymv3f_-mz1 "#<anon> (Protocol, Sample)" 1
+(uid "-yk94ms_85r_eqyymv3f_-mz1"))
+($13 398 < -yk94ms_85r_eqyymv3f_-mz0 "#<anon> (Protocol, Method)" 1
+(uid "-yk94ms_85r_eqyymv3f_-mz0"))
+($13 399 < -yk94ms_85r_eqyymv3f_-myz "#<anon> (Protocol, Instrument)" 1
+(uid "-yk94ms_85r_eqyymv3f_-myz"))
+($6 400 < -yk94ms_85r_eqyymv3f_-my0 "ParamDefType" 1
+(name "ParamDefType"
+)
+(uid "-yk94ms_85r_eqyymv3f_-my0"))
+($9 401 < -yk94ms_85r_eqyymv3f_-mxz "#<anon> (ParamDefType, Word)" 400
+(uid "-yk94ms_85r_eqyymv3f_-mxz"))
+($8 402 < -yk94ms_85r_eqyymv3f_-mxy "documentation" 400
+(name "documentation"
+)
+(value "Parameter definition types for ParameterDefinition class. Type enumeration (Float, String, ...)"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mxy"))
+($8 403 < -yk94ms_85r_eqyymv3f_-mxx "isOpen" 400
+(name "isOpen"
+)
+(value "False"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mxx"))
+($8 404 < -yk94ms_85r_eqyymv3f_-mxw "enumeration" 400
+(name "enumeration"
+)
+(value "'Float','Double','Int','Long','String','Boolean','Filename','DateTime','Interval','InputSample','OutputSample','Instrument'"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mxw"))
+($8 405 < -yk94ms_85r_eqyymv3f_-mxv "guid" 400
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00015"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mxv"))
+($6 406 < -yk94ms_85r_eqyymv3f_-mxu "RefInputSample" 1
+(name "RefInputSample"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mxu"))
+($7 407 < -yk94ms_85r_eqyymv3f_-mxt "serial" 406
+(changeability "frozen")
+(name "serial"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mxt")
+(multiplicity "1"))
+($8 408 < -yk94ms_85r_eqyymv3f_-mxs "isAutomatic" 407
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mxs"))
+($8 409 < -yk94ms_85r_eqyymv3f_-mxr "documentation" 407
+(name "documentation"
+)
+(value "Unique identifier."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mxr"))
+($8 410 < -yk94ms_85r_eqyymv3f_-mxq "guid" 407
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00016"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mxq"))
+($7 411 < -yk94ms_85r_eqyymv3f_-mxp "name" 406
+(name "name"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mxp"))
+($8 412 < -yk94ms_85r_eqyymv3f_-mxo "documentation" 411
+(name "documentation"
+)
+(value "The name of the InputSampleDef. It is envisioned that this will be something useful to the user during the viewing and editing of Protocols. This should also be copied down to InputSample.name when an InputSample is created from an InputSampleDef."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mxo"))
+($8 413 < -yk94ms_85r_eqyymv3f_-mxn "guid" 411
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00017"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mxn"))
+($7 414 < -yk94ms_85r_eqyymv3f_-mxm "amount" 406
+(name "amount"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mxm"))
+($8 415 < -yk94ms_85r_eqyymv3f_-mxl "documentation" 414
+(name "documentation"
+)
+(value "The default amount of Sample to use for an InputSample created from this InputSampleDef."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mxl"))
+($8 416 < -yk94ms_85r_eqyymv3f_-mxk "guid" 414
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00018"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mxk"))
+($7 417 < -yk94ms_85r_eqyymv3f_-mxj "unit" 406
+(name "unit"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mxj"))
+($8 418 < -yk94ms_85r_eqyymv3f_-mxi "documentation" 417
+(name "documentation"
+)
+(value "Unit (L, Kg, g/L, s-1, etc.) for InputSampleDef.amount"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mxi"))
+($8 419 < -yk94ms_85r_eqyymv3f_-mxh "guid" 417
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00019"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mxh"))
+($7 420 < -yk94ms_85r_eqyymv3f_-mxg "displayUnit" 406
+(name "displayUnit"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mxg"))
+($8 421 < -yk94ms_85r_eqyymv3f_-mxf "documentation" 420
+(name "documentation"
+)
+(value "The unit to display for InputSampleDef.amount."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mxf"))
+($8 422 < -yk94ms_85r_eqyymv3f_-mxe "guid" 420
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00020"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mxe"))
+($9 423 < -yk94ms_85r_eqyymv3f_-mxd "#<anon> (RefInputSample, DataObject)" 406
+(uid "-yk94ms_85r_eqyymv3f_-mxd"))
+($10 424 < -yk94ms_85r_eqyymv3f_-mxc "#<anon> (RefInputSample, Step)##," 406
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-mxc"))
+($11 425 < -yk94ms_85r_eqyymv3f_-mxb "#0" 424
+(uid "-yk94ms_85r_eqyymv3f_-mxb")
+(multiplicity "*"))
+($8 426 < -yk94ms_85r_eqyymv3f_-mxa "documentation" 425
+(name "documentation"
+)
+(value "List of InputSampleDefs associated with this Step."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mxa"))
+($8 427 < -yk94ms_85r_eqyymv3f_-mx9 "guid" 425
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00006"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mx9"))
+($11 428 < -yk94ms_85r_eqyymv3f_-mx8 "#1" 424
+(uid "-yk94ms_85r_eqyymv3f_-mx8"))
+($8 429 < -yk94ms_85r_eqyymv3f_-mx7 "documentation" 428
+(name "documentation"
+)
+(value "The Step the InputSampleDef belongs to."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mx7"))
+($8 430 < -yk94ms_85r_eqyymv3f_-mx6 "guid" 428
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00007"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mx6"))
+($10 431 < -yk94ms_85r_eqyymv3f_-mx5 "#<anon> (RefInputSample, RefSample)##," 406
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-mx5"))
+($11 432 < -yk94ms_85r_eqyymv3f_-mx4 "#0" 431
+(uid "-yk94ms_85r_eqyymv3f_-mx4")
+(multiplicity "*"))
+($8 433 < -yk94ms_85r_eqyymv3f_-mx3 "guid" 432
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00008"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mx3"))
+($11 434 < -yk94ms_85r_eqyymv3f_-mx2 "#1" 431
+(uid "-yk94ms_85r_eqyymv3f_-mx2"))
+($8 435 < -yk94ms_85r_eqyymv3f_-mx1 "guid" 434
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00009"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mx1"))
+($10 436 < -yk94ms_85r_eqyymv3f_-mx0 "#<anon> (RefInputSample, AddStep)##," 406
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-mx0"))
+($11 437 < -yk94ms_85r_eqyymv3f_-mwz "#0" 436
+(uid "-yk94ms_85r_eqyymv3f_-mwz")
+(multiplicity "1"))
+($8 438 < -yk94ms_85r_eqyymv3f_-mwy "documentation" 437
+(name "documentation"
+)
+(value "Material used by the AddStep."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mwy"))
+($8 439 < -yk94ms_85r_eqyymv3f_-mwx "guid" 437
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00010"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mwx"))
+($11 440 < -yk94ms_85r_eqyymv3f_-mww "#1" 436
+(uid "-yk94ms_85r_eqyymv3f_-mww")
+(multiplicity "*"))
+($8 441 < -yk94ms_85r_eqyymv3f_-mwv "documentation" 440
+(name "documentation"
+)
+(value "Steps where the Materiel is involved."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mwv"))
+($8 442 < -yk94ms_85r_eqyymv3f_-mwu "guid" 440
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00011"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mwu"))
+($10 443 < -yk94ms_85r_eqyymv3f_-mwt "#<anon> (RefInputSample, FlowStep)##solutionA,solAflowSteps" 406
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-mwt"))
+($11 444 < -yk94ms_85r_eqyymv3f_-mws "solutionA#0" 443
+(name "solutionA"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mws"))
+($8 445 < -yk94ms_85r_eqyymv3f_-mwr "documentation" 444
+(name "documentation"
+)
+(value "solutionA used by the FlowStep."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mwr"))
+($8 446 < -yk94ms_85r_eqyymv3f_-mwq "guid" 444
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00012"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mwq"))
+($11 447 < -yk94ms_85r_eqyymv3f_-mwp "solAflowSteps#1" 443
+(name "solAflowSteps"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mwp")
+(multiplicity "*"))
+($8 448 < -yk94ms_85r_eqyymv3f_-mwo "baseName" 447
+(name "baseName"
+)
+(value "solAflowStep"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mwo"))
+($8 449 < -yk94ms_85r_eqyymv3f_-mwn "documentation" 447
+(name "documentation"
+)
+(value "FlowSteps where the solutionA is involved."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mwn"))
+($8 450 < -yk94ms_85r_eqyymv3f_-mwm "guid" 447
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00013"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mwm"))
+($10 451 < -yk94ms_85r_eqyymv3f_-mwl "#<anon> (RefInputSample, FlowStep)##solutionB,solBflowSteps" 406
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-mwl"))
+($11 452 < -yk94ms_85r_eqyymv3f_-mwk "solutionB#0" 451
+(name "solutionB"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mwk"))
+($8 453 < -yk94ms_85r_eqyymv3f_-mwj "documentation" 452
+(name "documentation"
+)
+(value "solutionB used by the FlowStep."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mwj"))
+($8 454 < -yk94ms_85r_eqyymv3f_-mwi "guid" 452
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00014"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mwi"))
+($11 455 < -yk94ms_85r_eqyymv3f_-mwh "solBflowSteps#1" 451
+(name "solBflowSteps"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mwh")
+(multiplicity "*"))
+($8 456 < -yk94ms_85r_eqyymv3f_-mwg "baseName" 455
+(name "baseName"
+)
+(value "solBflowStep"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mwg"))
+($8 457 < -yk94ms_85r_eqyymv3f_-mwf "documentation" 455
+(name "documentation"
+)
+(value "FlowSteps where the solutionB is involved."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mwf"))
+($8 458 < -yk94ms_85r_eqyymv3f_-mwe "guid" 455
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00015"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mwe"))
+($8 459 < -yk94ms_85r_eqyymv3f_-mwc "documentation" 406
+(name "documentation"
+)
+(value "An InputSampleDef is used to specify that an Experiment created from the parent Protocol should have an InputSample that accepts Samples belonging to the specified SampleCategory (any if InputSampleDef.sampleCategory is null)."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mwc"))
+($8 460 < -yk94ms_85r_eqyymv3f_-mwb "guid" 406
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00016"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mwb"))
+($8 461 < -yk94ms_15v_evqyosvg_-p33 "keyNames" 406
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "-yk94ms_15v_evqyosvg_-p33"))
+($6 462 < -yk94ms_85r_eqyymv3f_-mwa "RefOutputSample" 1
+(name "RefOutputSample"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mwa"))
+($7 463 < -yk94ms_85r_eqyymv3f_-mw9 "serial" 462
+(changeability "frozen")
+(name "serial"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mw9")
+(multiplicity "1"))
+($8 464 < -yk94ms_85r_eqyymv3f_-mw8 "isAutomatic" 463
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mw8"))
+($8 465 < -yk94ms_85r_eqyymv3f_-mw7 "documentation" 463
+(name "documentation"
+)
+(value "Unique identifier."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mw7"))
+($8 466 < -yk94ms_85r_eqyymv3f_-mw6 "guid" 463
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00025"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mw6"))
+($7 467 < -yk94ms_85r_eqyymv3f_-mw5 "name" 462
+(name "name"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mw5"))
+($8 468 < -yk94ms_85r_eqyymv3f_-mw4 "documentation" 467
+(name "documentation"
+)
+(value "The name of the OutputSampleDef. It is envisioned that this will be something useful to the user during the viewing and editing of Protocols. This should also be copied down to OutputSample.name when an OutputSample is created from an OutputSampleDef."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mw4"))
+($8 469 < -yk94ms_85r_eqyymv3f_-mw3 "guid" 467
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00026"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mw3"))
+($7 470 < -yk94ms_85r_eqyymv3f_-mw2 "amount" 462
+(name "amount"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mw2"))
+($8 471 < -yk94ms_85r_eqyymv3f_-mw1 "documentation" 470
+(name "documentation"
+)
+(value "The default amount of Sample to create for an OutputSample created from this OutputSampleDef."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mw1"))
+($8 472 < -yk94ms_85r_eqyymv3f_-mw0 "guid" 470
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00027"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mw0"))
+($7 473 < -yk94ms_85r_eqyymv3f_-mvz "unit" 462
+(name "unit"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mvz"))
+($8 474 < -yk94ms_85r_eqyymv3f_-mvy "documentation" 473
+(name "documentation"
+)
+(value "Unit (L, Kg, g/L, s-1, etc.) for OutputSampleDef.amount"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mvy"))
+($8 475 < -yk94ms_85r_eqyymv3f_-mvx "guid" 473
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00028"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mvx"))
+($7 476 < -yk94ms_85r_eqyymv3f_-mvw "displayUnit" 462
+(name "displayUnit"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mvw"))
+($8 477 < -yk94ms_85r_eqyymv3f_-mvv "documentation" 476
+(name "documentation"
+)
+(value "The unit to display for OutputSampleDef.amount."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mvv"))
+($8 478 < -yk94ms_85r_eqyymv3f_-mvu "guid" 476
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00029"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mvu"))
+($9 479 < -yk94ms_85r_eqyymv3f_-mvt "#<anon> (RefOutputSample, DataObject)" 462
+(uid "-yk94ms_85r_eqyymv3f_-mvt"))
+($10 480 < -yk94ms_85r_eqyymv3f_-mvs "#<anon> (RefOutputSample, Step)##," 462
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-mvs"))
+($11 481 < -yk94ms_85r_eqyymv3f_-mvr "#0" 480
+(uid "-yk94ms_85r_eqyymv3f_-mvr")
+(multiplicity "*"))
+($8 482 < -yk94ms_85r_eqyymv3f_-mvq "documentation" 481
+(name "documentation"
+)
+(value "List of InputSampleDefs associated with this Step."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mvq"))
+($8 483 < -yk94ms_85r_eqyymv3f_-mvp "guid" 481
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00021"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mvp"))
+($11 484 < -yk94ms_85r_eqyymv3f_-mvo "#1" 480
+(uid "-yk94ms_85r_eqyymv3f_-mvo"))
+($8 485 < -yk94ms_85r_eqyymv3f_-mvn "documentation" 484
+(name "documentation"
+)
+(value "The Step the InputSampleDef belongs to."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mvn"))
+($8 486 < -yk94ms_85r_eqyymv3f_-mvm "guid" 484
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00022"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mvm"))
+($10 487 < -yk94ms_85r_eqyymv3f_-mvl "#<anon> (RefOutputSample, RefSample)##," 462
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-mvl"))
+($11 488 < -yk94ms_85r_eqyymv3f_-mvk "#0" 487
+(uid "-yk94ms_85r_eqyymv3f_-mvk")
+(multiplicity "*"))
+($8 489 < -yk94ms_85r_eqyymv3f_-mvj "guid" 488
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00023"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mvj"))
+($11 490 < -yk94ms_85r_eqyymv3f_-mvi "#1" 487
+(uid "-yk94ms_85r_eqyymv3f_-mvi"))
+($8 491 < -yk94ms_85r_eqyymv3f_-mvh "guid" 490
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00024"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mvh"))
+($8 492 < -yk94ms_85r_eqyymv3f_-mvf "documentation" 462
+(name "documentation"
+)
+(value "An OutputSampleDef is used to specify that an Experiment created from the parent Protocol should have an OutputSample that accepts Samples belonging to the specified SampleCategory (any if OutputSampleDef.sampleCategory is null)."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mvf"))
+($8 493 < -yk94ms_85r_eqyymv3f_-mve "guid" 462
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00017"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mve"))
+($8 494 < -yk94ms_15v_evqyosvg_-p32 "keyNames" 462
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "-yk94ms_15v_evqyosvg_-p32"))
+($6 495 < -yk94ms_85r_eqyymv3f_-mvd "ParameterDefinition" 1
+(name "ParameterDefinition"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mvd"))
+($7 496 < -yk94ms_85r_eqyymv3f_-mvc "serial" 495
+(changeability "frozen")
+(name "serial"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mvc")
+(multiplicity "1"))
+($8 497 < -yk94ms_85r_eqyymv3f_-mvb "isAutomatic" 496
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mvb"))
+($8 498 < -yk94ms_85r_eqyymv3f_-mva "documentation" 496
+(name "documentation"
+)
+(value "Unique identifier."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mva"))
+($8 499 < -yk94ms_85r_eqyymv3f_-mv9 "guid" 496
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00032"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mv9"))
+($7 500 < -yk94ms_85r_eqyymv3f_-mv8 "name" 495
+(name "name"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mv8"))
+($8 501 < -yk94ms_85r_eqyymv3f_-mv7 "documentation" 500
+(name "documentation"
+)
+(value "The name of the parameter."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mv7"))
+($8 502 < -yk94ms_85r_eqyymv3f_-mv6 "guid" 500
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00033"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mv6"))
+($7 503 < -yk94ms_85r_eqyymv3f_-mv5 "label" 495
+(name "label"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mv5"))
+($8 504 < -yk94ms_85r_eqyymv3f_-mv4 "documentation" 503
+(name "documentation"
+)
+(value "Label of the parameter."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mv4"))
+($8 505 < -yk94ms_85r_eqyymv3f_-mv3 "guid" 503
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00034"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mv3"))
+($7 506 < -yk94ms_85r_eqyymv3f_-mv2 "paramType" 495
+(name "paramType"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mv2"))
+($8 507 < -yk94ms_85r_eqyymv3f_-mv1 "documentation" 506
+(name "documentation"
+)
+(value "parameter type of parameter (as in Float, String, ...)"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mv1"))
+($8 508 < -yk94ms_85r_eqyymv3f_-mv0 "guid" 506
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00035"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mv0"))
+($7 509 < -yk94ms_85r_eqyymv3f_-muz "unit" 495
+(name "unit"
+)
+(uid "-yk94ms_85r_eqyymv3f_-muz"))
+($8 510 < -yk94ms_85r_eqyymv3f_-muy "documentation" 509
+(name "documentation"
+)
+(value "Unit of parameter (L, Kg, g/L, s-1, etc."
+)
+(uid "-yk94ms_85r_eqyymv3f_-muy"))
+($8 511 < -yk94ms_85r_eqyymv3f_-mux "guid" 509
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00036"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mux"))
+($7 512 < -yk94ms_85r_eqyymv3f_-muw "displayUnit" 495
+(name "displayUnit"
+)
+(uid "-yk94ms_85r_eqyymv3f_-muw"))
+($8 513 < -yk94ms_85r_eqyymv3f_-muv "documentation" 512
+(name "documentation"
+)
+(value "Display unit of the parameter."
+)
+(uid "-yk94ms_85r_eqyymv3f_-muv"))
+($8 514 < -yk94ms_85r_eqyymv3f_-muu "guid" 512
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00037"
+)
+(uid "-yk94ms_85r_eqyymv3f_-muu"))
+($7 515 < -yk94ms_85r_eqyymv3f_-mut "defaultValue" 495
+(name "defaultValue"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mut"))
+($8 516 < -yk94ms_85r_eqyymv3f_-mus "documentation" 515
+(name "documentation"
+)
+(value "The default value of the parameter."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mus"))
+($8 517 < -yk94ms_85r_eqyymv3f_-mur "guid" 515
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00038"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mur"))
+($7 518 < -yk94ms_85r_eqyymv3f_-muq "minValue" 495
+(name "minValue"
+)
+(uid "-yk94ms_85r_eqyymv3f_-muq"))
+($8 519 < -yk94ms_85r_eqyymv3f_-mup "documentation" 518
+(name "documentation"
+)
+(value "The minimum value of the parameter."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mup"))
+($8 520 < -yk94ms_85r_eqyymv3f_-muo "guid" 518
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00001"
+)
+(uid "-yk94ms_85r_eqyymv3f_-muo"))
+($7 521 < -yk94ms_85r_eqyymv3f_-mun "maxValue" 495
+(name "maxValue"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mun"))
+($8 522 < -yk94ms_85r_eqyymv3f_-mum "documentation" 521
+(name "documentation"
+)
+(value "The maximum value of the parameter."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mum"))
+($8 523 < -yk94ms_85r_eqyymv3f_-mul "guid" 521
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00002"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mul"))
+($7 524 < -yk94ms_85r_eqyymv3f_-muk "possibleValues" 495
+(name "possibleValues"
+)
+(uid "-yk94ms_85r_eqyymv3f_-muk")
+(multiplicity "*"))
+($8 525 < -yk94ms_85r_eqyymv3f_-muj "baseName" 524
+(name "baseName"
+)
+(value "possibleValue"
+)
+(uid "-yk94ms_85r_eqyymv3f_-muj"))
+($8 526 < -yk94ms_85r_eqyymv3f_-mui "documentation" 524
+(name "documentation"
+)
+(value "The list of possible values for the parameter."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mui"))
+($8 527 < -yk94ms_85r_eqyymv3f_-muh "guid" 524
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00003"
+)
+(uid "-yk94ms_85r_eqyymv3f_-muh"))
+($7 528 < -yk94ms_85r_eqyymv3f_-mug "mandatory" 495
+(name "mandatory"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mug"))
+($8 529 < -yk94ms_85r_eqyymv3f_-muf "documentation" 528
+(name "documentation"
+)
+(value "Flag to indicate whether it is mandatory for a value to be assigned to any Parameters derived from this ParameterDefinition before the Parameter's parent Experiment can be considered completed."
+)
+(uid "-yk94ms_85r_eqyymv3f_-muf"))
+($8 530 < -yk94ms_85r_eqyymv3f_-mue "guid" 528
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00004"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mue"))
+($9 531 < -yk94ms_85r_eqyymv3f_-mud "#<anon> (ParameterDefinition, DataObject)" 495
+(uid "-yk94ms_85r_eqyymv3f_-mud"))
+($10 532 < -yk94ms_85r_eqyymv3f_-muc "#<anon> (ParameterDefinition, Step)##," 495
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-muc"))
+($11 533 < -yk94ms_85r_eqyymv3f_-mub "#0" 532
+(uid "-yk94ms_85r_eqyymv3f_-mub")
+(multiplicity "*"))
+($8 534 < -yk94ms_85r_eqyymv3f_-mua "documentation" 533
+(name "documentation"
+)
+(value "List of parameter definition associated to a step."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mua"))
+($8 535 < -yk94ms_85r_eqyymv3f_-mu9 "guid" 533
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00030"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mu9"))
+($11 536 < -yk94ms_85r_eqyymv3f_-mu8 "#1" 532
+(uid "-yk94ms_85r_eqyymv3f_-mu8"))
+($8 537 < -yk94ms_85r_eqyymv3f_-mu7 "documentation" 536
+(name "documentation"
+)
+(value "The step where the parameter definition should be defined."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mu7"))
+($8 538 < -yk94ms_85r_eqyymv3f_-mu6 "guid" 536
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:57_00031"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mu6"))
+($8 539 < -yk94ms_85r_eqyymv3f_-mu4 "documentation" 495
+(name "documentation"
+)
+(value "The list of possible parameters associated with a protocol where the values are associated with an Experiment."
+)
+(uid "-yk94ms_85r_eqyymv3f_-mu4"))
+($8 540 < -yk94ms_85r_eqyymv3f_-mu3 "guid" 495
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00018"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mu3"))
+($8 541 < -yk94ms_15v_evqyosvg_-p31 "keyNames" 495
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "-yk94ms_15v_evqyosvg_-p31"))
+($13 542 < -yk94ms_63g_erotfltk_-p5t "#<anon> (Protocol, Classification)" 1
+(uid "-yk94ms_63g_erotfltk_-p5t"))
+($6 543 < 0_om1_erq4w1i4_-p62 "ProtocolStore" 1
+(name "ProtocolStore"
+)
+(uid "0_om1_erq4w1i4_-p62"))
+($7 544 < 0_om1_erq4w1i4_-p5y "name" 543
+(changeability "frozen")
+(name "name"
+)
+(uid "0_om1_erq4w1i4_-p5y")
+(multiplicity "1"))
+($8 545 < 0_om1_erq4w1i4_-p5x "documentation" 544
+(name "documentation"
+)
+(value "name of ProtocolStore"
+)
+(uid "0_om1_erq4w1i4_-p5x"))
+($8 546 < 0_om1_erq4w1i4_-p2q "guid" 544
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-05-12:37:27_00016"
+)
+(uid "0_om1_erq4w1i4_-p2q"))
+($10 547 < 0_om1_erq4w1i4_-p5w "#<anon> (ProtocolStore, Protocol)##," 543
+(name "")
+(uid "0_om1_erq4w1i4_-p5w"))
+($11 548 < 0_om1_erq4w1i4_-p5s "#0" 547
+(changeability "frozen")
+(aggregation "composite")
+(uid "0_om1_erq4w1i4_-p5s")
+(multiplicity "1"))
+($8 549 < 0_om1_erq4w1i4_-p2p "guid" 548
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-05-12:37:27_00014"
+)
+(uid "0_om1_erq4w1i4_-p2p"))
+($11 550 < 0_om1_erq4w1i4_-p5r "#1" 547
+(uid "0_om1_erq4w1i4_-p5r")
+(multiplicity "*"))
+($8 551 < 0_om1_erq4w1i4_-p2o "guid" 550
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-05-12:37:27_00015"
+)
+(uid "0_om1_erq4w1i4_-p2o"))
+($9 552 < -yk94ms_l0q_evqpurmn_-p7d "#<anon> (ProtocolStore, TopObject)" 543
+(uid "-yk94ms_l0q_evqpurmn_-p7d"))
+($8 553 < 0_om1_erq4w1i4_-p61 "documentation" 543
+(name "documentation"
+)
+(value "TopObject for Protocol package"
+)
+(uid "0_om1_erq4w1i4_-p61"))
+($8 554 < 0_om1_erq4w1i4_-p2n "guid" 543
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-05-12:37:24_00006"
+)
+(uid "0_om1_erq4w1i4_-p2n"))
+($8 555 < -yk94ms_15v_evqyosvg_-p30 "keyNames" 543
+(name "keyNames"
+)
+(value "name"
+)
+(uid "-yk94ms_15v_evqyosvg_-p30"))
+($8 556 < -yk94ms_85r_eqyymv3f_-mu2 "documentation" 1
+(name "documentation"
+)
+(value "Protocol"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mu2"))
+($8 557 < -yk94ms_85r_eqyymv3f_-mu1 "shortName" 1
+(name "shortName"
+)
+(value "PROT"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mu1"))
+($8 558 < -yk94ms_85r_eqyymv3f_-mu0 "packageGroup" 1
+(name "packageGroup"
+)
+(value "pp"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mu0"))
+($8 559 < -yk94ms_85r_eqyymv3f_-mtz "isDraft" 1
+(name "isDraft"
+)
+(value "True"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mtz"))
+($8 560 < -yk94ms_85r_eqyymv3f_-mty "guid" 1
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:44_00017"
+)
+(uid "-yk94ms_85r_eqyymv3f_-mty"))
+($15 562)
+($17 565)
+($17 573)
+($17 576)
+($17 577)
+($17 579)
+($17 582)
+($17 583)
+($17 584)
+($17 585)
+($17 586)
+($17 587)
+($17 589)
+($15 591)
+($15 593)
+($15 594)
+($15 596)
+($15 598)
+($15 599)
+($15 600)
+($15 601)
+($15 602)
+($15 603)
+($15 604)
+($15 605)
+($15 606)
+($15 607)
+($15 608)
+($15 609)
+($15 610)
+($15 611)
+($15 612)
+($15 613)
+($15 614)
+($15 615)
+($15 616)
+($15 617)
+($15 618)
+($15 619)
+($15 620)
+($15 621)
+($15 622)
+($15 623)
+($15 624)
+($15 625)
+($15 627)
+($15 629)
+($15 631)
+($15 633)
+($15 635)
+($15 637)
+($15 639)
+($15 641)
+($15 643)
+($15 644)
+($15 645)
+($15 646)
+($15 647)
+($15 648)
+($15 649)
+($15 650)
+($15 651)
+($15 652)
+($15 653)
+($15 654)
+($17 656)
+($15 657)
+($15 659)
+($15 661)
+($15 662)
+($15 663)
+($15 664)
+($15 665)
+($15 666)
+($15 667)
+($15 668)
+($15 669)
+($15 670)
+($15 671)
+($15 672)
+($15 673)
+($15 674)
+($15 675)
+($15 676)
+($15 677)
+($15 678)
+($15 679)
+($15 680)
+($15 681)
+($15 682)
+($15 683)
+($15 684)
+($15 685)
+($15 686)
+($15 687)
+($15 688)
+($15 689)
+($15 690)
+($15 691)
+($15 692)
+($15 693)
+($15 694)
+($15 695)
+($15 696)
+($15 697)
+($15 698)
+($15 699)
+($15 700)
+($15 701)
+($15 702)
+($15 703)
+($15 704)
+($15 705)
+($15 706)
+($15 707)
+($15 708)
+($15 709)
+($15 710)
+($14 561 @ -yk94ms_-e3s_e41656c6_-fve 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Protocol" $14)
+($6 563 @ -yk94ms_-e3s_e41656c6_-gpe 4 "Logical" $1 "memops" $1 "Implementation" $1 "DataObject" $6)
+($6 564 @ -yk94ms_-e3s_e41656c6_-h0t 4 "Logical" $1 "memops" $1 "Implementation" $1 "Int" $6)
+($6 566 @ -yk94ms_-e3s_e41656c6_-h0m 4 "Logical" $1 "memops" $1 "Implementation" $1 "Line" $6)
+($6 567 @ -yk94ms_-e3s_e41656c6_-h04 4 "Logical" $1 "memops" $1 "Implementation" $1 "Text" $6)
+($6 568 @ -yk94ms_-e3s_e41656c6_-h1b 4 "Logical" $1 "memops" $1 "Implementation" $1 "DateTime" $6)
+($6 569 @ -yk94ms_-e3s_e41656c6_-h0a 4 "Logical" $1 "memops" $1 "Implementation" $1 "String" $6)
+($6 570 @ -yk94ms_85r_eqyymv3f_-nrq 5 "Logical" $1 "ccp" $1 "lims" $1 "Experiment" $1 "Experiment" $6)
+($6 571 @ -yk94ms_85r_eqyymv3f_-p7a 5 "Logical" $1 "ccp" $1 "general" $1 "Affiliation" $1 "Person" $6)
+($6 572 @ -yk94ms_85r_eqyymv3f_-ovk 5 "Logical" $1 "ccp" $1 "general" $1 "Citation" $1 "Citation" $6)
+($6 574 @ -yk94ms_-e3s_e41656c6_-h10 4 "Logical" $1 "memops" $1 "Implementation" $1 "Float" $6)
+($6 575 @ -yk94ms_-e3s_e41656c6_-gzz 4 "Logical" $1 "memops" $1 "Implementation" $1 "Word" $6)
+($6 578 @ -yk94ms_-e3s_e41656c6_-k06 5 "Logical" $1 "ccp" $1 "lims" $1 "Sample" $1 "AmountUnit" $6)
+($6 580 @ -yk94ms_-e3s_e41656c6_-k1n 5 "Logical" $1 "ccp" $1 "lims" $1 "Sample" $1 "RefSample" $6)
+($18 581 @ -yk94ms_-e3s_e41656c6_-fw7 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "DataType" $18)
+($6 588 @ -yk94ms_-e3s_e41656c6_-h1k 4 "Logical" $1 "memops" $1 "Implementation" $1 "Boolean" $6)
+($14 590 @ -yk94ms_-e3s_e41656c6_-fvt 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Citation" $14)
+($14 592 @ -yk94ms_-e3s_e41656c6_-fw4 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "People" $14)
+($10 595 @ -yk94ms_85r_eqyymv3f_-ouj 6 "Logical" $1 "ccp" $1 "general" $1 "Citation" $1 "Citation" $6 "#<anon> (Citation, Person)##authorCitations,authors" $10)
+($10 597 @ -yk94ms_85r_eqyymv3f_-oua 6 "Logical" $1 "ccp" $1 "general" $1 "Citation" $1 "Citation" $6 "#<anon> (Citation, Person)##editorCitations,editors" $10)
+($14 626 @ -yk94ms_-e3s_e41656c6_-fw1 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Sample" $14)
+($14 628 @ -yk94ms_63g_erotfltk_-p8v 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Classification" $14)
+($6 630 @ -hkq0ob_nkk_ebb8yivk_-p8h 5 "Logical" $1 "ccp" $1 "lims" $1 "Classification" $1 "SampleCategory" $6)
+($6 632 @ -yk94ms_85r_eqyymv3f_-oiq 5 "Logical" $1 "ccp" $1 "lims" $1 "Classification" $1 "InstrumentType" $6)
+($10 634 @ -yk94ms_85r_eqyymv3f_-oig 6 "Logical" $1 "ccp" $1 "lims" $1 "Classification" $1 "InstrumentType" $6 "#<anon> (InstrumentType, Procedure)##," $10)
+($6 636 @ -yk94ms_85r_eqyymv3f_-myy 5 "Logical" $1 "ccp" $1 "lims" $1 "Classification" $1 "ExperimentType" $6)
+($10 638 @ -yk94ms_85r_eqyymv3f_-myo 6 "Logical" $1 "ccp" $1 "lims" $1 "Classification" $1 "ExperimentType" $6 "#<anon> (ExperimentType, Protocol)##," $10)
+($10 640 @ -yk94ms_85r_eqyymv3f_-myh 6 "Logical" $1 "ccp" $1 "lims" $1 "Classification" $1 "ExperimentType" $6 "#<anon> (ExperimentType, SampleCategory)##,sampleCategories" $10)
+($10 642 @ -yk94ms_85r_eqyymv3f_-mya 6 "Logical" $1 "ccp" $1 "lims" $1 "Classification" $1 "ExperimentType" $6 "#<anon> (ExperimentType, InstrumentType)##," $10)
+($6 655 @ z8kflu_63g_errlz7sn_-p8u 4 "Logical" $1 "memops" $1 "Implementation" $1 "TopObject" $6)
+($14 658 @ -yk94ms_-e3s_e41656c6_-fvw 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "memops.Implementation" $14)
+($6 660 @ -yk94ms_-e3s_e41656c6_-gyg 4 "Logical" $1 "memops" $1 "Implementation" $1 "MemopsRoot" $6)
+($18 711 @ -yk94ms_-e3s_e41656c6_-fwy 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "import" $18)
+($1 712 @ -yk94ms_-e3s_e41656c6_-jc4 4 "Logical" $1 "ccp" $1 "general" $1 "Affiliation" $1)
+($1 713 @ -yk94ms_-e3s_e41656c6_-iio 4 "Logical" $1 "ccp" $1 "general" $1 "Citation" $1)
+($1 714 @ -yk94ms_-e3s_e41656c6_-k89 4 "Logical" $1 "ccp" $1 "lims" $1 "Sample" $1)
+($1 715 @ -yk94ms_-e3s_e41656c6_-kyd 4 "Logical" $1 "ccp" $1 "general" $1 "Method" $1)
+($1 716 @ -yk94ms_-e3s_e41656c6_-hn7 4 "Logical" $1 "ccp" $1 "general" $1 "Instrument" $1)
+($1 717 @ -yk94ms_63g_erotfltk_-p98 4 "Logical" $1 "ccp" $1 "lims" $1 "Classification" $1)
+(styleAssn 3 561)
+(typeAssn 135 109)
+(assocEndAssn 109 135)
+(typeAssn 142 109)
+(assocEndAssn 109 142)
+(typeAssn 150 109)
+(assocEndAssn 109 150)
+(typeAssn 158 109)
+(assocEndAssn 109 158)
+(typeAssn 166 109)
+(assocEndAssn 109 166)
+(typeAssn 171 109)
+(assocEndAssn 109 171)
+(typeAssn 176 109)
+(assocEndAssn 109 176)
+(typeAssn 181 109)
+(assocEndAssn 109 181)
+(typeAssn 550 109)
+(assocEndAssn 109 550)
+(subtypeAssn 133 109)
+(supertypeAssn 133 563)
+(generalizationAssn 109 133)
+(typeRefAssn 110 564)
+(typeExpression 110 565)
+(typeRefAssn 114 566)
+(typeExpression 114 565)
+(typeRefAssn 117 567)
+(typeExpression 117 565)
+(typeRefAssn 120 568)
+(typeExpression 120 565)
+(typeRefAssn 123 568)
+(typeExpression 123 565)
+(typeRefAssn 126 569)
+(typeExpression 126 565)
+(typeRefAssn 130 569)
+(typeExpression 130 565)
+(typeAssn 138 570)
+(typeAssn 146 571)
+(typeAssn 154 571)
+(typeAssn 161 572)
+(assocEndAssn 192 168)
+(typeAssn 218 192)
+(assocEndAssn 192 218)
+(subtypeAssn 216 192)
+(supertypeAssn 216 563)
+(generalizationAssn 192 216)
+(typeRefAssn 193 564)
+(typeExpression 193 565)
+(typeRefAssn 197 566)
+(typeExpression 197 565)
+(typeRefAssn 200 564)
+(typeExpression 200 573)
+(typeRefAssn 203 564)
+(typeExpression 203 565)
+(typeRefAssn 206 566)
+(typeExpression 206 565)
+(typeRefAssn 209 569)
+(typeExpression 209 565)
+(typeRefAssn 213 569)
+(typeExpression 213 565)
+(assocEndAssn 227 220)
+(typeAssn 428 227)
+(assocEndAssn 227 428)
+(typeAssn 484 227)
+(assocEndAssn 227 484)
+(typeAssn 536 227)
+(assocEndAssn 227 536)
+(subtypeAssn 250 227)
+(supertypeAssn 250 563)
+(generalizationAssn 227 250)
+(typeRefAssn 228 564)
+(typeExpression 228 565)
+(typeRefAssn 232 566)
+(typeExpression 232 565)
+(typeRefAssn 235 564)
+(typeExpression 235 573)
+(typeRefAssn 238 574)
+(typeExpression 238 565)
+(typeRefAssn 241 575)
+(typeExpression 241 565)
+(typeRefAssn 244 566)
+(typeExpression 244 565)
+(typeRefAssn 247 569)
+(typeExpression 247 565)
+(typeAssn 220 227)
+(typeAssn 168 192)
+(typeAssn 425 406)
+(assocEndAssn 406 425)
+(assocEndAssn 406 173)
+(typeAssn 432 406)
+(assocEndAssn 406 432)
+(typeAssn 437 406)
+(assocEndAssn 406 437)
+(typeAssn 444 406)
+(assocEndAssn 406 444)
+(typeAssn 452 406)
+(assocEndAssn 406 452)
+(subtypeAssn 423 406)
+(supertypeAssn 423 563)
+(generalizationAssn 406 423)
+(typeRefAssn 407 564)
+(typeExpression 407 576)
+(typeRefAssn 411 566)
+(typeExpression 411 576)
+(typeRefAssn 414 574)
+(typeExpression 414 577)
+(typeRefAssn 417 578)
+(typeExpression 417 576)
+(typeRefAssn 420 575)
+(typeExpression 420 579)
+(typeAssn 434 580)
+(assocEndAssn 254 440)
+(subtypeAssn 264 254)
+(supertypeAssn 264 227)
+(generalizationAssn 254 264)
+(typeRefAssn 255 574)
+(typeExpression 255 565)
+(typeRefAssn 258 578)
+(typeExpression 258 565)
+(typeRefAssn 261 575)
+(typeExpression 261 565)
+(typeAssn 440 254)
+(assocEndAssn 340 447)
+(typeAssn 455 340)
+(assocEndAssn 340 455)
+(subtypeAssn 356 340)
+(supertypeAssn 356 227)
+(generalizationAssn 340 356)
+(stereotypeAssn 391 581)
+(subtypeAssn 392 391)
+(supertypeAssn 392 566)
+(generalizationAssn 391 392)
+(typeRefAssn 341 391)
+(typeExpression 341 582)
+(typeRefAssn 344 574)
+(typeExpression 344 582)
+(typeRefAssn 347 575)
+(typeExpression 347 582)
+(typeRefAssn 350 574)
+(typeExpression 350 582)
+(typeRefAssn 353 574)
+(typeExpression 353 582)
+(typeAssn 447 340)
+(typeAssn 173 406)
+(typeAssn 481 462)
+(assocEndAssn 462 481)
+(assocEndAssn 462 178)
+(typeAssn 488 462)
+(assocEndAssn 462 488)
+(subtypeAssn 479 462)
+(supertypeAssn 479 563)
+(generalizationAssn 462 479)
+(typeRefAssn 463 564)
+(typeExpression 463 583)
+(typeRefAssn 467 566)
+(typeExpression 467 583)
+(typeRefAssn 470 574)
+(typeExpression 470 584)
+(typeRefAssn 473 578)
+(typeExpression 473 583)
+(typeRefAssn 476 575)
+(typeExpression 476 585)
+(typeAssn 490 580)
+(typeAssn 178 462)
+(typeAssn 533 495)
+(assocEndAssn 495 533)
+(assocEndAssn 495 183)
+(subtypeAssn 531 495)
+(supertypeAssn 531 563)
+(generalizationAssn 495 531)
+(typeRefAssn 496 564)
+(typeExpression 496 586)
+(typeRefAssn 500 566)
+(typeExpression 500 586)
+(typeRefAssn 503 569)
+(typeExpression 503 586)
+(stereotypeAssn 400 581)
+(subtypeAssn 401 400)
+(supertypeAssn 401 575)
+(generalizationAssn 400 401)
+(typeRefAssn 506 400)
+(typeExpression 506 586)
+(typeRefAssn 509 575)
+(typeExpression 509 586)
+(typeRefAssn 512 575)
+(typeExpression 512 587)
+(typeRefAssn 515 566)
+(typeExpression 515 587)
+(typeRefAssn 518 566)
+(typeExpression 518 587)
+(typeRefAssn 521 566)
+(typeExpression 521 587)
+(typeRefAssn 524 566)
+(typeExpression 524 587)
+(typeRefAssn 528 588)
+(typeExpression 528 589)
+(typeAssn 183 495)
+(projectionAssn 3 109 562)
+(styleAssn 4 590)
+(projectionAssn 4 572 591)
+(styleAssn 5 592)
+(projectionAssn 5 571 593)
+(to 6 5)
+(from 6 4)
+(projectionAssn 6 595 594)
+(to 7 5)
+(from 7 4)
+(projectionAssn 7 597 596)
+(to 8 5)
+(from 8 3)
+(projectionAssn 8 141 598)
+(to 9 5)
+(from 9 3)
+(projectionAssn 9 149 599)
+(to 10 4)
+(from 10 3)
+(projectionAssn 10 157 600)
+(styleAssn 11 561)
+(projectionAssn 11 192 601)
+(to 12 11)
+(from 12 3)
+(projectionAssn 12 165 602)
+(styleAssn 13 561)
+(projectionAssn 13 227 603)
+(to 14 13)
+(from 14 11)
+(projectionAssn 14 217 604)
+(styleAssn 15 561)
+(projectionAssn 15 254 605)
+(styleAssn 16 561)
+(subtypeAssn 277 267)
+(supertypeAssn 277 227)
+(generalizationAssn 267 277)
+(typeRefAssn 268 574)
+(typeExpression 268 565)
+(typeRefAssn 271 575)
+(typeExpression 271 565)
+(typeRefAssn 274 566)
+(typeExpression 274 565)
+(projectionAssn 16 267 606)
+(styleAssn 17 561)
+(subtypeAssn 293 280)
+(supertypeAssn 293 227)
+(generalizationAssn 280 293)
+(typeRefAssn 281 574)
+(typeExpression 281 582)
+(typeRefAssn 284 575)
+(typeExpression 284 582)
+(typeRefAssn 287 574)
+(typeExpression 287 582)
+(typeRefAssn 290 575)
+(typeExpression 290 582)
+(projectionAssn 17 280 607)
+(styleAssn 18 561)
+(subtypeAssn 315 296)
+(supertypeAssn 315 227)
+(generalizationAssn 296 315)
+(typeRefAssn 297 574)
+(typeExpression 297 582)
+(typeRefAssn 300 575)
+(typeExpression 300 582)
+(typeRefAssn 303 566)
+(typeExpression 303 582)
+(typeRefAssn 306 574)
+(typeExpression 306 582)
+(typeRefAssn 309 575)
+(typeExpression 309 582)
+(typeRefAssn 312 567)
+(typeExpression 312 582)
+(projectionAssn 18 296 608)
+(styleAssn 19 561)
+(subtypeAssn 337 318)
+(supertypeAssn 337 227)
+(generalizationAssn 318 337)
+(typeRefAssn 319 574)
+(typeExpression 319 582)
+(typeRefAssn 322 575)
+(typeExpression 322 582)
+(typeRefAssn 325 574)
+(typeExpression 325 582)
+(typeRefAssn 328 574)
+(typeExpression 328 582)
+(typeRefAssn 331 574)
+(typeExpression 331 582)
+(typeRefAssn 334 567)
+(typeExpression 334 582)
+(projectionAssn 19 318 609)
+(styleAssn 20 561)
+(projectionAssn 20 340 610)
+(styleAssn 21 561)
+(subtypeAssn 375 359)
+(supertypeAssn 375 227)
+(generalizationAssn 359 375)
+(typeRefAssn 360 574)
+(typeExpression 360 582)
+(typeRefAssn 363 575)
+(typeExpression 363 582)
+(typeRefAssn 366 566)
+(typeExpression 366 582)
+(typeRefAssn 369 574)
+(typeExpression 369 582)
+(typeRefAssn 372 567)
+(typeExpression 372 582)
+(projectionAssn 21 359 611)
+(styleAssn 22 561)
+(subtypeAssn 388 378)
+(supertypeAssn 388 227)
+(generalizationAssn 378 388)
+(typeRefAssn 379 574)
+(typeExpression 379 582)
+(typeRefAssn 382 574)
+(typeExpression 382 582)
+(typeRefAssn 385 575)
+(typeExpression 385 582)
+(projectionAssn 22 378 612)
+(to 23 13)
+(from 23 15)
+(projectionAssn 23 264 613)
+(to 24 13)
+(from 24 16)
+(projectionAssn 24 277 614)
+(to 25 13)
+(from 25 22)
+(projectionAssn 25 388 615)
+(to 26 13)
+(from 26 18)
+(projectionAssn 26 315 616)
+(to 27 13)
+(from 27 19)
+(projectionAssn 27 337 617)
+(to 28 13)
+(from 28 20)
+(projectionAssn 28 356 618)
+(to 29 13)
+(from 29 21)
+(projectionAssn 29 375 619)
+(to 30 13)
+(from 30 17)
+(projectionAssn 30 293 620)
+(styleAssn 31 561)
+(projectionAssn 31 391 621)
+(to 32 15)
+(styleAssn 44 561)
+(projectionAssn 44 406 622)
+(from 32 44)
+(projectionAssn 32 436 623)
+(to 33 20)
+(from 33 44)
+(projectionAssn 33 443 624)
+(to 34 20)
+(from 34 44)
+(projectionAssn 34 451 625)
+(styleAssn 35 626)
+(projectionAssn 35 580 627)
+(styleAssn 36 628)
+(projectionAssn 36 630 629)
+(styleAssn 37 628)
+(projectionAssn 37 632 631)
+(to 38 11)
+(from 38 37)
+(projectionAssn 38 634 633)
+(styleAssn 39 628)
+(projectionAssn 39 636 635)
+(to 40 3)
+(from 40 39)
+(projectionAssn 40 638 637)
+(to 41 36)
+(from 41 39)
+(projectionAssn 41 640 639)
+(to 42 37)
+(from 42 39)
+(projectionAssn 42 642 641)
+(styleAssn 43 561)
+(projectionAssn 43 400 643)
+(to 45 13)
+(from 45 44)
+(projectionAssn 45 424 644)
+(to 46 44)
+(from 46 3)
+(projectionAssn 46 170 645)
+(styleAssn 47 561)
+(projectionAssn 47 462 646)
+(to 48 13)
+(from 48 47)
+(projectionAssn 48 480 647)
+(to 49 47)
+(from 49 3)
+(projectionAssn 49 175 648)
+(styleAssn 50 561)
+(projectionAssn 50 495 649)
+(to 51 13)
+(from 51 50)
+(projectionAssn 51 532 650)
+(to 52 50)
+(from 52 3)
+(projectionAssn 52 180 651)
+(to 53 35)
+(from 53 44)
+(projectionAssn 53 431 652)
+(to 54 35)
+(from 54 47)
+(projectionAssn 54 487 653)
+(styleAssn 55 561)
+(typeAssn 548 543)
+(assocEndAssn 543 548)
+(subtypeAssn 552 543)
+(supertypeAssn 552 655)
+(generalizationAssn 543 552)
+(typeRefAssn 544 566)
+(typeExpression 544 656)
+(projectionAssn 55 543 654)
+(to 56 3)
+(from 56 55)
+(projectionAssn 56 547 657)
+(styleAssn 57 658)
+(projectionAssn 57 660 659)
+(styleAssn 59 561)
+(projectionAssn 59 109 661)
+(styleAssn 60 590)
+(projectionAssn 60 572 662)
+(styleAssn 61 592)
+(projectionAssn 61 571 663)
+(to 62 60)
+(from 62 59)
+(projectionAssn 62 157 664)
+(styleAssn 63 561)
+(projectionAssn 63 192 665)
+(to 64 63)
+(from 64 59)
+(projectionAssn 64 165 666)
+(styleAssn 65 561)
+(projectionAssn 65 227 667)
+(to 66 65)
+(from 66 63)
+(projectionAssn 66 217 668)
+(styleAssn 67 561)
+(projectionAssn 67 254 669)
+(styleAssn 68 561)
+(projectionAssn 68 267 670)
+(styleAssn 69 561)
+(projectionAssn 69 280 671)
+(styleAssn 70 561)
+(projectionAssn 70 296 672)
+(styleAssn 71 561)
+(projectionAssn 71 318 673)
+(styleAssn 72 561)
+(projectionAssn 72 340 674)
+(styleAssn 73 561)
+(projectionAssn 73 359 675)
+(styleAssn 74 561)
+(projectionAssn 74 378 676)
+(to 75 65)
+(from 75 67)
+(projectionAssn 75 264 677)
+(to 76 65)
+(from 76 68)
+(projectionAssn 76 277 678)
+(to 77 65)
+(from 77 74)
+(projectionAssn 77 388 679)
+(to 78 65)
+(from 78 70)
+(projectionAssn 78 315 680)
+(to 79 65)
+(from 79 71)
+(projectionAssn 79 337 681)
+(to 80 65)
+(from 80 72)
+(projectionAssn 80 356 682)
+(to 81 65)
+(from 81 73)
+(projectionAssn 81 375 683)
+(to 82 65)
+(from 82 69)
+(projectionAssn 82 293 684)
+(styleAssn 83 626)
+(projectionAssn 83 580 685)
+(to 84 61)
+(from 84 59)
+(projectionAssn 84 141 686)
+(to 85 61)
+(from 85 59)
+(projectionAssn 85 149 687)
+(to 86 61)
+(from 86 60)
+(projectionAssn 86 595 688)
+(to 87 61)
+(from 87 60)
+(projectionAssn 87 597 689)
+(styleAssn 88 628)
+(projectionAssn 88 636 690)
+(to 89 59)
+(from 89 88)
+(projectionAssn 89 638 691)
+(styleAssn 90 628)
+(projectionAssn 90 632 692)
+(to 91 63)
+(from 91 90)
+(projectionAssn 91 634 693)
+(to 92 90)
+(from 92 88)
+(projectionAssn 92 642 694)
+(styleAssn 93 628)
+(projectionAssn 93 630 695)
+(to 94 93)
+(from 94 88)
+(projectionAssn 94 640 696)
+(styleAssn 95 561)
+(projectionAssn 95 406 697)
+(to 96 65)
+(from 96 95)
+(projectionAssn 96 424 698)
+(to 97 95)
+(from 97 59)
+(projectionAssn 97 170 699)
+(styleAssn 98 561)
+(projectionAssn 98 462 700)
+(to 99 65)
+(from 99 98)
+(projectionAssn 99 480 701)
+(to 100 98)
+(from 100 59)
+(projectionAssn 100 175 702)
+(styleAssn 101 561)
+(projectionAssn 101 495 703)
+(to 102 65)
+(from 102 101)
+(projectionAssn 102 532 704)
+(to 103 101)
+(from 103 59)
+(projectionAssn 103 180 705)
+(to 104 67)
+(from 104 95)
+(projectionAssn 104 436 706)
+(to 105 72)
+(from 105 95)
+(projectionAssn 105 443 707)
+(to 106 72)
+(from 106 95)
+(projectionAssn 106 451 708)
+(to 107 83)
+(from 107 95)
+(projectionAssn 107 431 709)
+(to 108 83)
+(from 108 98)
+(projectionAssn 108 487 710)
+(stereotypeAssn 190 711)
+(clientAssn 190 1)
+(supplierAssn 190 712)
+(stereotypeAssn 191 711)
+(clientAssn 191 1)
+(supplierAssn 191 713)
+(stereotypeAssn 397 711)
+(clientAssn 397 1)
+(supplierAssn 397 714)
+(stereotypeAssn 398 711)
+(clientAssn 398 1)
+(supplierAssn 398 715)
+(stereotypeAssn 399 711)
+(clientAssn 399 1)
+(supplierAssn 399 716)
+(stereotypeAssn 542 711)
+(clientAssn 542 1)
+(supplierAssn 542 717)

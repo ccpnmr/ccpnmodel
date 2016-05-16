@@ -1,13 +1,12 @@
-import sys, os, traceback, time, subprocess, datetime
+import sys, os, traceback, time, datetime
 
-from ccpnmodel.util import Path as modelPath
 from ccpn.util import Path as corePath
 
 from ccpn.util import Io as utilIo
 from ccpn.util import LocalShutil as shutil
 # from ccpn.util import Logging
 
-testDataPath = 'testdata/upgrade/'
+testDataPath = ['data', 'testdata', 'upgrade']
 
 alwaysSkipDirs = {'.svn', '.idea', 'ccp', 'ccpnmr', 'cambridge', 'CVS', 'molsim', 'utrecht',}
 stdTempDir='unzipped_%s'
@@ -48,7 +47,7 @@ def doTest(target=None, workDir=None, maskErrors=True):
     removeTarget=False
   else:
     # We are testing all projects.
-    target = modelPath.getDirectoryFromTop(testDataPath)
+    target = corePath.joinPath(corePath.getPathToImport('ccpnmodel', *testDataPath))
     removeTarget=True
   
   if os.path.isfile(target):

@@ -1,0 +1,769 @@
+ObjectDomain_Shared_Package 15
+{-hkpzxr_-dbn_f78xhhy8_-p98 3 "Logical" objectdomain.uml.mechanisms.UmlPackage-owns "cambridge" objectdomain.uml.mechanisms.UmlPackage-owns "Dangle" objectdomain.uml.mechanisms.UmlPackage-owns
+}[objectdomain.uml.core.TypeExpression $17
+objectdomain.uml.mechanisms.UmlPackage-owns $1
+objectdomain.uml.core.Generalization-owns $9
+objectdomain.uml.core.Dependency-owns $2
+objectdomain.uml.core.Projection $15
+objectdomain.uml.core.UmlAttribute-features $7
+objectdomain.uml.core.UmlAssociationEnd-connections $11
+objectdomain.uml.view.style.BaseViewElementStyle-owns $14
+objectdomain.uml.view.ClassView-owns $4
+objectdomain.uml.core.UmlTaggedValue-taggedValues $8
+objectdomain.uml.core.UmlConstraint-constraints $12
+objectdomain.uml.core.UmlAssociation-owns $10
+objectdomain.uml.view.Diagram-owns $3
+objectdomain.uml.core.UmlMultiplicity $16
+objectdomain.uml.core.UmlClass-owns $6
+objectdomain.uml.view.AssociationView-owns $5
+objectdomain.uml.core.Stereotype-owns $13
+]
+($1 1 > -hkpzxr_-dbn_f78xhhy8_-p98 3 "Logical" $1 "cambridge" $1 "Dangle" $1
+(name "Dangle"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p98"))
+($2 2 < -hkpzxr_-dbn_f78xhhy8_-p94 "#<anon> (Dangle, NmrConstraint)" 1
+(uid "-hkpzxr_-dbn_f78xhhy8_-p94"))
+($2 3 < -hkpzxr_-dbn_f78xhhy8_-p93 "#<anon> (Dangle, Nmr)" 1
+(uid "-hkpzxr_-dbn_f78xhhy8_-p93"))
+($2 4 < -hkpzxr_-dbn_f78xhhy8_-p92 "#<anon> (Dangle, MolSystem)" 1
+(uid "-hkpzxr_-dbn_f78xhhy8_-p92"))
+($3 5 < -hkpzxr_-dbn_f78xhhy8_-p8t "_Dangle-details" 1
+(name "_Dangle-details"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p8t")
+(diagramType "class"))
+($4 6 < -hkpzxr_-dbn_f78xhhy8_-p6a "Chain" 5
+(autoSizeToFit true)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p6a")
+(bbx 690 10 200 290))
+($4 7 < -hkpzxr_-dbn_f78xhhy8_-p69 "Residue" 5
+(autoSizeToFit true)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p69")
+(bbx 690 350 210 240))
+($5 8 < -hkpzxr_-dbn_f78xhhy8_-p8s "" 5
+(toMultiplicityPosition 780 330)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p8s")
+(points 795 300 795 350)
+(fromMultiplicityPosition 805 310))
+($4 9 < -hkpzxr_-dbn_f78xhhy8_-p68 "ShiftList" 5
+(autoSizeToFit true)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p68")
+(bbx 500 280 140 60))
+($4 10 < -hkpzxr_-dbn_f78xhhy8_-p67 "NmrConstraintStore" 5
+(autoSizeToFit true)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p67")
+(bbx 350 10 280 60))
+($4 11 < -hkpzxr_-dbn_f78xhhy8_-p65 "DangleStore" 5
+(uid "-hkpzxr_-dbn_f78xhhy8_-p65")
+(bbx 10 200 240 90))
+($4 12 < -hkpzxr_-dbn_f78xhhy8_-p64 "DangleChain" 5
+(uid "-hkpzxr_-dbn_f78xhhy8_-p64")
+(bbx 350 200 100 50))
+($4 13 < -hkpzxr_-dbn_f78xhhy8_-p63 "DangleResidue" 5
+(uid "-hkpzxr_-dbn_f78xhhy8_-p63")
+(bbx 310 370 190 240))
+($4 14 < -hkpzxr_-dbn_f78xhhy8_-p62 "ColorScheme" 5
+(uid "-hkpzxr_-dbn_f78xhhy8_-p62")
+(bbx 20 360 100 60))
+($5 15 < -hkpzxr_-dbn_f78xhhy8_-p79 "" 5
+(toMultiplicityPosition 330 240)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p79")
+(points 250 225 350 225)
+(fromMultiplicityPosition 265 195))
+($5 16 < -hkpzxr_-dbn_f78xhhy8_-p78 "" 5
+(toMultiplicityPosition 415 335)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p78")
+(points 400 250 400 370)
+(fromMultiplicityPosition 410 255))
+($5 17 < -hkpzxr_-dbn_f78xhhy8_-p7a "" 5
+(toMultiplicityPosition 455 205)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p7a")
+(points 690 225 450 225)
+(fromMultiplicityPosition 680 200))
+($5 18 < -hkpzxr_-dbn_f78xhhy8_-p60 "" 5
+(toMultiplicityPosition 475 225)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p60")
+(points 510 280 450 250)
+(lineStyle "oblique"))
+($5 19 < -hkpzxr_-dbn_f78xhhy8_-p7b "" 5
+(toMultiplicityPosition 390 175)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p7b")
+(points 405 70 405 200))
+($5 20 < -hkpzxr_-dbn_f78xhhy8_-p6z "" 5
+(toMultiplicityPosition 680 500)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p6z")
+(points 500 495 690 495)
+(fromMultiplicityPosition 510 475))
+($4 21 < -hkpzxr_-dbn_f78xhhy8_-p5z "NormDegAngle" 5
+(uid "-hkpzxr_-dbn_f78xhhy8_-p5z")
+(bbx 20 470 110 60))
+($6 22 < -hkpzxr_-dbn_f78xhhy8_-p8q "DangleStore" 1
+(name "DangleStore"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p8q"))
+($7 23 < -hkpzxr_-dbn_f78xhhy8_-p8l "name" 22
+(changeability "frozen")
+(name "name"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p8l")
+(multiplicity "1"))
+($8 24 < -hkpzxr_-dbn_f78xhhy8_-p8k "documentation" 23
+(name "documentation"
+)
+(value "Name of DangleStore. Serves as key"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p8k"))
+($8 25 < -hkpzxr_-dbn_f78xhhy8_-p4y "guid" 23
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:28:21_00003"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p4y"))
+($7 26 < -hkpzxr_-dbn_f78xhhy8_-p8j "dbLocation" 22
+(name "dbLocation"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p8j"))
+($8 27 < -hkpzxr_-dbn_f78xhhy8_-p8i "documentation" 26
+(name "documentation"
+)
+(value "Location (directory) of Dangle database files"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p8i"))
+($8 28 < -hkpzxr_-dbn_f78xhhy8_-p4x "guid" 26
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:28:21_00004"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p4x"))
+($7 29 < -hkpzxr_-dbn_f78xhhy8_-p88 "colorScheme" 22
+(initialValue "rainbow"
+)
+(name "colorScheme"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p88")
+(multiplicity "1"))
+($8 30 < -hkpzxr_-dbn_f78xhhy8_-p4w "guid" 29
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:28:21_00005"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p4w"))
+($8 31 < -hkpzxr_-iih_f82srgo8_-p8h "documentation" 29
+(name "documentation"
+)
+(value "Color scheme used in Dangle"
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p8h"))
+($9 32 < -hkpzxr_-dbn_f78xhhy8_-p8c "#<anon> (DangleStore, TopObject)" 22
+(uid "-hkpzxr_-dbn_f78xhhy8_-p8c"))
+($10 33 < -hkpzxr_-dbn_f78xhhy8_-p80 "#<anon> (DangleStore, DangleChain)##," 22
+(name "")
+(uid "-hkpzxr_-dbn_f78xhhy8_-p80"))
+($11 34 < -hkpzxr_-dbn_f78xhhy8_-p7y "#0" 33
+(changeability "frozen")
+(aggregation "composite")
+(uid "-hkpzxr_-dbn_f78xhhy8_-p7y")
+(multiplicity "1"))
+($8 35 < -hkpzxr_-dbn_f78xhhy8_-p4v "guid" 34
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:28:21_00001"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p4v"))
+($11 36 < -hkpzxr_-dbn_f78xhhy8_-p7x "#1" 33
+(uid "-hkpzxr_-dbn_f78xhhy8_-p7x")
+(multiplicity "*"))
+($8 37 < -hkpzxr_-dbn_f78xhhy8_-p4u "guid" 36
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:28:21_00002"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p4u"))
+($8 38 < -hkpzxr_-dbn_f78xhhy8_-p8n "documentation" 22
+(name "documentation"
+)
+(value "Collection of Dangle prediction data, and associated information. This class serves as TopObject. "
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p8n"))
+($8 39 < -hkpzxr_-dbn_f78xhhy8_-p8m "keyNames" 22
+(name "keyNames"
+)
+(value "name"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p8m"))
+($8 40 < -hkpzxr_-dbn_f78xhhy8_-p5r "guid" 22
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:13:59_00002"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p5r"))
+($6 41 < -hkpzxr_-dbn_f78xhhy8_-p8p "DangleChain" 1
+(name "DangleChain"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p8p"))
+($10 42 < -hkpzxr_-dbn_f78xhhy8_-p7z "#<anon> (DangleChain, DangleResidue)##," 41
+(name "")
+(uid "-hkpzxr_-dbn_f78xhhy8_-p7z"))
+($11 43 < -hkpzxr_-dbn_f78xhhy8_-p7w "#0" 42
+(changeability "frozen")
+(aggregation "composite")
+(uid "-hkpzxr_-dbn_f78xhhy8_-p7w")
+(multiplicity "1"))
+($8 44 < -hkpzxr_-dbn_f78xhhy8_-p5q "guid" 43
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:14:02_00001"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p5q"))
+($11 45 < -hkpzxr_-dbn_f78xhhy8_-p7v "#1" 42
+(uid "-hkpzxr_-dbn_f78xhhy8_-p7v")
+(multiplicity "*"))
+($8 46 < -hkpzxr_-dbn_f78xhhy8_-p5p "guid" 45
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:14:02_00002"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p5p"))
+($9 47 < -hkpzxr_-dbn_f78xhhy8_-p70 "#<anon> (DangleChain, DataObject)" 41
+(uid "-hkpzxr_-dbn_f78xhhy8_-p70"))
+($8 48 < -hkpzxr_-dbn_f78xhhy8_-p7u "documentation" 41
+(name "documentation"
+)
+(value "Chain containing residues with predicted angles"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p7u"))
+($8 49 < -hkpzxr_-dbn_f78xhhy8_-p7s "keyNames" 41
+(name "keyNames"
+)
+(value "chain"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p7s"))
+($8 50 < -hkpzxr_-dbn_f78xhhy8_-p5o "guid" 41
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:13:59_00003"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p5o"))
+($6 51 < -hkpzxr_-dbn_f78xhhy8_-p8o "DangleResidue" 1
+(name "DangleResidue"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p8o"))
+($7 52 < -hkpzxr_-dbn_f78xhhy8_-p6x "phiValue" 51
+(name "phiValue"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p6x"))
+($8 53 < -hkpzxr_-dbn_f78xhhy8_-p6r "documentation" 52
+(name "documentation"
+)
+(value "Predicted phi value"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p6r"))
+($8 54 < -hkpzxr_-dbn_f78xhhy8_-p5n "guid" 52
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:14:02_00005"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p5n"))
+($7 55 < -hkpzxr_-dbn_f78xhhy8_-p6q "phiUpper" 51
+(name "phiUpper"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p6q"))
+($8 56 < -hkpzxr_-dbn_f78xhhy8_-p6p "documentation" 55
+(name "documentation"
+)
+(value "upper phi value"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p6p"))
+($8 57 < -hkpzxr_-dbn_f78xhhy8_-p5m "guid" 55
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:14:02_00006"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p5m"))
+($7 58 < -hkpzxr_-dbn_f78xhhy8_-p6o "phiLower" 51
+(name "phiLower"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p6o"))
+($8 59 < -hkpzxr_-dbn_f78xhhy8_-p6n "documentation" 58
+(name "documentation"
+)
+(value "lower phi value"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p6n"))
+($8 60 < -hkpzxr_-dbn_f78xhhy8_-p5l "guid" 58
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:14:02_00007"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p5l"))
+($7 61 < -hkpzxr_-dbn_f78xhhy8_-p6m "psiValue" 51
+(name "psiValue"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p6m"))
+($8 62 < -hkpzxr_-dbn_f78xhhy8_-p6l "documentation" 61
+(name "documentation"
+)
+(value "predicted psi value"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p6l"))
+($8 63 < -hkpzxr_-dbn_f78xhhy8_-p5k "guid" 61
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:14:02_00008"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p5k"))
+($7 64 < -hkpzxr_-dbn_f78xhhy8_-p6k "psiUpper" 51
+(name "psiUpper"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p6k"))
+($8 65 < -hkpzxr_-dbn_f78xhhy8_-p6j "documentation" 64
+(name "documentation"
+)
+(value "upper psi value"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p6j"))
+($8 66 < -hkpzxr_-dbn_f78xhhy8_-p5j "guid" 64
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:14:02_00009"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p5j"))
+($7 67 < -hkpzxr_-dbn_f78xhhy8_-p6i "psiLower" 51
+(name "psiLower"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p6i"))
+($8 68 < -hkpzxr_-dbn_f78xhhy8_-p6h "documentation" 67
+(name "documentation"
+)
+(value "lower psi value"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p6h"))
+($8 69 < -hkpzxr_-dbn_f78xhhy8_-p5i "guid" 67
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:14:02_00010"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p5i"))
+($7 70 < -hkpzxr_-dbn_f78xhhy8_-p6g "omegaValue" 51
+(name "omegaValue"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p6g"))
+($8 71 < -hkpzxr_-dbn_f78xhhy8_-p6f "documentation" 70
+(name "documentation"
+)
+(value "predicted omega value"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p6f"))
+($8 72 < -hkpzxr_-dbn_f78xhhy8_-p5h "guid" 70
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:14:02_00011"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p5h"))
+($7 73 < -hkpzxr_-dbn_f78xhhy8_-p6e "omegaUpper" 51
+(name "omegaUpper"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p6e"))
+($8 74 < -hkpzxr_-dbn_f78xhhy8_-p6d "documentation" 73
+(name "documentation"
+)
+(value "upper Omega value"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p6d"))
+($8 75 < -hkpzxr_-dbn_f78xhhy8_-p5g "guid" 73
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:14:02_00012"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p5g"))
+($7 76 < -hkpzxr_-dbn_f78xhhy8_-p6c "omegaLower" 51
+(name "omegaLower"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p6c"))
+($8 77 < -hkpzxr_-dbn_f78xhhy8_-p6b "documentation" 76
+(name "documentation"
+)
+(value "lower omega value"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p6b"))
+($8 78 < -hkpzxr_-dbn_f78xhhy8_-p5f "guid" 76
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:14:02_00013"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p5f"))
+($7 79 < -hkpzxr_-dbn_f78xhhy8_-p5y "numIslands" 51
+(name "numIslands"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p5y"))
+($8 80 < -hkpzxr_-dbn_f78xhhy8_-p5x "documentation" 79
+(name "documentation"
+)
+(value "Number of predicted 'islands'"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p5x"))
+($8 81 < -hkpzxr_-dbn_f78xhhy8_-p5e "guid" 79
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:14:02_00014"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p5e"))
+($7 82 < -hkpzxr_-dbn_f78xhhy8_-p5w "phiPsiLikelihoodMatrix" 51
+(name "phiPsiLikelihoodMatrix"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p5w")
+(multiplicity "1296"))
+($8 83 < -hkpzxr_-dbn_f78xhhy8_-p5v "documentation" 82
+(name "documentation"
+)
+(value "Phi/psi likelihood matrix. 36*36 float matrix, packed as list."
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p5v"))
+($8 84 < -hkpzxr_-dbn_f78xhhy8_-p5d "guid" 82
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:14:02_00015"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p5d"))
+($8 85 < -hkpzxr_-dbn_f78xhhy8_-p5u "baseName" 82
+(name "baseName"
+)
+(value "phiPsiLikelihoodMatrix"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p5u"))
+($7 86 < z8kfsx_-9el_fj74gjov_-p98 "secStrucCode" 51
+(name "secStrucCode"
+)
+(uid "z8kfsx_-9el_fj74gjov_-p98"))
+($8 87 < z8kfsx_-9el_fj74gjov_-p97 "documentation" 86
+(name "documentation"
+)
+(value "Secondary structure code."
+)
+(uid "z8kfsx_-9el_fj74gjov_-p97"))
+($8 88 < z8kfsx_-9el_fj74gjov_-p94 "guid" 86
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-07-28-17:02:27_00001"
+)
+(uid "z8kfsx_-9el_fj74gjov_-p94"))
+($10 89 < -hkpzxr_-dbn_f78xhhy8_-p77 "#<anon> (DangleResidue, Residue)##," 51
+(name "")
+(uid "-hkpzxr_-dbn_f78xhhy8_-p77"))
+($11 90 < -hkpzxr_-dbn_f78xhhy8_-p76 "#0" 89
+(uid "-hkpzxr_-dbn_f78xhhy8_-p76")
+(multiplicity "*"))
+($8 91 < -hkpzxr_-dbn_f78xhhy8_-p73 "documentation" 90
+(name "documentation"
+)
+(value "DangleResidue with predicted angles"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p73"))
+($8 92 < -hkpzxr_-dbn_f78xhhy8_-p5c "guid" 90
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:14:02_00003"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p5c"))
+($11 93 < -hkpzxr_-dbn_f78xhhy8_-p75 "#1" 89
+(changeability "frozen")
+(uid "-hkpzxr_-dbn_f78xhhy8_-p75")
+(multiplicity "1"))
+($8 94 < -hkpzxr_-dbn_f78xhhy8_-p74 "documentation" 93
+(name "documentation"
+)
+(value "Residue for which angles are predicted"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p74"))
+($8 95 < -hkpzxr_-dbn_f78xhhy8_-p5b "guid" 93
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:14:02_00004"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p5b"))
+($9 96 < -hkpzxr_-dbn_f78xhhy8_-p71 "#<anon> (DangleResidue, DataObject)" 51
+(uid "-hkpzxr_-dbn_f78xhhy8_-p71"))
+($8 97 < -hkpzxr_-dbn_f78xhhy8_-p72 "documentation" 51
+(name "documentation"
+)
+(value "Residue that holds Dangle angle predictions"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p72"))
+($8 98 < -hkpzxr_-dbn_f78xhhy8_-p6y "keyNames" 51
+(name "keyNames"
+)
+(value "residue"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p6y"))
+($8 99 < -hkpzxr_-dbn_f78xhhy8_-p5a "guid" 51
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:13:59_00004"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p5a"))
+($6 100 < -hkpzxr_-dbn_f78xhhy8_-p8h "ColorScheme" 1
+(name "ColorScheme"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p8h"))
+($9 101 < -hkpzxr_-dbn_f78xhhy8_-p8d "#<anon> (ColorScheme, Word)" 100
+(uid "-hkpzxr_-dbn_f78xhhy8_-p8d"))
+($8 102 < -hkpzxr_-dbn_f78xhhy8_-p8g "documentation" 100
+(name "documentation"
+)
+(value "Dangle color scheme datatype"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p8g"))
+($8 103 < -hkpzxr_-dbn_f78xhhy8_-p8f "isOpen" 100
+(name "isOpen"
+)
+(value "False"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p8f"))
+($8 104 < -hkpzxr_-dbn_f78xhhy8_-p8e "enumeration" 100
+(name "enumeration"
+)
+(value "('black','white','rainbow')"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p8e"))
+($8 105 < -hkpzxr_-dbn_f78xhhy8_-p59 "guid" 100
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:13:59_00005"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p59"))
+($6 106 < -hkpzxr_-dbn_f78xhhy8_-p6w "NormDegAngle" 1
+(name "NormDegAngle"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p6w"))
+($9 107 < -hkpzxr_-dbn_f78xhhy8_-p6u "#<anon> (NormDegAngle, Float)" 106
+(uid "-hkpzxr_-dbn_f78xhhy8_-p6u"))
+($8 108 < -hkpzxr_-dbn_f78xhhy8_-p6v "documentation" 106
+(name "documentation"
+)
+(value "Angle in degrees, normalised to -180 <= x < 180 degrees"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p6v"))
+($8 109 < -hkpzxr_-dbn_f78xhhy8_-p58 "guid" 106
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:13:59_00006"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p58"))
+($12 110 < -hkpzxr_-dbn_f78xhhy8_-p6t "value_ge_minus_180" 106
+(name "value_ge_minus_180"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p6t")
+(body "code:python"
+"_"
+"-180.0 <= value"
+"_"
+"code:java"
+"_"
+"-180.0f <= value"
+"_"
+"code:xml"
+"_"
+"<xsd:minInclusive value=\"-180.0\"/>"
+))
+($8 111 < -hkpzxr_-dbn_f78xhhy8_-p57 "guid" 110
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:13:59_00007"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p57"))
+($12 112 < -hkpzxr_-dbn_f78xhhy8_-p6s "value_lt_180" 106
+(name "value_lt_180"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p6s")
+(body "code:python"
+"_"
+"180.0 > value"
+"_"
+"code:java"
+"_"
+"180.0f > value"
+"_"
+"code:xml"
+"_"
+"<xsd:maxExclusive value=\"180.0\"/>"
+))
+($8 113 < -hkpzxr_-dbn_f78xhhy8_-p56 "guid" 112
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:13:59_00008"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p56"))
+($2 114 < z8kfsx_-9el_fj74gjov_-p96 "#<anon> (Dangle, Molecule)" 1
+(uid "z8kfsx_-9el_fj74gjov_-p96"))
+($8 115 < -hkpzxr_-dbn_f78xhhy8_-p97 "shortName" 1
+(name "shortName"
+)
+(value "DANG"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p97"))
+($8 116 < -hkpzxr_-dbn_f78xhhy8_-p96 "documentation" 1
+(name "documentation"
+)
+(value "Data for the CcpNmr Dangle program, for predicting torsion angles from shifts."
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p96"))
+($8 117 < -hkpzxr_-dbn_f78xhhy8_-p95 "packageGroup" 1
+(name "packageGroup"
+)
+(value "nmr"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p95"))
+($8 118 < -hkpzxr_-dbn_f78xhhy8_-p55 "guid" 1
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-01-14:13:59_00001"
+)
+(uid "-hkpzxr_-dbn_f78xhhy8_-p55"))
+($15 124)
+($15 126)
+($15 128)
+($15 131)
+($15 134)
+($15 136)
+($17 139)
+($17 147)
+($15 148)
+($15 149)
+($15 150)
+($15 151)
+($15 152)
+($15 153)
+($15 155)
+($15 157)
+($15 159)
+($15 160)
+($13 119 @ -yk94ms_-e3s_e41656c6_-fwy 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "import" $13)
+($1 120 @ -yk94ms_-e3s_e41656c6_-lll 4 "Logical" $1 "ccp" $1 "nmr" $1 "NmrConstraint" $1)
+($1 121 @ -yk94ms_-e3s_e41656c6_-p95 4 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1)
+($1 122 @ -yk94ms_-e3s_e41656c6_-ibf 4 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1)
+($14 123 @ -yk94ms_-e3s_e41656c6_-fvn 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "MolSystem" $14)
+($6 125 @ -yk94ms_85r_eqyymv3f_-jo5 5 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "Chain" $6)
+($6 127 @ -yk94ms_85r_eqyymv3f_-jju 5 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "Residue" $6)
+($10 129 @ -yk94ms_85r_eqyymv3f_-jm9 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "Chain" $6 "#<anon> (Chain, Residue)##," $10)
+($14 130 @ -yk94ms_-e3s_e41656c6_-fvm 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Nmr" $14)
+($6 132 @ -yk94ms_85r_eqyymv3f_-gyc 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ShiftList" $6)
+($14 133 @ -yk94ms_-e3s_e41656c6_-fvf 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "NmrConstraints" $14)
+($6 135 @ -yk94ms_85r_eqyymv3f_-guo 5 "Logical" $1 "ccp" $1 "nmr" $1 "NmrConstraint" $1 "NmrConstraintStore" $6)
+($6 137 @ z8kflu_63g_errlz7sn_-p8u 4 "Logical" $1 "memops" $1 "Implementation" $1 "TopObject" $6)
+($6 138 @ -yk94ms_-e3s_e41656c6_-h0m 4 "Logical" $1 "memops" $1 "Implementation" $1 "Line" $6)
+($6 140 @ -yk94ms_-e3s_e41656c6_-gqa 4 "Logical" $1 "memops" $1 "Implementation" $1 "Url" $6)
+($13 141 @ -yk94ms_-e3s_e41656c6_-fw7 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "DataType" $13)
+($6 142 @ -yk94ms_-e3s_e41656c6_-gzz 4 "Logical" $1 "memops" $1 "Implementation" $1 "Word" $6)
+($6 143 @ -yk94ms_-e3s_e41656c6_-gpe 4 "Logical" $1 "memops" $1 "Implementation" $1 "DataObject" $6)
+($6 144 @ -yk94ms_-e3s_e41656c6_-h10 4 "Logical" $1 "memops" $1 "Implementation" $1 "Float" $6)
+($6 145 @ -yk94ms_-e3s_e41656c6_-gn4 4 "Logical" $1 "memops" $1 "Implementation" $1 "NonNegativeInt" $6)
+($6 146 @ -yk94ms_85r_eqyymv3f_-k08 5 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "SecStrucCode" $6)
+($10 154 @ -hkpzxr_-dbn_f78xhhy8_-p7r 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "Chain" $6 "#<anon> (Chain, DangleChain)##," $10)
+($10 156 @ -hkpzxr_-dbn_f78xhhy8_-p7q 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ShiftList" $6 "#<anon> (ShiftList, DangleChain)##," $10)
+($10 158 @ -hkpzxr_-dbn_f78xhhy8_-p7p 6 "Logical" $1 "ccp" $1 "nmr" $1 "NmrConstraint" $1 "NmrConstraintStore" $6 "#<anon> (NmrConstraintStore, DangleChain)##," $10)
+($1 161 @ -yk94ms_-e3s_e41656c6_-m0p 4 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1)
+(stereotypeAssn 2 119)
+(clientAssn 2 1)
+(supplierAssn 2 120)
+(stereotypeAssn 3 119)
+(clientAssn 3 1)
+(supplierAssn 3 121)
+(stereotypeAssn 4 119)
+(clientAssn 4 1)
+(supplierAssn 4 122)
+(styleAssn 6 123)
+(projectionAssn 6 125 124)
+(styleAssn 7 123)
+(projectionAssn 7 127 126)
+(to 8 7)
+(from 8 6)
+(projectionAssn 8 129 128)
+(styleAssn 9 130)
+(projectionAssn 9 132 131)
+(styleAssn 10 133)
+(projectionAssn 10 135 134)
+(typeAssn 34 22)
+(assocEndAssn 22 34)
+(subtypeAssn 32 22)
+(supertypeAssn 32 137)
+(generalizationAssn 22 32)
+(typeRefAssn 23 138)
+(typeExpression 23 139)
+(typeRefAssn 26 140)
+(typeExpression 26 139)
+(stereotypeAssn 100 141)
+(subtypeAssn 101 100)
+(supertypeAssn 101 142)
+(generalizationAssn 100 101)
+(typeRefAssn 29 100)
+(typeExpression 29 139)
+(assocEndAssn 41 36)
+(typeAssn 43 41)
+(assocEndAssn 41 43)
+(subtypeAssn 47 41)
+(supertypeAssn 47 143)
+(generalizationAssn 41 47)
+(assocEndAssn 51 45)
+(typeAssn 90 51)
+(assocEndAssn 51 90)
+(subtypeAssn 96 51)
+(supertypeAssn 96 143)
+(generalizationAssn 51 96)
+(stereotypeAssn 106 141)
+(subtypeAssn 107 106)
+(supertypeAssn 107 144)
+(generalizationAssn 106 107)
+(typeRefAssn 52 106)
+(typeExpression 52 139)
+(typeRefAssn 55 106)
+(typeExpression 55 139)
+(typeRefAssn 58 106)
+(typeExpression 58 139)
+(typeRefAssn 61 106)
+(typeExpression 61 139)
+(typeRefAssn 64 106)
+(typeExpression 64 139)
+(typeRefAssn 67 106)
+(typeExpression 67 139)
+(typeRefAssn 70 106)
+(typeExpression 70 139)
+(typeRefAssn 73 106)
+(typeExpression 73 139)
+(typeRefAssn 76 106)
+(typeExpression 76 139)
+(typeRefAssn 79 145)
+(typeExpression 79 139)
+(typeRefAssn 82 144)
+(typeExpression 82 139)
+(typeRefAssn 86 146)
+(typeExpression 86 147)
+(typeAssn 93 127)
+(typeAssn 45 51)
+(typeAssn 36 41)
+(projectionAssn 11 22 136)
+(projectionAssn 12 41 148)
+(projectionAssn 13 51 149)
+(projectionAssn 14 100 150)
+(to 15 12)
+(from 15 11)
+(projectionAssn 15 33 151)
+(to 16 13)
+(from 16 12)
+(projectionAssn 16 42 152)
+(to 17 12)
+(from 17 6)
+(projectionAssn 17 154 153)
+(to 18 12)
+(from 18 9)
+(projectionAssn 18 156 155)
+(to 19 12)
+(from 19 10)
+(projectionAssn 19 158 157)
+(to 20 7)
+(from 20 13)
+(projectionAssn 20 89 159)
+(projectionAssn 21 106 160)
+(stereotypeAssn 114 119)
+(clientAssn 114 1)
+(supplierAssn 114 161)

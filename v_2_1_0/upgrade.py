@@ -46,7 +46,7 @@ automated software development. Bioinformatics 21, 1678-1684.
 """
 __author__ = 'rhf22'
 
-from ccpnmodel.util import Conversion
+from ccpnmodel.ccpncore.lib import Conversion
 
 versionSequence = ['2.0.a0', '2.0.a1', '2.0.a2', '2.0.a3', '2.0.b1', '2.0.b2', '2.0.b3',
                    '2.0.4',  '2.0.5',  '2.1.0',  '2.1.1']
@@ -235,15 +235,15 @@ def fixNmr(topObj, delayDataDict):
 
     # fix NmrExpPrototype mapping for defunct types
     Conversion.setNmrExpPrototypeLink(xpr, 'refExperiment', topObjByGuid, delayDataDict,
-                           remapPrototypeLink)
+                                      remapPrototypeLink)
     for xd in expDict.get('expDims', emptyList):
 
       Conversion.setNmrExpPrototypeLink(xd, 'refExpDim', topObjByGuid, delayDataDict,
-                             remapPrototypeLink)
+                                        remapPrototypeLink)
       for xdr in doGet(xd, emptyDict).get('expDimRefs', emptyList):
 
         Conversion.setNmrExpPrototypeLink(xdr, 'refExpDimRef', topObjByGuid, delayDataDict,
-                               remapPrototypeLink)
+                                          remapPrototypeLink)
 
 
 def remapPrototypeLink(keyList):

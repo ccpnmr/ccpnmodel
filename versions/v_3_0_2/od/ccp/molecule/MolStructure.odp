@@ -1,0 +1,3621 @@
+ObjectDomain_Shared_Package 15
+{-yk94ms_-e3s_e41656c6_-j6m 4 "Logical" objectdomain.uml.mechanisms.UmlPackage-owns "ccp" objectdomain.uml.mechanisms.UmlPackage-owns "molecule" objectdomain.uml.mechanisms.UmlPackage-owns "MolStructure" objectdomain.uml.mechanisms.UmlPackage-owns
+}[objectdomain.uml.core.TypeExpression $19
+objectdomain.uml.mechanisms.UmlPackage-owns $1
+objectdomain.uml.core.Generalization-owns $13
+objectdomain.uml.core.Dependency-owns $6
+objectdomain.uml.core.Projection $17
+objectdomain.uml.core.UmlAttribute-features $8
+objectdomain.uml.core.UmlAssociationEnd-connections $12
+objectdomain.uml.view.style.BaseViewElementStyle-owns $16
+objectdomain.uml.view.ClassView-owns $3
+objectdomain.uml.core.UmlTaggedValue-taggedValues $9
+objectdomain.uml.core.UmlConstraint-constraints $14
+objectdomain.uml.core.UmlParameter-parameters $15
+objectdomain.uml.core.UmlAssociation-owns $11
+objectdomain.uml.view.Diagram-owns $2
+objectdomain.uml.core.UmlOperation-features $10
+objectdomain.uml.view.GeneralizationView-owns $5
+objectdomain.uml.core.UmlMultiplicity $18
+objectdomain.uml.core.UmlClass-owns $7
+objectdomain.uml.view.AssociationView-owns $4
+objectdomain.uml.core.Stereotype-owns $20
+]
+($1 1 > -yk94ms_-e3s_e41656c6_-j6m 4 "Logical" $1 "ccp" $1 "molecule" $1 "MolStructure" $1
+(name "MolStructure"
+)
+(uid "-yk94ms_-e3s_e41656c6_-j6m"))
+($2 2 < 0_-fvi_hrnjywg5_-ksz "_MolStructure-details" 1
+(name "_MolStructure-details"
+)
+(uid "0_-fvi_hrnjywg5_-ksz")
+(diagramType "class"))
+($3 3 < 0_-fvi_hrnjywg5_-ksx "Atom" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-ksx")
+(bbx 260 800 200 130))
+($3 4 < 0_-fvi_hrnjywg5_-ksw "MolSystem" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-ksw")
+(bbx 330 50 230 230))
+($3 5 < 0_-fvi_hrnjywg5_-ksv "StructureEnsemble" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-ksv")
+(bbx 620 70 140 200))
+($4 6 < 0_-fvi_hrnjywg5_-ksu "" 2
+(toMultiplicityPosition 610 145)
+(uid "0_-fvi_hrnjywg5_-ksu")
+(points 560 140 620 140)
+(fromMultiplicityPosition 555 145))
+($3 7 < 0_-fvi_hrnjywg5_-kst "Chain" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-kst")
+(bbx 290 370 70 70))
+($4 8 < 0_-fvi_hrnjywg5_-kss "" 2
+(toMultiplicityPosition 360 390)
+(toRolePosition 365 395)
+(uid "0_-fvi_hrnjywg5_-kss")
+(points 625 270 625 390 360 390)
+(fromMultiplicityPosition 605 275))
+($3 9 < 0_-fvi_hrnjywg5_-ksr "Residue" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-ksr")
+(bbx 270 530 170 120))
+($4 10 < 0_-fvi_hrnjywg5_-ksq "" 2
+(toMultiplicityPosition 310 510)
+(uid "0_-fvi_hrnjywg5_-ksq")
+(points 320 440 320 530)
+(fromMultiplicityPosition 330 445))
+($3 11 < 0_-fvi_hrnjywg5_-ksp "Atom" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-ksp")
+(bbx 510 420 220 340))
+($4 12 < 0_-fvi_hrnjywg5_-kso "" 2
+(toMultiplicityPosition 500 565)
+(uid "0_-fvi_hrnjywg5_-kso")
+(points 440 555 510 555)
+(fromMultiplicityPosition 440 570))
+($3 13 < 0_-fvi_hrnjywg5_-ksm "Chain" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-ksm")
+(bbx 10 180 200 260))
+($4 14 < 0_-fvi_hrnjywg5_-ksl "" 2
+(toMultiplicityPosition 220 225)
+(uid "0_-fvi_hrnjywg5_-ksl")
+(points 330 225 210 225)
+(fromMultiplicityPosition 320 235))
+($3 15 < 0_-fvi_hrnjywg5_-ksk "Residue" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-ksk")
+(bbx 10 570 210 240))
+($4 16 < 0_-fvi_hrnjywg5_-ksj "" 2
+(toMultiplicityPosition 255 815)
+(uid "0_-fvi_hrnjywg5_-ksj")
+(points 220 810 260 810)
+(fromMultiplicityPosition 225 780))
+($4 17 < 0_-fvi_hrnjywg5_-ksi "" 2
+(toMultiplicityPosition 95 565)
+(uid "0_-fvi_hrnjywg5_-ksi")
+(points 95 440 95 570)
+(fromMultiplicityPosition 105 445))
+($4 18 < 0_-fvi_hrnjywg5_-ksh "" 2
+(toMultiplicityPosition 220 395)
+(uid "0_-fvi_hrnjywg5_-ksh")
+(points 290 415 210 415))
+($4 19 < 0_-fvi_hrnjywg5_-ksg "" 2
+(toMultiplicityPosition 225 605)
+(uid "0_-fvi_hrnjywg5_-ksg")
+(points 270 615 220 615))
+($4 20 < 0_-fvi_hrnjywg5_-ksf "" 2
+(toMultiplicityPosition 350 710)
+(uid "0_-fvi_hrnjywg5_-ksf")
+(points 510 715 360 715 360 800))
+($3 21 < 0_-fvi_hrnjywg5_-kse "ChemAtom" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-kse")
+(bbx 1030 740 240 130))
+($4 22 < 0_-fvi_hrnjywg5_-ksd "" 2
+(toMultiplicityPosition 1000 905)
+(uid "0_-fvi_hrnjywg5_-ksd")
+(points 460 900 1030 900 1030 870))
+($4 23 < 0_-fvi_hrnjywg5_-ksc "" 2
+(toMultiplicityPosition 1015 755)
+(uid "0_-fvi_hrnjywg5_-ksc")
+(points 730 760 730 785 1030 785))
+($3 24 < 0_-fvi_hrnjywg5_-ksb "StructureGroup" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-ksb")
+(bbx 10 30 260 90))
+($4 25 < 0_-fvi_hrnjywg5_-ksa "" 2
+(toMultiplicityPosition 275 105)
+(uid "0_-fvi_hrnjywg5_-ksa")
+(points 330 105 270 105)
+(fromMultiplicityPosition 315 120))
+($3 26 < 0_-fvi_hrnjywg5_-ks9 "Model" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-ks9")
+(bbx 840 30 180 210))
+($4 27 < 0_-fvi_hrnjywg5_-ks8 "" 2
+(toMultiplicityPosition 830 125)
+(uid "0_-fvi_hrnjywg5_-ks8")
+(points 760 125 840 125)
+(fromMultiplicityPosition 760 135))
+($4 28 < 0_-fvi_hrnjywg5_-ks6 "" 2
+(toMultiplicityPosition 825 35)
+(uid "0_-fvi_hrnjywg5_-ks6")
+(points 270 35 840 35)
+(fromMultiplicityPosition 275 35))
+($3 29 < 0_-fvi_hrnjywg5_-ks5 "DataMatrix" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-ks5")
+(bbx 760 430 160 90))
+($4 30 < 0_-fvi_hrnjywg5_-ks4 "" 2
+(toMultiplicityPosition 765 410)
+(toRolePosition 780 410)
+(uid "0_-fvi_hrnjywg5_-ks4")
+(points 760 270 760 430)
+(fromMultiplicityPosition 740 280))
+($3 31 < 0_-fvi_hrnjywg5_-ks3 "EnsembleDataNames" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-ks3")
+(bbx 1080 210 120 60))
+($4 32 < 0_-fvi_hrnjywg5_-ks2 "" 2
+(toMultiplicityPosition 715 400)
+(toRolePosition 605 400)
+(uid "0_-fvi_hrnjywg5_-ks2")
+(points 705 270 705 420)
+(toOrderedPosition 640 380))
+($3 33 < 0_-fvi_hrnjywg5_-ks1 "FloatMatrixObject" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-ks1")
+(bbx 1010 350 220 270))
+($5 34 < 0_-fvi_hrnjywg5_-ks0 "" 2
+(uid "0_-fvi_hrnjywg5_-ks0")
+(points 920 475 1010 475))
+($2 35 < 0_-fvi_hrnjywg5_-krz "_MolStructure" 1
+(name "_MolStructure"
+)
+(uid "0_-fvi_hrnjywg5_-krz")
+(diagramType "class"))
+($3 36 < 0_-fvi_hrnjywg5_-krx "Atom" 35
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-krx")
+(bbx 30 390 200 30))
+($3 37 < 0_-fvi_hrnjywg5_-krw "MolSystem" 35
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-krw")
+(bbx 30 120 230 30))
+($3 38 < 0_-fvi_hrnjywg5_-krv "StructureEnsemble" 35
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-krv")
+(bbx 370 120 160 30))
+($4 39 < 0_-fvi_hrnjywg5_-kru "" 35
+(toMultiplicityPosition 360 140)
+(uid "0_-fvi_hrnjywg5_-kru")
+(points 260 135 370 135)
+(fromMultiplicityPosition 285 110))
+($3 40 < 0_-fvi_hrnjywg5_-krt "Chain" 35
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-krt")
+(bbx 480 210 50 30))
+($4 41 < 0_-fvi_hrnjywg5_-krs "" 35
+(toMultiplicityPosition 515 190)
+(toRolePosition 415 190)
+(uid "0_-fvi_hrnjywg5_-krs")
+(points 505 150 505 210)
+(fromMultiplicityPosition 490 160))
+($3 42 < 0_-fvi_hrnjywg5_-krr "Residue" 35
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-krr")
+(bbx 470 300 60 30))
+($4 43 < 0_-fvi_hrnjywg5_-krq "" 35
+(toMultiplicityPosition 515 280)
+(uid "0_-fvi_hrnjywg5_-krq")
+(points 505 240 505 300)
+(fromMultiplicityPosition 490 245))
+($3 44 < 0_-fvi_hrnjywg5_-krp "Atom" 35
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-krp")
+(bbx 480 390 50 30))
+($4 45 < 0_-fvi_hrnjywg5_-kro "" 35
+(toMultiplicityPosition 515 370)
+(uid "0_-fvi_hrnjywg5_-kro")
+(points 505 330 505 390)
+(fromMultiplicityPosition 485 335))
+($3 46 < 0_-fvi_hrnjywg5_-krm "Chain" 35
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-krm")
+(bbx 30 210 200 30))
+($4 47 < 0_-fvi_hrnjywg5_-krl "" 35
+(toMultiplicityPosition 90 190)
+(uid "0_-fvi_hrnjywg5_-krl")
+(points 85 150 85 210)
+(fromMultiplicityPosition 65 155))
+($3 48 < 0_-fvi_hrnjywg5_-krk "Residue" 35
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-krk")
+(bbx 30 300 210 30))
+($4 49 < 0_-fvi_hrnjywg5_-krj "" 35
+(toMultiplicityPosition 90 370)
+(uid "0_-fvi_hrnjywg5_-krj")
+(points 85 330 85 390)
+(fromMultiplicityPosition 70 335))
+($4 50 < 0_-fvi_hrnjywg5_-kri "" 35
+(toMultiplicityPosition 90 280)
+(uid "0_-fvi_hrnjywg5_-kri")
+(points 85 240 85 300)
+(fromMultiplicityPosition 70 250))
+($4 51 < 0_-fvi_hrnjywg5_-krh "" 35
+(toMultiplicityPosition 240 235)
+(uid "0_-fvi_hrnjywg5_-krh")
+(points 480 225 230 225))
+($4 52 < 0_-fvi_hrnjywg5_-krg "" 35
+(toMultiplicityPosition 250 325)
+(uid "0_-fvi_hrnjywg5_-krg")
+(points 470 315 240 315))
+($4 53 < 0_-fvi_hrnjywg5_-krf "" 35
+(toMultiplicityPosition 250 410)
+(uid "0_-fvi_hrnjywg5_-krf")
+(points 480 405 230 405))
+($3 54 < 0_-fvi_hrnjywg5_-kre "ChemAtom" 35
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-kre")
+(bbx 240 440 240 30))
+($4 55 < 0_-fvi_hrnjywg5_-krd "" 35
+(toMultiplicityPosition 225 460)
+(uid "0_-fvi_hrnjywg5_-krd")
+(points 85 420 85 455 240 455))
+($4 56 < 0_-fvi_hrnjywg5_-krc "" 35
+(toMultiplicityPosition 490 455)
+(uid "0_-fvi_hrnjywg5_-krc")
+(points 505 420 505 450 480 450))
+($3 57 < 0_-fvi_hrnjywg5_-krb "Model" 35
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-krb")
+(bbx 600 120 50 30))
+($4 58 < 0_-fvi_hrnjywg5_-kr9 "" 35
+(toMultiplicityPosition 590 140)
+(uid "0_-fvi_hrnjywg5_-kr9")
+(points 530 135 600 135)
+(fromMultiplicityPosition 540 110))
+($3 59 < 0_-fvi_hrnjywg5_-kr8 "StructureGroup" 35
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-kr8")
+(bbx 540 50 260 30))
+($4 60 < 0_-fvi_hrnjywg5_-kr7 "" 35
+(toMultiplicityPosition 615 85)
+(uid "0_-fvi_hrnjywg5_-kr7")
+(points 625 80 625 120)
+(fromMultiplicityPosition 630 105))
+($4 61 < 0_-fvi_hrnjywg5_-kr6 "" 35
+(toMultiplicityPosition 650 30)
+(uid "0_-fvi_hrnjywg5_-kr6")
+(points 30 135 5 135 5 25 660 25 660 50)
+(fromMultiplicityPosition 10 105))
+($3 62 < 0_-fvi_hrnjywg5_-kr5 "DataMatrix" 35
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-kr5")
+(bbx 390 50 80 30))
+($4 63 < 0_-fvi_hrnjywg5_-kr4 "" 35
+(toMultiplicityPosition 440 80)
+(uid "0_-fvi_hrnjywg5_-kr4")
+(points 435 120 435 80)
+(fromMultiplicityPosition 420 100))
+($6 64 < -yk94ms_85r_eqyymv3f_-jxk "#<anon> (MolStructure, MolSystem)" 1
+(uid "-yk94ms_85r_eqyymv3f_-jxk"))
+($7 65 < 0_-fvi_hrnjywg5_-ko8 "Chain" 1
+(name "Chain"
+)
+(uid "0_-fvi_hrnjywg5_-ko8"))
+($8 66 < 0_-fvi_hrnjywg5_-ko7 "code" 65
+(changeability "frozen")
+(name "code"
+)
+(uid "0_-fvi_hrnjywg5_-ko7")
+(multiplicity "1"))
+($9 67 < 0_-fvi_hrnjywg5_-ko6 "documentation" 66
+(name "documentation"
+)
+(value "Chain code - key for object."
+)
+(uid "0_-fvi_hrnjywg5_-ko6"))
+($9 68 < 0_-fvi_hrnjywg5_-ko5 "guid" 66
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:36_00051"
+)
+(uid "0_-fvi_hrnjywg5_-ko5"))
+($10 69 < 0_-fvi_hrnjywg5_-ko4 "getChain" 65
+(name "getChain"
+)
+(uid "0_-fvi_hrnjywg5_-ko4")
+(isQuery true))
+($9 70 < 0_-fvi_hrnjywg5_-ko3 "documentation" 69
+(name "documentation"
+)
+(value "getter for derived link 'chain'"
+)
+(uid "0_-fvi_hrnjywg5_-ko3"))
+($9 71 < 0_-fvi_hrnjywg5_-ko2 "opType" 69
+(name "opType"
+)
+(value "get"
+)
+(uid "0_-fvi_hrnjywg5_-ko2"))
+($9 72 < 0_-fvi_hrnjywg5_-ko1 "guid" 69
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:36_00052"
+)
+(uid "0_-fvi_hrnjywg5_-ko1"))
+($9 73 < 0_-fvi_hrnjywg5_-ko0 "code:java" 69
+(name "code:java"
+)
+(value "result = getStructureEnsemble().getMolSystem().findFirstChain(\"code\", getCode());"
+)
+(uid "0_-fvi_hrnjywg5_-ko0"))
+($9 74 < 0_-fvi_hrnjywg5_-knz "code:python" 69
+(name "code:python"
+)
+(value "result = self.getByNavigation("
+" 'structureEnsemble', "
+" 'molSystem', "
+" ('chains', self.code),"
+")"
+)
+(uid "0_-fvi_hrnjywg5_-knz"))
+($11 75 < 0_-fvi_hrnjywg5_-kny "#<anon> (Chain, Residue)##," 65
+(name "")
+(uid "0_-fvi_hrnjywg5_-kny"))
+($12 76 < 0_-fvi_hrnjywg5_-knx "#0" 75
+(changeability "frozen")
+(aggregation "composite")
+(uid "0_-fvi_hrnjywg5_-knx")
+(multiplicity "1"))
+($9 77 < 0_-fvi_hrnjywg5_-knw "guid" 76
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:36_00048"
+)
+(uid "0_-fvi_hrnjywg5_-knw"))
+($12 78 < 0_-fvi_hrnjywg5_-knv "#1" 75
+(uid "0_-fvi_hrnjywg5_-knv")
+(multiplicity "*"))
+($9 79 < 0_-fvi_hrnjywg5_-knu "guid" 78
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:36_00049"
+)
+(uid "0_-fvi_hrnjywg5_-knu"))
+($13 80 < 0_-fvi_hrnjywg5_-knt "#<anon> (Chain, DataObject)" 65
+(uid "0_-fvi_hrnjywg5_-knt"))
+($11 81 < 0_-fvi_hrnjywg5_-kns "#<anon> (Chain, Chain)##," 65
+(name "")
+(uid "0_-fvi_hrnjywg5_-kns"))
+($12 82 < 0_-fvi_hrnjywg5_-knr "#0" 81
+(uid "0_-fvi_hrnjywg5_-knr")
+(isNavigable false))
+($12 83 < 0_-fvi_hrnjywg5_-knq "#1" 81
+(changeability "frozen")
+(uid "0_-fvi_hrnjywg5_-knq"))
+($9 84 < 0_-fvi_hrnjywg5_-knp "documentation" 83
+(name "documentation"
+)
+(value "MolSystem Chain, coresponding to Coordinate Chain"
+)
+(uid "0_-fvi_hrnjywg5_-knp"))
+($9 85 < 0_-fvi_hrnjywg5_-kno "guid" 83
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:36_00050"
+)
+(uid "0_-fvi_hrnjywg5_-kno"))
+($9 86 < 0_-fvi_hrnjywg5_-knn "isDerived" 81
+(name "isDerived"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-knn"))
+($11 87 < 0_-fvi_hrnjywg5_-knm "#<anon> (Chain, ChainValidation)##," 65
+(name "")
+(uid "0_-fvi_hrnjywg5_-knm"))
+($12 88 < 0_-fvi_hrnjywg5_-knl "#0" 87
+(uid "0_-fvi_hrnjywg5_-knl")
+(multiplicity "*"))
+($9 89 < 0_-fvi_hrnjywg5_-knk "guid" 88
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:55:55_00023"
+)
+(uid "0_-fvi_hrnjywg5_-knk"))
+($9 90 < 0_-fvi_hrnjywg5_-knj "documentation" 88
+(name "documentation"
+)
+(value "Chains being validated"
+)
+(uid "0_-fvi_hrnjywg5_-knj"))
+($12 91 < 0_-fvi_hrnjywg5_-kni "#1" 87
+(uid "0_-fvi_hrnjywg5_-kni")
+(multiplicity "*"))
+($9 92 < 0_-fvi_hrnjywg5_-knh "guid" 91
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:55:55_00024"
+)
+(uid "0_-fvi_hrnjywg5_-knh"))
+($9 93 < 0_-fvi_hrnjywg5_-kng "documentation" 91
+(name "documentation"
+)
+(value "Validation results that include Chain"
+)
+(uid "0_-fvi_hrnjywg5_-kng"))
+($14 94 < 0_-fvi_hrnjywg5_-knf "KeywordDefinition_fits_Chain" 91
+(name "KeywordDefinition_fits_Chain"
+)
+(uid "0_-fvi_hrnjywg5_-knf")
+(body "code:python"
+"_"
+"ll= value.keywordDefinition.targetNames"
+"isValid = (not ll or self.qualifiedName in ll)"
+"_"
+"code:java"
+"_"
+"java.util.Set<java.lang.String> ll = other.getKeywordDefinition().getTargetNames();"
+"isValid = (ll.isEmpty() || ll.contains(getQualifiedName()));"
+))
+($9 95 < 0_-fvi_hrnjywg5_-kne "guid" 94
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-15-11:19:44_00001"
+)
+(uid "0_-fvi_hrnjywg5_-kne"))
+($9 96 < 0_-fvi_hrnjywg5_-knd "documentation" 65
+(name "documentation"
+)
+(value "Chain of Molecular System coordinate description."
+)
+(uid "0_-fvi_hrnjywg5_-knd"))
+($9 97 < 0_-fvi_hrnjywg5_-knc "guid" 65
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:55_00002"
+)
+(uid "0_-fvi_hrnjywg5_-knc"))
+($9 98 < 0_-fvi_hrnjywg5_-knb "keyNames" 65
+(name "keyNames"
+)
+(value "code"
+)
+(uid "0_-fvi_hrnjywg5_-knb"))
+($9 99 < 0_-fvi_hrnjywg5_-kna "destructorCode:python" 65
+(name "destructorCode:python"
+)
+(value "# Check if there are models"
+"if not self.root.override:"
+"  # The following code interacts directly with the deletion implementation (use of 'objsToBeDeleted'). "
+"  # This is bad, but the only way to accomplish the desired result."
+"  structureEnsemble = self.structureEnsemble"
+"  if structureEnsemble not in objsToBeDeleted and structureEnsemble.findFirstModel() is not None:"
+"      raise ApiError(\"Chains may not be deleted in StructureEnsembles with Models\")"
+)
+(uid "0_-fvi_hrnjywg5_-kna"))
+($9 100 < 0_-fvi_hrnjywg5_-kn9 "destructorCode:java" 65
+(name "destructorCode:java"
+)
+(value "if (!getRoot().getOverride()) {"
+"  // The following code interacts directly with the deletion implementation (use of 'nowDeleted'). "
+"  // This is bad, but the only way to accomplish the desired result."
+"  if (!objsToBeDeleted.contains(getStructureEnsemble() && !(getStructureEnsemble().findFirstModel() == null)) {"
+"    throw new memops.general.ApiException(\"Chain \" + getFullKey() + \": Chains can not be deleted when models are present.\");"
+"  }"
+"}"
+)
+(uid "0_-fvi_hrnjywg5_-kn9"))
+($7 101 < 0_-fvi_hrnjywg5_-kn8 "Residue" 1
+(name "Residue"
+)
+(uid "0_-fvi_hrnjywg5_-kn8"))
+($8 102 < 0_-fvi_hrnjywg5_-kn4 "seqCode" 101
+(changeability "frozen")
+(name "seqCode"
+)
+(uid "0_-fvi_hrnjywg5_-kn4")
+(multiplicity "1"))
+($9 103 < 0_-fvi_hrnjywg5_-kn3 "documentation" 102
+(name "documentation"
+)
+(value "Molecular sequence number as used in Coordinate description. "
+)
+(uid "0_-fvi_hrnjywg5_-kn3"))
+($9 104 < 0_-fvi_hrnjywg5_-kn2 "guid" 102
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:36_00058"
+)
+(uid "0_-fvi_hrnjywg5_-kn2"))
+($8 105 < 0_-fvi_hrnjywg5_-kn1 "seqInsertCode" 101
+(initialValue " "
+)
+(changeability "frozen")
+(name "seqInsertCode"
+)
+(uid "0_-fvi_hrnjywg5_-kn1")
+(multiplicity "1"))
+($9 106 < 0_-fvi_hrnjywg5_-kn0 "documentation" 105
+(name "documentation"
+)
+(value "Molecular sequence insert code as used in Coordinate description."
+)
+(uid "0_-fvi_hrnjywg5_-kn0"))
+($9 107 < 0_-fvi_hrnjywg5_-kmz "guid" 105
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:36_00059"
+)
+(uid "0_-fvi_hrnjywg5_-kmz"))
+($8 108 < 0_6e6_hy7f8lhz_-p8s "code3Letter" 101
+(name "code3Letter"
+)
+(uid "0_6e6_hy7f8lhz_-p8s"))
+($9 109 < 0_6e6_hy7f8lhz_-p8r "documentation" 108
+(name "documentation"
+)
+(value "ChemComp.code3Letter for residue"
+)
+(uid "0_6e6_hy7f8lhz_-p8r"))
+($9 110 < 0_6e6_hy7f8lhz_-p7k "guid" 108
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2014-07-30-17:44:23_00010"
+)
+(uid "0_6e6_hy7f8lhz_-p7k"))
+($8 111 < 0_85r_ih391bwo_-p98 "seqId" 101
+(name "seqId"
+)
+(uid "0_85r_ih391bwo_-p98"))
+($9 112 < 0_85r_ih391bwo_-p97 "documentation" 111
+(name "documentation"
+)
+(value "Identifier corresponding to the molResidue identifier (self.residue.molResidue.serial)"
+)
+(uid "0_85r_ih391bwo_-p97"))
+($9 113 < 0_85r_ih391bwo_-p96 "guid" 111
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:36_00057"
+)
+(uid "0_85r_ih391bwo_-p96"))
+($10 114 < 0_-fvi_hrnjywg5_-kmy "getResidue" 101
+(name "getResidue"
+)
+(uid "0_-fvi_hrnjywg5_-kmy")
+(isQuery true))
+($9 115 < 0_-fvi_hrnjywg5_-kmx "documentation" 114
+(name "documentation"
+)
+(value "getter for derived link 'residue'"
+)
+(uid "0_-fvi_hrnjywg5_-kmx"))
+($9 116 < 0_-fvi_hrnjywg5_-kmw "opType" 114
+(name "opType"
+)
+(value "get"
+)
+(uid "0_-fvi_hrnjywg5_-kmw"))
+($9 117 < 0_-fvi_hrnjywg5_-kmv "guid" 114
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:36_00060"
+)
+(uid "0_-fvi_hrnjywg5_-kmv"))
+($9 118 < 0_-fvi_hrnjywg5_-kmu "code:java" 114
+(name "code:java"
+)
+(value "result = getChain().getChain().findFirstResidue(\"seqId\", getSeqId());"
+)
+(uid "0_-fvi_hrnjywg5_-kmu"))
+($9 119 < 0_-fvi_hrnjywg5_-kmt "code:python" 114
+(name "code:python"
+)
+(value "# NB left with direct access for speed only"
+"chain = dataDict['chain']"
+"molChain = chain.getByNavigation("
+" 'structureEnsemble', "
+" 'molSystem', "
+" ('chains', chain.__dict__['code'])"
+")"
+"result = molChain and molChain.findFirstResidue(seqCode=dataDict['seqCode'], seqInsertCode=dataDict['seqInsertCode']) "
+)
+(uid "0_-fvi_hrnjywg5_-kmt"))
+($11 120 < 0_-fvi_hrnjywg5_-kms "#<anon> (Residue, Atom)##," 101
+(name "")
+(uid "0_-fvi_hrnjywg5_-kms"))
+($12 121 < 0_-fvi_hrnjywg5_-kmr "#0" 120
+(changeability "frozen")
+(aggregation "composite")
+(uid "0_-fvi_hrnjywg5_-kmr")
+(multiplicity "1"))
+($9 122 < 0_-fvi_hrnjywg5_-kmq "guid" 121
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:36_00054"
+)
+(uid "0_-fvi_hrnjywg5_-kmq"))
+($12 123 < 0_-fvi_hrnjywg5_-kmp "#1" 120
+(uid "0_-fvi_hrnjywg5_-kmp")
+(multiplicity "*"))
+($9 124 < 0_-fvi_hrnjywg5_-kmo "guid" 123
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:36_00055"
+)
+(uid "0_-fvi_hrnjywg5_-kmo"))
+($13 125 < 0_-fvi_hrnjywg5_-kmn "#<anon> (Residue, DataObject)" 101
+(uid "0_-fvi_hrnjywg5_-kmn"))
+($11 126 < 0_-fvi_hrnjywg5_-kmm "#<anon> (Residue, Residue)##," 101
+(name "")
+(uid "0_-fvi_hrnjywg5_-kmm"))
+($12 127 < 0_-fvi_hrnjywg5_-kml "#0" 126
+(uid "0_-fvi_hrnjywg5_-kml")
+(isNavigable false))
+($12 128 < 0_-fvi_hrnjywg5_-kmk "#1" 126
+(changeability "frozen")
+(uid "0_-fvi_hrnjywg5_-kmk"))
+($9 129 < 0_-fvi_hrnjywg5_-kmj "documentation" 128
+(name "documentation"
+)
+(value "MolSystem Residue, coresponding to Coordinate Residue"
+)
+(uid "0_-fvi_hrnjywg5_-kmj"))
+($9 130 < 0_-fvi_hrnjywg5_-kmi "guid" 128
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:36_00056"
+)
+(uid "0_-fvi_hrnjywg5_-kmi"))
+($9 131 < 0_-fvi_hrnjywg5_-kmh "isDerived" 126
+(name "isDerived"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-kmh"))
+($11 132 < 0_-fvi_hrnjywg5_-kmg "#<anon> (Residue, ResidueValidation)##," 101
+(name "")
+(uid "0_-fvi_hrnjywg5_-kmg"))
+($12 133 < 0_-fvi_hrnjywg5_-kmf "#0" 132
+(uid "0_-fvi_hrnjywg5_-kmf")
+(multiplicity "*"))
+($9 134 < 0_-fvi_hrnjywg5_-kme "guid" 133
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:55:55_00027"
+)
+(uid "0_-fvi_hrnjywg5_-kme"))
+($9 135 < 0_-fvi_hrnjywg5_-kmd "documentation" 133
+(name "documentation"
+)
+(value "Residues being validated"
+)
+(uid "0_-fvi_hrnjywg5_-kmd"))
+($12 136 < 0_-fvi_hrnjywg5_-kmc "#1" 132
+(uid "0_-fvi_hrnjywg5_-kmc")
+(multiplicity "*"))
+($9 137 < 0_-fvi_hrnjywg5_-kmb "guid" 136
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:55:55_00028"
+)
+(uid "0_-fvi_hrnjywg5_-kmb"))
+($9 138 < 0_-fvi_hrnjywg5_-kma "documentation" 136
+(name "documentation"
+)
+(value "Validation results that include Residue"
+)
+(uid "0_-fvi_hrnjywg5_-kma"))
+($14 139 < 0_-fvi_hrnjywg5_-km9 "KeywordDefinition_fits_Residue" 136
+(name "KeywordDefinition_fits_Residue"
+)
+(uid "0_-fvi_hrnjywg5_-km9")
+(body "code:python"
+"_"
+"ll= value.keywordDefinition.targetNames"
+"isValid = (not ll or self.qualifiedName in ll)"
+"_"
+"code:java"
+"_"
+"java.util.Set<java.lang.String> ll = other.getKeywordDefinition().getTargetNames();"
+"isValid = (ll.isEmpty() || ll.contains(getQualifiedName()));"
+))
+($9 140 < 0_-fvi_hrnjywg5_-km8 "guid" 139
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-15-11:19:44_00002"
+)
+(uid "0_-fvi_hrnjywg5_-km8"))
+($9 141 < 0_-fvi_hrnjywg5_-km7 "documentation" 101
+(name "documentation"
+)
+(value "Residue in Molsystem Coordinate description"
+)
+(uid "0_-fvi_hrnjywg5_-km7"))
+($9 142 < 0_-fvi_hrnjywg5_-km6 "guid" 101
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:55_00003"
+)
+(uid "0_-fvi_hrnjywg5_-km6"))
+($9 143 < 0_-fvi_hrnjywg5_-km5 "keyNames" 101
+(name "keyNames"
+)
+(value "seqCode, seqInsertCode"
+)
+(uid "0_-fvi_hrnjywg5_-km5"))
+($9 144 < 0_-fvi_hrnjywg5_-km4 "destructorCode:python" 101
+(name "destructorCode:python"
+)
+(value "# Check if there are models"
+"if not self.root.override:"
+"  # The following code interacts directly with the deletion implementation (use of 'objsToBeDeleted'). "
+"  # This is bad, but the only way to accomplish the desired result."
+"  if self.chain not in objsToBeDeleted:"
+"    if self.topObject.findFirstModel() is not None:"
+"      raise ApiError(\"Residues may not be deleted in StructureEnsembles with Models\")"
+)
+(uid "0_-fvi_hrnjywg5_-km4"))
+($9 145 < 0_-fvi_hrnjywg5_-km3 "destructorCode:java" 101
+(name "destructorCode:java"
+)
+(value "if (!getRoot().getOverride()) {"
+"  // The following code interacts directly with the deletion implementation (use of 'nowDeleted'). "
+"  // This is bad, but the only way to accomplish the desired result."
+"  if (!objsToBeDeleted.contains(getChain() && !(getTopObject().findFirstModel() == null)) {"
+"    throw new memops.general.ApiException(\"Residue \" + getFullKey() + \": Residues can not be deleted when models are present.\");"
+"  }"
+"}"
+)
+(uid "0_-fvi_hrnjywg5_-km3"))
+($7 146 < 0_-fvi_hrnjywg5_-km2 "Atom" 1
+(name "Atom"
+)
+(uid "0_-fvi_hrnjywg5_-km2"))
+($8 147 < 0_-fvi_hrnjywg5_-km1 "name" 146
+(changeability "frozen")
+(name "name"
+)
+(uid "0_-fvi_hrnjywg5_-km1")
+(multiplicity "1"))
+($9 148 < 0_-fvi_hrnjywg5_-km0 "documentation" 147
+(name "documentation"
+)
+(value "Atom Name - identical to Molsystem.Atom.name of corersponding Molsysterm Atom. Part of object key, and foreign key used for deriving the link to MolSystem.Atom"
+)
+(uid "0_-fvi_hrnjywg5_-km0"))
+($9 149 < 0_-fvi_hrnjywg5_-klz "guid" 147
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:36_00066"
+)
+(uid "0_-fvi_hrnjywg5_-klz"))
+($10 150 < 0_-fvi_hrnjywg5_-kly "getAtom" 146
+(name "getAtom"
+)
+(uid "0_-fvi_hrnjywg5_-kly")
+(isQuery true))
+($9 151 < 0_-fvi_hrnjywg5_-klx "documentation" 150
+(name "documentation"
+)
+(value "getter for derived link 'atom'"
+)
+(uid "0_-fvi_hrnjywg5_-klx"))
+($9 152 < 0_-fvi_hrnjywg5_-klw "opType" 150
+(name "opType"
+)
+(value "get"
+)
+(uid "0_-fvi_hrnjywg5_-klw"))
+($9 153 < 0_-fvi_hrnjywg5_-klv "guid" 150
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:36_00068"
+)
+(uid "0_-fvi_hrnjywg5_-klv"))
+($9 154 < 0_-fvi_hrnjywg5_-klu "code:java" 150
+(name "code:java"
+)
+(value "result = getResidue().getResidue().findFirstAtom(\"name\", getName());"
+)
+(uid "0_-fvi_hrnjywg5_-klu"))
+($9 155 < 0_-fvi_hrnjywg5_-klt "code:python" 150
+(name "code:python"
+)
+(value "# NB left with direct access for speed only"
+"residueDict= dataDict['residue'].__dict__"
+"chain = residueDict['chain']"
+"result = chain.getByNavigation("
+" 'structureEnsemble', "
+" 'molSystem', "
+" ('chains', chain.__dict__['code']),"
+" ('residues', residueDict['seqId']), "
+" ('atoms', dataDict['name']), "
+")"
+)
+(uid "0_-fvi_hrnjywg5_-klt"))
+($8 156 < 0_-fvi_hrnjywg5_-kls "altLocationCode" 146
+(initialValue " "
+)
+(changeability "frozen")
+(name "altLocationCode"
+)
+(uid "0_-fvi_hrnjywg5_-kls")
+(multiplicity "1"))
+($9 157 < 0_-fvi_hrnjywg5_-klr "documentation" 156
+(name "documentation"
+)
+(value "Alternative locatoin code defaults to single space (' ')."
+)
+(uid "0_-fvi_hrnjywg5_-klr"))
+($9 158 < 0_-fvi_hrnjywg5_-klq "guid" 156
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-22-17:23:27_00005"
+)
+(uid "0_-fvi_hrnjywg5_-klq"))
+($8 159 < 0_-fvi_hrnjywg5_-klp "index" 146
+(changeability "frozen")
+(name "index"
+)
+(uid "0_-fvi_hrnjywg5_-klp")
+(multiplicity "1"))
+($9 160 < 0_-fvi_hrnjywg5_-klo "isAutomatic" 159
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-klo"))
+($9 161 < 0_-fvi_hrnjywg5_-kln "documentation" 159
+(name "documentation"
+)
+(value "index of Atom in list of Atoms. Set by implementation."
+)
+(uid "0_-fvi_hrnjywg5_-kln"))
+($9 162 < 0_-fvi_hrnjywg5_-klm "guid" 159
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-22-17:23:27_00006"
+)
+(uid "0_-fvi_hrnjywg5_-klm"))
+($14 163 < 0_-fvi_hrnjywg5_-kll "index_point_to_object_in_StructureEnsemble_orderedAtoms" 159
+(name "index_point_to_object_in_StructureEnsemble_orderedAtoms"
+)
+(uid "0_-fvi_hrnjywg5_-kll")
+(body "code:python"
+"_"
+"self.topObject.__dict__['orderedAtoms'][value] is self"
+"_"
+"code:java"
+"_"
+"true /* NBNB TBD */"
+))
+($9 164 < 0_-fvi_hrnjywg5_-klk "guid" 163
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-04-07-12:25:59_00001"
+)
+(uid "0_-fvi_hrnjywg5_-klk"))
+($8 165 < 0_85r_ih391bwo_-p95 "elementName" 146
+(initialValue "Unknown"
+)
+(name "elementName"
+)
+(uid "0_85r_ih391bwo_-p95")
+(multiplicity "1"))
+($9 166 < 0_85r_ih391bwo_-p94 "documentation" 165
+(name "documentation"
+)
+(value "Element name (e.g. 'C', 'He', 'Sn'). V3 successor of 'elementSymbol'"
+)
+(uid "0_85r_ih391bwo_-p94"))
+($9 167 < 0_85r_ih391bwo_-p91 "guid" 165
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2015-11-17-18:46:32_00001"
+)
+(uid "0_85r_ih391bwo_-p91"))
+($14 168 < 0_85r_ih391bwo_-p93 "element_names_are_Titlecase" 165
+(name "element_names_are_Titlecase"
+)
+(uid "0_85r_ih391bwo_-p93")
+(body "python"
+"_"
+"value == value.title()"
+))
+($9 169 < 0_85r_ih391bwo_-p92 "guid" 168
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2015-11-17-18:46:32_00002"
+)
+(uid "0_85r_ih391bwo_-p92"))
+($8 170 < 0_-fvi_hrnjywg5_-klj "elementSymbol" 146
+(changeability "frozen")
+(name "elementSymbol"
+)
+(uid "0_-fvi_hrnjywg5_-klj")
+(multiplicity "1"))
+($9 171 < 0_-fvi_hrnjywg5_-kli "isDerived" 170
+(name "isDerived"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-kli"))
+($9 172 < 0_-fvi_hrnjywg5_-klh "documentation" 170
+(name "documentation"
+)
+(value "Element Symbol (e.g. 'C', 'He', 'Sn'). Derived from link to Atom. Deprecated - used for V\" compatibility only."
+)
+(uid "0_-fvi_hrnjywg5_-klh"))
+($9 173 < 0_-fvi_hrnjywg5_-klg "guid" 170
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:36_00067"
+)
+(uid "0_-fvi_hrnjywg5_-klg"))
+($10 174 < 0_-fvi_hrnjywg5_-klf "getElementSymbol" 146
+(name "getElementSymbol"
+)
+(uid "0_-fvi_hrnjywg5_-klf")
+(isQuery true))
+($9 175 < 0_-fvi_hrnjywg5_-kle "opType" 174
+(name "opType"
+)
+(value "get"
+)
+(uid "0_-fvi_hrnjywg5_-kle"))
+($9 176 < 0_-fvi_hrnjywg5_-kld "documentation" 174
+(name "documentation"
+)
+(value "getter for derived attribute elementSymbol"
+)
+(uid "0_-fvi_hrnjywg5_-kld"))
+($9 177 < 0_-fvi_hrnjywg5_-klc "guid" 174
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:36_00070"
+)
+(uid "0_-fvi_hrnjywg5_-klc"))
+($9 178 < 0_-fvi_hrnjywg5_-klb "code:java" 174
+(name "code:java"
+)
+(value "ccp.api.molecule.ChemComp.AbstractChemAtom rr = getResidue().getResidue().getChemCompVar().findFirstChemAtom(\"name\", getName());"
+""
+"if (rr instanceof ccp.api.molecule.ChemComp.ChemAtom)"
+"  result = ((ccp.api.molecule.ChemComp.ChemAtom) rr).getElementSymbol();"
+"else"
+"  result = null;"
+)
+(uid "0_-fvi_hrnjywg5_-klb"))
+($9 179 < 0_-fvi_hrnjywg5_-kla "code:python" 174
+(name "code:python"
+)
+(value "result = self.elementName"
+"if result == 'Unknown':"
+"  residue = self.residue"
+"  if residue is not None:"
+"    atom = residue.residue.chemCompVar.findFirstChemAtom(name=self.name)"
+"    if atom is not None and atom.className == 'ChemAtom':"
+"      result = atom.elementSymbol"
+)
+(uid "0_-fvi_hrnjywg5_-kla"))
+($10 180 < 0_-fvi_hrnjywg5_-kl9 "getChemAtom" 146
+(name "getChemAtom"
+)
+(uid "0_-fvi_hrnjywg5_-kl9")
+(isQuery true))
+($9 181 < 0_-fvi_hrnjywg5_-kl8 "documentation" 180
+(name "documentation"
+)
+(value "getter for derived link ChemAtom"
+)
+(uid "0_-fvi_hrnjywg5_-kl8"))
+($9 182 < 0_-fvi_hrnjywg5_-kl7 "opType" 180
+(name "opType"
+)
+(value "get"
+)
+(uid "0_-fvi_hrnjywg5_-kl7"))
+($9 183 < 0_-fvi_hrnjywg5_-kl6 "guid" 180
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:36_00072"
+)
+(uid "0_-fvi_hrnjywg5_-kl6"))
+($9 184 < 0_-fvi_hrnjywg5_-kl5 "code:java" 180
+(name "code:java"
+)
+(value "ccp.api.molecule.ChemComp.AbstractChemAtom rr = getResidue().getResidue().getChemCompVar().findFirstChemAtom(\"name\", getName());"
+""
+"if (rr instanceof ccp.api.molecule.ChemComp.ChemAtom)"
+"  result = (ccp.api.molecule.ChemComp.ChemAtom) rr;"
+"else"
+"  result = null;"
+)
+(uid "0_-fvi_hrnjywg5_-kl5"))
+($9 185 < 0_-fvi_hrnjywg5_-kl4 "code:python" 180
+(name "code:python"
+)
+(value "result = self.residue.residue.chemCompVar.findFirstChemAtom(name=self.name)"
+"if result.className != 'ChemAtom':"
+"  result = None"
+)
+(uid "0_-fvi_hrnjywg5_-kl4"))
+($8 186 < 0_63g_i1m6g9jk_-p98 "iupacNames" 146
+(name "iupacNames"
+)
+(uid "0_63g_i1m6g9jk_-p98")
+(multiplicity "*"))
+($9 187 < 0_63g_i1m6g9jk_-p97 "documentation" 186
+(name "documentation"
+)
+(value "Corresponding IUPAC names,that can be used for coordinates."
+"NBNB TBD this list goes with a iupacNameIndex matrix, so that every atom in every model can have a different IUPAC name (e.g. for assignments like HBX."
+)
+(uid "0_63g_i1m6g9jk_-p97"))
+($9 188 < 0_63g_i1m6g9jk_-p95 "guid" 186
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2014-10-23-17:02:39_00001"
+)
+(uid "0_63g_i1m6g9jk_-p95"))
+($9 189 < 0_63g_i1m6g9jk_-p96 "baseName" 186
+(name "baseName"
+)
+(value "iupacName"
+)
+(uid "0_63g_i1m6g9jk_-p96"))
+($8 190 < 0_-fvi_hrnjywg5_-kl3 "coordinates" 146
+(changeability "frozen")
+(name "coordinates"
+)
+(uid "0_-fvi_hrnjywg5_-kl3")
+(multiplicity "*"))
+($9 191 < 0_-fvi_hrnjywg5_-kl2 "isDerived" 190
+(name "isDerived"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-kl2"))
+($9 192 < 0_-fvi_hrnjywg5_-kl1 "documentation" 190
+(name "documentation"
+)
+(value "Coordinates of Atom in all models, packed as [x1,y1,z1,x2,y2,z2,x3,...]"
+)
+(uid "0_-fvi_hrnjywg5_-kl1"))
+($9 193 < 0_-fvi_hrnjywg5_-kl0 "baseName" 190
+(name "baseName"
+)
+(value "coordinate"
+)
+(uid "0_-fvi_hrnjywg5_-kl0"))
+($9 194 < 0_-fvi_hrnjywg5_-kkz "guid" 190
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-22-17:23:27_00007"
+)
+(uid "0_-fvi_hrnjywg5_-kkz"))
+($8 195 < 0_-fvi_hrnjywg5_-kky "bFactors" 146
+(changeability "frozen")
+(name "bFactors"
+)
+(uid "0_-fvi_hrnjywg5_-kky")
+(multiplicity "*"))
+($9 196 < 0_-fvi_hrnjywg5_-kkx "documentation" 195
+(name "documentation"
+)
+(value "bFActors of Atom in all models  in model order."
+)
+(uid "0_-fvi_hrnjywg5_-kkx"))
+($9 197 < 0_-fvi_hrnjywg5_-kkw "isDerived" 195
+(name "isDerived"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-kkw"))
+($9 198 < 0_-fvi_hrnjywg5_-kkv "baseName" 195
+(name "baseName"
+)
+(value "bFactor"
+)
+(uid "0_-fvi_hrnjywg5_-kkv"))
+($9 199 < 0_-fvi_hrnjywg5_-kku "guid" 195
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-22-17:23:27_00009"
+)
+(uid "0_-fvi_hrnjywg5_-kku"))
+($8 200 < 0_-fvi_hrnjywg5_-kkt "occupancies" 146
+(changeability "frozen")
+(name "occupancies"
+)
+(uid "0_-fvi_hrnjywg5_-kkt")
+(multiplicity "*"))
+($9 201 < 0_-fvi_hrnjywg5_-kks "documentation" 200
+(name "documentation"
+)
+(value "Coordinates of Atom in all models, in model order."
+)
+(uid "0_-fvi_hrnjywg5_-kks"))
+($9 202 < 0_-fvi_hrnjywg5_-kkr "isDerived" 200
+(name "isDerived"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-kkr"))
+($9 203 < 0_-fvi_hrnjywg5_-kkq "baseName" 200
+(name "baseName"
+)
+(value "occupancy"
+)
+(uid "0_-fvi_hrnjywg5_-kkq"))
+($9 204 < 0_-fvi_hrnjywg5_-kkp "guid" 200
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-22-17:23:27_00010"
+)
+(uid "0_-fvi_hrnjywg5_-kkp"))
+($10 205 < 0_-fvi_hrnjywg5_-kki "getCoordinates" 146
+(name "getCoordinates"
+)
+(uid "0_-fvi_hrnjywg5_-kki")
+(isQuery true))
+($9 206 < 0_-fvi_hrnjywg5_-kkh "documentation" 205
+(name "documentation"
+)
+(value "getter for derived attribute coordinates"
+)
+(uid "0_-fvi_hrnjywg5_-kkh"))
+($9 207 < 0_-fvi_hrnjywg5_-kkg "opType" 205
+(name "opType"
+)
+(value "get"
+)
+(uid "0_-fvi_hrnjywg5_-kkg"))
+($9 208 < 0_-fvi_hrnjywg5_-kkf "code:java" 205
+(name "code:java"
+)
+(value "/* NBNB TBD */"
+)
+(uid "0_-fvi_hrnjywg5_-kkf"))
+($9 209 < 0_-fvi_hrnjywg5_-kke "code:python" 205
+(name "code:python"
+)
+(value "dataMatrix = self.topObject.findFirstDataMatrix(name='coordinates')"
+"if dataMatrix:"
+"  result = dataMatrix.getSubmatrixData(point=(0,self.index,), shape=(0,1,))"
+"else:"
+"  raise ApiError(\"%s lacks DataMatrix named 'coordinates''\" % self.topObject)"
+)
+(uid "0_-fvi_hrnjywg5_-kke"))
+($9 210 < 0_-fvi_hrnjywg5_-kkd "guid" 205
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-22-17:23:27_00011"
+)
+(uid "0_-fvi_hrnjywg5_-kkd"))
+($10 211 < 0_-fvi_hrnjywg5_-kkc "getBFactors" 146
+(name "getBFactors"
+)
+(uid "0_-fvi_hrnjywg5_-kkc")
+(isQuery true))
+($9 212 < 0_-fvi_hrnjywg5_-kkb "documentation" 211
+(name "documentation"
+)
+(value "getter for derived attribute bFactors"
+)
+(uid "0_-fvi_hrnjywg5_-kkb"))
+($9 213 < 0_-fvi_hrnjywg5_-kka "opType" 211
+(name "opType"
+)
+(value "get"
+)
+(uid "0_-fvi_hrnjywg5_-kka"))
+($9 214 < 0_-fvi_hrnjywg5_-kk9 "code:java" 211
+(name "code:java"
+)
+(value "/* NBNB TBD */"
+)
+(uid "0_-fvi_hrnjywg5_-kk9"))
+($9 215 < 0_-fvi_hrnjywg5_-kk8 "code:python" 211
+(name "code:python"
+)
+(value "dataMatrix = self.topObject.findFirstDataMatrix(name='bFactors')"
+"if dataMatrix:"
+"  result = dataMatrix.getSubmatrixData(point=(0,self.index,), shape=(0,1,))"
+"else:"
+"  raise ApiError(\"%s lacks DataMatrix named 'bFactors''\" % self.topObject)"
+)
+(uid "0_-fvi_hrnjywg5_-kk8"))
+($9 216 < 0_-fvi_hrnjywg5_-kk7 "guid" 211
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-22-17:23:27_00013"
+)
+(uid "0_-fvi_hrnjywg5_-kk7"))
+($10 217 < 0_-fvi_hrnjywg5_-kk6 "getOccupancies" 146
+(name "getOccupancies"
+)
+(uid "0_-fvi_hrnjywg5_-kk6")
+(isQuery true))
+($9 218 < 0_-fvi_hrnjywg5_-kk5 "documentation" 217
+(name "documentation"
+)
+(value "getter for derived attribute occupancies"
+)
+(uid "0_-fvi_hrnjywg5_-kk5"))
+($9 219 < 0_-fvi_hrnjywg5_-kk4 "opType" 217
+(name "opType"
+)
+(value "get"
+)
+(uid "0_-fvi_hrnjywg5_-kk4"))
+($9 220 < 0_-fvi_hrnjywg5_-kk3 "code:java" 217
+(name "code:java"
+)
+(value "/* NBNB TBD */"
+)
+(uid "0_-fvi_hrnjywg5_-kk3"))
+($9 221 < 0_-fvi_hrnjywg5_-kk2 "code:python" 217
+(name "code:python"
+)
+(value "dataMatrix = self.topObject.findFirstDataMatrix(name='occupancies')"
+"if dataMatrix:"
+"  result = dataMatrix.getSubmatrixData(point=(0,self.index,), shape=(0,1,))"
+"else:"
+"  raise ApiError(\"%s lacks DataMatrix named 'occupancies''\" % self.topObject)"
+)
+(uid "0_-fvi_hrnjywg5_-kk2"))
+($9 222 < 0_-fvi_hrnjywg5_-kk1 "guid" 217
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-22-17:23:27_00014"
+)
+(uid "0_-fvi_hrnjywg5_-kk1"))
+($10 223 < 0_-fvi_hrnjywg5_-kk0 "getSubmatrixData#Word##IeeeFloat*" 146
+(name "getSubmatrixData"
+)
+(uid "0_-fvi_hrnjywg5_-kk0")
+(isQuery true))
+($15 224 < 0_-fvi_hrnjywg5_-kjz "name" 223
+(name "name"
+)
+(uid "0_-fvi_hrnjywg5_-kjz"))
+($9 225 < 0_-fvi_hrnjywg5_-kjy "guid" 224
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-04-05-18:09:03_00002"
+)
+(uid "0_-fvi_hrnjywg5_-kjy"))
+($15 226 < 0_-fvi_hrnjywg5_-kjx "result" 223
+(name "result"
+)
+(kind "return")
+(uid "0_-fvi_hrnjywg5_-kjx"))
+($9 227 < 0_-fvi_hrnjywg5_-kjw "guid" 226
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-04-05-18:09:03_00003"
+)
+(uid "0_-fvi_hrnjywg5_-kjw"))
+($9 228 < 0_-fvi_hrnjywg5_-kjv "opType" 223
+(name "opType"
+)
+(value "otherQuery"
+)
+(uid "0_-fvi_hrnjywg5_-kjv"))
+($9 229 < 0_-fvi_hrnjywg5_-kju "documentation" 223
+(name "documentation"
+)
+(value "Get submatrix of StructureEnsemble data matrix named 'name' belonging to Atom"
+)
+(uid "0_-fvi_hrnjywg5_-kju"))
+($9 230 < 0_-fvi_hrnjywg5_-kjt "guid" 223
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-04-05-18:09:03_00001"
+)
+(uid "0_-fvi_hrnjywg5_-kjt"))
+($9 231 < 0_-fvi_hrnjywg5_-kjs "code:java" 223
+(name "code:java"
+)
+(value "/* NBNB TBD */"
+)
+(uid "0_-fvi_hrnjywg5_-kjs"))
+($9 232 < 0_-fvi_hrnjywg5_-kjr "code:python" 223
+(name "code:python"
+)
+(value "dataMatrix = self.topObject.findFirstDataMatrix(name=name)"
+"if dataMatrix:"
+"  result = dataMatrix.getSubMatrixData(point=(0,self.index,), shape=(0,1,) )"
+"else:"
+"  raise ApiError(\"%s lacks DataMatrix named %s'\" % (self.topObject, name))"
+)
+(uid "0_-fvi_hrnjywg5_-kjr"))
+($10 233 < 0_-fvi_hrnjywg5_-kjq "setSubmatrixData#Word#IeeeFloat*" 146
+(name "setSubmatrixData"
+)
+(uid "0_-fvi_hrnjywg5_-kjq"))
+($15 234 < 0_-fvi_hrnjywg5_-kjp "name" 233
+(name "name"
+)
+(uid "0_-fvi_hrnjywg5_-kjp"))
+($9 235 < 0_-fvi_hrnjywg5_-kjo "guid" 234
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-04-05-18:09:03_00005"
+)
+(uid "0_-fvi_hrnjywg5_-kjo"))
+($15 236 < 0_-fvi_hrnjywg5_-kjn "values" 233
+(name "values"
+)
+(uid "0_-fvi_hrnjywg5_-kjn"))
+($9 237 < 0_-fvi_hrnjywg5_-kjm "guid" 236
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-04-05-18:09:03_00007"
+)
+(uid "0_-fvi_hrnjywg5_-kjm"))
+($9 238 < 0_-fvi_hrnjywg5_-kjl "documentation" 233
+(name "documentation"
+)
+(value "set all Submatrix data values for matrix called 'name' corresponding to this Atom.It is recommended to use the setters on the Model instance where possible, as this function will be slower"
+)
+(uid "0_-fvi_hrnjywg5_-kjl"))
+($9 239 < 0_-fvi_hrnjywg5_-kjk "opType" 233
+(name "opType"
+)
+(value "otherModify"
+)
+(uid "0_-fvi_hrnjywg5_-kjk"))
+($9 240 < 0_-fvi_hrnjywg5_-kjj "code:java" 233
+(name "code:java"
+)
+(value "/* NBNB TBD */"
+)
+(uid "0_-fvi_hrnjywg5_-kjj"))
+($9 241 < 0_-fvi_hrnjywg5_-kji "code:python" 233
+(name "code:python"
+)
+(value "dataMatrix = self.topObject.findFirstDataMatrix(name=name)"
+"if dataMatrix:"
+"  dataMatrix.setSubMatrixData(point=(0,self.index,), shape=(0,1,), values=values)"
+"else:"
+"  raise ApiError(\"%s lacks DataMatrix named %s'\" % (self.topObject, name))"
+)
+(uid "0_-fvi_hrnjywg5_-kji"))
+($9 242 < 0_-fvi_hrnjywg5_-kjh "guid" 233
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-04-05-18:09:03_00004"
+)
+(uid "0_-fvi_hrnjywg5_-kjh"))
+($10 243 < 0_-fvi_hrnjywg5_-kjg "setCoordinate#Int#IeeeFloat3" 146
+(name "setCoordinate"
+)
+(uid "0_-fvi_hrnjywg5_-kjg"))
+($15 244 < 0_-fvi_hrnjywg5_-kjf "index" 243
+(name "index"
+)
+(uid "0_-fvi_hrnjywg5_-kjf"))
+($9 245 < 0_-fvi_hrnjywg5_-kje "guid" 244
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-22-17:23:27_00016"
+)
+(uid "0_-fvi_hrnjywg5_-kje"))
+($15 246 < 0_-fvi_hrnjywg5_-kjd "values" 243
+(name "values"
+)
+(uid "0_-fvi_hrnjywg5_-kjd"))
+($9 247 < 0_-fvi_hrnjywg5_-kjc "guid" 246
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-22-17:23:27_00017"
+)
+(uid "0_-fvi_hrnjywg5_-kjc"))
+($9 248 < 0_-fvi_hrnjywg5_-kjb "documentation" 243
+(name "documentation"
+)
+(value "set coordinate triplet for current atom and model at index."
+)
+(uid "0_-fvi_hrnjywg5_-kjb"))
+($9 249 < 0_-fvi_hrnjywg5_-kja "opType" 243
+(name "opType"
+)
+(value "otherModify"
+)
+(uid "0_-fvi_hrnjywg5_-kja"))
+($9 250 < 0_-fvi_hrnjywg5_-kj9 "code:java" 243
+(name "code:java"
+)
+(value "/* NBNB TBD */"
+)
+(uid "0_-fvi_hrnjywg5_-kj9"))
+($9 251 < 0_-fvi_hrnjywg5_-kj8 "code:python" 243
+(name "code:python"
+)
+(value "dataMatrix = self.topObject.findFirstDataMatrix(name='coordinates')"
+"if dataMatrix:"
+"  dataMatrix.setSubMatrixData(point=(index,self.index,), shape=(1,1,), values=values)"
+"else:"
+"  raise ApiError(\"%s lacks DataMatrix named 'coordinates''\" % self.topObject)"
+)
+(uid "0_-fvi_hrnjywg5_-kj8"))
+($9 252 < 0_-fvi_hrnjywg5_-kj7 "guid" 243
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-22-17:23:27_00015"
+)
+(uid "0_-fvi_hrnjywg5_-kj7"))
+($10 253 < 0_-fvi_hrnjywg5_-kj6 "setBFactor#Int#IeeeFloat" 146
+(name "setBFactor"
+)
+(uid "0_-fvi_hrnjywg5_-kj6"))
+($15 254 < 0_-fvi_hrnjywg5_-kj5 "index" 253
+(name "index"
+)
+(uid "0_-fvi_hrnjywg5_-kj5"))
+($9 255 < 0_-fvi_hrnjywg5_-kj4 "guid" 254
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-22-17:23:27_00026"
+)
+(uid "0_-fvi_hrnjywg5_-kj4"))
+($15 256 < 0_-fvi_hrnjywg5_-kj3 "value" 253
+(name "value"
+)
+(uid "0_-fvi_hrnjywg5_-kj3"))
+($9 257 < 0_-fvi_hrnjywg5_-kj2 "guid" 256
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-22-17:23:27_00027"
+)
+(uid "0_-fvi_hrnjywg5_-kj2"))
+($9 258 < 0_-fvi_hrnjywg5_-kj1 "documentation" 253
+(name "documentation"
+)
+(value "set B Factor for current atom and model at index."
+)
+(uid "0_-fvi_hrnjywg5_-kj1"))
+($9 259 < 0_-fvi_hrnjywg5_-kj0 "opType" 253
+(name "opType"
+)
+(value "otherModify"
+)
+(uid "0_-fvi_hrnjywg5_-kj0"))
+($9 260 < 0_-fvi_hrnjywg5_-kiz "code:java" 253
+(name "code:java"
+)
+(value "/* NBNB TBD */"
+)
+(uid "0_-fvi_hrnjywg5_-kiz"))
+($9 261 < 0_-fvi_hrnjywg5_-kiy "code:python" 253
+(name "code:python"
+)
+(value "dataMatrix = self.topObject.findFirstDataMatrix(name='bFactors')"
+"if dataMatrix:"
+"  dataMatrix.setPointValue(point=(index,self.index), value=value)"
+"else:"
+"  raise ApiError(\"%s lacks DataMatrix named 'bFactors''\" % self.topObject)"
+)
+(uid "0_-fvi_hrnjywg5_-kiy"))
+($9 262 < 0_-fvi_hrnjywg5_-kix "guid" 253
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-22-17:23:27_00025"
+)
+(uid "0_-fvi_hrnjywg5_-kix"))
+($10 263 < 0_-fvi_hrnjywg5_-kiw "setOccupancy#Int#IeeeFloat" 146
+(name "setOccupancy"
+)
+(uid "0_-fvi_hrnjywg5_-kiw"))
+($15 264 < 0_-fvi_hrnjywg5_-kiv "index" 263
+(name "index"
+)
+(uid "0_-fvi_hrnjywg5_-kiv"))
+($9 265 < 0_-fvi_hrnjywg5_-kiu "guid" 264
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-22-17:23:27_00029"
+)
+(uid "0_-fvi_hrnjywg5_-kiu"))
+($15 266 < 0_-fvi_hrnjywg5_-kit "value" 263
+(name "value"
+)
+(uid "0_-fvi_hrnjywg5_-kit"))
+($9 267 < 0_-fvi_hrnjywg5_-kis "guid" 266
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-22-17:23:27_00030"
+)
+(uid "0_-fvi_hrnjywg5_-kis"))
+($9 268 < 0_-fvi_hrnjywg5_-kir "documentation" 263
+(name "documentation"
+)
+(value "set occupancy for current atom and model at index."
+)
+(uid "0_-fvi_hrnjywg5_-kir"))
+($9 269 < 0_-fvi_hrnjywg5_-kiq "opType" 263
+(name "opType"
+)
+(value "otherModify"
+)
+(uid "0_-fvi_hrnjywg5_-kiq"))
+($9 270 < 0_-fvi_hrnjywg5_-kip "code:java" 263
+(name "code:java"
+)
+(value "/* NBNB TBD */"
+)
+(uid "0_-fvi_hrnjywg5_-kip"))
+($9 271 < 0_-fvi_hrnjywg5_-kio "code:python" 263
+(name "code:python"
+)
+(value "dataMatrix = self.topObject.findFirstDataMatrix(name='occupancies')"
+"if dataMatrix:"
+"  dataMatrix.setPointValue(point=(index,self.index), value=value)"
+"else:"
+"  raise ApiError(\"%s lacks DataMatrix named 'occupancies''\" % self.topObject)"
+)
+(uid "0_-fvi_hrnjywg5_-kio"))
+($9 272 < 0_-fvi_hrnjywg5_-kin "guid" 263
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-22-17:23:27_00028"
+)
+(uid "0_-fvi_hrnjywg5_-kin"))
+($10 273 < 0_-fvi_hrnjywg5_-kim "setSubmatrixValues#Word#Word#IeeeFloat*" 146
+(name "setSubmatrixValues"
+)
+(uid "0_-fvi_hrnjywg5_-kim"))
+($15 274 < 0_-fvi_hrnjywg5_-kil "name" 273
+(name "name"
+)
+(uid "0_-fvi_hrnjywg5_-kil"))
+($9 275 < 0_-fvi_hrnjywg5_-kik "guid" 274
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-04-07-12:25:59_00003"
+)
+(uid "0_-fvi_hrnjywg5_-kik"))
+($15 276 < 0_-fvi_hrnjywg5_-kij "index" 273
+(name "index"
+)
+(uid "0_-fvi_hrnjywg5_-kij"))
+($9 277 < 0_-fvi_hrnjywg5_-kii "guid" 276
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-04-07-12:25:59_00004"
+)
+(uid "0_-fvi_hrnjywg5_-kii"))
+($15 278 < 0_-fvi_hrnjywg5_-kih "values" 273
+(name "values"
+)
+(uid "0_-fvi_hrnjywg5_-kih"))
+($9 279 < 0_-fvi_hrnjywg5_-kig "guid" 278
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-04-07-12:25:59_00005"
+)
+(uid "0_-fvi_hrnjywg5_-kig"))
+($9 280 < 0_-fvi_hrnjywg5_-kif "documentation" 273
+(name "documentation"
+)
+(value "set submatrix data vaues for current atom and model at index. NB values are passed in as a list even where there is only one."
+)
+(uid "0_-fvi_hrnjywg5_-kif"))
+($9 281 < 0_-fvi_hrnjywg5_-kie "opType" 273
+(name "opType"
+)
+(value "otherModify"
+)
+(uid "0_-fvi_hrnjywg5_-kie"))
+($9 282 < 0_-fvi_hrnjywg5_-kid "code:java" 273
+(name "code:java"
+)
+(value "result = null; /* NBNB TBD */"
+)
+(uid "0_-fvi_hrnjywg5_-kid"))
+($9 283 < 0_-fvi_hrnjywg5_-kic "code:python" 273
+(name "code:python"
+)
+(value "dataMatrix = self.topObject.findFirstDataMatrix(name=name)"
+"if dataMatrix:"
+"  dataMatrix.setSubMatrixData(point=(index,self.index,), shape=(1,1,), values=values)"
+"else:"
+"  raise ApiError(\"%s lacks DataMatrix named %s'\" % (self.topObject, name))"
+)
+(uid "0_-fvi_hrnjywg5_-kic"))
+($9 284 < 0_-fvi_hrnjywg5_-kib "guid" 273
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-04-07-12:25:59_00002"
+)
+(uid "0_-fvi_hrnjywg5_-kib"))
+($13 285 < 0_-fvi_hrnjywg5_-khz "#<anon> (Atom, DataObject)" 146
+(uid "0_-fvi_hrnjywg5_-khz"))
+($11 286 < 0_-fvi_hrnjywg5_-khy "#<anon> (Atom, Atom)##," 146
+(name "")
+(uid "0_-fvi_hrnjywg5_-khy"))
+($12 287 < 0_-fvi_hrnjywg5_-khx "#0" 286
+(uid "0_-fvi_hrnjywg5_-khx")
+(isNavigable false))
+($9 288 < 0_-fvi_hrnjywg5_-khw "documentation" 287
+(name "documentation"
+)
+(value "Molsystem.Atom corresponding to Atom coordinate desription."
+)
+(uid "0_-fvi_hrnjywg5_-khw"))
+($12 289 < 0_-fvi_hrnjywg5_-khv "#1" 286
+(changeability "frozen")
+(uid "0_-fvi_hrnjywg5_-khv"))
+($9 290 < 0_-fvi_hrnjywg5_-khu "documentation" 289
+(name "documentation"
+)
+(value "MolSystem Atom, coresponding to Coordinate Atom"
+)
+(uid "0_-fvi_hrnjywg5_-khu"))
+($9 291 < 0_-fvi_hrnjywg5_-kht "guid" 289
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:36_00064"
+)
+(uid "0_-fvi_hrnjywg5_-kht"))
+($9 292 < 0_-fvi_hrnjywg5_-khs "isDerived" 286
+(name "isDerived"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-khs"))
+($11 293 < 0_-fvi_hrnjywg5_-khr "#<anon> (Atom, ChemAtom)##," 146
+(name "")
+(uid "0_-fvi_hrnjywg5_-khr"))
+($12 294 < 0_-fvi_hrnjywg5_-khq "#0" 293
+(uid "0_-fvi_hrnjywg5_-khq")
+(isNavigable false))
+($12 295 < 0_-fvi_hrnjywg5_-khp "#1" 293
+(changeability "frozen")
+(uid "0_-fvi_hrnjywg5_-khp")
+(multiplicity "1"))
+($9 296 < 0_-fvi_hrnjywg5_-kho "documentation" 295
+(name "documentation"
+)
+(value "ChemAtom corresponding to Atom"
+)
+(uid "0_-fvi_hrnjywg5_-kho"))
+($9 297 < 0_-fvi_hrnjywg5_-khn "guid" 295
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:36_00065"
+)
+(uid "0_-fvi_hrnjywg5_-khn"))
+($9 298 < 0_-fvi_hrnjywg5_-khm "isDerived" 293
+(name "isDerived"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-khm"))
+($9 299 < 0_-fvi_hrnjywg5_-khl "documentation" 146
+(name "documentation"
+)
+(value "Atom in Coordinate description - local equivalent of MolSystem.Atom for a given set of coordinates."
+)
+(uid "0_-fvi_hrnjywg5_-khl"))
+($9 300 < 0_-fvi_hrnjywg5_-khk "guid" 146
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:55_00004"
+)
+(uid "0_-fvi_hrnjywg5_-khk"))
+($9 301 < 0_-fvi_hrnjywg5_-khj "keyNames" 146
+(name "keyNames"
+)
+(value "name,altLocationCode"
+)
+(uid "0_-fvi_hrnjywg5_-khj"))
+($9 302 < 0_-fvi_hrnjywg5_-khi "constructorCode:python" 146
+(name "constructorCode:python"
+)
+(value "structureEnsemble = self.topObject"
+""
+"# Check if there are models"
+"if not self.root.override and structureEnsemble.dataMatrices:"
+"  raise ApiError(\"Atoms may not be created if MatrixData exist\")"
+""
+"# Set index and nAtoms"
+"orderedAtoms = structureEnsemble.__dict__['orderedAtoms']"
+"if orderedAtoms:"
+"  dataDict['index'] = orderedAtoms[-1].index + 1"
+"else:"
+"  dataDict['index'] = 0"
+"orderedAtoms.append(self)"
+)
+(uid "0_-fvi_hrnjywg5_-khi"))
+($9 303 < 0_-fvi_hrnjywg5_-khh "constructorCode:java" 146
+(name "constructorCode:java"
+)
+(value "/* NBNB TBD */"
+)
+(uid "0_-fvi_hrnjywg5_-khh"))
+($9 304 < 0_-fvi_hrnjywg5_-khg "destructorCode:python" 146
+(name "destructorCode:python"
+)
+(value "structureEnsemble = self.topObject"
+"# Check if there are data"
+"# The following code interacts directly with the deletion implementation (use of 'objsToBeDeleted'). "
+"# This is bad, but the only way to accomplish the desired result."
+"if not self.root.override:"
+"  if structureEnsemble not in objsToBeDeleted:"
+"    if structureEnsemble.dataMatrices:"
+"      raise ApiError(\"Atoms may not be deleted if MatrixData exist\")"
+""
+"orderedAtoms = structureEnsemble.__dict__['orderedAtoms']"
+"try:"
+"  ii = orderedAtoms.index(self)"
+"except ValueError:"
+"  raise ApiError(\"Inconsistent data - %s not found in %s.orderedAtoms\" % (self,structureEnsemble))"
+"  "
+"del orderedAtoms[ii]"
+"for atom in orderedAtoms[ii:]:"
+"  atom.__dict__['index'] -= 1"
+)
+(uid "0_-fvi_hrnjywg5_-khg"))
+($9 305 < 0_-fvi_hrnjywg5_-khf "destructorCode:java" 146
+(name "destructorCode:java"
+)
+(value "/* NBNB TBD */"
+)
+(uid "0_-fvi_hrnjywg5_-khf"))
+($6 306 < -yk94ms_85r_eqyymv3f_-jud "#<anon> (MolStructure, ChemComp)" 1
+(uid "-yk94ms_85r_eqyymv3f_-jud"))
+($7 307 < 0_-fvi_hrnjywg5_-khd "StructureEnsemble" 1
+(name "StructureEnsemble"
+)
+(uid "0_-fvi_hrnjywg5_-khd"))
+($8 308 < 0_-fvi_hrnjywg5_-khc "ensembleId" 307
+(changeability "frozen")
+(name "ensembleId"
+)
+(uid "0_-fvi_hrnjywg5_-khc")
+(multiplicity "1"))
+($9 309 < 0_-fvi_hrnjywg5_-khb "guid" 308
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00021"
+)
+(uid "0_-fvi_hrnjywg5_-khb"))
+($9 310 < 0_-fvi_hrnjywg5_-kha "documentation" 308
+(name "documentation"
+)
+(value "Ensemble ID number. Part of key."
+)
+(uid "0_-fvi_hrnjywg5_-kha"))
+($8 311 < 0_-fvi_hrnjywg5_-kh9 "atomNamingSystem" 307
+(name "atomNamingSystem"
+)
+(uid "0_-fvi_hrnjywg5_-kh9"))
+($9 312 < 0_-fvi_hrnjywg5_-kh8 "documentation" 311
+(name "documentation"
+)
+(value "Atom naming system used in stored coordinates. If not set, coordinates are stored using CCPN/IUPAC names	"
+)
+(uid "0_-fvi_hrnjywg5_-kh8"))
+($9 313 < 0_-fvi_hrnjywg5_-kh7 "guid" 311
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00022"
+)
+(uid "0_-fvi_hrnjywg5_-kh7"))
+($8 314 < 0_-fvi_hrnjywg5_-kh6 "resNamingSystem" 307
+(name "resNamingSystem"
+)
+(uid "0_-fvi_hrnjywg5_-kh6"))
+($9 315 < 0_-fvi_hrnjywg5_-kh5 "documentation" 314
+(name "documentation"
+)
+(value "Naming system for residues in stored coordinates. If not set, CCPN/IUPAC names are used."
+)
+(uid "0_-fvi_hrnjywg5_-kh5"))
+($9 316 < 0_-fvi_hrnjywg5_-kh4 "guid" 314
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00023"
+)
+(uid "0_-fvi_hrnjywg5_-kh4"))
+($10 317 < 0_-fvi_hrnjywg5_-kh3 "getEnsembleValidations" 307
+(name "getEnsembleValidations"
+)
+(uid "0_-fvi_hrnjywg5_-kh3")
+(isQuery true))
+($9 318 < 0_-fvi_hrnjywg5_-kh2 "documentation" 317
+(name "documentation"
+)
+(value "getter for derived link ensembleValidations"
+)
+(uid "0_-fvi_hrnjywg5_-kh2"))
+($9 319 < 0_-fvi_hrnjywg5_-kh1 "opType" 317
+(name "opType"
+)
+(value "get"
+)
+(uid "0_-fvi_hrnjywg5_-kh1"))
+($9 320 < 0_-fvi_hrnjywg5_-kh0 "code:python" 317
+(name "code:python"
+)
+(value "result = set()"
+"for svs in self.validationStores:"
+"  result.update(svs.findAllValidationResults(className='EnsembleValidation'))"
+"#"
+"result = frozenset(result)"
+)
+(uid "0_-fvi_hrnjywg5_-kh0"))
+($9 321 < 0_-fvi_hrnjywg5_-kgz "guid" 317
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-23-14:13:49_00002"
+)
+(uid "0_-fvi_hrnjywg5_-kgz"))
+($9 322 < 0_-fvi_hrnjywg5_-kgy "code:java" 317
+(name "code:java"
+)
+(value "result = new"
+"java.util.HashSet<ccp.api.molecule.Validation.EnsembleValidation>();"
+"for (ccp.api.molecule.Validation.ValidationStore svs: getValidationStores()) {"
+"  for (ccp.api.molecule.Validation.ValidationResult rr: svs.getValidationResults()) {"
+"    if (\"EnsembleValidation\".equals(rr.getClassName()))"
+"      result.add((ccp.api.molecule.Validation.EnsembleValidation) rr);"
+"  }"
+"}"
+)
+(uid "0_-fvi_hrnjywg5_-kgy"))
+($8 323 < 0_-fvi_hrnjywg5_-kgx "nAtoms" 307
+(initialValue "0"
+)
+(changeability "frozen")
+(name "nAtoms"
+)
+(uid "0_-fvi_hrnjywg5_-kgx")
+(multiplicity "1"))
+($9 324 < 0_-fvi_hrnjywg5_-kgw "documentation" 323
+(name "documentation"
+)
+(value "Number of Atoms"
+)
+(uid "0_-fvi_hrnjywg5_-kgw"))
+($9 325 < 0_-fvi_hrnjywg5_-kgv "guid" 323
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-17:56:39_00032"
+)
+(uid "0_-fvi_hrnjywg5_-kgv"))
+($9 326 < 0_-fvi_hrnjywg5_-kgu "isDerived" 323
+(name "isDerived"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-kgu"))
+($8 327 < 0_-fvi_hrnjywg5_-kgt "softwareName" 307
+(name "softwareName"
+)
+(uid "0_-fvi_hrnjywg5_-kgt"))
+($9 328 < 0_-fvi_hrnjywg5_-kgs "documentation" 327
+(name "documentation"
+)
+(value "Name of software used to generate ensemble. Only necessary if Data matrices include nonstandard data (e.g. energy terms), that cannot be interpreted without knowing the source program."
+)
+(uid "0_-fvi_hrnjywg5_-kgs"))
+($9 329 < 0_-fvi_hrnjywg5_-kgr "guid" 327
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-04-06-10:33:05_00003"
+)
+(uid "0_-fvi_hrnjywg5_-kgr"))
+($8 330 < ajvq9s_joo_ikxbcnnd_-p8i "dataPath" 307
+(name "dataPath"
+)
+(uid "ajvq9s_joo_ikxbcnnd_-p8i"))
+($9 331 < ajvq9s_joo_ikxbcnnd_-p8h "documentation" 330
+(name "documentation"
+)
+(value "Path to file holding StructureEnsemble. Relative paths ar interpreted relative to the project location"
+)
+(uid "ajvq9s_joo_ikxbcnnd_-p8h"))
+($9 332 < ajvq9s_joo_ikxbcnnd_-p5r "guid" 330
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2016-02-21-22:03:03_00001"
+)
+(uid "ajvq9s_joo_ikxbcnnd_-p5r"))
+($8 333 < ajvq9s_joo_ikxbcnnd_-p8g "data" 307
+(name "data"
+)
+(uid "ajvq9s_joo_ikxbcnnd_-p8g"))
+($9 334 < ajvq9s_joo_ikxbcnnd_-p5q "guid" 333
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2016-02-21-22:03:03_00002"
+)
+(uid "ajvq9s_joo_ikxbcnnd_-p5q"))
+($8 335 < 0_-fvi_hrnjywg5_-kgq "details" 307
+(name "details"
+)
+(uid "0_-fvi_hrnjywg5_-kgq"))
+($9 336 < 0_-fvi_hrnjywg5_-kgp "guid" 335
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-21-15:56:25_00001"
+)
+(uid "0_-fvi_hrnjywg5_-kgp"))
+($10 337 < 0_-fvi_hrnjywg5_-kgo "purge" 307
+(name "purge"
+)
+(uid "0_-fvi_hrnjywg5_-kgo"))
+($9 338 < 0_-fvi_hrnjywg5_-kgn "documentation" 337
+(name "documentation"
+)
+(value "Clear unnecessary adidtional data (Coords and arrays identical to default)"
+)
+(uid "0_-fvi_hrnjywg5_-kgn"))
+($9 339 < 0_-fvi_hrnjywg5_-kgm "guid" 337
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-17:58:41_00003"
+)
+(uid "0_-fvi_hrnjywg5_-kgm"))
+($9 340 < 0_-fvi_hrnjywg5_-kgl "opType" 337
+(name "opType"
+)
+(value "other"
+)
+(uid "0_-fvi_hrnjywg5_-kgl"))
+($9 341 < 0_-fvi_hrnjywg5_-kgk "code:python" 337
+(name "code:python"
+)
+(value "# NB As the change reduces memory without changing data state, undo is not needed"
+""
+"for dataMatrix in self.dataMatrices:"
+"  data = dataMatrix.__dict__['data']"
+"  if data and data.count(dataMatrix.defaultValue) == len(data):"
+"    dataMatrix.resetData()"
+""
+"for model in self.models:"
+"  for coord in model.__dict__['coords']:"
+"    coord.delete()"
+)
+(uid "0_-fvi_hrnjywg5_-kgk"))
+($9 342 < 0_-fvi_hrnjywg5_-kgj "code:java" 337
+(name "code:java"
+)
+(value "/* NBNB TBD */"
+)
+(uid "0_-fvi_hrnjywg5_-kgj"))
+($10 343 < 0_-fvi_hrnjywg5_-kgi "getNAtoms" 307
+(name "getNAtoms"
+)
+(uid "0_-fvi_hrnjywg5_-kgi")
+(isQuery true))
+($9 344 < 0_-fvi_hrnjywg5_-kgh "documentation" 343
+(name "documentation"
+)
+(value "getter for derived attribute nAtoms"
+)
+(uid "0_-fvi_hrnjywg5_-kgh"))
+($9 345 < 0_-fvi_hrnjywg5_-kgg "opType" 343
+(name "opType"
+)
+(value "get"
+)
+(uid "0_-fvi_hrnjywg5_-kgg"))
+($9 346 < 0_-fvi_hrnjywg5_-kgf "code:java" 343
+(name "code:java"
+)
+(value "result = null; /* NBNB TBD*/"
+)
+(uid "0_-fvi_hrnjywg5_-kgf"))
+($9 347 < 0_-fvi_hrnjywg5_-kge "code:python" 343
+(name "code:python"
+)
+(value "result = len(self.__dict__['orderedAtoms'])"
+)
+(uid "0_-fvi_hrnjywg5_-kge"))
+($9 348 < 0_-fvi_hrnjywg5_-kgd "guid" 343
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-04-06-17:18:19_00002"
+)
+(uid "0_-fvi_hrnjywg5_-kgd"))
+($11 349 < 0_-fvi_hrnjywg5_-kgc "#<anon> (StructureEnsemble, Chain)##,coordChains" 307
+(name "")
+(uid "0_-fvi_hrnjywg5_-kgc"))
+($12 350 < 0_-fvi_hrnjywg5_-kgb "#0" 349
+(changeability "frozen")
+(aggregation "composite")
+(uid "0_-fvi_hrnjywg5_-kgb")
+(multiplicity "1"))
+($9 351 < 0_-fvi_hrnjywg5_-kga "guid" 350
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00019"
+)
+(uid "0_-fvi_hrnjywg5_-kga"))
+($12 352 < 0_-fvi_hrnjywg5_-kg9 "coordChains#1" 349
+(name "coordChains"
+)
+(uid "0_-fvi_hrnjywg5_-kg9")
+(multiplicity "*"))
+($9 353 < 0_-fvi_hrnjywg5_-kg8 "baseName" 352
+(name "baseName"
+)
+(value "coordChain"
+)
+(uid "0_-fvi_hrnjywg5_-kg8"))
+($9 354 < 0_-fvi_hrnjywg5_-kg7 "guid" 352
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00020"
+)
+(uid "0_-fvi_hrnjywg5_-kg7"))
+($13 355 < 0_-fvi_hrnjywg5_-kg6 "#<anon> (StructureEnsemble, TopObject)" 307
+(uid "0_-fvi_hrnjywg5_-kg6"))
+($11 356 < 0_-fvi_hrnjywg5_-kg5 "#<anon> (StructureEnsemble, Model)##," 307
+(name "")
+(uid "0_-fvi_hrnjywg5_-kg5"))
+($12 357 < 0_-fvi_hrnjywg5_-kg4 "#0" 356
+(changeability "frozen")
+(aggregation "composite")
+(uid "0_-fvi_hrnjywg5_-kg4")
+(multiplicity "1"))
+($9 358 < 0_-fvi_hrnjywg5_-kg3 "guid" 357
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-23-12:00:15_00006"
+)
+(uid "0_-fvi_hrnjywg5_-kg3"))
+($12 359 < 0_-fvi_hrnjywg5_-kg2 "#1" 356
+(uid "0_-fvi_hrnjywg5_-kg2")
+(multiplicity "*"))
+($9 360 < 0_-fvi_hrnjywg5_-kg1 "guid" 359
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-23-12:00:15_00007"
+)
+(uid "0_-fvi_hrnjywg5_-kg1"))
+($11 361 < 0_-fvi_hrnjywg5_-kg0 "#<anon> (StructureEnsemble, ValidationStore)##," 307
+(name "")
+(uid "0_-fvi_hrnjywg5_-kg0"))
+($12 362 < 0_-fvi_hrnjywg5_-kfz "#0" 361
+(uid "0_-fvi_hrnjywg5_-kfz"))
+($9 363 < 0_-fvi_hrnjywg5_-kfy "documentation" 362
+(name "documentation"
+)
+(value "strucureEnsemble that is being validated"
+)
+(uid "0_-fvi_hrnjywg5_-kfy"))
+($9 364 < 0_-fvi_hrnjywg5_-kfx "guid" 362
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-23-12:00:15_00008"
+)
+(uid "0_-fvi_hrnjywg5_-kfx"))
+($12 365 < 0_-fvi_hrnjywg5_-kfw "#1" 361
+(uid "0_-fvi_hrnjywg5_-kfw")
+(multiplicity "*"))
+($9 366 < 0_-fvi_hrnjywg5_-kfv "documentation" 365
+(name "documentation"
+)
+(value "ValidationStores that validate StructureEnsemble"
+)
+(uid "0_-fvi_hrnjywg5_-kfv"))
+($9 367 < 0_-fvi_hrnjywg5_-kfu "guid" 365
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-23-12:00:15_00009"
+)
+(uid "0_-fvi_hrnjywg5_-kfu"))
+($9 368 < 0_-fvi_hrnjywg5_-kft "partitionsChildren" 361
+(name "partitionsChildren"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-kft"))
+($11 369 < 0_-fvi_hrnjywg5_-kfs "#<anon> (StructureEnsemble, EnsembleValidation)##," 307
+(name "")
+(uid "0_-fvi_hrnjywg5_-kfs"))
+($12 370 < 0_-fvi_hrnjywg5_-kfr "#0" 369
+(changeability "frozen")
+(uid "0_-fvi_hrnjywg5_-kfr"))
+($9 371 < 0_-fvi_hrnjywg5_-kfq "documentation" 370
+(name "documentation"
+)
+(value "StructureEnsemble being validated"
+)
+(uid "0_-fvi_hrnjywg5_-kfq"))
+($9 372 < 0_-fvi_hrnjywg5_-kfp "guid" 370
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-23-12:00:15_00010"
+)
+(uid "0_-fvi_hrnjywg5_-kfp"))
+($12 373 < 0_-fvi_hrnjywg5_-kfo "#1" 369
+(changeability "frozen")
+(uid "0_-fvi_hrnjywg5_-kfo")
+(multiplicity "*"))
+($9 374 < 0_-fvi_hrnjywg5_-kfn "documentation" 373
+(name "documentation"
+)
+(value "Validation.EnsembleValidations for structureEnsemble"
+)
+(uid "0_-fvi_hrnjywg5_-kfn"))
+($9 375 < 0_-fvi_hrnjywg5_-kfm "guid" 373
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-23-14:13:49_00001"
+)
+(uid "0_-fvi_hrnjywg5_-kfm"))
+($9 376 < 0_-fvi_hrnjywg5_-kfl "isDerived" 369
+(name "isDerived"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-kfl"))
+($11 377 < 0_-fvi_hrnjywg5_-kfk "#<anon> (StructureEnsemble, StructureAnalysis)##,structureAnalyses" 307
+(name "")
+(uid "0_-fvi_hrnjywg5_-kfk"))
+($12 378 < 0_-fvi_hrnjywg5_-kfj "#0" 377
+(uid "0_-fvi_hrnjywg5_-kfj")
+(multiplicity "*"))
+($9 379 < 0_-fvi_hrnjywg5_-kfi "documentation" 378
+(name "documentation"
+)
+(value "Structure Ensembles used for Structure Analysis"
+)
+(uid "0_-fvi_hrnjywg5_-kfi"))
+($9 380 < 0_-fvi_hrnjywg5_-kfh "guid" 378
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-03-06-18:40:29_00001"
+)
+(uid "0_-fvi_hrnjywg5_-kfh"))
+($12 381 < 0_-fvi_hrnjywg5_-kfg "structureAnalyses#1" 377
+(name "structureAnalyses"
+)
+(uid "0_-fvi_hrnjywg5_-kfg")
+(multiplicity "*"))
+($9 382 < 0_-fvi_hrnjywg5_-kff "documentation" 381
+(name "documentation"
+)
+(value "Structure analyses carried out using StructureEnsemble"
+)
+(uid "0_-fvi_hrnjywg5_-kff"))
+($9 383 < 0_-fvi_hrnjywg5_-kfe "baseName" 381
+(name "baseName"
+)
+(value "structureAnalysis"
+)
+(uid "0_-fvi_hrnjywg5_-kfe"))
+($9 384 < 0_-fvi_hrnjywg5_-kfd "guid" 381
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-03-06-18:40:29_00002"
+)
+(uid "0_-fvi_hrnjywg5_-kfd"))
+($11 385 < 0_-fvi_hrnjywg5_-kfc "#<anon> (StructureEnsemble, DataMatrix)##,dataMatrices" 307
+(name "")
+(uid "0_-fvi_hrnjywg5_-kfc"))
+($12 386 < 0_-fvi_hrnjywg5_-kfb "#0" 385
+(changeability "frozen")
+(aggregation "composite")
+(uid "0_-fvi_hrnjywg5_-kfb")
+(multiplicity "1"))
+($9 387 < 0_-fvi_hrnjywg5_-kfa "guid" 386
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-17:56:39_00030"
+)
+(uid "0_-fvi_hrnjywg5_-kfa"))
+($12 388 < 0_-fvi_hrnjywg5_-kf9 "dataMatrices#1" 385
+(name "dataMatrices"
+)
+(uid "0_-fvi_hrnjywg5_-kf9")
+(multiplicity "*"))
+($9 389 < 0_-fvi_hrnjywg5_-kf8 "guid" 388
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-17:56:39_00031"
+)
+(uid "0_-fvi_hrnjywg5_-kf8"))
+($9 390 < 0_-fvi_hrnjywg5_-kf7 "baseName" 388
+(name "baseName"
+)
+(value "dataMatrix"
+)
+(uid "0_-fvi_hrnjywg5_-kf7"))
+($11 391 < 0_-fvi_hrnjywg5_-kf6 "#<anon> (StructureEnsemble, Atom)##,orderedAtoms" 307
+(name "")
+(uid "0_-fvi_hrnjywg5_-kf6"))
+($12 392 < 0_-fvi_hrnjywg5_-kf5 "#0" 391
+(uid "0_-fvi_hrnjywg5_-kf5")
+(isNavigable false))
+($12 393 < 0_-fvi_hrnjywg5_-kf4 "orderedAtoms#1" 391
+(isOrdered true)
+(changeability "frozen")
+(name "orderedAtoms"
+)
+(uid "0_-fvi_hrnjywg5_-kf4")
+(multiplicity "*"))
+($9 394 < 0_-fvi_hrnjywg5_-kf3 "documentation" 393
+(name "documentation"
+)
+(value "Atoms in index order (creation order)"
+)
+(uid "0_-fvi_hrnjywg5_-kf3"))
+($9 395 < 0_-fvi_hrnjywg5_-kf2 "baseName" 393
+(name "baseName"
+)
+(value "orderedAtom"
+)
+(uid "0_-fvi_hrnjywg5_-kf2"))
+($9 396 < 0_-fvi_hrnjywg5_-kf1 "guid" 393
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-04-06-17:18:19_00001"
+)
+(uid "0_-fvi_hrnjywg5_-kf1"))
+($9 397 < 0_-fvi_hrnjywg5_-kf0 "isAutomatic" 391
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-kf0"))
+($9 398 < 0_-fvi_hrnjywg5_-kez "documentation" 307
+(name "documentation"
+)
+(value "Ensemble of three-dimensional structures (atomic coordinates) or trajectory for the MolSystem or part of it."
+)
+(uid "0_-fvi_hrnjywg5_-kez"))
+($9 399 < 0_-fvi_hrnjywg5_-key "guid" 307
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00032"
+)
+(uid "0_-fvi_hrnjywg5_-key"))
+($9 400 < 0_-fvi_hrnjywg5_-kex "keyNames" 307
+(name "keyNames"
+)
+(value "molSystem,ensembleId"
+)
+(uid "0_-fvi_hrnjywg5_-kex"))
+($6 401 < -hkpzxr_v5_f8zng6fd_-p91 "#<anon> (MolStructure, Validation)" 1
+(uid "-hkpzxr_v5_f8zng6fd_-p91"))
+($7 402 < 0_-fvi_hrnjywg5_-kev "Model" 1
+(name "Model"
+)
+(uid "0_-fvi_hrnjywg5_-kev"))
+($8 403 < 0_-fvi_hrnjywg5_-keu "serial" 402
+(changeability "frozen")
+(name "serial"
+)
+(uid "0_-fvi_hrnjywg5_-keu")
+(multiplicity "1"))
+($9 404 < 0_-fvi_hrnjywg5_-ket "isAutomatic" 403
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-ket"))
+($9 405 < 0_-fvi_hrnjywg5_-kes "guid" 403
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-23-12:00:15_00005"
+)
+(uid "0_-fvi_hrnjywg5_-kes"))
+($8 406 < 0_-fvi_hrnjywg5_-ker "name" 402
+(name "name"
+)
+(uid "0_-fvi_hrnjywg5_-ker"))
+($9 407 < 0_-fvi_hrnjywg5_-keq "documentation" 406
+(name "documentation"
+)
+(value "Name of model"
+)
+(uid "0_-fvi_hrnjywg5_-keq"))
+($9 408 < 0_-fvi_hrnjywg5_-kep "guid" 406
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-07-11-16:03:09_00001"
+)
+(uid "0_-fvi_hrnjywg5_-kep"))
+($8 409 < 0_-fvi_hrnjywg5_-keo "index" 402
+(changeability "frozen")
+(name "index"
+)
+(uid "0_-fvi_hrnjywg5_-keo")
+(multiplicity "1"))
+($9 410 < 0_-fvi_hrnjywg5_-ken "isAutomatic" 409
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-ken"))
+($9 411 < 0_-fvi_hrnjywg5_-kem "documentation" 409
+(name "documentation"
+)
+(value "index of model in list of models.  Set by implementation."
+)
+(uid "0_-fvi_hrnjywg5_-kem"))
+($9 412 < 0_-fvi_hrnjywg5_-kel "guid" 409
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-17:56:39_00013"
+)
+(uid "0_-fvi_hrnjywg5_-kel"))
+($8 413 < 0_-fvi_hrnjywg5_-kek "details" 402
+(name "details"
+)
+(uid "0_-fvi_hrnjywg5_-kek"))
+($9 414 < 0_-fvi_hrnjywg5_-kej "guid" 413
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-07-11-16:03:09_00002"
+)
+(uid "0_-fvi_hrnjywg5_-kej"))
+($8 415 < 0_-fvi_hrnjywg5_-kei "coordinates" 402
+(changeability "frozen")
+(name "coordinates"
+)
+(uid "0_-fvi_hrnjywg5_-kei")
+(multiplicity "*"))
+($9 416 < 0_-fvi_hrnjywg5_-keh "documentation" 415
+(name "documentation"
+)
+(value "Coordinates of Atoms in Model, given as [x1,y1,z1,x2,y2,z2, ...] in Atom index order."
+)
+(uid "0_-fvi_hrnjywg5_-keh"))
+($9 417 < 0_-fvi_hrnjywg5_-keg "baseName" 415
+(name "baseName"
+)
+(value "coordinate"
+)
+(uid "0_-fvi_hrnjywg5_-keg"))
+($9 418 < 0_-fvi_hrnjywg5_-kef "isDerived" 415
+(name "isDerived"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-kef"))
+($9 419 < 0_-fvi_hrnjywg5_-kee "guid" 415
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-17:56:39_00014"
+)
+(uid "0_-fvi_hrnjywg5_-kee"))
+($8 420 < 0_-fvi_hrnjywg5_-ked "bFactors" 402
+(changeability "frozen")
+(name "bFactors"
+)
+(uid "0_-fvi_hrnjywg5_-ked")
+(multiplicity "*"))
+($9 421 < 0_-fvi_hrnjywg5_-kec "documentation" 420
+(name "documentation"
+)
+(value "B Factors of Atoms in Model, in Atom index order."
+)
+(uid "0_-fvi_hrnjywg5_-kec"))
+($9 422 < 0_-fvi_hrnjywg5_-keb "isDerived" 420
+(name "isDerived"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-keb"))
+($9 423 < 0_-fvi_hrnjywg5_-kea "baseName" 420
+(name "baseName"
+)
+(value "bFactor"
+)
+(uid "0_-fvi_hrnjywg5_-kea"))
+($9 424 < 0_-fvi_hrnjywg5_-ke9 "guid" 420
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-17:56:39_00018"
+)
+(uid "0_-fvi_hrnjywg5_-ke9"))
+($8 425 < 0_-fvi_hrnjywg5_-ke8 "occupancies" 402
+(changeability "frozen")
+(name "occupancies"
+)
+(uid "0_-fvi_hrnjywg5_-ke8")
+(multiplicity "*"))
+($9 426 < 0_-fvi_hrnjywg5_-ke7 "documentation" 425
+(name "documentation"
+)
+(value "Occupancies of Atoms in Model, in Atom index order."
+)
+(uid "0_-fvi_hrnjywg5_-ke7"))
+($9 427 < 0_-fvi_hrnjywg5_-ke6 "baseName" 425
+(name "baseName"
+)
+(value "occupancy"
+)
+(uid "0_-fvi_hrnjywg5_-ke6"))
+($9 428 < 0_-fvi_hrnjywg5_-ke5 "isDerived" 425
+(name "isDerived"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-ke5"))
+($9 429 < 0_-fvi_hrnjywg5_-ke4 "guid" 425
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-17:56:39_00020"
+)
+(uid "0_-fvi_hrnjywg5_-ke4"))
+($10 430 < 0_-fvi_hrnjywg5_-kdx "getCoordinates" 402
+(name "getCoordinates"
+)
+(uid "0_-fvi_hrnjywg5_-kdx")
+(isQuery true))
+($9 431 < 0_-fvi_hrnjywg5_-kdw "documentation" 430
+(name "documentation"
+)
+(value "getter for derived attribute coordinates"
+)
+(uid "0_-fvi_hrnjywg5_-kdw"))
+($9 432 < 0_-fvi_hrnjywg5_-kdv "opType" 430
+(name "opType"
+)
+(value "get"
+)
+(uid "0_-fvi_hrnjywg5_-kdv"))
+($9 433 < 0_-fvi_hrnjywg5_-kdu "code:java" 430
+(name "code:java"
+)
+(value "result = null; /* NBNB TBD */"
+)
+(uid "0_-fvi_hrnjywg5_-kdu"))
+($9 434 < 0_-fvi_hrnjywg5_-kdt "code:python" 430
+(name "code:python"
+)
+(value "dataMatrix = self.structureEnsemble.findFirstDataMatrix(name='coordinates')"
+"if dataMatrix:"
+"  result = dataMatrix.getSubmatrixData(point=(self.index,), shape=(1,))"
+"else:"
+"  raise ApiError(\"%s lacks DataMatrix named 'coordinates''\" % self.structureEnsemble)"
+)
+(uid "0_-fvi_hrnjywg5_-kdt"))
+($9 435 < 0_-fvi_hrnjywg5_-kds "guid" 430
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-17:56:39_00022"
+)
+(uid "0_-fvi_hrnjywg5_-kds"))
+($10 436 < 0_-fvi_hrnjywg5_-kdr "getBFactors" 402
+(name "getBFactors"
+)
+(uid "0_-fvi_hrnjywg5_-kdr")
+(isQuery true))
+($9 437 < 0_-fvi_hrnjywg5_-kdq "documentation" 436
+(name "documentation"
+)
+(value "getter for derived attribute bFactors"
+)
+(uid "0_-fvi_hrnjywg5_-kdq"))
+($9 438 < 0_-fvi_hrnjywg5_-kdp "opType" 436
+(name "opType"
+)
+(value "get"
+)
+(uid "0_-fvi_hrnjywg5_-kdp"))
+($9 439 < 0_-fvi_hrnjywg5_-kdo "code:java" 436
+(name "code:java"
+)
+(value "result = null; /* NBNB TBD */"
+)
+(uid "0_-fvi_hrnjywg5_-kdo"))
+($9 440 < 0_-fvi_hrnjywg5_-kdn "code:python" 436
+(name "code:python"
+)
+(value "dataMatrix = self.structureEnsemble.findFirstDataMatrix(name='bFactors')"
+"if dataMatrix:"
+"  result = dataMatrix.getSubmatrixData(point=(self.index,), shape=(1,))"
+"else:"
+"  raise ApiError(\"%s lacks DataMatrix named 'bFactors''\" % self.structureEnsemble)"
+)
+(uid "0_-fvi_hrnjywg5_-kdn"))
+($9 441 < 0_-fvi_hrnjywg5_-kdm "guid" 436
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-17:56:39_00026"
+)
+(uid "0_-fvi_hrnjywg5_-kdm"))
+($10 442 < 0_-fvi_hrnjywg5_-kdl "getOccupancies" 402
+(name "getOccupancies"
+)
+(uid "0_-fvi_hrnjywg5_-kdl")
+(isQuery true))
+($9 443 < 0_-fvi_hrnjywg5_-kdk "documentation" 442
+(name "documentation"
+)
+(value "getter for derived attribute occupancies"
+)
+(uid "0_-fvi_hrnjywg5_-kdk"))
+($9 444 < 0_-fvi_hrnjywg5_-kdj "opType" 442
+(name "opType"
+)
+(value "get"
+)
+(uid "0_-fvi_hrnjywg5_-kdj"))
+($9 445 < 0_-fvi_hrnjywg5_-kdi "code:java" 442
+(name "code:java"
+)
+(value "result = null; /* NBNB TBD */"
+)
+(uid "0_-fvi_hrnjywg5_-kdi"))
+($9 446 < 0_-fvi_hrnjywg5_-kdh "code:python" 442
+(name "code:python"
+)
+(value "dataMatrix = self.structureEnsemble.findFirstDataMatrix(name='occupancies')"
+"if dataMatrix:"
+"  result = dataMatrix.getSubmatrixData(point=(self.index,), shape=(1,))"
+"else:"
+"  raise ApiError(\"%s lacks DataMatrix named 'occupancies''\" % self.structureEnsemble)"
+)
+(uid "0_-fvi_hrnjywg5_-kdh"))
+($9 447 < 0_-fvi_hrnjywg5_-kdg "guid" 442
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-17:56:39_00028"
+)
+(uid "0_-fvi_hrnjywg5_-kdg"))
+($10 448 < 0_-fvi_hrnjywg5_-kdf "getSubmatrixData#Word##IeeeFloat*" 402
+(name "getSubmatrixData"
+)
+(uid "0_-fvi_hrnjywg5_-kdf")
+(isQuery true))
+($15 449 < 0_-fvi_hrnjywg5_-kde "name" 448
+(name "name"
+)
+(uid "0_-fvi_hrnjywg5_-kde"))
+($9 450 < 0_-fvi_hrnjywg5_-kdd "guid" 449
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-04-05-18:09:03_00009"
+)
+(uid "0_-fvi_hrnjywg5_-kdd"))
+($15 451 < 0_-fvi_hrnjywg5_-kdc "result" 448
+(name "result"
+)
+(kind "return")
+(uid "0_-fvi_hrnjywg5_-kdc"))
+($9 452 < 0_-fvi_hrnjywg5_-kdb "guid" 451
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-04-05-18:09:03_00010"
+)
+(uid "0_-fvi_hrnjywg5_-kdb"))
+($9 453 < 0_-fvi_hrnjywg5_-kda "documentation" 448
+(name "documentation"
+)
+(value "Get data from StructureEnsemble data matrix named 'name' relevant to Model"
+)
+(uid "0_-fvi_hrnjywg5_-kda"))
+($9 454 < 0_-fvi_hrnjywg5_-kd9 "opType" 448
+(name "opType"
+)
+(value "otherQuery"
+)
+(uid "0_-fvi_hrnjywg5_-kd9"))
+($9 455 < 0_-fvi_hrnjywg5_-kd8 "code:java" 448
+(name "code:java"
+)
+(value "/* NBNB TBD */"
+)
+(uid "0_-fvi_hrnjywg5_-kd8"))
+($9 456 < 0_-fvi_hrnjywg5_-kd7 "code:python" 448
+(name "code:python"
+)
+(value "dataMatrix = self.structureEnsemble.findFirstDataMatrix(name=name)"
+"if dataMatrix:"
+"  result = dataMatrix.getSubmatrixData(point=(self.index,), shape=(1,))"
+"else:"
+"  raise ApiError(\"%s lacks DataMatrix named %s'\" % (self.structureEnsemble,name))"
+)
+(uid "0_-fvi_hrnjywg5_-kd7"))
+($9 457 < 0_-fvi_hrnjywg5_-kd6 "guid" 448
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-04-05-18:09:03_00008"
+)
+(uid "0_-fvi_hrnjywg5_-kd6"))
+($10 458 < 0_-fvi_hrnjywg5_-kd5 "setSubmatrixData#Word#IeeeFloat*" 402
+(name "setSubmatrixData"
+)
+(uid "0_-fvi_hrnjywg5_-kd5"))
+($15 459 < 0_-fvi_hrnjywg5_-kd4 "name" 458
+(name "name"
+)
+(uid "0_-fvi_hrnjywg5_-kd4"))
+($9 460 < 0_-fvi_hrnjywg5_-kd3 "guid" 459
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-04-05-18:09:03_00012"
+)
+(uid "0_-fvi_hrnjywg5_-kd3"))
+($15 461 < 0_-fvi_hrnjywg5_-kd2 "values" 458
+(name "values"
+)
+(uid "0_-fvi_hrnjywg5_-kd2"))
+($9 462 < 0_-fvi_hrnjywg5_-kd1 "guid" 461
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-04-05-18:09:03_00013"
+)
+(uid "0_-fvi_hrnjywg5_-kd1"))
+($9 463 < 0_-fvi_hrnjywg5_-kd0 "documentation" 458
+(name "documentation"
+)
+(value "Set data from StructureEnsemble data matrix named 'name' relevant to Model"
+)
+(uid "0_-fvi_hrnjywg5_-kd0"))
+($9 464 < 0_-fvi_hrnjywg5_-kcz "opType" 458
+(name "opType"
+)
+(value "otherModify"
+)
+(uid "0_-fvi_hrnjywg5_-kcz"))
+($9 465 < 0_-fvi_hrnjywg5_-kcy "code:java" 458
+(name "code:java"
+)
+(value "/* NBNB TBD */"
+)
+(uid "0_-fvi_hrnjywg5_-kcy"))
+($9 466 < 0_-fvi_hrnjywg5_-kcx "code:python" 458
+(name "code:python"
+)
+(value "dataMatrix = self.structureEnsemble.findFirstDataMatrix(name=name)"
+"if dataMatrix:"
+"  dataMatrix.setSubmatrixData(point=(self.index,), shape=(1,), values=values)"
+"else:"
+"  raise ApiError(\"%s lacks DataMatrix named %s'\" % (self.structureEnsemble,name))"
+)
+(uid "0_-fvi_hrnjywg5_-kcx"))
+($9 467 < 0_-fvi_hrnjywg5_-kcw "guid" 458
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-04-05-18:09:03_00011"
+)
+(uid "0_-fvi_hrnjywg5_-kcw"))
+($13 468 < 0_-fvi_hrnjywg5_-kcv "#<anon> (Model, DataObject)" 402
+(uid "0_-fvi_hrnjywg5_-kcv"))
+($11 469 < 0_-fvi_hrnjywg5_-kcn "#<anon> (Model, ViolationList)##molStructures," 402
+(name "")
+(uid "0_-fvi_hrnjywg5_-kcn"))
+($12 470 < 0_-fvi_hrnjywg5_-kcm "molStructures#0" 469
+(name "molStructures"
+)
+(uid "0_-fvi_hrnjywg5_-kcm")
+(multiplicity "*"))
+($9 471 < 0_-fvi_hrnjywg5_-kcl "documentation" 470
+(name "documentation"
+)
+(value "MolStructure.Models used for calculating ViolationList"
+)
+(uid "0_-fvi_hrnjywg5_-kcl"))
+($9 472 < 0_-fvi_hrnjywg5_-kck "baseName" 470
+(name "baseName"
+)
+(value "molStructure"
+)
+(uid "0_-fvi_hrnjywg5_-kck"))
+($9 473 < 0_-fvi_hrnjywg5_-kcj "guid" 470
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-23-12:00:15_00003"
+)
+(uid "0_-fvi_hrnjywg5_-kcj"))
+($12 474 < 0_-fvi_hrnjywg5_-kci "#1" 469
+(uid "0_-fvi_hrnjywg5_-kci")
+(multiplicity "*"))
+($9 475 < 0_-fvi_hrnjywg5_-kch "documentation" 474
+(name "documentation"
+)
+(value "NmrConstraint.ViolationLists calculated using Model"
+)
+(uid "0_-fvi_hrnjywg5_-kch"))
+($9 476 < 0_-fvi_hrnjywg5_-kcg "guid" 474
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-23-12:00:15_00004"
+)
+(uid "0_-fvi_hrnjywg5_-kcg"))
+($9 477 < 0_-fvi_hrnjywg5_-kcf "documentation" 402
+(name "documentation"
+)
+(value "A single structure instance that is part of the structure ensemble. Corresponds to a PDB MODEL."
+)
+(uid "0_-fvi_hrnjywg5_-kcf"))
+($9 478 < 0_-fvi_hrnjywg5_-kce "keyNames" 402
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "0_-fvi_hrnjywg5_-kce"))
+($9 479 < 0_-fvi_hrnjywg5_-kcd "guid" 402
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-23-12:00:10_00001"
+)
+(uid "0_-fvi_hrnjywg5_-kcd"))
+($9 480 < 0_-fvi_hrnjywg5_-kcc "constructorCode:python" 402
+(name "constructorCode:python"
+)
+(value "structureEnsemble = self.structureEnsemble"
+"nModels = len(structureEnsemble.models)"
+"dataDict['index'] = nModels - 1"
+"matrices = structureEnsemble.dataMatrices"
+"if matrices:"
+"  for matrix in structureEnsemble.dataMatrices:"
+"    matrix.sizeFirstDim(nModels)"
+"if structureEnsemble.findFirstDataMatrix(name='coordinates') is None:"
+"  structureEnsemble.newDataMatrix(name='coordinates', shape=(nModels,structureEnsemble.nAtoms,3))"
+"for tag in ('bFactors','occupancies'):"
+"  if structureEnsemble.findFirstDataMatrix(name=tag) is None:"
+"    structureEnsemble.newDataMatrix(name=tag, shape=(nModels,structureEnsemble.nAtoms))"
+)
+(uid "0_-fvi_hrnjywg5_-kcc"))
+($9 481 < 0_-fvi_hrnjywg5_-kcb "constructorCode:java" 402
+(name "constructorCode:java"
+)
+(value "/* NBNB TBD */"
+)
+(uid "0_-fvi_hrnjywg5_-kcb"))
+($9 482 < 0_-fvi_hrnjywg5_-kca "postDestructorCode:java" 402
+(name "postDestructorCode:java"
+)
+(value "/* NBNB TBD */"
+)
+(uid "0_-fvi_hrnjywg5_-kca"))
+($9 483 < 0_-fvi_hrnjywg5_-kc9 "postDestructorCode:python" 402
+(name "postDestructorCode:python"
+)
+(value "structureEnsemble = self.structureEnsemble"
+"if not structureEnsemble in objsToBeDeleted:"
+"  index = self.index"
+"  for matrix in self.structureEnsemble.dataMatrices:"
+"    matrix.removeSlice(index)"
+"  for model in self.structureEnsemble.models:"
+"    ii = model.index"
+"    if ii > index:"
+"      model.__dict__['index'] = ii - 1"
+)
+(uid "0_-fvi_hrnjywg5_-kc9"))
+($7 484 < 0_-fvi_hrnjywg5_-kc8 "DataMatrix" 1
+(name "DataMatrix"
+)
+(uid "0_-fvi_hrnjywg5_-kc8"))
+($8 485 < 0_-fvi_hrnjywg5_-kc7 "name" 484
+(changeability "frozen")
+(name "name"
+)
+(uid "0_-fvi_hrnjywg5_-kc7")
+(multiplicity "1"))
+($9 486 < 0_-fvi_hrnjywg5_-kc6 "documentation" 485
+(name "documentation"
+)
+(value "name of DataMatrix. Names  should use spellings in EnsembleDataNames when relevant."
+)
+(uid "0_-fvi_hrnjywg5_-kc6"))
+($9 487 < 0_-fvi_hrnjywg5_-kc5 "guid" 485
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-17:56:39_00012"
+)
+(uid "0_-fvi_hrnjywg5_-kc5"))
+($8 488 < 0_-fvi_hrnjywg5_-kc4 "unit" 484
+(name "unit"
+)
+(uid "0_-fvi_hrnjywg5_-kc4"))
+($9 489 < 0_-fvi_hrnjywg5_-kc3 "documentation" 488
+(name "documentation"
+)
+(value "Unit for values in data. If not set, data are assumed to be in default units, which are:"
+"coordinates: Angstrom"
+"velocities: Angstrom/s"
+"times: s"
+"temperatures: K"
+"partialCharges: electron charge unit"
+)
+(uid "0_-fvi_hrnjywg5_-kc3"))
+($9 490 < 0_-fvi_hrnjywg5_-kc2 "guid" 488
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-04-06-10:33:05_00001"
+)
+(uid "0_-fvi_hrnjywg5_-kc2"))
+($8 491 < 0_-fvi_hrnjywg5_-kc1 "details" 484
+(name "details"
+)
+(uid "0_-fvi_hrnjywg5_-kc1"))
+($9 492 < 0_-fvi_hrnjywg5_-kc0 "guid" 491
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-04-06-10:33:05_00002"
+)
+(uid "0_-fvi_hrnjywg5_-kc0"))
+($13 493 < 0_-fvi_hrnjywg5_-kbz "#<anon> (DataMatrix, DataObject)" 484
+(uid "0_-fvi_hrnjywg5_-kbz"))
+($13 494 < 0_-fvi_hrnjywg5_-kby "#<anon> (DataMatrix, FloatMatrixObject)" 484
+(uid "0_-fvi_hrnjywg5_-kby"))
+($9 495 < 0_-fvi_hrnjywg5_-kbx "documentation" 484
+(name "documentation"
+)
+(value "Matrix of per-atom, per-model data. Data matrices named 'coordinates', 'bFactors', and 'occupancies' are created when the first Model object is created"
+)
+(uid "0_-fvi_hrnjywg5_-kbx"))
+($9 496 < 0_-fvi_hrnjywg5_-kbw "keyNames" 484
+(name "keyNames"
+)
+(value "name"
+)
+(uid "0_-fvi_hrnjywg5_-kbw"))
+($9 497 < 0_-fvi_hrnjywg5_-kbv "guid" 484
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-17:55:16_00001"
+)
+(uid "0_-fvi_hrnjywg5_-kbv"))
+($6 498 < 0_-fvi_hrnjywg5_-kbu "#<anon> (MolStructure, Template)" 1
+(uid "0_-fvi_hrnjywg5_-kbu"))
+($7 499 < 0_-fvi_hrnjywg5_-kbt "EnsembleDataNames" 1
+(name "EnsembleDataNames"
+)
+(uid "0_-fvi_hrnjywg5_-kbt"))
+($13 500 < 0_-fvi_hrnjywg5_-kbs "#<anon> (EnsembleDataNames, Word)" 499
+(uid "0_-fvi_hrnjywg5_-kbs"))
+($9 501 < 0_-fvi_hrnjywg5_-kbr "documentation" 499
+(name "documentation"
+)
+(value "DataMatrix names. Open enumeration, serves to standardise spelling."
+)
+(uid "0_-fvi_hrnjywg5_-kbr"))
+($9 502 < 0_-fvi_hrnjywg5_-kbq "isOpen" 499
+(name "isOpen"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-kbq"))
+($9 503 < 0_-fvi_hrnjywg5_-kbp "enumeration" 499
+(name "enumeration"
+)
+(value "('coordinates','bFactors','occupancies','velocities','partialCharges','temperatures','pressures','times')"
+)
+(uid "0_-fvi_hrnjywg5_-kbp"))
+($9 504 < 0_-fvi_hrnjywg5_-kbo "guid" 499
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-04-05-18:06:52_00001"
+)
+(uid "0_-fvi_hrnjywg5_-kbo"))
+($2 505 < 0_-fvi_hrnjywg5_-kbn "Hinxton_MolStructure" 1
+(name "Hinxton_MolStructure"
+)
+(uid "0_-fvi_hrnjywg5_-kbn")
+(diagramType "class"))
+($3 506 < 0_-fvi_hrnjywg5_-kbm "StructureEnsemble" 505
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-kbm")
+(bbx 10 10 170 140))
+($3 507 < 0_-fvi_hrnjywg5_-kbl "Residue" 505
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-kbl")
+(bbx 240 250 160 90))
+($3 508 < 0_-fvi_hrnjywg5_-kbk "Chain" 505
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-kbk")
+(bbx 280 140 80 60))
+($4 509 < 0_-fvi_hrnjywg5_-kbj "" 505
+(toMultiplicityPosition 305 235)
+(uid "0_-fvi_hrnjywg5_-kbj")
+(points 315 200 315 250)
+(fromMultiplicityPosition 325 205))
+($4 510 < 0_-fvi_hrnjywg5_-kbi "" 505
+(toMultiplicityPosition 265 170)
+(toRolePosition 195 150)
+(uid "0_-fvi_hrnjywg5_-kbi")
+(points 180 145 280 145)
+(fromMultiplicityPosition 185 160))
+($3 511 < 0_-fvi_hrnjywg5_-kbh "Atom" 505
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-kbh")
+(bbx 230 380 170 160))
+($4 512 < 0_-fvi_hrnjywg5_-kbg "" 505
+(toMultiplicityPosition 305 365)
+(uid "0_-fvi_hrnjywg5_-kbg")
+(points 315 340 315 380)
+(fromMultiplicityPosition 325 345))
+($4 513 < 0_-fvi_hrnjywg5_-kbf "" 505
+(toMultiplicityPosition 220 395)
+(toRolePosition 175 365)
+(uid "0_-fvi_hrnjywg5_-kbf")
+(points 155 150 155 385 230 385)
+(toOrderedPosition 180 350))
+($3 514 < 0_-fvi_hrnjywg5_-kbc "DataMatrix" 505
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-kbc")
+(bbx 230 20 190 90))
+($4 515 < 0_-fvi_hrnjywg5_-kbb "" 505
+(toMultiplicityPosition 220 30)
+(toRolePosition 220 5)
+(uid "0_-fvi_hrnjywg5_-kbb")
+(points 180 25 230 25)
+(fromMultiplicityPosition 185 5))
+($3 516 < 0_-fvi_hrnjywg5_-kba "Model" 505
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-kba")
+(bbx 10 200 130 160))
+($4 517 < 0_-fvi_hrnjywg5_-kb8 "" 505
+(toMultiplicityPosition 65 185)
+(uid "0_-fvi_hrnjywg5_-kb8")
+(points 75 150 75 200)
+(fromMultiplicityPosition 85 150))
+($3 518 < 0_-fvi_hrnjywg5_-kb7 "MolSystem" 505
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-kb7")
+(bbx 440 100 230 30))
+($4 519 < 0_-fvi_hrnjywg5_-kb6 "" 505
+(toMultiplicityPosition 185 95)
+(uid "0_-fvi_hrnjywg5_-kb6")
+(points 440 120 180 120)
+(fromMultiplicityPosition 430 125))
+($3 520 < 0_-fvi_hrnjywg5_-kb5 "Chain" 505
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-kb5")
+(bbx 460 170 200 30))
+($4 521 < 0_-fvi_hrnjywg5_-kb4 "" 505
+(uid "0_-fvi_hrnjywg5_-kb4")
+(points 360 185 460 185))
+($4 522 < 0_-fvi_hrnjywg5_-kb3 "" 505
+(toMultiplicityPosition 565 155)
+(uid "0_-fvi_hrnjywg5_-kb3")
+(points 560 130 560 170)
+(fromMultiplicityPosition 540 135))
+($3 523 < 0_-fvi_hrnjywg5_-kb2 "Residue" 505
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-kb2")
+(bbx 450 260 210 30))
+($4 524 < 0_-fvi_hrnjywg5_-kb1 "" 505
+(uid "0_-fvi_hrnjywg5_-kb1")
+(points 400 275 450 275))
+($4 525 < 0_-fvi_hrnjywg5_-kb0 "" 505
+(toMultiplicityPosition 550 245)
+(uid "0_-fvi_hrnjywg5_-kb0")
+(points 560 200 560 260)
+(fromMultiplicityPosition 545 205))
+($3 526 < 0_-fvi_hrnjywg5_-kaz "Atom" 505
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-kaz")
+(bbx 460 370 200 30))
+($4 527 < 0_-fvi_hrnjywg5_-kay "" 505
+(uid "0_-fvi_hrnjywg5_-kay")
+(points 400 385 460 385))
+($4 528 < 0_-fvi_hrnjywg5_-kax "" 505
+(toMultiplicityPosition 550 350)
+(uid "0_-fvi_hrnjywg5_-kax")
+(points 560 290 560 370)
+(fromMultiplicityPosition 540 295))
+($3 529 < 0_-fvi_hrnjywg5_-kaw "FloatMatrixObject" 505
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-kaw")
+(bbx 430 410 260 130))
+($5 530 < 0_-fvi_hrnjywg5_-kav "" 505
+(uid "0_-fvi_hrnjywg5_-kav")
+(points 420 65 685 65 685 410))
+($9 531 < 0_-fvi_hrnjywg5_-kau "shortName" 1
+(name "shortName"
+)
+(value "COOR"
+)
+(uid "0_-fvi_hrnjywg5_-kau"))
+($9 532 < 0_-fvi_hrnjywg5_-kat "documentation" 1
+(name "documentation"
+)
+(value "Three-dimensional structures and their atomic coordinates, corresponding to the ATOM and HETATM records in a PDB file."
+)
+(uid "0_-fvi_hrnjywg5_-kat"))
+($9 533 < 0_-fvi_hrnjywg5_-kas "packageGroup" 1
+(name "packageGroup"
+)
+(value "nmr"
+)
+(uid "0_-fvi_hrnjywg5_-kas"))
+($9 534 < 0_-fvi_hrnjywg5_-kar "guid" 1
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00065"
+)
+(uid "0_-fvi_hrnjywg5_-kar"))
+($17 536)
+($17 538)
+($17 541)
+($19 544)
+($19 546)
+($19 548)
+($19 550)
+($19 553)
+($19 555)
+($19 557)
+($19 558)
+($19 559)
+($19 560)
+($19 561)
+($19 562)
+($19 564)
+($19 565
+(body "*"
+))
+($19 566
+(body "*"
+))
+($19 567
+(body "3"
+))
+($19 568)
+($19 569
+(body "*"
+))
+($19 575)
+($19 576)
+($19 577)
+($19 578
+(body "*"
+))
+($19 579
+(body "*"
+))
+($19 586)
+($17 587)
+($17 589)
+($17 590)
+($17 591)
+($17 592)
+($17 593)
+($17 594)
+($17 595)
+($17 596)
+($17 598)
+($17 599)
+($17 601)
+($17 603)
+($17 604)
+($17 605)
+($17 607)
+($17 608)
+($17 610)
+($17 611)
+($17 613)
+($17 615)
+($17 616)
+($17 617)
+($17 619)
+($17 620)
+($17 621)
+($17 622)
+($17 623)
+($17 624)
+($17 625)
+($17 626)
+($17 627)
+($17 628)
+($17 629)
+($17 630)
+($17 631)
+($17 632)
+($17 633)
+($17 634)
+($17 635)
+($17 636)
+($17 637)
+($17 638)
+($17 639)
+($17 640)
+($17 641)
+($17 642)
+($17 643)
+($17 644)
+($17 645)
+($17 646)
+($17 647)
+($17 648)
+($17 649)
+($17 650)
+($17 651)
+($17 652)
+($17 658)
+($17 659)
+($17 660)
+($17 661)
+($17 662)
+($17 663)
+($17 664)
+($17 665)
+($17 666)
+($17 667)
+($17 668)
+($17 669)
+($17 670)
+($17 671)
+($17 672)
+($17 673)
+($17 674)
+($17 675)
+($17 676)
+($17 677)
+($17 678)
+($17 679)
+($17 680)
+($17 681)
+($17 682)
+($16 535 @ -yk94ms_-e3s_e41656c6_-fvn 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "MolSystem" $16)
+($7 537 @ 0_-fvi_hrnjywg5_-k0g 5 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "Atom" $7)
+($7 539 @ 0_-fvi_hrnjywg5_-k7s 5 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "MolSystem" $7)
+($16 540 @ -yk94ms_-e3s_e41656c6_-fvs 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Coordinates" $16)
+($7 542 @ 0_-fvi_hrnjywg5_-dbb 4 "Logical" $1 "memops" $1 "Implementation" $1 "TopObject" $7)
+($7 543 @ 0_-fvi_hrnjywg5_-dl3 4 "Logical" $1 "memops" $1 "Implementation" $1 "Int" $7)
+($7 545 @ 0_-fvi_hrnjywg5_-dkx 4 "Logical" $1 "memops" $1 "Implementation" $1 "Line" $7)
+($7 547 @ 0_-fvi_hrnjywg5_-dkb 4 "Logical" $1 "memops" $1 "Implementation" $1 "Word" $7)
+($7 549 @ 0_-fvi_hrnjywg5_-dcf 4 "Logical" $1 "memops" $1 "Implementation" $1 "PathString" $7)
+($7 551 @ ajvq9s_joo_ikxbcnnd_-p98 4 "Logical" $1 "memops" $1 "Implementation" $1 "Multiple" $7)
+($7 552 @ 0_-fvi_hrnjywg5_-dkm 4 "Logical" $1 "memops" $1 "Implementation" $1 "String" $7)
+($7 554 @ 0_-fvi_hrnjywg5_-d9g 4 "Logical" $1 "memops" $1 "Implementation" $1 "DataObject" $7)
+($7 556 @ 0_-fvi_hrnjywg5_-m5f 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "ThreeLetterCode" $7)
+($7 563 @ 0_6e6_ig7sn6om_-p98 4 "Logical" $1 "memops" $1 "Implementation" $1 "IeeeFloat" $7)
+($7 570 @ 0_-fvi_hrnjywg5_-m17 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "ChemAtom" $7)
+($7 571 @ 0_-fvi_hrnjywg5_-jzp 5 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "Residue" $7)
+($7 572 @ 0_-fvi_hrnjywg5_-jmn 5 "Logical" $1 "ccp" $1 "molecule" $1 "Validation" $1 "ResidueValidation" $7)
+($7 573 @ 0_-fvi_hrnjywg5_-k4a 5 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "Chain" $7)
+($7 574 @ 0_-fvi_hrnjywg5_-jmj 5 "Logical" $1 "ccp" $1 "molecule" $1 "Validation" $1 "ChainValidation" $7)
+($7 580 @ -yk94ms_-e3s_e41656c6_-ld4 5 "Logical" $1 "ccp" $1 "nmr" $1 "NmrConstraint" $1 "ViolationList" $7)
+($7 581 @ 0_-fvi_hrnjywg5_-jom 5 "Logical" $1 "ccp" $1 "molecule" $1 "Validation" $1 "ValidationStore" $7)
+($7 582 @ 0_-fvi_hrnjywg5_-jk5 5 "Logical" $1 "ccp" $1 "molecule" $1 "Validation" $1 "EnsembleValidation" $7)
+($7 583 @ 0_-fvi_hrnjywg5_-gr9 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "StructureAnalysis" $7)
+($7 584 @ 0_-fvi_hrnjywg5_-nhc 5 "Logical" $1 "ccp" $1 "general" $1 "Template" $1 "FloatMatrixObject" $7)
+($20 585 @ -yk94ms_-e3s_e41656c6_-fw7 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "DataType" $20)
+($11 588 @ 0_-fvi_hrnjywg5_-k5j 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "MolSystem" $7 "#<anon> (MolSystem, StructureEnsemble)##," $11)
+($11 597 @ 0_-fvi_hrnjywg5_-k6a 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "MolSystem" $7 "#<anon> (MolSystem, Chain)##," $11)
+($11 600 @ 0_-fvi_hrnjywg5_-jy8 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "Residue" $7 "#<anon> (Residue, Atom)##," $11)
+($11 602 @ 0_-fvi_hrnjywg5_-k2k 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "Chain" $7 "#<anon> (Chain, Residue)##," $11)
+($16 606 @ -yk94ms_-e3s_e41656c6_-fvu 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "ChemComp" $16)
+($11 609 @ 0_-fvi_hrnjywg5_-k05 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "Atom" $7 "#<anon> (Atom, ChemAtom)##," $11)
+($7 612 @ 0_-fvi_hrnjywg5_-jwi 5 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "StructureGroup" $7)
+($11 614 @ 0_-fvi_hrnjywg5_-k5b 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "MolSystem" $7 "#<anon> (MolSystem, StructureGroup)##," $11)
+($11 618 @ 0_-fvi_hrnjywg5_-jw6 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1 "StructureGroup" $7 "#<anon> (StructureGroup, Model)##," $11)
+($20 653 @ -yk94ms_-e3s_e41656c6_-fwy 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "import" $20)
+($1 654 @ -yk94ms_-e3s_e41656c6_-ibf 4 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1)
+($1 655 @ -yk94ms_-e3s_e41656c6_-p0n 4 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1)
+($1 656 @ 0_-fvi_hrnjywg5_-ote 4 "Logical" $1 "ccp" $1 "molecule" $1 "Validation" $1)
+($1 657 @ -yk94ms_-e3s_e41656c6_-jt9 4 "Logical" $1 "ccp" $1 "general" $1 "Template" $1)
+(styleAssn 3 535)
+(projectionAssn 3 537 536)
+(styleAssn 4 535)
+(projectionAssn 4 539 538)
+(styleAssn 5 540)
+(typeAssn 350 307)
+(assocEndAssn 307 350)
+(typeAssn 357 307)
+(assocEndAssn 307 357)
+(typeAssn 362 307)
+(assocEndAssn 307 362)
+(typeAssn 370 307)
+(assocEndAssn 307 370)
+(typeAssn 378 307)
+(assocEndAssn 307 378)
+(typeAssn 386 307)
+(assocEndAssn 307 386)
+(typeAssn 392 307)
+(assocEndAssn 307 392)
+(subtypeAssn 355 307)
+(supertypeAssn 355 542)
+(generalizationAssn 307 355)
+(typeRefAssn 308 543)
+(typeExpression 308 544)
+(typeRefAssn 311 545)
+(typeExpression 311 544)
+(typeRefAssn 314 545)
+(typeExpression 314 544)
+(typeRefAssn 323 543)
+(typeExpression 323 546)
+(typeRefAssn 327 547)
+(typeExpression 327 548)
+(typeRefAssn 330 549)
+(typeExpression 330 550)
+(typeRefAssn 333 551)
+(typeExpression 333 550)
+(typeRefAssn 335 552)
+(typeExpression 335 553)
+(typeAssn 76 65)
+(assocEndAssn 65 76)
+(typeAssn 82 65)
+(assocEndAssn 65 82)
+(assocEndAssn 65 352)
+(typeAssn 88 65)
+(assocEndAssn 65 88)
+(subtypeAssn 80 65)
+(supertypeAssn 80 554)
+(generalizationAssn 65 80)
+(typeRefAssn 66 545)
+(typeExpression 66 555)
+(assocEndAssn 101 78)
+(typeAssn 121 101)
+(assocEndAssn 101 121)
+(typeAssn 127 101)
+(assocEndAssn 101 127)
+(typeAssn 133 101)
+(assocEndAssn 101 133)
+(subtypeAssn 125 101)
+(supertypeAssn 125 554)
+(generalizationAssn 101 125)
+(typeRefAssn 102 543)
+(typeExpression 102 555)
+(typeRefAssn 105 545)
+(typeExpression 105 555)
+(typeRefAssn 108 556)
+(typeExpression 108 557)
+(typeRefAssn 111 543)
+(typeExpression 111 558)
+(assocEndAssn 146 123)
+(typeAssn 287 146)
+(assocEndAssn 146 287)
+(typeAssn 294 146)
+(assocEndAssn 146 294)
+(typeAssn 393 146)
+(assocEndAssn 146 393)
+(subtypeAssn 285 146)
+(supertypeAssn 285 554)
+(generalizationAssn 146 285)
+(typeRefAssn 147 547)
+(typeExpression 147 555)
+(typeRefAssn 156 545)
+(typeExpression 156 559)
+(typeRefAssn 159 543)
+(typeExpression 159 560)
+(typeRefAssn 165 547)
+(typeExpression 165 558)
+(typeRefAssn 170 547)
+(typeExpression 170 561)
+(typeRefAssn 186 547)
+(typeExpression 186 562)
+(typeRefAssn 190 563)
+(typeExpression 190 560)
+(typeRefAssn 195 563)
+(typeExpression 195 560)
+(typeRefAssn 200 563)
+(typeExpression 200 560)
+(typeAssn 224 547)
+(typeExpression 224 564)
+(typeAssn 226 563)
+(typeExpression 226 565)
+(typeAssn 234 547)
+(typeExpression 234 564)
+(typeAssn 236 563)
+(typeExpression 236 566)
+(typeAssn 244 543)
+(typeExpression 244 560)
+(typeAssn 246 563)
+(typeExpression 246 567)
+(typeAssn 254 543)
+(typeExpression 254 560)
+(typeAssn 256 563)
+(typeExpression 256 560)
+(typeAssn 264 543)
+(typeExpression 264 560)
+(typeAssn 266 563)
+(typeExpression 266 560)
+(typeAssn 274 547)
+(typeExpression 274 568)
+(typeAssn 276 547)
+(typeExpression 276 568)
+(typeAssn 278 563)
+(typeExpression 278 569)
+(typeAssn 289 537)
+(typeAssn 295 570)
+(typeAssn 123 146)
+(typeAssn 128 571)
+(typeAssn 136 572)
+(typeAssn 78 101)
+(typeAssn 83 573)
+(typeAssn 91 574)
+(typeAssn 352 65)
+(assocEndAssn 402 359)
+(typeAssn 470 402)
+(assocEndAssn 402 470)
+(subtypeAssn 468 402)
+(supertypeAssn 468 554)
+(generalizationAssn 402 468)
+(typeRefAssn 403 543)
+(typeExpression 403 575)
+(typeRefAssn 406 545)
+(typeExpression 406 576)
+(typeRefAssn 409 543)
+(typeExpression 409 546)
+(typeRefAssn 413 552)
+(typeExpression 413 576)
+(typeRefAssn 415 563)
+(typeExpression 415 546)
+(typeRefAssn 420 563)
+(typeExpression 420 577)
+(typeRefAssn 425 563)
+(typeExpression 425 546)
+(typeAssn 449 547)
+(typeExpression 449 564)
+(typeAssn 451 563)
+(typeExpression 451 578)
+(typeAssn 459 547)
+(typeExpression 459 564)
+(typeAssn 461 563)
+(typeExpression 461 579)
+(typeAssn 474 580)
+(typeAssn 359 402)
+(typeAssn 365 581)
+(typeAssn 373 582)
+(typeAssn 381 583)
+(assocEndAssn 484 388)
+(subtypeAssn 493 484)
+(supertypeAssn 493 554)
+(generalizationAssn 484 493)
+(subtypeAssn 494 484)
+(supertypeAssn 494 584)
+(generalizationAssn 484 494)
+(stereotypeAssn 499 585)
+(subtypeAssn 500 499)
+(supertypeAssn 500 547)
+(generalizationAssn 499 500)
+(typeRefAssn 485 499)
+(typeExpression 485 586)
+(typeRefAssn 488 547)
+(typeExpression 488 548)
+(typeRefAssn 491 552)
+(typeExpression 491 548)
+(typeAssn 388 484)
+(projectionAssn 5 307 541)
+(to 6 5)
+(from 6 4)
+(projectionAssn 6 588 587)
+(styleAssn 7 540)
+(projectionAssn 7 65 589)
+(to 8 7)
+(from 8 5)
+(projectionAssn 8 349 590)
+(styleAssn 9 540)
+(projectionAssn 9 101 591)
+(to 10 9)
+(from 10 7)
+(projectionAssn 10 75 592)
+(styleAssn 11 540)
+(projectionAssn 11 146 593)
+(to 12 11)
+(from 12 9)
+(projectionAssn 12 120 594)
+(styleAssn 13 535)
+(projectionAssn 13 573 595)
+(to 14 13)
+(from 14 4)
+(projectionAssn 14 597 596)
+(styleAssn 15 535)
+(projectionAssn 15 571 598)
+(to 16 3)
+(from 16 15)
+(projectionAssn 16 600 599)
+(to 17 15)
+(from 17 13)
+(projectionAssn 17 602 601)
+(to 18 13)
+(from 18 7)
+(projectionAssn 18 81 603)
+(to 19 15)
+(from 19 9)
+(projectionAssn 19 126 604)
+(to 20 3)
+(from 20 11)
+(projectionAssn 20 286 605)
+(styleAssn 21 606)
+(projectionAssn 21 570 607)
+(to 22 21)
+(from 22 3)
+(projectionAssn 22 609 608)
+(to 23 21)
+(from 23 11)
+(projectionAssn 23 293 610)
+(styleAssn 24 535)
+(projectionAssn 24 612 611)
+(to 25 24)
+(from 25 4)
+(projectionAssn 25 614 613)
+(styleAssn 26 540)
+(projectionAssn 26 402 615)
+(to 27 26)
+(from 27 5)
+(projectionAssn 27 356 616)
+(to 28 26)
+(from 28 24)
+(projectionAssn 28 618 617)
+(styleAssn 29 540)
+(projectionAssn 29 484 619)
+(to 30 29)
+(from 30 5)
+(projectionAssn 30 385 620)
+(projectionAssn 31 499 621)
+(to 32 11)
+(from 32 5)
+(projectionAssn 32 391 622)
+(projectionAssn 33 584 623)
+(to 34 33)
+(from 34 29)
+(projectionAssn 34 494 624)
+(styleAssn 36 535)
+(projectionAssn 36 537 625)
+(styleAssn 37 535)
+(projectionAssn 37 539 626)
+(styleAssn 38 540)
+(projectionAssn 38 307 627)
+(to 39 38)
+(from 39 37)
+(projectionAssn 39 588 628)
+(styleAssn 40 540)
+(projectionAssn 40 65 629)
+(to 41 40)
+(from 41 38)
+(projectionAssn 41 349 630)
+(styleAssn 42 540)
+(projectionAssn 42 101 631)
+(to 43 42)
+(from 43 40)
+(projectionAssn 43 75 632)
+(styleAssn 44 540)
+(projectionAssn 44 146 633)
+(to 45 44)
+(from 45 42)
+(projectionAssn 45 120 634)
+(styleAssn 46 535)
+(projectionAssn 46 573 635)
+(to 47 46)
+(from 47 37)
+(projectionAssn 47 597 636)
+(styleAssn 48 535)
+(projectionAssn 48 571 637)
+(to 49 36)
+(from 49 48)
+(projectionAssn 49 600 638)
+(to 50 48)
+(from 50 46)
+(projectionAssn 50 602 639)
+(to 51 46)
+(from 51 40)
+(projectionAssn 51 81 640)
+(to 52 48)
+(from 52 42)
+(projectionAssn 52 126 641)
+(to 53 36)
+(from 53 44)
+(projectionAssn 53 286 642)
+(styleAssn 54 606)
+(projectionAssn 54 570 643)
+(to 55 54)
+(from 55 36)
+(projectionAssn 55 609 644)
+(to 56 54)
+(from 56 44)
+(projectionAssn 56 293 645)
+(styleAssn 57 540)
+(projectionAssn 57 402 646)
+(to 58 57)
+(from 58 38)
+(projectionAssn 58 356 647)
+(styleAssn 59 535)
+(projectionAssn 59 612 648)
+(to 60 57)
+(from 60 59)
+(projectionAssn 60 618 649)
+(to 61 59)
+(from 61 37)
+(projectionAssn 61 614 650)
+(styleAssn 62 540)
+(projectionAssn 62 484 651)
+(to 63 62)
+(from 63 38)
+(projectionAssn 63 385 652)
+(stereotypeAssn 64 653)
+(clientAssn 64 1)
+(supplierAssn 64 654)
+(stereotypeAssn 306 653)
+(clientAssn 306 1)
+(supplierAssn 306 655)
+(stereotypeAssn 401 653)
+(clientAssn 401 1)
+(supplierAssn 401 656)
+(stereotypeAssn 498 653)
+(clientAssn 498 1)
+(supplierAssn 498 657)
+(styleAssn 506 540)
+(projectionAssn 506 307 658)
+(styleAssn 507 540)
+(projectionAssn 507 101 659)
+(styleAssn 508 540)
+(projectionAssn 508 65 660)
+(to 509 507)
+(from 509 508)
+(projectionAssn 509 75 661)
+(to 510 508)
+(from 510 506)
+(projectionAssn 510 349 662)
+(styleAssn 511 540)
+(projectionAssn 511 146 663)
+(to 512 511)
+(from 512 507)
+(projectionAssn 512 120 664)
+(to 513 511)
+(from 513 506)
+(projectionAssn 513 391 665)
+(styleAssn 514 540)
+(projectionAssn 514 484 666)
+(to 515 514)
+(from 515 506)
+(projectionAssn 515 385 667)
+(styleAssn 516 540)
+(projectionAssn 516 402 668)
+(to 517 516)
+(from 517 506)
+(projectionAssn 517 356 669)
+(styleAssn 518 535)
+(projectionAssn 518 539 670)
+(to 519 506)
+(from 519 518)
+(projectionAssn 519 588 671)
+(styleAssn 520 535)
+(projectionAssn 520 573 672)
+(to 521 520)
+(from 521 508)
+(projectionAssn 521 81 673)
+(to 522 520)
+(from 522 518)
+(projectionAssn 522 597 674)
+(styleAssn 523 535)
+(projectionAssn 523 571 675)
+(to 524 523)
+(from 524 507)
+(projectionAssn 524 126 676)
+(to 525 523)
+(from 525 520)
+(projectionAssn 525 602 677)
+(styleAssn 526 535)
+(projectionAssn 526 537 678)
+(to 527 526)
+(from 527 511)
+(projectionAssn 527 286 679)
+(to 528 526)
+(from 528 523)
+(projectionAssn 528 600 680)
+(projectionAssn 529 584 681)
+(to 530 529)
+(from 530 514)
+(projectionAssn 530 494 682)

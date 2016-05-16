@@ -1,0 +1,479 @@
+ObjectDomain_Shared_Package 15
+{0_6e6_i1unbjiz_-p98 4 "Logical" objectdomain.uml.mechanisms.UmlPackage-owns "ccpnmr" objectdomain.uml.mechanisms.UmlPackage-owns "gui" objectdomain.uml.mechanisms.UmlPackage-owns "Window" objectdomain.uml.mechanisms.UmlPackage-owns
+}[objectdomain.uml.core.TypeExpression $16
+objectdomain.uml.mechanisms.UmlPackage-owns $1
+objectdomain.uml.core.Generalization-owns $12
+objectdomain.uml.core.Dependency-owns $13
+objectdomain.uml.core.Projection $14
+objectdomain.uml.core.UmlAttribute-features $6
+objectdomain.uml.core.UmlAssociationEnd-connections $10
+objectdomain.uml.view.style.BaseViewElementStyle-owns $17
+objectdomain.uml.view.ClassView-owns $3
+objectdomain.uml.core.UmlTaggedValue-taggedValues $7
+objectdomain.uml.core.UmlConstraint-constraints $11
+objectdomain.uml.core.UmlAssociation-owns $9
+objectdomain.uml.view.Diagram-owns $2
+objectdomain.uml.core.UmlOperation-features $8
+objectdomain.uml.core.UmlMultiplicity $15
+objectdomain.uml.core.UmlClass-owns $5
+objectdomain.uml.view.AssociationView-owns $4
+objectdomain.uml.core.Stereotype-owns $18
+]
+($1 1 > 0_6e6_i1unbjiz_-p98 4 "Logical" $1 "ccpnmr" $1 "gui" $1 "Window" $1
+(name "Window"
+)
+(uid "0_6e6_i1unbjiz_-p98"))
+($2 2 < 0_6e6_i1unbjiz_-p96 "_Window-details" 1
+(name "_Window-details"
+)
+(uid "0_6e6_i1unbjiz_-p96")
+(diagramType "class"))
+($3 3 < 0_92a_i1vy88ot_-p90 "Window" 2
+(autoSizeToFit true)
+(uid "0_92a_i1vy88ot_-p90")
+(bbx 350 200 120 110))
+($3 4 < 0_92a_i1vy88ot_-p8x "WindowStore" 2
+(autoSizeToFit true)
+(uid "0_92a_i1vy88ot_-p8x")
+(bbx 380 10 80 40))
+($4 5 < 0_92a_i1vy88ot_-p94 "" 2
+(toMultiplicityPosition 405 170)
+(uid "0_92a_i1vy88ot_-p94")
+(points 395 50 395 200)
+(fromMultiplicityPosition 410 60))
+($4 6 < 0_92a_i1vy88ot_-p93 "" 2
+(toMultiplicityPosition 435 175)
+(toRolePosition 420 145)
+(uid "0_92a_i1vy88ot_-p93")
+(points 450 50 450 200))
+($3 7 < 0_92a_i1vy88ot_-p98 "NmrProject" 2
+(autoSizeToFit true)
+(uid "0_92a_i1vy88ot_-p98")
+(bbx 10 10 170 90))
+($4 8 < 0_92a_i1vy88ot_-p97 "" 2
+(uid "0_92a_i1vy88ot_-p97")
+(points 180 40 380 40)
+(fromMultiplicityPosition 185 50))
+($3 9 < 0_92a_i1vy88ot_-p8o "Module" 2
+(autoSizeToFit true)
+(uid "0_92a_i1vy88ot_-p8o")
+(bbx 540 240 190 130))
+($4 10 < 0_92a_i1vy88ot_-p8n "" 2
+(toMultiplicityPosition 530 275)
+(uid "0_92a_i1vy88ot_-p8n")
+(points 470 300 540 300)
+(fromMultiplicityPosition 220 270))
+($3 11 < 0_63g_i5xzv1pc_-p91 "GuiTask" 2
+(autoSizeToFit true)
+(uid "0_63g_i5xzv1pc_-p91")
+(bbx 10 200 280 170))
+($4 12 < 0_63g_i5xzv1pc_-p98 "" 2
+(toMultiplicityPosition 520 365)
+(uid "0_63g_i5xzv1pc_-p98")
+(points 290 350 540 350)
+(fromMultiplicityPosition 305 315))
+($4 13 < 0_63g_i5xzv1pc_-p97 "" 2
+(uid "0_63g_i5xzv1pc_-p97")
+(points 120 200 120 100)
+(fromMultiplicityPosition 125 175))
+($4 14 < 0_6e6_i5z82i6b_-p97 "" 2
+(toMultiplicityPosition 330 290)
+(uid "0_6e6_i5z82i6b_-p97")
+(points 290 275 350 275))
+($5 15 < 0_-m68_i1awny29_-p7r "Window" 1
+(name "Window"
+)
+(uid "0_-m68_i1awny29_-p7r"))
+($6 16 < 0_6e6_i1v279qx_-p96 "serial" 15
+(changeability "frozen")
+(name "serial"
+)
+(uid "0_6e6_i1v279qx_-p96")
+(multiplicity "1"))
+($7 17 < 0_6e6_i1v279qx_-p95 "isAutomatic" 16
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "0_6e6_i1v279qx_-p95"))
+($7 18 < 0_jd_i1xri1ko_-p8j "guid" 16
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2014-10-31-16:36:30_00013"
+)
+(uid "0_jd_i1xri1ko_-p8j"))
+($6 19 < 0_-m68_i1awny29_-p3q "title" 15
+(changeability "frozen")
+(name "title"
+)
+(uid "0_-m68_i1awny29_-p3q")
+(multiplicity "1"))
+($7 20 < 0_6e6_i1uzeiit_-p8a "documentation" 19
+(name "documentation"
+)
+(value "Window label. Defaults to 'Main' for serial == 1 and to 'W%s' % serial for other windows."
+)
+(uid "0_6e6_i1uzeiit_-p8a"))
+($7 21 < 0_jd_i1xri1ko_-p8i "guid" 19
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2014-10-31-16:36:30_00014"
+)
+(uid "0_jd_i1xri1ko_-p8i"))
+($6 22 < 0_-m68_i1awny29_-p3o "position" 15
+(initialValue "0,0"
+)
+(name "position"
+)
+(uid "0_-m68_i1awny29_-p3o")
+(multiplicity "2"))
+($7 23 < 0_6e6_i1uzeiit_-p88 "documentation" 22
+(name "documentation"
+)
+(value "Windox x,y position in pixels. NBNB TBD decide whether pixels are the correct unit, and which conventions and defaults are required."
+"NBNB The main window is created automatically whe the GuiStore is created - it will have serial==1.and cannot be deleted except when the GuiStore is deleted.  At creation time the label is 'Main' (but it can be changed).If necessary we can make this a special subclass. "
+)
+(uid "0_6e6_i1uzeiit_-p88"))
+($7 24 < 0_jd_i1xri1ko_-p8h "guid" 22
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2014-10-31-16:36:30_00015"
+)
+(uid "0_jd_i1xri1ko_-p8h"))
+($7 25 < 0_jd_i1xri1ko_-p98 "baseName" 22
+(name "baseName"
+)
+(value "positionCoordinate"
+)
+(uid "0_jd_i1xri1ko_-p98"))
+($6 26 < 0_-m68_i1awny29_-p3n "size" 15
+(initialValue "400, 400"
+)
+(name "size"
+)
+(uid "0_-m68_i1awny29_-p3n")
+(multiplicity "2"))
+($7 27 < 0_6e6_i1uzeiit_-p87 "documentation" 26
+(name "documentation"
+)
+(value "Window x,y size in pixels."
+)
+(uid "0_6e6_i1uzeiit_-p87"))
+($7 28 < 0_jd_i1xri1ko_-p97 "baseName" 26
+(name "baseName"
+)
+(value "sizeCoordinate"
+)
+(uid "0_jd_i1xri1ko_-p97"))
+($7 29 < 0_jd_i1xri1ko_-p7s "guid" 26
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2014-10-31-16:40:01_00001"
+)
+(uid "0_jd_i1xri1ko_-p7s"))
+($8 30 < 0_6e6_i2bth0nb_-p93 "empty" 15
+(name "empty"
+)
+(uid "0_6e6_i2bth0nb_-p93"))
+($7 31 < 0_6e6_i2bth0nb_-p92 "documentation" 30
+(name "documentation"
+)
+(value "Empty window by disconnecting all tasks shown in the window."
+)
+(uid "0_6e6_i2bth0nb_-p92"))
+($7 32 < 0_6e6_i2bth0nb_-p91 "opType" 30
+(name "opType"
+)
+(value "other"
+)
+(uid "0_6e6_i2bth0nb_-p91"))
+($7 33 < 0_6e6_i2bth0nb_-p90 "code:python" 30
+(name "code:python"
+)
+(value "for task in set(x.task for x in self.modules):"
+"  task.disconnect()"
+)
+(uid "0_6e6_i2bth0nb_-p90"))
+($7 34 < 0_6e6_i2bth0nb_-p8u "guid" 30
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2014-11-10-13:39:28_00001"
+)
+(uid "0_6e6_i2bth0nb_-p8u"))
+($9 35 < 0_-m68_i1awny29_-p7h "#<anon> (Window, Module)##," 15
+(name "")
+(uid "0_-m68_i1awny29_-p7h"))
+($10 36 < 0_-m68_i1awny29_-p5u "#0" 35
+(uid "0_-m68_i1awny29_-p5u"))
+($7 37 < 0_92a_i1vy88ot_-p8w "documentation" 36
+(name "documentation"
+)
+(value "Window currently harbouring module"
+)
+(uid "0_92a_i1vy88ot_-p8w"))
+($7 38 < 0_jd_i1xri1ko_-p8g "guid" 36
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2014-10-31-16:36:30_00011"
+)
+(uid "0_jd_i1xri1ko_-p8g"))
+($11 39 < 0_63g_idvewym5_-p98 "all_window_modules_must_belong_to_window_task" 36
+(name "all_window_modules_must_belong_to_window_task"
+)
+(uid "0_63g_idvewym5_-p98")
+(body "python"
+"_"
+"value.guiTask is self.guiTask"
+))
+($7 40 < 0_63g_ie5gdhgh_-p91 "guid" 39
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2015-09-04-10:52:35_00001"
+)
+(uid "0_63g_ie5gdhgh_-p91"))
+($10 41 < 0_-m68_i1awny29_-p5t "#1" 35
+(uid "0_-m68_i1awny29_-p5t")
+(multiplicity "*"))
+($7 42 < 0_6e6_i1uzeiit_-p83 "documentation" 41
+(name "documentation"
+)
+(value "Module displayed in window"
+)
+(uid "0_6e6_i1uzeiit_-p83"))
+($7 43 < 0_jd_i1xri1ko_-p8f "guid" 41
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2014-10-31-16:36:30_00012"
+)
+(uid "0_jd_i1xri1ko_-p8f"))
+($12 44 < 0_6e6_i1uzeiit_-p98 "#<anon> (Window, DataObject)" 15
+(uid "0_6e6_i1uzeiit_-p98"))
+($7 45 < 0_6e6_i1uzeiit_-p97 "documentation" 15
+(name "documentation"
+)
+(value "Window, corresponding to operating system window"
+)
+(uid "0_6e6_i1uzeiit_-p97"))
+($7 46 < 0_6e6_i1v279qx_-p94 "keyNames" 15
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "0_6e6_i1v279qx_-p94"))
+($7 47 < 0_6e6_i1v279qx_-p8x "destructorCode:python" 15
+(name "destructorCode:python"
+)
+(value "if any(x for x in self.modules if x not in objsToBeDeleted and x.guiTask not in objsToBeDeleted):"
+"  raise ApiError(\"Window %s is not empty - first delete or disconnect modules %s.\" % (self, self.modules))"
+""
+"# The following code interacts directly with the deletion implementation (use of 'objsToBeDeleted'). "
+"# This is bad, but the only way to accomplish the desired result."
+"if self is self.windowStore.mainWindow and self.windowStore not in objsToBeDeleted and not self.root.override:"
+"  raise ApiError(\"Window %s: Main Window can only be deleted when the GuiStore is deleted.\" % self)"
+)
+(uid "0_6e6_i1v279qx_-p8x"))
+($7 48 < 0_jd_i1xri1ko_-p8e "guid" 15
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2014-10-31-16:36:26_00001"
+)
+(uid "0_jd_i1xri1ko_-p8e"))
+($7 49 < 0_6e6_i2bth0nb_-p94 "constructorCode:python" 15
+(name "constructorCode:python"
+)
+(value "if self.title is None:"
+"  if self.serial == 1:"
+"    self.title = 'Main'"
+"  else:"
+"    self.title = 'W%s' % self.serial"
+)
+(uid "0_6e6_i2bth0nb_-p94"))
+($5 50 < 0_6e6_i1uqh9rp_-p97 "WindowStore" 1
+(name "WindowStore"
+)
+(uid "0_6e6_i1uqh9rp_-p97"))
+($12 51 < 0_6e6_i1uqh9rp_-p95 "#<anon> (WindowStore, TopObject)" 50
+(uid "0_6e6_i1uqh9rp_-p95"))
+($9 52 < 0_6e6_i1uqh9rp_-p8y "#<anon> (WindowStore, Window)##," 50
+(name "")
+(uid "0_6e6_i1uqh9rp_-p8y"))
+($10 53 < 0_6e6_i1uqh9rp_-p8x "#0" 52
+(changeability "frozen")
+(aggregation "composite")
+(uid "0_6e6_i1uqh9rp_-p8x")
+(multiplicity "1"))
+($7 54 < 0_jd_i1xri1ko_-p7r "guid" 53
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2014-10-31-16:40:01_00002"
+)
+(uid "0_jd_i1xri1ko_-p7r"))
+($10 55 < 0_6e6_i1uqh9rp_-p8w "#1" 52
+(uid "0_6e6_i1uqh9rp_-p8w")
+(multiplicity "*"))
+($7 56 < 0_jd_i1xri1ko_-p7q "guid" 55
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2014-10-31-16:40:01_00003"
+)
+(uid "0_jd_i1xri1ko_-p7q"))
+($9 57 < 0_6e6_i1v279qx_-p93 "#<anon> (WindowStore, Window)##,mainWindow" 50
+(name "")
+(uid "0_6e6_i1v279qx_-p93"))
+($10 58 < 0_6e6_i1v279qx_-p91 "#0" 57
+(uid "0_6e6_i1v279qx_-p91")
+(isNavigable false))
+($10 59 < 0_6e6_i1v279qx_-p90 "mainWindow#1" 57
+(changeability "frozen")
+(name "mainWindow"
+)
+(uid "0_6e6_i1v279qx_-p90")
+(multiplicity "1"))
+($7 60 < 0_6e6_i1v279qx_-p8z "documentation" 59
+(name "documentation"
+)
+(value "Main display window"
+)
+(uid "0_6e6_i1v279qx_-p8z"))
+($7 61 < 0_jd_i1xri1ko_-p7t "guid" 59
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2014-10-31-16:40:01_00008"
+)
+(uid "0_jd_i1xri1ko_-p7t"))
+($7 62 < z8kq45_6e6_i7w0ozcm_-p98 "isAutomatic" 57
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "z8kq45_6e6_i7w0ozcm_-p98"))
+($7 63 < 0_6e6_i1uqh9rp_-p96 "documentation" 50
+(name "documentation"
+)
+(value "TopObject to group Gui windows for each NmrProject"
+)
+(uid "0_6e6_i1uqh9rp_-p96"))
+($7 64 < 0_6e6_i1uqh9rp_-p94 "keyNames" 50
+(name "keyNames"
+)
+(value "nmrProject"
+)
+(uid "0_6e6_i1uqh9rp_-p94"))
+($7 65 < 0_6e6_i1uzeiit_-p7h "constructorCode:python" 50
+(name "constructorCode:python"
+)
+(value "dataDict['mainWindow'] = newWindow = self.newWindow(title='Main')"
+"objectsCreated.add(newWindow)"
+)
+(uid "0_6e6_i1uzeiit_-p7h"))
+($7 66 < 0_jd_i1xri1ko_-p87 "guid" 50
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2014-10-31-16:36:26_00003"
+)
+(uid "0_jd_i1xri1ko_-p87"))
+($13 67 < 0_63g_i2351kgg_-ox3 "#<anon> (Window, Nmr)" 1
+(uid "0_63g_i2351kgg_-ox3"))
+($7 68 < 0_6e6_i1unbjiz_-p97 "documentation" 1
+(name "documentation"
+)
+(value "Anaysis V3 GUI Window package"
+)
+(uid "0_6e6_i1unbjiz_-p97"))
+($7 69 < 0_jd_i1xri1ko_-p86 "guid" 1
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2014-10-31-16:36:25_00003"
+)
+(uid "0_jd_i1xri1ko_-p86"))
+($7 70 < 0_63g_i2351kgg_-ox1 "shortName" 1
+(name "shortName"
+)
+(value "GUIW"
+)
+(uid "0_63g_i2351kgg_-ox1"))
+($14 71)
+($16 74)
+($16 76)
+($16 77)
+($16 78)
+($14 80)
+($14 82)
+($14 83)
+($14 85)
+($14 87)
+($14 89)
+($14 90)
+($14 91)
+($14 93)
+($14 95)
+($14 97)
+($5 72 @ 0_-fvi_hrnjywg5_-d9g 4 "Logical" $1 "memops" $1 "Implementation" $1 "DataObject" $5)
+($5 73 @ 0_-fvi_hrnjywg5_-dl3 4 "Logical" $1 "memops" $1 "Implementation" $1 "Int" $5)
+($5 75 @ 0_-fvi_hrnjywg5_-dkb 4 "Logical" $1 "memops" $1 "Implementation" $1 "Word" $5)
+($5 79 @ 0_-m68_i1awny29_-p7i 5 "Logical" $1 "ccpnmr" $1 "gui" $1 "Task" $1 "Module" $5)
+($5 81 @ 0_-fvi_hrnjywg5_-dbb 4 "Logical" $1 "memops" $1 "Implementation" $1 "TopObject" $5)
+($17 84 @ -yk94ms_-e3s_e41656c6_-fvm 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Nmr" $17)
+($5 86 @ 0_-fvi_hrnjywg5_-gwd 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "NmrProject" $5)
+($9 88 @ 0_6e6_i1uqh9rp_-p93 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "NmrProject" $5 "#<anon> (NmrProject, WindowStore)##," $9)
+($5 92 @ 0_6e6_i2eonilu_-oyq 5 "Logical" $1 "ccpnmr" $1 "gui" $1 "Task" $1 "GuiTask" $5)
+($9 94 @ 0_6e6_i2eonilu_-oxe 6 "Logical" $1 "ccpnmr" $1 "gui" $1 "Task" $1 "GuiTask" $5 "#<anon> (GuiTask, Module)##," $9)
+($9 96 @ 0_6e6_i2eonilu_-ox9 6 "Logical" $1 "ccpnmr" $1 "gui" $1 "Task" $1 "GuiTask" $5 "#<anon> (GuiTask, NmrProject)##," $9)
+($9 98 @ 0_6e6_i5z82i6b_-p98 6 "Logical" $1 "ccpnmr" $1 "gui" $1 "Task" $1 "GuiTask" $5 "#<anon> (GuiTask, Window)##," $9)
+($18 99 @ -yk94ms_-e3s_e41656c6_-fwy 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "import" $18)
+($1 100 @ 0_-fvi_hrnjywg5_-ota 4 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1)
+(typeAssn 36 15)
+(assocEndAssn 15 36)
+(typeAssn 55 15)
+(assocEndAssn 15 55)
+(typeAssn 59 15)
+(assocEndAssn 15 59)
+(subtypeAssn 44 15)
+(supertypeAssn 44 72)
+(generalizationAssn 15 44)
+(typeRefAssn 16 73)
+(typeExpression 16 74)
+(typeRefAssn 19 75)
+(typeExpression 19 76)
+(typeRefAssn 22 73)
+(typeExpression 22 77)
+(typeRefAssn 26 73)
+(typeExpression 26 78)
+(typeAssn 41 79)
+(projectionAssn 3 15 71)
+(typeAssn 53 50)
+(assocEndAssn 50 53)
+(typeAssn 58 50)
+(assocEndAssn 50 58)
+(subtypeAssn 51 50)
+(supertypeAssn 51 81)
+(generalizationAssn 50 51)
+(projectionAssn 4 50 80)
+(to 5 3)
+(from 5 4)
+(projectionAssn 5 52 82)
+(to 6 3)
+(from 6 4)
+(projectionAssn 6 57 83)
+(styleAssn 7 84)
+(projectionAssn 7 86 85)
+(to 8 4)
+(from 8 7)
+(projectionAssn 8 88 87)
+(projectionAssn 9 79 89)
+(to 10 9)
+(from 10 3)
+(projectionAssn 10 35 90)
+(projectionAssn 11 92 91)
+(to 12 9)
+(from 12 11)
+(projectionAssn 12 94 93)
+(to 13 7)
+(from 13 11)
+(projectionAssn 13 96 95)
+(to 14 3)
+(from 14 11)
+(projectionAssn 14 98 97)
+(stereotypeAssn 67 99)
+(clientAssn 67 1)
+(supplierAssn 67 100)

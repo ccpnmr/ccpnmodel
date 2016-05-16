@@ -1,0 +1,1037 @@
+ObjectDomain_Shared_Package 15
+{z8kfsx_-fvi_fqjirlib_-p98 3 "Logical" objectdomain.uml.mechanisms.UmlPackage-owns "cambridge" objectdomain.uml.mechanisms.UmlPackage-owns "Wms" objectdomain.uml.mechanisms.UmlPackage-owns
+}[objectdomain.uml.core.TypeExpression $16
+objectdomain.uml.mechanisms.UmlPackage-owns $1
+objectdomain.uml.core.Generalization-owns $9
+objectdomain.uml.core.Dependency-owns $2
+objectdomain.uml.core.Projection $14
+objectdomain.uml.core.UmlAttribute-features $7
+objectdomain.uml.core.UmlAssociationEnd-connections $11
+objectdomain.uml.view.style.BaseViewElementStyle-owns $13
+objectdomain.uml.view.ClassView-owns $4
+objectdomain.uml.core.UmlTaggedValue-taggedValues $8
+objectdomain.uml.core.UmlAssociation-owns $10
+objectdomain.uml.view.Diagram-owns $3
+objectdomain.uml.core.UmlMultiplicity $15
+objectdomain.uml.core.UmlClass-owns $6
+objectdomain.uml.view.AssociationView-owns $5
+objectdomain.uml.core.Stereotype-owns $12
+]
+($1 1 > z8kfsx_-fvi_fqjirlib_-p98 3 "Logical" $1 "cambridge" $1 "Wms" $1
+(name "Wms"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p98"))
+($2 2 < z8kfsx_-fvi_fqjirlib_-p94 "#<anon> (Wms, Affiliation)" 1
+(uid "z8kfsx_-fvi_fqjirlib_-p94"))
+($3 3 < z8kfsx_-fvi_fqjirlib_-p93 "_Wms-details" 1
+(name "_Wms-details"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p93")
+(diagramType "class"))
+($4 4 < z8kfsx_-fvi_fqjirlib_-p61 "MemopsRoot" 3
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "z8kfsx_-fvi_fqjirlib_-p61")
+(bbx 130 10 250 30))
+($4 5 < z8kfsx_-fvi_fqjirlib_-p60 "Person" 3
+(uid "z8kfsx_-fvi_fqjirlib_-p60")
+(bbx 490 400 190 170))
+($4 6 < z8kfsx_-fvi_fqjirlib_-p5z "WmsSegment" 3
+(uid "z8kfsx_-fvi_fqjirlib_-p5z")
+(bbx 210 90 100 60))
+($5 7 < z8kfsx_-fvi_fqjirlib_-p6o "" 3
+(toMultiplicityPosition 235 70)
+(uid "z8kfsx_-fvi_fqjirlib_-p6o")
+(points 260 40 260 90)
+(fromMultiplicityPosition 270 45))
+($4 8 < z8kfsx_-fvi_fqjirlib_-p5y "User" 3
+(uid "z8kfsx_-fvi_fqjirlib_-p5y")
+(bbx 470 200 110 80))
+($5 9 < z8kfsx_-fvi_fqjirlib_-p6l "" 3
+(uid "z8kfsx_-fvi_fqjirlib_-p6l")
+(points 555 280 555 400))
+($5 10 < z8kfsx_-fvi_fqjirlib_-p5x "" 3
+(toMultiplicityPosition 510 180)
+(uid "z8kfsx_-fvi_fqjirlib_-p5x")
+(points 310 150 520 150 520 200)
+(fromMultiplicityPosition 325 155))
+($4 11 < z8kfsx_-fvi_fqjirlib_-p5w "RawFile" 3
+(uid "z8kfsx_-fvi_fqjirlib_-p5w")
+(bbx 590 80 110 110))
+($5 12 < z8kfsx_-fvi_fqjirlib_-p6p "" 3
+(toMultiplicityPosition 580 85)
+(uid "z8kfsx_-fvi_fqjirlib_-p6p")
+(points 310 105 590 105)
+(fromMultiplicityPosition 315 95))
+($4 13 < z8kfsx_-fvi_fqjirlib_-p5v "Project" 3
+(uid "z8kfsx_-fvi_fqjirlib_-p5v")
+(bbx 130 260 100 90))
+($5 14 < z8kfsx_-fvi_fqjirlib_-p6m "" 3
+(toMultiplicityPosition 205 240)
+(uid "z8kfsx_-fvi_fqjirlib_-p6m")
+(points 215 150 215 260)
+(fromMultiplicityPosition 195 150))
+($4 15 < z8kfsx_-fvi_fqjirlib_-p5u "ProjectVersion" 3
+(uid "z8kfsx_-fvi_fqjirlib_-p5u")
+(bbx 210 440 160 90))
+($5 16 < z8kfsx_-fvi_fqjirlib_-p6r "" 3
+(toMultiplicityPosition 210 420)
+(uid "z8kfsx_-fvi_fqjirlib_-p6r")
+(points 220 350 220 440)
+(fromMultiplicityPosition 200 355))
+($4 17 < z8kfsx_-fvi_fqjirlib_-p5t "Task" 3
+(uid "z8kfsx_-fvi_fqjirlib_-p5t")
+(bbx 270 260 180 110))
+($5 18 < z8kfsx_-fvi_fqjirlib_-p6n "" 3
+(toMultiplicityPosition 285 240)
+(uid "z8kfsx_-fvi_fqjirlib_-p6n")
+(points 280 150 280 260)
+(fromMultiplicityPosition 260 155))
+($5 19 < z8kfsx_-fvi_fs33d07s_-p95 "" 3
+(toRolePosition 255 380)
+(uid "z8kfsx_-fvi_fs33d07s_-p95")
+(points 300 440 300 370)
+(fromRolePosition 255 420))
+($5 20 < z8kfsx_-fvi_fs33d07s_-p96 "" 3
+(toMultiplicityPosition 440 385)
+(toRolePosition 390 375)
+(uid "z8kfsx_-fvi_fs33d07s_-p96")
+(points 370 450 425 450 425 370)
+(fromRolePosition 375 455)
+(toOrderedPosition 400 395))
+($4 21 < z8kfsx_-fvi_fs33d07s_-p8h "Basket" 3
+(uid "z8kfsx_-fvi_fs33d07s_-p8h")
+(bbx 40 440 100 60))
+($5 22 < z8kfsx_-fvi_fs33d07s_-p8m "" 3
+(toMultiplicityPosition 90 415)
+(uid "z8kfsx_-fvi_fs33d07s_-p8m")
+(points 210 120 105 120 105 440)
+(fromMultiplicityPosition 175 100))
+($5 23 < z8kfsx_-fvi_fs33d07s_-p8p "" 3
+(toMultiplicityPosition 200 465)
+(uid "z8kfsx_-fvi_fs33d07s_-p8p")
+(points 140 460 210 460)
+(fromMultiplicityPosition 150 440))
+($5 24 < z8kfsx_-fvi_fs33d07s_-p8i "" 3
+(toMultiplicityPosition 455 295)
+(uid "z8kfsx_-fvi_fs33d07s_-p8i")
+(points 520 280 520 315 450 315))
+($6 25 < z8kfsx_-fvi_fqjirlib_-p92 "WmsSegment" 1
+(name "WmsSegment"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p92"))
+($7 26 < z8kfsx_-fvi_fqjirlib_-p8z "name" 25
+(changeability "frozen")
+(name "name"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p8z")
+(multiplicity "1"))
+($8 27 < z8kfsx_-fvi_fqjirlib_-p8y "documentation" 26
+(name "documentation"
+)
+(value "Name of WmsSegment - key for the class"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p8y"))
+($8 28 < z8kfsx_-fvi_fqjirlib_-p5k "guid" 26
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:56_00034"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p5k"))
+($9 29 < z8kfsx_-fvi_fqjirlib_-p90 "#<anon> (WmsSegment, TopObject)" 25
+(uid "z8kfsx_-fvi_fqjirlib_-p90"))
+($10 30 < z8kfsx_-fvi_fqjirlib_-p8i "#<anon> (WmsSegment, User)##," 25
+(name "")
+(uid "z8kfsx_-fvi_fqjirlib_-p8i"))
+($11 31 < z8kfsx_-fvi_fqjirlib_-p8h "#0" 30
+(changeability "frozen")
+(aggregation "composite")
+(uid "z8kfsx_-fvi_fqjirlib_-p8h")
+(multiplicity "1"))
+($8 32 < z8kfsx_-fvi_fqjirlib_-p5j "guid" 31
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:56_00026"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p5j"))
+($11 33 < z8kfsx_-fvi_fqjirlib_-p8g "#1" 30
+(uid "z8kfsx_-fvi_fqjirlib_-p8g")
+(multiplicity "*"))
+($8 34 < z8kfsx_-fvi_fqjirlib_-p5i "guid" 33
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:56_00027"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p5i"))
+($10 35 < z8kfsx_-fvi_fqjirlib_-p8d "#<anon> (WmsSegment, RawFile)##," 25
+(name "")
+(uid "z8kfsx_-fvi_fqjirlib_-p8d"))
+($11 36 < z8kfsx_-fvi_fqjirlib_-p8c "#0" 35
+(changeability "frozen")
+(aggregation "composite")
+(uid "z8kfsx_-fvi_fqjirlib_-p8c")
+(multiplicity "1"))
+($8 37 < z8kfsx_-fvi_fqjirlib_-p5h "guid" 36
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:56_00028"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p5h"))
+($11 38 < z8kfsx_-fvi_fqjirlib_-p8b "#1" 35
+(uid "z8kfsx_-fvi_fqjirlib_-p8b")
+(multiplicity "*"))
+($8 39 < z8kfsx_-fvi_fqjirlib_-p5g "guid" 38
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:56_00029"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p5g"))
+($10 40 < z8kfsx_-fvi_fqjirlib_-p82 "#<anon> (WmsSegment, Project)##," 25
+(name "")
+(uid "z8kfsx_-fvi_fqjirlib_-p82"))
+($11 41 < z8kfsx_-fvi_fqjirlib_-p7x "#0" 40
+(changeability "frozen")
+(aggregation "composite")
+(uid "z8kfsx_-fvi_fqjirlib_-p7x")
+(multiplicity "1"))
+($8 42 < z8kfsx_-fvi_fqjirlib_-p5f "guid" 41
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:56_00030"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p5f"))
+($11 43 < z8kfsx_-fvi_fqjirlib_-p7w "#1" 40
+(uid "z8kfsx_-fvi_fqjirlib_-p7w")
+(multiplicity "*"))
+($8 44 < z8kfsx_-fvi_fqjirlib_-p5e "guid" 43
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:56_00031"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p5e"))
+($10 45 < z8kfsx_-fvi_fqjirlib_-p73 "#<anon> (WmsSegment, Task)##," 25
+(name "")
+(uid "z8kfsx_-fvi_fqjirlib_-p73"))
+($11 46 < z8kfsx_-fvi_fqjirlib_-p72 "#0" 45
+(changeability "frozen")
+(aggregation "composite")
+(uid "z8kfsx_-fvi_fqjirlib_-p72")
+(multiplicity "1"))
+($8 47 < z8kfsx_-fvi_fqjirlib_-p5d "guid" 46
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:56_00032"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p5d"))
+($11 48 < z8kfsx_-fvi_fqjirlib_-p71 "#1" 45
+(uid "z8kfsx_-fvi_fqjirlib_-p71")
+(multiplicity "*"))
+($8 49 < z8kfsx_-fvi_fqjirlib_-p5c "guid" 48
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:56_00033"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p5c"))
+($10 50 < z8kfsx_-fvi_fs33d07s_-p8y "#<anon> (WmsSegment, Basket)##," 25
+(name "")
+(uid "z8kfsx_-fvi_fs33d07s_-p8y"))
+($11 51 < z8kfsx_-fvi_fs33d07s_-p8x "#0" 50
+(changeability "frozen")
+(aggregation "composite")
+(uid "z8kfsx_-fvi_fs33d07s_-p8x")
+(multiplicity "1"))
+($8 52 < z8kfsx_-fvi_fs33d07s_-p8f "guid" 51
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-03-09-12:00:17_00012"
+)
+(uid "z8kfsx_-fvi_fs33d07s_-p8f"))
+($11 53 < z8kfsx_-fvi_fs33d07s_-p8w "#1" 50
+(uid "z8kfsx_-fvi_fs33d07s_-p8w")
+(multiplicity "*"))
+($8 54 < z8kfsx_-fvi_fs33d07s_-p8g "guid" 53
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-03-09-12:00:17_00013"
+)
+(uid "z8kfsx_-fvi_fs33d07s_-p8g"))
+($8 55 < z8kfsx_-fvi_fqjirlib_-p91 "documentation" 25
+(name "documentation"
+)
+(value "Compartment of workflow management system"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p91"))
+($8 56 < z8kfsx_-fvi_fqjirlib_-p8x "keyNames" 25
+(name "keyNames"
+)
+(value "name"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p8x"))
+($8 57 < z8kfsx_-fvi_fqjirlib_-p5b "guid" 25
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:52_00002"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p5b"))
+($6 58 < z8kfsx_-fvi_fqjirlib_-p8t "User" 1
+(name "User"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p8t"))
+($7 59 < z8kfsx_-fvi_fqjirlib_-p8q "userId" 58
+(changeability "frozen")
+(name "userId"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p8q")
+(multiplicity "1"))
+($8 60 < z8kfsx_-fvi_fqjirlib_-p8p "documentation" 59
+(name "documentation"
+)
+(value "system user Id, key for class"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p8p"))
+($8 61 < z8kfsx_-fvi_fqjirlib_-p5a "guid" 59
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:56_00024"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p5a"))
+($7 62 < z8kfsx_-fvi_fqjirlib_-p8o "password" 58
+(name "password"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p8o")
+(multiplicity "1"))
+($8 63 < z8kfsx_-fvi_fqjirlib_-p8n "documentation" 62
+(name "documentation"
+)
+(value "User password"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p8n"))
+($8 64 < z8kfsx_-fvi_fqjirlib_-p59 "guid" 62
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:56_00025"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p59"))
+($10 65 < z8kfsx_-fvi_fqjirlib_-p8m "#<anon> (User, Person)##," 58
+(name "")
+(uid "z8kfsx_-fvi_fqjirlib_-p8m"))
+($11 66 < z8kfsx_-fvi_fqjirlib_-p8l "#0" 65
+(uid "z8kfsx_-fvi_fqjirlib_-p8l")
+(isNavigable false))
+($11 67 < z8kfsx_-fvi_fqjirlib_-p8k "#1" 65
+(uid "z8kfsx_-fvi_fqjirlib_-p8k"))
+($8 68 < z8kfsx_-fvi_fqjirlib_-p8j "documentation" 67
+(name "documentation"
+)
+(value "Real Person corresponding to user"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p8j"))
+($8 69 < z8kfsx_-fvi_fqjirlib_-p58 "guid" 67
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:56_00023"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p58"))
+($9 70 < z8kfsx_-fvi_fqjirlib_-p7y "#<anon> (User, DataObject)" 58
+(uid "z8kfsx_-fvi_fqjirlib_-p7y"))
+($10 71 < z8kfsx_-fvi_fs33d07s_-p8l "#<anon> (User, Task)##," 58
+(name "")
+(uid "z8kfsx_-fvi_fs33d07s_-p8l"))
+($11 72 < z8kfsx_-fvi_fs33d07s_-p8k "#0" 71
+(uid "z8kfsx_-fvi_fs33d07s_-p8k"))
+($8 73 < z8kfsx_-fvi_fs33d07s_-p8e "guid" 72
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-03-09-12:00:17_00010"
+)
+(uid "z8kfsx_-fvi_fs33d07s_-p8e"))
+($11 74 < z8kfsx_-fvi_fs33d07s_-p8j "#1" 71
+(uid "z8kfsx_-fvi_fs33d07s_-p8j")
+(multiplicity "*"))
+($8 75 < z8kfsx_-fvi_fs33d07s_-p8d "guid" 74
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-03-09-12:00:17_00011"
+)
+(uid "z8kfsx_-fvi_fs33d07s_-p8d"))
+($8 76 < z8kfsx_-fvi_fqjirlib_-p8r "documentation" 58
+(name "documentation"
+)
+(value "Workflow management system user"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p8r"))
+($8 77 < z8kfsx_-fvi_fqjirlib_-p57 "guid" 58
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:52_00003"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p57"))
+($8 78 < z8kfsx_-fvi_fqjirlib_-p4e "keyNames" 58
+(name "keyNames"
+)
+(value "userId"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p4e"))
+($6 79 < z8kfsx_-fvi_fqjirlib_-p8f "RawFile" 1
+(name "RawFile"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p8f"))
+($7 80 < z8kfsx_-fvi_fqjirlib_-p8a "serial" 79
+(changeability "frozen")
+(name "serial"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p8a")
+(multiplicity "1"))
+($8 81 < z8kfsx_-fvi_fqjirlib_-p89 "isAutomatic" 80
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p89"))
+($8 82 < z8kfsx_-fvi_fqjirlib_-p56 "guid" 80
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:56_00017"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p56"))
+($7 83 < z8kfsx_-fvi_fqjirlib_-p88 "path" 79
+(name "path"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p88")
+(multiplicity "1"))
+($8 84 < z8kfsx_-fvi_fqjirlib_-p87 "documentation" 83
+(name "documentation"
+)
+(value "Path relative to dataUrl.url."
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p87"))
+($8 85 < z8kfsx_-fvi_fqjirlib_-p55 "guid" 83
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:56_00018"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p55"))
+($7 86 < z8kfsx_-fvi_fqjirlib_-p86 "location" 79
+(name "location"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p86")
+(multiplicity "1"))
+($8 87 < z8kfsx_-fvi_fqjirlib_-p85 "documentation" 86
+(name "documentation"
+)
+(value "Url of directory containing file"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p85"))
+($8 88 < z8kfsx_-fvi_fqjirlib_-p54 "guid" 86
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:56_00019"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p54"))
+($7 89 < z8kfsx_-fvi_fqjirlib_-p84 "details" 79
+(name "details"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p84"))
+($8 90 < z8kfsx_-fvi_fqjirlib_-p53 "guid" 89
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:56_00020"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p53"))
+($9 91 < z8kfsx_-fvi_fqjirlib_-p7z "#<anon> (RawFile, DataObject)" 79
+(uid "z8kfsx_-fvi_fqjirlib_-p7z"))
+($8 92 < z8kfsx_-fvi_fqjirlib_-p8e "documentation" 79
+(name "documentation"
+)
+(value "Raw data file asociated with Wms Segment"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p8e"))
+($8 93 < z8kfsx_-fvi_fqjirlib_-p80 "keyNames" 79
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p80"))
+($8 94 < z8kfsx_-fvi_fqjirlib_-p52 "guid" 79
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:52_00004"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p52"))
+($6 95 < z8kfsx_-fvi_fqjirlib_-p83 "Project" 1
+(name "Project"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p83"))
+($7 96 < z8kfsx_-fvi_fqjirlib_-p7v "name" 95
+(changeability "frozen")
+(name "name"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p7v")
+(multiplicity "1"))
+($8 97 < z8kfsx_-fvi_fqjirlib_-p7u "documentation" 96
+(name "documentation"
+)
+(value "name of project - key of class"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p7u"))
+($8 98 < z8kfsx_-fvi_fqjirlib_-p51 "guid" 96
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:56_00005"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p51"))
+($7 99 < z8kfsx_-fvi_fqjirlib_-p7s "location" 95
+(name "location"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p7s")
+(multiplicity "1"))
+($8 100 < z8kfsx_-fvi_fqjirlib_-p7r "documentation" 99
+(name "documentation"
+)
+(value "Location of directory containing Project versions"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p7r"))
+($8 101 < z8kfsx_-fvi_fqjirlib_-p50 "guid" 99
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:56_00006"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p50"))
+($7 102 < z8kfsx_-fvi_fqjirlib_-p7q "details" 95
+(name "details"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p7q"))
+($8 103 < z8kfsx_-fvi_fqjirlib_-p4z "guid" 102
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:56_00007"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p4z"))
+($10 104 < z8kfsx_-fvi_fqjirlib_-p7m "#<anon> (Project, ProjectVersion)##," 95
+(name "")
+(uid "z8kfsx_-fvi_fqjirlib_-p7m"))
+($11 105 < z8kfsx_-fvi_fqjirlib_-p7l "#0" 104
+(changeability "frozen")
+(aggregation "composite")
+(uid "z8kfsx_-fvi_fqjirlib_-p7l")
+(multiplicity "1"))
+($8 106 < z8kfsx_-fvi_fqjirlib_-p4y "guid" 105
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:56_00003"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p4y"))
+($11 107 < z8kfsx_-fvi_fqjirlib_-p7k "#1" 104
+(uid "z8kfsx_-fvi_fqjirlib_-p7k")
+(multiplicity "*"))
+($8 108 < z8kfsx_-fvi_fqjirlib_-p4x "guid" 107
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:56_00004"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p4x"))
+($9 109 < z8kfsx_-fvi_fqjirlib_-p5n "#<anon> (Project, DataObject)" 95
+(uid "z8kfsx_-fvi_fqjirlib_-p5n"))
+($8 110 < z8kfsx_-fvi_fqjirlib_-p81 "documentation" 95
+(name "documentation"
+)
+(value "Wms project"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p81"))
+($8 111 < z8kfsx_-fvi_fqjirlib_-p7t "keyNames" 95
+(name "keyNames"
+)
+(value "name"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p7t"))
+($8 112 < z8kfsx_-fvi_fqjirlib_-p4w "guid" 95
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:52_00005"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p4w"))
+($6 113 < z8kfsx_-fvi_fqjirlib_-p7o "ProjectVersion" 1
+(name "ProjectVersion"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p7o"))
+($7 114 < z8kfsx_-fvi_fqjirlib_-p7j "versionTag" 113
+(changeability "frozen")
+(name "versionTag"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p7j")
+(multiplicity "1"))
+($8 115 < z8kfsx_-fvi_fqjirlib_-p7g "documentation" 114
+(name "documentation"
+)
+(value "string tag idnetifying version"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p7g"))
+($8 116 < z8kfsx_-fvi_fqjirlib_-p4v "guid" 114
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:56_00014"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p4v"))
+($7 117 < z8kfsx_-fvi_fqjirlib_-p7f "status" 113
+(name "status"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p7f"))
+($8 118 < z8kfsx_-fvi_fqjirlib_-p7e "documentation" 117
+(name "documentation"
+)
+(value "Version status. To be changed to enumeration type"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p7e"))
+($8 119 < z8kfsx_-fvi_fqjirlib_-p4u "guid" 117
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:56_00015"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p4u"))
+($7 120 < z8kfsx_-fvi_fqjirlib_-p7d "creationTime" 113
+(name "creationTime"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p7d")
+(multiplicity "1"))
+($8 121 < z8kfsx_-fvi_fqjirlib_-p7c "documentation" 120
+(name "documentation"
+)
+(value "Timesamped for creation of project"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p7c"))
+($8 122 < z8kfsx_-fvi_fqjirlib_-p4t "guid" 120
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:56_00016"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p4t"))
+($9 123 < z8kfsx_-fvi_fqjirlib_-p7n "#<anon> (ProjectVersion, DataObject)" 113
+(uid "z8kfsx_-fvi_fqjirlib_-p7n"))
+($10 124 < z8kfsx_-fvi_fs33d07s_-p98 "#<anon> (ProjectVersion, Task)##generatedVersion,createdByTask" 113
+(name "")
+(uid "z8kfsx_-fvi_fs33d07s_-p98"))
+($11 125 < z8kfsx_-fvi_fs33d07s_-p94 "generatedVersion#0" 124
+(name "generatedVersion"
+)
+(uid "z8kfsx_-fvi_fs33d07s_-p94"))
+($8 126 < z8kfsx_-fvi_fs33d07s_-p8c "guid" 125
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-03-09-12:00:17_00004"
+)
+(uid "z8kfsx_-fvi_fs33d07s_-p8c"))
+($11 127 < z8kfsx_-fvi_fs33d07s_-p93 "createdByTask#1" 124
+(name "createdByTask"
+)
+(uid "z8kfsx_-fvi_fs33d07s_-p93"))
+($8 128 < z8kfsx_-fvi_fs33d07s_-p8b "guid" 127
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-03-09-12:00:17_00005"
+)
+(uid "z8kfsx_-fvi_fs33d07s_-p8b"))
+($10 129 < z8kfsx_-fvi_fs33d07s_-p97 "#<anon> (ProjectVersion, Task)##inputVersion,outputTasks" 113
+(name "")
+(uid "z8kfsx_-fvi_fs33d07s_-p97"))
+($11 130 < z8kfsx_-fvi_fs33d07s_-p92 "inputVersion#0" 129
+(name "inputVersion"
+)
+(uid "z8kfsx_-fvi_fs33d07s_-p92"))
+($8 131 < z8kfsx_-fvi_fs33d07s_-p8a "guid" 130
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-03-09-12:00:17_00006"
+)
+(uid "z8kfsx_-fvi_fs33d07s_-p8a"))
+($11 132 < z8kfsx_-fvi_fs33d07s_-p91 "outputTasks#1" 129
+(isOrdered true)
+(name "outputTasks"
+)
+(uid "z8kfsx_-fvi_fs33d07s_-p91")
+(multiplicity "*"))
+($8 133 < z8kfsx_-fvi_fs33d07s_-p90 "baseName" 132
+(name "baseName"
+)
+(value "outputTask"
+)
+(uid "z8kfsx_-fvi_fs33d07s_-p90"))
+($8 134 < z8kfsx_-fvi_fs33d07s_-p89 "guid" 132
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-03-09-12:00:17_00007"
+)
+(uid "z8kfsx_-fvi_fs33d07s_-p89"))
+($8 135 < z8kfsx_-fvi_fqjirlib_-p7i "keyNames" 113
+(name "keyNames"
+)
+(value "versionTag"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p7i"))
+($8 136 < z8kfsx_-fvi_fqjirlib_-p7h "documentation" 113
+(name "documentation"
+)
+(value "Version (timestamped snapshot) of the Project"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p7h"))
+($8 137 < z8kfsx_-fvi_fqjirlib_-p4m "guid" 113
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:52_00006"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p4m"))
+($6 138 < z8kfsx_-fvi_fqjirlib_-p7b "Task" 1
+(name "Task"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p7b"))
+($7 139 < z8kfsx_-fvi_fqjirlib_-p78 "serial" 138
+(changeability "frozen")
+(name "serial"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p78")
+(multiplicity "1"))
+($8 140 < z8kfsx_-fvi_fqjirlib_-p77 "isAutomatic" 139
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p77"))
+($8 141 < z8kfsx_-fvi_fqjirlib_-p4l "guid" 139
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:56_00001"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p4l"))
+($7 142 < z8kfsx_-fvi_fqjirlib_-p75 "status" 138
+(name "status"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p75"))
+($8 143 < z8kfsx_-fvi_fqjirlib_-p74 "documentation" 142
+(name "documentation"
+)
+(value "Task status - to be turned into enumeration"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p74"))
+($8 144 < z8kfsx_-fvi_fqjirlib_-p4k "guid" 142
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:56_00002"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p4k"))
+($7 145 < z8kfsx_-fvi_fs33d07s_-p8o "dateStarted" 138
+(name "dateStarted"
+)
+(uid "z8kfsx_-fvi_fs33d07s_-p8o"))
+($8 146 < z8kfsx_-fvi_fs33d07s_-p88 "guid" 145
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-03-09-12:00:17_00008"
+)
+(uid "z8kfsx_-fvi_fs33d07s_-p88"))
+($7 147 < z8kfsx_-fvi_fs33d07s_-p8n "dateCompleted" 138
+(name "dateCompleted"
+)
+(uid "z8kfsx_-fvi_fs33d07s_-p8n"))
+($8 148 < z8kfsx_-fvi_fs33d07s_-p87 "guid" 147
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-03-09-12:00:17_00009"
+)
+(uid "z8kfsx_-fvi_fs33d07s_-p87"))
+($7 149 < z8kfsx_-fvi_fs7rvkq0_-p98 "taskType" 138
+(name "taskType"
+)
+(uid "z8kfsx_-fvi_fs7rvkq0_-p98"))
+($8 150 < z8kfsx_-fvi_fs7rvkq0_-p97 "documentation" 149
+(name "documentation"
+)
+(value "Type of task"
+)
+(uid "z8kfsx_-fvi_fs7rvkq0_-p97"))
+($8 151 < z8kfsx_-fvi_fs7rvkq0_-p96 "guid" 149
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-03-12-18:29:05_00001"
+)
+(uid "z8kfsx_-fvi_fs7rvkq0_-p96"))
+($9 152 < z8kfsx_-fvi_fqjirlib_-p7a "#<anon> (Task, DataObject)" 138
+(uid "z8kfsx_-fvi_fqjirlib_-p7a"))
+($8 153 < z8kfsx_-fvi_fqjirlib_-p79 "documentation" 138
+(name "documentation"
+)
+(value "Abstract task - describing the kind of operation that can be done on data."
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p79"))
+($8 154 < z8kfsx_-fvi_fqjirlib_-p76 "keyNames" 138
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p76"))
+($8 155 < z8kfsx_-fvi_fqjirlib_-p4j "guid" 138
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:52_00007"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p4j"))
+($6 156 < z8kfsx_-fvi_fs33d07s_-p8z "Basket" 1
+(name "Basket"
+)
+(uid "z8kfsx_-fvi_fs33d07s_-p8z"))
+($7 157 < z8kfsx_-fvi_fs33d07s_-p8u "name" 156
+(changeability "frozen")
+(name "name"
+)
+(uid "z8kfsx_-fvi_fs33d07s_-p8u")
+(multiplicity "1"))
+($8 158 < z8kfsx_-fvi_fs33d07s_-p86 "guid" 157
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-03-09-12:00:17_00003"
+)
+(uid "z8kfsx_-fvi_fs33d07s_-p86"))
+($9 159 < z8kfsx_-fvi_fs33d07s_-p8v "#<anon> (Basket, DataObject)" 156
+(uid "z8kfsx_-fvi_fs33d07s_-p8v"))
+($10 160 < z8kfsx_-fvi_fs33d07s_-p8s "#<anon> (Basket, ProjectVersion)##," 156
+(name "")
+(uid "z8kfsx_-fvi_fs33d07s_-p8s"))
+($11 161 < z8kfsx_-fvi_fs33d07s_-p8r "#0" 160
+(uid "z8kfsx_-fvi_fs33d07s_-p8r")
+(multiplicity "*"))
+($8 162 < z8kfsx_-fvi_fs33d07s_-p85 "guid" 161
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-03-09-12:00:17_00001"
+)
+(uid "z8kfsx_-fvi_fs33d07s_-p85"))
+($11 163 < z8kfsx_-fvi_fs33d07s_-p8q "#1" 160
+(uid "z8kfsx_-fvi_fs33d07s_-p8q")
+(multiplicity "*"))
+($8 164 < z8kfsx_-fvi_fs33d07s_-p84 "guid" 163
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-03-09-12:00:17_00002"
+)
+(uid "z8kfsx_-fvi_fs33d07s_-p84"))
+($8 165 < z8kfsx_-fvi_fs33d07s_-p8t "keyNames" 156
+(name "keyNames"
+)
+(value "name"
+)
+(uid "z8kfsx_-fvi_fs33d07s_-p8t"))
+($8 166 < z8kfsx_-fvi_fs33d07s_-p83 "guid" 156
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-03-09-12:00:15_00001"
+)
+(uid "z8kfsx_-fvi_fs33d07s_-p83"))
+($8 167 < z8kfsx_-fvi_fqjirlib_-p97 "documentation" 1
+(name "documentation"
+)
+(value "Workflow Management System"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p97"))
+($8 168 < z8kfsx_-fvi_fqjirlib_-p96 "shortName" 1
+(name "shortName"
+)
+(value "WMS"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p96"))
+($8 169 < z8kfsx_-fvi_fqjirlib_-p4f "guid" 1
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:52_00001"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p4f"))
+($14 173)
+($14 176)
+($14 178)
+($16 181)
+($16 186)
+($16 187)
+($14 191)
+($14 193)
+($14 194)
+($14 195)
+($14 196)
+($14 197)
+($14 198)
+($14 199)
+($14 200)
+($14 201)
+($14 202)
+($14 203)
+($14 204)
+($14 205)
+($14 206)
+($14 207)
+($14 208)
+($14 209)
+($12 170 @ -yk94ms_-e3s_e41656c6_-fwy 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "import" $12)
+($1 171 @ -yk94ms_-e3s_e41656c6_-jc4 4 "Logical" $1 "ccp" $1 "general" $1 "Affiliation" $1)
+($13 172 @ -yk94ms_-e3s_e41656c6_-fvw 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "memops.Implementation" $13)
+($6 174 @ -yk94ms_-e3s_e41656c6_-gyg 4 "Logical" $1 "memops" $1 "Implementation" $1 "MemopsRoot" $6)
+($13 175 @ -yk94ms_-e3s_e41656c6_-fw4 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "People" $13)
+($6 177 @ -yk94ms_85r_eqyymv3f_-p7a 5 "Logical" $1 "ccp" $1 "general" $1 "Affiliation" $1 "Person" $6)
+($6 179 @ z8kflu_63g_errlz7sn_-p8u 4 "Logical" $1 "memops" $1 "Implementation" $1 "TopObject" $6)
+($6 180 @ -yk94ms_-e3s_e41656c6_-h0m 4 "Logical" $1 "memops" $1 "Implementation" $1 "Line" $6)
+($6 182 @ -yk94ms_-e3s_e41656c6_-gpe 4 "Logical" $1 "memops" $1 "Implementation" $1 "DataObject" $6)
+($6 183 @ -yk94ms_-e3s_e41656c6_-gzz 4 "Logical" $1 "memops" $1 "Implementation" $1 "Word" $6)
+($6 184 @ -yk94ms_-e3s_e41656c6_-h0t 4 "Logical" $1 "memops" $1 "Implementation" $1 "Int" $6)
+($6 185 @ -yk94ms_-e3s_e41656c6_-h1b 4 "Logical" $1 "memops" $1 "Implementation" $1 "DateTime" $6)
+($6 188 @ -yk94ms_-e3s_e41656c6_-gnn 4 "Logical" $1 "memops" $1 "Implementation" $1 "PathString" $6)
+($6 189 @ -yk94ms_-e3s_e41656c6_-gqa 4 "Logical" $1 "memops" $1 "Implementation" $1 "Url" $6)
+($6 190 @ -yk94ms_-e3s_e41656c6_-h04 4 "Logical" $1 "memops" $1 "Implementation" $1 "Text" $6)
+($10 192 @ z8kfsx_-fvi_fqjirlib_-p8w 5 "Logical" $1 "memops" $1 "Implementation" $1 "MemopsRoot" $6 "#<anon> (MemopsRoot, WmsSegment)##," $10)
+(stereotypeAssn 2 170)
+(clientAssn 2 1)
+(supplierAssn 2 171)
+(styleAssn 4 172)
+(projectionAssn 4 174 173)
+(styleAssn 5 175)
+(projectionAssn 5 177 176)
+(typeAssn 31 25)
+(assocEndAssn 25 31)
+(typeAssn 36 25)
+(assocEndAssn 25 36)
+(typeAssn 41 25)
+(assocEndAssn 25 41)
+(typeAssn 46 25)
+(assocEndAssn 25 46)
+(typeAssn 51 25)
+(assocEndAssn 25 51)
+(subtypeAssn 29 25)
+(supertypeAssn 29 179)
+(generalizationAssn 25 29)
+(typeRefAssn 26 180)
+(typeExpression 26 181)
+(typeAssn 66 58)
+(assocEndAssn 58 66)
+(assocEndAssn 58 33)
+(typeAssn 72 58)
+(assocEndAssn 58 72)
+(subtypeAssn 70 58)
+(supertypeAssn 70 182)
+(generalizationAssn 58 70)
+(typeRefAssn 59 183)
+(typeExpression 59 181)
+(typeRefAssn 62 180)
+(typeExpression 62 181)
+(typeAssn 67 177)
+(typeAssn 48 138)
+(assocEndAssn 138 48)
+(typeAssn 127 138)
+(assocEndAssn 138 127)
+(typeAssn 132 138)
+(assocEndAssn 138 132)
+(assocEndAssn 138 74)
+(subtypeAssn 152 138)
+(supertypeAssn 152 182)
+(generalizationAssn 138 152)
+(typeRefAssn 139 184)
+(typeExpression 139 181)
+(typeRefAssn 142 180)
+(typeExpression 142 181)
+(typeRefAssn 145 185)
+(typeExpression 145 186)
+(typeRefAssn 147 185)
+(typeExpression 147 186)
+(typeRefAssn 149 183)
+(typeExpression 149 187)
+(typeAssn 74 138)
+(typeAssn 33 58)
+(assocEndAssn 79 38)
+(subtypeAssn 91 79)
+(supertypeAssn 91 182)
+(generalizationAssn 79 91)
+(typeRefAssn 80 184)
+(typeExpression 80 181)
+(typeRefAssn 83 188)
+(typeExpression 83 181)
+(typeRefAssn 86 189)
+(typeExpression 86 181)
+(typeRefAssn 89 190)
+(typeExpression 89 181)
+(typeAssn 38 79)
+(assocEndAssn 95 43)
+(typeAssn 105 95)
+(assocEndAssn 95 105)
+(subtypeAssn 109 95)
+(supertypeAssn 109 182)
+(generalizationAssn 95 109)
+(typeRefAssn 96 180)
+(typeExpression 96 181)
+(typeRefAssn 99 189)
+(typeExpression 99 181)
+(typeRefAssn 102 190)
+(typeExpression 102 181)
+(assocEndAssn 113 107)
+(typeAssn 125 113)
+(assocEndAssn 113 125)
+(typeAssn 130 113)
+(assocEndAssn 113 130)
+(typeAssn 163 113)
+(assocEndAssn 113 163)
+(subtypeAssn 123 113)
+(supertypeAssn 123 182)
+(generalizationAssn 113 123)
+(typeRefAssn 114 183)
+(typeExpression 114 181)
+(typeRefAssn 117 183)
+(typeExpression 117 181)
+(typeRefAssn 120 185)
+(typeExpression 120 181)
+(typeAssn 107 113)
+(typeAssn 43 95)
+(assocEndAssn 156 53)
+(typeAssn 161 156)
+(assocEndAssn 156 161)
+(subtypeAssn 159 156)
+(supertypeAssn 159 182)
+(generalizationAssn 156 159)
+(typeRefAssn 157 183)
+(typeExpression 157 186)
+(typeAssn 53 156)
+(projectionAssn 6 25 178)
+(to 7 6)
+(from 7 4)
+(projectionAssn 7 192 191)
+(projectionAssn 8 58 193)
+(to 9 5)
+(from 9 8)
+(projectionAssn 9 65 194)
+(to 10 8)
+(from 10 6)
+(projectionAssn 10 30 195)
+(projectionAssn 11 79 196)
+(to 12 11)
+(from 12 6)
+(projectionAssn 12 35 197)
+(projectionAssn 13 95 198)
+(to 14 13)
+(from 14 6)
+(projectionAssn 14 40 199)
+(projectionAssn 15 113 200)
+(to 16 15)
+(from 16 13)
+(projectionAssn 16 104 201)
+(projectionAssn 17 138 202)
+(to 18 17)
+(from 18 6)
+(projectionAssn 18 45 203)
+(to 19 17)
+(from 19 15)
+(projectionAssn 19 124 204)
+(to 20 17)
+(from 20 15)
+(projectionAssn 20 129 205)
+(projectionAssn 21 156 206)
+(to 22 21)
+(from 22 6)
+(projectionAssn 22 50 207)
+(to 23 15)
+(from 23 21)
+(projectionAssn 23 160 208)
+(to 24 17)
+(from 24 8)
+(projectionAssn 24 71 209)

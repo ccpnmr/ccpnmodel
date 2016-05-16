@@ -7,9 +7,9 @@
 __copyright__ = "Copyright (C) CCPN project (www.ccpn.ac.uk) 2002 - $Date$"
 __credits__ = "Wayne Boucher, Rasmus H Fogh, Simon Skinner, Timothy J. Stevens, Geerten Vuister"
 __license__ = ("CCPN license. See www.ccpn.ac.uk/license"
-               "or ccpncore.memops.Credits.CcpnLicense for license text")
+               "or ccpnmodel.ccpncore.memops.Credits.CcpnLicense for license text")
 __reference__ = ("For publications, please use reference from www.ccpn.ac.uk/license"
-                 " or ccpncore.memops.Credits.CcpNmrReference")
+                 " or ccpnmodel.ccpncore.memops.Credits.CcpNmrReference")
 
 #=========================================================================================
 # Last code modification:
@@ -23,13 +23,13 @@ __version__ = "$Revision$"
 #=========================================================================================
 
 from ccpn.util import CopyData
-from ccpncore.lib import V2Upgrade
-from ccpncore.lib import Constants
-from ccpncore.memops.ApiError import ApiError
+from ccpnmodel.ccpncore.lib import V2Upgrade
+from ccpnmodel.ccpncore.lib import Constants
+from ccpnmodel.ccpncore.memops.ApiError import ApiError
 from ccpn.util import Common as commonUtil
 from ccpn.util import Sorting
-from ccpncore.lib.spectrum import Spectrum as spectrumLib
-# from ccpncore.lib.molecule import MoleculeModify
+from ccpnmodel.ccpncore.lib.spectrum import Spectrum as spectrumLib
+# from ccpnmodel.ccpncore.lib.molecule import MoleculeModify
 
 
 versionSequence = ['2.0.a0', '2.0.a1', '2.0.a2', '2.0.a3', '2.0.b1', '2.0.b2', '2.0.b3',

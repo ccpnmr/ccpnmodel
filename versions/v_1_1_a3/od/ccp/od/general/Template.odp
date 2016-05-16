@@ -1,0 +1,111 @@
+ObjectDomain_Shared_Package 15
+{-yk94ms_-e3s_e41656c6_-jt9 4 "Logical" objectdomain.uml.mechanisms.UmlPackage-owns "ccp" objectdomain.uml.mechanisms.UmlPackage-owns "general" objectdomain.uml.mechanisms.UmlPackage-owns "Template" objectdomain.uml.mechanisms.UmlPackage-owns
+}[objectdomain.uml.core.TypeExpression $10
+objectdomain.uml.mechanisms.UmlPackage-owns $1
+objectdomain.uml.core.Generalization-owns $8
+objectdomain.uml.core.Projection $9
+objectdomain.uml.core.UmlAttribute-features $6
+objectdomain.uml.view.style.BaseViewElementStyle-owns $12
+objectdomain.uml.view.ClassView-owns $3
+objectdomain.uml.core.UmlTaggedValue-taggedValues $7
+objectdomain.uml.view.Diagram-owns $2
+objectdomain.uml.view.GeneralizationView-owns $4
+objectdomain.uml.core.UmlMultiplicity $11
+objectdomain.uml.core.UmlClass-owns $5
+]
+($1 1 > -yk94ms_-e3s_e41656c6_-jt9 4 "Logical" $1 "ccp" $1 "general" $1 "Template" $1
+(name "Template"
+)
+(uid "-yk94ms_-e3s_e41656c6_-jt9"))
+($2 2 < -yk94ms_85r_eqyymv3f_-o75 "_Template" 1
+(name "_Template"
+)
+(uid "-yk94ms_85r_eqyymv3f_-o75")
+(diagramType "class"))
+($3 3 < -yk94ms_85r_eqyymv3f_-o74 "AbstractProbability" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-o74")
+(bbx 180 120 130 60))
+($3 4 < -yk94ms_85r_eqyymv3f_-o73 "NormalStored" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-o73")
+(bbx 400 120 260 50))
+($4 5 < -yk94ms_85r_eqyymv3f_-o72 "" 2
+(uid "-yk94ms_85r_eqyymv3f_-o72")
+(points 310 150 400 150))
+($5 6 < -yk94ms_85r_eqyymv3f_-o71 "AbstractProbability" 1
+(name "AbstractProbability"
+)
+(uid "-yk94ms_85r_eqyymv3f_-o71")
+(isAbstract true))
+($6 7 < -yk94ms_85r_eqyymv3f_-o70 "weight" 6
+(initialValue "1.0"
+)
+(name "weight"
+)
+(uid "-yk94ms_85r_eqyymv3f_-o70")
+(multiplicity "1"))
+($7 8 < -yk94ms_85r_eqyymv3f_-o6z "documentation" 7
+(name "documentation"
+)
+(value "weight (= non-normalised probability) that the parent is associated with this particular possibility. "
+)
+(uid "-yk94ms_85r_eqyymv3f_-o6z"))
+($7 9 < -yk94ms_85r_eqyymv3f_-o6y "guid" 7
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:38_00025"
+)
+(uid "-yk94ms_85r_eqyymv3f_-o6y"))
+($8 10 < -yk94ms_85r_eqyymv3f_-o6x "#<anon> (AbstractProbability, NormalStored)" 6
+(uid "-yk94ms_85r_eqyymv3f_-o6x"))
+($7 11 < -yk94ms_85r_eqyymv3f_-o6w "documentation" 6
+(name "documentation"
+)
+(value "Abstract class defining classes used for probability lists. AbstractProbability objects have a parent that is the object that has the probability (e.g. a ResonanceGroup), a link 'possibility' to various possibilities (e.g. a ChemComp), and a weight to determine their relative probability. Probabilities are calculated by taking the weight of each AbstractProbability object and dividing by the sum of the weights in the (appropriate subset of) AbstractProbability objects linked to a given parent. "
+""
+"Implementation note: The presence of the 'possibility' link must be enforced by the data modeller, as it is not checked by the software. "
+)
+(uid "-yk94ms_85r_eqyymv3f_-o6w"))
+($7 12 < -yk94ms_85r_eqyymv3f_-o6v "guid" 6
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:19:50_00005"
+)
+(uid "-yk94ms_85r_eqyymv3f_-o6v"))
+($7 13 < -yk94ms_85r_eqyymv3f_-o6u "shortName" 1
+(name "shortName"
+)
+(value "TEMP"
+)
+(uid "-yk94ms_85r_eqyymv3f_-o6u"))
+($7 14 < -yk94ms_85r_eqyymv3f_-o6t "documentation" 1
+(name "documentation"
+)
+(value "Templates, i.e. abstract classes for general use in other parts of the data model."
+)
+(uid "-yk94ms_85r_eqyymv3f_-o6t"))
+($7 15 < -yk94ms_85r_eqyymv3f_-o6s "guid" 1
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:19:50_00004"
+)
+(uid "-yk94ms_85r_eqyymv3f_-o6s"))
+($9 16)
+($10 19)
+($9 21)
+($9 22)
+($5 17 @ -yk94ms_-e3s_e41656c6_-gpe 4 "Logical" $1 "memops" $1 "Implementation" $1 "NormalStored" $5)
+($5 18 @ -yk94ms_-e3s_e41656c6_-h10 4 "Logical" $1 "memops" $1 "Implementation" $1 "Float" $5)
+($12 20 @ -yk94ms_-e3s_e41656c6_-fvw 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "memops.Implementation" $12)
+(subtypeAssn 10 6)
+(supertypeAssn 10 17)
+(generalizationAssn 6 10)
+(typeRefAssn 7 18)
+(typeExpression 7 19)
+(projectionAssn 3 6 16)
+(styleAssn 4 20)
+(projectionAssn 4 17 21)
+(to 5 4)
+(from 5 3)
+(projectionAssn 5 10 22)

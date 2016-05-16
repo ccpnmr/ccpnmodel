@@ -45,7 +45,7 @@ automated software development. Bioinformatics 21, 1678-1684.
 
 """
 
-from ccpnmodel.util import Conversion
+from ccpnmodel.ccpncore.lib import Conversion
 
 __author__ = 'rhf22'
 
@@ -167,7 +167,7 @@ def fixImplementation(topObj, delayDataDict):
   have already had their child links and crosslinks set.
   """
   from ccpn.util import Path
-  from ccpncore.api.memops.Implementation import Url
+  from ccpnmodel.ccpncore.api.memops.Implementation import Url
   import os.path
 
   doGet = delayDataDict.get
@@ -200,13 +200,13 @@ def fixNmr(topObj, delayDataDict):
 
     # fix NmrExpPrototype mapping for defunct types
     Conversion.setNmrExpPrototypeLink(xpr, 'refExperiment', topObjByGuid, delayDataDict,
-                           remapPrototypeLink)
+                                      remapPrototypeLink)
     for xd in expDict.get('expDims', emptyList):
       Conversion.setNmrExpPrototypeLink(xd, 'refExpDim', topObjByGuid, delayDataDict,
-                             remapPrototypeLink)
+                                        remapPrototypeLink)
       for xdr in doGet(xd, emptyDict).get('expDimRefs', emptyList):
         Conversion.setNmrExpPrototypeLink(xdr, 'refExpDimRef', topObjByGuid, delayDataDict,
-                               remapPrototypeLink)
+                                          remapPrototypeLink)
 
     # Fix DimensionScalings
     for ds in expDict.get('dataSources', emptyList):

@@ -1,0 +1,273 @@
+ObjectDomain_Shared_Package 15
+{-hkpzxr_v5_f8zng6fd_-p3m 4 "Logical" objectdomain.uml.mechanisms.UmlPackage-owns "ccp" objectdomain.uml.mechanisms.UmlPackage-owns "general" objectdomain.uml.mechanisms.UmlPackage-owns "KeywordDefinition" objectdomain.uml.mechanisms.UmlPackage-owns
+}[objectdomain.uml.core.TypeExpression $13
+objectdomain.uml.mechanisms.UmlPackage-owns $1
+objectdomain.uml.core.Generalization-owns $8
+objectdomain.uml.core.Projection $11
+objectdomain.uml.core.UmlAttribute-features $6
+objectdomain.uml.core.UmlAssociationEnd-connections $10
+objectdomain.uml.view.ClassView-owns $3
+objectdomain.uml.core.UmlTaggedValue-taggedValues $7
+objectdomain.uml.core.UmlAssociation-owns $9
+objectdomain.uml.view.Diagram-owns $2
+objectdomain.uml.core.UmlMultiplicity $12
+objectdomain.uml.core.UmlClass-owns $5
+objectdomain.uml.view.AssociationView-owns $4
+]
+($1 1 > -hkpzxr_v5_f8zng6fd_-p3m 4 "Logical" $1 "ccp" $1 "general" $1 "KeywordDefinition" $1
+(name "KeywordDefinition"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p3m"))
+($2 2 < -hkpzxr_v5_f8zng6fd_-p2z "_KeywordDefinition" 1
+(name "_KeywordDefinition"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p2z")
+(diagramType "class"))
+($3 3 < -hkpzxr_v5_f8zng6fd_-p2x "KeywordDefinition" 2
+(autoSizeToFit true)
+(uid "-hkpzxr_v5_f8zng6fd_-p2x")
+(bbx 60 400 130 110))
+($3 4 < -hkpzxr_v5_f8zng6fd_-p2w "KeywordDefinitionStore" 2
+(autoSizeToFit true)
+(uid "-hkpzxr_v5_f8zng6fd_-p2w")
+(bbx 50 250 160 60))
+($4 5 < -hkpzxr_v5_f8zng6fd_-p38 "" 2
+(toMultiplicityPosition 120 380)
+(uid "-hkpzxr_v5_f8zng6fd_-p38")
+(points 130 310 130 400)
+(fromMultiplicityPosition 140 315))
+($3 6 < z8kfsx_-m68_ffp3lr51_-p8s "ValidationResult" 2
+(uid "z8kfsx_-m68_ffp3lr51_-p8s")
+(bbx 330 350 320 160))
+($4 7 < z8kfsx_-m68_ffp3lr51_-p8t "" 2
+(toMultiplicityPosition 205 405)
+(uid "z8kfsx_-m68_ffp3lr51_-p8t")
+(points 330 450 190 450))
+($5 8 < -hkpzxr_v5_f8zng6fd_-p98 "KeywordDefinition" 1
+(name "KeywordDefinition"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p98"))
+($6 9 < -hkpzxr_v5_f8zng6fd_-p96 "keyword" 8
+(changeability "frozen")
+(name "keyword"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p96")
+(multiplicity "1"))
+($7 10 < -hkpzxr_v5_f8zng6fd_-p24 "guid" 9
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:03:00_00001"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p24"))
+($6 11 < -hkpzxr_v5_f8zng6fd_-p95 "name" 8
+(name "name"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p95"))
+($7 12 < -hkpzxr_v5_f8zng6fd_-p3p "documentation" 11
+(name "documentation"
+)
+(value "A user-friendly synonym for the keyword"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p3p"))
+($7 13 < -hkpzxr_v5_f8zng6fd_-p23 "guid" 11
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:03:00_00002"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p23"))
+($6 14 < -hkpzxr_v5_f8zng6fd_-p94 "explanation" 8
+(name "explanation"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p94"))
+($7 15 < -hkpzxr_v5_f8zng6fd_-p3o "documentation" 14
+(name "documentation"
+)
+(value "Definition, examples, etc. to explain the parameter defined by the keyword."
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p3o"))
+($7 16 < -hkpzxr_v5_f8zng6fd_-p22 "guid" 14
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:03:00_00003"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p22"))
+($6 17 < -hkpzxr_v5_f8zng6fd_-p8v "targetNames" 8
+(name "targetNames"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p8v")
+(multiplicity "*"))
+($7 18 < -hkpzxr_v5_f8zng6fd_-p3n "documentation" 17
+(name "documentation"
+)
+(value "qualified names for the CCPN classes that the keyword may be used to describe. If empty there are no limitations. Typically keywords are used as part of a keyword-value-object combination. targetNames refer to the allowed tyope for the object being described (*not* the object that contains the desctription)"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p3n"))
+($7 19 < -hkpzxr_v5_f8zng6fd_-p27 "isUnique" 17
+(name "isUnique"
+)
+(value "True"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p27"))
+($7 20 < -hkpzxr_v5_f8zng6fd_-p26 "isOrdered" 17
+(name "isOrdered"
+)
+(value "False"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p26"))
+($7 21 < -hkpzxr_v5_f8zng6fd_-p25 "baseName" 17
+(name "baseName"
+)
+(value "targetName"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p25"))
+($7 22 < -hkpzxr_v5_f8zng6fd_-p21 "guid" 17
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:03:00_00004"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p21"))
+($8 23 < -hkpzxr_v5_f8zng6fd_-p3r "#<anon> (KeywordDefinition, DataObject)" 8
+(uid "-hkpzxr_v5_f8zng6fd_-p3r"))
+($7 24 < -hkpzxr_v5_f8zng6fd_-p3q "keyNames" 8
+(name "keyNames"
+)
+(value "keyword"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p3q"))
+($7 25 < -hkpzxr_v5_f8zng6fd_-p20 "guid" 8
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:02:54_00002"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p20"))
+($5 26 < -hkpzxr_v5_f8zng6fd_-p3g "KeywordDefinitionStore" 1
+(name "KeywordDefinitionStore"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p3g"))
+($6 27 < -hkpzxr_v5_f8zng6fd_-p3d "context" 26
+(changeability "frozen")
+(name "context"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p3d")
+(multiplicity "1"))
+($7 28 < -hkpzxr_v5_f8zng6fd_-p3c "documentation" 27
+(name "documentation"
+)
+(value "context within which keywords are defined. Typically the name of teh program or standard that defines them."
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p3c"))
+($7 29 < -hkpzxr_v5_f8zng6fd_-p1z "guid" 27
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:03:00_00007"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p1z"))
+($9 30 < -hkpzxr_v5_f8zng6fd_-p3b "#<anon> (KeywordDefinitionStore, KeywordDefinition)##," 26
+(name "")
+(uid "-hkpzxr_v5_f8zng6fd_-p3b"))
+($10 31 < -hkpzxr_v5_f8zng6fd_-p3a "#0" 30
+(changeability "frozen")
+(aggregation "composite")
+(uid "-hkpzxr_v5_f8zng6fd_-p3a")
+(multiplicity "1"))
+($7 32 < -hkpzxr_v5_f8zng6fd_-p1y "guid" 31
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:03:00_00005"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p1y"))
+($10 33 < -hkpzxr_v5_f8zng6fd_-p39 "#1" 30
+(uid "-hkpzxr_v5_f8zng6fd_-p39")
+(multiplicity "*"))
+($7 34 < -hkpzxr_v5_f8zng6fd_-p1x "guid" 33
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:03:00_00006"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p1x"))
+($8 35 < -hkpzxr_v5_f8zng6fd_-p0p "#<anon> (KeywordDefinitionStore, TopObject)" 26
+(uid "-hkpzxr_v5_f8zng6fd_-p0p"))
+($7 36 < -hkpzxr_v5_f8zng6fd_-p3f "documentation" 26
+(name "documentation"
+)
+(value "Store for keyword definitions for a given context (e.g. a particular program or standard). "
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p3f"))
+($7 37 < -hkpzxr_v5_f8zng6fd_-p3e "keyNames" 26
+(name "keyNames"
+)
+(value "context"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p3e"))
+($7 38 < -hkpzxr_v5_f8zng6fd_-p1w "guid" 26
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:02:54_00003"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p1w"))
+($7 39 < -hkpzxr_v5_f8zng6fd_-p3l "documentation" 1
+(name "documentation"
+)
+(value "Storage of keyword definitions - reference data."
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p3l"))
+($7 40 < -hkpzxr_v5_f8zng6fd_-p3k "isReferenceData" 1
+(name "isReferenceData"
+)
+(value "True"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p3k"))
+($7 41 < -hkpzxr_v5_f8zng6fd_-p1v "guid" 1
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:02:54_00001"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p1v"))
+($7 42 < -hkpzxr_v5_f8zng6fd_-p0g "shortName" 1
+(name "shortName"
+)
+(value "KWDF"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p0g"))
+($11 43)
+($13 46)
+($11 49)
+($11 51)
+($11 52)
+($11 54)
+($5 44 @ -yk94ms_-e3s_e41656c6_-gpe 4 "Logical" $1 "memops" $1 "Implementation" $1 "DataObject" $5)
+($5 45 @ -yk94ms_-e3s_e41656c6_-gzz 4 "Logical" $1 "memops" $1 "Implementation" $1 "Word" $5)
+($5 47 @ -yk94ms_-e3s_e41656c6_-h0m 4 "Logical" $1 "memops" $1 "Implementation" $1 "Line" $5)
+($5 48 @ -yk94ms_-e3s_e41656c6_-h0a 4 "Logical" $1 "memops" $1 "Implementation" $1 "String" $5)
+($5 50 @ z8kflu_63g_errlz7sn_-p8u 4 "Logical" $1 "memops" $1 "Implementation" $1 "TopObject" $5)
+($5 53 @ -hkpzxr_-nsb_f8y6usm8_-p8o 5 "Logical" $1 "ccp" $1 "molecule" $1 "StructureValidation" $1 "ValidationResult" $5)
+($9 55 @ -hkpzxr_v5_f8zng6fd_-p93 6 "Logical" $1 "ccp" $1 "molecule" $1 "StructureValidation" $1 "ValidationResult" $5 "#<anon> (ValidationResult, KeywordDefinition)##," $9)
+(typeAssn 33 8)
+(assocEndAssn 8 33)
+(subtypeAssn 23 8)
+(supertypeAssn 23 44)
+(generalizationAssn 8 23)
+(typeRefAssn 9 45)
+(typeExpression 9 46)
+(typeRefAssn 11 47)
+(typeExpression 11 46)
+(typeRefAssn 14 48)
+(typeExpression 14 46)
+(typeRefAssn 17 45)
+(typeExpression 17 46)
+(projectionAssn 3 8 43)
+(typeAssn 31 26)
+(assocEndAssn 26 31)
+(subtypeAssn 35 26)
+(supertypeAssn 35 50)
+(generalizationAssn 26 35)
+(typeRefAssn 27 45)
+(typeExpression 27 46)
+(projectionAssn 4 26 49)
+(to 5 3)
+(from 5 4)
+(projectionAssn 5 30 51)
+(projectionAssn 6 53 52)
+(to 7 3)
+(from 7 6)
+(projectionAssn 7 55 54)

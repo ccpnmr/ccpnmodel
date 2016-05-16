@@ -1,0 +1,3252 @@
+ObjectDomain_Shared_Package 15
+{-yk94ms_-e3s_e41656c6_-ouq 4 "Logical" objectdomain.uml.mechanisms.UmlPackage-owns "ccp" objectdomain.uml.mechanisms.UmlPackage-owns "nmr" objectdomain.uml.mechanisms.UmlPackage-owns "NmrExpPrototype" objectdomain.uml.mechanisms.UmlPackage-owns
+}[objectdomain.uml.core.TypeExpression $17
+objectdomain.uml.mechanisms.UmlPackage-owns $1
+objectdomain.uml.core.Generalization-owns $10
+objectdomain.uml.core.Dependency-owns $12
+objectdomain.uml.core.Projection $15
+objectdomain.uml.core.UmlAttribute-features $6
+objectdomain.uml.core.UmlAssociationEnd-connections $9
+objectdomain.uml.view.style.BaseViewElementStyle-owns $14
+objectdomain.uml.view.ClassView-owns $3
+objectdomain.uml.core.UmlTaggedValue-taggedValues $7
+objectdomain.uml.core.UmlConstraint-constraints $11
+objectdomain.uml.core.UmlAssociation-owns $8
+objectdomain.uml.view.Diagram-owns $2
+objectdomain.uml.core.UmlOperation-features $13
+objectdomain.uml.core.UmlMultiplicity $16
+objectdomain.uml.core.UmlClass-owns $5
+objectdomain.uml.view.AssociationView-owns $4
+objectdomain.uml.core.Stereotype-owns $18
+]
+($1 1 > -yk94ms_-e3s_e41656c6_-ouq 4 "Logical" $1 "ccp" $1 "nmr" $1 "NmrExpPrototype" $1
+(name "NmrExpPrototype"
+)
+(uid "-yk94ms_-e3s_e41656c6_-ouq"))
+($2 2 < -yk94ms_85r_eqyymv3f_-ff7 "_NmrExpPrototype-details" 1
+(name "_NmrExpPrototype-details"
+)
+(uid "-yk94ms_85r_eqyymv3f_-ff7")
+(diagramType "class"))
+($3 3 < -yk94ms_85r_eqyymv3f_-ff6 "Experiment" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-ff6")
+(bbx 240 70 190 250))
+($3 4 < -yk94ms_85r_eqyymv3f_-ff5 "ExpDim" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-ff5")
+(bbx 300 370 190 80))
+($4 5 < -yk94ms_85r_eqyymv3f_-ff4 "" 2
+(toMultiplicityPosition 400 325)
+(uid "-yk94ms_85r_eqyymv3f_-ff4")
+(points 390 370 390 320)
+(fromMultiplicityPosition 380 350))
+($3 6 < -yk94ms_85r_eqyymv3f_-ff3 "ExpDimRef" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-ff3")
+(bbx 420 500 310 350))
+($4 7 < -yk94ms_85r_eqyymv3f_-ff2 "" 2
+(toMultiplicityPosition 390 455)
+(uid "-yk94ms_85r_eqyymv3f_-ff2")
+(points 420 520 380 520 380 450)
+(fromMultiplicityPosition 410 530))
+($3 8 < -yk94ms_85r_eqyymv3f_-ff1 "NmrExpPrototype" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-ff1")
+(bbx 1190 20 160 140))
+($3 9 < -yk94ms_85r_eqyymv3f_-ff0 "ExpTransfer" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-ff0")
+(bbx 870 290 200 90))
+($3 10 < -yk94ms_85r_eqyymv3f_-fez "Isotope" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-fez")
+(bbx 1120 630 240 220))
+($4 11 < -yk94ms_85r_eqyymv3f_-fey "" 2
+(toMultiplicityPosition 1110 720)
+(uid "-yk94ms_85r_eqyymv3f_-fey")
+(points 730 710 1120 710)
+(toOrderedPosition 1050 685))
+($3 12 < -yk94ms_85r_eqyymv3f_-fex "ExpTransfer" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-fex")
+(bbx 60 500 250 90))
+($4 13 < -yk94ms_85r_eqyymv3f_-few "" 2
+(toMultiplicityPosition 405 560)
+(uid "-yk94ms_85r_eqyymv3f_-few")
+(points 310 580 420 580)
+(toOrderedPosition 125 250)
+(fromMultiplicityPosition 315 560))
+($4 14 < -yk94ms_85r_eqyymv3f_-fev "" 2
+(toMultiplicityPosition 285 480)
+(uid "-yk94ms_85r_eqyymv3f_-fev")
+(points 280 320 280 500)
+(fromMultiplicityPosition 265 330))
+($3 15 < -yk94ms_85r_eqyymv3f_-feu "AtomSite" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-feu")
+(bbx 1120 220 210 210))
+($3 16 < -yk94ms_85r_eqyymv3f_-fet "RefExperiment" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-fet")
+(bbx 470 20 190 110))
+($4 17 < -yk94ms_85r_eqyymv3f_-fes "" 2
+(toMultiplicityPosition 665 105)
+(uid "-yk94ms_85r_eqyymv3f_-fes")
+(points 1190 100 660 100)
+(fromMultiplicityPosition 1155 110))
+($3 18 < -yk94ms_85r_eqyymv3f_-fer "RefExpDim" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-fer")
+(bbx 480 180 80 60))
+($4 19 < -yk94ms_85r_eqyymv3f_-feq "" 2
+(toMultiplicityPosition 510 160)
+(uid "-yk94ms_85r_eqyymv3f_-feq")
+(points 520 130 520 180)
+(fromMultiplicityPosition 530 135))
+($3 20 < -yk94ms_85r_eqyymv3f_-fep "RefExpDimRef" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-fep")
+(bbx 510 310 280 140))
+($4 21 < -yk94ms_85r_eqyymv3f_-feo "" 2
+(toMultiplicityPosition 515 290)
+(uid "-yk94ms_85r_eqyymv3f_-feo")
+(points 525 240 525 310)
+(fromMultiplicityPosition 535 245))
+($3 22 < -yk94ms_85r_eqyymv3f_-fen "ExpTransferSubType" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-fen")
+(bbx 60 630 140 60))
+($4 23 < -yk94ms_85r_eqyymv3f_-fem "" 2
+(toMultiplicityPosition 1110 660)
+(toRolePosition 1000 620)
+(uid "-yk94ms_85r_eqyymv3f_-fem")
+(points 755 450 755 645 1120 645))
+($4 24 < -yk94ms_85r_eqyymv3f_-fel "" 2
+(toMultiplicityPosition 1105 335)
+(uid "-yk94ms_85r_eqyymv3f_-fel")
+(points 1070 330 1120 330)
+(fromMultiplicityPosition 1075 300))
+($3 25 < -yk94ms_85r_eqyymv3f_-fek "ExpStep" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-fek")
+(bbx 610 180 120 80))
+($4 26 < -yk94ms_85r_eqyymv3f_-fej "" 2
+(labelPosition 600 680)
+(uid "-yk94ms_85r_eqyymv3f_-fej")
+(points 430 95 470 95)
+(fromMultiplicityPosition 535 60))
+($3 27 < -yk94ms_85r_eqyymv3f_-fei "ExpTransferType" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-fei")
+(bbx 250 630 120 60))
+($3 28 < -yk94ms_85r_eqyymv3f_-feh "ExpMeasurementType" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-feh")
+(bbx 60 730 150 60))
+($4 29 < -yk94ms_85r_eqyymv3f_-feg "" 2
+(toMultiplicityPosition 535 290)
+(uid "-yk94ms_85r_eqyymv3f_-feg")
+(points 485 240 485 370))
+($4 30 < -yk94ms_85r_eqyymv3f_-fef "" 2
+(uid "-yk94ms_85r_eqyymv3f_-fef")
+(points 585 500 585 450)
+(fromMultiplicityPosition 325 445))
+($3 31 < -yk94ms_85r_eqyymv3f_-fee "ConstantTimeType" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-fee")
+(bbx 250 730 130 60))
+($3 32 < -yk94ms_85r_eqyymv3f_-fed "ExpGraph" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-fed")
+(bbx 840 120 150 110))
+($4 33 < -yk94ms_85r_eqyymv3f_-fec "" 2
+(toMultiplicityPosition 995 145)
+(uid "-yk94ms_85r_eqyymv3f_-fec")
+(points 1190 135 990 135)
+(fromMultiplicityPosition 1175 145))
+($4 34 < -yk94ms_85r_eqyymv3f_-feb "" 2
+(toMultiplicityPosition 955 265)
+(uid "-yk94ms_85r_eqyymv3f_-feb")
+(points 965 230 965 290)
+(fromMultiplicityPosition 975 235))
+($3 35 < -yk94ms_85r_eqyymv3f_-fea "ExpMeasurement" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-fea")
+(bbx 820 480 310 110))
+($4 36 < -yk94ms_85r_eqyymv3f_-fe9 "" 2
+(toMultiplicityPosition 1155 435)
+(uid "-yk94ms_85r_eqyymv3f_-fe9")
+(points 1130 505 1170 505 1170 430)
+(toOrderedPosition 1135 455)
+(fromMultiplicityPosition 1135 510))
+($4 37 < -yk94ms_85r_eqyymv3f_-fe8 "" 2
+(toMultiplicityPosition 830 455)
+(uid "-yk94ms_85r_eqyymv3f_-fe8")
+(points 730 225 825 225 825 480)
+(fromMultiplicityPosition 735 200))
+($4 38 < -yk94ms_85r_eqyymv3f_-fe7 "" 2
+(toMultiplicityPosition 655 155)
+(uid "-yk94ms_85r_eqyymv3f_-fe7")
+(points 840 165 670 165 670 180)
+(fromMultiplicityPosition 820 130))
+($4 39 < -yk94ms_85r_eqyymv3f_-fe6 "" 2
+(toMultiplicityPosition 655 265)
+(uid "-yk94ms_85r_eqyymv3f_-fe6")
+(points 665 310 665 260)
+(fromMultiplicityPosition 675 290))
+($3 40 < -yk94ms_85r_eqyymv3f_-fe5 "ExpCategory" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-fe5")
+(bbx 20 110 90 60))
+($4 41 < -yk94ms_85r_eqyymv3f_-fe4 "" 2
+(toMultiplicityPosition 1245 200)
+(uid "-yk94ms_85r_eqyymv3f_-fe4")
+(points 1255 160 1255 220)
+(fromMultiplicityPosition 1270 175))
+($4 42 < -yk94ms_85r_eqyymv3f_-fe3 "" 2
+(toMultiplicityPosition 1135 555)
+(uid "-yk94ms_85r_eqyymv3f_-fe3")
+(points 1345 160 1345 550 1130 550)
+(fromMultiplicityPosition 1360 175))
+($4 43 < -yk94ms_85r_eqyymv3f_-fe2 "" 2
+(toMultiplicityPosition 790 455)
+(uid "-yk94ms_85r_eqyymv3f_-fe2")
+(points 820 550 780 550 780 450)
+(fromMultiplicityPosition 805 555))
+($4 44 < -yk94ms_85r_eqyymv3f_-fe1 "" 2
+(toMultiplicityPosition 865 455)
+(uid "-yk94ms_85r_eqyymv3f_-fe1")
+(points 855 230 855 480)
+(fromMultiplicityPosition 865 235))
+($4 45 < -yk94ms_85r_eqyymv3f_-fe0 "" 2
+(toMultiplicityPosition 1160 195)
+(uid "-yk94ms_85r_eqyymv3f_-fe0")
+(points 990 185 1155 185 1155 220)
+(fromMultiplicityPosition 1005 195))
+($4 46 < -yk94ms_85r_eqyymv3f_-fdz "" 2
+(uid "-yk94ms_85r_eqyymv3f_-fdz")
+(points 1265 430 1265 630))
+($3 47 < -yk94ms_85r_eqyymv3f_-fdy "ExpKeyword" 2
+(uid "-yk94ms_85r_eqyymv3f_-fdy")
+(bbx 20 20 100 60))
+($4 48 < 0_om1_ezvf3kpm_-p98 "" 2
+(toMultiplicityPosition 230 270)
+(toRolePosition 165 295)
+(uid "0_om1_ezvf3kpm_-p98")
+(points 240 240 180 240 180 290 240 290)
+(fromRolePosition 155 220)
+(fromMultiplicityPosition 230 245))
+($3 49 < 0_-epz_fefricw7_-p8r "SystematicName" 2
+(autoSizeToFit true)
+(uid "0_-epz_fefricw7_-p8r")
+(bbx 60 360 200 80))
+($4 50 < 0_-epz_fefricw7_-p90 "" 2
+(toMultiplicityPosition 135 340)
+(uid "0_-epz_fefricw7_-p90")
+(points 470 45 145 45 145 360)
+(fromMultiplicityPosition 445 20))
+($3 51 < 0_-epz_fefricw7_-p8q "NamingSystem" 2
+(autoSizeToFit true)
+(uid "0_-epz_fefricw7_-p8q")
+(bbx 20 210 110 60))
+($3 52 < -hkpzxr_-o65_fev6cycj_-p8a "ExpDimRefMapping" 2
+(autoSizeToFit true)
+(uid "-hkpzxr_-o65_fev6cycj_-p8a")
+(bbx 850 780 210 60))
+($4 53 < -hkpzxr_-o65_fev6cycj_-p8b "" 2
+(toMultiplicityPosition 735 810)
+(toRolePosition 700 835)
+(uid "-hkpzxr_-o65_fev6cycj_-p8b")
+(points 850 830 730 830)
+(fromRolePosition 780 810)
+(fromMultiplicityPosition 840 835))
+($4 54 < -hkpzxr_-o65_fev6cycj_-p8c "" 2
+(toMultiplicityPosition 845 765)
+(uid "-hkpzxr_-o65_fev6cycj_-p8c")
+(points 730 785 850 785)
+(fromMultiplicityPosition 735 760))
+($2 55 < -yk94ms_85r_eqyymv3f_-fdx "_NmrExpPrototype" 1
+(name "_NmrExpPrototype"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fdx")
+(diagramType "class"))
+($3 56 < -yk94ms_85r_eqyymv3f_-fdw "Experiment" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fdw")
+(bbx 120 30 160 30))
+($3 57 < -yk94ms_85r_eqyymv3f_-fdv "ExpDim" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fdv")
+(bbx 160 120 140 30))
+($4 58 < -yk94ms_85r_eqyymv3f_-fdu "" 55
+(toMultiplicityPosition 225 65)
+(uid "-yk94ms_85r_eqyymv3f_-fdu")
+(points 215 120 215 60)
+(fromMultiplicityPosition 200 100))
+($3 59 < -yk94ms_85r_eqyymv3f_-fdt "ExpDimRef" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fdt")
+(bbx 120 240 160 30))
+($4 60 < -yk94ms_85r_eqyymv3f_-fds "" 55
+(toMultiplicityPosition 230 155)
+(uid "-yk94ms_85r_eqyymv3f_-fds")
+(points 215 240 215 150)
+(fromMultiplicityPosition 200 220))
+($3 61 < -yk94ms_85r_eqyymv3f_-fdr "NmrExpPrototype" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fdr")
+(bbx 470 30 120 30))
+($3 62 < -yk94ms_85r_eqyymv3f_-fdq "ExpTransfer" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fdq")
+(bbx 670 120 90 30))
+($3 63 < -yk94ms_85r_eqyymv3f_-fdp "Isotope" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fdp")
+(bbx 380 320 230 30))
+($4 64 < -yk94ms_85r_eqyymv3f_-fdo "" 55
+(toMultiplicityPosition 365 340)
+(uid "-yk94ms_85r_eqyymv3f_-fdo")
+(points 255 270 255 335 380 335)
+(toOrderedPosition 285 290))
+($3 65 < -yk94ms_85r_eqyymv3f_-fdn "ExpTransfer" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fdn")
+(bbx 30 170 170 30))
+($4 66 < -yk94ms_85r_eqyymv3f_-fdm "" 55
+(toMultiplicityPosition 125 220)
+(uid "-yk94ms_85r_eqyymv3f_-fdm")
+(points 140 200 140 240)
+(toOrderedPosition 185 280)
+(fromMultiplicityPosition 145 205))
+($4 67 < -yk94ms_85r_eqyymv3f_-fdl "" 55
+(toMultiplicityPosition 135 150)
+(uid "-yk94ms_85r_eqyymv3f_-fdl")
+(points 145 60 145 170)
+(fromMultiplicityPosition 155 65))
+($3 68 < -yk94ms_85r_eqyymv3f_-fdk "AtomSite" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fdk")
+(bbx 670 200 70 30))
+($4 69 < -yk94ms_85r_eqyymv3f_-fdj "" 55
+(toMultiplicityPosition 475 300)
+(uid "-yk94ms_85r_eqyymv3f_-fdj")
+(points 705 230 705 335 610 335))
+($4 70 < -yk94ms_85r_eqyymv3f_-fdi "" 55
+(toMultiplicityPosition 725 175)
+(uid "-yk94ms_85r_eqyymv3f_-fdi")
+(points 715 150 715 200)
+(fromMultiplicityPosition 720 155))
+($3 71 < -yk94ms_85r_eqyymv3f_-fdh "RefExpDim" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fdh")
+(bbx 320 120 80 30))
+($3 72 < -yk94ms_85r_eqyymv3f_-fdg "RefExpDimRef" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fdg")
+(bbx 310 240 100 30))
+($4 73 < -yk94ms_85r_eqyymv3f_-fdf "" 55
+(toMultiplicityPosition 405 300)
+(toRolePosition 280 295)
+(uid "-yk94ms_85r_eqyymv3f_-fdf")
+(points 395 270 395 320))
+($4 74 < -yk94ms_85r_eqyymv3f_-fde "" 55
+(toMultiplicityPosition 365 220)
+(uid "-yk94ms_85r_eqyymv3f_-fde")
+(points 360 150 360 240)
+(fromMultiplicityPosition 375 165))
+($3 75 < -yk94ms_85r_eqyymv3f_-fdd "RefExperiment" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fdd")
+(bbx 310 30 100 30))
+($4 76 < -yk94ms_85r_eqyymv3f_-fdc "" 55
+(toMultiplicityPosition 350 100)
+(uid "-yk94ms_85r_eqyymv3f_-fdc")
+(points 360 60 360 120)
+(fromMultiplicityPosition 375 65))
+($4 77 < -yk94ms_85r_eqyymv3f_-fdb "" 55
+(toMultiplicityPosition 415 25)
+(uid "-yk94ms_85r_eqyymv3f_-fdb")
+(points 470 45 410 45)
+(fromMultiplicityPosition 445 60))
+($4 78 < -yk94ms_85r_eqyymv3f_-fda "" 55
+(uid "-yk94ms_85r_eqyymv3f_-fda")
+(points 280 45 310 45))
+($3 79 < -yk94ms_85r_eqyymv3f_-fd9 "ExpStep" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fd9")
+(bbx 430 120 60 30))
+($4 80 < -yk94ms_85r_eqyymv3f_-fd8 "" 55
+(uid "-yk94ms_85r_eqyymv3f_-fd8")
+(points 320 135 300 135))
+($4 81 < -yk94ms_85r_eqyymv3f_-fd7 "" 55
+(uid "-yk94ms_85r_eqyymv3f_-fd7")
+(points 280 255 310 255))
+($4 82 < -yk94ms_85r_eqyymv3f_-fd6 "" 55
+(toMultiplicityPosition 425 155)
+(uid "-yk94ms_85r_eqyymv3f_-fd6")
+(points 410 245 440 245 440 150)
+(fromMultiplicityPosition 415 220))
+($3 83 < -yk94ms_85r_eqyymv3f_-fd5 "ExpGraph" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fd5")
+(bbx 550 120 70 30))
+($4 84 < -yk94ms_85r_eqyymv3f_-fd4 "" 55
+(toMultiplicityPosition 660 140)
+(uid "-yk94ms_85r_eqyymv3f_-fd4")
+(points 620 135 670 135)
+(fromMultiplicityPosition 630 110))
+($4 85 < -yk94ms_85r_eqyymv3f_-fd3 "" 55
+(toMultiplicityPosition 495 140)
+(uid "-yk94ms_85r_eqyymv3f_-fd3")
+(points 550 135 490 135)
+(fromMultiplicityPosition 535 140))
+($4 86 < -yk94ms_85r_eqyymv3f_-fd2 "" 55
+(toMultiplicityPosition 575 100)
+(uid "-yk94ms_85r_eqyymv3f_-fd2")
+(points 570 60 570 120)
+(fromMultiplicityPosition 550 65))
+($3 87 < -yk94ms_85r_eqyymv3f_-fd1 "ExpMeasurement" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_85r_eqyymv3f_-fd1")
+(bbx 470 200 120 30))
+($4 88 < -yk94ms_85r_eqyymv3f_-fd0 "" 55
+(toMultiplicityPosition 670 250)
+(uid "-yk94ms_85r_eqyymv3f_-fd0")
+(points 535 230 535 265 680 265 680 230)
+(toOrderedPosition 620 235)
+(fromMultiplicityPosition 525 235))
+($4 89 < -yk94ms_85r_eqyymv3f_-fcz "" 55
+(toMultiplicityPosition 460 175)
+(uid "-yk94ms_85r_eqyymv3f_-fcz")
+(points 475 150 475 200)
+(fromMultiplicityPosition 465 155))
+($4 90 < -yk94ms_85r_eqyymv3f_-fcy "" 55
+(toMultiplicityPosition 750 225)
+(uid "-yk94ms_85r_eqyymv3f_-fcy")
+(points 590 40 780 40 780 215 740 215)
+(fromMultiplicityPosition 610 15))
+($4 91 < -yk94ms_85r_eqyymv3f_-fcx "" 55
+(toMultiplicityPosition 520 180)
+(uid "-yk94ms_85r_eqyymv3f_-fcx")
+(points 515 60 515 200)
+(fromMultiplicityPosition 500 80))
+($4 92 < -yk94ms_85r_eqyymv3f_-fcw "" 55
+(toMultiplicityPosition 415 265)
+(uid "-yk94ms_85r_eqyymv3f_-fcw")
+(points 495 230 495 260 410 260)
+(fromMultiplicityPosition 480 235))
+($4 93 < -yk94ms_85r_eqyymv3f_-fcv "" 55
+(toMultiplicityPosition 660 195)
+(uid "-yk94ms_85r_eqyymv3f_-fcv")
+(points 615 150 615 215 670 215)
+(fromMultiplicityPosition 620 155))
+($4 94 < -yk94ms_85r_eqyymv3f_-fcu "" 55
+(toMultiplicityPosition 555 180)
+(uid "-yk94ms_85r_eqyymv3f_-fcu")
+(points 565 150 565 200)
+(fromMultiplicityPosition 570 155))
+($4 95 < -hkpzxr_-iih_f3zymwjl_-p6i "" 55
+(toMultiplicityPosition 110 40)
+(toRolePosition 45 15)
+(uid "-hkpzxr_-iih_f3zymwjl_-p6i")
+(points 120 60 120 90 55 90 55 35 120 35)
+(fromRolePosition 40 70)
+(fromMultiplicityPosition 110 55))
+($3 96 < -hkpzxr_-o65_fev6cycj_-p87 "ExpDimRefMapping" 55
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-hkpzxr_-o65_fev6cycj_-p87")
+(bbx 10 320 210 30))
+($4 97 < -hkpzxr_-o65_fev6cycj_-p89 "" 55
+(toMultiplicityPosition 135 275)
+(toRolePosition 35 300)
+(uid "-hkpzxr_-o65_fev6cycj_-p89")
+(points 130 320 130 270)
+(fromRolePosition 145 290)
+(fromMultiplicityPosition 135 300))
+($4 98 < -hkpzxr_-o65_fev6cycj_-p88 "" 55
+(toMultiplicityPosition 195 300)
+(uid "-hkpzxr_-o65_fev6cycj_-p88")
+(points 185 270 185 320)
+(fromMultiplicityPosition 195 275))
+($3 99 < z8kfsx_-fvi_ffpcprzj_-p8v "SystematicName" 55
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "z8kfsx_-fvi_ffpcprzj_-p8v")
+(bbx 10 110 110 30))
+($4 100 < z8kfsx_-fvi_ffpcprzj_-p8w "" 55
+(toMultiplicityPosition 20 85)
+(uid "z8kfsx_-fvi_ffpcprzj_-p8w")
+(points 360 30 360 5 30 5 30 110)
+(fromMultiplicityPosition 375 10))
+($5 101 < -yk94ms_85r_eqyymv3f_-fct "NmrExpPrototype" 1
+(name "NmrExpPrototype"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fct"))
+($6 102 < -yk94ms_85r_eqyymv3f_-fcs "serial" 101
+(changeability "frozen")
+(name "serial"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fcs")
+(multiplicity "1"))
+($7 103 < -yk94ms_85r_eqyymv3f_-fcr "isAutomatic" 102
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fcr"))
+($7 104 < -yk94ms_85r_eqyymv3f_-fcq "guid" 102
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00013"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fcq"))
+($6 105 < -yk94ms_85r_eqyymv3f_-fcp "name" 101
+(name "name"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fcp")
+(multiplicity "1"))
+($7 106 < -yk94ms_85r_eqyymv3f_-fco "documentation" 105
+(name "documentation"
+)
+(value "name of experiment prototype"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fco"))
+($7 107 < -yk94ms_85r_eqyymv3f_-fcn "guid" 105
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00014"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fcn"))
+($6 108 < -yk94ms_85r_eqyymv3f_-fcm "category" 101
+(name "category"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fcm")
+(multiplicity "1"))
+($7 109 < -yk94ms_85r_eqyymv3f_-fcl "documentation" 108
+(name "documentation"
+)
+(value "Experiment category. See datatype for details"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fcl"))
+($7 110 < -yk94ms_85r_eqyymv3f_-fck "guid" 108
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00015"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fck"))
+($6 111 < -yk94ms_85r_eqyymv3f_-fcj "keywords" 101
+(name "keywords"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fcj")
+(multiplicity "*"))
+($7 112 < -yk94ms_85r_eqyymv3f_-fci "documentation" 111
+(name "documentation"
+)
+(value "keywords to characterise the type and uses of experiment in more detail than permitted by 'category'. Examples would be 'protein', 'sidechain', 'backbone', 'filtered', 'T1', 'RDC', ..."
+)
+(uid "-yk94ms_85r_eqyymv3f_-fci"))
+($7 113 < -yk94ms_85r_eqyymv3f_-fch "baseName" 111
+(name "baseName"
+)
+(value "keyword"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fch"))
+($7 114 < -yk94ms_85r_eqyymv3f_-fcg "guid" 111
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00016"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fcg"))
+($6 115 < -yk94ms_85r_eqyymv3f_-fcf "details" 101
+(name "details"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fcf"))
+($7 116 < -yk94ms_85r_eqyymv3f_-fce "guid" 115
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00017"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fce"))
+($6 117 < -yk94ms_85r_eqyymv3f_-fcd "synonym" 101
+(name "synonym"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fcd"))
+($7 118 < -yk94ms_85r_eqyymv3f_-fcc "documentation" 117
+(name "documentation"
+)
+(value "Alternative name of NmrExpPrototype. Used for experiments with well-established non-systematic name."
+)
+(uid "-yk94ms_85r_eqyymv3f_-fcc"))
+($7 119 < -yk94ms_85r_eqyymv3f_-fcb "guid" 117
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00018"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fcb"))
+($8 120 < -yk94ms_85r_eqyymv3f_-fc9 "#<anon> (NmrExpPrototype, RefExperiment)##," 101
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-fc9"))
+($9 121 < -yk94ms_85r_eqyymv3f_-fc8 "#0" 120
+(changeability "frozen")
+(aggregation "composite")
+(uid "-yk94ms_85r_eqyymv3f_-fc8")
+(multiplicity "1"))
+($7 122 < -yk94ms_85r_eqyymv3f_-fc7 "guid" 121
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00005"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fc7"))
+($9 123 < -yk94ms_85r_eqyymv3f_-fc6 "#1" 120
+(uid "-yk94ms_85r_eqyymv3f_-fc6")
+(multiplicity "*"))
+($7 124 < -yk94ms_85r_eqyymv3f_-fc5 "guid" 123
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00006"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fc5"))
+($8 125 < -yk94ms_85r_eqyymv3f_-fc4 "#<anon> (NmrExpPrototype, ExpGraph)##," 101
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-fc4"))
+($9 126 < -yk94ms_85r_eqyymv3f_-fc3 "#0" 125
+(changeability "frozen")
+(aggregation "composite")
+(uid "-yk94ms_85r_eqyymv3f_-fc3")
+(multiplicity "1"))
+($7 127 < -yk94ms_85r_eqyymv3f_-fc2 "guid" 126
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00007"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fc2"))
+($9 128 < -yk94ms_85r_eqyymv3f_-fc1 "#1" 125
+(uid "-yk94ms_85r_eqyymv3f_-fc1")
+(multiplicity "*"))
+($7 129 < -yk94ms_85r_eqyymv3f_-fc0 "guid" 128
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00008"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fc0"))
+($8 130 < -yk94ms_85r_eqyymv3f_-fbz "#<anon> (NmrExpPrototype, AtomSite)##," 101
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-fbz"))
+($9 131 < -yk94ms_85r_eqyymv3f_-fby "#0" 130
+(changeability "frozen")
+(aggregation "composite")
+(uid "-yk94ms_85r_eqyymv3f_-fby")
+(multiplicity "1"))
+($7 132 < -yk94ms_85r_eqyymv3f_-fbx "guid" 131
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00009"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fbx"))
+($9 133 < -yk94ms_85r_eqyymv3f_-fbw "#1" 130
+(uid "-yk94ms_85r_eqyymv3f_-fbw")
+(multiplicity "*"))
+($7 134 < -yk94ms_85r_eqyymv3f_-fbv "guid" 133
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00010"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fbv"))
+($8 135 < -yk94ms_85r_eqyymv3f_-fbu "#<anon> (NmrExpPrototype, ExpMeasurement)##," 101
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-fbu"))
+($9 136 < -yk94ms_85r_eqyymv3f_-fbt "#0" 135
+(changeability "frozen")
+(aggregation "composite")
+(uid "-yk94ms_85r_eqyymv3f_-fbt")
+(multiplicity "1"))
+($7 137 < -yk94ms_85r_eqyymv3f_-fbs "guid" 136
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00011"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fbs"))
+($9 138 < -yk94ms_85r_eqyymv3f_-fbr "#1" 135
+(uid "-yk94ms_85r_eqyymv3f_-fbr")
+(multiplicity "*"))
+($7 139 < -yk94ms_85r_eqyymv3f_-fbq "guid" 138
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00012"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fbq"))
+($10 140 < -yk94ms_l0q_evqpurmn_-p5d "#<anon> (NmrExpPrototype, TopObject)" 101
+(uid "-yk94ms_l0q_evqpurmn_-p5d"))
+($7 141 < -yk94ms_85r_eqyymv3f_-fbp "documentation" 101
+(name "documentation"
+)
+(value "Description of a reference NMR experiment as defined by its magnetisation transfer pathway. E.g. a 4D HCCH, 3D (H)CCH or HC(C)H, 2D H(C)(C)H and 2D (reduced dimensionality) HC(C)H are seen as the same experiment"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fbp"))
+($7 142 < -yk94ms_85r_eqyymv3f_-fbn "guid" 101
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00020"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fbn"))
+($7 143 < -yk94ms_15v_evqyosvg_-p4t "keyNames" 101
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "-yk94ms_15v_evqyosvg_-p4t"))
+($5 144 < -yk94ms_85r_eqyymv3f_-fbm "ExpTransfer" 1
+(name "ExpTransfer"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fbm"))
+($6 145 < -yk94ms_85r_eqyymv3f_-fbl "serial" 144
+(changeability "frozen")
+(name "serial"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fbl")
+(multiplicity "1"))
+($7 146 < -yk94ms_85r_eqyymv3f_-fbk "isAutomatic" 145
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fbk"))
+($7 147 < -yk94ms_85r_eqyymv3f_-fbj "guid" 145
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00021"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fbj"))
+($6 148 < -yk94ms_85r_eqyymv3f_-fbi "transferType" 144
+(name "transferType"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fbi"))
+($7 149 < -yk94ms_85r_eqyymv3f_-fbh "documentation" 148
+(name "documentation"
+)
+(value "Type of transfer. E.g. NOESY. Intended to describe the minimum information necessary to establish the relationship between the ExpAtomSites connected by the transfer"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fbh"))
+($7 150 < -yk94ms_85r_eqyymv3f_-fbg "guid" 148
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00022"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fbg"))
+($6 151 < -yk94ms_85r_eqyymv3f_-fbf "transferToSelf" 144
+(initialValue "False"
+)
+(name "transferToSelf"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fbf")
+(multiplicity "1"))
+($7 152 < -yk94ms_85r_eqyymv3f_-fbe "documentation" 151
+(name "documentation"
+)
+(value "Does transfer permit magnetisation to remain on the same site ('diagonal' peak)?"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fbe"))
+($7 153 < -yk94ms_85r_eqyymv3f_-fbd "guid" 151
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00023"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fbd"))
+($10 154 < -yk94ms_85r_eqyymv3f_-fbc "#<anon> (ExpTransfer, DataObject)" 144
+(uid "-yk94ms_85r_eqyymv3f_-fbc"))
+($8 155 < -yk94ms_85r_eqyymv3f_-fbb "#<anon> (ExpTransfer, AtomSite)##," 144
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-fbb"))
+($9 156 < -yk94ms_85r_eqyymv3f_-fba "#0" 155
+(uid "-yk94ms_85r_eqyymv3f_-fba")
+(multiplicity "*"))
+($7 157 < -yk94ms_85r_eqyymv3f_-fb9 "documentation" 156
+(name "documentation"
+)
+(value "Magnetisation transfer (non-directional) connecting two AtomSites"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fb9"))
+($7 158 < -yk94ms_85r_eqyymv3f_-fb8 "guid" 156
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00019"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fb8"))
+($9 159 < -yk94ms_85r_eqyymv3f_-fb7 "#1" 155
+(uid "-yk94ms_85r_eqyymv3f_-fb7")
+(multiplicity "2"))
+($7 160 < -yk94ms_85r_eqyymv3f_-fb6 "documentation" 159
+(name "documentation"
+)
+(value "AtomSites connected by Transfer"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fb6"))
+($7 161 < -yk94ms_85r_eqyymv3f_-fb5 "guid" 159
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00020"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fb5"))
+($7 162 < -yk94ms_85r_eqyymv3f_-fb4 "documentation" 144
+(name "documentation"
+)
+(value "Magnetisation transfer between two AtomSites. The transfer does not say anything about direction, merely that e.g. an H and a C are connected by a one-bond coupling."
+""
+"The ExpTransferPaths and the AtomSites they select describe the network of nuclei that must be present in order to get observable peaks from a ginve ExpGraph."
+)
+(uid "-yk94ms_85r_eqyymv3f_-fb4"))
+($7 163 < -yk94ms_85r_eqyymv3f_-fb2 "guid" 144
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00021"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fb2"))
+($7 164 < -yk94ms_15v_evqyosvg_-p4s "keyNames" 144
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "-yk94ms_15v_evqyosvg_-p4s"))
+($11 165 < -yk94ms_85r_eqyymv3f_-fb1 "transferToSelf_requires_identical_isotopes" 144
+(name "transferToSelf_requires_identical_isotopes"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fb1")
+(body "code:python"
+"_"
+"not self.transferToSelf or len(set(x.isotopeCode for x in self.atomSites)) == 1"
+"_"
+"code:java"
+"_"
+"isValid = true;"
+"if (getTransferToSelf()) {"
+"  java.util.Set<java.lang.String> tt = new java.util.HashSet<java.lang.String>();"
+"  for (ccp.api.nmr.NmrExpPrototype.AtomSite atomSite: getAtomSites()) {"
+"    tt.add(atomSite.getIsotopeCode());"
+"  }"
+""
+"  if (tt.size() != 1)"
+"    isValid = false;"
+"  }"
+))
+($7 166 < -yk94ms_85r_eqyymv3f_-fb0 "guid" 165
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00022"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fb0"))
+($12 167 < -yk94ms_85r_eqyymv3f_-faz "#<anon> (NmrExpPrototype, ChemElement)" 1
+(uid "-yk94ms_85r_eqyymv3f_-faz"))
+($5 168 < -yk94ms_85r_eqyymv3f_-fay "AtomSite" 1
+(name "AtomSite"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fay"))
+($6 169 < -yk94ms_85r_eqyymv3f_-fax "serial" 168
+(changeability "frozen")
+(name "serial"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fax")
+(multiplicity "1"))
+($7 170 < -yk94ms_85r_eqyymv3f_-faw "isAutomatic" 169
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "-yk94ms_85r_eqyymv3f_-faw"))
+($7 171 < -yk94ms_85r_eqyymv3f_-fav "guid" 169
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00025"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fav"))
+($6 172 < -yk94ms_85r_eqyymv3f_-fau "isotopeCode" 168
+(name "isotopeCode"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fau")
+(multiplicity "1"))
+($7 173 < -yk94ms_85r_eqyymv3f_-fat "documentation" 172
+(name "documentation"
+)
+(value "Isotope code for Isotope making up the ExpAtomSite "
+)
+(uid "-yk94ms_85r_eqyymv3f_-fat"))
+($7 174 < -yk94ms_85r_eqyymv3f_-fas "guid" 172
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00026"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fas"))
+($13 175 < -yk94ms_85r_eqyymv3f_-far "getIsotope" 168
+(name "getIsotope"
+)
+(uid "-yk94ms_85r_eqyymv3f_-far")
+(isQuery true))
+($7 176 < -yk94ms_85r_eqyymv3f_-fao "opType" 175
+(name "opType"
+)
+(value "get"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fao"))
+($7 177 < -yk94ms_85r_eqyymv3f_-fal "documentation" 175
+(name "documentation"
+)
+(value "getter for derived link isotopes"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fal"))
+($7 178 < -yk94ms_85r_eqyymv3f_-faj "guid" 175
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:59_00004"
+)
+(uid "-yk94ms_85r_eqyymv3f_-faj"))
+($7 179 < z8kflu_15v_ewd8gvqb_-p5m "code:java" 175
+(name "code:java"
+)
+(value "java.lang.String ss = getIsotopeCode();"
+"int nn = ss.length();"
+"int firstLetter = nn-2;"
+"if ((nn >= 2) && (\"0123456789\".indexOf(ss.substring(nn-2,nn-1)) >= 0))"
+"  firstLetter = nn-1;"
+""
+"java.lang.String atomSymbol = ss.substring(firstLetter).toUpperCase();"
+"java.lang.Integer massNumber = Integer.valueOf(ss.substring(0, firstLetter));"
+""
+"java.util.List<java.lang.Object> keys = memops.universal.Util.argsToList((java.lang.Object) atomSymbol, massNumber);"
+"result = ccp.api.molecule.ChemElement.Isotope.getByKey(getRoot().getCurrentChemElementStore(), keys);"
+)
+(uid "z8kflu_15v_ewd8gvqb_-p5m"))
+($7 180 < z8kflu_15v_ewd8gvqb_-p5l "code:python" 175
+(name "code:python"
+)
+(value "ss = self.isotopeCode"
+"if ss[-2] in '0123456789':"
+"  firstLetter = -1"
+"else:"
+"  firstLetter = -2"
+"atomSymbol = ss[firstLetter:].capitalize()"
+"massNumber = int(ss[:firstLetter])"
+""
+"result = ccp.api.molecule.ChemElement.Isotope.getByKey(self.root.currentChemElementStore, (atomSymbol, massNumber))"
+)
+(uid "z8kflu_15v_ewd8gvqb_-p5l"))
+($6 181 < -yk94ms_85r_eqyymv3f_-fai "name" 168
+(name "name"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fai"))
+($7 182 < -yk94ms_85r_eqyymv3f_-fah "documentation" 181
+(name "documentation"
+)
+(value "A short string to be used in generating experiment names. If the attribute is not set, the nucleus symbol should be used. Examples of names would be 'CO', 'CA', for e.g. HNCOCA.Note that the name does not have to match with protein or any other naming conventions (proteins use 'C', where we might use 'CO'). "
+)
+(uid "-yk94ms_85r_eqyymv3f_-fah"))
+($7 183 < -yk94ms_85r_eqyymv3f_-fag "guid" 181
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00027"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fag"))
+($6 184 < -yk94ms_85r_eqyymv3f_-faf "minShift" 168
+(name "minShift"
+)
+(uid "-yk94ms_85r_eqyymv3f_-faf"))
+($7 185 < -yk94ms_85r_eqyymv3f_-fae "documentation" 184
+(name "documentation"
+)
+(value "minimum value of shift allowed for AtomSite, in ppm. Is not set in normal cases. Together with maxShift serves to distinguish frequency-selective sites. The most common use is for distinguishing CO, aliphatic carbon, and 'just' carbon."
+"Aliphatic carbon: <90ppm"
+"Aromatic carbon: 90-150ppm"
+"CO carbon: > 150ppm"
+"CA (for proteins): 40-90ppm"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fae"))
+($7 186 < -yk94ms_85r_eqyymv3f_-fad "guid" 184
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00028"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fad"))
+($11 187 < -yk94ms_85r_eqyymv3f_-fac "minShift_less_than_maxShift" 184
+(name "minShift_less_than_maxShift"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fac")
+(body "code:python"
+"_"
+"maxShift = self.maxShift"
+"isValid = (maxShift is None or value < maxShift)"
+"_"
+"code:java"
+"_"
+"getMaxShift() == null || value < getMaxShift()"
+))
+($7 188 < -yk94ms_85r_eqyymv3f_-fab "guid" 187
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00029"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fab"))
+($6 189 < -yk94ms_85r_eqyymv3f_-faa "maxShift" 168
+(name "maxShift"
+)
+(uid "-yk94ms_85r_eqyymv3f_-faa"))
+($7 190 < -yk94ms_85r_eqyymv3f_-fa9 "documentation" 189
+(name "documentation"
+)
+(value "maximum value of shift allowed for AtomSite, in ppm. Is not set in normal cases. Together with minShift serves to distinguish frequency-selective sites. For some common cases it is recommended to use standard limits :"
+"Aliphatic carbon: <90ppm"
+"Aromatic carbon: 90-150ppm"
+"CO carbon: > 150ppm"
+"CA (for proteins): 40-90ppm"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fa9"))
+($7 191 < -yk94ms_85r_eqyymv3f_-fa8 "guid" 189
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00030"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fa8"))
+($11 192 < -yk94ms_85r_eqyymv3f_-fa7 "maxShift_greater_than_minShift" 189
+(name "maxShift_greater_than_minShift"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fa7")
+(body "code:python"
+"_"
+"minShift = self.minShift"
+"isValid = (minShift is None or value > minShift)"
+"_"
+"code:java"
+"_"
+"getMinShift() == null || value > getMinShift()"
+))
+($7 193 < -yk94ms_85r_eqyymv3f_-fa6 "guid" 192
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00031"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fa6"))
+($6 194 < -yk94ms_85r_eqyymv3f_-fa5 "minNumber" 168
+(initialValue "1"
+)
+(name "minNumber"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fa5")
+(multiplicity "1"))
+($7 195 < -yk94ms_85r_eqyymv3f_-fa4 "documentation" 194
+(name "documentation"
+)
+(value "Minimum number of occurrences of atom corresponding to atomSite. MinNumber two wiould mean at least two atoms. If, for instance a carbon atomSite has a J coupling transfer to a proton AtomSite with minNumber=2, it means that this ExpGraph will give observable results only for CH2 and  CH3 groups."
+)
+(uid "-yk94ms_85r_eqyymv3f_-fa4"))
+($7 196 < -yk94ms_85r_eqyymv3f_-fa3 "guid" 194
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00032"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fa3"))
+($11 197 < -yk94ms_85r_eqyymv3f_-fa2 "minNumber_le_maxNumber" 194
+(name "minNumber_le_maxNumber"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fa2")
+(body "code:python"
+"_"
+"maxNumber = self.maxNumber"
+"isValid = (maxNumber is None or value <= maxNumber)"
+"_"
+"code:java"
+"_"
+"getMaxNumber() == null || value <= getMaxNumber()"
+))
+($7 198 < -yk94ms_85r_eqyymv3f_-fa1 "guid" 197
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00033"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fa1"))
+($6 199 < -yk94ms_85r_eqyymv3f_-fa0 "maxNumber" 168
+(name "maxNumber"
+)
+(uid "-yk94ms_85r_eqyymv3f_-fa0"))
+($7 200 < -yk94ms_85r_eqyymv3f_-f9z "documentation" 199
+(name "documentation"
+)
+(value "Maximum number of occurrences of atom corresponding to atomSite. maxNumber 2 would mena no more than two atoms could appear in this position. If, for instance a carbon atomSite has a J coupling transfer to a proton AtomSite with maxNumber=2, it means that this ExpGraph will give no observable result for CH3 groups. May be set to zero, which indicates that no atoms of this type are allowed."
+)
+(uid "-yk94ms_85r_eqyymv3f_-f9z"))
+($7 201 < -yk94ms_85r_eqyymv3f_-f9y "guid" 199
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:59_00001"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f9y"))
+($11 202 < -yk94ms_85r_eqyymv3f_-f9x "maxNumber_ge_minNumber" 199
+(name "maxNumber_ge_minNumber"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f9x")
+(body "code:python"
+"_"
+"minNumber = self.minNumber"
+"isValid = (minNumber is None or value >= minNumber)"
+"_"
+"code:java"
+"_"
+"getMinNumber() == null || value >= getMinNumber()"
+))
+($7 203 < -yk94ms_85r_eqyymv3f_-f9w "guid" 202
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:59_00002"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f9w"))
+($6 204 < -yk94ms_85r_eqyymv3f_-f9v "numberStep" 168
+(initialValue "1"
+)
+(name "numberStep"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f9v")
+(multiplicity "1"))
+($7 205 < -yk94ms_85r_eqyymv3f_-f9u "documentation" 204
+(name "documentation"
+)
+(value "Integer step between allowed number of occurrences of atoms corresponding to this atomSite. If, for instance a carbon atomSite has a J coupling transfer to a proton AtomSite with minNumber=1 and numberStep = 2, there must be 1, 3, 5, ... atoms corresponding to the AtomSite. Uased for instance to indicate 'carbon coupled to an odd number of protons', where you would have a carbon AtomSite, with a JCoupling ExpTransfer to a proton AtomSite witn minNumber 1 and numberStep 2."
+)
+(uid "-yk94ms_85r_eqyymv3f_-f9u"))
+($7 206 < -yk94ms_85r_eqyymv3f_-f9t "guid" 204
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:59_00003"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f9t"))
+($13 207 < -yk94ms_85r_eqyymv3f_-f9s "getExpGraphs" 168
+(name "getExpGraphs"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f9s")
+(isQuery true))
+($7 208 < -yk94ms_85r_eqyymv3f_-f9p "documentation" 207
+(name "documentation"
+)
+(value "getter for derived link expGraphs"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f9p"))
+($7 209 < -yk94ms_85r_eqyymv3f_-f9o "opType" 207
+(name "opType"
+)
+(value "get"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f9o"))
+($7 210 < -yk94ms_85r_eqyymv3f_-f9l "guid" 207
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:59_00006"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f9l"))
+($7 211 < z8kflu_15v_ewd8gvqb_-p5k "code:java" 207
+(name "code:java"
+)
+(value "result = new java.util.HashSet<ccp.api.nmr.NmrExpPrototype.ExpGraph>();"
+"for (ccp.api.nmr.NmrExpPrototype.ExpTransfer x: getExpTransfers())"
+"  result.add(x.getExpGraph());"
+)
+(uid "z8kflu_15v_ewd8gvqb_-p5k"))
+($7 212 < z8kflu_15v_ewd8gvqb_-p5j "code:python" 207
+(name "code:python"
+)
+(value "result = frozenset(x.expGraph for x in self.expTransfers)"
+)
+(uid "z8kflu_15v_ewd8gvqb_-p5j"))
+($10 213 < -yk94ms_85r_eqyymv3f_-f9k "#<anon> (AtomSite, DataObject)" 168
+(uid "-yk94ms_85r_eqyymv3f_-f9k"))
+($8 214 < -yk94ms_85r_eqyymv3f_-f9j "#<anon> (AtomSite, Isotope)##," 168
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-f9j"))
+($9 215 < -yk94ms_85r_eqyymv3f_-f9i "#0" 214
+(uid "-yk94ms_85r_eqyymv3f_-f9i")
+(isNavigable false))
+($9 216 < -yk94ms_85r_eqyymv3f_-f9h "#1" 214
+(changeability "frozen")
+(uid "-yk94ms_85r_eqyymv3f_-f9h"))
+($7 217 < -yk94ms_85r_eqyymv3f_-f9g "documentation" 216
+(name "documentation"
+)
+(value "Isotope making up ExpAtomSite. "
+)
+(uid "-yk94ms_85r_eqyymv3f_-f9g"))
+($7 218 < -yk94ms_85r_eqyymv3f_-f9e "guid" 216
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00024"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f9e"))
+($7 219 < -yk94ms_85r_eqyymv3f_-f9d "isDerived" 214
+(name "isDerived"
+)
+(value "True"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f9d"))
+($7 220 < -yk94ms_85r_eqyymv3f_-f9c "documentation" 168
+(name "documentation"
+)
+(value "An Atom site on the graph of atoms through which magnetisation passes in an experiment. If there is more than one ExpGraph, each AtomSite may be relevant for one or more of these. The AtomSite may be given even if it is never a carrier of magnetisation, for instance to show that coupling to a given nucleus is used for filtering during an experiment."
+)
+(uid "-yk94ms_85r_eqyymv3f_-f9c"))
+($7 221 < -yk94ms_85r_eqyymv3f_-f9a "guid" 168
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00023"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f9a"))
+($7 222 < -yk94ms_15v_evqyosvg_-p4r "keyNames" 168
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "-yk94ms_15v_evqyosvg_-p4r"))
+($5 223 < -yk94ms_85r_eqyymv3f_-f99 "RefExperiment" 1
+(name "RefExperiment"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f99"))
+($6 224 < -yk94ms_85r_eqyymv3f_-f98 "serial" 223
+(changeability "frozen")
+(name "serial"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f98")
+(multiplicity "1"))
+($7 225 < -yk94ms_85r_eqyymv3f_-f97 "isAutomatic" 224
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f97"))
+($7 226 < -yk94ms_85r_eqyymv3f_-f96 "guid" 224
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:59_00010"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f96"))
+($6 227 < -yk94ms_85r_eqyymv3f_-f95 "name" 223
+(name "name"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f95"))
+($7 228 < -yk94ms_85r_eqyymv3f_-f94 "documentation" 227
+(name "documentation"
+)
+(value "name of RefExperiment"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f94"))
+($7 229 < -yk94ms_85r_eqyymv3f_-f93 "guid" 227
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:59_00011"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f93"))
+($6 230 < -yk94ms_85r_eqyymv3f_-f92 "synonym" 223
+(name "synonym"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f92"))
+($7 231 < -yk94ms_85r_eqyymv3f_-f91 "documentation" 230
+(name "documentation"
+)
+(value "Alternative name of RefExperiment. Intended for longer, more precisely descriptive names. Dimensionality, if desired, should be given as a prefix separated by a dot, e.g. '3D.'. Detailed indications of transfer mechanisms (e.g. 'HSQC', 'HMQC', should be given in the same manner as other transfer mechanisms (like 'NOESY')."
+)
+(uid "-yk94ms_85r_eqyymv3f_-f91"))
+($7 232 < -yk94ms_85r_eqyymv3f_-f90 "guid" 230
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:59_00012"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f90"))
+($6 233 < -yk94ms_85r_eqyymv3f_-f8z "isReversed" 223
+(initialValue "False"
+)
+(name "isReversed"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f8z")
+(multiplicity "1"))
+($7 234 < -yk94ms_85r_eqyymv3f_-f8y "documentation" 233
+(name "documentation"
+)
+(value "Is experiment carried out with the transfer steps and sequence of ExpMeasurements in reverse  order relative to the order given in the ExpGraphs?"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f8y"))
+($7 235 < -yk94ms_85r_eqyymv3f_-f8x "guid" 233
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:59_00013"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f8x"))
+($8 236 < -yk94ms_85r_eqyymv3f_-f8w "#<anon> (RefExperiment, RefExpDim)##," 223
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-f8w"))
+($9 237 < -yk94ms_85r_eqyymv3f_-f8v "#0" 236
+(changeability "frozen")
+(aggregation "composite")
+(uid "-yk94ms_85r_eqyymv3f_-f8v")
+(multiplicity "1"))
+($7 238 < -yk94ms_85r_eqyymv3f_-f8u "guid" 237
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:59_00008"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f8u"))
+($9 239 < -yk94ms_85r_eqyymv3f_-f8t "#1" 236
+(uid "-yk94ms_85r_eqyymv3f_-f8t")
+(multiplicity "*"))
+($7 240 < -yk94ms_85r_eqyymv3f_-f8s "guid" 239
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:59_00009"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f8s"))
+($10 241 < -yk94ms_85r_eqyymv3f_-f8r "#<anon> (RefExperiment, DataObject)" 223
+(uid "-yk94ms_85r_eqyymv3f_-f8r"))
+($8 242 < 0_-epz_fefricw7_-p91 "#<anon> (RefExperiment, SystematicName)##," 223
+(name "")
+(uid "0_-epz_fefricw7_-p91"))
+($9 243 < 0_-epz_fefricw7_-p8z "#0" 242
+(changeability "frozen")
+(aggregation "composite")
+(uid "0_-epz_fefricw7_-p8z")
+(multiplicity "1"))
+($7 244 < 0_-epz_fefricw7_-p8p "guid" 243
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-03-30-16:37:37_00001"
+)
+(uid "0_-epz_fefricw7_-p8p"))
+($9 245 < 0_-epz_fefricw7_-p8y "#1" 242
+(uid "0_-epz_fefricw7_-p8y")
+(multiplicity "*"))
+($7 246 < 0_-epz_fefricw7_-p8o "guid" 245
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-03-30-16:37:37_00002"
+)
+(uid "0_-epz_fefricw7_-p8o"))
+($7 247 < -yk94ms_85r_eqyymv3f_-f8q "documentation" 223
+(name "documentation"
+)
+(value "Reference Experiment. Selects experiment dimensions from the steps available in the NmrExpPrototype"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f8q"))
+($7 248 < -yk94ms_85r_eqyymv3f_-f8o "guid" 223
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00024"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f8o"))
+($7 249 < -yk94ms_15v_evqyosvg_-p4q "keyNames" 223
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "-yk94ms_15v_evqyosvg_-p4q"))
+($5 250 < -yk94ms_85r_eqyymv3f_-f8n "RefExpDim" 1
+(name "RefExpDim"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f8n"))
+($6 251 < -yk94ms_85r_eqyymv3f_-f8m "dim" 250
+(changeability "frozen")
+(name "dim"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f8m")
+(multiplicity "1"))
+($7 252 < -yk94ms_85r_eqyymv3f_-f8l "documentation" 251
+(name "documentation"
+)
+(value "Dimension number. Note that the dim attribute is used to determine which Nmr.ExpDim corresponds to which RefExpDim"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f8l"))
+($7 253 < -yk94ms_85r_eqyymv3f_-f8k "guid" 251
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00005"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f8k"))
+($8 254 < -yk94ms_85r_eqyymv3f_-f8j "#<anon> (RefExpDim, RefExpDimRef)##," 250
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-f8j"))
+($9 255 < -yk94ms_85r_eqyymv3f_-f8i "#0" 254
+(changeability "frozen")
+(aggregation "composite")
+(uid "-yk94ms_85r_eqyymv3f_-f8i")
+(multiplicity "1"))
+($7 256 < -yk94ms_85r_eqyymv3f_-f8h "guid" 255
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:59_00014"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f8h"))
+($9 257 < -yk94ms_85r_eqyymv3f_-f8g "#1" 254
+(uid "-yk94ms_85r_eqyymv3f_-f8g")
+(multiplicity "*"))
+($7 258 < -yk94ms_85r_eqyymv3f_-f8f "guid" 257
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00001"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f8f"))
+($10 259 < -yk94ms_85r_eqyymv3f_-f8e "#<anon> (RefExpDim, DataObject)" 250
+(uid "-yk94ms_85r_eqyymv3f_-f8e"))
+($8 260 < -yk94ms_85r_eqyymv3f_-f8d "#<anon> (RefExpDim, ExpDim)##," 250
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-f8d"))
+($9 261 < -yk94ms_85r_eqyymv3f_-f8c "#0" 260
+(uid "-yk94ms_85r_eqyymv3f_-f8c"))
+($7 262 < -yk94ms_85r_eqyymv3f_-f8b "documentation" 261
+(name "documentation"
+)
+(value "Corresponding ExpDim in RefNmeExperiment"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f8b"))
+($7 263 < -yk94ms_85r_eqyymv3f_-f8a "guid" 261
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00002"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f8a"))
+($11 264 < -yk94ms_85r_eqyymv3f_-f87 "refExpDim_is_secondary_key_for_ExpDim" 261
+(name "refExpDim_is_secondary_key_for_ExpDim"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f87")
+(body "code:python"
+"_"
+"isValid = True"
+"if value is not None:"
+"  for xx in self.experiment.expDims:"
+"    if xx is not self and xx.refExpDim is value:"
+"      isValid = False"
+"      break"
+""
+"_"
+"code:java"
+"_"
+"isValid = true;"
+"if (other != null) {"
+"  for (ccp.api.nmr.Nmr.ExpDim xx: getExperiment().getExpDims()) {"
+"    if ((xx != self) && (xx.getRefExpDim() == other)) {"
+"      isValid = false;"
+"      break;"
+"    }"
+"  }"
+"}"
+))
+($7 265 < -yk94ms_85r_eqyymv3f_-f86 "guid" 264
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00004"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f86"))
+($9 266 < -yk94ms_85r_eqyymv3f_-f85 "#1" 260
+(uid "-yk94ms_85r_eqyymv3f_-f85")
+(isNavigable false))
+($7 267 < -yk94ms_jd_ex33l3c1_-p95 "partitionsChildren" 260
+(name "partitionsChildren"
+)
+(value "True"
+)
+(uid "-yk94ms_jd_ex33l3c1_-p95"))
+($7 268 < -yk94ms_85r_eqyymv3f_-f84 "documentation" 250
+(name "documentation"
+)
+(value "Dimension of reference exeriment."
+)
+(uid "-yk94ms_85r_eqyymv3f_-f84"))
+($7 269 < -yk94ms_85r_eqyymv3f_-f82 "guid" 250
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00025"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f82"))
+($7 270 < -yk94ms_15v_evqyosvg_-p4p "keyNames" 250
+(name "keyNames"
+)
+(value "dim"
+)
+(uid "-yk94ms_15v_evqyosvg_-p4p"))
+($5 271 < -yk94ms_85r_eqyymv3f_-f81 "RefExpDimRef" 1
+(name "RefExpDimRef"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f81"))
+($6 272 < -yk94ms_85r_eqyymv3f_-f80 "serial" 271
+(changeability "frozen")
+(name "serial"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f80")
+(multiplicity "1"))
+($7 273 < -yk94ms_85r_eqyymv3f_-f7z "isAutomatic" 272
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f7z"))
+($7 274 < -yk94ms_85r_eqyymv3f_-f7y "guid" 272
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00010"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f7y"))
+($6 275 < -yk94ms_85r_eqyymv3f_-f7u "coupledIsotopeCodes" 271
+(name "coupledIsotopeCodes"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f7u")
+(multiplicity "*"))
+($7 276 < -yk94ms_85r_eqyymv3f_-f7t "baseName" 275
+(name "baseName"
+)
+(value "coupledIsotopeCode"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f7t"))
+($7 277 < -yk94ms_85r_eqyymv3f_-f7s "documentation" 275
+(name "documentation"
+)
+(value "Isotope codes for isotopes, couplings to which are active in the dimension. Note that homonuclear couplings (e.g. proton couplings in a proton dimension) must be specified explicitly if they are to be treated as active. Except for constant-time experiments, homonuclear couplings are normally active, but they may be ignored if they are not resolved and not of interest. "
+)
+(uid "-yk94ms_85r_eqyymv3f_-f7s"))
+($7 278 < -yk94ms_85r_eqyymv3f_-f7r "guid" 275
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00012"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f7r"))
+($13 279 < -yk94ms_85r_eqyymv3f_-f7q "getCoupledIsotopes" 271
+(name "getCoupledIsotopes"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f7q")
+(isQuery true))
+($7 280 < -yk94ms_85r_eqyymv3f_-f7n "documentation" 279
+(name "documentation"
+)
+(value "getter for derived link coupledIsotopes"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f7n"))
+($7 281 < -yk94ms_85r_eqyymv3f_-f7m "opType" 279
+(name "opType"
+)
+(value "get"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f7m"))
+($7 282 < -yk94ms_85r_eqyymv3f_-f7i "guid" 279
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00014"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f7i"))
+($7 283 < z8kflu_15v_ewd8gvqb_-p5i "code:java" 279
+(name "code:java"
+)
+(value "result = new java.util.HashSet<ccp.api.molecule.ChemElement.Isotope>();"
+"for (java.lang.String ss: getCoupledIsotopeCodes()) {"
+"  int nn = ss.length();"
+"  int firstLetter = nn-2;"
+"  if ((nn >= 2) && (\"0123456789\".indexOf(ss.substring(nn-2,nn-1)) >= 0))"
+"    firstLetter = nn-1;"
+"  java.lang.String atomSymbol = ss.substring(firstLetter).toUpperCase();"
+"  java.lang.Integer massNumber = Integer.valueOf(ss.substring(0, firstLetter));"
+"  java.util.List<java.lang.Object> keys = memops.universal.Util.argsToList((java.lang.Object) atomSymbol, massNumber);"
+"  result.add(ccp.api.molecule.ChemElement.Isotope.getByKey(getRoot().getCurrentChemElementStore(), keys));"
+"}"
+)
+(uid "z8kflu_15v_ewd8gvqb_-p5i"))
+($7 284 < z8kflu_15v_ewd8gvqb_-p5h "code:python" 279
+(name "code:python"
+)
+(value "result = []"
+"for ss in self.coupledIsotopeCodes:"
+"  if ss[-2] in '0123456789':"
+"    firstLetter = -1"
+"  else:"
+"    firstLetter = -2"
+"  atomSymbol = ss[firstLetter:].capitalize()"
+"  massNumber = int(ss[:firstLetter])"
+"  "
+"  result.append(ccp.api.molecule.ChemElement.Isotope.getByKey(self.root.currentChemElementStore, (atomSymbol, massNumber)))"
+"#"
+"result = frozenset(result)"
+)
+(uid "z8kflu_15v_ewd8gvqb_-p5h"))
+($6 285 < -yk94ms_85r_eqyymv3f_-f7h "constantTime" 271
+(initialValue "variable"
+)
+(name "constantTime"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f7h")
+(multiplicity "1"))
+($7 286 < -yk94ms_85r_eqyymv3f_-f7g "documentation" 285
+(name "documentation"
+)
+(value "Is the dimension constant time, variable time, or partial (harmonica type)?"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f7g"))
+($7 287 < -yk94ms_85r_eqyymv3f_-f7f "guid" 285
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00013"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f7f"))
+($6 288 < 0_l0l_f00x1g1w_-p93 "groupingId" 271
+(initialValue "1"
+)
+(name "groupingId"
+)
+(uid "0_l0l_f00x1g1w_-p93")
+(multiplicity "1"))
+($7 289 < 0_l0l_f00x1g1w_-p92 "documentation" 288
+(name "documentation"
+)
+(value "groupingId divides RefExpDimRef from the same parent into groups - all RefExpDimRef with the same groupingId belong in the same group. RefExpDimRef from the same group can appear on the same peak - RefExpDimRef from different groups can not."
+)
+(uid "0_l0l_f00x1g1w_-p92"))
+($7 290 < 0_om1_f02f4zyq_-p8g "guid" 288
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-03-15:13:51_00001"
+)
+(uid "0_om1_f02f4zyq_-p8g"))
+($6 291 < 0_l0l_f00x1g1w_-p91 "validScalingFactors" 271
+(initialValue "('1.0',)"
+)
+(name "validScalingFactors"
+)
+(uid "0_l0l_f00x1g1w_-p91")
+(multiplicity "*"))
+($7 292 < 0_l0l_f00x1g1w_-p90 "documentation" 291
+(name "documentation"
+)
+(value "List of valid scaling factors for RefExpDimRef. If empty, many different factors are allowed. The position of a peak is calculated as the sum over ExpDimRef scaling factors times position values (e.g. position in ppm)."
+)
+(uid "0_l0l_f00x1g1w_-p90"))
+($7 293 < 0_om1_f02f4zyq_-p8f "guid" 291
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-03-15:13:51_00002"
+)
+(uid "0_om1_f02f4zyq_-p8f"))
+($7 294 < 0_om1_f02f4zyq_-p8m "baseName" 291
+(name "baseName"
+)
+(value "validScalingFactor"
+)
+(uid "0_om1_f02f4zyq_-p8m"))
+($7 295 < -hkpzxr_-o65_fev6cycj_-p7n "isUnique" 291
+(name "isUnique"
+)
+(value "True"
+)
+(uid "-hkpzxr_-o65_fev6cycj_-p7n"))
+($10 296 < -yk94ms_85r_eqyymv3f_-f7e "#<anon> (RefExpDimRef, DataObject)" 271
+(uid "-yk94ms_85r_eqyymv3f_-f7e"))
+($8 297 < -yk94ms_85r_eqyymv3f_-f7d "#<anon> (RefExpDimRef, Isotope)##,coupledIsotopes" 271
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-f7d"))
+($9 298 < -yk94ms_85r_eqyymv3f_-f7c "#0" 297
+(uid "-yk94ms_85r_eqyymv3f_-f7c")
+(isNavigable false))
+($9 299 < -yk94ms_85r_eqyymv3f_-f7b "coupledIsotopes#1" 297
+(changeability "frozen")
+(name "coupledIsotopes"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f7b")
+(multiplicity "*"))
+($7 300 < -yk94ms_85r_eqyymv3f_-f7a "baseName" 299
+(name "baseName"
+)
+(value "coupledIsotope"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f7a"))
+($7 301 < -yk94ms_85r_eqyymv3f_-f79 "documentation" 299
+(name "documentation"
+)
+(value "Isotopes couplings to which are active in a given dimension."
+)
+(uid "-yk94ms_85r_eqyymv3f_-f79"))
+($7 302 < -yk94ms_85r_eqyymv3f_-f78 "guid" 299
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00006"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f78"))
+($7 303 < -yk94ms_85r_eqyymv3f_-f77 "isDerived" 297
+(name "isDerived"
+)
+(value "True"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f77"))
+($8 304 < -yk94ms_85r_eqyymv3f_-f76 "#<anon> (RefExpDimRef, ExpStep)##," 271
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-f76"))
+($9 305 < -yk94ms_85r_eqyymv3f_-f75 "#0" 304
+(uid "-yk94ms_85r_eqyymv3f_-f75")
+(multiplicity "*"))
+($7 306 < -yk94ms_85r_eqyymv3f_-f74 "documentation" 305
+(name "documentation"
+)
+(value "RefExpDimRefs that correspond to ExpStep"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f74"))
+($7 307 < -yk94ms_85r_eqyymv3f_-f73 "guid" 305
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00007"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f73"))
+($9 308 < -yk94ms_85r_eqyymv3f_-f72 "#1" 304
+(uid "-yk94ms_85r_eqyymv3f_-f72")
+(multiplicity "*"))
+($7 309 < -yk94ms_85r_eqyymv3f_-f71 "documentation" 308
+(name "documentation"
+)
+(value "ExpSteps that corresponds to RefExpDimRef. The connection to the ExpMeasurenment is handled via the direct link to ExpMeasurement. The expStep link serves to distinguish which of several ExpSteps compatible with the ExpMeasurement was actually to make a measurement (e.g. was the N15 magnetisation measured before or after the CA magnetisaion in an HNCA experiment."
+)
+(uid "-yk94ms_85r_eqyymv3f_-f71"))
+($7 310 < -yk94ms_85r_eqyymv3f_-f70 "guid" 308
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00008"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f70"))
+($11 311 < -yk94ms_85r_eqyymv3f_-f6z "ExpStep_and_RefExpDimRef_must_belong_to_same_ExpMeasurement" 308
+(name "ExpStep_and_RefExpDimRef_must_belong_to_same_ExpMeasurement"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f6z")
+(body "code:python"
+"_"
+"self.expMeasurement is value.expMeasurement"
+"_"
+"code:java"
+"_"
+"self.getExpMeasurement() == other.getExpMeasurement()"
+))
+($7 312 < -yk94ms_85r_eqyymv3f_-f6y "guid" 311
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00009"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f6y"))
+($7 313 < -yk94ms_85r_eqyymv3f_-f6x "documentation" 271
+(name "documentation"
+)
+(value "ExpDimRef for prototype experiment. Maps ExpDimRef on ExpStep, from which the information necessary for creating ExpDimRef can be found."
+""
+"If there is more than one ExpGraph in the NmrExpPrototype, in general each RefExpDim will have an equivalent set of RefExpDimRef for every ExpGraph. Where this is not the case it may be assumed that the 'missing' RefExpDimRefs are 1) identical in content to those present and 2) correspond to the same ExpStep as those given. This convention is used to avoid having several identical RefExpDimRefs just because there are several ExpGraphs."
+""
+"Note that the serial attribute is used to match Nmr.ExpDimRefs to RefExpDimRefs, so that objects with the same serial correspond to each other. "
+)
+(uid "-yk94ms_85r_eqyymv3f_-f6x"))
+($7 314 < -yk94ms_85r_eqyymv3f_-f6v "guid" 271
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00026"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f6v"))
+($7 315 < -yk94ms_15v_evqyosvg_-p4o "keyNames" 271
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "-yk94ms_15v_evqyosvg_-p4o"))
+($5 316 < -yk94ms_85r_eqyymv3f_-f6u "ExpTransferSubType" 1
+(name "ExpTransferSubType"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f6u"))
+($10 317 < -yk94ms_85r_eqyymv3f_-f6t "#<anon> (ExpTransferSubType, Line)" 316
+(uid "-yk94ms_85r_eqyymv3f_-f6t"))
+($7 318 < -yk94ms_85r_eqyymv3f_-f6s "isOpen" 316
+(name "isOpen"
+)
+(value "True"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f6s"))
+($7 319 < -yk94ms_85r_eqyymv3f_-f6r "enumeration" 316
+(name "enumeration"
+)
+(value "('HMQC','HSQC','HSMQC','TROESY','NOESY','ROESY','CP','TOCSY')"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f6r"))
+($7 320 < -yk94ms_85r_eqyymv3f_-f6q "documentation" 316
+(name "documentation"
+)
+(value "Enumeration for subtype of ExpTransferType. E.g. 'ROESY' for main type 'NOESY', or 'HSQC' for main type 'onebond'"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f6q"))
+($7 321 < -yk94ms_85r_eqyymv3f_-f6p "guid" 316
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00027"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f6p"))
+($5 322 < -yk94ms_85r_eqyymv3f_-f6o "ExpStep" 1
+(name "ExpStep"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f6o"))
+($6 323 < -yk94ms_85r_eqyymv3f_-f6n "serial" 322
+(changeability "frozen")
+(name "serial"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f6n")
+(multiplicity "1"))
+($7 324 < -yk94ms_85r_eqyymv3f_-f6m "isAutomatic" 323
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f6m"))
+($7 325 < -yk94ms_85r_eqyymv3f_-f6l "guid" 323
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00018"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f6l"))
+($6 326 < -yk94ms_85r_eqyymv3f_-f6k "stepNumber" 322
+(name "stepNumber"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f6k")
+(multiplicity "1"))
+($7 327 < -yk94ms_85r_eqyymv3f_-f6j "documentation" 326
+(name "documentation"
+)
+(value "Step number. Should be consecutive integers starting at 1."
+)
+(uid "-yk94ms_85r_eqyymv3f_-f6j"))
+($7 328 < -yk94ms_85r_eqyymv3f_-f6i "guid" 326
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00001"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f6i"))
+($10 329 < -yk94ms_85r_eqyymv3f_-f6h "#<anon> (ExpStep, DataObject)" 322
+(uid "-yk94ms_85r_eqyymv3f_-f6h"))
+($8 330 < -yk94ms_85r_eqyymv3f_-f6g "#<anon> (ExpStep, ExpMeasurement)##," 322
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-f6g"))
+($9 331 < -yk94ms_85r_eqyymv3f_-f6f "#0" 330
+(uid "-yk94ms_85r_eqyymv3f_-f6f")
+(multiplicity "*"))
+($7 332 < -yk94ms_85r_eqyymv3f_-f6e "documentation" 331
+(name "documentation"
+)
+(value "ExpSteps where ExpMeasurement is being accessed. In a completed NmrExpPrototype all ExpMeasurements must be involved in at least one ExpStep."
+)
+(uid "-yk94ms_85r_eqyymv3f_-f6e"))
+($7 333 < -yk94ms_85r_eqyymv3f_-f6d "guid" 331
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00016"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f6d"))
+($9 334 < -yk94ms_85r_eqyymv3f_-f6c "#1" 330
+(uid "-yk94ms_85r_eqyymv3f_-f6c")
+(multiplicity "1"))
+($7 335 < -yk94ms_85r_eqyymv3f_-f6b "documentation" 334
+(name "documentation"
+)
+(value "ExpMeasurements being accesed during ExpStep. Several ExpSteps, either successive or at different place in the transfer sequence, may point to the same Measurement. "
+)
+(uid "-yk94ms_85r_eqyymv3f_-f6b"))
+($7 336 < -yk94ms_85r_eqyymv3f_-f6a "guid" 334
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00017"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f6a"))
+($7 337 < -yk94ms_85r_eqyymv3f_-f68 "documentation" 322
+(name "documentation"
+)
+(value "Defines the order in which Measurements are encountered within a (non-reversed) experiment, and, implicitly, which ExpMeasurements are involved in a given ExpGraph. The same measurement can appear several times, e.g. for out-and-back experiments."
+)
+(uid "-yk94ms_85r_eqyymv3f_-f68"))
+($7 338 < -yk94ms_85r_eqyymv3f_-f67 "guid" 322
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00028"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f67"))
+($7 339 < -yk94ms_15v_evqyosvg_-p4n "keyNames" 322
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "-yk94ms_15v_evqyosvg_-p4n"))
+($5 340 < -yk94ms_85r_eqyymv3f_-f66 "ExpTransferType" 1
+(name "ExpTransferType"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f66"))
+($10 341 < -yk94ms_85r_eqyymv3f_-f65 "#<anon> (ExpTransferType, Word)" 340
+(uid "-yk94ms_85r_eqyymv3f_-f65"))
+($7 342 < -yk94ms_85r_eqyymv3f_-f64 "documentation" 340
+(name "documentation"
+)
+(value "Magnetisation transfer types for describing NMR experiments. Of the allowed values, NOESY includes ROESY, onebond is any transfer guaranteed to go along a single bond, Jmultibond is direct J coupling  excluding one-bond coupling, and Jcoupling is direct J coupling regardless of the number of intervening bonds. DipDip, SpinDiff, and CP are transfer types for solid state NMR. DipDip is dipole-dipoole transfer with an r-3 distance dependence, SpinDiff is spin diffusion possible mediated by another nucleus, with r-6 dependence, and CP is 'cross-polarization' which could be by a number of methods."
+)
+(uid "-yk94ms_85r_eqyymv3f_-f64"))
+($7 343 < -yk94ms_85r_eqyymv3f_-f63 "isOpen" 340
+(name "isOpen"
+)
+(value "False"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f63"))
+($7 344 < -yk94ms_85r_eqyymv3f_-f62 "enumeration" 340
+(name "enumeration"
+)
+(value "('NOESY', 'TOCSY', 'onebond', 'Jcoupling', 'Jmultibond', 'DipDip', 'SpinDiff', 'CP')"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f62"))
+($7 345 < -yk94ms_85r_eqyymv3f_-f61 "guid" 340
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00029"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f61"))
+($5 346 < -yk94ms_85r_eqyymv3f_-f60 "ExpMeasurementType" 1
+(name "ExpMeasurementType"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f60"))
+($10 347 < -yk94ms_85r_eqyymv3f_-f5z "#<anon> (ExpMeasurementType, Line)" 346
+(uid "-yk94ms_85r_eqyymv3f_-f5z"))
+($7 348 < -yk94ms_85r_eqyymv3f_-f5y "documentation" 346
+(name "documentation"
+)
+(value "Type of Measurement that can appear (in the ExpDimRef) of an Nmr experiment. Equal to the Class name of the appropriate measurement class if one exists. "
+)
+(uid "-yk94ms_85r_eqyymv3f_-f5y"))
+($7 349 < -yk94ms_85r_eqyymv3f_-f5x "isOpen" 346
+(name "isOpen"
+)
+(value "True"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f5x"))
+($7 350 < -yk94ms_85r_eqyymv3f_-f5w "enumeration" 346
+(name "enumeration"
+)
+(value "('Shift','ShiftAnisotropy','JCoupling','Rdc','TROESY','DipolarCoupling','MQShift','T1','T2','T1rho','T1zz')"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f5w"))
+($7 351 < -yk94ms_85r_eqyymv3f_-f5v "guid" 346
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00030"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f5v"))
+($5 352 < -yk94ms_85r_eqyymv3f_-f5u "ConstantTimeType" 1
+(name "ConstantTimeType"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f5u"))
+($10 353 < -yk94ms_85r_eqyymv3f_-f5t "#<anon> (ConstantTimeType, Word)" 352
+(uid "-yk94ms_85r_eqyymv3f_-f5t"))
+($7 354 < -yk94ms_85r_eqyymv3f_-f5s "isOpen" 352
+(name "isOpen"
+)
+(value "False"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f5s"))
+($7 355 < -yk94ms_85r_eqyymv3f_-f5r "enumeration" 352
+(name "enumeration"
+)
+(value "('constant', 'variable', 'partial')"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f5r"))
+($7 356 < -yk94ms_85r_eqyymv3f_-f5q "documentation" 352
+(name "documentation"
+)
+(value "Constant time type for dimension. There are three alternatives, 'constant', 'variable', and 'partial'. The latter denotes a harmonica-type experiment."
+)
+(uid "-yk94ms_85r_eqyymv3f_-f5q"))
+($7 357 < -yk94ms_85r_eqyymv3f_-f5p "guid" 352
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00031"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f5p"))
+($5 358 < -yk94ms_85r_eqyymv3f_-f5o "ExpGraph" 1
+(name "ExpGraph"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f5o"))
+($6 359 < -yk94ms_85r_eqyymv3f_-f5n "serial" 358
+(changeability "frozen")
+(name "serial"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f5n")
+(multiplicity "1"))
+($7 360 < -yk94ms_85r_eqyymv3f_-f5m "isAutomatic" 359
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f5m"))
+($7 361 < -yk94ms_85r_eqyymv3f_-f5l "guid" 359
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00010"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f5l"))
+($6 362 < -yk94ms_85r_eqyymv3f_-f5k "peakSign" 358
+(name "peakSign"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f5k"))
+($7 363 < -yk94ms_85r_eqyymv3f_-f5j "documentation" 362
+(name "documentation"
+)
+(value "Sign of crosspeaks associated with transfer within ExpGraph. If set, all peaks arising from the ExpGraph must have the same sign. Mainly relevant where there are several ExpGraphs that give rise to peaks of different sign."
+)
+(uid "-yk94ms_85r_eqyymv3f_-f5j"))
+($7 364 < -yk94ms_85r_eqyymv3f_-f5i "guid" 362
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00011"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f5i"))
+($13 365 < -yk94ms_85r_eqyymv3f_-f5f "getExpMeasurements" 358
+(name "getExpMeasurements"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f5f")
+(isQuery true))
+($7 366 < -yk94ms_85r_eqyymv3f_-f5c "documentation" 365
+(name "documentation"
+)
+(value "getter for derived link ExpMeasurements"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f5c"))
+($7 367 < -yk94ms_85r_eqyymv3f_-f5b "opType" 365
+(name "opType"
+)
+(value "get"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f5b"))
+($7 368 < -yk94ms_85r_eqyymv3f_-f58 "guid" 365
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00013"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f58"))
+($7 369 < z8kflu_15v_ewd8gvqb_-p5g "code:java" 365
+(name "code:java"
+)
+(value "result = new java.util.HashSet<ccp.api.nmr.NmrExpPrototype.ExpMeasurement>();"
+"for (ccp.api.nmr.NmrExpPrototype.ExpStep x: getExpSteps())"
+"  result.add(x.getExpMeasurement());"
+)
+(uid "z8kflu_15v_ewd8gvqb_-p5g"))
+($7 370 < z8kflu_15v_ewd8gvqb_-p5f "code:python" 365
+(name "code:python"
+)
+(value "result = frozenset(x.expMeasurement for x in self.expSteps)"
+)
+(uid "z8kflu_15v_ewd8gvqb_-p5f"))
+($13 371 < -yk94ms_85r_eqyymv3f_-f57 "getAtomSites" 358
+(name "getAtomSites"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f57")
+(isQuery true))
+($7 372 < -yk94ms_85r_eqyymv3f_-f54 "documentation" 371
+(name "documentation"
+)
+(value "getter for derived link atomSites"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f54"))
+($7 373 < -yk94ms_85r_eqyymv3f_-f53 "opType" 371
+(name "opType"
+)
+(value "get"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f53"))
+($7 374 < -yk94ms_85r_eqyymv3f_-f50 "guid" 371
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00015"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f50"))
+($7 375 < z8kflu_15v_ewd8gvqb_-p5e "code:java" 371
+(name "code:java"
+)
+(value "result = new java.util.HashSet<ccp.api.nmr.NmrExpPrototype.AtomSite>();"
+"for (ccp.api.nmr.NmrExpPrototype.ExpTransfer x: getExpTransfers())"
+"  result.addAll(x.getAtomSites());"
+)
+(uid "z8kflu_15v_ewd8gvqb_-p5e"))
+($7 376 < z8kflu_15v_ewd8gvqb_-p5d "code:python" 371
+(name "code:python"
+)
+(value "result = frozenset(y for x in self.expTransfers for y in x.atomSites)"
+)
+(uid "z8kflu_15v_ewd8gvqb_-p5d"))
+($10 377 < -yk94ms_85r_eqyymv3f_-f4z "#<anon> (ExpGraph, DataObject)" 358
+(uid "-yk94ms_85r_eqyymv3f_-f4z"))
+($8 378 < -yk94ms_85r_eqyymv3f_-f4y "#<anon> (ExpGraph, ExpTransfer)##," 358
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-f4y"))
+($9 379 < -yk94ms_85r_eqyymv3f_-f4x "#0" 378
+(changeability "frozen")
+(aggregation "composite")
+(uid "-yk94ms_85r_eqyymv3f_-f4x")
+(multiplicity "1"))
+($7 380 < -yk94ms_85r_eqyymv3f_-f4w "guid" 379
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00002"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f4w"))
+($9 381 < -yk94ms_85r_eqyymv3f_-f4v "#1" 378
+(uid "-yk94ms_85r_eqyymv3f_-f4v")
+(multiplicity "*"))
+($7 382 < -yk94ms_85r_eqyymv3f_-f4u "guid" 381
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00003"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f4u"))
+($8 383 < -yk94ms_85r_eqyymv3f_-f4t "#<anon> (ExpGraph, ExpStep)##," 358
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-f4t"))
+($9 384 < -yk94ms_85r_eqyymv3f_-f4s "#0" 383
+(changeability "frozen")
+(aggregation "composite")
+(uid "-yk94ms_85r_eqyymv3f_-f4s")
+(multiplicity "1"))
+($7 385 < -yk94ms_85r_eqyymv3f_-f4r "guid" 384
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00004"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f4r"))
+($9 386 < -yk94ms_85r_eqyymv3f_-f4q "#1" 383
+(uid "-yk94ms_85r_eqyymv3f_-f4q")
+(multiplicity "*"))
+($7 387 < -yk94ms_85r_eqyymv3f_-f4p "guid" 386
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00005"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f4p"))
+($8 388 < -yk94ms_85r_eqyymv3f_-f4o "#<anon> (ExpGraph, ExpMeasurement)##," 358
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-f4o"))
+($9 389 < -yk94ms_85r_eqyymv3f_-f4n "#0" 388
+(changeability "frozen")
+(uid "-yk94ms_85r_eqyymv3f_-f4n")
+(multiplicity "*"))
+($7 390 < -yk94ms_85r_eqyymv3f_-f4m "documentation" 389
+(name "documentation"
+)
+(value "ExpGraphs where ExpMeasurement appears"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f4m"))
+($7 391 < -yk94ms_85r_eqyymv3f_-f4l "guid" 389
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00006"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f4l"))
+($9 392 < -yk94ms_85r_eqyymv3f_-f4k "#1" 388
+(changeability "frozen")
+(uid "-yk94ms_85r_eqyymv3f_-f4k")
+(multiplicity "*"))
+($7 393 < -yk94ms_85r_eqyymv3f_-f4j "documentation" 392
+(name "documentation"
+)
+(value "ExpMeasurements that appear in ExpGraph"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f4j"))
+($7 394 < -yk94ms_85r_eqyymv3f_-f4i "guid" 392
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00007"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f4i"))
+($7 395 < -yk94ms_85r_eqyymv3f_-f4h "isDerived" 388
+(name "isDerived"
+)
+(value "True"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f4h"))
+($8 396 < -yk94ms_85r_eqyymv3f_-f4g "#<anon> (ExpGraph, AtomSite)##," 358
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-f4g"))
+($9 397 < -yk94ms_85r_eqyymv3f_-f4f "#0" 396
+(changeability "frozen")
+(uid "-yk94ms_85r_eqyymv3f_-f4f")
+(multiplicity "*"))
+($7 398 < -yk94ms_85r_eqyymv3f_-f4e "documentation" 397
+(name "documentation"
+)
+(value "ExpGraphs whre AtomSite appears"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f4e"))
+($7 399 < -yk94ms_85r_eqyymv3f_-f4d "guid" 397
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00008"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f4d"))
+($9 400 < -yk94ms_85r_eqyymv3f_-f4c "#1" 396
+(changeability "frozen")
+(uid "-yk94ms_85r_eqyymv3f_-f4c")
+(multiplicity "*"))
+($7 401 < -yk94ms_85r_eqyymv3f_-f4b "documentation" 400
+(name "documentation"
+)
+(value "AtomSites connected to ExpGraph"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f4b"))
+($7 402 < -yk94ms_85r_eqyymv3f_-f4a "guid" 400
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00009"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f4a"))
+($7 403 < -yk94ms_85r_eqyymv3f_-f49 "isDerived" 396
+(name "isDerived"
+)
+(value "True"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f49"))
+($7 404 < -yk94ms_85r_eqyymv3f_-f48 "documentation" 358
+(name "documentation"
+)
+(value "Set of Connected AtomSites, ExpTransfers, ExpSteps and ExpMeasurements that define the allowed magnetisation transfer paths and observables for an NMR experiment. Each ExpGraph, its ExpSteps and ExpTransfers, and the ExpMeasurements and AtomSites these are connected to, effectively define a self-contained NMR experiment. There may be several ExpGraphs that share some, but not all, AtomSites and ExpMeasurementsl, e.g. if you acquire CH and NH 2D HSQC experiments together, or if you have diferent molecule topologies giving rise to peaks of different sign."
+)
+(uid "-yk94ms_85r_eqyymv3f_-f48"))
+($7 405 < -yk94ms_85r_eqyymv3f_-f46 "guid" 358
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00032"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f46"))
+($7 406 < -yk94ms_15v_evqyosvg_-p4m "keyNames" 358
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "-yk94ms_15v_evqyosvg_-p4m"))
+($11 407 < -yk94ms_85r_eqyymv3f_-f45 "stepNumber_is_secondary_key_for_ExpStep" 358
+(name "stepNumber_is_secondary_key_for_ExpStep"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f45")
+(body "code:python"
+"_"
+"ll = self.expSteps"
+"isValid = (len(ll) == len(set(x.stepNumber for x in ll)))"
+"_"
+"code:java"
+"_"
+"java.util.HashSet<java.lang.Integer> dd = new java.util.HashSet<java.lang.Integer>();"
+"int nn = 0;"
+"for (ccp.api.nmr.NmrExpPrototype.ExpStep xs: getExpSteps()) {"
+"  dd.add(xs.getStepNumber());"
+"  nn++;"
+"}"
+""
+"if (dd.size() == nn)"
+"  isValid = true;"
+"else"
+"  isValid = false;"
+))
+($7 408 < -yk94ms_85r_eqyymv3f_-f44 "guid" 407
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00033"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f44"))
+($5 409 < -yk94ms_85r_eqyymv3f_-f43 "ExpMeasurement" 1
+(name "ExpMeasurement"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f43"))
+($6 410 < -yk94ms_85r_eqyymv3f_-f42 "serial" 409
+(changeability "frozen")
+(name "serial"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f42")
+(multiplicity "1"))
+($7 411 < -yk94ms_85r_eqyymv3f_-f41 "isAutomatic" 410
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f41"))
+($7 412 < -yk94ms_85r_eqyymv3f_-f40 "guid" 410
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00021"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f40"))
+($6 413 < -yk94ms_85r_eqyymv3f_-f3z "measurementType" 409
+(initialValue "shift"
+)
+(name "measurementType"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f3z")
+(multiplicity "1"))
+($7 414 < -yk94ms_85r_eqyymv3f_-f3y "documentation" 413
+(name "documentation"
+)
+(value "Property being measured. Typically chemical shift, but could be e.g. J-coupling or multiple quantum magnetisation."
+)
+(uid "-yk94ms_85r_eqyymv3f_-f3y"))
+($7 415 < -yk94ms_85r_eqyymv3f_-f3x "guid" 413
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00022"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f3x"))
+($6 416 < -yk94ms_85r_eqyymv3f_-f3w "atomSiteWeights" 409
+(name "atomSiteWeights"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f3w")
+(multiplicity "*"))
+($7 417 < -yk94ms_85r_eqyymv3f_-f3v "documentation" 416
+(name "documentation"
+)
+(value "Weight of contribution from atomSites to measurement being made, given in same order as the atomSites. Typically +/- 1. Serves to define multiple-quantum magnetisation, distinguishing between e.g. three-spin triple-quantum magnetisation and three-spin single-quantum magnetisation. Has no defined meaning in other cases. If both atomSiteWeights and atomSites are set, their length must be the same."
+)
+(uid "-yk94ms_85r_eqyymv3f_-f3v"))
+($7 418 < -yk94ms_85r_eqyymv3f_-f3u "baseName" 416
+(name "baseName"
+)
+(value "atomSiteWeight"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f3u"))
+($7 419 < -yk94ms_85r_eqyymv3f_-f3t "guid" 416
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00023"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f3t"))
+($13 420 < -yk94ms_85r_eqyymv3f_-f3s "getExpGraphs" 409
+(name "getExpGraphs"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f3s")
+(isQuery true))
+($7 421 < -yk94ms_85r_eqyymv3f_-f3p "documentation" 420
+(name "documentation"
+)
+(value "getter for derived link expGraphs"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f3p"))
+($7 422 < -yk94ms_85r_eqyymv3f_-f3o "opType" 420
+(name "opType"
+)
+(value "get"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f3o"))
+($7 423 < -yk94ms_85r_eqyymv3f_-f3l "guid" 420
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00024"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f3l"))
+($7 424 < z8kflu_15v_ewd8gvqb_-p5c "code:java" 420
+(name "code:java"
+)
+(value "result = new java.util.HashSet<ccp.api.nmr.NmrExpPrototype.ExpGraph>();"
+"for (ccp.api.nmr.NmrExpPrototype.ExpStep x: getExpSteps())"
+"  result.add(x.getExpGraph());"
+)
+(uid "z8kflu_15v_ewd8gvqb_-p5c"))
+($7 425 < z8kflu_15v_ewd8gvqb_-p5b "code:python" 420
+(name "code:python"
+)
+(value "result = frozenset(x.expGraph for x in self.expSteps)"
+)
+(uid "z8kflu_15v_ewd8gvqb_-p5b"))
+($8 426 < -yk94ms_85r_eqyymv3f_-f3k "#<anon> (ExpMeasurement, AtomSite)##," 409
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-f3k"))
+($9 427 < -yk94ms_85r_eqyymv3f_-f3j "#0" 426
+(uid "-yk94ms_85r_eqyymv3f_-f3j")
+(multiplicity "*"))
+($7 428 < -yk94ms_85r_eqyymv3f_-f3i "documentation" 427
+(name "documentation"
+)
+(value "ExpMeasurements involving AtomSite"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f3i"))
+($7 429 < -yk94ms_85r_eqyymv3f_-f3h "guid" 427
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00017"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f3h"))
+($9 430 < -yk94ms_85r_eqyymv3f_-f3g "#1" 426
+(isOrdered true)
+(uid "-yk94ms_85r_eqyymv3f_-f3g")
+(multiplicity "*"))
+($7 431 < -yk94ms_85r_eqyymv3f_-f3f "documentation" 430
+(name "documentation"
+)
+(value "AtomSites defining Measurement. For shifts a single one, defining which shift is being measured. For coupling constants a pair defining the sites coupled. For multiple quantum coherences the number apropriate to define the MQ coherence. The order of atomSites in the link is significant, as it corresponds to the order of Measurement.atomSiteWeights (if set).  "
+)
+(uid "-yk94ms_85r_eqyymv3f_-f3f"))
+($7 432 < -yk94ms_85r_eqyymv3f_-f3e "guid" 430
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00018"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f3e"))
+($10 433 < -yk94ms_85r_eqyymv3f_-f3d "#<anon> (ExpMeasurement, DataObject)" 409
+(uid "-yk94ms_85r_eqyymv3f_-f3d"))
+($8 434 < -yk94ms_85r_eqyymv3f_-f3c "#<anon> (ExpMeasurement, RefExpDimRef)##," 409
+(name "")
+(uid "-yk94ms_85r_eqyymv3f_-f3c"))
+($9 435 < -yk94ms_85r_eqyymv3f_-f3b "#0" 434
+(uid "-yk94ms_85r_eqyymv3f_-f3b")
+(multiplicity "1"))
+($7 436 < -yk94ms_85r_eqyymv3f_-f3a "documentation" 435
+(name "documentation"
+)
+(value "ExpMeasurement to which the RefExpDimRef applies. The reference may be relevant for one or several ExpGraphs."
+)
+(uid "-yk94ms_85r_eqyymv3f_-f3a"))
+($7 437 < -yk94ms_85r_eqyymv3f_-f39 "guid" 435
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00019"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f39"))
+($9 438 < -yk94ms_85r_eqyymv3f_-f38 "#1" 434
+(uid "-yk94ms_85r_eqyymv3f_-f38")
+(multiplicity "*"))
+($7 439 < -yk94ms_85r_eqyymv3f_-f37 "documentation" 438
+(name "documentation"
+)
+(value "RefExpDimRefs that pertain to the ExpMeasurement."
+)
+(uid "-yk94ms_85r_eqyymv3f_-f37"))
+($7 440 < -yk94ms_85r_eqyymv3f_-f36 "guid" 438
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00020"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f36"))
+($7 441 < -yk94ms_85r_eqyymv3f_-f35 "documentation" 409
+(name "documentation"
+)
+(value "Property being measured on a dimension of a multidimensional NMR experiment. Most common are shifts, but coupling constants, multi-quantum magnetisation, time (for relaxation time measurements) and others are possible."
+)
+(uid "-yk94ms_85r_eqyymv3f_-f35"))
+($7 442 < -yk94ms_85r_eqyymv3f_-f33 "guid" 409
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00034"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f33"))
+($7 443 < -yk94ms_15v_evqyosvg_-p4l "keyNames" 409
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "-yk94ms_15v_evqyosvg_-p4l"))
+($11 444 < -yk94ms_85r_eqyymv3f_-f32 "lengths_of_atomSites_and_atomSiteWeights_must_conform" 409
+(name "lengths_of_atomSites_and_atomSiteWeights_must_conform"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f32")
+(body "code:python"
+"_"
+"len1 = len(self.atomSites)"
+"len2 = len(self.atomSiteWeights)"
+"isValid = (not len1 or not len2 or (len1 == len2))"
+""
+"_"
+"code:java"
+"_"
+"int len1 = getAtomSites().size();"
+"int len2 = getAtomSiteWeights().size();"
+"isValid = ((len1 == 0) || (len2 == 0) || (len1 == len2));"
+))
+($7 445 < -yk94ms_85r_eqyymv3f_-f31 "guid" 444
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00035"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f31"))
+($5 446 < -yk94ms_85r_eqyymv3f_-f30 "ExpCategory" 1
+(name "ExpCategory"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f30"))
+($10 447 < -yk94ms_85r_eqyymv3f_-f2z "#<anon> (ExpCategory, Line)" 446
+(uid "-yk94ms_85r_eqyymv3f_-f2z"))
+($7 448 < -yk94ms_85r_eqyymv3f_-f2y "documentation" 446
+(name "documentation"
+)
+(value "Category of NmrExpPrototype."
+"'through-bond' are though-bond correlation experiments (TOCSY, HSQC, HNCOCA, ...)"
+"'though-space' are through-space correlation experiments (NOESY, ROESY, HSQC-NOESY-HSQC,...)"
+"'quantification' are experiments meant to measure parameters, such as relaxation, heteronuclear NOEs, dipolar and scalar couplings, quantitative exchange rates, ...)"
+"'other' takes care of experiments that do not fit anything else."
+)
+(uid "-yk94ms_85r_eqyymv3f_-f2y"))
+($7 449 < -yk94ms_85r_eqyymv3f_-f2x "isOpen" 446
+(name "isOpen"
+)
+(value "False"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f2x"))
+($7 450 < -yk94ms_85r_eqyymv3f_-f2w "enumeration" 446
+(name "enumeration"
+)
+(value "('through-bond','through-space','quantification','other')"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f2w"))
+($7 451 < -yk94ms_85r_eqyymv3f_-f2v "guid" 446
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00036"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f2v"))
+($5 452 < -yk94ms_85r_eqyymv3f_-f2u "ExpKeyword" 1
+(name "ExpKeyword"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f2u"))
+($10 453 < -yk94ms_85r_eqyymv3f_-f2t "#<anon> (ExpKeyword, Line)" 452
+(uid "-yk94ms_85r_eqyymv3f_-f2t"))
+($7 454 < -yk94ms_85r_eqyymv3f_-f2s "documentation" 452
+(name "documentation"
+)
+(value "Proposed keywords (open enumeration) for NmrExpPrototype.keywords"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f2s"))
+($7 455 < -yk94ms_85r_eqyymv3f_-f2r "isOpen" 452
+(name "isOpen"
+)
+(value "True"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f2r"))
+($7 456 < -yk94ms_85r_eqyymv3f_-f2q "enumeration" 452
+(name "enumeration"
+)
+(value "('protein','DNA','RNA','carbohydrate','nonpolymer','backbone','sidechain')"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f2q"))
+($7 457 < -yk94ms_85r_eqyymv3f_-f2p "guid" 452
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00037"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f2p"))
+($5 458 < 0_-epz_fefricw7_-p98 "SystematicName" 1
+(name "SystematicName"
+)
+(uid "0_-epz_fefricw7_-p98"))
+($6 459 < 0_-epz_fefricw7_-p95 "namingSystem" 458
+(changeability "frozen")
+(name "namingSystem"
+)
+(uid "0_-epz_fefricw7_-p95")
+(multiplicity "1"))
+($7 460 < 0_-epz_fefricw7_-p94 "documentation" 459
+(name "documentation"
+)
+(value "Naming system for systematic name"
+)
+(uid "0_-epz_fefricw7_-p94"))
+($7 461 < 0_-epz_fefricw7_-p8n "guid" 459
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-03-30-16:37:37_00003"
+)
+(uid "0_-epz_fefricw7_-p8n"))
+($6 462 < 0_-epz_fefricw7_-p93 "name" 458
+(name "name"
+)
+(uid "0_-epz_fefricw7_-p93")
+(multiplicity "1"))
+($7 463 < 0_-epz_fefricw7_-p92 "documentation" 462
+(name "documentation"
+)
+(value "Name within naming system"
+)
+(uid "0_-epz_fefricw7_-p92"))
+($7 464 < 0_-epz_fefricw7_-p8m "guid" 462
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-03-30-16:37:37_00004"
+)
+(uid "0_-epz_fefricw7_-p8m"))
+($10 465 < 0_-epz_fefricw7_-p8s "#<anon> (SystematicName, DataObject)" 458
+(uid "0_-epz_fefricw7_-p8s"))
+($7 466 < 0_-epz_fefricw7_-p97 "documentation" 458
+(name "documentation"
+)
+(value "Systematic name for RefExperiment"
+)
+(uid "0_-epz_fefricw7_-p97"))
+($7 467 < 0_-epz_fefricw7_-p96 "keyNames" 458
+(name "keyNames"
+)
+(value "namingSystem"
+)
+(uid "0_-epz_fefricw7_-p96"))
+($7 468 < 0_-epz_fefricw7_-p8l "guid" 458
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-03-30-16:37:31_00001"
+)
+(uid "0_-epz_fefricw7_-p8l"))
+($5 469 < 0_-epz_fefricw7_-p8x "NamingSystem" 1
+(name "NamingSystem"
+)
+(uid "0_-epz_fefricw7_-p8x"))
+($10 470 < 0_-m68_fegvapaa_-p98 "#<anon> (NamingSystem, Line)" 469
+(uid "0_-m68_fegvapaa_-p98"))
+($7 471 < 0_-epz_fefricw7_-p8w "documentation" 469
+(name "documentation"
+)
+(value "NamingSystems accepted for RefExperiments"
+)
+(uid "0_-epz_fefricw7_-p8w"))
+($7 472 < 0_-epz_fefricw7_-p8v "isOpen" 469
+(name "isOpen"
+)
+(value "False"
+)
+(uid "0_-epz_fefricw7_-p8v"))
+($7 473 < 0_-epz_fefricw7_-p8u "enumeration" 469
+(name "enumeration"
+)
+(value "('BMRB',)"
+)
+(uid "0_-epz_fefricw7_-p8u"))
+($7 474 < 0_-epz_fefricw7_-p8k "guid" 469
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-03-30-16:37:31_00002"
+)
+(uid "0_-epz_fefricw7_-p8k"))
+($7 475 < -yk94ms_85r_eqyymv3f_-f2o "shortName" 1
+(name "shortName"
+)
+(value "NMRX"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f2o"))
+($7 476 < -yk94ms_85r_eqyymv3f_-f2n "documentation" 1
+(name "documentation"
+)
+(value "Package for describing NMR experment prototypes, which could also be described as template descriptions."
+)
+(uid "-yk94ms_85r_eqyymv3f_-f2n"))
+($7 477 < -yk94ms_85r_eqyymv3f_-f2m "packageGroup" 1
+(name "packageGroup"
+)
+(value "nmr"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f2m"))
+($7 478 < -yk94ms_85r_eqyymv3f_-f2l "guid" 1
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00019"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f2l"))
+($15 480)
+($15 482)
+($15 484)
+($15 486)
+($15 488)
+($15 491)
+($17 494)
+($17 496)
+($17 498)
+($17 500)
+($17 501)
+($17 503)
+($17 505)
+($17 507)
+($17 508)
+($17 511)
+($17 512)
+($17 513)
+($17 516)
+($15 518)
+($15 520)
+($15 521)
+($15 523)
+($15 525)
+($15 527)
+($15 529)
+($15 530)
+($15 531)
+($15 532)
+($15 533)
+($15 534)
+($15 535)
+($15 536)
+($15 537)
+($15 538)
+($15 539)
+($15 540)
+($15 542)
+($15 543)
+($15 544)
+($15 545)
+($15 547)
+($15 548)
+($15 549)
+($15 550)
+($15 551)
+($15 552)
+($15 553)
+($15 554)
+($15 555)
+($15 556)
+($15 557)
+($15 558)
+($15 559)
+($15 560)
+($15 561)
+($15 562)
+($15 563)
+($15 564)
+($15 566)
+($15 567)
+($15 568)
+($15 569)
+($15 571)
+($15 573)
+($15 575)
+($15 576)
+($15 577)
+($15 578)
+($15 579)
+($15 580)
+($15 581)
+($15 582)
+($15 583)
+($15 584)
+($15 585)
+($15 586)
+($15 587)
+($15 588)
+($15 589)
+($15 590)
+($15 591)
+($15 592)
+($15 593)
+($15 594)
+($15 595)
+($15 596)
+($15 597)
+($15 598)
+($15 599)
+($15 600)
+($15 601)
+($15 602)
+($15 603)
+($15 604)
+($15 605)
+($15 606)
+($15 607)
+($15 608)
+($15 609)
+($15 610)
+($15 611)
+($15 612)
+($15 613)
+($15 614)
+($15 615)
+($15 616)
+($15 617)
+($15 618)
+($15 619)
+($14 479 @ -yk94ms_-e3s_e41656c6_-fvm 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Nmr" $14)
+($5 481 @ -yk94ms_-e3s_e41656c6_-ntb 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "Experiment" $5)
+($5 483 @ -yk94ms_85r_eqyymv3f_-hz7 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ExpDim" $5)
+($8 485 @ -yk94ms_85r_eqyymv3f_-hyy 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ExpDim" $5 "#<anon> (ExpDim, Experiment)##," $8)
+($5 487 @ -yk94ms_-e3s_e41656c6_-nvd 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ExpDimRef" $5)
+($8 489 @ -yk94ms_85r_eqyymv3f_-hwo 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ExpDimRef" $5 "#<anon> (ExpDimRef, ExpDim)##," $8)
+($14 490 @ -yk94ms_-e3s_e41656c6_-fvg 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "NmrExpPrototype" $14)
+($5 492 @ z8kflu_63g_errlz7sn_-p8u 4 "Logical" $1 "memops" $1 "Implementation" $1 "TopObject" $5)
+($5 493 @ -yk94ms_-e3s_e41656c6_-h0t 4 "Logical" $1 "memops" $1 "Implementation" $1 "Int" $5)
+($5 495 @ -yk94ms_-e3s_e41656c6_-h0m 4 "Logical" $1 "memops" $1 "Implementation" $1 "Line" $5)
+($18 497 @ -yk94ms_-e3s_e41656c6_-fw7 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "DataType" $18)
+($5 499 @ -yk94ms_-e3s_e41656c6_-h04 4 "Logical" $1 "memops" $1 "Implementation" $1 "Text" $5)
+($5 502 @ -yk94ms_-e3s_e41656c6_-gpe 4 "Logical" $1 "memops" $1 "Implementation" $1 "DataObject" $5)
+($5 504 @ -yk94ms_-e3s_e41656c6_-h1k 4 "Logical" $1 "memops" $1 "Implementation" $1 "Boolean" $5)
+($5 506 @ -yk94ms_-e3s_e41656c6_-gzz 4 "Logical" $1 "memops" $1 "Implementation" $1 "Word" $5)
+($5 509 @ -yk94ms_-e3s_e41656c6_-h10 4 "Logical" $1 "memops" $1 "Implementation" $1 "Float" $5)
+($5 510 @ -yk94ms_85r_eqyymv3f_-kjo 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemElement" $1 "Isotope" $5)
+($5 514 @ -yk94ms_-e3s_e41656c6_-gn4 4 "Logical" $1 "memops" $1 "Implementation" $1 "NonNegativeInt" $5)
+($5 515 @ -yk94ms_-e3s_e41656c6_-gnr 4 "Logical" $1 "memops" $1 "Implementation" $1 "PositiveInt" $5)
+($5 517 @ -hkpzxr_-o65_fev6cycj_-p8n 4 "Logical" $1 "memops" $1 "Implementation" $1 "IntSign" $5)
+($14 519 @ -yk94ms_-e3s_e41656c6_-fvk 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Nucleus" $14)
+($8 522 @ -yk94ms_-e3s_e41656c6_-ntp 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ExpDimRef" $5 "#<anon> (ExpDimRef, Isotope)##," $8)
+($5 524 @ -yk94ms_85r_eqyymv3f_-hsz 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ExpTransfer" $5)
+($8 526 @ -yk94ms_85r_eqyymv3f_-hsp 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ExpTransfer" $5 "#<anon> (ExpTransfer, ExpDimRef)##," $8)
+($8 528 @ -yk94ms_85r_eqyymv3f_-hty 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "Experiment" $5 "#<anon> (Experiment, ExpTransfer)##," $8)
+($8 541 @ -yk94ms_85r_eqyymv3f_-htl 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "Experiment" $5 "#<anon> (Experiment, RefExperiment)##," $8)
+($8 546 @ -yk94ms_85r_eqyymv3f_-hw8 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ExpDimRef" $5 "#<anon> (ExpDimRef, RefExpDimRef)##," $8)
+($8 565 @ -yk94ms_jd_ews44umg_-p8k 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "Experiment" $5 "#<anon> (Experiment, )##derivedFrom,derivedTo" $8)
+($5 570 @ -hkpzxr_-o65_fev6cycj_-p92 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ExpDimRefMapping" $5)
+($8 572 @ -hkpzxr_-o65_fev6cycj_-p8x 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ExpDimRefMapping" $5 "#<anon> (ExpDimRefMapping, ExpDimRef)##derivedTo,derivedFrom" $8)
+($8 574 @ -hkpzxr_-o65_fev6cycj_-p91 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ExpDimRef" $5 "#<anon> (ExpDimRef, ExpDimRefMapping)##," $8)
+($18 620 @ -yk94ms_-e3s_e41656c6_-fwy 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "import" $18)
+($1 621 @ -yk94ms_-e3s_e41656c6_-hj7 4 "Logical" $1 "ccp" $1 "molecule" $1 "ChemElement" $1)
+(styleAssn 3 479)
+(projectionAssn 3 481 480)
+(styleAssn 4 479)
+(projectionAssn 4 483 482)
+(to 5 3)
+(from 5 4)
+(projectionAssn 5 485 484)
+(styleAssn 6 479)
+(projectionAssn 6 487 486)
+(to 7 4)
+(from 7 6)
+(projectionAssn 7 489 488)
+(styleAssn 8 490)
+(typeAssn 121 101)
+(assocEndAssn 101 121)
+(typeAssn 126 101)
+(assocEndAssn 101 126)
+(typeAssn 131 101)
+(assocEndAssn 101 131)
+(typeAssn 136 101)
+(assocEndAssn 101 136)
+(subtypeAssn 140 101)
+(supertypeAssn 140 492)
+(generalizationAssn 101 140)
+(typeRefAssn 102 493)
+(typeExpression 102 494)
+(typeRefAssn 105 495)
+(typeExpression 105 496)
+(stereotypeAssn 446 497)
+(subtypeAssn 447 446)
+(supertypeAssn 447 495)
+(generalizationAssn 446 447)
+(typeRefAssn 108 446)
+(typeExpression 108 498)
+(stereotypeAssn 452 497)
+(subtypeAssn 453 452)
+(supertypeAssn 453 495)
+(generalizationAssn 452 453)
+(typeRefAssn 111 452)
+(typeExpression 111 498)
+(typeRefAssn 115 499)
+(typeExpression 115 500)
+(typeRefAssn 117 495)
+(typeExpression 117 501)
+(assocEndAssn 223 123)
+(typeAssn 237 223)
+(assocEndAssn 223 237)
+(typeAssn 243 223)
+(assocEndAssn 223 243)
+(subtypeAssn 241 223)
+(supertypeAssn 241 502)
+(generalizationAssn 223 241)
+(typeRefAssn 224 493)
+(typeExpression 224 496)
+(typeRefAssn 227 495)
+(typeExpression 227 496)
+(typeRefAssn 230 495)
+(typeExpression 230 503)
+(typeRefAssn 233 504)
+(typeExpression 233 505)
+(assocEndAssn 250 239)
+(typeAssn 255 250)
+(assocEndAssn 250 255)
+(typeAssn 261 250)
+(assocEndAssn 250 261)
+(subtypeAssn 259 250)
+(supertypeAssn 259 502)
+(generalizationAssn 250 259)
+(typeRefAssn 251 493)
+(typeExpression 251 496)
+(assocEndAssn 271 257)
+(typeAssn 298 271)
+(assocEndAssn 271 298)
+(typeAssn 305 271)
+(assocEndAssn 271 305)
+(typeAssn 438 271)
+(assocEndAssn 271 438)
+(subtypeAssn 296 271)
+(supertypeAssn 296 502)
+(generalizationAssn 271 296)
+(typeRefAssn 272 493)
+(typeExpression 272 496)
+(typeRefAssn 275 506)
+(typeExpression 275 505)
+(stereotypeAssn 352 497)
+(subtypeAssn 353 352)
+(supertypeAssn 353 506)
+(generalizationAssn 352 353)
+(typeRefAssn 285 352)
+(typeExpression 285 507)
+(typeRefAssn 288 493)
+(typeExpression 288 508)
+(typeRefAssn 291 509)
+(typeExpression 291 508)
+(typeAssn 299 510)
+(typeAssn 331 322)
+(assocEndAssn 322 331)
+(typeAssn 386 322)
+(assocEndAssn 322 386)
+(assocEndAssn 322 308)
+(subtypeAssn 329 322)
+(supertypeAssn 329 502)
+(generalizationAssn 322 329)
+(typeRefAssn 323 493)
+(typeExpression 323 511)
+(typeRefAssn 326 493)
+(typeExpression 326 512)
+(typeAssn 427 409)
+(assocEndAssn 409 427)
+(assocEndAssn 409 334)
+(typeAssn 138 409)
+(assocEndAssn 409 138)
+(typeAssn 435 409)
+(assocEndAssn 409 435)
+(typeAssn 392 409)
+(assocEndAssn 409 392)
+(subtypeAssn 433 409)
+(supertypeAssn 433 502)
+(generalizationAssn 409 433)
+(typeRefAssn 410 493)
+(typeExpression 410 513)
+(stereotypeAssn 346 497)
+(subtypeAssn 347 346)
+(supertypeAssn 347 495)
+(generalizationAssn 346 347)
+(typeRefAssn 413 346)
+(typeExpression 413 513)
+(typeRefAssn 416 509)
+(typeExpression 416 513)
+(typeAssn 215 168)
+(assocEndAssn 168 215)
+(typeAssn 159 168)
+(assocEndAssn 168 159)
+(assocEndAssn 168 430)
+(typeAssn 133 168)
+(assocEndAssn 168 133)
+(typeAssn 400 168)
+(assocEndAssn 168 400)
+(subtypeAssn 213 168)
+(supertypeAssn 213 502)
+(generalizationAssn 168 213)
+(typeRefAssn 169 493)
+(typeExpression 169 496)
+(typeRefAssn 172 506)
+(typeExpression 172 496)
+(typeRefAssn 181 506)
+(typeExpression 181 507)
+(typeRefAssn 184 509)
+(typeExpression 184 507)
+(typeRefAssn 189 509)
+(typeExpression 189 507)
+(typeRefAssn 194 514)
+(typeExpression 194 513)
+(typeRefAssn 199 514)
+(typeExpression 199 513)
+(typeRefAssn 204 515)
+(typeExpression 204 513)
+(typeAssn 216 510)
+(typeAssn 430 168)
+(typeAssn 334 409)
+(typeAssn 308 322)
+(typeAssn 257 271)
+(typeAssn 266 483)
+(typeAssn 239 250)
+(assocEndAssn 458 245)
+(subtypeAssn 465 458)
+(supertypeAssn 465 502)
+(generalizationAssn 458 465)
+(stereotypeAssn 469 497)
+(subtypeAssn 470 469)
+(supertypeAssn 470 495)
+(generalizationAssn 469 470)
+(typeRefAssn 459 469)
+(typeExpression 459 516)
+(typeRefAssn 462 495)
+(typeExpression 462 516)
+(typeAssn 245 458)
+(typeAssn 123 223)
+(assocEndAssn 358 128)
+(typeAssn 379 358)
+(assocEndAssn 358 379)
+(typeAssn 384 358)
+(assocEndAssn 358 384)
+(typeAssn 389 358)
+(assocEndAssn 358 389)
+(typeAssn 397 358)
+(assocEndAssn 358 397)
+(subtypeAssn 377 358)
+(supertypeAssn 377 502)
+(generalizationAssn 358 377)
+(typeRefAssn 359 493)
+(typeExpression 359 513)
+(typeRefAssn 362 517)
+(typeExpression 362 513)
+(typeAssn 156 144)
+(assocEndAssn 144 156)
+(assocEndAssn 144 381)
+(subtypeAssn 154 144)
+(supertypeAssn 154 502)
+(generalizationAssn 144 154)
+(typeRefAssn 145 493)
+(typeExpression 145 494)
+(stereotypeAssn 340 497)
+(subtypeAssn 341 340)
+(supertypeAssn 341 506)
+(generalizationAssn 340 341)
+(typeRefAssn 148 340)
+(typeExpression 148 494)
+(typeRefAssn 151 504)
+(typeExpression 151 505)
+(typeAssn 381 144)
+(typeAssn 128 358)
+(projectionAssn 8 101 491)
+(styleAssn 9 490)
+(projectionAssn 9 144 518)
+(styleAssn 10 519)
+(projectionAssn 10 510 520)
+(to 11 10)
+(from 11 6)
+(projectionAssn 11 522 521)
+(styleAssn 12 479)
+(projectionAssn 12 524 523)
+(to 13 6)
+(from 13 12)
+(projectionAssn 13 526 525)
+(to 14 12)
+(from 14 3)
+(projectionAssn 14 528 527)
+(styleAssn 15 490)
+(projectionAssn 15 168 529)
+(styleAssn 16 490)
+(projectionAssn 16 223 530)
+(to 17 16)
+(from 17 8)
+(projectionAssn 17 120 531)
+(styleAssn 18 490)
+(projectionAssn 18 250 532)
+(to 19 18)
+(from 19 16)
+(projectionAssn 19 236 533)
+(styleAssn 20 490)
+(projectionAssn 20 271 534)
+(to 21 20)
+(from 21 18)
+(projectionAssn 21 254 535)
+(styleAssn 22 490)
+(stereotypeAssn 316 497)
+(subtypeAssn 317 316)
+(supertypeAssn 317 495)
+(generalizationAssn 316 317)
+(projectionAssn 22 316 536)
+(to 23 10)
+(from 23 20)
+(projectionAssn 23 297 537)
+(to 24 15)
+(from 24 9)
+(projectionAssn 24 155 538)
+(styleAssn 25 490)
+(projectionAssn 25 322 539)
+(to 26 16)
+(from 26 3)
+(projectionAssn 26 541 540)
+(styleAssn 27 490)
+(projectionAssn 27 340 542)
+(styleAssn 28 490)
+(projectionAssn 28 346 543)
+(to 29 4)
+(from 29 18)
+(projectionAssn 29 260 544)
+(to 30 20)
+(from 30 6)
+(projectionAssn 30 546 545)
+(styleAssn 31 490)
+(projectionAssn 31 352 547)
+(styleAssn 32 490)
+(projectionAssn 32 358 548)
+(to 33 32)
+(from 33 8)
+(projectionAssn 33 125 549)
+(to 34 9)
+(from 34 32)
+(projectionAssn 34 378 550)
+(styleAssn 35 490)
+(projectionAssn 35 409 551)
+(to 36 15)
+(from 36 35)
+(projectionAssn 36 426 552)
+(to 37 35)
+(from 37 25)
+(projectionAssn 37 330 553)
+(to 38 25)
+(from 38 32)
+(projectionAssn 38 383 554)
+(to 39 25)
+(from 39 20)
+(projectionAssn 39 304 555)
+(styleAssn 40 490)
+(projectionAssn 40 446 556)
+(to 41 15)
+(from 41 8)
+(projectionAssn 41 130 557)
+(to 42 35)
+(from 42 8)
+(projectionAssn 42 135 558)
+(to 43 20)
+(from 43 35)
+(projectionAssn 43 434 559)
+(to 44 35)
+(from 44 32)
+(projectionAssn 44 388 560)
+(to 45 15)
+(from 45 32)
+(projectionAssn 45 396 561)
+(to 46 10)
+(from 46 15)
+(projectionAssn 46 214 562)
+(styleAssn 47 490)
+(projectionAssn 47 452 563)
+(to 48 3)
+(from 48 3)
+(projectionAssn 48 565 564)
+(styleAssn 49 490)
+(projectionAssn 49 458 566)
+(to 50 49)
+(from 50 16)
+(projectionAssn 50 242 567)
+(styleAssn 51 490)
+(projectionAssn 51 469 568)
+(styleAssn 52 479)
+(projectionAssn 52 570 569)
+(to 53 6)
+(from 53 52)
+(projectionAssn 53 572 571)
+(to 54 52)
+(from 54 6)
+(projectionAssn 54 574 573)
+(styleAssn 56 479)
+(projectionAssn 56 481 575)
+(styleAssn 57 479)
+(projectionAssn 57 483 576)
+(to 58 56)
+(from 58 57)
+(projectionAssn 58 485 577)
+(styleAssn 59 479)
+(projectionAssn 59 487 578)
+(to 60 57)
+(from 60 59)
+(projectionAssn 60 489 579)
+(styleAssn 61 490)
+(projectionAssn 61 101 580)
+(styleAssn 62 490)
+(projectionAssn 62 144 581)
+(styleAssn 63 519)
+(projectionAssn 63 510 582)
+(to 64 63)
+(from 64 59)
+(projectionAssn 64 522 583)
+(styleAssn 65 479)
+(projectionAssn 65 524 584)
+(to 66 59)
+(from 66 65)
+(projectionAssn 66 526 585)
+(to 67 65)
+(from 67 56)
+(projectionAssn 67 528 586)
+(styleAssn 68 490)
+(projectionAssn 68 168 587)
+(to 69 63)
+(from 69 68)
+(projectionAssn 69 214 588)
+(to 70 68)
+(from 70 62)
+(projectionAssn 70 155 589)
+(styleAssn 71 490)
+(projectionAssn 71 250 590)
+(styleAssn 72 490)
+(projectionAssn 72 271 591)
+(to 73 63)
+(from 73 72)
+(projectionAssn 73 297 592)
+(to 74 72)
+(from 74 71)
+(projectionAssn 74 254 593)
+(styleAssn 75 490)
+(projectionAssn 75 223 594)
+(to 76 71)
+(from 76 75)
+(projectionAssn 76 236 595)
+(to 77 75)
+(from 77 61)
+(projectionAssn 77 120 596)
+(to 78 75)
+(from 78 56)
+(projectionAssn 78 541 597)
+(styleAssn 79 490)
+(projectionAssn 79 322 598)
+(to 80 57)
+(from 80 71)
+(projectionAssn 80 260 599)
+(to 81 72)
+(from 81 59)
+(projectionAssn 81 546 600)
+(to 82 79)
+(from 82 72)
+(projectionAssn 82 304 601)
+(styleAssn 83 490)
+(projectionAssn 83 358 602)
+(to 84 62)
+(from 84 83)
+(projectionAssn 84 378 603)
+(to 85 79)
+(from 85 83)
+(projectionAssn 85 383 604)
+(to 86 83)
+(from 86 61)
+(projectionAssn 86 125 605)
+(styleAssn 87 490)
+(projectionAssn 87 409 606)
+(to 88 68)
+(from 88 87)
+(projectionAssn 88 426 607)
+(to 89 87)
+(from 89 79)
+(projectionAssn 89 330 608)
+(to 90 68)
+(from 90 61)
+(projectionAssn 90 130 609)
+(to 91 87)
+(from 91 61)
+(projectionAssn 91 135 610)
+(to 92 72)
+(from 92 87)
+(projectionAssn 92 434 611)
+(to 93 68)
+(from 93 83)
+(projectionAssn 93 396 612)
+(to 94 87)
+(from 94 83)
+(projectionAssn 94 388 613)
+(to 95 56)
+(from 95 56)
+(projectionAssn 95 565 614)
+(styleAssn 96 479)
+(projectionAssn 96 570 615)
+(to 97 59)
+(from 97 96)
+(projectionAssn 97 572 616)
+(to 98 96)
+(from 98 59)
+(projectionAssn 98 574 617)
+(styleAssn 99 490)
+(projectionAssn 99 458 618)
+(to 100 99)
+(from 100 75)
+(projectionAssn 100 242 619)
+(stereotypeAssn 167 620)
+(clientAssn 167 1)
+(supplierAssn 167 621)

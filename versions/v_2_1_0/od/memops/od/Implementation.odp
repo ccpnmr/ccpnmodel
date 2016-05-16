@@ -1,0 +1,6858 @@
+ObjectDomain_Shared_Package 15
+{-yk94ms_-e3s_e41656c6_-ow2 3 "Logical" objectdomain.uml.mechanisms.UmlPackage-owns "memops" objectdomain.uml.mechanisms.UmlPackage-owns "Implementation" objectdomain.uml.mechanisms.UmlPackage-owns
+}[objectdomain.uml.core.TypeExpression $21
+objectdomain.uml.view.CommentView-owns $17
+objectdomain.uml.mechanisms.UmlPackage-owns $1
+objectdomain.uml.core.UmlComment-owns $16
+objectdomain.uml.core.Generalization-owns $10
+objectdomain.uml.core.Projection $18
+objectdomain.uml.core.UmlAttribute-features $8
+objectdomain.uml.core.UmlAssociationEnd-connections $14
+objectdomain.uml.view.style.BaseViewElementStyle-owns $20
+objectdomain.uml.view.ClassView-owns $3
+objectdomain.uml.core.UmlTaggedValue-taggedValues $9
+objectdomain.uml.core.UmlConstraint-constraints $15
+objectdomain.uml.core.UmlParameter-parameters $12
+objectdomain.uml.core.UmlAssociation-owns $13
+objectdomain.uml.view.Diagram-owns $2
+objectdomain.uml.core.UmlOperation-features $11
+objectdomain.uml.view.GeneralizationView-owns $4
+objectdomain.uml.view.PackageView-owns $5
+objectdomain.uml.core.UmlMultiplicity $22
+objectdomain.uml.core.UmlClass-owns $7
+objectdomain.uml.view.AssociationView-owns $6
+objectdomain.uml.core.Stereotype-owns $19
+]
+($1 1 > -yk94ms_-e3s_e41656c6_-ow2 3 "Logical" $1 "memops" $1 "Implementation" $1
+(name "Implementation"
+)
+(uid "-yk94ms_-e3s_e41656c6_-ow2"))
+($2 2 < -yk94ms_-e3s_e41656c6_-h5v "_BasicDataTypes" 1
+(name "_BasicDataTypes"
+)
+(uid "-yk94ms_-e3s_e41656c6_-h5v")
+(diagramType "class"))
+($3 3 < -yk94ms_-e3s_e41656c6_-h5u "Boolean" 2
+(autoSizeToFit true)
+(uid "-yk94ms_-e3s_e41656c6_-h5u")
+(bbx 20 10 80 60))
+($3 4 < -yk94ms_-e3s_e41656c6_-h5t "Int" 2
+(autoSizeToFit true)
+(uid "-yk94ms_-e3s_e41656c6_-h5t")
+(bbx 640 10 80 60))
+($3 5 < -yk94ms_-e3s_e41656c6_-h5s "Float" 2
+(autoSizeToFit true)
+(uid "-yk94ms_-e3s_e41656c6_-h5s")
+(bbx 760 10 80 60))
+($3 6 < -yk94ms_-e3s_e41656c6_-h5r "String" 2
+(autoSizeToFit true)
+(uid "-yk94ms_-e3s_e41656c6_-h5r")
+(bbx 140 10 80 60))
+($3 7 < -yk94ms_-e3s_e41656c6_-h5q "Line" 2
+(autoSizeToFit true)
+(uid "-yk94ms_-e3s_e41656c6_-h5q")
+(bbx 390 230 80 60))
+($3 8 < -yk94ms_-e3s_e41656c6_-h5p "Text" 2
+(autoSizeToFit true)
+(uid "-yk94ms_-e3s_e41656c6_-h5p")
+(bbx 270 120 80 60))
+($4 9 < -yk94ms_-e3s_e41656c6_-h5o "" 2
+(uid "-yk94ms_-e3s_e41656c6_-h5o")
+(points 310 120 310 95 180 95 180 70))
+($3 10 < -yk94ms_-e3s_e41656c6_-h5n "Long" 2
+(autoSizeToFit true)
+(uid "-yk94ms_-e3s_e41656c6_-h5n")
+(bbx 260 10 80 60))
+($3 11 < -yk94ms_-e3s_e41656c6_-h5m "Double" 2
+(autoSizeToFit true)
+(uid "-yk94ms_-e3s_e41656c6_-h5m")
+(bbx 450 10 80 60))
+($3 12 < -yk94ms_-e3s_e41656c6_-h5l "Word" 2
+(autoSizeToFit true)
+(uid "-yk94ms_-e3s_e41656c6_-h5l")
+(bbx 280 230 80 60))
+($3 13 < -yk94ms_-e3s_e41656c6_-h5e "PositiveInt" 2
+(autoSizeToFit true)
+(uid "-yk94ms_-e3s_e41656c6_-h5e")
+(bbx 660 120 80 60))
+($4 14 < -yk94ms_-e3s_e41656c6_-h5d "" 2
+(uid "-yk94ms_-e3s_e41656c6_-h5d")
+(points 695 120 695 95 670 95 670 70))
+($3 15 < -yk94ms_-e3s_e41656c6_-h5b "SingleLine" 2
+(autoSizeToFit true)
+(uid "-yk94ms_-e3s_e41656c6_-h5b")
+(bbx 390 120 80 60))
+($4 16 < -yk94ms_-e3s_e41656c6_-h5a "" 2
+(uid "-yk94ms_-e3s_e41656c6_-h5a")
+(points 430 120 430 95 180 95 180 70))
+($4 17 < -yk94ms_-e3s_e41656c6_-h59 "" 2
+(uid "-yk94ms_-e3s_e41656c6_-h59")
+(points 430 230 430 180))
+($3 18 < -yk94ms_-e3s_e41656c6_-h52 "NonNegativeInt" 2
+(autoSizeToFit true)
+(uid "-yk94ms_-e3s_e41656c6_-h52")
+(bbx 510 120 110 60))
+($4 19 < -yk94ms_-e3s_e41656c6_-h51 "" 2
+(uid "-yk94ms_-e3s_e41656c6_-h51")
+(points 565 120 565 95 670 95 670 70))
+($3 20 < -yk94ms_6e6_eu2ehkvg_-p97 "Dict" 2
+(uid "-yk94ms_6e6_eu2ehkvg_-p97")
+(bbx 880 10 100 60))
+($3 21 < -yk94ms_6e6_eu2ehkvg_-p96 "DateTime" 2
+(uid "-yk94ms_6e6_eu2ehkvg_-p96")
+(bbx 10 230 100 60))
+($4 22 < -yk94ms_6e6_eu2ehkvg_-p98 "" 2
+(uid "-yk94ms_6e6_eu2ehkvg_-p98")
+(points 15 230 15 95 180 95 180 70))
+($3 23 < -yk94ms_6e6_eu2ehkvg_-p91 "StringKeyDict" 2
+(uid "-yk94ms_6e6_eu2ehkvg_-p91")
+(bbx 880 120 100 60))
+($4 24 < -yk94ms_6e6_eu2ehkvg_-p93 "" 2
+(uid "-yk94ms_6e6_eu2ehkvg_-p93")
+(points 930 120 930 70))
+($3 25 < -yk94ms_jd_eumd4zu8_-p95 "Any" 2
+(uid "-yk94ms_jd_eumd4zu8_-p95")
+(bbx 1030 10 100 60))
+($3 26 < z8kflu_jd_ey8cceug_-p97 "Token" 2
+(autoSizeToFit true)
+(uid "z8kflu_jd_ey8cceug_-p97")
+(bbx 30 120 80 60))
+($4 27 < z8kflu_jd_ey8cceug_-p98 "" 2
+(autoSizeToFit true)
+(uid "z8kflu_jd_ey8cceug_-p98")
+(points 65 120 65 95 180 95 180 70))
+($3 28 < -yk94ms_-hpq_ezgs5ane_-p95 "NonNegativeFloat" 2
+(uid "-yk94ms_-hpq_ezgs5ane_-p95")
+(bbx 700 320 120 60))
+($4 29 < -yk94ms_-hpq_ezgs5ane_-p97 "" 2
+(uid "-yk94ms_-hpq_ezgs5ane_-p97")
+(points 760 320 760 205 800 205 800 70))
+($3 30 < -yk94ms_-hpq_ezgs5ane_-p94 "FloatRatio" 2
+(uid "-yk94ms_-hpq_ezgs5ane_-p94")
+(bbx 930 230 100 60))
+($4 31 < -yk94ms_-hpq_ezgs5ane_-p96 "" 2
+(uid "-yk94ms_-hpq_ezgs5ane_-p96")
+(points 980 230 980 205 800 205 800 70))
+($3 32 < -yk94ms_-hpq_ezgs5ane_-p93 "PositiveFloat" 2
+(uid "-yk94ms_-hpq_ezgs5ane_-p93")
+(bbx 800 230 100 60))
+($4 33 < -yk94ms_-hpq_ezgs5ane_-p98 "" 2
+(uid "-yk94ms_-hpq_ezgs5ane_-p98")
+(points 850 230 850 205 800 205 800 70))
+($3 34 < -hkpzxr_-li2_f6hr0e0k_-p8u "SpacelessString" 2
+(uid "-hkpzxr_-li2_f6hr0e0k_-p8u")
+(bbx 140 120 110 60))
+($4 35 < -hkpzxr_-li2_f6hr0e0k_-p91 "" 2
+(uid "-hkpzxr_-li2_f6hr0e0k_-p91")
+(points 180 120 180 70))
+($3 36 < -hkpzxr_-li2_f6hr0e0k_-p8t "LongWord" 2
+(uid "-hkpzxr_-li2_f6hr0e0k_-p8t")
+(bbx 140 230 100 60))
+($4 37 < -hkpzxr_-li2_f6hr0e0k_-p8v "" 2
+(uid "-hkpzxr_-li2_f6hr0e0k_-p8v")
+(points 190 230 190 180))
+($4 38 < -hkpzxr_-li2_f7bl5du8_-p97 "" 2
+(uid "-hkpzxr_-li2_f7bl5du8_-p97")
+(points 280 260 240 260))
+($3 39 < -hkpzxr_v5_fa2hfpju_-p8v "PositiveDouble" 2
+(uid "-hkpzxr_v5_fa2hfpju_-p8v")
+(bbx 510 490 110 60))
+($4 40 < -hkpzxr_v5_fa2hfpju_-p8w "" 2
+(uid "-hkpzxr_v5_fa2hfpju_-p8w")
+(points 510 525 490 525 490 70))
+($3 41 < -hkpzxr_v5_fa2hfpju_-p8u "NonNegativeDouble" 2
+(uid "-hkpzxr_v5_fa2hfpju_-p8u")
+(bbx 510 320 140 60))
+($4 42 < -hkpzxr_v5_fa2hfpju_-p8x "" 2
+(uid "-hkpzxr_v5_fa2hfpju_-p8x")
+(points 510 345 490 345 490 70))
+($3 43 < -hkpzxr_-o65_fev6cycj_-p8g "IntSign" 2
+(uid "-hkpzxr_-o65_fev6cycj_-p8g")
+(bbx 520 230 100 60))
+($4 44 < -hkpzxr_-o65_fev6cycj_-p8i "" 2
+(uid "-hkpzxr_-o65_fev6cycj_-p8i")
+(points 570 230 570 205 640 205 640 95 670 95 670 70))
+($3 45 < z8kfsx_-9el_ffqk1gqf_-p92 "RgbColor" 2
+(uid "z8kfsx_-9el_ffqk1gqf_-p92")
+(bbx 320 540 100 60))
+($3 46 < z8kfsx_-fvi_ffqsowwn_-p8o "PaperFormat" 2
+(uid "z8kfsx_-fvi_ffqsowwn_-p8o")
+(bbx 140 340 100 60))
+($4 47 < z8kfsx_-fvi_ffqsowwn_-p8p "" 2
+(uid "z8kfsx_-fvi_ffqsowwn_-p8p")
+(points 195 340 195 315 125 315 125 95 180 95 180 70))
+($3 48 < z8kfsx_-fvi_ffqsowwn_-p84 "PaperUnit" 2
+(uid "z8kfsx_-fvi_ffqsowwn_-p84")
+(bbx 10 440 100 60))
+($3 49 < z8kfsx_-fvi_ffqsowwn_-p83 "PrintFormat" 2
+(uid "z8kfsx_-fvi_ffqsowwn_-p83")
+(bbx 10 340 100 60))
+($3 50 < z8kfsx_-fvi_ffqsowwn_-p82 "PaperOrientation" 2
+(uid "z8kfsx_-fvi_ffqsowwn_-p82")
+(bbx 140 440 120 60))
+($4 51 < z8kfsx_-fvi_ffqsowwn_-p81 "" 2
+(uid "z8kfsx_-fvi_ffqsowwn_-p81")
+(points 60 440 60 425 125 425 125 95 180 95 180 70))
+($4 52 < z8kfsx_-fvi_ffqsowwn_-p80 "" 2
+(uid "z8kfsx_-fvi_ffqsowwn_-p80")
+(points 65 340 65 315 125 315 125 95 180 95 180 70))
+($4 53 < z8kfsx_-fvi_ffqsowwn_-p7z "" 2
+(uid "z8kfsx_-fvi_ffqsowwn_-p7z")
+(points 200 440 200 425 125 425 125 95 180 95 180 70))
+($3 54 < z8kfsx_-9el_fgtclf5e_-p8t "NegativeFloat" 2
+(uid "z8kfsx_-9el_fgtclf5e_-p8t")
+(bbx 880 320 100 60))
+($4 55 < z8kfsx_-9el_fgtclf5e_-p96 "" 2
+(uid "z8kfsx_-9el_fgtclf5e_-p96")
+(points 915 320 915 205 800 205 800 70))
+($3 56 < z8kfsx_-9el_fgtclf5e_-p8s "NegativeInt" 2
+(uid "z8kfsx_-9el_fgtclf5e_-p8s")
+(bbx 640 230 100 60))
+($4 57 < z8kfsx_-9el_fgtclf5e_-p90 "" 2
+(uid "z8kfsx_-9el_fgtclf5e_-p90")
+(points 685 230 685 205 640 205 640 95 670 95 670 70))
+($3 58 < z8kfsx_-9el_fgtclf5e_-p8r "NegativeDouble" 2
+(uid "z8kfsx_-9el_fgtclf5e_-p8r")
+(bbx 510 410 110 60))
+($4 59 < z8kfsx_-9el_fgtclf5e_-p8u "" 2
+(uid "z8kfsx_-9el_fgtclf5e_-p8u")
+(points 510 435 490 435 490 70))
+($3 60 < z8kfsx_iv7_fi382ccl_-p93 "GuidString" 2
+(uid "z8kfsx_iv7_fi382ccl_-p93")
+(bbx 380 340 100 60))
+($4 61 < z8kfsx_iv7_fi382ccl_-p94 "" 2
+(uid "z8kfsx_iv7_fi382ccl_-p94")
+(points 430 340 430 290))
+($3 62 < z8kfsx_-9el_fqars3g2_-p92 "Page" 2
+(uid "z8kfsx_-9el_fqars3g2_-p92")
+(bbx 320 440 100 60))
+($4 63 < z8kfsx_-9el_fqars3g2_-p93 "" 2
+(uid "z8kfsx_-9el_fqars3g2_-p93")
+(points 365 440 365 95 180 95 180 70))
+($3 64 < z8kfsx_-gyy_gvnq1xrz_-p4c "HexString" 2
+(uid "z8kfsx_-gyy_gvnq1xrz_-p4c")
+(bbx 250 340 100 60))
+($4 65 < z8kfsx_-gyy_gvnq1xrz_-p4i "" 2
+(uid "z8kfsx_-gyy_gvnq1xrz_-p4i")
+(points 300 340 300 315 125 315 125 95 180 95 180 70))
+($4 66 < z8kfsx_-gyy_gvnq1xrz_-p4h "" 2
+(uid "z8kfsx_-gyy_gvnq1xrz_-p4h")
+(points 365 540 365 520 300 520 300 400))
+($3 67 < z8kfsx_-gyy_gvnq1xrz_-p4b "RgbaColor" 2
+(uid "z8kfsx_-gyy_gvnq1xrz_-p4b")
+(bbx 160 540 100 60))
+($4 68 < z8kfsx_-gyy_gvnq1xrz_-p4d "" 2
+(uid "z8kfsx_-gyy_gvnq1xrz_-p4d")
+(points 205 540 205 520 300 520 300 400))
+($2 69 < -yk94ms_-e3s_e41656c6_-h50 "_Implementation" 1
+(name "_Implementation"
+)
+(uid "-yk94ms_-e3s_e41656c6_-h50")
+(diagramType "class"))
+($3 70 < -yk94ms_-e3s_e41656c6_-h4z "MemopsObject" 69
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_-e3s_e41656c6_-h4z")
+(bbx 250 110 140 30))
+($3 71 < -yk94ms_-e3s_e41656c6_-h4y "ApplicationData" 69
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_-e3s_e41656c6_-h4y")
+(bbx 610 180 110 50))
+($3 72 < -yk94ms_-e3s_e41656c6_-h4w "MemopsRoot" 69
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_-e3s_e41656c6_-h4w")
+(bbx 250 290 90 30))
+($3 73 < -yk94ms_-e3s_e41656c6_-h4v "AppDataBoolean" 69
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_-e3s_e41656c6_-h4v")
+(bbx 800 10 120 50))
+($4 74 < -yk94ms_-e3s_e41656c6_-h4u "" 69
+(uid "-yk94ms_-e3s_e41656c6_-h4u")
+(points 800 25 780 25 780 195 720 195))
+($3 75 < -yk94ms_-e3s_e41656c6_-h4t "AppDataLong" 69
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_-e3s_e41656c6_-h4t")
+(bbx 800 250 100 50))
+($4 76 < -yk94ms_-e3s_e41656c6_-h4s "" 69
+(uid "-yk94ms_-e3s_e41656c6_-h4s")
+(points 800 265 780 265 780 195 720 195))
+($3 77 < -yk94ms_-e3s_e41656c6_-h4r "AppDataInt" 69
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_-e3s_e41656c6_-h4r")
+(bbx 800 190 80 50))
+($4 78 < -yk94ms_-e3s_e41656c6_-h4q "" 69
+(uid "-yk94ms_-e3s_e41656c6_-h4q")
+(points 800 205 780 205 780 195 720 195))
+($3 79 < -yk94ms_-e3s_e41656c6_-h4p "AppDataDouble" 69
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_-e3s_e41656c6_-h4p")
+(bbx 800 70 110 50))
+($4 80 < -yk94ms_-e3s_e41656c6_-h4o "" 69
+(uid "-yk94ms_-e3s_e41656c6_-h4o")
+(points 800 85 780 85 780 195 720 195))
+($3 81 < -yk94ms_-e3s_e41656c6_-h4n "AppDataFloat" 69
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_-e3s_e41656c6_-h4n")
+(bbx 800 130 100 50))
+($4 82 < -yk94ms_-e3s_e41656c6_-h4m "" 69
+(uid "-yk94ms_-e3s_e41656c6_-h4m")
+(points 800 145 780 145 780 195 720 195))
+($3 83 < -yk94ms_-e3s_e41656c6_-h4l "AppDataString" 69
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_-e3s_e41656c6_-h4l")
+(bbx 800 310 100 50))
+($4 84 < -yk94ms_-e3s_e41656c6_-h4k "" 69
+(uid "-yk94ms_-e3s_e41656c6_-h4k")
+(points 800 325 780 325 780 195 720 195))
+($3 85 < -yk94ms_-e3s_e41656c6_-h4h "Url" 69
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_-e3s_e41656c6_-h4h")
+(bbx 680 110 80 50))
+($3 86 < -yk94ms_-e3s_e41656c6_-h4f "FileStorageObject" 69
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "-yk94ms_-e3s_e41656c6_-h4f")
+(bbx 110 90 120 30))
+($4 87 < -yk94ms_-e3s_e41656c6_-h44 "" 69
+(uid "-yk94ms_-e3s_e41656c6_-h44")
+(points 250 295 155 295 155 120))
+($5 88 < -yk94ms_fph_e52j4ykh_-p98 "Implementation" 69
+(autoSizeToFit true)
+(uid "-yk94ms_fph_e52j4ykh_-p98")
+(bbx 750 380 160 80))
+($3 89 < -yk94ms_-dbn_elqdw3n5_-p6k "AccessObject" 69
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-yk94ms_-dbn_elqdw3n5_-p6k")
+(bbx 10 10 240 30))
+($3 90 < -yk94ms_63g_esbjyarm_-p8q "DataObject" 69
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-yk94ms_63g_esbjyarm_-p8q")
+(bbx 10 150 80 30))
+($4 91 < -yk94ms_63g_esbjyarm_-p8t "" 69
+(autoSizeToFit true)
+(uid "-yk94ms_63g_esbjyarm_-p8t")
+(points 15 40 15 150))
+($3 92 < -hkpzxr_-iih_f3zymwjl_-p50 "MemopsDataTypeObject" 69
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-hkpzxr_-iih_f3zymwjl_-p50")
+(bbx 570 10 160 50))
+($4 93 < -hkpzxr_-iih_f3zymwjl_-p51 "" 69
+(uid "-hkpzxr_-iih_f3zymwjl_-p51")
+(points 705 110 705 60))
+($4 94 < -hkpzxr_-iih_f3zymwjl_-p52 "" 69
+(uid "-hkpzxr_-iih_f3zymwjl_-p52")
+(points 630 180 630 60))
+($3 95 < -hkpzxr_-iih_f3zymwjl_-p4d "PackageLocator" 69
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-hkpzxr_-iih_f3zymwjl_-p4d")
+(bbx 470 340 110 30))
+($6 96 < -hkpzxr_-iih_f3zymwjl_-p4i "" 69
+(toMultiplicityPosition 445 325)
+(uid "-hkpzxr_-iih_f3zymwjl_-p4i")
+(points 340 305 400 305 400 345 470 345)
+(fromMultiplicityPosition 360 315))
+($6 97 < -hkpzxr_-iih_f3zymwjl_-p4n "" 69
+(toMultiplicityPosition 450 370)
+(uid "-hkpzxr_-iih_f3zymwjl_-p4n")
+(points 295 320 295 360 470 360))
+($3 98 < -hkpzxr_-iih_f3zymwjl_-p4c "Repository" 69
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-hkpzxr_-iih_f3zymwjl_-p4c")
+(bbx 480 230 80 30))
+($6 99 < -hkpzxr_-iih_f3zymwjl_-p4h "" 69
+(toMultiplicityPosition 560 290)
+(toRolePosition 560 270)
+(uid "-hkpzxr_-iih_f3zymwjl_-p4h")
+(points 555 340 555 260)
+(fromRolePosition 505 325)
+(toOrderedPosition 595 290)
+(fromMultiplicityPosition 560 325))
+($6 100 < -hkpzxr_-iih_f3zymwjl_-p4o "" 69
+(toMultiplicityPosition 445 250)
+(toRolePosition 395 225)
+(uid "-hkpzxr_-iih_f3zymwjl_-p4o")
+(points 340 305 400 305 400 245 480 245)
+(fromMultiplicityPosition 360 315))
+($6 101 < -hkpzxr_-iih_f3zymwjl_-p4t "" 69
+(toMultiplicityPosition 515 210)
+(toRolePosition 435 190)
+(uid "-hkpzxr_-iih_f3zymwjl_-p4t")
+(points 230 95 510 95 510 230)
+(toOrderedPosition 480 165))
+($3 102 < -hkpzxr_-iih_f3zymwjl_-p4b "FileMemopsRoot" 69
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-hkpzxr_-iih_f3zymwjl_-p4b")
+(bbx 140 350 120 30))
+($4 103 < -hkpzxr_-iih_f3zymwjl_-p4k "" 69
+(uid "-hkpzxr_-iih_f3zymwjl_-p4k")
+(points 255 320 255 350))
+($3 104 < -hkpzxr_-iih_f3zymwjl_-p4a "DbMemopsRoot" 69
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-hkpzxr_-iih_f3zymwjl_-p4a")
+(bbx 220 400 110 30))
+($4 105 < -hkpzxr_-iih_f3zymwjl_-p4f "" 69
+(uid "-hkpzxr_-iih_f3zymwjl_-p4f")
+(points 275 320 275 400))
+($3 106 < -hkpzxr_-iih_f3zymwjl_-p49 "DbTopObject" 69
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-hkpzxr_-iih_f3zymwjl_-p49")
+(bbx 40 400 90 30))
+($3 107 < -hkpzxr_-iih_f3zymwjl_-p48 "ImplementationObject" 69
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-hkpzxr_-iih_f3zymwjl_-p48")
+(bbx 160 170 150 30))
+($6 108 < -hkpzxr_-iih_f3zymwjl_-p4p "" 69
+(toMultiplicityPosition 235 270)
+(toRolePosition 205 250)
+(uid "-hkpzxr_-iih_f3zymwjl_-p4p")
+(points 255 200 255 290))
+($4 109 < -hkpzxr_-iih_f3zymwjl_-p4y "" 69
+(uid "-hkpzxr_-iih_f3zymwjl_-p4y")
+(points 260 170 260 140))
+($4 110 < -hkpzxr_-iih_f3zymwjl_-p4s "" 69
+(uid "-hkpzxr_-iih_f3zymwjl_-p4s")
+(points 525 230 525 185 310 185))
+($4 111 < -hkpzxr_-iih_f3zymwjl_-p4q "" 69
+(uid "-hkpzxr_-iih_f3zymwjl_-p4q")
+(points 295 290 295 200))
+($4 112 < -hkpzxr_-iih_f3zymwjl_-p4r "" 69
+(uid "-hkpzxr_-iih_f3zymwjl_-p4r")
+(points 575 340 575 185 310 185))
+($6 113 < -hkpzxr_-iih_f3zymwjl_-p4z "" 69
+(toMultiplicityPosition 320 270)
+(toRolePosition 315 250)
+(uid "-hkpzxr_-iih_f3zymwjl_-p4z")
+(points 335 140 335 290))
+($4 114 < -hkpzxr_-iih_f3zymwjl_-p4x "" 69
+(uid "-hkpzxr_-iih_f3zymwjl_-p4x")
+(points 75 150 75 70 320 70 320 110))
+($3 115 < -hkpzxr_-iih_f3zymwjl_-p47 "TopObject" 69
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-hkpzxr_-iih_f3zymwjl_-p47")
+(bbx 10 290 80 30))
+($6 116 < -hkpzxr_-iih_f3zymwjl_-p4j "" 69
+(toMultiplicityPosition 525 380)
+(uid "-hkpzxr_-iih_f3zymwjl_-p4j")
+(points 25 320 25 440 520 440 520 370))
+($4 117 < -hkpzxr_-iih_f3zymwjl_-p4u "" 69
+(uid "-hkpzxr_-iih_f3zymwjl_-p4u")
+(points 65 320 65 400))
+($4 118 < -hkpzxr_-iih_f3zymwjl_-p4v "" 69
+(uid "-hkpzxr_-iih_f3zymwjl_-p4v")
+(points 40 290 40 180))
+($6 119 < -hkpzxr_-iih_f3zymwjl_-p4w "" 69
+(toMultiplicityPosition 0 255)
+(uid "-hkpzxr_-iih_f3zymwjl_-p4w")
+(points 20 180 20 290))
+($6 120 < -hkpzxr_-iih_f3zymwjl_-p4l "" 69
+(autoSizeToFit true)
+(toMultiplicityPosition 90 275)
+(uid "-hkpzxr_-iih_f3zymwjl_-p4l")
+(points 250 300 90 300))
+($6 121 < -hkpzxr_-iih_f3zymwjl_-p4e "" 69
+(toMultiplicityPosition 30 130)
+(uid "-hkpzxr_-iih_f3zymwjl_-p4e")
+(points 45 40 45 150)
+(fromRolePosition 50 45))
+($3 122 < -hkpzxr_-li2_f7bl5du8_-p92 "FileTopObject" 69
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-hkpzxr_-li2_f7bl5du8_-p92")
+(bbx 50 210 100 30))
+($4 123 < -hkpzxr_-li2_f7bl5du8_-p90 "" 69
+(uid "-hkpzxr_-li2_f7bl5du8_-p90")
+(points 130 210 130 120))
+($4 124 < -hkpzxr_-li2_f7bl5du8_-p91 "" 69
+(autoSizeToFit true)
+(uid "-hkpzxr_-li2_f7bl5du8_-p91")
+(points 75 290 75 240))
+($3 125 < z8kfsx_-m68_ffno1onp_-p92 "ComplexDataType" 69
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "z8kfsx_-m68_ffno1onp_-p92")
+(bbx 350 10 130 50))
+($4 126 < z8kfsx_-m68_ffno1onp_-p94 "" 69
+(uid "z8kfsx_-m68_ffno1onp_-p94")
+(points 375 110 375 60))
+($4 127 < z8kfsx_-m68_ffno1onp_-p95 "" 69
+(uid "z8kfsx_-m68_ffno1onp_-p95")
+(points 570 35 480 35))
+($3 128 < z8kfsx_-m68_ffno1onp_-p91 "SymmTracelessMatrix" 69
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "z8kfsx_-m68_ffno1onp_-p91")
+(bbx 560 400 150 50))
+($4 129 < z8kfsx_-m68_ffno1onp_-p93 "" 69
+(uid "z8kfsx_-m68_ffno1onp_-p93")
+(points 600 400 600 60))
+($6 130 < z8kfsx_-m68_ffno1onp_-p90 "" 69
+(uid "z8kfsx_-m68_ffno1onp_-p90")
+(points 250 315 90 315)
+(fromMultiplicityPosition 230 325))
+($7 131 < -yk94ms_-e3s_e41656c6_-h3r "ApplicationData" 1
+(name "ApplicationData"
+)
+(uid "-yk94ms_-e3s_e41656c6_-h3r")
+(isAbstract true))
+($8 132 < -yk94ms_-e3s_e41656c6_-h3o "application" 131
+(changeability "frozen")
+(name "application"
+)
+(uid "-yk94ms_-e3s_e41656c6_-h3o")
+(multiplicity "1"))
+($9 133 < -yk94ms_-e3s_e41656c6_-h3n "documentation" 132
+(name "documentation"
+)
+(value "Name of application owning the data."
+)
+(uid "-yk94ms_-e3s_e41656c6_-h3n"))
+($9 134 < -yk94ms_85r_eqz4zfps_-p7p "guid" 132
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-17-14:16:23_00025"
+)
+(uid "-yk94ms_85r_eqz4zfps_-p7p"))
+($8 135 < -yk94ms_-e3s_e41656c6_-h3m "keyword" 131
+(changeability "frozen")
+(name "keyword"
+)
+(uid "-yk94ms_-e3s_e41656c6_-h3m")
+(multiplicity "1"))
+($9 136 < -yk94ms_-e3s_e41656c6_-h3l "documentation" 135
+(name "documentation"
+)
+(value "keyword or name of variable"
+)
+(uid "-yk94ms_-e3s_e41656c6_-h3l"))
+($9 137 < -yk94ms_85r_eqz4zfps_-p7o "guid" 135
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-17-14:16:23_00026"
+)
+(uid "-yk94ms_85r_eqz4zfps_-p7o"))
+($10 138 < -yk94ms_6e6_evpe4fus_-p8q "#<anon> (ApplicationData, MemopsDataTypeObject)" 131
+(uid "-yk94ms_6e6_evpe4fus_-p8q"))
+($9 139 < -yk94ms_-e3s_e41656c6_-h3j "documentation" 131
+(name "documentation"
+)
+(value "Stores program-specific data. Intended for application-specific extensions to the data model. ApplicationData objects should be used only by the application that wrote them originally. "
+"ApplicationData objects all have an attribute 'value' holding the data value. The data type of the value differs between the different subclasses of ApplicationData"
+)
+(uid "-yk94ms_-e3s_e41656c6_-h3j"))
+($9 140 < -yk94ms_15v_eqxp59vz_-ow4 "guid" 131
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00026"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ow4"))
+($7 141 < -yk94ms_-e3s_e41656c6_-h3h "MemopsObject" 1
+(name "MemopsObject"
+)
+(uid "-yk94ms_-e3s_e41656c6_-h3h")
+(isAbstract true))
+($8 142 < z8kflu_jd_ew839iyf_-p8q "isDeleted" 141
+(changeability "frozen")
+(name "isDeleted"
+)
+(uid "z8kflu_jd_ew839iyf_-p8q")
+(multiplicity "1"))
+($9 143 < z8kflu_jd_ew839iyf_-p8p "documentation" 142
+(name "documentation"
+)
+(value "Implementation attribute, set automatically. If True the object has been deleted. Deleted objects are never returned by any API call, so there is normally no need to check this attribute. But if you keep your own lists (or other data structures) containing CCP objects, you may need to look."
+)
+(uid "z8kflu_jd_ew839iyf_-p8p"))
+($9 144 < z8kflu_jd_ew839iyf_-p8o "isImplementation" 142
+(name "isImplementation"
+)
+(value "True"
+)
+(uid "z8kflu_jd_ew839iyf_-p8o"))
+($9 145 < z8kflu_15v_ewd8gvqb_-p98 "guid" 142
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-12-31-09:00:59_00012"
+)
+(uid "z8kflu_15v_ewd8gvqb_-p98"))
+($11 146 < z8kflu_-hpq_f1995bcq_-p98 "getExpandedKey##Any*" 141
+(name "getExpandedKey"
+)
+(uid "z8kflu_-hpq_f1995bcq_-p98")
+(isQuery true))
+($12 147 < z8kflu_-hpq_f1995bcq_-p96 "result" 146
+(name "result"
+)
+(kind "return")
+(uid "z8kflu_-hpq_f1995bcq_-p96"))
+($9 148 < z8kflu_-hpq_f1995bcq_-p91 "guid" 147
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-05-03-16:57:50_00002"
+)
+(uid "z8kflu_-hpq_f1995bcq_-p91"))
+($9 149 < z8kflu_-hpq_f1995bcq_-p97 "documentation" 146
+(name "documentation"
+)
+(value "get expanded (object-free) version of full key, for comparing objects from different trees."
+)
+(uid "z8kflu_-hpq_f1995bcq_-p97"))
+($9 150 < z8kflu_-hpq_f1995bcq_-p95 "opType" 146
+(name "opType"
+)
+(value "otherQuery"
+)
+(uid "z8kflu_-hpq_f1995bcq_-p95"))
+($9 151 < z8kflu_-hpq_f1995bcq_-p94 "code:java" 146
+(name "code:java"
+)
+(value "result = getFullKey();"
+""
+"for (int ii = 0; ii < result.size(); ii++) {"
+"  if (result.get(ii) instanceof memops.api.Implementation.MemopsObject)"
+"    result.set(ii, ((memops.api.Implementation.MemopsObject) result.get(ii)).getExpandedKey());"
+"}"
+)
+(uid "z8kflu_-hpq_f1995bcq_-p94"))
+($9 152 < z8kflu_-hpq_f1995bcq_-p93 "code:python" 146
+(name "code:python"
+)
+(value "result = self.getFullKey()"
+""
+"for ii in range(len(result)):"
+"  if isinstance(result[ii], MemopsObject):"
+"    result[ii] = result[ii].getExpandedKey()"
+)
+(uid "z8kflu_-hpq_f1995bcq_-p93"))
+($9 153 < z8kflu_-hpq_f1995bcq_-p90 "guid" 146
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-05-03-16:57:50_00001"
+)
+(uid "z8kflu_-hpq_f1995bcq_-p90"))
+($13 154 < z8kflu_jd_ew839iyf_-p8l "#<anon> (MemopsObject, MemopsRoot)##,root" 141
+(name "")
+(uid "z8kflu_jd_ew839iyf_-p8l"))
+($14 155 < z8kflu_jd_ew839iyf_-p8f "#0" 154
+(uid "z8kflu_jd_ew839iyf_-p8f")
+(isNavigable false))
+($14 156 < z8kflu_jd_ew839iyf_-p8e "root#1" 154
+(changeability "frozen")
+(name "root"
+)
+(uid "z8kflu_jd_ew839iyf_-p8e")
+(multiplicity "1"))
+($9 157 < z8kflu_jd_ew839iyf_-p8d "documentation" 156
+(name "documentation"
+)
+(value "MemopsRoot object at top of parent tree."
+)
+(uid "z8kflu_jd_ew839iyf_-p8d"))
+($9 158 < z8kflu_15v_ewd8gvqb_-p97 "guid" 156
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-12-31-09:00:59_00010"
+)
+(uid "z8kflu_15v_ewd8gvqb_-p97"))
+($9 159 < z8kflu_85r_ewdj2n5o_-p97 "isImplementation" 154
+(name "isImplementation"
+)
+(value "True"
+)
+(uid "z8kflu_85r_ewdj2n5o_-p97"))
+($10 160 < -hkpzxr_v5_f7xb2l1q_-p97 "#<anon> (MemopsObject, ComplexDataType)" 141
+(uid "-hkpzxr_v5_f7xb2l1q_-p97"))
+($9 161 < -yk94ms_-e3s_e41656c6_-h1l "documentation" 141
+(name "documentation"
+)
+(value "Base class for Memops data model classes. "
+"Contains elements common to all classes, e.g. the link to ApplicationData, and the root and parent links. "
+)
+(uid "-yk94ms_-e3s_e41656c6_-h1l"))
+($9 162 < -yk94ms_15v_eqxp59vz_-ow3 "guid" 141
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00027"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ow3"))
+($7 163 < -yk94ms_-e3s_e41656c6_-h1k "Boolean" 1
+(name "Boolean"
+)
+(uid "-yk94ms_-e3s_e41656c6_-h1k"))
+($9 164 < -yk94ms_-e3s_e41656c6_-h1j "documentation" 163
+(name "documentation"
+)
+(value "Basic data type handling Boolean (true/false) values."
+)
+(uid "-yk94ms_-e3s_e41656c6_-h1j"))
+($9 165 < -yk94ms_-e3s_e41656c6_-h1i "isOpen" 163
+(name "isOpen"
+)
+(value "False"
+)
+(uid "-yk94ms_-e3s_e41656c6_-h1i"))
+($9 166 < -yk94ms_-e3s_e41656c6_-h1h "enumeration" 163
+(name "enumeration"
+)
+(value "('True','False')"
+)
+(uid "-yk94ms_-e3s_e41656c6_-h1h"))
+($9 167 < -yk94ms_15v_eqxp59vz_-ow2 "guid" 163
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00028"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ow2"))
+($9 168 < -yk94ms_63g_es2yk6pd_-oz7 "typeCode:java" 163
+(name "typeCode:java"
+)
+(value "java.lang.Boolean"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oz7"))
+($9 169 < -yk94ms_63g_es2yk6pd_-oz6 "typeCode:xml" 163
+(name "typeCode:xml"
+)
+(value "boolean"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oz6"))
+($9 170 < -yk94ms_63g_es2yk6pd_-oz5 "typeCode:python" 163
+(name "typeCode:python"
+)
+(value "Boolean"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oz5"))
+($7 171 < -yk94ms_-e3s_e41656c6_-h1b "DateTime" 1
+(name "DateTime"
+)
+(uid "-yk94ms_-e3s_e41656c6_-h1b"))
+($10 172 < -yk94ms_-e3s_e41656c6_-h1a "#<anon> (DateTime, String)" 171
+(uid "-yk94ms_-e3s_e41656c6_-h1a"))
+($9 173 < -yk94ms_-e3s_e41656c6_-h18 "documentation" 171
+(name "documentation"
+)
+(value "Class for data and time values, timestamps, etc. Temporarily set equal to a String, will be implemented properly at a later date."
+)
+(uid "-yk94ms_-e3s_e41656c6_-h18"))
+($9 174 < -yk94ms_15v_eqxp59vz_-ow1 "guid" 171
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00029"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ow1"))
+($7 175 < -yk94ms_-e3s_e41656c6_-h17 "Double" 1
+(name "Double"
+)
+(uid "-yk94ms_-e3s_e41656c6_-h17"))
+($9 176 < -yk94ms_-e3s_e41656c6_-h16 "documentation" 175
+(name "documentation"
+)
+(value "Basic data type, handling double precision (64 bit) floating point numbers."
+)
+(uid "-yk94ms_-e3s_e41656c6_-h16"))
+($9 177 < -yk94ms_15v_eqxp59vz_-ow0 "guid" 175
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00030"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ow0"))
+($9 178 < -yk94ms_63g_es2yk6pd_-oz4 "typeCode:java" 175
+(name "typeCode:java"
+)
+(value "java.lang.Double"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oz4"))
+($9 179 < -yk94ms_63g_es2yk6pd_-oz3 "typeCode:xml" 175
+(name "typeCode:xml"
+)
+(value "double"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oz3"))
+($9 180 < -yk94ms_63g_es2yk6pd_-oz2 "typeCode:python" 175
+(name "typeCode:python"
+)
+(value "Double"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oz2"))
+($15 181 < z8kfsx_-fvi_flz1qy5u_-p91 "value_is_not_NaN_or_Infinity" 175
+(name "value_is_not_NaN_or_Infinity"
+)
+(uid "z8kfsx_-fvi_flz1qy5u_-p91")
+(body "code:python"
+"_"
+"value - value == 0.0"
+"_"
+"code:java"
+"_"
+"(value - value) == 0.0"
+))
+($9 182 < z8kfsx_-fvi_flz1qy5u_-p8y "guid" 181
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-10-06-15:36:14_00001"
+)
+(uid "z8kfsx_-fvi_flz1qy5u_-p8y"))
+($7 183 < -yk94ms_-e3s_e41656c6_-h10 "Float" 1
+(name "Float"
+)
+(uid "-yk94ms_-e3s_e41656c6_-h10"))
+($9 184 < -yk94ms_-e3s_e41656c6_-h0z "documentation" 183
+(name "documentation"
+)
+(value "Basic data type, handling single precision (32 bit) floating point numbers."
+)
+(uid "-yk94ms_-e3s_e41656c6_-h0z"))
+($9 185 < -yk94ms_15v_eqxp59vz_-ovz "guid" 183
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00031"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ovz"))
+($9 186 < -yk94ms_63g_es2yk6pd_-oz1 "typeCode:java" 183
+(name "typeCode:java"
+)
+(value "java.lang.Float"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oz1"))
+($9 187 < -yk94ms_63g_es2yk6pd_-oz0 "typeCode:xml" 183
+(name "typeCode:xml"
+)
+(value "float"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oz0"))
+($9 188 < -yk94ms_63g_es2yk6pd_-oyz "typeCode:python" 183
+(name "typeCode:python"
+)
+(value "Float"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oyz"))
+($15 189 < z8kfsx_-fvi_flz1qy5u_-p92 "value_is_not_NaN_or_Infinity" 183
+(name "value_is_not_NaN_or_Infinity"
+)
+(uid "z8kfsx_-fvi_flz1qy5u_-p92")
+(body "code:python"
+"_"
+"value - value == 0.0"
+"_"
+"code:java"
+"_"
+"(value - value) == 0.0"
+))
+($9 190 < z8kfsx_-fvi_flz1qy5u_-p8x "guid" 189
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-10-06-15:36:14_00002"
+)
+(uid "z8kfsx_-fvi_flz1qy5u_-p8x"))
+($7 191 < -yk94ms_-e3s_e41656c6_-h0t "Int" 1
+(name "Int"
+)
+(uid "-yk94ms_-e3s_e41656c6_-h0t"))
+($9 192 < -yk94ms_-e3s_e41656c6_-h0s "documentation" 191
+(name "documentation"
+)
+(value "Basic data type, handling single precision (32 bit) integer."
+)
+(uid "-yk94ms_-e3s_e41656c6_-h0s"))
+($9 193 < -yk94ms_15v_eqxp59vz_-ovy "guid" 191
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00032"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ovy"))
+($9 194 < -yk94ms_63g_es2yk6pd_-oyy "typeCode:java" 191
+(name "typeCode:java"
+)
+(value "java.lang.Integer"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oyy"))
+($9 195 < -yk94ms_63g_es2yk6pd_-oyx "typeCode:xml" 191
+(name "typeCode:xml"
+)
+(value "int"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oyx"))
+($9 196 < -yk94ms_63g_es2yk6pd_-oyw "typeCode:python" 191
+(name "typeCode:python"
+)
+(value "Int"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oyw"))
+($7 197 < -yk94ms_-e3s_e41656c6_-h0m "Line" 1
+(name "Line"
+)
+(uid "-yk94ms_-e3s_e41656c6_-h0m"))
+($10 198 < -yk94ms_-e3s_e41656c6_-h0l "#<anon> (Line, SingleLine)" 197
+(uid "-yk94ms_-e3s_e41656c6_-h0l"))
+($9 199 < -yk94ms_-e3s_e41656c6_-h0k "documentation" 197
+(name "documentation"
+)
+(value "Max 80 char string without carriage returns (\\n or \\r). Used for most string fields."
+)
+(uid "-yk94ms_-e3s_e41656c6_-h0k"))
+($9 200 < -yk94ms_-e3s_e41656c6_-h0j "length" 197
+(name "length"
+)
+(value "80"
+)
+(uid "-yk94ms_-e3s_e41656c6_-h0j"))
+($9 201 < -yk94ms_15v_eqxp59vz_-ovx "guid" 197
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00033"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ovx"))
+($7 202 < -yk94ms_-e3s_e41656c6_-h0h "Long" 1
+(name "Long"
+)
+(uid "-yk94ms_-e3s_e41656c6_-h0h"))
+($9 203 < -yk94ms_-e3s_e41656c6_-h0g "documentation" 202
+(name "documentation"
+)
+(value "Basic data type, handling double precision (64 bit) integers."
+)
+(uid "-yk94ms_-e3s_e41656c6_-h0g"))
+($9 204 < -yk94ms_15v_eqxp59vz_-ovw "guid" 202
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00034"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ovw"))
+($9 205 < -yk94ms_63g_es2yk6pd_-oyv "typeCode:java" 202
+(name "typeCode:java"
+)
+(value "java.lang.Long"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oyv"))
+($9 206 < -yk94ms_63g_es2yk6pd_-oyu "typeCode:xml" 202
+(name "typeCode:xml"
+)
+(value "long"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oyu"))
+($9 207 < -yk94ms_63g_es2yk6pd_-oyt "typeCode:python" 202
+(name "typeCode:python"
+)
+(value "Long"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oyt"))
+($7 208 < -yk94ms_-e3s_e41656c6_-h0a "String" 1
+(name "String"
+)
+(uid "-yk94ms_-e3s_e41656c6_-h0a"))
+($9 209 < -yk94ms_-e3s_e41656c6_-h09 "documentation" 208
+(name "documentation"
+)
+(value "Basic data type, handling strings. Unicode not supported. Empty strings not supported"
+)
+(uid "-yk94ms_-e3s_e41656c6_-h09"))
+($9 210 < -yk94ms_15v_eqxp59vz_-ovv "guid" 208
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00035"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ovv"))
+($9 211 < -yk94ms_63g_es2yk6pd_-oys "typeCode:java" 208
+(name "typeCode:java"
+)
+(value "java.lang.String"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oys"))
+($9 212 < -yk94ms_63g_es2yk6pd_-oyr "typeCode:xml" 208
+(name "typeCode:xml"
+)
+(value "string"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oyr"))
+($9 213 < -yk94ms_63g_es2yk6pd_-oyq "typeCode:python" 208
+(name "typeCode:python"
+)
+(value "String"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oyq"))
+($7 214 < -yk94ms_-e3s_e41656c6_-h04 "Text" 1
+(name "Text"
+)
+(uid "-yk94ms_-e3s_e41656c6_-h04"))
+($10 215 < -yk94ms_-e3s_e41656c6_-h03 "#<anon> (Text, String)" 214
+(uid "-yk94ms_-e3s_e41656c6_-h03"))
+($9 216 < -yk94ms_-e3s_e41656c6_-h02 "length" 214
+(name "length"
+)
+(value "254"
+)
+(uid "-yk94ms_-e3s_e41656c6_-h02"))
+($9 217 < -yk94ms_-e3s_e41656c6_-h01 "documentation" 214
+(name "documentation"
+)
+(value "Limited-length string, max length 254"
+)
+(uid "-yk94ms_-e3s_e41656c6_-h01"))
+($9 218 < -yk94ms_15v_eqxp59vz_-ovu "guid" 214
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00036"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ovu"))
+($7 219 < -yk94ms_-e3s_e41656c6_-gzz "Word" 1
+(name "Word"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gzz"))
+($10 220 < -hkpzxr_-li2_f7bl5du8_-p98 "#<anon> (Word, LongWord)" 219
+(uid "-hkpzxr_-li2_f7bl5du8_-p98"))
+($9 221 < -yk94ms_-e3s_e41656c6_-gzx "documentation" 219
+(name "documentation"
+)
+(value "Max 32 char string without whitespace"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gzx"))
+($9 222 < -yk94ms_-e3s_e41656c6_-gzw "length" 219
+(name "length"
+)
+(value "32"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gzw"))
+($9 223 < -yk94ms_15v_eqxp59vz_-ovt "guid" 219
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00037"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ovt"))
+($7 224 < -yk94ms_-e3s_e41656c6_-gzt "AppDataBoolean" 1
+(name "AppDataBoolean"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gzt"))
+($8 225 < -yk94ms_-e3s_e41656c6_-gzs "value" 224
+(changeability "frozen")
+(name "value"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gzs")
+(multiplicity "1"))
+($9 226 < -yk94ms_-e3s_e41656c6_-gzr "documentation" 225
+(name "documentation"
+)
+(value "Data value"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gzr"))
+($9 227 < -yk94ms_85r_eqz4zfps_-p72 "guid" 225
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-17-14:16:24_00011"
+)
+(uid "-yk94ms_85r_eqz4zfps_-p72"))
+($10 228 < -yk94ms_-e3s_e41656c6_-gzq "#<anon> (AppDataBoolean, ApplicationData)" 224
+(uid "-yk94ms_-e3s_e41656c6_-gzq"))
+($9 229 < -yk94ms_-e3s_e41656c6_-gzp "documentation" 224
+(name "documentation"
+)
+(value "Boolean type application data."
+)
+(uid "-yk94ms_-e3s_e41656c6_-gzp"))
+($9 230 < -yk94ms_15v_eqxp59vz_-ovr "guid" 224
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00039"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ovr"))
+($7 231 < -yk94ms_-e3s_e41656c6_-gzo "AppDataLong" 1
+(name "AppDataLong"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gzo"))
+($8 232 < -yk94ms_-e3s_e41656c6_-gzn "value" 231
+(changeability "frozen")
+(name "value"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gzn")
+(multiplicity "1"))
+($9 233 < -yk94ms_-e3s_e41656c6_-gzm "documentation" 232
+(name "documentation"
+)
+(value "Data value"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gzm"))
+($9 234 < -yk94ms_85r_eqz4zfps_-p71 "guid" 232
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-17-14:16:24_00012"
+)
+(uid "-yk94ms_85r_eqz4zfps_-p71"))
+($10 235 < -yk94ms_-e3s_e41656c6_-gzl "#<anon> (AppDataLong, ApplicationData)" 231
+(uid "-yk94ms_-e3s_e41656c6_-gzl"))
+($9 236 < -yk94ms_-e3s_e41656c6_-gzk "documentation" 231
+(name "documentation"
+)
+(value "Long Int type application data."
+)
+(uid "-yk94ms_-e3s_e41656c6_-gzk"))
+($9 237 < -yk94ms_15v_eqxp59vz_-ovq "guid" 231
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00040"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ovq"))
+($7 238 < -yk94ms_-e3s_e41656c6_-gzj "AppDataInt" 1
+(name "AppDataInt"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gzj"))
+($8 239 < -yk94ms_-e3s_e41656c6_-gzi "value" 238
+(changeability "frozen")
+(name "value"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gzi")
+(multiplicity "1"))
+($9 240 < -yk94ms_-e3s_e41656c6_-gzh "documentation" 239
+(name "documentation"
+)
+(value "Data value"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gzh"))
+($9 241 < -yk94ms_85r_eqz4zfps_-p70 "guid" 239
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-17-14:16:24_00013"
+)
+(uid "-yk94ms_85r_eqz4zfps_-p70"))
+($10 242 < -yk94ms_-e3s_e41656c6_-gzg "#<anon> (AppDataInt, ApplicationData)" 238
+(uid "-yk94ms_-e3s_e41656c6_-gzg"))
+($9 243 < -yk94ms_-e3s_e41656c6_-gzf "documentation" 238
+(name "documentation"
+)
+(value "Int type application data."
+)
+(uid "-yk94ms_-e3s_e41656c6_-gzf"))
+($9 244 < -yk94ms_15v_eqxp59vz_-ovp "guid" 238
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00041"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ovp"))
+($7 245 < -yk94ms_-e3s_e41656c6_-gze "AppDataDouble" 1
+(name "AppDataDouble"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gze"))
+($8 246 < -yk94ms_-e3s_e41656c6_-gzd "value" 245
+(changeability "frozen")
+(name "value"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gzd")
+(multiplicity "1"))
+($9 247 < -yk94ms_-e3s_e41656c6_-gzc "documentation" 246
+(name "documentation"
+)
+(value "Data value"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gzc"))
+($9 248 < -yk94ms_85r_eqz4zfps_-p6z "guid" 246
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-17-14:16:24_00014"
+)
+(uid "-yk94ms_85r_eqz4zfps_-p6z"))
+($10 249 < -yk94ms_-e3s_e41656c6_-gzb "#<anon> (AppDataDouble, ApplicationData)" 245
+(uid "-yk94ms_-e3s_e41656c6_-gzb"))
+($9 250 < -yk94ms_-e3s_e41656c6_-gza "documentation" 245
+(name "documentation"
+)
+(value "Double type application data."
+)
+(uid "-yk94ms_-e3s_e41656c6_-gza"))
+($9 251 < -yk94ms_15v_eqxp59vz_-ovo "guid" 245
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00042"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ovo"))
+($7 252 < -yk94ms_-e3s_e41656c6_-gz9 "AppDataFloat" 1
+(name "AppDataFloat"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gz9"))
+($8 253 < -yk94ms_-e3s_e41656c6_-gz8 "value" 252
+(changeability "frozen")
+(name "value"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gz8")
+(multiplicity "1"))
+($9 254 < -yk94ms_-e3s_e41656c6_-gz7 "documentation" 253
+(name "documentation"
+)
+(value "Data value"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gz7"))
+($9 255 < -yk94ms_85r_eqz4zfps_-p6y "guid" 253
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-17-14:16:24_00015"
+)
+(uid "-yk94ms_85r_eqz4zfps_-p6y"))
+($10 256 < -yk94ms_-e3s_e41656c6_-gz6 "#<anon> (AppDataFloat, ApplicationData)" 252
+(uid "-yk94ms_-e3s_e41656c6_-gz6"))
+($9 257 < -yk94ms_-e3s_e41656c6_-gz5 "documentation" 252
+(name "documentation"
+)
+(value "Float type application data."
+)
+(uid "-yk94ms_-e3s_e41656c6_-gz5"))
+($9 258 < -yk94ms_15v_eqxp59vz_-ovn "guid" 252
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00043"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ovn"))
+($7 259 < -yk94ms_-e3s_e41656c6_-gz4 "AppDataString" 1
+(name "AppDataString"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gz4"))
+($8 260 < -yk94ms_-e3s_e41656c6_-gz3 "value" 259
+(changeability "frozen")
+(name "value"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gz3")
+(multiplicity "1"))
+($9 261 < -yk94ms_-e3s_e41656c6_-gz2 "documentation" 260
+(name "documentation"
+)
+(value "Data value"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gz2"))
+($9 262 < -yk94ms_85r_eqz4zfps_-p6x "guid" 260
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-17-14:16:24_00016"
+)
+(uid "-yk94ms_85r_eqz4zfps_-p6x"))
+($10 263 < -yk94ms_-e3s_e41656c6_-gz1 "#<anon> (AppDataString, ApplicationData)" 259
+(uid "-yk94ms_-e3s_e41656c6_-gz1"))
+($9 264 < -yk94ms_-e3s_e41656c6_-gz0 "documentation" 259
+(name "documentation"
+)
+(value "String type application data."
+)
+(uid "-yk94ms_-e3s_e41656c6_-gz0"))
+($9 265 < -yk94ms_15v_eqxp59vz_-ovm "guid" 259
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00044"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ovm"))
+($7 266 < -yk94ms_-e3s_e41656c6_-gyg "MemopsRoot" 1
+(name "MemopsRoot"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gyg"))
+($8 267 < -yk94ms_15v_etiuu9yq_-p98 "name" 266
+(initialValue "ccpProject"
+)
+(changeability "frozen")
+(name "name"
+)
+(uid "-yk94ms_15v_etiuu9yq_-p98")
+(multiplicity "1"))
+($9 268 < -yk94ms_15v_etiuu9yq_-p97 "documentation" 267
+(name "documentation"
+)
+(value "Memops root name - used in naming files etc"
+)
+(uid "-yk94ms_15v_etiuu9yq_-p97"))
+($9 269 < -yk94ms_6e6_etr2d29e_-p97 "guid" 267
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-26-12:22:46_00001"
+)
+(uid "-yk94ms_6e6_etr2d29e_-p97"))
+($15 270 < -hkpzxr_v5_f9l8hvtw_-p97 "value_is_alphanumeric_or_underscore" 267
+(name "value_is_alphanumeric_or_underscore"
+)
+(uid "-hkpzxr_v5_f9l8hvtw_-p97")
+(body "code:python"
+"_"
+"isValid = frozenset('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789').issuperset(value)"
+"_"
+"code:java"
+"_"
+"value.matches(\"^[_a-zA-Z0-9]*$\")"
+))
+($9 271 < -hkpzxr_v5_f9l8hvtw_-p96 "guid" 270
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-29-16:15:10_00001"
+)
+(uid "-hkpzxr_v5_f9l8hvtw_-p96"))
+($8 272 < -yk94ms_6e6_esmzi4xs_-p98 "override" 266
+(initialValue "False"
+)
+(name "override"
+)
+(uid "-yk94ms_6e6_esmzi4xs_-p98")
+(multiplicity "1"))
+($9 273 < -yk94ms_6e6_esmzi4xs_-p97 "documentation" 272
+(name "documentation"
+)
+(value "Override switch - switches off validity and constraint checking. NB anyone setting override takes reponsibility for unsetting it again and ensuring that the final result is valid. It is strongly recommended to check the validity of any changes afterwards. NBNB TBD we need to prevent the storing of override=True data somehow."
+)
+(uid "-yk94ms_6e6_esmzi4xs_-p97"))
+($9 274 < -yk94ms_-dbn_esol78c6_-p93 "guid" 272
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-29-18:30:36_00001"
+)
+(uid "-yk94ms_-dbn_esol78c6_-p93"))
+($8 275 < -yk94ms_p3u_evxsl0om_-p98 "currentUserId" 266
+(initialValue "user"
+)
+(name "currentUserId"
+)
+(uid "-yk94ms_p3u_evxsl0om_-p98")
+(multiplicity "1"))
+($9 276 < -yk94ms_p3u_evxsl0om_-p97 "documentation" 275
+(name "documentation"
+)
+(value "user Id for current user. Used for access control, record of who creates and modifies objects, etc."
+)
+(uid "-yk94ms_p3u_evxsl0om_-p97"))
+($9 277 < z8kflu_15v_ewd8gvqb_-p95 "guid" 275
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-12-31-09:03:01_00011"
+)
+(uid "z8kflu_15v_ewd8gvqb_-p95"))
+($15 278 < -hkpzxr_v5_fa6lxl7o_-p98 "value_is_alphanumeric" 275
+(name "value_is_alphanumeric"
+)
+(uid "-hkpzxr_v5_fa6lxl7o_-p98")
+(body "code:python"
+"_"
+"isValid = frozenset('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789').issuperset(value)"
+"_"
+"code:java"
+"_"
+"value.matches(\"^[a-zA-Z0-9]*$\")"
+))
+($9 279 < -hkpzxr_v5_fa71dxny_-p98 "guid" 278
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-12-14-18:11:38_00001"
+)
+(uid "-hkpzxr_v5_fa71dxny_-p98"))
+($11 280 < -yk94ms_-9af_exohwvzk_-p98 "newGuid##Line" 266
+(name "newGuid"
+)
+(uid "-yk94ms_-9af_exohwvzk_-p98"))
+($12 281 < -yk94ms_-9af_exohwvzk_-p96 "result" 280
+(name "result"
+)
+(kind "return")
+(uid "-yk94ms_-9af_exohwvzk_-p96"))
+($9 282 < -yk94ms_-9af_exohwvzk_-p93 "guid" 281
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-02-02-11:21:42_00002"
+)
+(uid "-yk94ms_-9af_exohwvzk_-p93"))
+($9 283 < -yk94ms_-9af_exohwvzk_-p97 "documentation" 280
+(name "documentation"
+)
+(value "get new globally unique identifier"
+)
+(uid "-yk94ms_-9af_exohwvzk_-p97"))
+($9 284 < -yk94ms_-9af_exohwvzk_-p95 "opType" 280
+(name "opType"
+)
+(value "other"
+)
+(uid "-yk94ms_-9af_exohwvzk_-p95"))
+($9 285 < -yk94ms_-9af_exohwvzk_-p94 "code:python" 280
+(name "code:python"
+)
+(value "# NBNB HACK TBD"
+"# This is a weak GUID generator - should be replaced with a proper one"
+"# NB must be done by direct access"
+""
+"import time"
+"dataDict = self.__dict__"
+""
+"tt = time.time()"
+"timeStamp = ''.join((time.strftime(\"%Y-%m-%d-%H-%M-%S\", time.localtime(tt)), '-',  (\"%.3f\" % (tt%1))[2:]))"
+"if timeStamp == dataDict.get('_lastTimeStamp'):"
+"  serial = dataDict.get('_lastTimeSerial',0) + 1"
+"  dataDict['_lastTimeSerial'] = serial"
+"else:"
+"  dataDict['_lastTimeStamp'] = timeStamp"
+"  serial = dataDict['_lastTimeSerial'] = 1"
+"      "
+"result =  \"%s_%s_%s_%05d\" % (dataDict['name'], dataDict['currentUserId'], "
+"                               timeStamp, serial)"
+)
+(uid "-yk94ms_-9af_exohwvzk_-p94"))
+($9 286 < -yk94ms_-9af_exohwvzk_-p92 "guid" 280
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-02-02-11:21:42_00001"
+)
+(uid "-yk94ms_-9af_exohwvzk_-p92"))
+($9 287 < -hkpzxr_-iih_f5qjvgiy_-p91 "code:java" 280
+(name "code:java"
+)
+(value "java.lang.String sep = \"-\";"
+"java.util.Calendar calendar = java.util.Calendar.getInstance();"
+"java.lang.String timeStamp = java.lang.String.format(\"%02d%s%02d%s%02d%s%02d%s%02d%s%02d%s%03d\","
+"                    calendar.get(java.util.Calendar.YEAR), sep,"
+"                    calendar.get(java.util.Calendar.MONTH), sep,"
+"                    calendar.get(java.util.Calendar.DAY_OF_MONTH), sep,"
+"                    calendar.get(java.util.Calendar.HOUR_OF_DAY), sep,"
+"                    calendar.get(java.util.Calendar.MINUTE), sep,"
+"                    calendar.get(java.util.Calendar.SECOND), sep,"
+"                    calendar.get(java.util.Calendar.MILLISECOND));"
+""
+"java.lang.Integer serial;"
+"if (timeStamp.equals(_lastTimeStamp))"
+"{"
+"  _lastTimeSerial = serial = _lastTimeSerial + 1;"
+"}"
+"else"
+"{"
+"  _lastTimeStamp = timeStamp;"
+"  _lastTimeSerial = serial = 1;"
+"}"
+""
+"java.lang.String sep2 = \"_\";"
+"result = java.lang.String.format(\"%s%s%s%s%s%s%05d\","
+"                    getName(), sep2,"
+"                    getCurrentUserId(), sep2,"
+"                    timeStamp, sep2,"
+"                    serial);"
+)
+(uid "-hkpzxr_-iih_f5qjvgiy_-p91"))
+($11 288 < z8kflu_-hpq_f0w65k7d_-p92 "getPackageLocator" 266
+(name "getPackageLocator"
+)
+(uid "z8kflu_-hpq_f0w65k7d_-p92")
+(isQuery true))
+($9 289 < z8kflu_-hpq_f0w65k7d_-p91 "documentation" 288
+(name "documentation"
+)
+(value "getter for derived link packageLocator"
+)
+(uid "z8kflu_-hpq_f0w65k7d_-p91"))
+($9 290 < z8kflu_-hpq_f0w65k7d_-p90 "opType" 288
+(name "opType"
+)
+(value "get"
+)
+(uid "z8kflu_-hpq_f0w65k7d_-p90"))
+($9 291 < z8kflu_-hpq_f0w65k7d_-p8z "code:python" 288
+(name "code:python"
+)
+(value "ff = self.findFirstPackageLocator"
+"result = ff(targetName=self.packageName) or ff(targetName='any')"
+)
+(uid "z8kflu_-hpq_f0w65k7d_-p8z"))
+($9 292 < z8kflu_-hpq_f0w65k7d_-p8y "code:java" 288
+(name "code:java"
+)
+(value "result = findFirstPackageLocator(\"targetName\", getPackageName());"
+"if (result == null)"
+"  result = findFirstPackageLocator(\"targetName\", \"any\");"
+)
+(uid "z8kflu_-hpq_f0w65k7d_-p8y"))
+($9 293 < z8kflu_-hpq_f0w65k7d_-p81 "guid" 288
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-24-13:22:35_00002"
+)
+(uid "z8kflu_-hpq_f0w65k7d_-p81"))
+($8 294 < z8kfsx_-fvi_fyk75s09_-p96 "currentGroupName" 266
+(initialValue "user"
+)
+(name "currentGroupName"
+)
+(uid "z8kfsx_-fvi_fyk75s09_-p96")
+(multiplicity "1"))
+($9 295 < z8kfsx_-fvi_fyk75s09_-p95 "documentation" 294
+(name "documentation"
+)
+(value "name of current group. Used for access control, record of who creates and modifies objects, etc."
+)
+(uid "z8kfsx_-fvi_fyk75s09_-p95"))
+($9 296 < z8kfsx_-fvi_fyk75s09_-p8q "guid" 294
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-08-19-17:31:11_00003"
+)
+(uid "z8kfsx_-fvi_fyk75s09_-p8q"))
+($8 297 < z8kfsx_-fvi_fyk75s09_-p98 "accessControlOn" 266
+(initialValue "False"
+)
+(name "accessControlOn"
+)
+(uid "z8kfsx_-fvi_fyk75s09_-p98")
+(multiplicity "1"))
+($9 298 < z8kfsx_-fvi_fyk75s09_-p97 "documentation" 297
+(name "documentation"
+)
+(value "Is access control active?"
+)
+(uid "z8kfsx_-fvi_fyk75s09_-p97"))
+($9 299 < z8kfsx_-fvi_fyk75s09_-p8p "guid" 297
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-08-19-17:31:11_00004"
+)
+(uid "z8kfsx_-fvi_fyk75s09_-p8p"))
+($10 300 < -yk94ms_-e3s_e41656c6_-guu "#<anon> (MemopsRoot, FileStorageObject)" 266
+(uid "-yk94ms_-e3s_e41656c6_-guu"))
+($13 301 < 0_om1_erq4w1i4_-p40 "#<anon> (MemopsRoot, Taxonomy)##,taxonomies" 266
+(name "")
+(uid "0_om1_erq4w1i4_-p40"))
+($14 302 < 0_om1_erq4w1i4_-p3t "#0" 301
+(changeability "frozen")
+(aggregation "composite")
+(uid "0_om1_erq4w1i4_-p3t")
+(multiplicity "1"))
+($9 303 < 0_om1_erq4w1i4_-p0p "guid" 302
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-05-12:55:48_00001"
+)
+(uid "0_om1_erq4w1i4_-p0p"))
+($14 304 < 0_om1_erq4w1i4_-p3s "taxonomies#1" 301
+(name "taxonomies"
+)
+(uid "0_om1_erq4w1i4_-p3s")
+(multiplicity "*"))
+($9 305 < 0_om1_erq4w1i4_-p3r "baseName" 304
+(name "baseName"
+)
+(value "taxonomy"
+)
+(uid "0_om1_erq4w1i4_-p3r"))
+($9 306 < 0_om1_erq4w1i4_-p0o "guid" 304
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-05-12:55:49_00001"
+)
+(uid "0_om1_erq4w1i4_-p0o"))
+($13 307 < -yk94ms_6e6_esadgnst_-p98 "#<anon> (MemopsRoot, PackageLocator)##," 266
+(name "")
+(uid "-yk94ms_6e6_esadgnst_-p98"))
+($14 308 < -yk94ms_6e6_esadgnst_-p96 "#0" 307
+(changeability "frozen")
+(aggregation "composite")
+(uid "-yk94ms_6e6_esadgnst_-p96")
+(multiplicity "1"))
+($9 309 < -yk94ms_63g_esbj9d1i_-p97 "guid" 308
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-20-10:48:39_00001"
+)
+(uid "-yk94ms_63g_esbj9d1i_-p97"))
+($14 310 < -yk94ms_6e6_esadgnst_-p95 "#1" 307
+(uid "-yk94ms_6e6_esadgnst_-p95")
+(multiplicity "*"))
+($9 311 < -yk94ms_63g_esbj9d1i_-p96 "guid" 310
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-20-10:48:39_00002"
+)
+(uid "-yk94ms_63g_esbj9d1i_-p96"))
+($13 312 < -yk94ms_6e6_esadgnst_-p97 "#<anon> (MemopsRoot, Repository)##,repositories" 266
+(name "")
+(uid "-yk94ms_6e6_esadgnst_-p97"))
+($14 313 < -yk94ms_6e6_esadgnst_-p94 "#0" 312
+(changeability "frozen")
+(aggregation "composite")
+(uid "-yk94ms_6e6_esadgnst_-p94")
+(multiplicity "1"))
+($9 314 < -yk94ms_63g_esbj9d1i_-p95 "guid" 313
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-20-10:48:39_00003"
+)
+(uid "-yk94ms_63g_esbj9d1i_-p95"))
+($14 315 < -yk94ms_6e6_esadgnst_-p93 "repositories#1" 312
+(name "repositories"
+)
+(uid "-yk94ms_6e6_esadgnst_-p93")
+(multiplicity "*"))
+($9 316 < -yk94ms_6e6_esadgnst_-p92 "baseName" 315
+(name "baseName"
+)
+(value "repository"
+)
+(uid "-yk94ms_6e6_esadgnst_-p92"))
+($9 317 < -yk94ms_63g_esbj9d1i_-p98 "guid" 315
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-20-10:48:39_00004"
+)
+(uid "-yk94ms_63g_esbj9d1i_-p98"))
+($10 318 < -yk94ms_6e6_evpe4fus_-p8t "#<anon> (MemopsRoot, ImplementationObject)" 266
+(uid "-yk94ms_6e6_evpe4fus_-p8t"))
+($10 319 < -yk94ms_6e6_evpe4fus_-p8g "#<anon> (MemopsRoot, DbMemopsRoot)" 266
+(uid "-yk94ms_6e6_evpe4fus_-p8g"))
+($10 320 < -yk94ms_6e6_evpe4fus_-p8f "#<anon> (MemopsRoot, FileMemopsRoot)" 266
+(uid "-yk94ms_6e6_evpe4fus_-p8f"))
+($13 321 < -yk94ms_-9af_exn8m9i4_-p95 "#<anon> (MemopsRoot, TopObject)##," 266
+(name "")
+(uid "-yk94ms_-9af_exn8m9i4_-p95"))
+($14 322 < -yk94ms_-9af_exn8m9i4_-p94 "#0" 321
+(uid "-yk94ms_-9af_exn8m9i4_-p94")
+(isNavigable false))
+($14 323 < -yk94ms_-9af_exn8m9i4_-p93 "#1" 321
+(changeability "frozen")
+(uid "-yk94ms_-9af_exn8m9i4_-p93")
+(multiplicity "*"))
+($9 324 < -yk94ms_-9af_exn8m9i4_-p91 "documentation" 323
+(name "documentation"
+)
+(value "All TopObjects of whatever kind (not including MemopsRoot)"
+)
+(uid "-yk94ms_-9af_exn8m9i4_-p91"))
+($9 325 < -yk94ms_-9af_exn8m9i4_-p8y "guid" 323
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-02-01-17:10:13_00001"
+)
+(uid "-yk94ms_-9af_exn8m9i4_-p8y"))
+($9 326 < -yk94ms_-9af_exn8m9i4_-p92 "isImplementation" 321
+(name "isImplementation"
+)
+(value "True"
+)
+(uid "-yk94ms_-9af_exn8m9i4_-p92"))
+($13 327 < z8kflu_-hpq_f0w65k7d_-p98 "#<anon> (MemopsRoot, PackageLocator)##," 266
+(name "")
+(uid "z8kflu_-hpq_f0w65k7d_-p98"))
+($14 328 < z8kflu_-hpq_f0w65k7d_-p97 "#0" 327
+(uid "z8kflu_-hpq_f0w65k7d_-p97")
+(isNavigable false))
+($14 329 < z8kflu_-hpq_f0w65k7d_-p96 "#1" 327
+(changeability "frozen")
+(uid "z8kflu_-hpq_f0w65k7d_-p96")
+(multiplicity "1"))
+($9 330 < z8kflu_-hpq_f0w65k7d_-p94 "documentation" 329
+(name "documentation"
+)
+(value "Package locator relevant for MemopsRoot"
+)
+(uid "z8kflu_-hpq_f0w65k7d_-p94"))
+($9 331 < z8kflu_-hpq_f0w65k7d_-p80 "guid" 329
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-24-13:22:35_00001"
+)
+(uid "z8kflu_-hpq_f0w65k7d_-p80"))
+($9 332 < z8kflu_-hpq_f0w65k7d_-p95 "isDerived" 327
+(name "isDerived"
+)
+(value "True"
+)
+(uid "z8kflu_-hpq_f0w65k7d_-p95"))
+($13 333 < -hkpzxr_-li2_f6q4mkqb_-p8w "#<anon> (MemopsRoot, TopObject)##," 266
+(name "")
+(uid "-hkpzxr_-li2_f6q4mkqb_-p8w")
+(isAbstract true))
+($14 334 < -hkpzxr_-li2_f6q4mkqb_-p8u "#0" 333
+(changeability "frozen")
+(aggregation "composite")
+(uid "-hkpzxr_-li2_f6q4mkqb_-p8u")
+(multiplicity "1"))
+($9 335 < -hkpzxr_-li2_f6q4mkqb_-p8r "guid" 334
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-09-18-10:10:44_00001"
+)
+(uid "-hkpzxr_-li2_f6q4mkqb_-p8r"))
+($14 336 < -hkpzxr_-li2_f6q4mkqb_-p8t "#1" 333
+(uid "-hkpzxr_-li2_f6q4mkqb_-p8t")
+(isNavigable false))
+($13 337 < z8kfsx_-fvi_fqjirlib_-p8w "#<anon> (MemopsRoot, WmsSegment)##," 266
+(name "")
+(uid "z8kfsx_-fvi_fqjirlib_-p8w"))
+($14 338 < z8kfsx_-fvi_fqjirlib_-p8v "#0" 337
+(changeability "frozen")
+(aggregation "composite")
+(uid "z8kfsx_-fvi_fqjirlib_-p8v")
+(multiplicity "1"))
+($9 339 < z8kfsx_-fvi_fqjirlib_-p5m "guid" 338
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:54_00001"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p5m"))
+($14 340 < z8kfsx_-fvi_fqjirlib_-p8u "#1" 337
+(uid "z8kfsx_-fvi_fqjirlib_-p8u")
+(multiplicity "*"))
+($9 341 < z8kfsx_-fvi_fqjirlib_-p5l "guid" 340
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-29-15:16:54_00002"
+)
+(uid "z8kfsx_-fvi_fqjirlib_-p5l"))
+($13 342 < z8kfsx_-o65_ftli6gtq_-p8x "#<anon> (MemopsRoot, NmrCalcStore)##," 266
+(name "")
+(uid "z8kfsx_-o65_ftli6gtq_-p8x"))
+($14 343 < z8kfsx_-o65_ftli6gtq_-p8v "#0" 342
+(changeability "frozen")
+(aggregation "composite")
+(uid "z8kfsx_-o65_ftli6gtq_-p8v")
+(multiplicity "1"))
+($9 344 < z8kfsx_-o65_ftli6gtq_-ozy "guid" 343
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-04-16-16:24:00_00001"
+)
+(uid "z8kfsx_-o65_ftli6gtq_-ozy"))
+($14 345 < z8kfsx_-o65_ftli6gtq_-p8u "#1" 342
+(uid "z8kfsx_-o65_ftli6gtq_-p8u")
+(multiplicity "*"))
+($9 346 < z8kfsx_-o65_ftli6gtq_-ozx "guid" 345
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-04-16-16:24:00_00002"
+)
+(uid "z8kfsx_-o65_ftli6gtq_-ozx"))
+($13 347 < z8kfsx_fb8_g1xcbxen_-p8x "#<anon> (MemopsRoot, NmrScreenStore)##," 266
+(name "")
+(uid "z8kfsx_fb8_g1xcbxen_-p8x"))
+($14 348 < z8kfsx_fb8_g1xcbxen_-p8w "#0" 347
+(changeability "frozen")
+(aggregation "composite")
+(uid "z8kfsx_fb8_g1xcbxen_-p8w")
+(multiplicity "1"))
+($9 349 < z8kfsx_-fvi_g27mpo1g_-p6o "guid" 348
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-11-19-14:50:34_00001"
+)
+(uid "z8kfsx_-fvi_g27mpo1g_-p6o"))
+($14 350 < z8kfsx_fb8_g1xcbxen_-p8v "#1" 347
+(uid "z8kfsx_fb8_g1xcbxen_-p8v")
+(multiplicity "*"))
+($9 351 < z8kfsx_-fvi_g27mpo1g_-p6n "guid" 350
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-11-19-14:50:34_00002"
+)
+(uid "z8kfsx_-fvi_g27mpo1g_-p6n"))
+($13 352 < z8kfsx_-9el_g8u3kgqo_-p6t "#<anon> (MemopsRoot, WmsProtocol)##," 266
+(name "")
+(uid "z8kfsx_-9el_g8u3kgqo_-p6t"))
+($14 353 < z8kfsx_-9el_g8u3kgqo_-p6s "#0" 352
+(changeability "frozen")
+(aggregation "composite")
+(uid "z8kfsx_-9el_g8u3kgqo_-p6s")
+(multiplicity "1"))
+($9 354 < z8kfsx_-fvi_g8vcq3f8_-ozx "guid" 353
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-13:30:17_00061"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-ozx"))
+($14 355 < z8kfsx_-9el_g8u3kgqo_-p6r "#1" 352
+(uid "z8kfsx_-9el_g8u3kgqo_-p6r")
+(multiplicity "*"))
+($9 356 < z8kfsx_-fvi_g8vcq3f8_-ozw "guid" 355
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-13:30:17_00062"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-ozw"))
+($13 357 < z8kfsx_-9el_g8u3kgqo_-p5d "#<anon> (MemopsRoot, WmsQueryStore)##," 266
+(name "")
+(uid "z8kfsx_-9el_g8u3kgqo_-p5d"))
+($14 358 < z8kfsx_-9el_g8u3kgqo_-p5c "#0" 357
+(changeability "frozen")
+(aggregation "composite")
+(uid "z8kfsx_-9el_g8u3kgqo_-p5c")
+(multiplicity "1"))
+($9 359 < z8kfsx_-fvi_g8vcq3f8_-ozv "guid" 358
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-13:30:17_00063"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-ozv"))
+($14 360 < z8kfsx_-9el_g8u3kgqo_-p5b "#1" 357
+(uid "z8kfsx_-9el_g8u3kgqo_-p5b")
+(multiplicity "*"))
+($9 361 < z8kfsx_-fvi_g8vcq3f8_-ozu "guid" 360
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-06-13:30:17_00064"
+)
+(uid "z8kfsx_-fvi_g8vcq3f8_-ozu"))
+($13 362 < z8kfsx_-gyy_gvksmz4u_-p66 "#<anon> (MemopsRoot, AnalysisWindowStore)##," 266
+(name "")
+(uid "z8kfsx_-gyy_gvksmz4u_-p66"))
+($14 363 < z8kfsx_-gyy_gvksmz4u_-p65 "#0" 362
+(changeability "frozen")
+(aggregation "composite")
+(uid "z8kfsx_-gyy_gvksmz4u_-p65")
+(multiplicity "1"))
+($9 364 < z8kfsx_-gyy_gvm5mpjs_-ozp "guid" 363
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-11-30-11:04:35_00007"
+)
+(uid "z8kfsx_-gyy_gvm5mpjs_-ozp"))
+($14 365 < z8kfsx_-gyy_gvksmz4u_-p64 "#1" 362
+(uid "z8kfsx_-gyy_gvksmz4u_-p64")
+(multiplicity "*"))
+($9 366 < z8kfsx_-gyy_gvm5mpjs_-ozo "guid" 365
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-11-30-11:04:35_00008"
+)
+(uid "z8kfsx_-gyy_gvm5mpjs_-ozo"))
+($13 367 < z8kfsx_-gyy_gvksmz4u_-p63 "#<anon> (MemopsRoot, AnalysisProjectV3)##," 266
+(name "")
+(uid "z8kfsx_-gyy_gvksmz4u_-p63"))
+($14 368 < z8kfsx_-gyy_gvksmz4u_-p62 "#0" 367
+(changeability "frozen")
+(aggregation "composite")
+(uid "z8kfsx_-gyy_gvksmz4u_-p62")
+(multiplicity "1"))
+($9 369 < z8kfsx_-gyy_gvm5mpjs_-ozn "guid" 368
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-11-30-11:04:35_00009"
+)
+(uid "z8kfsx_-gyy_gvm5mpjs_-ozn"))
+($14 370 < z8kfsx_-gyy_gvksmz4u_-p61 "#1" 367
+(uid "z8kfsx_-gyy_gvksmz4u_-p61")
+(multiplicity "*"))
+($9 371 < z8kfsx_-gyy_gvm5mpjs_-ozm "guid" 370
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-11-30-11:04:35_00010"
+)
+(uid "z8kfsx_-gyy_gvm5mpjs_-ozm"))
+($13 372 < z8kfsx_-gyy_gvksmz4u_-p60 "#<anon> (MemopsRoot, Layout)##," 266
+(name "")
+(uid "z8kfsx_-gyy_gvksmz4u_-p60"))
+($14 373 < z8kfsx_-gyy_gvksmz4u_-p5z "#0" 372
+(changeability "frozen")
+(aggregation "composite")
+(uid "z8kfsx_-gyy_gvksmz4u_-p5z")
+(multiplicity "1"))
+($9 374 < z8kfsx_-gyy_gvm5mpjs_-ozl "guid" 373
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-11-30-11:04:35_00011"
+)
+(uid "z8kfsx_-gyy_gvm5mpjs_-ozl"))
+($14 375 < z8kfsx_-gyy_gvksmz4u_-p5y "#1" 372
+(uid "z8kfsx_-gyy_gvksmz4u_-p5y")
+(multiplicity "*"))
+($9 376 < z8kfsx_-gyy_gvm5mpjs_-ozk "guid" 375
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-11-30-11:04:35_00012"
+)
+(uid "z8kfsx_-gyy_gvm5mpjs_-ozk"))
+($9 377 < -yk94ms_-e3s_e41656c6_-gs6 "documentation" 266
+(name "documentation"
+)
+(value "Unique root class, located at the top of the parent-child tree of objects. The  attributes adn operations are different in the File and Db Implementations"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gs6"))
+($9 378 < -yk94ms_15v_eqxp59vz_-ovj "guid" 266
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00047"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ovj"))
+($9 379 < -yk94ms_85r_eucih6gm_-p98 "partitionsChildren" 266
+(name "partitionsChildren"
+)
+(value "True"
+)
+(uid "-yk94ms_85r_eucih6gm_-p98"))
+($15 380 < -yk94ms_-9af_f0usjrcv_-p98 "must_have_default_packageLocator" 266
+(name "must_have_default_packageLocator"
+)
+(uid "-yk94ms_-9af_f0usjrcv_-p98")
+(body "code:python"
+"_"
+"self.findFirstPackageLocator(targetName='any') is not None"
+"_"
+"code:java"
+"_"
+"findFirstPackageLocator(\"targetName\", \"any\") != null"
+))
+($9 381 < -yk94ms_-9af_f0usjrcv_-p8z "guid" 380
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-23-15:11:22_00001"
+)
+(uid "-yk94ms_-9af_f0usjrcv_-p8z"))
+($7 382 < -yk94ms_-e3s_e41656c6_-gs1 "FileStorageObject" 1
+(name "FileStorageObject"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gs1")
+(isAbstract true))
+($8 383 < -yk94ms_-e3s_e41656c6_-grt "isLoaded" 382
+(changeability "frozen")
+(name "isLoaded"
+)
+(uid "-yk94ms_-e3s_e41656c6_-grt")
+(multiplicity "1"))
+($9 384 < -yk94ms_-e3s_e41656c6_-grs "isImplementation" 383
+(name "isImplementation"
+)
+(value "True"
+)
+(uid "-yk94ms_-e3s_e41656c6_-grs"))
+($9 385 < -yk94ms_-e3s_e41656c6_-grr "documentation" 383
+(name "documentation"
+)
+(value "Implementation attribute, set automatically. True if the data in the Storage are loaded into memory. As data are loaded automatically, this attribute should be of interest only for the implementation."
+)
+(uid "-yk94ms_-e3s_e41656c6_-grr"))
+($9 386 < -yk94ms_85r_eqz4zfps_-p5b "guid" 383
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-17-14:16:26_00006"
+)
+(uid "-yk94ms_85r_eqz4zfps_-p5b"))
+($8 387 < -yk94ms_-e3s_e41656c6_-grq "isModified" 382
+(changeability "frozen")
+(name "isModified"
+)
+(uid "-yk94ms_-e3s_e41656c6_-grq")
+(multiplicity "1"))
+($9 388 < -yk94ms_-e3s_e41656c6_-grp "isImplementation" 387
+(name "isImplementation"
+)
+(value "True"
+)
+(uid "-yk94ms_-e3s_e41656c6_-grp"))
+($9 389 < -yk94ms_-e3s_e41656c6_-gro "documentation" 387
+(name "documentation"
+)
+(value "Implementation attribute. True if the data corresponding to the Storage have been modified since being loaded. Serves to indicate which data need to be saved."
+)
+(uid "-yk94ms_-e3s_e41656c6_-gro"))
+($9 390 < -yk94ms_85r_eqz4zfps_-p5a "guid" 387
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-17-14:16:26_00007"
+)
+(uid "-yk94ms_85r_eqz4zfps_-p5a"))
+($11 391 < -yk94ms_-e3s_e41656c6_-gqo "setIsModifiable" 382
+(name "setIsModifiable"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gqo"))
+($9 392 < -yk94ms_-e3s_e41656c6_-gqm "opType" 391
+(name "opType"
+)
+(value "set"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gqm"))
+($9 393 < -yk94ms_-e3s_e41656c6_-gqk "documentation" 391
+(name "documentation"
+)
+(value "Special setter for isModifiable. Sets lastUnlockedBy"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gqk"))
+($9 394 < -yk94ms_85r_eqz4zfps_-p4x "guid" 391
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-17-14:16:26_00019"
+)
+(uid "-yk94ms_85r_eqz4zfps_-p4x"))
+($9 395 < -yk94ms_63g_es3fm25t_-p7x "code:java" 391
+(name "code:java"
+)
+(value "// NB must be done by direct access"
+"if (getIsModified())"
+"  throw new memops.general.ApiException(\"Modified and unsaved Storage can not be set to non-modifiable\");"
+""
+"if (value)"
+"  _lastUnlockedBy = getRoot().getCurrentUserId();"
+""
+"_isModifiable = value;"
+)
+(uid "-yk94ms_63g_es3fm25t_-p7x"))
+($9 396 < -yk94ms_63g_es3fm25t_-p7w "code:python" 391
+(name "code:python"
+)
+(value "# NB must be done by direct access"
+"if self.isModified:"
+"  raise ApiError(\"Modified and unsaved Storage can not be set to non-modifiable\")"
+""
+"if value:"
+"  dataDict['lastUnlockedBy'] = self.root.currentUserId"
+""
+"dataDict['isModifiable'] = bool(value)"
+)
+(uid "-yk94ms_63g_es3fm25t_-p7w"))
+($11 397 < -yk94ms_-e3s_e41656c6_-gqv "touch" 382
+(name "touch"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gqv"))
+($9 398 < -yk94ms_-e3s_e41656c6_-gqu "documentation" 397
+(name "documentation"
+)
+(value "Set storage.isModified to True, so that the storage is saved at the next saveModified command. Fails if the storage is not loaded or not modifiable."
+)
+(uid "-yk94ms_-e3s_e41656c6_-gqu"))
+($9 399 < -yk94ms_-e3s_e41656c6_-gqt "opType" 397
+(name "opType"
+)
+(value "other"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gqt"))
+($9 400 < -yk94ms_85r_eqz4zfps_-p50 "guid" 397
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-17-14:16:26_00018"
+)
+(uid "-yk94ms_85r_eqz4zfps_-p50"))
+($9 401 < -yk94ms_63g_es3fm25t_-p7q "code:java" 397
+(name "code:java"
+)
+(value "// NB must be done by direct access"
+"if (!getIsLoaded())"
+"  throw new memops.general.ApiException(\"Attempt to touch non-loaded \" + getPackageName() + \" topObject\");"
+""
+"if (!getIsModifiable())"
+"  throw new memops.general.ApiException(\"Attempt to touch non-modifiable \" + getPackageName() + \" topObject\");"
+""
+"_isModified = true;"
+)
+(uid "-yk94ms_63g_es3fm25t_-p7q"))
+($9 402 < -yk94ms_63g_es3fm25t_-p7p "code:python" 397
+(name "code:python"
+)
+(value "# NB must be done by direct access"
+"if not self.isLoaded:"
+"  raise ApiError(\"Attempt to touch non-loaded TopObject %s\" % self)"
+""
+"if not self.isModifiable:"
+"  raise ApiError(\"Attempt to touch non-modifiable TopObject %s\" % self)"
+""
+"dataDict['isModified'] = True"
+)
+(uid "-yk94ms_63g_es3fm25t_-p7p"))
+($11 403 < z8kflu_jd_f0tizbxc_-p79 "saveTo#Repository" 382
+(name "saveTo"
+)
+(uid "z8kflu_jd_f0tizbxc_-p79"))
+($12 404 < z8kflu_jd_f0tizbxc_-p6x "repository" 403
+(name "repository"
+)
+(uid "z8kflu_jd_f0tizbxc_-p6x"))
+($9 405 < z8kflu_jd_f0tizbxc_-p6w "documentation" 404
+(name "documentation"
+)
+(value "Repository to save to"
+)
+(uid "z8kflu_jd_f0tizbxc_-p6w"))
+($9 406 < -yk94ms_-9af_f0usjrcv_-p8v "guid" 404
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-23-15:11:29_00008"
+)
+(uid "-yk94ms_-9af_f0usjrcv_-p8v"))
+($9 407 < z8kflu_jd_f0tizbxc_-p78 "documentation" 403
+(name "documentation"
+)
+(value "Save topObject to specified repository"
+)
+(uid "z8kflu_jd_f0tizbxc_-p78"))
+($9 408 < z8kflu_jd_f0tizbxc_-p77 "opType" 403
+(name "opType"
+)
+(value "other"
+)
+(uid "z8kflu_jd_f0tizbxc_-p77"))
+($9 409 < z8kflu_jd_f0tizbxc_-p73 "code:java" 403
+(name "code:java"
+)
+(value "// NB must be done by direct access"
+"if (!getIsLoaded() || getInConstructor() || getIsReading())"
+"  throw new memops.general.ApiException(\"WARNING \" + this + \": cannot be saved while isLoaded = \" + getIsLoaded() + \", inConstructor = \" + getInConstructor() + \", isReading = \" + getIsReading());"
+""
+"if (\"xml\".equals(repository.getFormat()) && \"file\".equals(repository.getUrl().getProtocol())) {"
+"  // must be done before saving"
+"  java.util.List<? extends memops.api.Implementation.Repository> activeRepositories = getActiveRepositories();"
+""
+"  memops.format.xml.Io.save(repository.getUrl().getDataLocation(), this);"
+""
+"  if (!activeRepositories.contains(repository)) {"
+"    java.util.List<memops.api.Implementation.Repository> ll = new java.util.ArrayList<memops.api.Implementation.Repository>();"
+"    for (memops.api.Implementation.Repository x: getPackageLocator().getRepositories()) {"
+"      if ((x == repository) || activeRepositories.contains(x))"
+"        ll.add(x);"
+"    }"
+"  }"
+"} else {"
+"  throw new memops.general.ApiException(repository + \": format \" + repository.getFormat() + \", protocol \" + repository.getUrl().getProtocol() + \", not supported\");"
+"}"
+)
+(uid "z8kflu_jd_f0tizbxc_-p73"))
+($9 410 < z8kflu_jd_f0tizbxc_-p72 "code:python" 403
+(name "code:python"
+)
+(value "# NB must be done by direct access"
+"if not self.isLoaded or self.inConstructor or self.isReading:"
+"  raise ApiError(\"%s: cannot be saved while isLoaded:%s, inConstructor:%s, isReading:%s\""
+"                       % (self, self.isLoaded, self.inConstructor, self.isReading))"
+""
+"if repository.format == 'xml' and repository.url.protocol == 'file':"
+"  "
+"  # must be done before saving"
+"  activeRepositories = self.activeRepositories"
+""
+"  from memops.format.xml import XmlIO"
+"  XmlIO.save(repository.url.getDataLocation(), self)"
+""
+"  if repository not in activeRepositories:"
+"    aSet = set(activeRepositories)"
+"    aSet.add(repository)"
+"    dataDict['activeRepositories'][:] = (x for x in self.packageLocator.repositories if x in aSet)"
+""
+"else:"
+"  raise ApiError(\" format %s, protocol %s not supported\""
+"                       % (repository.format, repository.url.protocol))"
+)
+(uid "z8kflu_jd_f0tizbxc_-p72"))
+($9 411 < -yk94ms_-9af_f0usjrcv_-p8u "guid" 403
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-23-15:11:29_00007"
+)
+(uid "-yk94ms_-9af_f0usjrcv_-p8u"))
+($11 412 < -yk94ms_-9af_f0usjrcv_-p97 "removeFrom#Repository" 382
+(name "removeFrom"
+)
+(uid "-yk94ms_-9af_f0usjrcv_-p97")
+(isQuery true))
+($12 413 < -yk94ms_-9af_f0usjrcv_-p92 "repository" 412
+(name "repository"
+)
+(uid "-yk94ms_-9af_f0usjrcv_-p92"))
+($9 414 < -yk94ms_-9af_f0usjrcv_-p91 "documentation" 413
+(name "documentation"
+)
+(value "repository to remove data from"
+)
+(uid "-yk94ms_-9af_f0usjrcv_-p91"))
+($9 415 < -yk94ms_-9af_f0usjrcv_-p8k "guid" 413
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-23-16:25:49_00002"
+)
+(uid "-yk94ms_-9af_f0usjrcv_-p8k"))
+($9 416 < -yk94ms_-9af_f0usjrcv_-p96 "documentation" 412
+(name "documentation"
+)
+(value "Remove data from specified repository. Will remove from disk. NB This operation is marked as a query because this means it may be executed on a deleted object. It does have the lasting side effect of changing the contents of the repository."
+)
+(uid "-yk94ms_-9af_f0usjrcv_-p96"))
+($9 417 < -yk94ms_-9af_f0usjrcv_-p95 "opType" 412
+(name "opType"
+)
+(value "other"
+)
+(uid "-yk94ms_-9af_f0usjrcv_-p95"))
+($9 418 < -yk94ms_-9af_f0usjrcv_-p94 "code:java" 412
+(name "code:java"
+)
+(value "// NB must be done by direct access"
+"java.util.List<? extends memops.api.Implementation.Repository> activeRepositories = getActiveRepositories();"
+"if (activeRepositories.contains(repository) && (activeRepositories.size() <= 1) && !getIsDeleted())"
+"  throw new memops.general.ApiException(this + \": cannot remove TopObject from last repository \" + repository);"
+""
+"java.lang.String fileLocation = memops.format.xml.Util.findTopObjectPath(repository.getUrl().getDataLocation(), this);"
+"java.io.File file = new java.io.File(fileLocation);"
+"if (!file.delete()) {"
+"  System.out.println(this + \": could not remove '\" + fileLocation + \"'\");"
+"  throw new memops.general.ApiException(this + \": could not remove '\" + fileLocation + \"'\");"
+"}"
+""
+"if (activeRepositories.contains(repository)) {"
+"  if (repository == activeRepositories.get(0))"
+"    _isModified = true;"
+"  _activeRepositories.remove(repository);"
+"}"
+)
+(uid "-yk94ms_-9af_f0usjrcv_-p94"))
+($9 419 < -yk94ms_-9af_f0usjrcv_-p93 "code:python" 412
+(name "code:python"
+)
+(value "# NB must be done by direct access"
+"activeRepositories = self.activeRepositories"
+"if (repository in activeRepositories and len(activeRepositories) <= 1"
+"    and not self.isDeleted):"
+"    raise ApiError(\"%s: cannot remove TopObject from last repository %s\" % (self, repository))"
+""
+"from memops.format.xml import Util as xmlUtil"
+"fileLocation = xmlUtil.findTopObjectPath(repository.url.getDataLocation(), self)"
+"import os"
+"try:"
+"  os.remove(fileLocation)"
+"except:"
+"  print (\"%s: could not remove %s\" % (self, fileLocation))"
+"  raise"
+""
+"if repository in activeRepositories:"
+"  if repository is activeRepositories[0]:"
+"    self.__dict__['isModified'] = True"
+"  dataDict['activeRepositories'].remove(repository)"
+)
+(uid "-yk94ms_-9af_f0usjrcv_-p93"))
+($9 420 < -yk94ms_-9af_f0usjrcv_-p8j "guid" 412
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-23-16:25:49_00001"
+)
+(uid "-yk94ms_-9af_f0usjrcv_-p8j"))
+($11 421 < -yk94ms_-e3s_e41656c6_-gr5 "save" 382
+(name "save"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gr5"))
+($9 422 < -yk94ms_-e3s_e41656c6_-gr4 "documentation" 421
+(name "documentation"
+)
+(value "Save data corresponding to TopObject"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gr4"))
+($9 423 < -yk94ms_-e3s_e41656c6_-gr3 "opType" 421
+(name "opType"
+)
+(value "other"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gr3"))
+($9 424 < -yk94ms_85r_eqz4zfps_-p53 "guid" 421
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-17-14:16:26_00017"
+)
+(uid "-yk94ms_85r_eqz4zfps_-p53"))
+($9 425 < -yk94ms_63g_es3fm25t_-p7v "code:java" 421
+(name "code:java"
+)
+(value "// NB must be done by direct access"
+"java.util.List<? extends memops.api.Implementation.Repository> repositories = getActiveRepositories();"
+"if (!repositories.isEmpty()) {"
+"  saveTo(repositories.get(0));"
+"} else {"
+"   memops.api.Implementation.Repository newRepository = getPackageLocator().findFirstRepository();"
+"  saveTo(newRepository);"
+"}"
+)
+(uid "-yk94ms_63g_es3fm25t_-p7v"))
+($9 426 < -yk94ms_63g_es3fm25t_-p7u "code:python" 421
+(name "code:python"
+)
+(value "# NB must be done by direct access"
+"repositories = self.activeRepositories"
+"if repositories:"
+"  repository = repositories[0]"
+"else:"
+"  repository = self.packageLocator.findFirstRepository()"
+"self.saveTo(repository)"
+"dataDict['isModified'] = False"
+)
+(uid "-yk94ms_63g_es3fm25t_-p7u"))
+($8 427 < -yk94ms_-e3s_e41656c6_-gr0 "isReading" 382
+(changeability "frozen")
+(name "isReading"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gr0")
+(multiplicity "1"))
+($9 428 < -yk94ms_-e3s_e41656c6_-gqz "isImplementation" 427
+(name "isImplementation"
+)
+(value "True"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gqz"))
+($9 429 < -yk94ms_-e3s_e41656c6_-gqy "documentation" 427
+(name "documentation"
+)
+(value "Implementation attribute, set automatically. True if the data corresponding to the Storage are in the process of being read. As data loading is handled automatically, this attribute should be relevant only for the implementation, or possibly for programmers of multithreaded programs. Serves to suppress notifiers and validity checking during reading. Note that objects are not valid until the data loading is completed."
+)
+(uid "-yk94ms_-e3s_e41656c6_-gqy"))
+($9 430 < -yk94ms_85r_eqz4zfps_-p52 "guid" 427
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-17-14:16:26_00008"
+)
+(uid "-yk94ms_85r_eqz4zfps_-p52"))
+($8 431 < -yk94ms_-e3s_e41656c6_-gqq "isModifiable" 382
+(initialValue "True"
+)
+(name "isModifiable"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gqq")
+(multiplicity "1"))
+($9 432 < -yk94ms_-e3s_e41656c6_-gqp "documentation" 431
+(name "documentation"
+)
+(value "True if the data corresponding to the storage may be modified. If isModifiable is false for a given package, attemps to modify the data will raise an error. Note that isModifiable can be set to true even if the corresponding file is read-only. "
+""
+"For a Project, this atribute defines whether the Implementation package (not the entire project contents) can be modified. If the Implementation package is Read-Only, this will prohibit many changes in the other packages as well."
+""
+"This parameter can be freely modified by users, so it is not a security feature, but rather a protection against accidental changes. "
+)
+(uid "-yk94ms_-e3s_e41656c6_-gqp"))
+($9 433 < -yk94ms_85r_eqz4zfps_-p4z "guid" 431
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-17-14:16:26_00010"
+)
+(uid "-yk94ms_85r_eqz4zfps_-p4z"))
+($11 434 < z8kflu_jd_f0tizbxc_-p7s "backup" 382
+(name "backup"
+)
+(uid "z8kflu_jd_f0tizbxc_-p7s"))
+($9 435 < z8kflu_jd_f0tizbxc_-p7r "documentation" 434
+(name "documentation"
+)
+(value "back up TopObject to current backup location"
+)
+(uid "z8kflu_jd_f0tizbxc_-p7r"))
+($9 436 < z8kflu_jd_f0tizbxc_-p7q "opType" 434
+(name "opType"
+)
+(value "other"
+)
+(uid "z8kflu_jd_f0tizbxc_-p7q"))
+($9 437 < z8kflu_jd_f0tizbxc_-p7p "code:python" 434
+(name "code:python"
+)
+(value "repository = self.memopsRoot.findFirstRepository(name='backup')"
+"if repository:"
+"  if not self.isLoaded:"
+"    self.load()"
+"  self.saveTo(repository)"
+"else:"
+"  raise ApiError('No backup repository found for TopObject %s' % self)"
+)
+(uid "z8kflu_jd_f0tizbxc_-p7p"))
+($9 438 < z8kflu_jd_f0tizbxc_-p7o "code:java" 434
+(name "code:java"
+)
+(value "memops.api.Implementation.Repository repository = getRoot().findFirstRepository(\"name\", \"backup\");"
+"if (repository == null) {"
+"  throw new memops.general.ApiException(\"No backup repository found for TopObject\" + this);"
+"} else {"
+"  if (!getIsLoaded()) {"
+"    // this hack is done because this code appears in MemopsRoot, which"
+"    // does not have a load(), but then getIsLoaded() returns True"
+"    java.lang.Object dummy = this;"
+"     ((memops.api.Implementation.TopObject) dummy).load();"
+"  }"
+"  saveTo(repository);"
+"}"
+)
+(uid "z8kflu_jd_f0tizbxc_-p7o"))
+($9 439 < -yk94ms_-9af_f0usjrcv_-p8r "guid" 434
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-23-15:11:29_00011"
+)
+(uid "-yk94ms_-9af_f0usjrcv_-p8r"))
+($8 440 < -yk94ms_p3u_evxsl0om_-p96 "createdBy" 382
+(changeability "frozen")
+(name "createdBy"
+)
+(uid "-yk94ms_p3u_evxsl0om_-p96")
+(multiplicity "1"))
+($9 441 < -yk94ms_p3u_evxsl0om_-p95 "documentation" 440
+(name "documentation"
+)
+(value "user who created TopObject."
+)
+(uid "-yk94ms_p3u_evxsl0om_-p95"))
+($9 442 < -yk94ms_p3u_evxsl0om_-p94 "isAutomatic" 440
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "-yk94ms_p3u_evxsl0om_-p94"))
+($9 443 < z8kflu_15v_ewd8gvqb_-p8q "guid" 440
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-12-31-09:00:59_00002"
+)
+(uid "z8kflu_15v_ewd8gvqb_-p8q"))
+($8 444 < -yk94ms_p3u_evxsl0om_-p93 "lastUnlockedBy" 382
+(changeability "frozen")
+(name "lastUnlockedBy"
+)
+(uid "-yk94ms_p3u_evxsl0om_-p93"))
+($9 445 < -yk94ms_p3u_evxsl0om_-p92 "documentation" 444
+(name "documentation"
+)
+(value "User who last set TopObject.isModifiable to True.  Used to track if data have been modified. Provided data have isModifiable set to False, any modification in the underlying data will show up on lastUnlockedBy."
+)
+(uid "-yk94ms_p3u_evxsl0om_-p92"))
+($9 446 < -yk94ms_p3u_evxsl0om_-p91 "isAutomatic" 444
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "-yk94ms_p3u_evxsl0om_-p91"))
+($9 447 < z8kflu_15v_ewd8gvqb_-p8p "guid" 444
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-12-31-09:00:59_00003"
+)
+(uid "z8kflu_15v_ewd8gvqb_-p8p"))
+($13 448 < z8kflu_-hpq_f0w65k7d_-p8b "#<anon> (FileStorageObject, Repository)##,activeRepositories" 382
+(name "")
+(uid "z8kflu_-hpq_f0w65k7d_-p8b"))
+($14 449 < z8kflu_-hpq_f0w65k7d_-p89 "#0" 448
+(uid "z8kflu_-hpq_f0w65k7d_-p89")
+(isNavigable false))
+($14 450 < z8kflu_-hpq_f0w65k7d_-p88 "activeRepositories#1" 448
+(isOrdered true)
+(changeability "frozen")
+(name "activeRepositories"
+)
+(uid "z8kflu_-hpq_f0w65k7d_-p88")
+(multiplicity "*"))
+($9 451 < z8kflu_-hpq_f0w65k7d_-p86 "baseName" 450
+(name "baseName"
+)
+(value "activeRepository"
+)
+(uid "z8kflu_-hpq_f0w65k7d_-p86"))
+($9 452 < z8kflu_-hpq_f0w65k7d_-p84 "documentation" 450
+(name "documentation"
+)
+(value "Repositories on package search path that contains a copy of TopObject"
+)
+(uid "z8kflu_-hpq_f0w65k7d_-p84"))
+($9 453 < z8kflu_-hpq_f0w65k7d_-p7z "guid" 450
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-24-13:22:34_00001"
+)
+(uid "z8kflu_-hpq_f0w65k7d_-p7z"))
+($9 454 < z8kflu_-hpq_f0w65k7d_-p83 "isImplementation" 448
+(name "isImplementation"
+)
+(value "True"
+)
+(uid "z8kflu_-hpq_f0w65k7d_-p83"))
+($9 455 < -yk94ms_-e3s_e41656c6_-gqb "documentation" 382
+(name "documentation"
+)
+(value "Object to hold file and URL information for a package, including memops.Implementation"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gqb"))
+($9 456 < -yk94ms_15v_eqxp59vz_-ovi "guid" 382
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00048"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ovi"))
+($9 457 < -hkpzxr_-iih_f2vnrytg_-p96 "specificImplementation" 382
+(name "specificImplementation"
+)
+(value "file"
+)
+(uid "-hkpzxr_-iih_f2vnrytg_-p96"))
+($7 458 < -yk94ms_-e3s_e41656c6_-gqa "Url" 1
+(name "Url"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gqa"))
+($8 459 < -yk94ms_-e3s_e41656c6_-gq5 "protocol" 458
+(initialValue "file"
+)
+(changeability "frozen")
+(name "protocol"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gq5")
+(multiplicity "1"))
+($9 460 < -yk94ms_-e3s_e41656c6_-gq4 "documentation" 459
+(name "documentation"
+)
+(value "URL transfer protocol. "
+)
+(uid "-yk94ms_-e3s_e41656c6_-gq4"))
+($9 461 < -yk94ms_85r_eqz4zfps_-p4t "guid" 459
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-17-14:16:26_00025"
+)
+(uid "-yk94ms_85r_eqz4zfps_-p4t"))
+($8 462 < -yk94ms_-e3s_e41656c6_-gq3 "user" 458
+(changeability "frozen")
+(name "user"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gq3"))
+($9 463 < -yk94ms_-e3s_e41656c6_-gq2 "documentation" 462
+(name "documentation"
+)
+(value "User ID for URL"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gq2"))
+($9 464 < -yk94ms_85r_eqz4zfps_-p4r "guid" 462
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-17-14:16:26_00027"
+)
+(uid "-yk94ms_85r_eqz4zfps_-p4r"))
+($8 465 < -yk94ms_-e3s_e41656c6_-gq1 "password" 458
+(changeability "frozen")
+(name "password"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gq1"))
+($9 466 < -yk94ms_-e3s_e41656c6_-gq0 "documentation" 465
+(name "documentation"
+)
+(value "User password for URL"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gq0"))
+($9 467 < -yk94ms_85r_eqz4zfps_-p4q "guid" 465
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-17-14:16:26_00028"
+)
+(uid "-yk94ms_85r_eqz4zfps_-p4q"))
+($8 468 < -yk94ms_-e3s_e41656c6_-gpz "host" 458
+(changeability "frozen")
+(name "host"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gpz"))
+($9 469 < -yk94ms_-e3s_e41656c6_-gpy "documentation" 468
+(name "documentation"
+)
+(value "Host computer or web site."
+)
+(uid "-yk94ms_-e3s_e41656c6_-gpy"))
+($9 470 < -yk94ms_85r_eqz4zfps_-p4p "guid" 468
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-17-14:16:26_00029"
+)
+(uid "-yk94ms_85r_eqz4zfps_-p4p"))
+($8 471 < -yk94ms_-e3s_e41656c6_-gpx "path" 458
+(changeability "frozen")
+(name "path"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gpx")
+(multiplicity "1"))
+($9 472 < -yk94ms_-e3s_e41656c6_-gpw "documentation" 471
+(name "documentation"
+)
+(value "Absolute URL path. "
+)
+(uid "-yk94ms_-e3s_e41656c6_-gpw"))
+($9 473 < -yk94ms_85r_eqz4zfps_-p4o "guid" 471
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-17-14:16:26_00030"
+)
+(uid "-yk94ms_85r_eqz4zfps_-p4o"))
+($8 474 < -yk94ms_-hes_ea7xo4my_-p98 "port" 458
+(changeability "frozen")
+(name "port"
+)
+(uid "-yk94ms_-hes_ea7xo4my_-p98"))
+($9 475 < -yk94ms_-hes_ea7xo4my_-p97 "documentation" 474
+(name "documentation"
+)
+(value "Port number to use for the URL."
+)
+(uid "-yk94ms_-hes_ea7xo4my_-p97"))
+($9 476 < -yk94ms_85r_eqz4zfps_-p4n "guid" 474
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-17-14:16:26_00031"
+)
+(uid "-yk94ms_85r_eqz4zfps_-p4n"))
+($8 477 < z8kflu_jd_f0tizbxc_-p98 "dataLocation" 458
+(changeability "frozen")
+(name "dataLocation"
+)
+(uid "z8kflu_jd_f0tizbxc_-p98")
+(multiplicity "1"))
+($9 478 < z8kflu_jd_f0tizbxc_-p97 "isDerived" 477
+(name "isDerived"
+)
+(value "True"
+)
+(uid "z8kflu_jd_f0tizbxc_-p97"))
+($9 479 < z8kflu_jd_f0tizbxc_-p96 "documentation" 477
+(name "documentation"
+)
+(value "Full data location as a single string."
+)
+(uid "z8kflu_jd_f0tizbxc_-p96"))
+($9 480 < -yk94ms_-9af_f0usjrcv_-p8n "guid" 477
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-23-15:11:28_00001"
+)
+(uid "-yk94ms_-9af_f0usjrcv_-p8n"))
+($11 481 < z8kflu_jd_f0tizbxc_-p94 "getDataLocation" 458
+(name "getDataLocation"
+)
+(uid "z8kflu_jd_f0tizbxc_-p94")
+(isQuery true))
+($9 482 < z8kflu_jd_f0tizbxc_-p93 "documentation" 481
+(name "documentation"
+)
+(value "getter for derived attribute dataLocation"
+)
+(uid "z8kflu_jd_f0tizbxc_-p93"))
+($9 483 < z8kflu_jd_f0tizbxc_-p92 "opType" 481
+(name "opType"
+)
+(value "get"
+)
+(uid "z8kflu_jd_f0tizbxc_-p92"))
+($9 484 < z8kflu_jd_f0tizbxc_-p91 "code:python" 481
+(name "code:python"
+)
+(value "if self.host:"
+"  result = '%s:%s' % (self.host, self.path)"
+"else:"
+"  result = self.path"
+)
+(uid "z8kflu_jd_f0tizbxc_-p91"))
+($9 485 < z8kflu_jd_f0tizbxc_-p90 "code:java" 481
+(name "code:java"
+)
+(value "result = getPath();"
+"java.lang.String host = getHost();"
+"if (host != null)"
+"  result = host + \":\" + result;"
+)
+(uid "z8kflu_jd_f0tizbxc_-p90"))
+($9 486 < -yk94ms_-9af_f0usjrcv_-p8m "guid" 481
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-23-15:11:28_00002"
+)
+(uid "-yk94ms_-9af_f0usjrcv_-p8m"))
+($10 487 < -yk94ms_6e6_evpe4fus_-p8p "#<anon> (Url, MemopsDataTypeObject)" 458
+(uid "-yk94ms_6e6_evpe4fus_-p8p"))
+($9 488 < -yk94ms_-e3s_e41656c6_-gpo "documentation" 458
+(name "documentation"
+)
+(value "URl for data location. Example: directory, database. "
+)
+(uid "-yk94ms_-e3s_e41656c6_-gpo"))
+($9 489 < -yk94ms_15v_eqxp59vz_-ovh "guid" 458
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:54:00_00000"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ovh"))
+($7 490 < -yk94ms_-e3s_e41656c6_-gpj "UrlProtocol" 1
+(name "UrlProtocol"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gpj"))
+($10 491 < -yk94ms_-e3s_e41656c6_-gpi "#<anon> (UrlProtocol, Word)" 490
+(uid "-yk94ms_-e3s_e41656c6_-gpi"))
+($9 492 < -yk94ms_-e3s_e41656c6_-gph "documentation" 490
+(name "documentation"
+)
+(value "URL scheme (see http://www.faqs.org/rfcs/rfc1808.html). It is up to the API generators for the individual supported langauges to ensure that all these protocols are supported."
+)
+(uid "-yk94ms_-e3s_e41656c6_-gph"))
+($9 493 < -yk94ms_-e3s_e41656c6_-gpg "isOpen" 490
+(name "isOpen"
+)
+(value "False"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gpg"))
+($9 494 < -yk94ms_-e3s_e41656c6_-gpf "enumeration" 490
+(name "enumeration"
+)
+(value "('file','ftp','http','shttp')"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gpf"))
+($9 495 < -yk94ms_15v_eqxp59vz_-ovg "guid" 490
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00050"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ovg"))
+($7 496 < -yk94ms_-e3s_e41656c6_-gof "StorageFormat" 1
+(name "StorageFormat"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gof"))
+($10 497 < -yk94ms_-e3s_e41656c6_-goe "#<anon> (StorageFormat, Word)" 496
+(uid "-yk94ms_-e3s_e41656c6_-goe"))
+($9 498 < -yk94ms_-e3s_e41656c6_-god "documentation" 496
+(name "documentation"
+)
+(value "supported data I/O formats. More values will be added in later versions."
+)
+(uid "-yk94ms_-e3s_e41656c6_-god"))
+($9 499 < -yk94ms_-e3s_e41656c6_-goc "isOpen" 496
+(name "isOpen"
+)
+(value "False"
+)
+(uid "-yk94ms_-e3s_e41656c6_-goc"))
+($9 500 < -yk94ms_-e3s_e41656c6_-gob "enumeration" 496
+(name "enumeration"
+)
+(value "('xml', 'sql')"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gob"))
+($9 501 < -yk94ms_15v_eqxp59vz_-ovc "guid" 496
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00054"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ovc"))
+($7 502 < -yk94ms_-e3s_e41656c6_-goa "Token" 1
+(name "Token"
+)
+(uid "-yk94ms_-e3s_e41656c6_-goa"))
+($10 503 < -yk94ms_-e3s_e41656c6_-go9 "#<anon> (Token, String)" 502
+(uid "-yk94ms_-e3s_e41656c6_-go9"))
+($9 504 < -yk94ms_-e3s_e41656c6_-go8 "documentation" 502
+(name "documentation"
+)
+(value "Max 32 char string [_A-Za-z][_A-Za-z0-9]*"
+)
+(uid "-yk94ms_-e3s_e41656c6_-go8"))
+($9 505 < -yk94ms_-e3s_e41656c6_-go7 "length" 502
+(name "length"
+)
+(value "32"
+)
+(uid "-yk94ms_-e3s_e41656c6_-go7"))
+($9 506 < -yk94ms_15v_eqxp59vz_-ovb "guid" 502
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00055"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ovb"))
+($15 507 < -yk94ms_-e3s_e41656c6_-go5 "name_type_characters" 502
+(name "name_type_characters"
+)
+(uid "-yk94ms_-e3s_e41656c6_-go5")
+(body "code:python"
+"_"
+"isValid = True"
+"if not value:"
+"  isValid = False"
+"elif value[0] not in 'abcdefghjiklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZ':"
+"  isValid = False"
+"else:"
+"  for cc in value[1:]:"
+"    if cc not in 'abcdefghjiklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789':"
+"      isValid = False"
+"      break"
+""
+"_"
+"code:java"
+"_"
+"isValid=true;"
+"if ((value == null) || (value.length() == 0))"
+"{"
+"  isValid=false;"
+"}"
+"else if (\"'abcdefghjiklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZ\".indexOf(value.charAt(0)) < 0)"
+"{"
+"  isValid = false;"
+"}"
+"else"
+"{"
+"  for (int cc = 1; cc < value.length(); cc++)"
+"  {"
+"    if (\"abcdefghjiklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789\".indexOf(value.charAt(cc)) < 0)"
+"    {"
+"      isValid=false;"
+"      break;"
+"    }"
+"  }"
+"}"
+""
+"_"
+"code:xml"
+"_"
+"<xsd:pattern value=\"[a-zA-Z_][a-zA-Z_0-9]*\"/>"
+))
+($9 508 < -yk94ms_15v_eqxp59vz_-ova "guid" 507
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00056"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ova"))
+($7 509 < -yk94ms_-e3s_e41656c6_-gnv "FloatRatio" 1
+(name "FloatRatio"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gnv"))
+($10 510 < -yk94ms_-e3s_e41656c6_-gnu "#<anon> (FloatRatio, Float)" 509
+(uid "-yk94ms_-e3s_e41656c6_-gnu"))
+($9 511 < -yk94ms_-e3s_e41656c6_-gnt "documentation" 509
+(name "documentation"
+)
+(value "Float between zero and one inclusive"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gnt"))
+($9 512 < -yk94ms_15v_eqxp59vz_-ov8 "guid" 509
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00058"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ov8"))
+($15 513 < -yk94ms_-e3s_e41656c6_-gns "value_ge_0" 509
+(name "value_ge_0"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gns")
+(body "code:python"
+"_"
+"0.0 <= value"
+"_"
+"code:java"
+"_"
+"0.0f <= value"
+"_"
+"code:xml"
+"_"
+"<xsd:minInclusive value=\"0.0\"/>"
+))
+($9 514 < -yk94ms_15v_eqxp59vz_-ov7 "guid" 513
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00059"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ov7"))
+($15 515 < -yk94ms_ndo_erjgq2go_-p97 "value_le_1" 509
+(name "value_le_1"
+)
+(uid "-yk94ms_ndo_erjgq2go_-p97")
+(body "code:python"
+"_"
+"value <= 1.0"
+"_"
+"code:java"
+"_"
+"value <= 1.0"
+"_"
+"code:xml"
+"_"
+"<xsd:maxInclusive value=\"1.0\"/>"
+))
+($9 516 < -yk94ms_ndo_erjgq2go_-p95 "guid" 515
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-31-19:35:22_00001"
+)
+(uid "-yk94ms_ndo_erjgq2go_-p95"))
+($7 517 < -yk94ms_-e3s_e41656c6_-gnr "PositiveInt" 1
+(name "PositiveInt"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gnr"))
+($10 518 < -yk94ms_-e3s_e41656c6_-gnq "#<anon> (PositiveInt, Int)" 517
+(uid "-yk94ms_-e3s_e41656c6_-gnq"))
+($9 519 < -yk94ms_-e3s_e41656c6_-gnp "documentation" 517
+(name "documentation"
+)
+(value "Integer greater than zero"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gnp"))
+($9 520 < -yk94ms_15v_eqxp59vz_-ov6 "guid" 517
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00001"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ov6"))
+($15 521 < -yk94ms_-e3s_e41656c6_-gno "int_value_gt_0" 517
+(name "int_value_gt_0"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gno")
+(body "code:python"
+"_"
+"value > 0"
+"_"
+"code:java"
+"_"
+"value > 0"
+"_"
+"code:xml"
+"_"
+"<xsd:minExclusive value=\"0\"/>"
+))
+($9 522 < -yk94ms_15v_eqxp59vz_-ov5 "guid" 521
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00002"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ov5"))
+($7 523 < -yk94ms_-e3s_e41656c6_-gnn "PathString" 1
+(name "PathString"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gnn"))
+($10 524 < -yk94ms_-e3s_e41656c6_-gnm "#<anon> (PathString, SingleLine)" 523
+(uid "-yk94ms_-e3s_e41656c6_-gnm"))
+($9 525 < -yk94ms_-e3s_e41656c6_-gnl "documentation" 523
+(name "documentation"
+)
+(value "One-line, long string for file name 'path' attributes"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gnl"))
+($9 526 < -yk94ms_15v_eqxp59vz_-ov4 "guid" 523
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00003"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ov4"))
+($15 527 < -yk94ms_-e3s_e41656c6_-gni "contains_no_backslash" 523
+(name "contains_no_backslash"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gni")
+(body "code:python"
+"_"
+"value.find(chr(92)) == -1"
+"_"
+"code:java"
+"_"
+"value.indexOf(92) == -1"
+))
+($9 528 < -yk94ms_15v_eqxp59vz_-ov3 "guid" 527
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00004"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ov3"))
+($7 529 < -yk94ms_-e3s_e41656c6_-gnh "SingleLine" 1
+(name "SingleLine"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gnh"))
+($10 530 < -yk94ms_-e3s_e41656c6_-gng "#<anon> (SingleLine, String)" 529
+(uid "-yk94ms_-e3s_e41656c6_-gng"))
+($9 531 < -yk94ms_-e3s_e41656c6_-gnf "documentation" 529
+(name "documentation"
+)
+(value "String not containing \\n or \\r"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gnf"))
+($9 532 < -yk94ms_15v_eqxp59vz_-ov2 "guid" 529
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00005"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ov2"))
+($15 533 < -yk94ms_-e3s_e41656c6_-gnd "contains_no_linebreak" 529
+(name "contains_no_linebreak"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gnd")
+(body "code:python"
+"_"
+"len(value.splitlines()) <= 1"
+"_"
+"code:java"
+"_"
+"(value.indexOf(10) == -1) || (value.indexOf(10) == value.length()-1)"
+"_"
+"code:xml"
+"_"
+"<xsd:pattern value=\".*\"/>"
+))
+($9 534 < -yk94ms_15v_eqxp59vz_-ov1 "guid" 533
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00006"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ov1"))
+($7 535 < -yk94ms_-e3s_e41656c6_-gnc "PositiveFloat" 1
+(name "PositiveFloat"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gnc"))
+($10 536 < -yk94ms_-e3s_e41656c6_-gnb "#<anon> (PositiveFloat, Float)" 535
+(uid "-yk94ms_-e3s_e41656c6_-gnb"))
+($9 537 < -yk94ms_-e3s_e41656c6_-gna "documentation" 535
+(name "documentation"
+)
+(value "Float greater than 0"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gna"))
+($9 538 < -yk94ms_15v_eqxp59vz_-ov0 "guid" 535
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00007"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ov0"))
+($15 539 < -yk94ms_-e3s_e41656c6_-gn9 "float_value_gt_0" 535
+(name "float_value_gt_0"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gn9")
+(body "code:python"
+"_"
+"value > 0"
+"_"
+"code:java"
+"_"
+"value > 0"
+"_"
+"code:xml"
+"_"
+"<xsd:minExclusive value=\"0\"/>"
+))
+($9 540 < -yk94ms_15v_eqxp59vz_-ouz "guid" 539
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00008"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ouz"))
+($7 541 < -yk94ms_-e3s_e41656c6_-gn8 "NonNegativeFloat" 1
+(name "NonNegativeFloat"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gn8"))
+($10 542 < -yk94ms_-e3s_e41656c6_-gn7 "#<anon> (NonNegativeFloat, Float)" 541
+(uid "-yk94ms_-e3s_e41656c6_-gn7"))
+($9 543 < -yk94ms_-e3s_e41656c6_-gn6 "documentation" 541
+(name "documentation"
+)
+(value "Float >= 0"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gn6"))
+($9 544 < -yk94ms_15v_eqxp59vz_-ouy "guid" 541
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00009"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ouy"))
+($15 545 < -yk94ms_-e3s_e41656c6_-gn5 "float_value_ge_0" 541
+(name "float_value_ge_0"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gn5")
+(body "code:python"
+"_"
+"0.0 <= value"
+"_"
+"code:java"
+"_"
+"0.0f <= value"
+"_"
+"code:xml"
+"_"
+"<xsd:minInclusive value=\"0.0\"/>"
+))
+($9 546 < -yk94ms_15v_eqxp59vz_-oux "guid" 545
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00010"
+)
+(uid "-yk94ms_15v_eqxp59vz_-oux"))
+($7 547 < -yk94ms_-e3s_e41656c6_-gn4 "NonNegativeInt" 1
+(name "NonNegativeInt"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gn4"))
+($10 548 < -yk94ms_-e3s_e41656c6_-gn3 "#<anon> (NonNegativeInt, Int)" 547
+(uid "-yk94ms_-e3s_e41656c6_-gn3"))
+($9 549 < -yk94ms_-e3s_e41656c6_-gn2 "documentation" 547
+(name "documentation"
+)
+(value "Non-negative integer"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gn2"))
+($9 550 < -yk94ms_15v_eqxp59vz_-ouw "guid" 547
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00011"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ouw"))
+($15 551 < -yk94ms_-e3s_e41656c6_-gn1 "int_value_ge_0" 547
+(name "int_value_ge_0"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gn1")
+(body "code:python"
+"_"
+"value >= 0"
+"_"
+"code:java"
+"_"
+"value >= 0"
+"_"
+"code:xml"
+"_"
+"<xsd:minInclusive value=\"0\"/>"
+))
+($9 552 < -yk94ms_15v_eqxp59vz_-ouv "guid" 551
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00012"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ouv"))
+($7 553 < z8kflu_lz0_ed488sqs_-p98 "Dict" 1
+(name "Dict"
+)
+(uid "z8kflu_lz0_ed488sqs_-p98"))
+($9 554 < z8kflu_lz0_ed488sqs_-p97 "documentation" 553
+(name "documentation"
+)
+(value "Basic Data Type, handling dictionary/mapping"
+"NB TBD not complete. "
+"Stringification not reversible in all cases."
+"Only allowed for MetaParameters."
+)
+(uid "z8kflu_lz0_ed488sqs_-p97"))
+($9 555 < -yk94ms_15v_eqxp59vz_-ouu "guid" 553
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00013"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ouu"))
+($9 556 < -yk94ms_63g_es2yk6pd_-oym "typeCode:java" 553
+(name "typeCode:java"
+)
+(value "java.util.Map"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oym"))
+($9 557 < -yk94ms_63g_es2yk6pd_-oyl "typeCode:xml" 553
+(name "typeCode:xml"
+)
+(value "Dict"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oyl"))
+($9 558 < -yk94ms_63g_es2yk6pd_-oyk "typeCode:python" 553
+(name "typeCode:python"
+)
+(value "Dict"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oyk"))
+($7 559 < z8kflu_63g_errlz7sn_-p8x "DbTopObject" 1
+(name "DbTopObject"
+)
+(uid "z8kflu_63g_errlz7sn_-p8x")
+(isAbstract true))
+($9 560 < z8kflu_63g_errlz7sn_-p8w "documentation" 559
+(name "documentation"
+)
+(value "Alternative class to FileTopObject - to be filled in"
+)
+(uid "z8kflu_63g_errlz7sn_-p8w"))
+($9 561 < -yk94ms_63g_es2yk6pd_-oyj "guid" 559
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-14-16:28:57_00001"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oyj"))
+($9 562 < -hkpzxr_-iih_f2vnrytg_-p95 "specificImplementation" 559
+(name "specificImplementation"
+)
+(value "db"
+)
+(uid "-hkpzxr_-iih_f2vnrytg_-p95"))
+($7 563 < z8kflu_63g_errlz7sn_-p8u "TopObject" 1
+(name "TopObject"
+)
+(uid "z8kflu_63g_errlz7sn_-p8u")
+(isAbstract true))
+($8 564 < z8kflu_63g_errlz7sn_-p8s "guid" 563
+(changeability "frozen")
+(name "guid"
+)
+(uid "z8kflu_63g_errlz7sn_-p8s")
+(multiplicity "1"))
+($9 565 < z8kflu_63g_errlz7sn_-p8r "documentation" 564
+(name "documentation"
+)
+(value "global unique identifier - set by implementation."
+)
+(uid "z8kflu_63g_errlz7sn_-p8r"))
+($9 566 < z8kflu_63g_errlz7sn_-p8q "isAutomatic" 564
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "z8kflu_63g_errlz7sn_-p8q"))
+($9 567 < -yk94ms_63g_es3fm25t_-p7n "guid" 564
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-14-18:48:26_00002"
+)
+(uid "-yk94ms_63g_es3fm25t_-p7n"))
+($11 568 < -yk94ms_6e6_f0v3v1lz_-p8v "getPackageLocator" 563
+(name "getPackageLocator"
+)
+(uid "-yk94ms_6e6_f0v3v1lz_-p8v")
+(isQuery true))
+($9 569 < -yk94ms_6e6_f0v3v1lz_-p8u "documentation" 568
+(name "documentation"
+)
+(value "getter for derived link packageLocator"
+)
+(uid "-yk94ms_6e6_f0v3v1lz_-p8u"))
+($9 570 < -yk94ms_6e6_f0v3v1lz_-p8t "opType" 568
+(name "opType"
+)
+(value "get"
+)
+(uid "-yk94ms_6e6_f0v3v1lz_-p8t"))
+($9 571 < -yk94ms_6e6_f0v3v1lz_-p8s "code:python" 568
+(name "code:python"
+)
+(value "ff = self.root.findFirstPackageLocator"
+"result = ff(targetName=self.packageName) or ff(targetName='any')"
+)
+(uid "-yk94ms_6e6_f0v3v1lz_-p8s"))
+($9 572 < -yk94ms_6e6_f0v3v1lz_-p8r "code:java" 568
+(name "code:java"
+)
+(value "memops.api.Implementation.MemopsRoot root = getRoot();"
+"result = root.findFirstPackageLocator(\"targetName\", getPackageName());"
+"if (result == null)"
+"  result = root.findFirstPackageLocator(\"targetName\", \"any\");"
+)
+(uid "-yk94ms_6e6_f0v3v1lz_-p8r"))
+($9 573 < -yk94ms_6e6_f0v3v1lz_-p8k "guid" 568
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-23-17:23:00_00001"
+)
+(uid "-yk94ms_6e6_f0v3v1lz_-p8k"))
+($10 574 < z8kflu_63g_errlz7sn_-p8f "#<anon> (TopObject, DbTopObject)" 563
+(uid "z8kflu_63g_errlz7sn_-p8f"))
+($10 575 < -yk94ms_6e6_evpe4fus_-p93 "#<anon> (TopObject, DataObject)" 563
+(uid "-yk94ms_6e6_evpe4fus_-p93"))
+($13 576 < -yk94ms_6e6_f0v3v1lz_-p98 "#<anon> (TopObject, PackageLocator)##," 563
+(name "")
+(uid "-yk94ms_6e6_f0v3v1lz_-p98"))
+($14 577 < -yk94ms_6e6_f0v3v1lz_-p96 "#0" 576
+(uid "-yk94ms_6e6_f0v3v1lz_-p96")
+(isNavigable false))
+($14 578 < -yk94ms_6e6_f0v3v1lz_-p95 "#1" 576
+(changeability "frozen")
+(uid "-yk94ms_6e6_f0v3v1lz_-p95")
+(multiplicity "1"))
+($9 579 < -yk94ms_6e6_f0v3v1lz_-p94 "documentation" 578
+(name "documentation"
+)
+(value "Package locator relevant for TopObject"
+)
+(uid "-yk94ms_6e6_f0v3v1lz_-p94"))
+($9 580 < -yk94ms_6e6_f0v3v1lz_-p8j "guid" 578
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-23-17:22:59_00001"
+)
+(uid "-yk94ms_6e6_f0v3v1lz_-p8j"))
+($9 581 < -yk94ms_6e6_f0v3v1lz_-p93 "isDerived" 576
+(name "isDerived"
+)
+(value "True"
+)
+(uid "-yk94ms_6e6_f0v3v1lz_-p93"))
+($10 582 < -hkpzxr_-li2_f7bl5du8_-p94 "#<anon> (TopObject, FileTopObject)" 563
+(uid "-hkpzxr_-li2_f7bl5du8_-p94"))
+($9 583 < z8kflu_63g_errlz7sn_-p8t "documentation" 563
+(name "documentation"
+)
+(value "Superclass for TopObjects (except for MemopsRoot). The attributes and operations are different in File and Db implementations"
+)
+(uid "z8kflu_63g_errlz7sn_-p8t"))
+($9 584 < -yk94ms_63g_es2yk6pd_-oyi "guid" 563
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-14-16:28:57_00002"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oyi"))
+($9 585 < -yk94ms_85r_eucih6gm_-p97 "partitionsChildren" 563
+(name "partitionsChildren"
+)
+(value "True"
+)
+(uid "-yk94ms_85r_eucih6gm_-p97"))
+($7 586 < z8kflu_63g_errlz7sn_-p8d "PackageLocator" 1
+(name "PackageLocator"
+)
+(uid "z8kflu_63g_errlz7sn_-p8d"))
+($8 587 < z8kflu_63g_errlz7sn_-p8b "targetName" 586
+(initialValue "any"
+)
+(changeability "frozen")
+(name "targetName"
+)
+(uid "z8kflu_63g_errlz7sn_-p8b")
+(multiplicity "1"))
+($9 588 < z8kflu_63g_errlz7sn_-p89 "documentation" 587
+(name "documentation"
+)
+(value "Qualified name of relevant package. If set to 'any' covers all packages that do not have  a specific PackageLocator."
+)
+(uid "z8kflu_63g_errlz7sn_-p89"))
+($9 589 < -yk94ms_63g_es3fm25t_-p7e "guid" 587
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-14-18:48:27_00006"
+)
+(uid "-yk94ms_63g_es3fm25t_-p7e"))
+($13 590 < z8kflu_63g_errlz7sn_-p7h "#<anon> (PackageLocator, Repository)##stored,repositories" 586
+(name "")
+(uid "z8kflu_63g_errlz7sn_-p7h"))
+($14 591 < z8kflu_63g_errlz7sn_-p78 "stored#0" 590
+(name "stored"
+)
+(uid "z8kflu_63g_errlz7sn_-p78")
+(multiplicity "*"))
+($9 592 < z8kflu_63g_errlz7sn_-p74 "documentation" 591
+(name "documentation"
+)
+(value "Groups of packages (LocationInfo) stored in repository."
+)
+(uid "z8kflu_63g_errlz7sn_-p74"))
+($9 593 < z8kflu_63g_errlz7sn_-p73 "baseName" 591
+(name "baseName"
+)
+(value "stored"
+)
+(uid "z8kflu_63g_errlz7sn_-p73"))
+($9 594 < -yk94ms_63g_es3fm25t_-p7b "guid" 591
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-14-18:48:27_00004"
+)
+(uid "-yk94ms_63g_es3fm25t_-p7b"))
+($14 595 < z8kflu_63g_errlz7sn_-p77 "repositories#1" 590
+(isOrdered true)
+(name "repositories"
+)
+(uid "z8kflu_63g_errlz7sn_-p77")
+(multiplicity "1..*"))
+($9 596 < z8kflu_63g_errlz7sn_-p72 "documentation" 595
+(name "documentation"
+)
+(value "repositories to search for data for packageLocaator packages - ordered to form a search path"
+)
+(uid "z8kflu_63g_errlz7sn_-p72"))
+($9 597 < z8kflu_63g_errlz7sn_-p71 "baseName" 595
+(name "baseName"
+)
+(value "repository"
+)
+(uid "z8kflu_63g_errlz7sn_-p71"))
+($9 598 < -yk94ms_63g_es3fm25t_-p7a "guid" 595
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-14-18:48:27_00005"
+)
+(uid "-yk94ms_63g_es3fm25t_-p7a"))
+($15 599 < z8kflu_jd_f0tizbxc_-p7a "value_is_not_backup_repository" 595
+(name "value_is_not_backup_repository"
+)
+(uid "z8kflu_jd_f0tizbxc_-p7a")
+(body "code:python"
+"_"
+"value.name  != 'backup'"
+"_"
+"code:java"
+"_"
+"other.getName() != \"backup\""
+))
+($9 600 < -yk94ms_-9af_f0usjrcv_-p8l "guid" 599
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-23-16:26:07_00001"
+)
+(uid "-yk94ms_-9af_f0usjrcv_-p8l"))
+($10 601 < -yk94ms_6e6_evpe4fus_-p8s "#<anon> (PackageLocator, ImplementationObject)" 586
+(uid "-yk94ms_6e6_evpe4fus_-p8s"))
+($9 602 < z8kflu_63g_errlz7sn_-p8c "documentation" 586
+(name "documentation"
+)
+(value "Storage locations for one or more packages"
+)
+(uid "z8kflu_63g_errlz7sn_-p8c"))
+($9 603 < -yk94ms_63g_es2yk6pd_-oyh "guid" 586
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-14-16:28:57_00003"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oyh"))
+($9 604 < -yk94ms_63g_es2yk6pd_-oyg "keyNames" 586
+(name "keyNames"
+)
+(value "targetName"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oyg"))
+($7 605 < z8kflu_63g_errlz7sn_-p87 "Repository" 1
+(name "Repository"
+)
+(uid "z8kflu_63g_errlz7sn_-p87"))
+($8 606 < z8kflu_63g_errlz7sn_-p83 "name" 605
+(changeability "frozen")
+(name "name"
+)
+(uid "z8kflu_63g_errlz7sn_-p83")
+(multiplicity "1"))
+($9 607 < z8kflu_63g_errlz7sn_-p82 "documentation" 606
+(name "documentation"
+)
+(value "name of repository"
+)
+(uid "z8kflu_63g_errlz7sn_-p82"))
+($9 608 < -yk94ms_63g_es3fm25t_-p78 "guid" 606
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-14-18:48:28_00029"
+)
+(uid "-yk94ms_63g_es3fm25t_-p78"))
+($8 609 < z8kflu_63g_errlz7sn_-p81 "format" 605
+(initialValue "xml"
+)
+(name "format"
+)
+(uid "z8kflu_63g_errlz7sn_-p81")
+(multiplicity "1"))
+($9 610 < z8kflu_63g_errlz7sn_-p80 "documentation" 609
+(name "documentation"
+)
+(value "Format in which data are supplied (default is 'xml', meaning standard CCPN XML). May differ from the format in which data are actually stored."
+)
+(uid "z8kflu_63g_errlz7sn_-p80"))
+($9 611 < -yk94ms_63g_es3fm25t_-p77 "guid" 609
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-14-18:48:28_00030"
+)
+(uid "-yk94ms_63g_es3fm25t_-p77"))
+($8 612 < z8kflu_63g_errlz7sn_-p7z "url" 605
+(name "url"
+)
+(uid "z8kflu_63g_errlz7sn_-p7z")
+(multiplicity "1"))
+($9 613 < z8kflu_63g_errlz7sn_-p7y "documentation" 612
+(name "documentation"
+)
+(value "Url of data repository"
+)
+(uid "z8kflu_63g_errlz7sn_-p7y"))
+($9 614 < -yk94ms_63g_es3fm25t_-p76 "guid" 612
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-14-18:48:28_00031"
+)
+(uid "-yk94ms_63g_es3fm25t_-p76"))
+($11 615 < z8kflu_-hpq_f0w65k7d_-p8x "getFileLocation#Word##PathString" 605
+(name "getFileLocation"
+)
+(uid "z8kflu_-hpq_f0w65k7d_-p8x")
+(isQuery true))
+($12 616 < z8kflu_-hpq_f0w65k7d_-p8s "packageName" 615
+(name "packageName"
+)
+(uid "z8kflu_-hpq_f0w65k7d_-p8s"))
+($9 617 < z8kflu_-hpq_f0w65k7d_-p8r "documentation" 616
+(name "documentation"
+)
+(value "Name of package to get location for"
+)
+(uid "z8kflu_-hpq_f0w65k7d_-p8r"))
+($9 618 < z8kflu_-hpq_f0w65k7d_-p82 "guid" 616
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-24-13:22:35_00004"
+)
+(uid "z8kflu_-hpq_f0w65k7d_-p82"))
+($12 619 < z8kflu_jd_f0xw04fz_-p98 "result" 615
+(name "result"
+)
+(kind "return")
+(uid "z8kflu_jd_f0xw04fz_-p98"))
+($9 620 < z8kflu_jd_f0xw04fz_-p97 "guid" 619
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-25-16:32:34_00001"
+)
+(uid "z8kflu_jd_f0xw04fz_-p97"))
+($9 621 < z8kflu_-hpq_f0w65k7d_-p8w "documentation" 615
+(name "documentation"
+)
+(value "get absolute file location for TopObject in repository"
+)
+(uid "z8kflu_-hpq_f0w65k7d_-p8w"))
+($9 622 < z8kflu_-hpq_f0w65k7d_-p8v "opType" 615
+(name "opType"
+)
+(value "otherQuery"
+)
+(uid "z8kflu_-hpq_f0w65k7d_-p8v"))
+($9 623 < z8kflu_-hpq_f0w65k7d_-p8u "code:java" 615
+(name "code:java"
+)
+(value "memops.api.Implementation.Url url = getUrl();"
+"java.lang.String protocol = url.getProtocol();"
+""
+"if (\"file\".equals(protocol))"
+"{"
+"  result = memops.universal.Io.joinPath(url.getDataLocation(), memops.universal.Util.splitString(packageName, \".\"));"
+"}"
+"else"
+"{"
+"  throw new memops.general.ApiException(\"getFileLocation not implemented for url.protocol == \" + protocol);"
+"}"
+)
+(uid "z8kflu_-hpq_f0w65k7d_-p8u"))
+($9 624 < z8kflu_-hpq_f0w65k7d_-p8t "code:python" 615
+(name "code:python"
+)
+(value "url = self.url"
+"protocol = url.protocol"
+""
+"if protocol == 'file':"
+"  from memops.universal import Io as uniIo"
+"  result = uniIo.joinPath(url.getDataLocation(), *packageName.split('.'))"
+""
+"else:"
+"  raise ApiError(\"getFileLocation not implemented for url.protocol == '%s'\" % protocol)"
+)
+(uid "z8kflu_-hpq_f0w65k7d_-p8t"))
+($9 625 < z8kflu_-hpq_f0w65k7d_-p7y "guid" 615
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-24-13:22:35_00003"
+)
+(uid "z8kflu_-hpq_f0w65k7d_-p7y"))
+($10 626 < -yk94ms_6e6_evpe4fus_-p8r "#<anon> (Repository, ImplementationObject)" 605
+(uid "-yk94ms_6e6_evpe4fus_-p8r"))
+($9 627 < z8kflu_63g_errlz7sn_-p86 "documentation" 605
+(name "documentation"
+)
+(value "Data repository - database, directory, or server, where data are stored"
+)
+(uid "z8kflu_63g_errlz7sn_-p86"))
+($9 628 < -yk94ms_63g_es2yk6pd_-oyf "guid" 605
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-14-16:28:57_00004"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oyf"))
+($9 629 < -yk94ms_63g_esbjyarm_-p98 "keyNames" 605
+(name "keyNames"
+)
+(value "name"
+)
+(uid "-yk94ms_63g_esbjyarm_-p98"))
+($7 630 < -yk94ms_-e3s_e41656c6_-gpe "DataObject" 1
+(name "DataObject"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gpe")
+(isAbstract true))
+($8 631 < -yk94ms_85r_es1s5wa4_-p93 "applicationData" 630
+(name "applicationData"
+)
+(uid "-yk94ms_85r_es1s5wa4_-p93")
+(multiplicity "*"))
+($9 632 < -yk94ms_85r_es1s5wa4_-p92 "documentation" 631
+(name "documentation"
+)
+(value "Application-specific data"
+)
+(uid "-yk94ms_85r_es1s5wa4_-p92"))
+($9 633 < -yk94ms_85r_es1s5wa4_-p91 "baseName" 631
+(name "baseName"
+)
+(value "applicationData"
+)
+(uid "-yk94ms_85r_es1s5wa4_-p91"))
+($9 634 < -yk94ms_63g_es3fm25t_-p75 "guid" 631
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-14-18:48:27_00007"
+)
+(uid "-yk94ms_63g_es3fm25t_-p75"))
+($11 635 < z8kfsx_-fvi_fyk75s09_-p92 "getActiveAccess" 630
+(name "getActiveAccess"
+)
+(uid "z8kfsx_-fvi_fyk75s09_-p92")
+(isQuery true))
+($9 636 < z8kfsx_-fvi_fyk75s09_-p91 "documentation" 635
+(name "documentation"
+)
+(value "Get Access object controlling access, either from object itself or one of its parents, recursively. Getter for derived link activeAccess."
+)
+(uid "z8kfsx_-fvi_fyk75s09_-p91"))
+($9 637 < z8kfsx_-fvi_fyk75s09_-p90 "opType" 635
+(name "opType"
+)
+(value "get"
+)
+(uid "z8kfsx_-fvi_fyk75s09_-p90"))
+($9 638 < z8kfsx_-fvi_fyk75s09_-p8z "code:python" 635
+(name "code:python"
+)
+(value "obj = self"
+"while hasattr(obj, 'access'):"
+"  result = obj.access"
+"  if result is not None:"
+"    break"
+"  obj = obj.parent"
+)
+(uid "z8kfsx_-fvi_fyk75s09_-p8z"))
+($9 639 < z8kfsx_-fvi_fyk75s09_-p8y "code:java" 635
+(name "code:java"
+)
+(value "memops.api.Implementation.DataObject obj = (memopsapi..Implementation.DataObject) this;"
+"while (true) {"
+"  result = obj.getAccess();"
+"  if (result != null){"
+"    break;"
+"  }"
+"  if (obj instanceof memops.api.Implementation.DataObject){"
+"    obj = (memops.api.Implementation.DataObject) obj.getParent();"
+"  } else {"
+"    break;"
+"  }"
+"}"
+)
+(uid "z8kfsx_-fvi_fyk75s09_-p8y"))
+($9 640 < z8kfsx_-fvi_fyk75s09_-p8o "guid" 635
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-08-19-17:31:11_00001"
+)
+(uid "z8kfsx_-fvi_fyk75s09_-p8o"))
+($13 641 < -yk94ms_6e6_evpe4fus_-p7p "#<anon> (DataObject, TopObject)##," 630
+(name "")
+(uid "-yk94ms_6e6_evpe4fus_-p7p"))
+($14 642 < -yk94ms_6e6_evpe4fus_-p7n "#0" 641
+(uid "-yk94ms_6e6_evpe4fus_-p7n")
+(isNavigable false))
+($14 643 < -yk94ms_6e6_evpe4fus_-p7m "#1" 641
+(changeability "frozen")
+(uid "-yk94ms_6e6_evpe4fus_-p7m")
+(multiplicity "1"))
+($9 644 < -yk94ms_6e6_evpe4fus_-p7k "documentation" 643
+(name "documentation"
+)
+(value "TopObject - topmost parent in package."
+)
+(uid "-yk94ms_6e6_evpe4fus_-p7k"))
+($9 645 < z8kflu_15v_ewd8gvqb_-p8o "guid" 643
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-12-31-09:00:59_00001"
+)
+(uid "z8kflu_15v_ewd8gvqb_-p8o"))
+($9 646 < z8kflu_85r_ewdj2n5o_-p95 "isImplementation" 641
+(name "isImplementation"
+)
+(value "True"
+)
+(uid "z8kflu_85r_ewdj2n5o_-p95"))
+($10 647 < z8kflu_jd_ew839iyf_-p8n "#<anon> (DataObject, MemopsObject)" 630
+(uid "z8kflu_jd_ew839iyf_-p8n"))
+($13 648 < z8kfsx_-fvi_fyk75s09_-p8w "#<anon> (DataObject, AccessObject)##,activeAccess" 630
+(name "")
+(uid "z8kfsx_-fvi_fyk75s09_-p8w"))
+($14 649 < z8kfsx_-fvi_fyk75s09_-p8u "#0" 648
+(uid "z8kfsx_-fvi_fyk75s09_-p8u")
+(isNavigable false))
+($14 650 < z8kfsx_-fvi_fyk75s09_-p8t "activeAccess#1" 648
+(changeability "frozen")
+(name "activeAccess"
+)
+(uid "z8kfsx_-fvi_fyk75s09_-p8t"))
+($9 651 < z8kfsx_-fvi_fyk75s09_-p8s "documentation" 650
+(name "documentation"
+)
+(value "Access object that is active for DataObject. NB This is a derived link tha depends on the access permissions on the (recursive) parents."
+)
+(uid "z8kfsx_-fvi_fyk75s09_-p8s"))
+($9 652 < z8kfsx_-fvi_fyk75s09_-p8m "guid" 650
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-08-19-17:40:45_00001"
+)
+(uid "z8kfsx_-fvi_fyk75s09_-p8m"))
+($9 653 < z8kfsx_-fvi_fyk75s09_-p8r "isDerived" 648
+(name "isDerived"
+)
+(value "True"
+)
+(uid "z8kfsx_-fvi_fyk75s09_-p8r"))
+($9 654 < -yk94ms_85r_es1s5wa4_-p96 "documentation" 630
+(name "documentation"
+)
+(value "Superclass for non-implementation classes"
+)
+(uid "-yk94ms_85r_es1s5wa4_-p96"))
+($9 655 < -yk94ms_63g_es2yk6pd_-oye "guid" 630
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-14-16:28:57_00005"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oye"))
+($7 656 < -yk94ms_85r_es1t39fw_-p8g "FileMemopsRoot" 1
+(name "FileMemopsRoot"
+)
+(uid "-yk94ms_85r_es1t39fw_-p8g")
+(isAbstract true))
+($11 657 < -yk94ms_85r_es1t39fw_-p88 "saveModified" 656
+(name "saveModified"
+)
+(uid "-yk94ms_85r_es1t39fw_-p88"))
+($9 658 < -yk94ms_85r_es1t39fw_-p87 "documentation" 657
+(name "documentation"
+)
+(value "Save all modified data"
+)
+(uid "-yk94ms_85r_es1t39fw_-p87"))
+($9 659 < -yk94ms_85r_es1t39fw_-p86 "opType" 657
+(name "opType"
+)
+(value "other"
+)
+(uid "-yk94ms_85r_es1t39fw_-p86"))
+($9 660 < -yk94ms_63g_es3fm25t_-p74 "guid" 657
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-14-18:48:26_00006"
+)
+(uid "-yk94ms_63g_es3fm25t_-p74"))
+($9 661 < -yk94ms_63g_es3fm25t_-p73 "code:java" 657
+(name "code:java"
+)
+(value "// NB must be done by direct access"
+"for (memops.api.Implementation.TopObject topObj: _topObjects.values()) {"
+"  if (topObj.getIsDeleted()) {"
+"    for (memops.api.Implementation.Repository repository: topObj.getActiveRepositories())"
+"      topObj.removeFrom(repository);"
+"    _topObjects.remove(topObj.getGuid());"
+"  } else if (topObj.getIsModified()) {"
+"    topObj.save();"
+"  }"
+"}"
+"if (getIsModified())"
+"  save();"
+)
+(uid "-yk94ms_63g_es3fm25t_-p73"))
+($9 662 < -yk94ms_63g_es3fm25t_-p72 "code:python" 657
+(name "code:python"
+)
+(value "# NB must be done by direct access"
+"for topObj in self.__dict__['topObjects'].values():"
+"  if topObj.isDeleted:"
+"    for repository in topObj.activeRepositories:"
+"      topObj.removeFrom(repository)"
+"    del  self.__dict__['topObjects'][topObj.guid]"
+"  elif topObj.isModified:"
+"    topObj.save()"
+"if self.isModified:"
+"  self.save()"
+)
+(uid "-yk94ms_63g_es3fm25t_-p72"))
+($11 663 < -yk94ms_nm6_esodjdus_-p98 "saveAll" 656
+(name "saveAll"
+)
+(uid "-yk94ms_nm6_esodjdus_-p98"))
+($9 664 < -yk94ms_nm6_esodjdus_-p97 "documentation" 663
+(name "documentation"
+)
+(value "force save of all data"
+)
+(uid "-yk94ms_nm6_esodjdus_-p97"))
+($9 665 < -yk94ms_nm6_esodjdus_-p96 "opType" 663
+(name "opType"
+)
+(value "other"
+)
+(uid "-yk94ms_nm6_esodjdus_-p96"))
+($9 666 < -yk94ms_nm6_esodjdus_-p95 "code:python" 663
+(name "code:python"
+)
+(value "# NB must be done by direct access"
+"for topObj in self.__dict__['topObjects'].values():"
+"  if topObj.isDeleted:"
+"    for repository in topObj.activeRepositories:"
+"      topObj.removeFrom(repository)"
+"    del  self.__dict__['topObjects'][topObj.guid]"
+"  elif topObj.isLoaded:"
+"    topObj.save()"
+"self.save()"
+)
+(uid "-yk94ms_nm6_esodjdus_-p95"))
+($9 667 < -yk94ms_nm6_esodjdus_-p94 "code:java" 663
+(name "code:java"
+)
+(value "// NB must be done by direct access"
+"for (memops.api.Implementation.TopObject topObj: _topObjects.values()) {"
+"  if (topObj.getIsDeleted()) {"
+"    for (memops.api.Implementation.Repository repository: topObj.getActiveRepositories())"
+"      topObj.removeFrom(repository);"
+"    _topObjects.remove(topObj.getGuid());"
+"  } else if (topObj.getIsLoaded() {"
+"    topObj.save();"
+"  }"
+"}"
+"save();"
+)
+(uid "-yk94ms_nm6_esodjdus_-p94"))
+($9 668 < -yk94ms_-dbn_esol78c6_-p94 "guid" 663
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-29-18:26:22_00001"
+)
+(uid "-yk94ms_-dbn_esol78c6_-p94"))
+($11 669 < -yk94ms_6e6_f0we3qfq_-p98 "refreshTopObjects#Word" 656
+(name "refreshTopObjects"
+)
+(uid "-yk94ms_6e6_f0we3qfq_-p98"))
+($12 670 < -yk94ms_6e6_f0we3qfq_-p93 "packageName" 669
+(name "packageName"
+)
+(uid "-yk94ms_6e6_f0we3qfq_-p93"))
+($9 671 < -yk94ms_6e6_f0we3qfq_-p92 "documentation" 670
+(name "documentation"
+)
+(value "packageName for package to refresh"
+)
+(uid "-yk94ms_6e6_f0we3qfq_-p92"))
+($9 672 < -yk94ms_6e6_f0we3qfq_-p91 "guid" 670
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-24-16:25:58_00002"
+)
+(uid "-yk94ms_6e6_f0we3qfq_-p91"))
+($9 673 < -yk94ms_6e6_f0we3qfq_-p97 "opType" 669
+(name "opType"
+)
+(value "other"
+)
+(uid "-yk94ms_6e6_f0we3qfq_-p97"))
+($9 674 < -yk94ms_6e6_f0we3qfq_-p96 "documentation" 669
+(name "documentation"
+)
+(value "Check on disk to make sure all topObjects in package packageName are present."
+)
+(uid "-yk94ms_6e6_f0we3qfq_-p96"))
+($9 675 < -yk94ms_6e6_f0we3qfq_-p95 "code:java" 669
+(name "code:java"
+)
+(value "if (\"memops.Implementation\".equals(packageName))"
+"  throw new memops.general.ApiException(\"refreshTopObjects not allowed for memops.Implementation\");"
+""
+"java.util.Collection<? extends memops.api.Implementation.TopObject> topObjects = getTopObjects();"
+"java.util.Map<memops.api.Implementation.TopObject, java.util.List<memops.api.Implementation.Repository>> activeRepositories = new java.util.HashMap<memops.api.Implementation.TopObject, java.util.List<memops.api.Implementation.Repository>>();"
+""
+"memops.api.Implementation.PackageLocator packageLocator = findFirstPackageLocator(\"targetName\", packageName);"
+"if (packageLocator == null)"
+"   packageLocator = findFirstPackageLocator(\"targetName\", \"any\");"
+""
+"for (memops.api.Implementation.Repository repository: packageLocator.getRepositories()) {"
+"  java.lang.String fileLocation = repository.getFileLocation(packageName);"
+"  java.io.File file = new java.io.File(fileLocation);"
+"  if (!file.exists())"
+"    continue;"
+"  if (!file.isDirectory())"
+"    throw new memops.general.ApiException(\"'\" + fileLocation + \"' is not a directory\");"
+""
+"  java.lang.String sep = memops.format.xml.Util.keySep;"
+"  java.lang.String fileSuffix = memops.format.xml.Util.fileSuffix;"
+"  int lenSuffix = fileSuffix.length();"
+"  for (java.lang.String filename: file.list()) {"
+"    if (filename.endsWith(fileSuffix) && !filename.startsWith(\".\")) {"
+"      java.lang.String[] ss = memops.universal.Util.splitString(filename, sep);"
+"      java.lang.String guid = ss[ss.length-1];"
+"      guid = guid.substring(0, guid.length()-lenSuffix);"
+"      memops.api.Implementation.TopObject topObject = _topObjects.get(guid);"
+"      if (topObject == null) {"
+"        String filePath = memops.universal.Io.joinPath(fileLocation, filename);"
+"        topObject = memops.format.xml.Io.loadFromFile(this, filePath, true);"
+"      }"
+""
+"      java.util.List<memops.api.Implementation.Repository> ll = activeRepositories.get(topObject);"
+"      if (ll == null)"
+"        ll = new java.util.ArrayList<memops.api.Implementation.Repository>();"
+"        activeRepositories.put(topObject, ll);"
+""
+"      ll.add(repository);"
+"    }"
+"  }"
+"}"
+""
+"// set activeRepositories"
+"for (memops.api.Implementation.TopObject topObject: activeRepositories.keySet()) {"
+"  java.util.List<memops.api.Implementation.Repository> ll = activeRepositories.get(topObject);"
+"  topObject._activeRepositories = ll;"
+"}"
+)
+(uid "-yk94ms_6e6_f0we3qfq_-p95"))
+($9 676 < -yk94ms_6e6_f0we3qfq_-p94 "code:python" 669
+(name "code:python"
+)
+(value "# NB must be done by direct access"
+"if packageName == 'memops.Implementation':"
+"    raise ApiError(\"refreshTopObjects not allowed for memops.Implementation\")"
+""
+"import os, os.path"
+"from memops.format.xml import XmlIO"
+"from memops.format.xml import Util as xmlUtil"
+""
+"topObjects = self.__dict__['topObjects']"
+"ff = self.findFirstPackageLocator"
+""
+"activeRepositories = {}"
+""
+"repositories = (ff(targetName=packageName) or ff(targetName='any')).repositories"
+"for repository in repositories:"
+""
+"  fileLocation = repository.getFileLocation(packageName)"
+"  if not os.path.exists(fileLocation):"
+"    continue"
+"  if not os.path.isdir(fileLocation):"
+"    raise ApiError(\"%s is not a directory\" % fileLocation)"
+"  "
+"  fileSuffix = xmlUtil.fileSuffix"
+"  lenSuffix = xmlUtil.lenFileSuffix"
+"  sep = xmlUtil.keySep"
+"  for filename in os.listdir(fileLocation):"
+""
+"    if filename.startswith('.'):"
+"      # skip hidden files (on *nix/Mac)"
+"      continue"
+""
+"    elif filename.endswith(fileSuffix):"
+"      guid = filename.split(sep)[-1][:-lenSuffix]"
+"      "
+"      topObject = topObjects.get(guid)"
+"      if topObject is None:"
+"        filePath = os.path.join(fileLocation, filename)"
+"        topObject = XmlIO.loadFromFile(self, filePath, partialLoad=True)"
+"      "
+"      ll = activeRepositories.setdefault(topObject, [])"
+"      ll.append(repository)"
+""
+"# set activeRepositories"
+"for topObject, ll in activeRepositories.iteritems():"
+"  topObject.__dict__['activeRepositories'] = ll"
+"  "
+)
+(uid "-yk94ms_6e6_f0we3qfq_-p94"))
+($9 677 < -yk94ms_6e6_f0we3qfq_-p90 "guid" 669
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-24-16:25:58_00001"
+)
+(uid "-yk94ms_6e6_f0we3qfq_-p90"))
+($11 678 < z8kflu_63g_f14q9hh2_-p98 "backupAll" 656
+(name "backupAll"
+)
+(uid "z8kflu_63g_f14q9hh2_-p98"))
+($9 679 < z8kflu_63g_f14q9hh2_-p97 "documentation" 678
+(name "documentation"
+)
+(value "back up memopsRoot and all known top objects"
+)
+(uid "z8kflu_63g_f14q9hh2_-p97"))
+($9 680 < z8kflu_63g_f14q9hh2_-p96 "opType" 678
+(name "opType"
+)
+(value "other"
+)
+(uid "z8kflu_63g_f14q9hh2_-p96"))
+($9 681 < z8kflu_63g_f14q9hh2_-p95 "code:java" 678
+(name "code:java"
+)
+(value "if (findFirstRepository(\"name\", \"backup\") != null) {"
+"  backup();"
+""
+"  for (memops.api.Implementation.TopObject topObj: getTopObjects())"
+"    topObj.backup();"
+"}"
+)
+(uid "z8kflu_63g_f14q9hh2_-p95"))
+($9 682 < z8kflu_63g_f14q9hh2_-p94 "code:python" 678
+(name "code:python"
+)
+(value "if self.findFirstRepository(name='backup'):"
+"  self.backup()"
+""
+"  for topObj in self.topObjects:"
+"      topObj.backup()"
+)
+(uid "z8kflu_63g_f14q9hh2_-p94"))
+($9 683 < z8kflu_63g_f14q9hh2_-p93 "guid" 678
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-30-10:40:04_00001"
+)
+(uid "z8kflu_63g_f14q9hh2_-p93"))
+($11 684 < -hkpzxr_-iih_f7n056gd_-p8v "importData#PathString##TopObject" 656
+(name "importData"
+)
+(uid "-hkpzxr_-iih_f7n056gd_-p8v"))
+($12 685 < -hkpzxr_-iih_f7n056gd_-p8q "filePath" 684
+(name "filePath"
+)
+(uid "-hkpzxr_-iih_f7n056gd_-p8q"))
+($9 686 < -hkpzxr_-iih_f7n056gd_-p8p "documentation" 685
+(name "documentation"
+)
+(value "name of file to load"
+)
+(uid "-hkpzxr_-iih_f7n056gd_-p8p"))
+($9 687 < -hkpzxr_-iih_f7n056gd_-p8n "guid" 685
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-11-15:05:49_00002"
+)
+(uid "-hkpzxr_-iih_f7n056gd_-p8n"))
+($12 688 < -hkpzxr_-iih_f7n056gd_-p8o "result" 684
+(name "result"
+)
+(kind "return")
+(uid "-hkpzxr_-iih_f7n056gd_-p8o"))
+($9 689 < -hkpzxr_-iih_f7n056gd_-p8m "guid" 688
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-11-15:05:49_00003"
+)
+(uid "-hkpzxr_-iih_f7n056gd_-p8m"))
+($9 690 < -hkpzxr_-iih_f7n056gd_-p8u "documentation" 684
+(name "documentation"
+)
+(value "Load data from file, without triggering any other loads. If the guid or code of the file TopObject are already in memory you will get an error. The loaded file will be saved in the first repository on the search path, overriding anything that might be there already"
+)
+(uid "-hkpzxr_-iih_f7n056gd_-p8u"))
+($9 691 < -hkpzxr_-iih_f7n056gd_-p8t "opType" 684
+(name "opType"
+)
+(value "other"
+)
+(uid "-hkpzxr_-iih_f7n056gd_-p8t"))
+($9 692 < -hkpzxr_-iih_f7n056gd_-p8s "code:java" 684
+(name "code:java"
+)
+(value "result = memops.format.xml.Io.loadFromFile(this, filePath);"
+)
+(uid "-hkpzxr_-iih_f7n056gd_-p8s"))
+($9 693 < -hkpzxr_-iih_f7n056gd_-p8r "code:python" 684
+(name "code:python"
+)
+(value "from memops.format.xml import XmlIO"
+"result = XmlIO.loadFromFile(self, filePath)"
+"# set to modified, as the loaded version may not come from the topmost repository"
+"result.__dict__['isModified'] = True"
+""
+"# Fix activeRepositories - NB must be done bypassing API"
+"useRepository = result.packageLocator.findFirstRepository()"
+"activeRepositories = dataDict.get('activeRepositories')"
+"if not useRepository in activeRepositories:"
+"  activeRepositories.insert(0, useRepository)"
+)
+(uid "-hkpzxr_-iih_f7n056gd_-p8r"))
+($9 694 < -hkpzxr_-iih_f7n056gd_-p8l "guid" 684
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-11-15:05:49_00001"
+)
+(uid "-hkpzxr_-iih_f7n056gd_-p8l"))
+($9 695 < -yk94ms_85r_es1t39fw_-p8f "documentation" 656
+(name "documentation"
+)
+(value "Memops Root Object for file implementations"
+)
+(uid "-yk94ms_85r_es1t39fw_-p8f"))
+($9 696 < -yk94ms_63g_es2yk6pd_-oyc "guid" 656
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-14-16:28:57_00007"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oyc"))
+($9 697 < -hkpzxr_-iih_f2vnrytg_-p98 "specificImplementation" 656
+(name "specificImplementation"
+)
+(value "file"
+)
+(uid "-hkpzxr_-iih_f2vnrytg_-p98"))
+($7 698 < -yk94ms_85r_es1t39fw_-p8e "DbMemopsRoot" 1
+(name "DbMemopsRoot"
+)
+(uid "-yk94ms_85r_es1t39fw_-p8e")
+(isAbstract true))
+($9 699 < -yk94ms_85r_es1t39fw_-p8d "documentation" 698
+(name "documentation"
+)
+(value "Memops Root Object for database implementations"
+)
+(uid "-yk94ms_85r_es1t39fw_-p8d"))
+($9 700 < -yk94ms_63g_es2yk6pd_-oyb "guid" 698
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-14-16:28:57_00008"
+)
+(uid "-yk94ms_63g_es2yk6pd_-oyb"))
+($9 701 < -hkpzxr_-iih_f2vnrytg_-p97 "specificImplementation" 698
+(name "specificImplementation"
+)
+(value "db"
+)
+(uid "-hkpzxr_-iih_f2vnrytg_-p97"))
+($7 702 < -yk94ms_6e6_eu2ehkvg_-p95 "StringKeyDict" 1
+(name "StringKeyDict"
+)
+(uid "-yk94ms_6e6_eu2ehkvg_-p95"))
+($10 703 < -yk94ms_6e6_eu2ehkvg_-p94 "#<anon> (StringKeyDict, Dict)" 702
+(uid "-yk94ms_6e6_eu2ehkvg_-p94"))
+($9 704 < -yk94ms_6e6_eu2ehkvg_-p92 "documentation" 702
+(name "documentation"
+)
+(value "Dictionary where all keys are strings. "
+"NBNB TBD not complete, constraint not enforced."
+"Allowed onlly for MetaParameters"
+)
+(uid "-yk94ms_6e6_eu2ehkvg_-p92"))
+($9 705 < -yk94ms_6e6_eu2nq16p_-p98 "guid" 702
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-11-03-14:03:26_00001"
+)
+(uid "-yk94ms_6e6_eu2nq16p_-p98"))
+($9 706 < -hkpzxr_-cvb_f5xw697h_-p98 "typeCode:java" 702
+(name "typeCode:java"
+)
+(value "java.util.Map<java.lang.String, java.lang.Object>"
+)
+(uid "-hkpzxr_-cvb_f5xw697h_-p98"))
+($7 707 < -yk94ms_jd_eumd4zu8_-p98 "Any" 1
+(name "Any"
+)
+(uid "-yk94ms_jd_eumd4zu8_-p98"))
+($9 708 < -yk94ms_jd_eumd4zu8_-p97 "documentation" 707
+(name "documentation"
+)
+(value "Basic data type - could be anything at all. Allowed only for parameters, not serialisable."
+)
+(uid "-yk94ms_jd_eumd4zu8_-p97"))
+($9 709 < -yk94ms_jd_eumd4zu8_-p96 "typeCode:python" 707
+(name "typeCode:python"
+)
+(value "Any"
+)
+(uid "-yk94ms_jd_eumd4zu8_-p96"))
+($9 710 < -yk94ms_jd_eumd4zu8_-p94 "guid" 707
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-11-17-09:06:35_00001"
+)
+(uid "-yk94ms_jd_eumd4zu8_-p94"))
+($9 711 < -yk94ms_6e6_euto1iek_-p97 "typeCode:java" 707
+(name "typeCode:java"
+)
+(value "java.lang.Object"
+)
+(uid "-yk94ms_6e6_euto1iek_-p97"))
+($7 712 < -yk94ms_6e6_evpe4fus_-p97 "ImplementationObject" 1
+(name "ImplementationObject"
+)
+(uid "-yk94ms_6e6_evpe4fus_-p97")
+(isAbstract true))
+($13 713 < -yk94ms_6e6_evpe4fus_-p7v "#<anon> (ImplementationObject, MemopsRoot)##,topObject" 712
+(name "")
+(uid "-yk94ms_6e6_evpe4fus_-p7v"))
+($14 714 < -yk94ms_6e6_evpe4fus_-p7t "#0" 713
+(uid "-yk94ms_6e6_evpe4fus_-p7t")
+(isNavigable false))
+($14 715 < -yk94ms_6e6_evpe4fus_-p7s "topObject#1" 713
+(changeability "frozen")
+(name "topObject"
+)
+(uid "-yk94ms_6e6_evpe4fus_-p7s")
+(multiplicity "1"))
+($9 716 < -yk94ms_6e6_evpe4fus_-p7r "documentation" 715
+(name "documentation"
+)
+(value "TopObject - topmost parent in package."
+)
+(uid "-yk94ms_6e6_evpe4fus_-p7r"))
+($9 717 < z8kflu_15v_ewd8gvqb_-p8n "guid" 715
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-12-31-09:00:59_00004"
+)
+(uid "z8kflu_15v_ewd8gvqb_-p8n"))
+($9 718 < z8kflu_85r_ewdj2n5o_-p96 "isImplementation" 713
+(name "isImplementation"
+)
+(value "True"
+)
+(uid "z8kflu_85r_ewdj2n5o_-p96"))
+($10 719 < z8kflu_jd_ew839iyf_-p8m "#<anon> (ImplementationObject, MemopsObject)" 712
+(uid "z8kflu_jd_ew839iyf_-p8m"))
+($9 720 < -yk94ms_6e6_evpe4fus_-p96 "documentation" 712
+(name "documentation"
+)
+(value "Superclass for Implementation package objects"
+)
+(uid "-yk94ms_6e6_evpe4fus_-p96"))
+($9 721 < -yk94ms_15v_evqyosvg_-p2h "guid" 712
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-12-15-19:00:39_00001"
+)
+(uid "-yk94ms_15v_evqyosvg_-p2h"))
+($16 722 < z8kflu_-9af_ew7shu8j_-p8j "Comment" 1
+(name "Comment"
+)
+(uid "z8kflu_-9af_ew7shu8j_-p8j")
+(body "DbTopObject and FileTopObject are alternatives"
+))
+($16 723 < z8kflu_-9af_ew7shu8j_-p8i "Comment1" 1
+(name "Comment1"
+)
+(uid "z8kflu_-9af_ew7shu8j_-p8i")
+(body "DbMemopsRoot and FileMemopsRoot are alternatives"
+))
+($7 724 < -hkpzxr_-li2_f6hr0e0k_-p98 "SpacelessString" 1
+(name "SpacelessString"
+)
+(uid "-hkpzxr_-li2_f6hr0e0k_-p98"))
+($10 725 < -hkpzxr_-li2_f6hr0e0k_-p93 "#<anon> (SpacelessString, String)" 724
+(uid "-hkpzxr_-li2_f6hr0e0k_-p93"))
+($9 726 < -hkpzxr_-li2_f6hr0e0k_-p97 "documentation" 724
+(name "documentation"
+)
+(value "String not containing whitespace"
+)
+(uid "-hkpzxr_-li2_f6hr0e0k_-p97"))
+($9 727 < -hkpzxr_-li2_f6hr0e0k_-p8s "guid" 724
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-09-12-18:31:28_00001"
+)
+(uid "-hkpzxr_-li2_f6hr0e0k_-p8s"))
+($15 728 < -hkpzxr_-li2_f6hr0e0k_-p94 "contains_no_white_space" 724
+(name "contains_no_white_space"
+)
+(uid "-hkpzxr_-li2_f6hr0e0k_-p94")
+(body "code:python"
+"_"
+"len(value.split()) == 1"
+"_"
+"code:java"
+"_"
+"isValid = true;"
+"if ((value == null) || (value.length() == 0))"
+"{"
+"  isValid = false;"
+"}"
+"else"
+"{"
+"  char whitespace[] = { 9, 10, 11, 12, 13, 32 };"
+"  for (int cc = 0; cc < whitespace.length; cc++)"
+"  {"
+"    if (value.indexOf(whitespace[cc]) >= 0)"
+"    {"
+"      isValid = false;"
+"      break;"
+"    }"
+"  }"
+"}"
+""
+"_"
+"code:xml"
+"_"
+"<xsd:pattern value=\"[^\\s]+\"/>"
+))
+($9 729 < -hkpzxr_-li2_f6hr0e0k_-p8r "guid" 728
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-09-12-18:31:28_00002"
+)
+(uid "-hkpzxr_-li2_f6hr0e0k_-p8r"))
+($7 730 < -hkpzxr_-li2_f6hr0e0k_-p8z "LongWord" 1
+(name "LongWord"
+)
+(uid "-hkpzxr_-li2_f6hr0e0k_-p8z"))
+($10 731 < -hkpzxr_-li2_f6hr0e0k_-p8w "#<anon> (LongWord, SpacelessString)" 730
+(uid "-hkpzxr_-li2_f6hr0e0k_-p8w"))
+($9 732 < -hkpzxr_-li2_f6hr0e0k_-p8y "documentation" 730
+(name "documentation"
+)
+(value "80 char string without white space"
+)
+(uid "-hkpzxr_-li2_f6hr0e0k_-p8y"))
+($9 733 < -hkpzxr_-li2_f6hr0e0k_-p8x "length" 730
+(name "length"
+)
+(value "80"
+)
+(uid "-hkpzxr_-li2_f6hr0e0k_-p8x"))
+($9 734 < -hkpzxr_-li2_f6hr0e0k_-p8q "guid" 730
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-09-12-18:31:28_00003"
+)
+(uid "-hkpzxr_-li2_f6hr0e0k_-p8q"))
+($7 735 < -hkpzxr_-li2_f7bl5du8_-p96 "FileTopObject" 1
+(name "FileTopObject"
+)
+(uid "-hkpzxr_-li2_f7bl5du8_-p96")
+(isAbstract true))
+($11 736 < -hkpzxr_-li2_f7bl5du8_-p8w "loadFrom#Repository" 735
+(name "loadFrom"
+)
+(uid "-hkpzxr_-li2_f7bl5du8_-p8w"))
+($12 737 < -hkpzxr_-li2_f7bl5du8_-p8u "repository" 736
+(name "repository"
+)
+(uid "-hkpzxr_-li2_f7bl5du8_-p8u"))
+($9 738 < -hkpzxr_-li2_f7bl5du8_-p8t "documentation" 737
+(name "documentation"
+)
+(value "Repository to load from"
+)
+(uid "-hkpzxr_-li2_f7bl5du8_-p8t"))
+($9 739 < -hkpzxr_-li2_f7bl5du8_-p8c "guid" 737
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-03-14:53:28_00001"
+)
+(uid "-hkpzxr_-li2_f7bl5du8_-p8c"))
+($9 740 < -hkpzxr_-li2_f7bl5du8_-p8v "documentation" 736
+(name "documentation"
+)
+(value "Load TopObject from specific Repository"
+)
+(uid "-hkpzxr_-li2_f7bl5du8_-p8v"))
+($9 741 < -hkpzxr_-li2_f7bl5du8_-p8s "opType" 736
+(name "opType"
+)
+(value "other"
+)
+(uid "-hkpzxr_-li2_f7bl5du8_-p8s"))
+($9 742 < -hkpzxr_-li2_f7bl5du8_-p8r "guid" 736
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-23-15:11:29_00009"
+)
+(uid "-hkpzxr_-li2_f7bl5du8_-p8r"))
+($9 743 < -hkpzxr_-li2_f7bl5du8_-p8q "code:java" 736
+(name "code:java"
+)
+(value "// NB must be done by direct access"
+"if (getIsLoaded() || getInConstructor() || getIsReading()) {"
+"  System.out.println(\"WARNING \" + this + \": cannot be loaded while isLoaded = \" + getIsLoaded() + \", inConstructor = \" + getInConstructor() + \", isReading = \" + getIsReading());"
+"  return;"
+"}"
+""
+"if (\"xml\".equals(repository.getFormat()) && \"file\".equals(repository.getUrl().getProtocol())) {"
+"  if (getParent() == null)"
+"    // MemopsRoot"
+"    throw new memops.general.ApiException(this + \": MemopsRoot can not be (re)loaded\");"
+""
+"  if (repository != getActiveRepositories().get(0)) {"
+"    if (getIsModifiable())"
+"      _isModified = true;"
+"    else"
+"      throw new memops.general.ApiException(this + \": attempt to load non-modifiable TopObject from alternative repository \" + repository);"
+"  }"
+""
+"  memops.format.xml.Io.loadTopObject(repository.getUrl().getDataLocation(), this);"
+"} else {"
+"  throw new memops.general.ApiException(repository + \": format \" + repository.getFormat() + \", protocol \" + repository.getUrl().getProtocol() + \", not supported\");"
+"}"
+)
+(uid "-hkpzxr_-li2_f7bl5du8_-p8q"))
+($9 744 < -hkpzxr_-li2_f7bl5du8_-p8p "code:python" 736
+(name "code:python"
+)
+(value "# NB must be done by direct access"
+"if self.isLoaded or self.inConstructor or self.isReading:"
+"  print (\"WARNING %s: cannot be loaded while isLoaded:%s, inConstructor:%s, isReading:%s\""
+"                       % (self, self.isLoaded, self.inConstructor, self.isReading))"
+"  return"
+""
+"if  repository.format == 'xml' and repository.url.protocol == 'file':"
+""
+"  if self.parent is None:"
+"    # MemopsRoot"
+"      raise ApiError(\" %s: MemopsRoot can not be (re)loaded\" % self)"
+"    "
+"  if repository is not self.activeRepositories[0]:"
+"    if self.isModifiable:"
+"      dataDict['isModified'] = True"
+""
+"    else:"
+"      raise ApiError(\" %s: attempt to load non-modifiable TopObject from alternative repository %s\" % (self, repository))"
+"  "
+"  from memops.format.xml import XmlIO"
+"  XmlIO.loadTopObject(repository.url.getDataLocation(), self)"
+"  "
+"  # NBNB recent addition"
+"  # resets upgraded refData objects to unmodified"
+"  if repository.name == 'refData' and repository is self.activeRepositories[0]:"
+"    self.__dict__['isModified'] = False"
+"  "
+"else:"
+"  raise ApiError(\" %s: format %s, protocol %s not supported\""
+"                       % (repository, repository.format, repository.url.protocol))"
+)
+(uid "-hkpzxr_-li2_f7bl5du8_-p8p"))
+($11 745 < -hkpzxr_-li2_f7bl5du8_-p8o "load" 735
+(name "load"
+)
+(uid "-hkpzxr_-li2_f7bl5du8_-p8o"))
+($9 746 < -hkpzxr_-li2_f7bl5du8_-p8m "opType" 745
+(name "opType"
+)
+(value "other"
+)
+(uid "-hkpzxr_-li2_f7bl5du8_-p8m"))
+($9 747 < -hkpzxr_-li2_f7bl5du8_-p8l "guid" 745
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-09-14-18:48:27_00001"
+)
+(uid "-hkpzxr_-li2_f7bl5du8_-p8l"))
+($9 748 < -hkpzxr_-li2_f7bl5du8_-p8k "code:python" 745
+(name "code:python"
+)
+(value "repositories = self.activeRepositories"
+"if repositories:"
+"  self.loadFrom(repositories[0])"
+"else:"
+"  raise ApiError('No active repository found for TopObject %s' % self)"
+)
+(uid "-hkpzxr_-li2_f7bl5du8_-p8k"))
+($9 749 < -hkpzxr_-li2_f7bl5du8_-p8j "code:java" 745
+(name "code:java"
+)
+(value "java.util.List<? extends memops.api.Implementation.Repository> repositories = getActiveRepositories();"
+"if (!repositories.isEmpty())"
+"  loadFrom(repositories.get(0));"
+"else"
+"  throw new memops.general.ApiException(\"No active repository found for TopObject\" + this);"
+)
+(uid "-hkpzxr_-li2_f7bl5du8_-p8j"))
+($9 750 < -hkpzxr_-li2_f7bl5du8_-p8e "documentation" 745
+(name "documentation"
+)
+(value "Load data corresponding to TopObject"
+)
+(uid "-hkpzxr_-li2_f7bl5du8_-p8e"))
+($11 751 < -hkpzxr_-li2_f7bl5du8_-p8n "restore" 735
+(name "restore"
+)
+(uid "-hkpzxr_-li2_f7bl5du8_-p8n"))
+($9 752 < -hkpzxr_-li2_f7bl5du8_-p8i "opType" 751
+(name "opType"
+)
+(value "other"
+)
+(uid "-hkpzxr_-li2_f7bl5du8_-p8i"))
+($9 753 < -hkpzxr_-li2_f7bl5du8_-p8h "guid" 751
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-23-15:11:29_00012"
+)
+(uid "-hkpzxr_-li2_f7bl5du8_-p8h"))
+($9 754 < -hkpzxr_-li2_f7bl5du8_-p8g "code:python" 751
+(name "code:python"
+)
+(value "repository = self.root.findFirstRepository(name=\"backup\")"
+"if repository:"
+"  self.loadFrom(repository)"
+"else:"
+"  raise ApiError('No backup repository found for TopObject %s' % self)"
+)
+(uid "-hkpzxr_-li2_f7bl5du8_-p8g"))
+($9 755 < -hkpzxr_-li2_f7bl5du8_-p8f "code:java" 751
+(name "code:java"
+)
+(value "memops.api.Implementation.Repository repository = getRoot().findFirstRepository(\"name\", \"backup\");"
+"if (repository != null)"
+"  loadFrom(repository);"
+"else"
+"  throw new memops.general.ApiException(\"No backup repository found for TopObject \" + this);"
+)
+(uid "-hkpzxr_-li2_f7bl5du8_-p8f"))
+($9 756 < -hkpzxr_-li2_f7bl5du8_-p8d "documentation" 751
+(name "documentation"
+)
+(value "restore data from current backup location"
+)
+(uid "-hkpzxr_-li2_f7bl5du8_-p8d"))
+($10 757 < -hkpzxr_-li2_f7bl5du8_-p93 "#<anon> (FileTopObject, FileStorageObject)" 735
+(uid "-hkpzxr_-li2_f7bl5du8_-p93"))
+($9 758 < -hkpzxr_-li2_f7bl5du8_-p95 "documentation" 735
+(name "documentation"
+)
+(value "Object to hold file and URL information for a package, *not* including memops.Implementation"
+)
+(uid "-hkpzxr_-li2_f7bl5du8_-p95"))
+($9 759 < -hkpzxr_-li2_f7bl5du8_-p8b "guid" 735
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-03-14:53:27_00001"
+)
+(uid "-hkpzxr_-li2_f7bl5du8_-p8b"))
+($2 760 < -yk94ms_-e3s_e41656c6_-ow1 "_Implementation-details" 1
+(name "_Implementation-details"
+)
+(uid "-yk94ms_-e3s_e41656c6_-ow1")
+(diagramType "class"))
+($3 761 < -yk94ms_-e3s_e41656c6_-ow0 "MemopsObject" 760
+(autoSizeToFit true)
+(uid "-yk94ms_-e3s_e41656c6_-ow0")
+(bbx 450 20 130 80))
+($3 762 < -yk94ms_-e3s_e41656c6_-ovz "ApplicationData" 760
+(autoSizeToFit true)
+(uid "-yk94ms_-e3s_e41656c6_-ovz")
+(bbx 1180 170 120 90))
+($3 763 < -yk94ms_-e3s_e41656c6_-ovx "MemopsRoot" 760
+(autoSizeToFit true)
+(uid "-yk94ms_-e3s_e41656c6_-ovx")
+(bbx 830 240 220 160))
+($3 764 < -yk94ms_-e3s_e41656c6_-ovw "AppDataBoolean" 760
+(autoSizeToFit true)
+(uid "-yk94ms_-e3s_e41656c6_-ovw")
+(bbx 1360 20 120 80))
+($4 765 < -yk94ms_-e3s_e41656c6_-ovv "" 760
+(uid "-yk94ms_-e3s_e41656c6_-ovv")
+(points 1360 45 1340 45 1340 210 1300 210))
+($3 766 < -yk94ms_-e3s_e41656c6_-ovu "AppDataLong" 760
+(autoSizeToFit true)
+(uid "-yk94ms_-e3s_e41656c6_-ovu")
+(bbx 1360 380 100 80))
+($4 767 < -yk94ms_-e3s_e41656c6_-ovt "" 760
+(uid "-yk94ms_-e3s_e41656c6_-ovt")
+(points 1360 400 1340 400 1340 210 1300 210))
+($3 768 < -yk94ms_-e3s_e41656c6_-ovs "AppDataInt" 760
+(autoSizeToFit true)
+(uid "-yk94ms_-e3s_e41656c6_-ovs")
+(bbx 1360 290 80 80))
+($4 769 < -yk94ms_-e3s_e41656c6_-ovr "" 760
+(uid "-yk94ms_-e3s_e41656c6_-ovr")
+(points 1360 310 1340 310 1340 210 1300 210))
+($3 770 < -yk94ms_-e3s_e41656c6_-ovq "AppDataDouble" 760
+(autoSizeToFit true)
+(uid "-yk94ms_-e3s_e41656c6_-ovq")
+(bbx 1360 110 110 80))
+($4 771 < -yk94ms_-e3s_e41656c6_-ovp "" 760
+(uid "-yk94ms_-e3s_e41656c6_-ovp")
+(points 1360 140 1340 140 1340 210 1300 210))
+($3 772 < -yk94ms_-e3s_e41656c6_-ovo "AppDataFloat" 760
+(autoSizeToFit true)
+(uid "-yk94ms_-e3s_e41656c6_-ovo")
+(bbx 1360 200 100 80))
+($4 773 < -yk94ms_-e3s_e41656c6_-ovn "" 760
+(uid "-yk94ms_-e3s_e41656c6_-ovn")
+(points 1360 220 1340 220 1340 210 1300 210))
+($3 774 < -yk94ms_-e3s_e41656c6_-ovm "AppDataString" 760
+(autoSizeToFit true)
+(uid "-yk94ms_-e3s_e41656c6_-ovm")
+(bbx 1360 470 100 80))
+($4 775 < -yk94ms_-e3s_e41656c6_-ovl "" 760
+(uid "-yk94ms_-e3s_e41656c6_-ovl")
+(points 1360 490 1340 490 1340 210 1300 210))
+($3 776 < -yk94ms_-e3s_e41656c6_-ovi "Url" 760
+(autoSizeToFit true)
+(uid "-yk94ms_-e3s_e41656c6_-ovi")
+(bbx 1150 310 170 190))
+($3 777 < -yk94ms_-e3s_e41656c6_-ovg "FileStorageObject" 760
+(autoSizeToFit true)
+(uid "-yk94ms_-e3s_e41656c6_-ovg")
+(bbx 250 350 190 240))
+($3 778 < -yk94ms_-e3s_e41656c6_-ov8 "UrlProtocol" 760
+(autoSizeToFit true)
+(uid "-yk94ms_-e3s_e41656c6_-ov8")
+(bbx 380 630 80 60))
+($4 779 < -yk94ms_-e3s_e41656c6_-ov4 "" 760
+(uid "-yk94ms_-e3s_e41656c6_-ov4")
+(points 830 365 440 365))
+($3 780 < -yk94ms_-e3s_e41656c6_-ov0 "StorageFormat" 760
+(autoSizeToFit true)
+(uid "-yk94ms_-e3s_e41656c6_-ov0")
+(bbx 640 630 100 60))
+($3 781 < -yk94ms_-dbn_elqdw3n5_-p6l "AccessObject" 760
+(autoSizeToFit true)
+(uid "-yk94ms_-dbn_elqdw3n5_-p6l")
+(bbx 140 140 240 80))
+($3 782 < z8kflu_63g_errlz7sn_-p70 "DbTopObject" 760
+(uid "z8kflu_63g_errlz7sn_-p70")
+(bbx 100 430 100 50))
+($3 783 < z8kflu_63g_errlz7sn_-p6z "TopObject" 760
+(autoSizeToFit true)
+(uid "z8kflu_63g_errlz7sn_-p6z")
+(bbx 20 250 140 80))
+($4 784 < z8kflu_63g_errlz7sn_-p7f "" 760
+(autoSizeToFit true)
+(uid "z8kflu_63g_errlz7sn_-p7f")
+(points 135 330 135 430))
+($3 785 < z8kflu_63g_errlz7sn_-p6y "PackageLocator" 760
+(uid "z8kflu_63g_errlz7sn_-p6y")
+(bbx 490 290 200 60))
+($3 786 < z8kflu_63g_errlz7sn_-p6x "Repository" 760
+(autoSizeToFit true)
+(uid "z8kflu_63g_errlz7sn_-p6x")
+(bbx 540 480 200 110))
+($6 787 < z8kflu_63g_errlz7sn_-p7g "" 760
+(toMultiplicityPosition 565 460)
+(toRolePosition 565 440)
+(uid "z8kflu_63g_errlz7sn_-p7g")
+(points 595 350 595 480)
+(fromRolePosition 575 380)
+(toOrderedPosition 600 460)
+(fromMultiplicityPosition 605 355))
+($3 788 < -yk94ms_85r_es1s5wa4_-p8w "DataObject" 760
+(autoSizeToFit true)
+(uid "-yk94ms_85r_es1s5wa4_-p8w")
+(bbx 30 20 210 80))
+($3 789 < -yk94ms_85r_es1t39fw_-p83 "FileMemopsRoot" 760
+(autoSizeToFit true)
+(uid "-yk94ms_85r_es1t39fw_-p83")
+(bbx 790 560 220 130))
+($3 790 < -yk94ms_85r_es1t39fw_-p82 "DbMemopsRoot" 760
+(uid "-yk94ms_85r_es1t39fw_-p82")
+(bbx 900 480 110 50))
+($4 791 < -yk94ms_63g_es2yk6pd_-p63 "" 760
+(uid "-yk94ms_63g_es2yk6pd_-p63")
+(points 180 140 180 100))
+($6 792 < -yk94ms_6e6_esadgnst_-p90 "" 760
+(toMultiplicityPosition 695 335)
+(toRolePosition 630 390)
+(uid "-yk94ms_6e6_esadgnst_-p90")
+(points 830 330 690 330)
+(fromMultiplicityPosition 805 335))
+($6 793 < -yk94ms_6e6_esadgnst_-p91 "" 760
+(toMultiplicityPosition 745 500)
+(toRolePosition 745 475)
+(uid "-yk94ms_6e6_esadgnst_-p91")
+(points 840 400 840 495 740 495)
+(fromMultiplicityPosition 820 405))
+($3 794 < -yk94ms_6e6_evpe4fus_-p7c "ImplementationObject" 760
+(uid "-yk94ms_6e6_evpe4fus_-p7c")
+(bbx 570 170 150 50))
+($4 795 < -yk94ms_6e6_evpe4fus_-p92 "" 760
+(uid "-yk94ms_6e6_evpe4fus_-p92")
+(points 60 250 60 100))
+($3 796 < -yk94ms_6e6_evpe4fus_-p7a "MemopsDataTypeObject" 760
+(autoSizeToFit true)
+(uid "-yk94ms_6e6_evpe4fus_-p7a")
+(bbx 1110 20 160 90))
+($4 797 < -yk94ms_6e6_evpe4fus_-p8m "" 760
+(uid "-yk94ms_6e6_evpe4fus_-p8m")
+(points 850 240 850 195 720 195))
+($4 798 < -yk94ms_6e6_evpe4fus_-p8k "" 760
+(uid "-yk94ms_6e6_evpe4fus_-p8k")
+(points 605 290 605 220))
+($4 799 < -yk94ms_6e6_evpe4fus_-p8l "" 760
+(uid "-yk94ms_6e6_evpe4fus_-p8l")
+(points 715 480 715 220))
+($4 800 < -yk94ms_6e6_evpe4fus_-p8c "" 760
+(uid "-yk94ms_6e6_evpe4fus_-p8c")
+(points 1205 170 1205 110))
+($4 801 < -yk94ms_6e6_evpe4fus_-p8o "" 760
+(uid "-yk94ms_6e6_evpe4fus_-p8o")
+(points 1165 310 1165 110))
+($4 802 < -yk94ms_6e6_evpe4fus_-p8e "" 760
+(uid "-yk94ms_6e6_evpe4fus_-p8e")
+(points 955 400 955 480))
+($6 803 < -yk94ms_6e6_evpe4fus_-p87 "" 760
+(toMultiplicityPosition 240 85)
+(uid "-yk94ms_6e6_evpe4fus_-p87")
+(points 235 140 235 100)
+(fromRolePosition 240 120))
+($6 804 < -yk94ms_6e6_evpe4fus_-p7u "" 760
+(toMultiplicityPosition 825 225)
+(toRolePosition 750 225)
+(uid "-yk94ms_6e6_evpe4fus_-p7u")
+(points 670 220 670 245 830 245))
+($6 805 < -yk94ms_6e6_evpe4fus_-p7o "" 760
+(toMultiplicityPosition 80 225)
+(uid "-yk94ms_6e6_evpe4fus_-p7o")
+(points 95 100 95 250))
+($4 806 < z8kflu_-9af_ew7shu8j_-p8k "" 760
+(uid "z8kflu_-9af_ew7shu8j_-p8k")
+(points 860 400 860 560))
+($17 807 < z8kflu_-9af_ew7shu8j_-p8g "Comment" 760
+(autoSizeToFit true)
+(uid "z8kflu_-9af_ew7shu8j_-p8g")
+(bbx 10 360 210 40))
+($17 808 < z8kflu_-9af_ew7shu8j_-p8h "Comment1" 760
+(autoSizeToFit true)
+(uid "z8kflu_-9af_ew7shu8j_-p8h")
+(bbx 870 410 170 60))
+($4 809 < z8kflu_jd_ew839iyf_-p8b "" 760
+(uid "z8kflu_jd_ew839iyf_-p8b")
+(points 240 55 450 55))
+($4 810 < z8kflu_jd_ew839iyf_-p8a "" 760
+(uid "z8kflu_jd_ew839iyf_-p8a")
+(points 575 170 575 100))
+($6 811 < z8kflu_jd_ew839iyf_-p88 "" 760
+(toMultiplicityPosition 870 210)
+(toRolePosition 880 210)
+(uid "z8kflu_jd_ew839iyf_-p88")
+(points 580 80 870 80 870 240))
+($6 812 < -yk94ms_-9af_exn8m9i4_-p8z "" 760
+(toMultiplicityPosition 170 235)
+(toRolePosition 305 290)
+(uid "-yk94ms_-9af_exn8m9i4_-p8z")
+(points 830 255 160 255)
+(fromRolePosition 790 235))
+($3 813 < z8kflu_jd_f0tizbxc_-p8z "PathString" 760
+(autoSizeToFit true)
+(uid "z8kflu_jd_f0tizbxc_-p8z")
+(bbx 510 630 80 60))
+($6 814 < -yk94ms_6e6_f0v3v1lz_-p8x "" 760
+(toMultiplicityPosition 470 315)
+(uid "-yk94ms_6e6_f0v3v1lz_-p8x")
+(points 160 305 490 305))
+($6 815 < z8kflu_-hpq_f0w65k7d_-p93 "" 760
+(toMultiplicityPosition 695 280)
+(uid "z8kflu_-hpq_f0w65k7d_-p93")
+(points 830 305 690 305))
+($6 816 < z8kflu_-hpq_f0w65k7d_-p8a "" 760
+(toMultiplicityPosition 530 570)
+(toRolePosition 475 595)
+(uid "z8kflu_-hpq_f0w65k7d_-p8a")
+(points 440 590 540 590)
+(toOrderedPosition 470 570))
+($6 817 < -hkpzxr_-li2_f6q4mkqb_-p8v "" 760
+(uid "-hkpzxr_-li2_f6q4mkqb_-p8v")
+(points 830 275 160 275)
+(fromMultiplicityPosition 805 290))
+($3 818 < -hkpzxr_-li2_f7bl5du8_-p8z "FileTopObject" 760
+(uid "-hkpzxr_-li2_f7bl5du8_-p8z")
+(bbx 20 500 140 90))
+($4 819 < -hkpzxr_-li2_f7bl5du8_-p8y "" 760
+(uid "-hkpzxr_-li2_f7bl5du8_-p8y")
+(points 60 330 60 500))
+($4 820 < -hkpzxr_-li2_f7bl5du8_-p8x "" 760
+(uid "-hkpzxr_-li2_f7bl5du8_-p8x")
+(points 160 525 250 525))
+($3 821 < -hkpzxr_v5_f7xb2l1q_-p94 "ComplexDataType" 760
+(autoSizeToFit true)
+(uid "-hkpzxr_v5_f7xb2l1q_-p94")
+(bbx 900 10 170 190))
+($4 822 < -hkpzxr_v5_f7xb2l1q_-p93 "" 760
+(uid "-hkpzxr_v5_f7xb2l1q_-p93")
+(points 580 60 900 60))
+($4 823 < -hkpzxr_v5_f7xb2l1q_-p92 "" 760
+(uid "-hkpzxr_v5_f7xb2l1q_-p92")
+(points 1110 80 1070 80))
+($3 824 < -hkpzxr_nv3_ff3psu73_-p78 "SymmTracelessMatrix" 760
+(autoSizeToFit true)
+(uid "-hkpzxr_nv3_ff3psu73_-p78")
+(bbx 1070 560 150 140))
+($4 825 < -hkpzxr_nv3_ff3psu73_-p7j "" 760
+(uid "-hkpzxr_nv3_ff3psu73_-p7j")
+(points 1120 560 1120 110))
+($3 826 < z8kfsx_-i16_ggmcp1x0_-p8u "ThreeValueAnswer" 760
+(uid "z8kfsx_-i16_ggmcp1x0_-p8u")
+(bbx 180 630 130 60))
+($7 827 < -yk94ms_6e6_evpe4fus_-p8w "MemopsDataTypeObject" 1
+(name "MemopsDataTypeObject"
+)
+(uid "-yk94ms_6e6_evpe4fus_-p8w")
+(isAbstract true))
+($8 828 < z8kflu_jd_f124ht5g_-p98 "override" 827
+(changeability "frozen")
+(name "override"
+)
+(uid "z8kflu_jd_f124ht5g_-p98")
+(multiplicity "1"))
+($9 829 < z8kflu_jd_f124ht5g_-p97 "documentation" 828
+(name "documentation"
+)
+(value "Overrride switch for DataObjType. Works like MemopsRoot.override, but only for the object itself. If set to True on creation must be reset to False explicitly later. Once set to False can only be reset to True by bypassing the API. "
+)
+(uid "z8kflu_jd_f124ht5g_-p97"))
+($9 830 < z8kflu_jd_f124ht5g_-p96 "guid" 828
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-28-16:40:44_00001"
+)
+(uid "z8kflu_jd_f124ht5g_-p96"))
+($9 831 < z8kflu_jd_f13ifs5b_-p97 "isImplementation" 828
+(name "isImplementation"
+)
+(value "True"
+)
+(uid "z8kflu_jd_f13ifs5b_-p97"))
+($11 832 < z8kflu_jd_f13ifs5b_-p96 "endOverride" 827
+(name "endOverride"
+)
+(uid "z8kflu_jd_f13ifs5b_-p96"))
+($9 833 < z8kflu_jd_f13ifs5b_-p95 "documentation" 832
+(name "documentation"
+)
+(value "removes DataObj from override status"
+)
+(uid "z8kflu_jd_f13ifs5b_-p95"))
+($9 834 < z8kflu_jd_f13ifs5b_-p94 "opType" 832
+(name "opType"
+)
+(value "other"
+)
+(uid "z8kflu_jd_f13ifs5b_-p94"))
+($9 835 < z8kflu_jd_f13ifs5b_-p93 "code:java" 832
+(name "code:java"
+)
+(value "overrideSet.remove(java.lang.System.identityHashCode(this));"
+)
+(uid "z8kflu_jd_f13ifs5b_-p93"))
+($9 836 < z8kflu_jd_f13ifs5b_-p92 "code:python" 832
+(name "code:python"
+)
+(value "# NB must be done by direct data access"
+"if 'override' in self.__dict__:"
+"  del self.__dict__['override']"
+)
+(uid "z8kflu_jd_f13ifs5b_-p92"))
+($9 837 < z8kflu_jd_f13ifs5b_-p8u "guid" 832
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-29-14:37:48_00001"
+)
+(uid "z8kflu_jd_f13ifs5b_-p8u"))
+($10 838 < -hkpzxr_v5_f7xb2l1q_-p96 "#<anon> (MemopsDataTypeObject, ComplexDataType)" 827
+(uid "-hkpzxr_v5_f7xb2l1q_-p96"))
+($9 839 < -yk94ms_6e6_evpe4fus_-p8v "documentation" 827
+(name "documentation"
+)
+(value "Superclass for DataObjTypes"
+)
+(uid "-yk94ms_6e6_evpe4fus_-p8v"))
+($9 840 < -yk94ms_15v_evqyosvg_-p2f "guid" 827
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-12-15-19:00:39_00003"
+)
+(uid "-yk94ms_15v_evqyosvg_-p2f"))
+($7 841 < -hkpzxr_v5_f7xb2l1q_-p98 "ComplexDataType" 1
+(name "ComplexDataType"
+)
+(uid "-hkpzxr_v5_f7xb2l1q_-p98")
+(isAbstract true))
+($8 842 < -hkpzxr_-iih_f82srgo8_-p98 "className" 841
+(changeability "frozen")
+(name "className"
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p98")
+(multiplicity "1"))
+($9 843 < -hkpzxr_-iih_f82srgo8_-p97 "documentation" 842
+(name "documentation"
+)
+(value "Name of class of object. If class names differ for different implementations, name of the coresponding Python class. This is really a class attribute and may be implemented as such by languages that support the concept."
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p97"))
+($9 844 < -hkpzxr_-iih_f82srgo8_-p96 "isImplementation" 842
+(name "isImplementation"
+)
+(value "True"
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p96"))
+($9 845 < -hkpzxr_-iih_f82srgo8_-p8o "guid" 842
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-22-14:11:28_00001"
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p8o"))
+($8 846 < -hkpzxr_-iih_f82srgo8_-p95 "packageName" 841
+(changeability "frozen")
+(name "packageName"
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p95")
+(multiplicity "1"))
+($9 847 < -hkpzxr_-iih_f82srgo8_-p94 "documentation" 846
+(name "documentation"
+)
+(value "Name of package containing class, as a dot-separated string. E.g. 'ccp.nmr.Nmr'. This is really a class attribute and may be implemented as such by languages that support the concept."
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p94"))
+($9 848 < -hkpzxr_-iih_f82srgo8_-p93 "isImplementation" 846
+(name "isImplementation"
+)
+(value "True"
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p93"))
+($9 849 < -hkpzxr_-iih_f82srgo8_-p8n "guid" 846
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-22-14:12:02_00001"
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p8n"))
+($8 850 < -hkpzxr_-iih_f82srgo8_-p92 "packageShortName" 841
+(changeability "frozen")
+(name "packageShortName"
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p92"))
+($9 851 < -hkpzxr_-iih_f82srgo8_-p91 "documentation" 850
+(name "documentation"
+)
+(value "Short name of package containing class, generally as four or fewer upper case characters. E.g. 'NMRC'. Package shortnames are unique across packages. They are not set (value None) for packages that contain other packages. This is really a class attribute and may be implemented as such by languages that support the concept.1"
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p91"))
+($9 852 < -hkpzxr_-iih_f82srgo8_-p90 "isImplementation" 850
+(name "isImplementation"
+)
+(value "True"
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p90"))
+($9 853 < -hkpzxr_-iih_f82srgo8_-p8m "guid" 850
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-22-14:12:02_00002"
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p8m"))
+($8 854 < -hkpzxr_-iih_f82srgo8_-p8z "qualifiedName" 841
+(changeability "frozen")
+(name "qualifiedName"
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p8z")
+(multiplicity "1"))
+($9 855 < -hkpzxr_-iih_f82srgo8_-p8y "documentation" 854
+(name "documentation"
+)
+(value "Fully qualified name of class, equal to (packageName + '.' + className). If class names differ between implementations, name of corresponding Python class. This is really a class attribute and may be implemented as such by languages that support the concept."
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p8y"))
+($9 856 < -hkpzxr_-iih_f82srgo8_-p8w "isDerived" 854
+(name "isDerived"
+)
+(value "True"
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p8w"))
+($9 857 < -hkpzxr_-iih_f82srgo8_-p8l "guid" 854
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-22-14:12:02_00003"
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p8l"))
+($11 858 < -hkpzxr_-iih_f82srgo8_-p8x "getQualifiedName" 841
+(name "getQualifiedName"
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p8x")
+(isQuery true))
+($9 859 < -hkpzxr_-iih_f82srgo8_-p8v "opType" 858
+(name "opType"
+)
+(value "get"
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p8v"))
+($9 860 < -hkpzxr_-iih_f82srgo8_-p8u "documentation" 858
+(name "documentation"
+)
+(value "getter for derived attribute qualifiedName"
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p8u"))
+($9 861 < -hkpzxr_-iih_f82srgo8_-p8t "code:python" 858
+(name "code:python"
+)
+(value "result = '.'.join((self.__class__._packageName, self.__class__.__name__))"
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p8t"))
+($9 862 < -hkpzxr_-iih_f82srgo8_-p8s "code:java" 858
+(name "code:java"
+)
+(value "result = getPackageName() + \".\" + getClassName();"
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p8s"))
+($9 863 < -hkpzxr_-iih_f82srgo8_-p8k "guid" 858
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-22-14:12:02_00005"
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p8k"))
+($8 864 < -hkpzxr_-li2_fd4ich7k_-p90 "fieldNames" 841
+(changeability "frozen")
+(name "fieldNames"
+)
+(uid "-hkpzxr_-li2_fd4ich7k_-p90")
+(multiplicity "*"))
+($9 865 < -hkpzxr_-li2_fd4ich7k_-p8z "documentation" 864
+(name "documentation"
+)
+(value "Names of all object fields in alphabetical order. Attribute names and role  names (where relevant) are given in alphabetical order (for each type). "
+""
+"If you need more information about the classes, the place to look is in the obejct .metaclass MetaModel object."
+)
+(uid "-hkpzxr_-li2_fd4ich7k_-p8z"))
+($9 866 < -hkpzxr_-li2_fd4ich7k_-p8w "baseName" 864
+(name "baseName"
+)
+(value "fieldName"
+)
+(uid "-hkpzxr_-li2_fd4ich7k_-p8w"))
+($9 867 < -hkpzxr_-li2_fd4ich7k_-p8l "guid" 864
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-26-14:05:19_00001"
+)
+(uid "-hkpzxr_-li2_fd4ich7k_-p8l"))
+($9 868 < -hkpzxr_-li2_fd91runt_-p98 "isImplementation" 864
+(name "isImplementation"
+)
+(value "True"
+)
+(uid "-hkpzxr_-li2_fd91runt_-p98"))
+($8 869 < -hkpzxr_-iih_f82srgo8_-p8r "inConstructor" 841
+(changeability "frozen")
+(name "inConstructor"
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p8r")
+(multiplicity "1"))
+($9 870 < -hkpzxr_-iih_f82srgo8_-p8q "documentation" 869
+(name "documentation"
+)
+(value "Implementation switch that determines if an object is being constructed, and turns off some validity checking."
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p8q"))
+($9 871 < -hkpzxr_-iih_f82srgo8_-p8p "isImplementation" 869
+(name "isImplementation"
+)
+(value "True"
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p8p"))
+($9 872 < -hkpzxr_-iih_f82srgo8_-p8j "guid" 869
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-22-14:12:02_00004"
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p8j"))
+($11 873 < -hkpzxr_-li2_fd4ed3vu_-p8t "toDetailedString##String" 841
+(name "toDetailedString"
+)
+(uid "-hkpzxr_-li2_fd4ed3vu_-p8t")
+(isQuery true))
+($12 874 < -hkpzxr_-li2_fd7adars_-p98 "result" 873
+(name "result"
+)
+(kind "return")
+(uid "-hkpzxr_-li2_fd7adars_-p98"))
+($9 875 < -hkpzxr_-li2_fd91runt_-p97 "guid" 874
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-29-18:14:41_00001"
+)
+(uid "-hkpzxr_-li2_fd91runt_-p97"))
+($9 876 < -hkpzxr_-li2_fd4ed3vu_-p8s "documentation" 873
+(name "documentation"
+)
+(value "Return object with all its contents as a detailed, multiline string"
+)
+(uid "-hkpzxr_-li2_fd4ed3vu_-p8s"))
+($9 877 < -hkpzxr_-li2_fd4ed3vu_-p8r "opType" 873
+(name "opType"
+)
+(value "otherQuery"
+)
+(uid "-hkpzxr_-li2_fd4ed3vu_-p8r"))
+($9 878 < -hkpzxr_-li2_fd4ed3vu_-p8q "code:python" 873
+(name "code:python"
+)
+(value "ll = ['{']"
+"for ss in self.fieldNames:"
+"  val = getattr(self,ss)"
+"  if isinstance(val, frozenset) or isinstance(val, tuple):"
+"    ll.append(\"'%s': <collection of length %s>,\\n\" % (ss, len(val)))"
+"  else: "
+"    ll.append(\"'%s':%s,\\n\" % (ss, val))"
+"ll.append('}')"
+"#"
+"result = ''.join(ll)"
+)
+(uid "-hkpzxr_-li2_fd4ed3vu_-p8q"))
+($9 879 < -hkpzxr_-li2_fd4ed3vu_-p8p "code:java" 873
+(name "code:java"
+)
+(value "result = null; /* NBNB TBD */"
+)
+(uid "-hkpzxr_-li2_fd4ed3vu_-p8p"))
+($9 880 < -hkpzxr_-li2_fd4ed3vu_-p8k "guid" 873
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-02-26-13:25:50_00002"
+)
+(uid "-hkpzxr_-li2_fd4ed3vu_-p8k"))
+($9 881 < -hkpzxr_v5_f7xb2l1q_-p95 "guid" 841
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-10-18-17:15:48_00001"
+)
+(uid "-hkpzxr_v5_f7xb2l1q_-p95"))
+($9 882 < -hkpzxr_-iih_f82srgo8_-p8i "documentation" 841
+(name "documentation"
+)
+(value "Topmost Superclass of both classes and complex datatype objects. Contains some implementation attributes"
+)
+(uid "-hkpzxr_-iih_f82srgo8_-p8i"))
+($7 883 < -hkpzxr_v5_fa2hfpju_-p95 "PositiveDouble" 1
+(name "PositiveDouble"
+)
+(uid "-hkpzxr_v5_fa2hfpju_-p95"))
+($10 884 < -hkpzxr_v5_fa2hfpju_-p94 "#<anon> (PositiveDouble, Double)" 883
+(uid "-hkpzxr_v5_fa2hfpju_-p94"))
+($9 885 < -hkpzxr_v5_fa2hfpju_-p92 "documentation" 883
+(name "documentation"
+)
+(value "Double greater than 0"
+)
+(uid "-hkpzxr_v5_fa2hfpju_-p92"))
+($9 886 < -hkpzxr_v5_fa2hfpju_-p8s "guid" 883
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-12-11-18:15:49_00001"
+)
+(uid "-hkpzxr_v5_fa2hfpju_-p8s"))
+($15 887 < -hkpzxr_v5_fa2hfpju_-p93 "double_value_gt_0" 883
+(name "double_value_gt_0"
+)
+(uid "-hkpzxr_v5_fa2hfpju_-p93")
+(body "code:python"
+"_"
+"value > 0"
+"_"
+"code:java"
+"_"
+"value > 0"
+"_"
+"code:xml"
+"_"
+"<xsd:minExclusive value=\"0\"/>"
+))
+($9 888 < -hkpzxr_v5_fa2hfpju_-p8r "guid" 887
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-12-11-18:15:49_00002"
+)
+(uid "-hkpzxr_v5_fa2hfpju_-p8r"))
+($7 889 < -hkpzxr_v5_fa2hfpju_-p91 "NonNegativeDouble" 1
+(name "NonNegativeDouble"
+)
+(uid "-hkpzxr_v5_fa2hfpju_-p91"))
+($10 890 < -hkpzxr_v5_fa2hfpju_-p8y "#<anon> (NonNegativeDouble, Double)" 889
+(uid "-hkpzxr_v5_fa2hfpju_-p8y"))
+($9 891 < -hkpzxr_v5_fa2hfpju_-p90 "documentation" 889
+(name "documentation"
+)
+(value "Double >= 0"
+)
+(uid "-hkpzxr_v5_fa2hfpju_-p90"))
+($9 892 < -hkpzxr_v5_fa2hfpju_-p8q "guid" 889
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-12-11-18:15:49_00003"
+)
+(uid "-hkpzxr_v5_fa2hfpju_-p8q"))
+($15 893 < -hkpzxr_v5_fa2hfpju_-p8z "double_value_ge_0" 889
+(name "double_value_ge_0"
+)
+(uid "-hkpzxr_v5_fa2hfpju_-p8z")
+(body "code:python"
+"_"
+"0.0 <= value"
+"_"
+"code:java"
+"_"
+"0.0f <= value"
+"_"
+"code:xml"
+"_"
+"<xsd:minInclusive value=\"0.0\"/>"
+))
+($9 894 < -hkpzxr_v5_fa2hfpju_-p8t "guid" 893
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-12-11-18:15:49_00004"
+)
+(uid "-hkpzxr_v5_fa2hfpju_-p8t"))
+($7 895 < -hkpzxr_-o65_fev6cycj_-p8n "IntSign" 1
+(name "IntSign"
+)
+(uid "-hkpzxr_-o65_fev6cycj_-p8n"))
+($10 896 < -hkpzxr_-o65_fev6cycj_-p8l "#<anon> (IntSign, Int)" 895
+(uid "-hkpzxr_-o65_fev6cycj_-p8l"))
+($9 897 < -hkpzxr_-o65_fev6cycj_-p8m "documentation" 895
+(name "documentation"
+)
+(value "+/- 1 - for sign infomation"
+)
+(uid "-hkpzxr_-o65_fev6cycj_-p8m"))
+($9 898 < -hkpzxr_-o65_fev6cycj_-p8k "isOpen" 895
+(name "isOpen"
+)
+(value "False"
+)
+(uid "-hkpzxr_-o65_fev6cycj_-p8k"))
+($9 899 < -hkpzxr_-o65_fev6cycj_-p8j "enumeration" 895
+(name "enumeration"
+)
+(value "('1','-1')"
+)
+(uid "-hkpzxr_-o65_fev6cycj_-p8j"))
+($9 900 < -hkpzxr_-o65_fev6cycj_-p7d "guid" 895
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-04-10-18:39:10_00003"
+)
+(uid "-hkpzxr_-o65_fev6cycj_-p7d"))
+($7 901 < -hkpzxr_nv3_ff3psu73_-p7m "SymmTracelessMatrix" 1
+(name "SymmTracelessMatrix"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p7m"))
+($8 902 < -hkpzxr_nv3_ff3psu73_-p7i "aAxial" 901
+(changeability "frozen")
+(name "aAxial"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p7i")
+(multiplicity "1"))
+($9 903 < -hkpzxr_nv3_ff3psu73_-p7h "documentation" 902
+(name "documentation"
+)
+(value "Axial component"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p7h"))
+($9 904 < -hkpzxr_nv3_ff3psu73_-p5z "guid" 902
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-04-16-13:49:38_00001"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p5z"))
+($8 905 < -hkpzxr_nv3_ff3psu73_-p7g "aRhombic" 901
+(changeability "frozen")
+(name "aRhombic"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p7g")
+(multiplicity "1"))
+($9 906 < -hkpzxr_nv3_ff3psu73_-p7f "documentation" 905
+(name "documentation"
+)
+(value "rhombic component"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p7f"))
+($9 907 < -hkpzxr_nv3_ff3psu73_-p5y "guid" 905
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-04-16-13:49:38_00002"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p5y"))
+($8 908 < -hkpzxr_nv3_ff3psu73_-p7e "alpha" 901
+(changeability "frozen")
+(name "alpha"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p7e")
+(multiplicity "1"))
+($9 909 < -hkpzxr_nv3_ff3psu73_-p7d "documentation" 908
+(name "documentation"
+)
+(value "Euler angle alpha in radians"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p7d"))
+($9 910 < -hkpzxr_nv3_ff3psu73_-p5x "guid" 908
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-04-16-13:49:38_00003"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p5x"))
+($8 911 < -hkpzxr_nv3_ff3psu73_-p7c "beta" 901
+(changeability "frozen")
+(name "beta"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p7c")
+(multiplicity "1"))
+($9 912 < -hkpzxr_nv3_ff3psu73_-p7b "documentation" 911
+(name "documentation"
+)
+(value "Euler angle beta in radians"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p7b"))
+($9 913 < -hkpzxr_nv3_ff3psu73_-p5w "guid" 911
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-04-16-13:49:38_00004"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p5w"))
+($8 914 < -hkpzxr_nv3_ff3psu73_-p7a "gamma" 901
+(changeability "frozen")
+(name "gamma"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p7a")
+(multiplicity "1"))
+($9 915 < -hkpzxr_nv3_ff3psu73_-p79 "documentation" 914
+(name "documentation"
+)
+(value "Euler angle gamma in radians"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p79"))
+($9 916 < -hkpzxr_nv3_ff3psu73_-p5v "guid" 914
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-04-16-13:49:38_00005"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p5v"))
+($10 917 < -hkpzxr_nv3_ff3psu73_-p7k "#<anon> (SymmTracelessMatrix, MemopsDataTypeObject)" 901
+(uid "-hkpzxr_nv3_ff3psu73_-p7k"))
+($9 918 < -hkpzxr_nv3_ff3psu73_-p7l "documentation" 901
+(name "documentation"
+)
+(value "Symmetric traceless tenaor, used for instance for alignment tensors."
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p7l"))
+($9 919 < -hkpzxr_nv3_ff3psu73_-p5u "guid" 901
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-04-16-13:49:36_00004"
+)
+(uid "-hkpzxr_nv3_ff3psu73_-p5u"))
+($7 920 < z8kfsx_-9el_ffqk1gqf_-p98 "RgbColor" 1
+(name "RgbColor"
+)
+(uid "z8kfsx_-9el_ffqk1gqf_-p98"))
+($10 921 < z8kfsx_-gyy_gvnq1xrz_-p4j "#<anon> (RgbColor, HexString)" 920
+(uid "z8kfsx_-gyy_gvnq1xrz_-p4j"))
+($9 922 < z8kfsx_-9el_ffqk1gqf_-p95 "documentation" 920
+(name "documentation"
+)
+(value "RGB colour specification- "
+)
+(uid "z8kfsx_-9el_ffqk1gqf_-p95"))
+($9 923 < z8kfsx_-fvi_ffv4spy9_-p6s "guid" 920
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-05-05-15:12:50_00007"
+)
+(uid "z8kfsx_-fvi_ffv4spy9_-p6s"))
+($15 924 < z8kfsx_-9el_ffqk1gqf_-p94 "length_is_7" 920
+(name "length_is_7"
+)
+(uid "z8kfsx_-9el_ffqk1gqf_-p94")
+(body "code:python"
+"_"
+"len(value) == 7"
+"_"
+"code:java"
+"_"
+"value.length() == 7"
+))
+($9 925 < z8kfsx_-fvi_ffv4spy9_-p6r "guid" 924
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-05-05-15:12:50_00008"
+)
+(uid "z8kfsx_-fvi_ffv4spy9_-p6r"))
+($7 926 < z8kfsx_-fvi_ffqsowwn_-p8u "PaperFormat" 1
+(name "PaperFormat"
+)
+(uid "z8kfsx_-fvi_ffqsowwn_-p8u"))
+($10 927 < z8kfsx_-fvi_ffqsowwn_-p8q "#<anon> (PaperFormat, String)" 926
+(uid "z8kfsx_-fvi_ffqsowwn_-p8q"))
+($9 928 < z8kfsx_-fvi_ffqsowwn_-p8t "documentation" 926
+(name "documentation"
+)
+(value "Paper format enumeration ('A4', 'A5', 'B4', 'letter', 'legal', 'other')"
+)
+(uid "z8kfsx_-fvi_ffqsowwn_-p8t"))
+($9 929 < z8kfsx_-fvi_ffqsowwn_-p8s "isOpen" 926
+(name "isOpen"
+)
+(value "True"
+)
+(uid "z8kfsx_-fvi_ffqsowwn_-p8s"))
+($9 930 < z8kfsx_-fvi_ffqsowwn_-p8r "enumeration" 926
+(name "enumeration"
+)
+(value " ('A3', 'A4', 'A5', 'B4', 'Letter', 'Legal', 'Tabloid', 'other')"
+)
+(uid "z8kfsx_-fvi_ffqsowwn_-p8r"))
+($9 931 < z8kfsx_-fvi_ffv4spy9_-p6p "guid" 926
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-05-05-15:12:50_00010"
+)
+(uid "z8kfsx_-fvi_ffv4spy9_-p6p"))
+($7 932 < z8kfsx_-fvi_ffqsowwn_-p8j "PaperUnit" 1
+(name "PaperUnit"
+)
+(uid "z8kfsx_-fvi_ffqsowwn_-p8j"))
+($10 933 < z8kfsx_-fvi_ffqsowwn_-p8h "#<anon> (PaperUnit, String)" 932
+(uid "z8kfsx_-fvi_ffqsowwn_-p8h"))
+($9 934 < z8kfsx_-fvi_ffqsowwn_-p8i "documentation" 932
+(name "documentation"
+)
+(value "Measurement units for paper size"
+)
+(uid "z8kfsx_-fvi_ffqsowwn_-p8i"))
+($9 935 < z8kfsx_-fvi_ffqsowwn_-p8g "isOpen" 932
+(name "isOpen"
+)
+(value "False"
+)
+(uid "z8kfsx_-fvi_ffqsowwn_-p8g"))
+($9 936 < z8kfsx_-fvi_ffqsowwn_-p8f "enumeration" 932
+(name "enumeration"
+)
+(value "('cm','in','pt')"
+)
+(uid "z8kfsx_-fvi_ffqsowwn_-p8f"))
+($9 937 < z8kfsx_-fvi_ffv4spy9_-p6o "guid" 932
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-05-05-15:12:50_00011"
+)
+(uid "z8kfsx_-fvi_ffv4spy9_-p6o"))
+($7 938 < z8kfsx_-fvi_ffqsowwn_-p8e "PrintFormat" 1
+(name "PrintFormat"
+)
+(uid "z8kfsx_-fvi_ffqsowwn_-p8e"))
+($10 939 < z8kfsx_-fvi_ffqsowwn_-p8d "#<anon> (PrintFormat, String)" 938
+(uid "z8kfsx_-fvi_ffqsowwn_-p8d"))
+($9 940 < z8kfsx_-fvi_ffqsowwn_-p8c "documentation" 938
+(name "documentation"
+)
+(value "Print output format"
+)
+(uid "z8kfsx_-fvi_ffqsowwn_-p8c"))
+($9 941 < z8kfsx_-fvi_ffqsowwn_-p8b "isOpen" 938
+(name "isOpen"
+)
+(value "False"
+)
+(uid "z8kfsx_-fvi_ffqsowwn_-p8b"))
+($9 942 < z8kfsx_-fvi_ffqsowwn_-p8a "enumeration" 938
+(name "enumeration"
+)
+(value "('PS','EPS','PDF')"
+)
+(uid "z8kfsx_-fvi_ffqsowwn_-p8a"))
+($9 943 < z8kfsx_-fvi_ffv4spy9_-p6n "guid" 938
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-05-05-15:12:50_00012"
+)
+(uid "z8kfsx_-fvi_ffv4spy9_-p6n"))
+($7 944 < z8kfsx_-fvi_ffqsowwn_-p89 "PaperOrientation" 1
+(name "PaperOrientation"
+)
+(uid "z8kfsx_-fvi_ffqsowwn_-p89"))
+($10 945 < z8kfsx_-fvi_ffqsowwn_-p85 "#<anon> (PaperOrientation, String)" 944
+(uid "z8kfsx_-fvi_ffqsowwn_-p85"))
+($9 946 < z8kfsx_-fvi_ffqsowwn_-p88 "documentation" 944
+(name "documentation"
+)
+(value "Paper orientation for printing."
+)
+(uid "z8kfsx_-fvi_ffqsowwn_-p88"))
+($9 947 < z8kfsx_-fvi_ffqsowwn_-p87 "isOpen" 944
+(name "isOpen"
+)
+(value "False"
+)
+(uid "z8kfsx_-fvi_ffqsowwn_-p87"))
+($9 948 < z8kfsx_-fvi_ffqsowwn_-p86 "enumeration" 944
+(name "enumeration"
+)
+(value "('Portrait','Landscape')"
+)
+(uid "z8kfsx_-fvi_ffqsowwn_-p86"))
+($9 949 < z8kfsx_-fvi_ffv4spy9_-p6m "guid" 944
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-05-05-15:12:50_00013"
+)
+(uid "z8kfsx_-fvi_ffv4spy9_-p6m"))
+($7 950 < z8kfsx_-9el_fgtclf5e_-p98 "NegativeFloat" 1
+(name "NegativeFloat"
+)
+(uid "z8kfsx_-9el_fgtclf5e_-p98"))
+($10 951 < z8kfsx_-9el_fgtclf5e_-p97 "#<anon> (NegativeFloat, Float)" 950
+(uid "z8kfsx_-9el_fgtclf5e_-p97"))
+($9 952 < z8kfsx_-9el_fgtclf5e_-p94 "documentation" 950
+(name "documentation"
+)
+(value "Float less than 0"
+)
+(uid "z8kfsx_-9el_fgtclf5e_-p94"))
+($9 953 < z8kfsx_-9el_fgtclf5e_-p8p "guid" 950
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-05-29-14:27:55_00001"
+)
+(uid "z8kfsx_-9el_fgtclf5e_-p8p"))
+($15 954 < z8kfsx_-9el_fgtclf5e_-p95 "value_lt_0" 950
+(name "value_lt_0"
+)
+(uid "z8kfsx_-9el_fgtclf5e_-p95")
+(body "code:python"
+"_"
+"value < 0"
+"_"
+"code:java"
+"_"
+"value < 0"
+"_"
+"code:xml"
+"_"
+"<xsd:maxExclusive value=\"0\"/>"
+))
+($9 955 < z8kfsx_-9el_fgtclf5e_-p8o "guid" 954
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-05-29-14:27:55_00002"
+)
+(uid "z8kfsx_-9el_fgtclf5e_-p8o"))
+($7 956 < z8kfsx_-9el_fgtclf5e_-p93 "NegativeInt" 1
+(name "NegativeInt"
+)
+(uid "z8kfsx_-9el_fgtclf5e_-p93"))
+($10 957 < z8kfsx_-9el_fgtclf5e_-p91 "#<anon> (NegativeInt, Int)" 956
+(uid "z8kfsx_-9el_fgtclf5e_-p91"))
+($9 958 < z8kfsx_-9el_fgtclf5e_-p92 "documentation" 956
+(name "documentation"
+)
+(value "Integer < 0"
+)
+(uid "z8kfsx_-9el_fgtclf5e_-p92"))
+($9 959 < z8kfsx_-9el_fgtclf5e_-p8n "guid" 956
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-05-29-14:27:55_00003"
+)
+(uid "z8kfsx_-9el_fgtclf5e_-p8n"))
+($15 960 < z8kfsx_-9el_fgtclf5e_-p8z "alue_lt_0" 956
+(name "alue_lt_0"
+)
+(uid "z8kfsx_-9el_fgtclf5e_-p8z")
+(body "code:python"
+"_"
+"value < 0"
+"_"
+"code:java"
+"_"
+"value < 0"
+"_"
+"code:xml"
+"_"
+"<xsd:maxExclusive value=\"0\"/>"
+))
+($9 961 < z8kfsx_-9el_fgtclf5e_-p8m "guid" 960
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-05-29-14:27:55_00004"
+)
+(uid "z8kfsx_-9el_fgtclf5e_-p8m"))
+($7 962 < z8kfsx_-9el_fgtclf5e_-p8y "NegativeDouble" 1
+(name "NegativeDouble"
+)
+(uid "z8kfsx_-9el_fgtclf5e_-p8y"))
+($10 963 < z8kfsx_-9el_fgtclf5e_-p8v "#<anon> (NegativeDouble, Double)" 962
+(uid "z8kfsx_-9el_fgtclf5e_-p8v"))
+($9 964 < z8kfsx_-9el_fgtclf5e_-p8x "documentation" 962
+(name "documentation"
+)
+(value "Double < 0"
+)
+(uid "z8kfsx_-9el_fgtclf5e_-p8x"))
+($9 965 < z8kfsx_-9el_fgtclf5e_-p8l "guid" 962
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-05-29-14:27:55_00005"
+)
+(uid "z8kfsx_-9el_fgtclf5e_-p8l"))
+($15 966 < z8kfsx_-9el_fgtclf5e_-p8w "value_lt_0" 962
+(name "value_lt_0"
+)
+(uid "z8kfsx_-9el_fgtclf5e_-p8w")
+(body "code:python"
+"_"
+"value < 0"
+"_"
+"code:java"
+"_"
+"value < 0"
+"_"
+"code:xml"
+"_"
+"<xsd:maxExclusive value=\"0\"/>"
+))
+($9 967 < z8kfsx_-9el_fgtclf5e_-p8q "guid" 966
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-05-29-14:27:55_00006"
+)
+(uid "z8kfsx_-9el_fgtclf5e_-p8q"))
+($7 968 < z8kfsx_iv7_fi382ccl_-p98 "GuidString" 1
+(name "GuidString"
+)
+(uid "z8kfsx_iv7_fi382ccl_-p98"))
+($10 969 < z8kfsx_iv7_fi382ccl_-p97 "#<anon> (GuidString, Line)" 968
+(uid "z8kfsx_iv7_fi382ccl_-p97"))
+($9 970 < z8kfsx_iv7_fi382ccl_-p96 "documentation" 968
+(name "documentation"
+)
+(value "GUID (globally unique identifier) string. Specially set up"
+"to allow use as file name etc."
+)
+(uid "z8kfsx_iv7_fi382ccl_-p96"))
+($9 971 < z8kfsx_iv7_fi382ccl_-p92 "guid" 968
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-06-30-16:30:50_00001"
+)
+(uid "z8kfsx_iv7_fi382ccl_-p92"))
+($15 972 < z8kfsx_iv7_fi382ccl_-p95 "value_is_url_safe" 968
+(name "value_is_url_safe"
+)
+(uid "z8kfsx_iv7_fi382ccl_-p95")
+(body "code:python"
+"_"
+"isValid = frozenset('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789-').issuperset(value)"
+"_"
+"code:java"
+"_"
+"value.matches(\"^[_a-zA-Z0-9-]*$\")"
+))
+($9 973 < z8kfsx_iv7_fi382ccl_-p91 "guid" 972
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-06-30-16:30:50_00002"
+)
+(uid "z8kfsx_iv7_fi382ccl_-p91"))
+($7 974 < z8kfsx_-9el_fqars3g2_-p98 "Page" 1
+(name "Page"
+)
+(uid "z8kfsx_-9el_fqars3g2_-p98"))
+($10 975 < z8kfsx_-9el_fqars3g2_-p94 "#<anon> (Page, String)" 974
+(uid "z8kfsx_-9el_fqars3g2_-p94"))
+($9 976 < z8kfsx_-9el_fqars3g2_-p97 "documentation" 974
+(name "documentation"
+)
+(value "Limited-length string, max length 4000"
+)
+(uid "z8kfsx_-9el_fqars3g2_-p97"))
+($9 977 < z8kfsx_-9el_fqars3g2_-p96 "length" 974
+(name "length"
+)
+(value "4000"
+)
+(uid "z8kfsx_-9el_fqars3g2_-p96"))
+($9 978 < z8kfsx_-9el_fqars3g2_-p95 "guid" 974
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2009-01-23-10:52:32_00001"
+)
+(uid "z8kfsx_-9el_fqars3g2_-p95"))
+($7 979 < z8kfsx_-i16_ggmcp1x0_-p97 "ThreeValueAnswer" 1
+(name "ThreeValueAnswer"
+)
+(uid "z8kfsx_-i16_ggmcp1x0_-p97"))
+($10 980 < z8kfsx_-i16_ggmcp1x0_-p95 "#<anon> (ThreeValueAnswer, Word)" 979
+(uid "z8kfsx_-i16_ggmcp1x0_-p95"))
+($9 981 < z8kfsx_-i16_ggmcp1x0_-p96 "documentation" 979
+(name "documentation"
+)
+(value "Enumeration: 'yes' , 'no', 'maybe'"
+)
+(uid "z8kfsx_-i16_ggmcp1x0_-p96"))
+($9 982 < z8kfsx_-i16_ggmcp1x0_-p94 "isOpen" 979
+(name "isOpen"
+)
+(value "False"
+)
+(uid "z8kfsx_-i16_ggmcp1x0_-p94"))
+($9 983 < z8kfsx_-i16_ggmcp1x0_-p93 "enumeration" 979
+(name "enumeration"
+)
+(value "('yes', 'no', 'maybe')"
+)
+(uid "z8kfsx_-i16_ggmcp1x0_-p93"))
+($9 984 < z8kfsx_-i16_ggmcp1x0_-p8t "guid" 979
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-11-17-16:21:33_00001"
+)
+(uid "z8kfsx_-i16_ggmcp1x0_-p8t"))
+($7 985 < z8kfsx_-gyy_gvnq1xrz_-p4m "HexString" 1
+(name "HexString"
+)
+(uid "z8kfsx_-gyy_gvnq1xrz_-p4m"))
+($10 986 < z8kfsx_-gyy_gvnq1xrz_-p4l "#<anon> (HexString, String)" 985
+(uid "z8kfsx_-gyy_gvnq1xrz_-p4l"))
+($9 987 < z8kfsx_-gyy_gvp0hyx4_-p97 "guid" 985
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-12-02-09:49:50_00001"
+)
+(uid "z8kfsx_-gyy_gvp0hyx4_-p97"))
+($15 988 < z8kfsx_-gyy_gvnq1xrz_-p4k "HexStringFormat" 985
+(name "HexStringFormat"
+)
+(uid "z8kfsx_-gyy_gvnq1xrz_-p4k")
+(body "code:python"
+"_"
+"value[0] == '#' and not [x for x in value[1:] if x not in  '0123456789ABCDEF']"
+"_"
+"code:java"
+"_"
+"true"
+))
+($9 989 < z8kfsx_-gyy_gvp0hyx4_-p96 "guid" 988
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-12-02-09:49:50_00002"
+)
+(uid "z8kfsx_-gyy_gvp0hyx4_-p96"))
+($7 990 < z8kfsx_-gyy_gvnq1xrz_-p4g "RgbaColor" 1
+(name "RgbaColor"
+)
+(uid "z8kfsx_-gyy_gvnq1xrz_-p4g"))
+($10 991 < z8kfsx_-gyy_gvnq1xrz_-p4e "#<anon> (RgbaColor, HexString)" 990
+(uid "z8kfsx_-gyy_gvnq1xrz_-p4e"))
+($9 992 < z8kfsx_-gyy_gvp0hyx4_-p95 "guid" 990
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-12-02-09:49:50_00003"
+)
+(uid "z8kfsx_-gyy_gvp0hyx4_-p95"))
+($15 993 < z8kfsx_-gyy_gvnq1xrz_-p4f "length_is_9" 990
+(name "length_is_9"
+)
+(uid "z8kfsx_-gyy_gvnq1xrz_-p4f")
+(body "code:python"
+"_"
+"len(value) == 9"
+"_"
+"code:java"
+"_"
+"value.length() == 9"
+))
+($9 994 < z8kfsx_-gyy_gvp0hyx4_-p94 "guid" 993
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-12-02-09:49:50_00004"
+)
+(uid "z8kfsx_-gyy_gvp0hyx4_-p94"))
+($9 995 < -yk94ms_-e3s_e41656c6_-gn0 "shortName" 1
+(name "shortName"
+)
+(value "IMPL"
+)
+(uid "-yk94ms_-e3s_e41656c6_-gn0"))
+($9 996 < -yk94ms_-e3s_e41656c6_-gmz "documentation" 1
+(name "documentation"
+)
+(value "The memops implementation - the basic machinery that makes the various subroutine libraries function."
+)
+(uid "-yk94ms_-e3s_e41656c6_-gmz"))
+($9 997 < -yk94ms_15v_eqxp59vz_-ous "guid" 1
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00025"
+)
+(uid "-yk94ms_15v_eqxp59vz_-ous"))
+($18 998)
+($18 1000)
+($18 1001)
+($18 1002)
+($18 1003)
+($18 1004)
+($18 1005)
+($18 1006)
+($18 1007)
+($18 1008)
+($18 1009)
+($18 1010)
+($18 1011)
+($18 1012)
+($18 1013)
+($18 1014)
+($18 1015)
+($18 1016)
+($18 1017)
+($18 1018)
+($18 1019)
+($18 1020)
+($18 1021)
+($18 1022)
+($18 1023)
+($18 1024)
+($18 1025)
+($18 1026)
+($18 1027)
+($18 1028)
+($18 1029)
+($18 1030)
+($18 1031)
+($18 1032)
+($18 1033)
+($18 1034)
+($18 1035)
+($18 1036)
+($18 1037)
+($18 1038)
+($18 1039)
+($18 1040)
+($18 1041)
+($18 1042)
+($18 1043)
+($18 1044)
+($18 1045)
+($18 1046)
+($18 1047)
+($18 1048)
+($18 1049)
+($18 1050)
+($18 1051)
+($18 1052)
+($18 1053)
+($18 1054)
+($18 1055)
+($18 1056)
+($18 1057)
+($18 1058)
+($18 1059)
+($18 1060)
+($18 1061)
+($18 1062)
+($18 1063)
+($18 1064)
+($18 1066)
+($21 1067)
+($21 1068)
+($21 1069)
+($21 1070)
+($21 1071
+(body "*"
+))
+($21 1072)
+($21 1073)
+($21 1074)
+($21 1075)
+($21 1076)
+($21 1077)
+($21 1078)
+($21 1079)
+($21 1080)
+($21 1081)
+($21 1082)
+($21 1083)
+($21 1084)
+($21 1085)
+($21 1086)
+($21 1087)
+($21 1089)
+($21 1090)
+($21 1091)
+($21 1092)
+($21 1093)
+($18 1103)
+($18 1104)
+($18 1105)
+($21 1106)
+($18 1107)
+($18 1108)
+($18 1109)
+($18 1110)
+($18 1111)
+($18 1112)
+($18 1113)
+($18 1114)
+($18 1115)
+($18 1116)
+($18 1117)
+($18 1118)
+($18 1119)
+($18 1120)
+($18 1121)
+($18 1122)
+($18 1123)
+($18 1124)
+($18 1126)
+($18 1127)
+($18 1128)
+($18 1129)
+($18 1130)
+($18 1131)
+($18 1132)
+($18 1133)
+($18 1134)
+($18 1135)
+($18 1136)
+($18 1137)
+($18 1138)
+($18 1139)
+($18 1140)
+($18 1141)
+($18 1142)
+($18 1143)
+($18 1144)
+($18 1145)
+($18 1146)
+($18 1147)
+($18 1148)
+($18 1149)
+($18 1150)
+($18 1151)
+($18 1152)
+($18 1153)
+($18 1154)
+($18 1155)
+($18 1157)
+($18 1158)
+($18 1159)
+($18 1160)
+($18 1161)
+($18 1162)
+($18 1163)
+($21 1164)
+($18 1165)
+($18 1166)
+($18 1167)
+($18 1168)
+($18 1169)
+($18 1170)
+($18 1171)
+($18 1172)
+($18 1173)
+($18 1174)
+($18 1175)
+($18 1176)
+($18 1177)
+($18 1178)
+($18 1179)
+($18 1180)
+($18 1181)
+($18 1182)
+($18 1183)
+($18 1184)
+($18 1185)
+($18 1186)
+($18 1187)
+($18 1188)
+($18 1189)
+($18 1190)
+($18 1191)
+($18 1192)
+($18 1193)
+($18 1194)
+($18 1195)
+($18 1196)
+($18 1197)
+($18 1198)
+($18 1199)
+($18 1200)
+($18 1201)
+($18 1202)
+($18 1203)
+($18 1204)
+($18 1205)
+($18 1206)
+($18 1207)
+($18 1208)
+($18 1209)
+($18 1210)
+($18 1211)
+($18 1212)
+($18 1213)
+($18 1214)
+($18 1215)
+($18 1216)
+($18 1217)
+($18 1218)
+($18 1219)
+($18 1220)
+($18 1221)
+($18 1222)
+($18 1223)
+($18 1224)
+($18 1225)
+($18 1226)
+($18 1227)
+($18 1228)
+($18 1229)
+($18 1230)
+($18 1231)
+($18 1232)
+($19 999 @ -yk94ms_-e3s_e41656c6_-fw7 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "DataType" $19)
+($20 1065 @ -yk94ms_-e3s_e41656c6_-fvw 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "memops.Implementation" $20)
+($7 1088 @ -na6ls1_77l_echf85hk_-p95 4 "Logical" $1 "memops" $1 "AccessControl" $1 "AccessObject" $7)
+($7 1094 @ 0_om1_erq4w1i4_-p41 5 "Logical" $1 "ccp" $1 "general" $1 "Taxonomy" $1 "Taxonomy" $7)
+($7 1095 @ z8kfsx_-fvi_fqjirlib_-p92 4 "Logical" $1 "cambridge" $1 "Wms" $1 "WmsSegment" $7)
+($7 1096 @ z8kfsx_-fvi_fuv25qf3_-p71 5 "Logical" $1 "ccp" $1 "nmr" $1 "NmrCalc" $1 "NmrCalcStore" $7)
+($7 1097 @ z8kfsx_fb8_g1xcbxen_-p94 5 "Logical" $1 "ccp" $1 "nmr" $1 "NmrScreen" $1 "NmrScreenStore" $7)
+($7 1098 @ z8kfsx_-9el_g8u3kgqo_-p70 4 "Logical" $1 "cambridge" $1 "WmsProtocol" $1 "WmsProtocol" $7)
+($7 1099 @ z8kfsx_-9el_g8u3kgqo_-p5f 4 "Logical" $1 "cambridge" $1 "WmsQuery" $1 "WmsQueryStore" $7)
+($7 1100 @ z8kfsx_-m68_gve1573z_-p82 4 "Logical" $1 "ccpnmr" $1 "AnalysisWindow" $1 "AnalysisWindowStore" $7)
+($7 1101 @ z8kfsx_-m68_gtzvewsk_-p97 4 "Logical" $1 "ccpnmr" $1 "AnalysisV3" $1 "AnalysisProjectV3" $7)
+($7 1102 @ z8kfsx_-m68_gtzvewsk_-p5r 4 "Logical" $1 "ccpnmr" $1 "AnalysisLayout" $1 "Layout" $7)
+($10 1125 @ -na6ls1_77l_ecisrbzs_-p90 5 "Logical" $1 "memops" $1 "AccessControl" $1 "AccessObject" $7 "#<anon> (AccessObject, DataObject)" $10)
+($13 1156 @ -yk94ms_6e6_evpe4fus_-p88 5 "Logical" $1 "memops" $1 "AccessControl" $1 "AccessObject" $7 "#<anon> (AccessObject, DataObject)##access," $13)
+(stereotypeAssn 163 999)
+(projectionAssn 3 163 998)
+(stereotypeAssn 191 999)
+(projectionAssn 4 191 1000)
+(stereotypeAssn 183 999)
+(projectionAssn 5 183 1001)
+(stereotypeAssn 208 999)
+(projectionAssn 6 208 1002)
+(stereotypeAssn 197 999)
+(subtypeAssn 198 197)
+(stereotypeAssn 529 999)
+(subtypeAssn 530 529)
+(supertypeAssn 530 208)
+(generalizationAssn 529 530)
+(supertypeAssn 198 529)
+(generalizationAssn 197 198)
+(projectionAssn 7 197 1003)
+(stereotypeAssn 214 999)
+(subtypeAssn 215 214)
+(supertypeAssn 215 208)
+(generalizationAssn 214 215)
+(projectionAssn 8 214 1004)
+(to 9 6)
+(from 9 8)
+(projectionAssn 9 215 1005)
+(stereotypeAssn 202 999)
+(projectionAssn 10 202 1006)
+(stereotypeAssn 175 999)
+(projectionAssn 11 175 1007)
+(stereotypeAssn 219 999)
+(subtypeAssn 220 219)
+(stereotypeAssn 730 999)
+(subtypeAssn 731 730)
+(stereotypeAssn 724 999)
+(subtypeAssn 725 724)
+(supertypeAssn 725 208)
+(generalizationAssn 724 725)
+(supertypeAssn 731 724)
+(generalizationAssn 730 731)
+(supertypeAssn 220 730)
+(generalizationAssn 219 220)
+(projectionAssn 12 219 1008)
+(stereotypeAssn 517 999)
+(subtypeAssn 518 517)
+(supertypeAssn 518 191)
+(generalizationAssn 517 518)
+(projectionAssn 13 517 1009)
+(to 14 4)
+(from 14 13)
+(projectionAssn 14 518 1010)
+(projectionAssn 15 529 1011)
+(to 16 6)
+(from 16 15)
+(projectionAssn 16 530 1012)
+(to 17 15)
+(from 17 7)
+(projectionAssn 17 198 1013)
+(stereotypeAssn 547 999)
+(subtypeAssn 548 547)
+(supertypeAssn 548 191)
+(generalizationAssn 547 548)
+(projectionAssn 18 547 1014)
+(to 19 4)
+(from 19 18)
+(projectionAssn 19 548 1015)
+(stereotypeAssn 553 999)
+(projectionAssn 20 553 1016)
+(stereotypeAssn 171 999)
+(subtypeAssn 172 171)
+(supertypeAssn 172 208)
+(generalizationAssn 171 172)
+(projectionAssn 21 171 1017)
+(to 22 6)
+(from 22 21)
+(projectionAssn 22 172 1018)
+(stereotypeAssn 702 999)
+(subtypeAssn 703 702)
+(supertypeAssn 703 553)
+(generalizationAssn 702 703)
+(projectionAssn 23 702 1019)
+(to 24 20)
+(from 24 23)
+(projectionAssn 24 703 1020)
+(stereotypeAssn 707 999)
+(projectionAssn 25 707 1021)
+(stereotypeAssn 502 999)
+(subtypeAssn 503 502)
+(supertypeAssn 503 208)
+(generalizationAssn 502 503)
+(projectionAssn 26 502 1022)
+(to 27 6)
+(from 27 26)
+(projectionAssn 27 503 1023)
+(stereotypeAssn 541 999)
+(subtypeAssn 542 541)
+(supertypeAssn 542 183)
+(generalizationAssn 541 542)
+(projectionAssn 28 541 1024)
+(to 29 5)
+(from 29 28)
+(projectionAssn 29 542 1025)
+(stereotypeAssn 509 999)
+(subtypeAssn 510 509)
+(supertypeAssn 510 183)
+(generalizationAssn 509 510)
+(projectionAssn 30 509 1026)
+(to 31 5)
+(from 31 30)
+(projectionAssn 31 510 1027)
+(stereotypeAssn 535 999)
+(subtypeAssn 536 535)
+(supertypeAssn 536 183)
+(generalizationAssn 535 536)
+(projectionAssn 32 535 1028)
+(to 33 5)
+(from 33 32)
+(projectionAssn 33 536 1029)
+(projectionAssn 34 724 1030)
+(to 35 6)
+(from 35 34)
+(projectionAssn 35 725 1031)
+(projectionAssn 36 730 1032)
+(to 37 34)
+(from 37 36)
+(projectionAssn 37 731 1033)
+(to 38 36)
+(from 38 12)
+(projectionAssn 38 220 1034)
+(stereotypeAssn 883 999)
+(subtypeAssn 884 883)
+(supertypeAssn 884 175)
+(generalizationAssn 883 884)
+(projectionAssn 39 883 1035)
+(to 40 11)
+(from 40 39)
+(projectionAssn 40 884 1036)
+(stereotypeAssn 889 999)
+(subtypeAssn 890 889)
+(supertypeAssn 890 175)
+(generalizationAssn 889 890)
+(projectionAssn 41 889 1037)
+(to 42 11)
+(from 42 41)
+(projectionAssn 42 890 1038)
+(stereotypeAssn 895 999)
+(subtypeAssn 896 895)
+(supertypeAssn 896 191)
+(generalizationAssn 895 896)
+(projectionAssn 43 895 1039)
+(to 44 4)
+(from 44 43)
+(projectionAssn 44 896 1040)
+(stereotypeAssn 920 999)
+(subtypeAssn 921 920)
+(stereotypeAssn 985 999)
+(subtypeAssn 986 985)
+(supertypeAssn 986 208)
+(generalizationAssn 985 986)
+(supertypeAssn 921 985)
+(generalizationAssn 920 921)
+(projectionAssn 45 920 1041)
+(stereotypeAssn 926 999)
+(subtypeAssn 927 926)
+(supertypeAssn 927 208)
+(generalizationAssn 926 927)
+(projectionAssn 46 926 1042)
+(to 47 6)
+(from 47 46)
+(projectionAssn 47 927 1043)
+(stereotypeAssn 932 999)
+(subtypeAssn 933 932)
+(supertypeAssn 933 208)
+(generalizationAssn 932 933)
+(projectionAssn 48 932 1044)
+(stereotypeAssn 938 999)
+(subtypeAssn 939 938)
+(supertypeAssn 939 208)
+(generalizationAssn 938 939)
+(projectionAssn 49 938 1045)
+(stereotypeAssn 944 999)
+(subtypeAssn 945 944)
+(supertypeAssn 945 208)
+(generalizationAssn 944 945)
+(projectionAssn 50 944 1046)
+(to 51 6)
+(from 51 48)
+(projectionAssn 51 933 1047)
+(to 52 6)
+(from 52 49)
+(projectionAssn 52 939 1048)
+(to 53 6)
+(from 53 50)
+(projectionAssn 53 945 1049)
+(stereotypeAssn 950 999)
+(subtypeAssn 951 950)
+(supertypeAssn 951 183)
+(generalizationAssn 950 951)
+(projectionAssn 54 950 1050)
+(to 55 5)
+(from 55 54)
+(projectionAssn 55 951 1051)
+(stereotypeAssn 956 999)
+(subtypeAssn 957 956)
+(supertypeAssn 957 191)
+(generalizationAssn 956 957)
+(projectionAssn 56 956 1052)
+(to 57 4)
+(from 57 56)
+(projectionAssn 57 957 1053)
+(stereotypeAssn 962 999)
+(subtypeAssn 963 962)
+(supertypeAssn 963 175)
+(generalizationAssn 962 963)
+(projectionAssn 58 962 1054)
+(to 59 11)
+(from 59 58)
+(projectionAssn 59 963 1055)
+(stereotypeAssn 968 999)
+(subtypeAssn 969 968)
+(supertypeAssn 969 197)
+(generalizationAssn 968 969)
+(projectionAssn 60 968 1056)
+(to 61 7)
+(from 61 60)
+(projectionAssn 61 969 1057)
+(stereotypeAssn 974 999)
+(subtypeAssn 975 974)
+(supertypeAssn 975 208)
+(generalizationAssn 974 975)
+(projectionAssn 62 974 1058)
+(to 63 6)
+(from 63 62)
+(projectionAssn 63 975 1059)
+(projectionAssn 64 985 1060)
+(to 65 6)
+(from 65 64)
+(projectionAssn 65 986 1061)
+(to 66 64)
+(from 66 45)
+(projectionAssn 66 921 1062)
+(stereotypeAssn 990 999)
+(subtypeAssn 991 990)
+(supertypeAssn 991 985)
+(generalizationAssn 990 991)
+(projectionAssn 67 990 1063)
+(to 68 64)
+(from 68 67)
+(projectionAssn 68 991 1064)
+(styleAssn 70 1065)
+(typeAssn 155 141)
+(assocEndAssn 141 155)
+(subtypeAssn 160 141)
+(stereotypeAssn 841 999)
+(typeRefAssn 842 219)
+(typeExpression 842 1067)
+(typeRefAssn 846 219)
+(typeExpression 846 1067)
+(typeRefAssn 850 219)
+(typeExpression 850 1067)
+(typeRefAssn 854 197)
+(typeExpression 854 1067)
+(typeRefAssn 864 219)
+(typeExpression 864 1068)
+(typeRefAssn 869 163)
+(typeExpression 869 1067)
+(typeAssn 874 208)
+(typeExpression 874 1069)
+(supertypeAssn 160 841)
+(generalizationAssn 141 160)
+(typeRefAssn 142 163)
+(typeExpression 142 1070)
+(typeAssn 147 707)
+(typeExpression 147 1071)
+(typeAssn 302 266)
+(assocEndAssn 266 302)
+(typeAssn 308 266)
+(assocEndAssn 266 308)
+(typeAssn 313 266)
+(assocEndAssn 266 313)
+(typeAssn 715 266)
+(assocEndAssn 266 715)
+(assocEndAssn 266 156)
+(typeAssn 322 266)
+(assocEndAssn 266 322)
+(typeAssn 328 266)
+(assocEndAssn 266 328)
+(typeAssn 334 266)
+(assocEndAssn 266 334)
+(typeAssn 338 266)
+(assocEndAssn 266 338)
+(typeAssn 343 266)
+(assocEndAssn 266 343)
+(typeAssn 348 266)
+(assocEndAssn 266 348)
+(typeAssn 353 266)
+(assocEndAssn 266 353)
+(typeAssn 358 266)
+(assocEndAssn 266 358)
+(typeAssn 363 266)
+(assocEndAssn 266 363)
+(typeAssn 368 266)
+(assocEndAssn 266 368)
+(typeAssn 373 266)
+(assocEndAssn 266 373)
+(subtypeAssn 300 266)
+(typeAssn 449 382)
+(assocEndAssn 382 449)
+(typeRefAssn 383 163)
+(typeExpression 383 1072)
+(typeRefAssn 387 163)
+(typeExpression 387 1072)
+(typeAssn 595 605)
+(assocEndAssn 605 595)
+(typeAssn 315 605)
+(assocEndAssn 605 315)
+(typeAssn 450 605)
+(assocEndAssn 605 450)
+(subtypeAssn 626 605)
+(typeAssn 714 712)
+(assocEndAssn 712 714)
+(subtypeAssn 719 712)
+(supertypeAssn 719 141)
+(generalizationAssn 712 719)
+(supertypeAssn 626 712)
+(generalizationAssn 605 626)
+(typeRefAssn 606 197)
+(typeExpression 606 1073)
+(stereotypeAssn 496 999)
+(subtypeAssn 497 496)
+(supertypeAssn 497 219)
+(generalizationAssn 496 497)
+(typeRefAssn 609 496)
+(typeExpression 609 1073)
+(stereotypeAssn 458 999)
+(subtypeAssn 487 458)
+(stereotypeAssn 827 999)
+(subtypeAssn 838 827)
+(supertypeAssn 838 841)
+(generalizationAssn 827 838)
+(typeRefAssn 828 163)
+(typeExpression 828 1074)
+(supertypeAssn 487 827)
+(generalizationAssn 458 487)
+(stereotypeAssn 490 999)
+(subtypeAssn 491 490)
+(supertypeAssn 491 219)
+(generalizationAssn 490 491)
+(typeRefAssn 459 490)
+(typeExpression 459 1075)
+(typeRefAssn 462 197)
+(typeExpression 462 1075)
+(typeRefAssn 465 197)
+(typeExpression 465 1075)
+(typeRefAssn 468 197)
+(typeExpression 468 1075)
+(stereotypeAssn 523 999)
+(subtypeAssn 524 523)
+(supertypeAssn 524 529)
+(generalizationAssn 523 524)
+(typeRefAssn 471 523)
+(typeExpression 471 1075)
+(typeRefAssn 474 191)
+(typeExpression 474 1076)
+(typeRefAssn 477 523)
+(typeExpression 477 1077)
+(typeRefAssn 612 458)
+(typeExpression 612 1073)
+(typeAssn 616 219)
+(typeExpression 616 1078)
+(typeAssn 619 523)
+(typeExpression 619 1079)
+(typeAssn 404 605)
+(typeExpression 404 1077)
+(typeAssn 413 605)
+(typeExpression 413 1080)
+(typeRefAssn 427 163)
+(typeExpression 427 1081)
+(typeRefAssn 431 163)
+(typeExpression 431 1082)
+(typeRefAssn 440 219)
+(typeExpression 440 1083)
+(typeRefAssn 444 219)
+(typeExpression 444 1083)
+(supertypeAssn 300 382)
+(generalizationAssn 266 300)
+(subtypeAssn 318 266)
+(supertypeAssn 318 712)
+(generalizationAssn 266 318)
+(subtypeAssn 319 266)
+(supertypeAssn 319 698)
+(generalizationAssn 266 319)
+(subtypeAssn 320 266)
+(typeAssn 670 219)
+(typeExpression 670 1084)
+(typeAssn 685 523)
+(typeExpression 685 1085)
+(typeAssn 643 563)
+(assocEndAssn 563 643)
+(typeAssn 323 563)
+(assocEndAssn 563 323)
+(typeAssn 577 563)
+(assocEndAssn 563 577)
+(typeAssn 336 563)
+(assocEndAssn 563 336)
+(subtypeAssn 574 563)
+(supertypeAssn 574 559)
+(generalizationAssn 563 574)
+(subtypeAssn 575 563)
+(typeAssn 642 630)
+(assocEndAssn 630 642)
+(typeAssn 649 630)
+(assocEndAssn 630 649)
+(subtypeAssn 647 630)
+(supertypeAssn 647 141)
+(generalizationAssn 630 647)
+(stereotypeAssn 131 999)
+(subtypeAssn 138 131)
+(supertypeAssn 138 827)
+(generalizationAssn 131 138)
+(typeRefAssn 132 197)
+(typeExpression 132 1086)
+(typeRefAssn 135 197)
+(typeExpression 135 1086)
+(typeRefAssn 631 131)
+(typeExpression 631 1087)
+(typeAssn 650 1088)
+(supertypeAssn 575 630)
+(generalizationAssn 563 575)
+(subtypeAssn 582 563)
+(subtypeAssn 757 735)
+(supertypeAssn 757 382)
+(generalizationAssn 735 757)
+(typeAssn 737 605)
+(typeExpression 737 1089)
+(supertypeAssn 582 735)
+(generalizationAssn 563 582)
+(typeRefAssn 564 968)
+(typeExpression 564 1073)
+(typeAssn 591 586)
+(assocEndAssn 586 591)
+(typeAssn 310 586)
+(assocEndAssn 586 310)
+(assocEndAssn 586 578)
+(typeAssn 329 586)
+(assocEndAssn 586 329)
+(subtypeAssn 601 586)
+(supertypeAssn 601 712)
+(generalizationAssn 586 601)
+(typeRefAssn 587 219)
+(typeExpression 587 1073)
+(typeAssn 578 586)
+(typeAssn 688 563)
+(typeExpression 688 1085)
+(supertypeAssn 320 656)
+(generalizationAssn 266 320)
+(typeRefAssn 267 219)
+(typeExpression 267 1090)
+(typeRefAssn 272 163)
+(typeExpression 272 1091)
+(typeRefAssn 275 219)
+(typeExpression 275 1083)
+(typeAssn 281 197)
+(typeExpression 281 1092)
+(typeRefAssn 294 219)
+(typeExpression 294 1093)
+(typeRefAssn 297 163)
+(typeExpression 297 1093)
+(typeAssn 304 1094)
+(typeAssn 340 1095)
+(typeAssn 345 1096)
+(typeAssn 350 1097)
+(typeAssn 355 1098)
+(typeAssn 360 1099)
+(typeAssn 365 1100)
+(typeAssn 370 1101)
+(typeAssn 375 1102)
+(typeAssn 156 266)
+(projectionAssn 70 141 1066)
+(styleAssn 71 1065)
+(projectionAssn 71 131 1103)
+(styleAssn 72 1065)
+(projectionAssn 72 266 1104)
+(styleAssn 73 1065)
+(stereotypeAssn 224 999)
+(subtypeAssn 228 224)
+(supertypeAssn 228 131)
+(generalizationAssn 224 228)
+(typeRefAssn 225 163)
+(typeExpression 225 1106)
+(projectionAssn 73 224 1105)
+(to 74 71)
+(from 74 73)
+(projectionAssn 74 228 1107)
+(styleAssn 75 1065)
+(stereotypeAssn 231 999)
+(subtypeAssn 235 231)
+(supertypeAssn 235 131)
+(generalizationAssn 231 235)
+(typeRefAssn 232 202)
+(typeExpression 232 1106)
+(projectionAssn 75 231 1108)
+(to 76 71)
+(from 76 75)
+(projectionAssn 76 235 1109)
+(styleAssn 77 1065)
+(stereotypeAssn 238 999)
+(subtypeAssn 242 238)
+(supertypeAssn 242 131)
+(generalizationAssn 238 242)
+(typeRefAssn 239 191)
+(typeExpression 239 1106)
+(projectionAssn 77 238 1110)
+(to 78 71)
+(from 78 77)
+(projectionAssn 78 242 1111)
+(styleAssn 79 1065)
+(stereotypeAssn 245 999)
+(subtypeAssn 249 245)
+(supertypeAssn 249 131)
+(generalizationAssn 245 249)
+(typeRefAssn 246 175)
+(typeExpression 246 1106)
+(projectionAssn 79 245 1112)
+(to 80 71)
+(from 80 79)
+(projectionAssn 80 249 1113)
+(styleAssn 81 1065)
+(stereotypeAssn 252 999)
+(subtypeAssn 256 252)
+(supertypeAssn 256 131)
+(generalizationAssn 252 256)
+(typeRefAssn 253 183)
+(typeExpression 253 1106)
+(projectionAssn 81 252 1114)
+(to 82 71)
+(from 82 81)
+(projectionAssn 82 256 1115)
+(styleAssn 83 1065)
+(stereotypeAssn 259 999)
+(subtypeAssn 263 259)
+(supertypeAssn 263 131)
+(generalizationAssn 259 263)
+(typeRefAssn 260 208)
+(typeExpression 260 1106)
+(projectionAssn 83 259 1116)
+(to 84 71)
+(from 84 83)
+(projectionAssn 84 263 1117)
+(styleAssn 85 1065)
+(projectionAssn 85 458 1118)
+(styleAssn 86 1065)
+(projectionAssn 86 382 1119)
+(to 87 86)
+(from 87 72)
+(projectionAssn 87 300 1120)
+(projectionAssn 88 1 1121)
+(projectionAssn 89 1088 1122)
+(styleAssn 90 1065)
+(projectionAssn 90 630 1123)
+(to 91 90)
+(from 91 89)
+(projectionAssn 91 1125 1124)
+(styleAssn 92 1065)
+(projectionAssn 92 827 1126)
+(to 93 92)
+(from 93 85)
+(projectionAssn 93 487 1127)
+(to 94 92)
+(from 94 71)
+(projectionAssn 94 138 1128)
+(styleAssn 95 1065)
+(projectionAssn 95 586 1129)
+(to 96 95)
+(from 96 72)
+(projectionAssn 96 307 1130)
+(to 97 95)
+(from 97 72)
+(projectionAssn 97 327 1131)
+(styleAssn 98 1065)
+(projectionAssn 98 605 1132)
+(to 99 98)
+(from 99 95)
+(projectionAssn 99 590 1133)
+(to 100 98)
+(from 100 72)
+(projectionAssn 100 312 1134)
+(to 101 98)
+(from 101 86)
+(projectionAssn 101 448 1135)
+(styleAssn 102 1065)
+(projectionAssn 102 656 1136)
+(to 103 102)
+(from 103 72)
+(projectionAssn 103 320 1137)
+(styleAssn 104 1065)
+(projectionAssn 104 698 1138)
+(to 105 104)
+(from 105 72)
+(projectionAssn 105 319 1139)
+(styleAssn 106 1065)
+(projectionAssn 106 559 1140)
+(styleAssn 107 1065)
+(projectionAssn 107 712 1141)
+(to 108 72)
+(from 108 107)
+(projectionAssn 108 713 1142)
+(to 109 70)
+(from 109 107)
+(projectionAssn 109 719 1143)
+(to 110 107)
+(from 110 98)
+(projectionAssn 110 626 1144)
+(to 111 107)
+(from 111 72)
+(projectionAssn 111 318 1145)
+(to 112 107)
+(from 112 95)
+(projectionAssn 112 601 1146)
+(to 113 72)
+(from 113 70)
+(projectionAssn 113 154 1147)
+(to 114 70)
+(from 114 90)
+(projectionAssn 114 647 1148)
+(styleAssn 115 1065)
+(projectionAssn 115 563 1149)
+(to 116 95)
+(from 116 115)
+(projectionAssn 116 576 1150)
+(to 117 106)
+(from 117 115)
+(projectionAssn 117 574 1151)
+(to 118 90)
+(from 118 115)
+(projectionAssn 118 575 1152)
+(to 119 115)
+(from 119 90)
+(projectionAssn 119 641 1153)
+(to 120 115)
+(from 120 72)
+(projectionAssn 120 321 1154)
+(to 121 90)
+(from 121 89)
+(projectionAssn 121 1156 1155)
+(styleAssn 122 1065)
+(projectionAssn 122 735 1157)
+(to 123 86)
+(from 123 122)
+(projectionAssn 123 757 1158)
+(to 124 122)
+(from 124 115)
+(projectionAssn 124 582 1159)
+(styleAssn 125 1065)
+(projectionAssn 125 841 1160)
+(to 126 125)
+(from 126 70)
+(projectionAssn 126 160 1161)
+(to 127 125)
+(from 127 92)
+(projectionAssn 127 838 1162)
+(styleAssn 128 1065)
+(stereotypeAssn 901 999)
+(subtypeAssn 917 901)
+(supertypeAssn 917 827)
+(generalizationAssn 901 917)
+(typeRefAssn 902 183)
+(typeExpression 902 1164)
+(typeRefAssn 905 183)
+(typeExpression 905 1164)
+(typeRefAssn 908 183)
+(typeExpression 908 1164)
+(typeRefAssn 911 183)
+(typeExpression 911 1164)
+(typeRefAssn 914 183)
+(typeExpression 914 1164)
+(projectionAssn 128 901 1163)
+(to 129 92)
+(from 129 128)
+(projectionAssn 129 917 1165)
+(to 130 115)
+(from 130 72)
+(projectionAssn 130 333 1166)
+(styleAssn 761 1065)
+(projectionAssn 761 141 1167)
+(styleAssn 762 1065)
+(projectionAssn 762 131 1168)
+(styleAssn 763 1065)
+(projectionAssn 763 266 1169)
+(styleAssn 764 1065)
+(projectionAssn 764 224 1170)
+(to 765 762)
+(from 765 764)
+(projectionAssn 765 228 1171)
+(styleAssn 766 1065)
+(projectionAssn 766 231 1172)
+(to 767 762)
+(from 767 766)
+(projectionAssn 767 235 1173)
+(styleAssn 768 1065)
+(projectionAssn 768 238 1174)
+(to 769 762)
+(from 769 768)
+(projectionAssn 769 242 1175)
+(styleAssn 770 1065)
+(projectionAssn 770 245 1176)
+(to 771 762)
+(from 771 770)
+(projectionAssn 771 249 1177)
+(styleAssn 772 1065)
+(projectionAssn 772 252 1178)
+(to 773 762)
+(from 773 772)
+(projectionAssn 773 256 1179)
+(styleAssn 774 1065)
+(projectionAssn 774 259 1180)
+(to 775 762)
+(from 775 774)
+(projectionAssn 775 263 1181)
+(styleAssn 776 1065)
+(projectionAssn 776 458 1182)
+(styleAssn 777 1065)
+(projectionAssn 777 382 1183)
+(styleAssn 778 1065)
+(projectionAssn 778 490 1184)
+(to 779 777)
+(from 779 763)
+(projectionAssn 779 300 1185)
+(styleAssn 780 1065)
+(projectionAssn 780 496 1186)
+(projectionAssn 781 1088 1187)
+(styleAssn 782 1065)
+(projectionAssn 782 559 1188)
+(styleAssn 783 1065)
+(projectionAssn 783 563 1189)
+(to 784 782)
+(from 784 783)
+(projectionAssn 784 574 1190)
+(styleAssn 785 1065)
+(projectionAssn 785 586 1191)
+(styleAssn 786 1065)
+(projectionAssn 786 605 1192)
+(to 787 786)
+(from 787 785)
+(projectionAssn 787 590 1193)
+(styleAssn 788 1065)
+(projectionAssn 788 630 1194)
+(styleAssn 789 1065)
+(projectionAssn 789 656 1195)
+(styleAssn 790 1065)
+(projectionAssn 790 698 1196)
+(to 791 788)
+(from 791 781)
+(projectionAssn 791 1125 1197)
+(to 792 785)
+(from 792 763)
+(projectionAssn 792 307 1198)
+(to 793 786)
+(from 793 763)
+(projectionAssn 793 312 1199)
+(styleAssn 794 1065)
+(projectionAssn 794 712 1200)
+(to 795 788)
+(from 795 783)
+(projectionAssn 795 575 1201)
+(styleAssn 796 1065)
+(projectionAssn 796 827 1202)
+(to 797 794)
+(from 797 763)
+(projectionAssn 797 318 1203)
+(to 798 794)
+(from 798 785)
+(projectionAssn 798 601 1204)
+(to 799 794)
+(from 799 786)
+(projectionAssn 799 626 1205)
+(to 800 796)
+(from 800 762)
+(projectionAssn 800 138 1206)
+(to 801 796)
+(from 801 776)
+(projectionAssn 801 487 1207)
+(to 802 790)
+(from 802 763)
+(projectionAssn 802 319 1208)
+(to 803 788)
+(from 803 781)
+(projectionAssn 803 1156 1209)
+(to 804 763)
+(from 804 794)
+(projectionAssn 804 713 1210)
+(to 805 783)
+(from 805 788)
+(projectionAssn 805 641 1211)
+(to 806 789)
+(from 806 763)
+(projectionAssn 806 320 1212)
+(projectionAssn 807 722 1213)
+(projectionAssn 808 723 1214)
+(to 809 761)
+(from 809 788)
+(projectionAssn 809 647 1215)
+(to 810 761)
+(from 810 794)
+(projectionAssn 810 719 1216)
+(to 811 763)
+(from 811 761)
+(projectionAssn 811 154 1217)
+(to 812 783)
+(from 812 763)
+(projectionAssn 812 321 1218)
+(styleAssn 813 1065)
+(projectionAssn 813 523 1219)
+(to 814 785)
+(from 814 783)
+(projectionAssn 814 576 1220)
+(to 815 785)
+(from 815 763)
+(projectionAssn 815 327 1221)
+(to 816 786)
+(from 816 777)
+(projectionAssn 816 448 1222)
+(to 817 783)
+(from 817 763)
+(projectionAssn 817 333 1223)
+(styleAssn 818 1065)
+(projectionAssn 818 735 1224)
+(to 819 818)
+(from 819 783)
+(projectionAssn 819 582 1225)
+(to 820 777)
+(from 820 818)
+(projectionAssn 820 757 1226)
+(styleAssn 821 1065)
+(projectionAssn 821 841 1227)
+(to 822 821)
+(from 822 761)
+(projectionAssn 822 160 1228)
+(to 823 821)
+(from 823 796)
+(projectionAssn 823 838 1229)
+(styleAssn 824 1065)
+(projectionAssn 824 901 1230)
+(to 825 796)
+(from 825 824)
+(projectionAssn 825 917 1231)
+(styleAssn 826 1065)
+(stereotypeAssn 979 999)
+(subtypeAssn 980 979)
+(supertypeAssn 980 219)
+(generalizationAssn 979 980)
+(projectionAssn 826 979 1232)

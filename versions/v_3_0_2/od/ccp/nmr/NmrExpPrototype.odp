@@ -1,0 +1,3583 @@
+ObjectDomain_Shared_Package 15
+{-yk94ms_-e3s_e41656c6_-ouq 4 "Logical" objectdomain.uml.mechanisms.UmlPackage-owns "ccp" objectdomain.uml.mechanisms.UmlPackage-owns "nmr" objectdomain.uml.mechanisms.UmlPackage-owns "NmrExpPrototype" objectdomain.uml.mechanisms.UmlPackage-owns
+}[objectdomain.uml.core.TypeExpression $17
+objectdomain.uml.mechanisms.UmlPackage-owns $1
+objectdomain.uml.core.Generalization-owns $10
+objectdomain.uml.core.Dependency-owns $12
+objectdomain.uml.core.Projection $15
+objectdomain.uml.core.UmlAttribute-features $6
+objectdomain.uml.core.UmlAssociationEnd-connections $9
+objectdomain.uml.view.style.BaseViewElementStyle-owns $14
+objectdomain.uml.view.ClassView-owns $3
+objectdomain.uml.core.UmlTaggedValue-taggedValues $7
+objectdomain.uml.core.UmlConstraint-constraints $11
+objectdomain.uml.core.UmlAssociation-owns $8
+objectdomain.uml.view.Diagram-owns $2
+objectdomain.uml.core.UmlOperation-features $13
+objectdomain.uml.core.UmlMultiplicity $16
+objectdomain.uml.core.UmlClass-owns $5
+objectdomain.uml.view.AssociationView-owns $4
+objectdomain.uml.core.Stereotype-owns $18
+]
+($1 1 > -yk94ms_-e3s_e41656c6_-ouq 4 "Logical" $1 "ccp" $1 "nmr" $1 "NmrExpPrototype" $1
+(name "NmrExpPrototype"
+)
+(uid "-yk94ms_-e3s_e41656c6_-ouq"))
+($2 2 < 0_-fvi_hrnjywg5_-eoj "_NmrExpPrototype-details" 1
+(name "_NmrExpPrototype-details"
+)
+(uid "0_-fvi_hrnjywg5_-eoj")
+(diagramType "class"))
+($3 3 < 0_-fvi_hrnjywg5_-eoi "Experiment" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-eoi")
+(bbx 240 70 160 340))
+($3 4 < 0_-fvi_hrnjywg5_-eoh "ExpDim" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-eoh")
+(bbx 290 480 170 70))
+($4 5 < 0_-fvi_hrnjywg5_-eog "" 2
+(toMultiplicityPosition 335 410)
+(uid "0_-fvi_hrnjywg5_-eog")
+(points 350 480 350 410)
+(fromMultiplicityPosition 360 450))
+($3 6 < 0_-fvi_hrnjywg5_-eof "ExpDimRef" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-eof")
+(bbx 440 610 260 350))
+($4 7 < 0_-fvi_hrnjywg5_-eoe "" 2
+(toMultiplicityPosition 460 555)
+(uid "0_-fvi_hrnjywg5_-eoe")
+(points 450 610 450 550)
+(fromMultiplicityPosition 435 590))
+($3 8 < 0_-fvi_hrnjywg5_-eod "NmrExpPrototype" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-eod")
+(bbx 1190 20 130 140))
+($3 9 < 0_-fvi_hrnjywg5_-eoc "ExpTransfer" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-eoc")
+(bbx 870 290 170 90))
+($3 10 < 0_-fvi_hrnjywg5_-eob "Isotope" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-eob")
+(bbx 1180 710 230 200))
+($4 11 < 0_-fvi_hrnjywg5_-eoa "" 2
+(toMultiplicityPosition 1170 805)
+(uid "0_-fvi_hrnjywg5_-eoa")
+(points 700 795 1180 795)
+(toOrderedPosition 1110 770))
+($3 12 < 0_-fvi_hrnjywg5_-eo9 "ExpTransfer" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-eo9")
+(bbx 60 600 200 100))
+($4 13 < 0_-fvi_hrnjywg5_-eo8 "" 2
+(toMultiplicityPosition 425 670)
+(uid "0_-fvi_hrnjywg5_-eo8")
+(points 260 670 440 670)
+(toOrderedPosition 125 250)
+(fromMultiplicityPosition 265 670))
+($4 14 < 0_-fvi_hrnjywg5_-eo7 "" 2
+(toMultiplicityPosition 260 580)
+(uid "0_-fvi_hrnjywg5_-eo7")
+(points 255 410 255 600)
+(fromMultiplicityPosition 240 420))
+($3 15 < 0_-fvi_hrnjywg5_-eo6 "AtomSite" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-eo6")
+(bbx 1120 280 180 190))
+($3 16 < 0_-fvi_hrnjywg5_-eo5 "RefExperiment" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-eo5")
+(bbx 470 20 160 170))
+($4 17 < 0_-fvi_hrnjywg5_-eo4 "" 2
+(toMultiplicityPosition 635 50)
+(uid "0_-fvi_hrnjywg5_-eo4")
+(points 1190 45 630 45)
+(fromMultiplicityPosition 1160 25))
+($3 18 < 0_-fvi_hrnjywg5_-eo3 "RefExpDim" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-eo3")
+(bbx 430 320 110 120))
+($4 19 < 0_-fvi_hrnjywg5_-eo2 "" 2
+(toMultiplicityPosition 480 300)
+(uid "0_-fvi_hrnjywg5_-eo2")
+(points 490 190 490 320)
+(fromMultiplicityPosition 500 195))
+($3 20 < 0_-fvi_hrnjywg5_-eo1 "RefExpDimRef" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-eo1")
+(bbx 580 400 240 140))
+($4 21 < 0_-fvi_hrnjywg5_-eo0 "" 2
+(toMultiplicityPosition 655 380)
+(uid "0_-fvi_hrnjywg5_-eo0")
+(points 540 360 665 360 665 400)
+(fromMultiplicityPosition 545 330))
+($3 22 < 0_-fvi_hrnjywg5_-enz "ExpTransferSubType" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-enz")
+(bbx 40 760 140 60))
+($4 23 < 0_-fvi_hrnjywg5_-eny "" 2
+(toMultiplicityPosition 1170 745)
+(toRolePosition 1060 705)
+(uid "0_-fvi_hrnjywg5_-eny")
+(points 750 540 750 730 1180 730))
+($4 24 < 0_-fvi_hrnjywg5_-enx "" 2
+(toMultiplicityPosition 1110 330)
+(uid "0_-fvi_hrnjywg5_-enx")
+(points 1040 320 1120 320)
+(fromMultiplicityPosition 1045 300))
+($3 25 < 0_-fvi_hrnjywg5_-enw "ExpStep" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-enw")
+(bbx 690 210 100 70))
+($4 26 < 0_-fvi_hrnjywg5_-env "" 2
+(labelPosition 600 680)
+(uid "0_-fvi_hrnjywg5_-env")
+(points 400 115 470 115)
+(fromMultiplicityPosition 535 60))
+($3 27 < 0_-fvi_hrnjywg5_-enu "ExpTransferType" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-enu")
+(bbx 240 770 120 60))
+($3 28 < 0_-fvi_hrnjywg5_-ent "ExpMeasurementType" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-ent")
+(bbx 40 870 150 60))
+($4 29 < 0_-fvi_hrnjywg5_-enr "" 2
+(uid "0_-fvi_hrnjywg5_-enr")
+(points 630 610 630 540)
+(fromMultiplicityPosition 325 445))
+($3 30 < 0_-fvi_hrnjywg5_-enq "ConstantTimeType" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-enq")
+(bbx 240 870 130 60))
+($3 31 < 0_-fvi_hrnjywg5_-enp "ExpGraph" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-enp")
+(bbx 840 70 130 100))
+($4 32 < 0_-fvi_hrnjywg5_-eno "" 2
+(toMultiplicityPosition 975 85)
+(uid "0_-fvi_hrnjywg5_-eno")
+(points 1190 75 970 75)
+(fromMultiplicityPosition 1175 85))
+($4 33 < 0_-fvi_hrnjywg5_-enn "" 2
+(toMultiplicityPosition 955 265)
+(uid "0_-fvi_hrnjywg5_-enn")
+(points 965 170 965 290)
+(fromMultiplicityPosition 975 175))
+($3 34 < 0_-fvi_hrnjywg5_-enm "ExpMeasurement" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-enm")
+(bbx 920 550 260 100))
+($4 35 < 0_-fvi_hrnjywg5_-enl "" 2
+(toMultiplicityPosition 1115 475)
+(uid "0_-fvi_hrnjywg5_-enl")
+(points 1130 550 1130 470)
+(toOrderedPosition 1140 480)
+(fromMultiplicityPosition 1135 525))
+($4 36 < 0_-fvi_hrnjywg5_-enk "" 2
+(toMultiplicityPosition 910 600)
+(uid "0_-fvi_hrnjywg5_-enk")
+(points 790 245 835 245 835 590 920 590)
+(fromMultiplicityPosition 795 220))
+($4 37 < 0_-fvi_hrnjywg5_-enj "" 2
+(toMultiplicityPosition 735 185)
+(uid "0_-fvi_hrnjywg5_-enj")
+(points 840 155 750 155 750 210)
+(fromMultiplicityPosition 820 120))
+($4 38 < 0_-fvi_hrnjywg5_-eni "" 2
+(toMultiplicityPosition 730 285)
+(uid "0_-fvi_hrnjywg5_-eni")
+(points 740 400 740 280)
+(fromMultiplicityPosition 750 380))
+($3 39 < 0_-fvi_hrnjywg5_-enh "ExpCategory" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-enh")
+(bbx 20 110 90 60))
+($4 40 < 0_-fvi_hrnjywg5_-eng "" 2
+(toMultiplicityPosition 1245 260)
+(uid "0_-fvi_hrnjywg5_-eng")
+(points 1255 160 1255 280)
+(fromMultiplicityPosition 1270 175))
+($4 41 < 0_-fvi_hrnjywg5_-enf "" 2
+(toMultiplicityPosition 1185 610)
+(uid "0_-fvi_hrnjywg5_-enf")
+(points 1320 160 1320 605 1180 605)
+(fromMultiplicityPosition 1300 175))
+($4 42 < 0_-fvi_hrnjywg5_-ene "" 2
+(toMultiplicityPosition 800 545)
+(uid "0_-fvi_hrnjywg5_-ene")
+(points 920 645 790 645 790 540)
+(fromMultiplicityPosition 905 650))
+($4 43 < 0_-fvi_hrnjywg5_-end "" 2
+(toMultiplicityPosition 905 540)
+(uid "0_-fvi_hrnjywg5_-end")
+(points 855 170 855 560 920 560)
+(fromMultiplicityPosition 865 175))
+($4 44 < 0_-fvi_hrnjywg5_-enc "" 2
+(toMultiplicityPosition 1145 265)
+(uid "0_-fvi_hrnjywg5_-enc")
+(points 970 130 1140 130 1140 280)
+(fromMultiplicityPosition 970 135))
+($4 45 < 0_-fvi_hrnjywg5_-enb "" 2
+(uid "0_-fvi_hrnjywg5_-enb")
+(points 1245 470 1245 710))
+($3 46 < 0_-fvi_hrnjywg5_-ena "ExpKeyword" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-ena")
+(bbx 20 20 90 60))
+($4 47 < 0_-fvi_hrnjywg5_-en9 "" 2
+(toMultiplicityPosition 230 205)
+(toRolePosition 165 230)
+(uid "0_-fvi_hrnjywg5_-en9")
+(points 240 175 180 175 180 225 240 225)
+(fromRolePosition 165 155)
+(fromMultiplicityPosition 230 180))
+($3 48 < 0_-fvi_hrnjywg5_-en8 "SystematicName" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-en8")
+(bbx 10 360 170 70))
+($4 49 < 0_-fvi_hrnjywg5_-en7 "" 2
+(toMultiplicityPosition 135 340)
+(uid "0_-fvi_hrnjywg5_-en7")
+(points 470 50 145 50 145 360)
+(fromMultiplicityPosition 445 25))
+($3 50 < 0_-fvi_hrnjywg5_-en6 "NamingSystem" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-en6")
+(bbx 20 210 110 60))
+($3 51 < 0_-fvi_hrnjywg5_-en5 "ExpDimRefMapping" 2
+(autoSizeToFit true)
+(uid "0_-fvi_hrnjywg5_-en5")
+(bbx 870 890 210 60))
+($4 52 < 0_-fvi_hrnjywg5_-en4 "" 2
+(toMultiplicityPosition 705 935)
+(toRolePosition 710 905)
+(uid "0_-fvi_hrnjywg5_-en4")
+(points 870 925 700 925)
+(fromRolePosition 805 900)
+(fromMultiplicityPosition 860 930))
+($4 53 < 0_-fvi_hrnjywg5_-en3 "" 2
+(toMultiplicityPosition 975 870)
+(uid "0_-fvi_hrnjywg5_-en3")
+(points 700 840 965 840 965 890)
+(fromMultiplicityPosition 705 810))
+($4 54 < 0_85r_if3xpxrt_-p8t "" 2
+(toMultiplicityPosition 510 300)
+(toRolePosition 540 285)
+(uid "0_85r_if3xpxrt_-p8t")
+(points 525 190 525 320)
+(toOrderedPosition 555 265))
+($2 55 < 0_-fvi_hrnjywg5_-en2 "_NmrExpPrototype" 1
+(name "_NmrExpPrototype"
+)
+(uid "0_-fvi_hrnjywg5_-en2")
+(diagramType "class"))
+($3 56 < 0_-fvi_hrnjywg5_-en1 "Experiment" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-en1")
+(bbx 120 30 160 40))
+($3 57 < 0_-fvi_hrnjywg5_-en0 "ExpDim" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-en0")
+(bbx 160 120 140 40))
+($4 58 < 0_-fvi_hrnjywg5_-emz "" 55
+(toMultiplicityPosition 225 75)
+(uid "0_-fvi_hrnjywg5_-emz")
+(points 215 120 215 70)
+(fromMultiplicityPosition 200 100))
+($3 59 < 0_-fvi_hrnjywg5_-emy "ExpDimRef" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-emy")
+(bbx 120 240 160 40))
+($4 60 < 0_-fvi_hrnjywg5_-emx "" 55
+(toMultiplicityPosition 230 165)
+(uid "0_-fvi_hrnjywg5_-emx")
+(points 215 240 215 160)
+(fromMultiplicityPosition 200 220))
+($3 61 < 0_-fvi_hrnjywg5_-emw "NmrExpPrototype" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-emw")
+(bbx 470 30 120 40))
+($3 62 < 0_-fvi_hrnjywg5_-emv "ExpTransfer" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-emv")
+(bbx 670 120 90 40))
+($3 63 < 0_-fvi_hrnjywg5_-emu "Isotope" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-emu")
+(bbx 380 320 230 40))
+($4 64 < 0_-fvi_hrnjywg5_-emt "" 55
+(toMultiplicityPosition 365 340)
+(uid "0_-fvi_hrnjywg5_-emt")
+(points 255 280 255 335 380 335)
+(toOrderedPosition 285 290))
+($3 65 < 0_-fvi_hrnjywg5_-ems "ExpTransfer" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-ems")
+(bbx 30 170 170 40))
+($4 66 < 0_-fvi_hrnjywg5_-emr "" 55
+(toMultiplicityPosition 125 220)
+(uid "0_-fvi_hrnjywg5_-emr")
+(points 140 210 140 240)
+(toOrderedPosition 185 280)
+(fromMultiplicityPosition 145 215))
+($4 67 < 0_-fvi_hrnjywg5_-emq "" 55
+(toMultiplicityPosition 135 150)
+(uid "0_-fvi_hrnjywg5_-emq")
+(points 145 70 145 170)
+(fromMultiplicityPosition 155 75))
+($3 68 < 0_-fvi_hrnjywg5_-emp "AtomSite" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-emp")
+(bbx 670 200 70 40))
+($4 69 < 0_-fvi_hrnjywg5_-emo "" 55
+(toMultiplicityPosition 475 300)
+(uid "0_-fvi_hrnjywg5_-emo")
+(points 705 240 705 335 610 335))
+($4 70 < 0_-fvi_hrnjywg5_-emn "" 55
+(toMultiplicityPosition 725 175)
+(uid "0_-fvi_hrnjywg5_-emn")
+(points 715 160 715 200)
+(fromMultiplicityPosition 720 165))
+($3 71 < 0_-fvi_hrnjywg5_-emm "RefExpDim" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-emm")
+(bbx 320 120 80 40))
+($3 72 < 0_-fvi_hrnjywg5_-eml "RefExpDimRef" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-eml")
+(bbx 310 240 100 40))
+($4 73 < 0_-fvi_hrnjywg5_-emk "" 55
+(toMultiplicityPosition 405 300)
+(toRolePosition 280 295)
+(uid "0_-fvi_hrnjywg5_-emk")
+(points 395 280 395 320))
+($4 74 < 0_-fvi_hrnjywg5_-emj "" 55
+(toMultiplicityPosition 365 220)
+(uid "0_-fvi_hrnjywg5_-emj")
+(points 360 160 360 240)
+(fromMultiplicityPosition 375 175))
+($3 75 < 0_-fvi_hrnjywg5_-emi "RefExperiment" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-emi")
+(bbx 310 30 100 40))
+($4 76 < 0_-fvi_hrnjywg5_-emh "" 55
+(toMultiplicityPosition 350 100)
+(uid "0_-fvi_hrnjywg5_-emh")
+(points 360 70 360 120)
+(fromMultiplicityPosition 375 75))
+($4 77 < 0_-fvi_hrnjywg5_-emg "" 55
+(toMultiplicityPosition 415 45)
+(uid "0_-fvi_hrnjywg5_-emg")
+(points 470 45 410 45)
+(fromMultiplicityPosition 445 60))
+($4 78 < 0_-fvi_hrnjywg5_-emf "" 55
+(uid "0_-fvi_hrnjywg5_-emf")
+(points 280 45 310 45))
+($3 79 < 0_-fvi_hrnjywg5_-eme "ExpStep" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-eme")
+(bbx 430 120 60 40))
+($4 80 < 0_-fvi_hrnjywg5_-emc "" 55
+(uid "0_-fvi_hrnjywg5_-emc")
+(points 280 255 310 255))
+($4 81 < 0_-fvi_hrnjywg5_-emb "" 55
+(toMultiplicityPosition 425 165)
+(uid "0_-fvi_hrnjywg5_-emb")
+(points 410 245 440 245 440 160)
+(fromMultiplicityPosition 415 220))
+($3 82 < 0_-fvi_hrnjywg5_-ema "ExpGraph" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-ema")
+(bbx 550 120 70 40))
+($4 83 < 0_-fvi_hrnjywg5_-em9 "" 55
+(toMultiplicityPosition 660 140)
+(uid "0_-fvi_hrnjywg5_-em9")
+(points 620 135 670 135)
+(fromMultiplicityPosition 630 110))
+($4 84 < 0_-fvi_hrnjywg5_-em8 "" 55
+(toMultiplicityPosition 495 140)
+(uid "0_-fvi_hrnjywg5_-em8")
+(points 550 135 490 135)
+(fromMultiplicityPosition 535 140))
+($4 85 < 0_-fvi_hrnjywg5_-em7 "" 55
+(toMultiplicityPosition 575 100)
+(uid "0_-fvi_hrnjywg5_-em7")
+(points 570 70 570 120)
+(fromMultiplicityPosition 550 75))
+($3 86 < 0_-fvi_hrnjywg5_-em6 "ExpMeasurement" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-em6")
+(bbx 470 200 120 40))
+($4 87 < 0_-fvi_hrnjywg5_-em5 "" 55
+(toMultiplicityPosition 670 260)
+(uid "0_-fvi_hrnjywg5_-em5")
+(points 535 240 535 265 680 265 680 240)
+(toOrderedPosition 620 245)
+(fromMultiplicityPosition 525 245))
+($4 88 < 0_-fvi_hrnjywg5_-em4 "" 55
+(toMultiplicityPosition 460 175)
+(uid "0_-fvi_hrnjywg5_-em4")
+(points 475 160 475 200)
+(fromMultiplicityPosition 465 165))
+($4 89 < 0_-fvi_hrnjywg5_-em3 "" 55
+(toMultiplicityPosition 750 225)
+(uid "0_-fvi_hrnjywg5_-em3")
+(points 590 40 780 40 780 215 740 215)
+(fromMultiplicityPosition 610 15))
+($4 90 < 0_-fvi_hrnjywg5_-em2 "" 55
+(toMultiplicityPosition 520 180)
+(uid "0_-fvi_hrnjywg5_-em2")
+(points 515 70 515 200)
+(fromMultiplicityPosition 500 90))
+($4 91 < 0_-fvi_hrnjywg5_-em1 "" 55
+(toMultiplicityPosition 415 265)
+(uid "0_-fvi_hrnjywg5_-em1")
+(points 495 240 495 260 410 260)
+(fromMultiplicityPosition 480 245))
+($4 92 < 0_-fvi_hrnjywg5_-em0 "" 55
+(toMultiplicityPosition 660 215)
+(uid "0_-fvi_hrnjywg5_-em0")
+(points 615 160 615 215 670 215)
+(fromMultiplicityPosition 620 165))
+($4 93 < 0_-fvi_hrnjywg5_-elz "" 55
+(toMultiplicityPosition 555 180)
+(uid "0_-fvi_hrnjywg5_-elz")
+(points 565 160 565 200)
+(fromMultiplicityPosition 570 165))
+($4 94 < 0_-fvi_hrnjywg5_-ely "" 55
+(toMultiplicityPosition 110 40)
+(toRolePosition 45 35)
+(uid "0_-fvi_hrnjywg5_-ely")
+(points 120 70 120 90 55 90 55 35 120 35)
+(fromRolePosition 40 80)
+(fromMultiplicityPosition 110 65))
+($3 95 < 0_-fvi_hrnjywg5_-elx "ExpDimRefMapping" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-elx")
+(bbx 10 320 210 40))
+($4 96 < 0_-fvi_hrnjywg5_-elw "" 55
+(toMultiplicityPosition 135 285)
+(toRolePosition 35 310)
+(uid "0_-fvi_hrnjywg5_-elw")
+(points 130 320 130 280)
+(fromRolePosition 145 290)
+(fromMultiplicityPosition 135 300))
+($4 97 < 0_-fvi_hrnjywg5_-elv "" 55
+(toMultiplicityPosition 195 300)
+(uid "0_-fvi_hrnjywg5_-elv")
+(points 185 280 185 320)
+(fromMultiplicityPosition 195 285))
+($3 98 < 0_-fvi_hrnjywg5_-elu "SystematicName" 55
+(showAttributeCompartment false)
+(showOperationCompartment false)
+(uid "0_-fvi_hrnjywg5_-elu")
+(bbx 10 110 110 40))
+($4 99 < 0_-fvi_hrnjywg5_-elt "" 55
+(toMultiplicityPosition 20 85)
+(uid "0_-fvi_hrnjywg5_-elt")
+(points 360 30 360 5 30 5 30 110)
+(fromMultiplicityPosition 375 10))
+($5 100 < 0_-fvi_hrnjywg5_-els "NmrExpPrototype" 1
+(name "NmrExpPrototype"
+)
+(uid "0_-fvi_hrnjywg5_-els"))
+($6 101 < 0_-fvi_hrnjywg5_-elr "serial" 100
+(changeability "frozen")
+(name "serial"
+)
+(uid "0_-fvi_hrnjywg5_-elr")
+(multiplicity "1"))
+($7 102 < 0_-fvi_hrnjywg5_-elq "isAutomatic" 101
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-elq"))
+($7 103 < 0_-fvi_hrnjywg5_-elp "guid" 101
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00013"
+)
+(uid "0_-fvi_hrnjywg5_-elp"))
+($6 104 < 0_-fvi_hrnjywg5_-elo "name" 100
+(name "name"
+)
+(uid "0_-fvi_hrnjywg5_-elo")
+(multiplicity "1"))
+($7 105 < 0_-fvi_hrnjywg5_-eln "documentation" 104
+(name "documentation"
+)
+(value "name of experiment prototype"
+)
+(uid "0_-fvi_hrnjywg5_-eln"))
+($7 106 < 0_-fvi_hrnjywg5_-elm "guid" 104
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00014"
+)
+(uid "0_-fvi_hrnjywg5_-elm"))
+($6 107 < 0_-fvi_hrnjywg5_-ell "category" 100
+(name "category"
+)
+(uid "0_-fvi_hrnjywg5_-ell")
+(multiplicity "1"))
+($7 108 < 0_-fvi_hrnjywg5_-elk "documentation" 107
+(name "documentation"
+)
+(value "Experiment category. See datatype for details"
+)
+(uid "0_-fvi_hrnjywg5_-elk"))
+($7 109 < 0_-fvi_hrnjywg5_-elj "guid" 107
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00015"
+)
+(uid "0_-fvi_hrnjywg5_-elj"))
+($6 110 < 0_-fvi_hrnjywg5_-eli "keywords" 100
+(name "keywords"
+)
+(uid "0_-fvi_hrnjywg5_-eli")
+(multiplicity "*"))
+($7 111 < 0_-fvi_hrnjywg5_-elh "documentation" 110
+(name "documentation"
+)
+(value "keywords to characterise the type and uses of experiment in more detail than permitted by 'category'. Examples would be 'protein', 'sidechain', 'backbone', 'filtered', 'T1', 'RDC', ..."
+)
+(uid "0_-fvi_hrnjywg5_-elh"))
+($7 112 < 0_-fvi_hrnjywg5_-elg "baseName" 110
+(name "baseName"
+)
+(value "keyword"
+)
+(uid "0_-fvi_hrnjywg5_-elg"))
+($7 113 < 0_-fvi_hrnjywg5_-elf "guid" 110
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00016"
+)
+(uid "0_-fvi_hrnjywg5_-elf"))
+($6 114 < 0_-fvi_hrnjywg5_-ele "details" 100
+(name "details"
+)
+(uid "0_-fvi_hrnjywg5_-ele"))
+($7 115 < 0_-fvi_hrnjywg5_-eld "guid" 114
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00017"
+)
+(uid "0_-fvi_hrnjywg5_-eld"))
+($6 116 < 0_-fvi_hrnjywg5_-elc "synonym" 100
+(name "synonym"
+)
+(uid "0_-fvi_hrnjywg5_-elc"))
+($7 117 < 0_-fvi_hrnjywg5_-elb "documentation" 116
+(name "documentation"
+)
+(value "Alternative name of NmrExpPrototype. Used for experiments with well-established non-systematic name."
+)
+(uid "0_-fvi_hrnjywg5_-elb"))
+($7 118 < 0_-fvi_hrnjywg5_-ela "guid" 116
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00018"
+)
+(uid "0_-fvi_hrnjywg5_-ela"))
+($6 119 < 0_-fvi_hrnjywg5_-el9 "priority" 100
+(initialValue "2"
+)
+(name "priority"
+)
+(uid "0_-fvi_hrnjywg5_-el9")
+(multiplicity "1"))
+($7 120 < 0_-fvi_hrnjywg5_-el8 "documentation" 119
+(name "documentation"
+)
+(value "Experiment priority. Serves to classify experiments for display so that the more common can be more prominently displayed. Intended use would be 1=high, 2=medium, 3=low priority."
+)
+(uid "0_-fvi_hrnjywg5_-el8"))
+($7 121 < 0_-fvi_hrnjywg5_-el7 "guid" 119
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2010-05-12-17:41:37_00001"
+)
+(uid "0_-fvi_hrnjywg5_-el7"))
+($8 122 < 0_-fvi_hrnjywg5_-el6 "#<anon> (NmrExpPrototype, RefExperiment)##," 100
+(name "")
+(uid "0_-fvi_hrnjywg5_-el6"))
+($9 123 < 0_-fvi_hrnjywg5_-el5 "#0" 122
+(changeability "frozen")
+(aggregation "composite")
+(uid "0_-fvi_hrnjywg5_-el5")
+(multiplicity "1"))
+($7 124 < 0_-fvi_hrnjywg5_-el4 "guid" 123
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00005"
+)
+(uid "0_-fvi_hrnjywg5_-el4"))
+($9 125 < 0_-fvi_hrnjywg5_-el3 "#1" 122
+(uid "0_-fvi_hrnjywg5_-el3")
+(multiplicity "*"))
+($7 126 < 0_-fvi_hrnjywg5_-el2 "guid" 125
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00006"
+)
+(uid "0_-fvi_hrnjywg5_-el2"))
+($8 127 < 0_-fvi_hrnjywg5_-el1 "#<anon> (NmrExpPrototype, ExpGraph)##," 100
+(name "")
+(uid "0_-fvi_hrnjywg5_-el1"))
+($9 128 < 0_-fvi_hrnjywg5_-el0 "#0" 127
+(changeability "frozen")
+(aggregation "composite")
+(uid "0_-fvi_hrnjywg5_-el0")
+(multiplicity "1"))
+($7 129 < 0_-fvi_hrnjywg5_-ekz "guid" 128
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00007"
+)
+(uid "0_-fvi_hrnjywg5_-ekz"))
+($9 130 < 0_-fvi_hrnjywg5_-eky "#1" 127
+(uid "0_-fvi_hrnjywg5_-eky")
+(multiplicity "*"))
+($7 131 < 0_-fvi_hrnjywg5_-ekx "guid" 130
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00008"
+)
+(uid "0_-fvi_hrnjywg5_-ekx"))
+($8 132 < 0_-fvi_hrnjywg5_-ekw "#<anon> (NmrExpPrototype, AtomSite)##," 100
+(name "")
+(uid "0_-fvi_hrnjywg5_-ekw"))
+($9 133 < 0_-fvi_hrnjywg5_-ekv "#0" 132
+(changeability "frozen")
+(aggregation "composite")
+(uid "0_-fvi_hrnjywg5_-ekv")
+(multiplicity "1"))
+($7 134 < 0_-fvi_hrnjywg5_-eku "guid" 133
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00009"
+)
+(uid "0_-fvi_hrnjywg5_-eku"))
+($9 135 < 0_-fvi_hrnjywg5_-ekt "#1" 132
+(uid "0_-fvi_hrnjywg5_-ekt")
+(multiplicity "*"))
+($7 136 < 0_-fvi_hrnjywg5_-eks "guid" 135
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00010"
+)
+(uid "0_-fvi_hrnjywg5_-eks"))
+($8 137 < 0_-fvi_hrnjywg5_-ekr "#<anon> (NmrExpPrototype, ExpMeasurement)##," 100
+(name "")
+(uid "0_-fvi_hrnjywg5_-ekr"))
+($9 138 < 0_-fvi_hrnjywg5_-ekq "#0" 137
+(changeability "frozen")
+(aggregation "composite")
+(uid "0_-fvi_hrnjywg5_-ekq")
+(multiplicity "1"))
+($7 139 < 0_-fvi_hrnjywg5_-ekp "guid" 138
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00011"
+)
+(uid "0_-fvi_hrnjywg5_-ekp"))
+($9 140 < 0_-fvi_hrnjywg5_-eko "#1" 137
+(uid "0_-fvi_hrnjywg5_-eko")
+(multiplicity "*"))
+($7 141 < 0_-fvi_hrnjywg5_-ekn "guid" 140
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00012"
+)
+(uid "0_-fvi_hrnjywg5_-ekn"))
+($10 142 < 0_-fvi_hrnjywg5_-ekm "#<anon> (NmrExpPrototype, TopObject)" 100
+(uid "0_-fvi_hrnjywg5_-ekm"))
+($7 143 < 0_-fvi_hrnjywg5_-ekl "documentation" 100
+(name "documentation"
+)
+(value "Description of a reference NMR experiment as defined by its magnetisation transfer pathway. E.g. a 4D HCCH, 3D (H)CCH or HC(C)H, 2D H(C)(C)H and 2D (reduced dimensionality) HC(C)H are seen as the same experiment"
+)
+(uid "0_-fvi_hrnjywg5_-ekl"))
+($7 144 < 0_-fvi_hrnjywg5_-ekk "guid" 100
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00020"
+)
+(uid "0_-fvi_hrnjywg5_-ekk"))
+($7 145 < 0_-fvi_hrnjywg5_-ekj "keyNames" 100
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "0_-fvi_hrnjywg5_-ekj"))
+($5 146 < 0_-fvi_hrnjywg5_-eki "ExpTransfer" 1
+(name "ExpTransfer"
+)
+(uid "0_-fvi_hrnjywg5_-eki"))
+($6 147 < 0_-fvi_hrnjywg5_-ekh "serial" 146
+(changeability "frozen")
+(name "serial"
+)
+(uid "0_-fvi_hrnjywg5_-ekh")
+(multiplicity "1"))
+($7 148 < 0_-fvi_hrnjywg5_-ekg "isAutomatic" 147
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-ekg"))
+($7 149 < 0_-fvi_hrnjywg5_-ekf "guid" 147
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00021"
+)
+(uid "0_-fvi_hrnjywg5_-ekf"))
+($6 150 < 0_-fvi_hrnjywg5_-eke "transferType" 146
+(name "transferType"
+)
+(uid "0_-fvi_hrnjywg5_-eke"))
+($7 151 < 0_-fvi_hrnjywg5_-ekd "documentation" 150
+(name "documentation"
+)
+(value "Type of transfer. E.g. NOESY. Intended to describe the minimum information necessary to establish the relationship between the ExpAtomSites connected by the transfer"
+)
+(uid "0_-fvi_hrnjywg5_-ekd"))
+($7 152 < 0_-fvi_hrnjywg5_-ekc "guid" 150
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00022"
+)
+(uid "0_-fvi_hrnjywg5_-ekc"))
+($6 153 < 0_-fvi_hrnjywg5_-ekb "transferToSelf" 146
+(initialValue "False"
+)
+(name "transferToSelf"
+)
+(uid "0_-fvi_hrnjywg5_-ekb")
+(multiplicity "1"))
+($7 154 < 0_-fvi_hrnjywg5_-eka "documentation" 153
+(name "documentation"
+)
+(value "Does transfer permit magnetisation to remain on the same site ('diagonal' peak)?"
+)
+(uid "0_-fvi_hrnjywg5_-eka"))
+($7 155 < 0_-fvi_hrnjywg5_-ek9 "guid" 153
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00023"
+)
+(uid "0_-fvi_hrnjywg5_-ek9"))
+($10 156 < 0_-fvi_hrnjywg5_-ek8 "#<anon> (ExpTransfer, DataObject)" 146
+(uid "0_-fvi_hrnjywg5_-ek8"))
+($8 157 < 0_-fvi_hrnjywg5_-ek7 "#<anon> (ExpTransfer, AtomSite)##," 146
+(name "")
+(uid "0_-fvi_hrnjywg5_-ek7"))
+($9 158 < 0_-fvi_hrnjywg5_-ek6 "#0" 157
+(uid "0_-fvi_hrnjywg5_-ek6")
+(multiplicity "*"))
+($7 159 < 0_-fvi_hrnjywg5_-ek5 "documentation" 158
+(name "documentation"
+)
+(value "Magnetisation transfer (non-directional) connecting two AtomSites"
+)
+(uid "0_-fvi_hrnjywg5_-ek5"))
+($7 160 < 0_-fvi_hrnjywg5_-ek4 "guid" 158
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00019"
+)
+(uid "0_-fvi_hrnjywg5_-ek4"))
+($9 161 < 0_-fvi_hrnjywg5_-ek3 "#1" 157
+(uid "0_-fvi_hrnjywg5_-ek3")
+(multiplicity "2"))
+($7 162 < 0_-fvi_hrnjywg5_-ek2 "documentation" 161
+(name "documentation"
+)
+(value "AtomSites connected by Transfer"
+)
+(uid "0_-fvi_hrnjywg5_-ek2"))
+($7 163 < 0_-fvi_hrnjywg5_-ek1 "guid" 161
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00020"
+)
+(uid "0_-fvi_hrnjywg5_-ek1"))
+($7 164 < 0_-fvi_hrnjywg5_-ek0 "documentation" 146
+(name "documentation"
+)
+(value "Magnetisation transfer between two AtomSites. The transfer does not say anything about direction, merely that e.g. an H and a C are connected by a one-bond coupling."
+""
+"The ExpTransferPaths and the AtomSites they select describe the network of nuclei that must be present in order to get observable peaks from a ginve ExpGraph."
+)
+(uid "0_-fvi_hrnjywg5_-ek0"))
+($7 165 < 0_-fvi_hrnjywg5_-ejz "guid" 146
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00021"
+)
+(uid "0_-fvi_hrnjywg5_-ejz"))
+($7 166 < 0_-fvi_hrnjywg5_-ejy "keyNames" 146
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "0_-fvi_hrnjywg5_-ejy"))
+($11 167 < 0_-fvi_hrnjywg5_-ejx "transferToSelf_requires_identical_isotopes" 146
+(name "transferToSelf_requires_identical_isotopes"
+)
+(uid "0_-fvi_hrnjywg5_-ejx")
+(body "code:python"
+"_"
+"not self.transferToSelf or len(set(x.isotopeCode for x in self.atomSites)) == 1"
+"_"
+"code:java"
+"_"
+"isValid = true;"
+"if (getTransferToSelf()) {"
+"  java.util.Set<java.lang.String> tt = new java.util.HashSet<java.lang.String>();"
+"  for (ccp.api.nmr.NmrExpPrototype.AtomSite atomSite: getAtomSites()) {"
+"    tt.add(atomSite.getIsotopeCode());"
+"  }"
+""
+"  if (tt.size() != 1)"
+"    isValid = false;"
+"  }"
+))
+($7 168 < 0_-fvi_hrnjywg5_-ejw "guid" 167
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00022"
+)
+(uid "0_-fvi_hrnjywg5_-ejw"))
+($12 169 < 0_-fvi_hrnjywg5_-ejv "#<anon> (NmrExpPrototype, ChemElement)" 1
+(uid "0_-fvi_hrnjywg5_-ejv"))
+($5 170 < 0_-fvi_hrnjywg5_-eju "AtomSite" 1
+(name "AtomSite"
+)
+(uid "0_-fvi_hrnjywg5_-eju"))
+($6 171 < 0_-fvi_hrnjywg5_-ejt "serial" 170
+(changeability "frozen")
+(name "serial"
+)
+(uid "0_-fvi_hrnjywg5_-ejt")
+(multiplicity "1"))
+($7 172 < 0_-fvi_hrnjywg5_-ejs "isAutomatic" 171
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-ejs"))
+($7 173 < 0_-fvi_hrnjywg5_-ejr "guid" 171
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00025"
+)
+(uid "0_-fvi_hrnjywg5_-ejr"))
+($6 174 < 0_-fvi_hrnjywg5_-ejq "isotopeCode" 170
+(name "isotopeCode"
+)
+(uid "0_-fvi_hrnjywg5_-ejq")
+(multiplicity "1"))
+($7 175 < 0_-fvi_hrnjywg5_-ejp "documentation" 174
+(name "documentation"
+)
+(value "Isotope code for Isotope making up the ExpAtomSite "
+)
+(uid "0_-fvi_hrnjywg5_-ejp"))
+($7 176 < 0_-fvi_hrnjywg5_-ejo "guid" 174
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00026"
+)
+(uid "0_-fvi_hrnjywg5_-ejo"))
+($13 177 < 0_-fvi_hrnjywg5_-ejn "getIsotope" 170
+(name "getIsotope"
+)
+(uid "0_-fvi_hrnjywg5_-ejn")
+(isQuery true))
+($7 178 < 0_-fvi_hrnjywg5_-ejm "opType" 177
+(name "opType"
+)
+(value "get"
+)
+(uid "0_-fvi_hrnjywg5_-ejm"))
+($7 179 < 0_-fvi_hrnjywg5_-ejl "documentation" 177
+(name "documentation"
+)
+(value "getter for derived link isotopes"
+)
+(uid "0_-fvi_hrnjywg5_-ejl"))
+($7 180 < 0_-fvi_hrnjywg5_-ejk "guid" 177
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:59_00004"
+)
+(uid "0_-fvi_hrnjywg5_-ejk"))
+($7 181 < 0_-fvi_hrnjywg5_-ejj "code:java" 177
+(name "code:java"
+)
+(value "java.lang.String ss = getIsotopeCode();"
+"int nn = ss.length();"
+"int firstLetter = nn-2;"
+"if ((nn >= 2) && (\"0123456789\".indexOf(ss.substring(nn-2,nn-1)) >= 0))"
+"  firstLetter = nn-1;"
+""
+"java.lang.String atomSymbol = ss.substring(firstLetter).toUpperCase();"
+"java.lang.Integer massNumber = Integer.valueOf(ss.substring(0, firstLetter));"
+""
+"java.util.List<java.lang.Object> keys = memops.universal.Util.argsToList((java.lang.Object) atomSymbol, massNumber);"
+"result = ccp.api.molecule.ChemElement.Isotope.getByKey(getRoot().getCurrentChemElementStore(), keys);"
+)
+(uid "0_-fvi_hrnjywg5_-ejj"))
+($7 182 < 0_-fvi_hrnjywg5_-eji "code:python" 177
+(name "code:python"
+)
+(value "ss = self.isotopeCode"
+"if ss[-2] in '0123456789':"
+"  firstLetter = -1"
+"else:"
+"  firstLetter = -2"
+"atomSymbol = ss[firstLetter:].capitalize()"
+"massNumber = int(ss[:firstLetter])"
+""
+"result = ccpnmodel.ccpncore.api.ccp.molecule.ChemElement.Isotope.getByKey(self.root.currentChemElementStore, (atomSymbol, massNumber))"
+)
+(uid "0_-fvi_hrnjywg5_-eji"))
+($6 183 < 0_-fvi_hrnjywg5_-ejh "name" 170
+(name "name"
+)
+(uid "0_-fvi_hrnjywg5_-ejh"))
+($7 184 < 0_-fvi_hrnjywg5_-ejg "documentation" 183
+(name "documentation"
+)
+(value "A short string to be used in generating experiment names. If the attribute is not set, the nucleus symbol should be used. Examples of names would be 'CO', 'CA', for e.g. HNCOCA.Note that the name does not have to match with protein or any other naming conventions (proteins use 'C', where we might use 'CO'). "
+)
+(uid "0_-fvi_hrnjywg5_-ejg"))
+($7 185 < 0_-fvi_hrnjywg5_-ejf "guid" 183
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00027"
+)
+(uid "0_-fvi_hrnjywg5_-ejf"))
+($6 186 < 0_-fvi_hrnjywg5_-eje "minShift" 170
+(name "minShift"
+)
+(uid "0_-fvi_hrnjywg5_-eje"))
+($7 187 < 0_-fvi_hrnjywg5_-ejd "documentation" 186
+(name "documentation"
+)
+(value "minimum value of shift allowed for AtomSite, in ppm. Is not set in normal cases. Together with maxShift serves to distinguish frequency-selective sites. The most common use is for distinguishing CO, aliphatic carbon, and 'just' carbon."
+"Aliphatic carbon: <90ppm"
+"Aromatic carbon: 90-150ppm"
+"CO carbon: > 150ppm"
+"CA (for proteins): 40-90ppm"
+)
+(uid "0_-fvi_hrnjywg5_-ejd"))
+($7 188 < 0_-fvi_hrnjywg5_-ejc "guid" 186
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00028"
+)
+(uid "0_-fvi_hrnjywg5_-ejc"))
+($11 189 < 0_-fvi_hrnjywg5_-ejb "minShift_less_than_maxShift" 186
+(name "minShift_less_than_maxShift"
+)
+(uid "0_-fvi_hrnjywg5_-ejb")
+(body "code:python"
+"_"
+"maxShift = self.maxShift"
+"isValid = (maxShift is None or value < maxShift)"
+"_"
+"code:java"
+"_"
+"getMaxShift() == null || value < getMaxShift()"
+))
+($7 190 < 0_-fvi_hrnjywg5_-eja "guid" 189
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00029"
+)
+(uid "0_-fvi_hrnjywg5_-eja"))
+($6 191 < 0_-fvi_hrnjywg5_-ej9 "maxShift" 170
+(name "maxShift"
+)
+(uid "0_-fvi_hrnjywg5_-ej9"))
+($7 192 < 0_-fvi_hrnjywg5_-ej8 "documentation" 191
+(name "documentation"
+)
+(value "maximum value of shift allowed for AtomSite, in ppm. Is not set in normal cases. Together with minShift serves to distinguish frequency-selective sites. For some common cases it is recommended to use standard limits :"
+"Aliphatic carbon: <90ppm"
+"Aromatic carbon: 90-150ppm"
+"CO carbon: > 150ppm"
+"CA (for proteins): 40-90ppm"
+)
+(uid "0_-fvi_hrnjywg5_-ej8"))
+($7 193 < 0_-fvi_hrnjywg5_-ej7 "guid" 191
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00030"
+)
+(uid "0_-fvi_hrnjywg5_-ej7"))
+($11 194 < 0_-fvi_hrnjywg5_-ej6 "maxShift_greater_than_minShift" 191
+(name "maxShift_greater_than_minShift"
+)
+(uid "0_-fvi_hrnjywg5_-ej6")
+(body "code:python"
+"_"
+"minShift = self.minShift"
+"isValid = (minShift is None or value > minShift)"
+"_"
+"code:java"
+"_"
+"getMinShift() == null || value > getMinShift()"
+))
+($7 195 < 0_-fvi_hrnjywg5_-ej5 "guid" 194
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00031"
+)
+(uid "0_-fvi_hrnjywg5_-ej5"))
+($6 196 < 0_-fvi_hrnjywg5_-ej4 "minNumber" 170
+(initialValue "1"
+)
+(name "minNumber"
+)
+(uid "0_-fvi_hrnjywg5_-ej4")
+(multiplicity "1"))
+($7 197 < 0_-fvi_hrnjywg5_-ej3 "documentation" 196
+(name "documentation"
+)
+(value "Minimum number of occurrences of atom corresponding to atomSite. MinNumber two wiould mean at least two atoms. If, for instance a carbon atomSite has a J coupling transfer to a proton AtomSite with minNumber=2, it means that this ExpGraph will give observable results only for CH2 and  CH3 groups."
+)
+(uid "0_-fvi_hrnjywg5_-ej3"))
+($7 198 < 0_-fvi_hrnjywg5_-ej2 "guid" 196
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00032"
+)
+(uid "0_-fvi_hrnjywg5_-ej2"))
+($11 199 < 0_-fvi_hrnjywg5_-ej1 "minNumber_le_maxNumber" 196
+(name "minNumber_le_maxNumber"
+)
+(uid "0_-fvi_hrnjywg5_-ej1")
+(body "code:python"
+"_"
+"maxNumber = self.maxNumber"
+"isValid = (maxNumber is None or value <= maxNumber)"
+"_"
+"code:java"
+"_"
+"getMaxNumber() == null || value <= getMaxNumber()"
+))
+($7 200 < 0_-fvi_hrnjywg5_-ej0 "guid" 199
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00033"
+)
+(uid "0_-fvi_hrnjywg5_-ej0"))
+($6 201 < 0_-fvi_hrnjywg5_-eiz "maxNumber" 170
+(name "maxNumber"
+)
+(uid "0_-fvi_hrnjywg5_-eiz"))
+($7 202 < 0_-fvi_hrnjywg5_-eiy "documentation" 201
+(name "documentation"
+)
+(value "Maximum number of occurrences of atom corresponding to atomSite. maxNumber 2 would mena no more than two atoms could appear in this position. If, for instance a carbon atomSite has a J coupling transfer to a proton AtomSite with maxNumber=2, it means that this ExpGraph will give no observable result for CH3 groups. May be set to zero, which indicates that no atoms of this type are allowed."
+)
+(uid "0_-fvi_hrnjywg5_-eiy"))
+($7 203 < 0_-fvi_hrnjywg5_-eix "guid" 201
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:59_00001"
+)
+(uid "0_-fvi_hrnjywg5_-eix"))
+($11 204 < 0_-fvi_hrnjywg5_-eiw "maxNumber_ge_minNumber" 201
+(name "maxNumber_ge_minNumber"
+)
+(uid "0_-fvi_hrnjywg5_-eiw")
+(body "code:python"
+"_"
+"minNumber = self.minNumber"
+"isValid = (minNumber is None or value >= minNumber)"
+"_"
+"code:java"
+"_"
+"getMinNumber() == null || value >= getMinNumber()"
+))
+($7 205 < 0_-fvi_hrnjywg5_-eiv "guid" 204
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:59_00002"
+)
+(uid "0_-fvi_hrnjywg5_-eiv"))
+($6 206 < 0_-fvi_hrnjywg5_-eiu "numberStep" 170
+(initialValue "1"
+)
+(name "numberStep"
+)
+(uid "0_-fvi_hrnjywg5_-eiu")
+(multiplicity "1"))
+($7 207 < 0_-fvi_hrnjywg5_-eit "documentation" 206
+(name "documentation"
+)
+(value "Integer step between allowed number of occurrences of atoms corresponding to this atomSite. If, for instance a carbon atomSite has a J coupling transfer to a proton AtomSite with minNumber=1 and numberStep = 2, there must be 1, 3, 5, ... atoms corresponding to the AtomSite. Uased for instance to indicate 'carbon coupled to an odd number of protons', where you would have a carbon AtomSite, with a JCoupling ExpTransfer to a proton AtomSite witn minNumber 1 and numberStep 2."
+)
+(uid "0_-fvi_hrnjywg5_-eit"))
+($7 208 < 0_-fvi_hrnjywg5_-eis "guid" 206
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:59_00003"
+)
+(uid "0_-fvi_hrnjywg5_-eis"))
+($13 209 < 0_-fvi_hrnjywg5_-eir "getExpGraphs" 170
+(name "getExpGraphs"
+)
+(uid "0_-fvi_hrnjywg5_-eir")
+(isQuery true))
+($7 210 < 0_-fvi_hrnjywg5_-eiq "documentation" 209
+(name "documentation"
+)
+(value "getter for derived link expGraphs"
+)
+(uid "0_-fvi_hrnjywg5_-eiq"))
+($7 211 < 0_-fvi_hrnjywg5_-eip "opType" 209
+(name "opType"
+)
+(value "get"
+)
+(uid "0_-fvi_hrnjywg5_-eip"))
+($7 212 < 0_-fvi_hrnjywg5_-eio "guid" 209
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:59_00006"
+)
+(uid "0_-fvi_hrnjywg5_-eio"))
+($7 213 < 0_-fvi_hrnjywg5_-ein "code:java" 209
+(name "code:java"
+)
+(value "result = new java.util.HashSet<ccp.api.nmr.NmrExpPrototype.ExpGraph>();"
+"for (ccp.api.nmr.NmrExpPrototype.ExpTransfer x: getExpTransfers())"
+"  result.add(x.getExpGraph());"
+)
+(uid "0_-fvi_hrnjywg5_-ein"))
+($7 214 < 0_-fvi_hrnjywg5_-eim "code:python" 209
+(name "code:python"
+)
+(value "result = frozenset(x.expGraph for x in self.expTransfers)"
+)
+(uid "0_-fvi_hrnjywg5_-eim"))
+($10 215 < 0_-fvi_hrnjywg5_-eil "#<anon> (AtomSite, DataObject)" 170
+(uid "0_-fvi_hrnjywg5_-eil"))
+($8 216 < 0_-fvi_hrnjywg5_-eik "#<anon> (AtomSite, Isotope)##," 170
+(name "")
+(uid "0_-fvi_hrnjywg5_-eik"))
+($9 217 < 0_-fvi_hrnjywg5_-eij "#0" 216
+(uid "0_-fvi_hrnjywg5_-eij")
+(isNavigable false))
+($9 218 < 0_-fvi_hrnjywg5_-eii "#1" 216
+(changeability "frozen")
+(uid "0_-fvi_hrnjywg5_-eii"))
+($7 219 < 0_-fvi_hrnjywg5_-eih "documentation" 218
+(name "documentation"
+)
+(value "Isotope making up ExpAtomSite. "
+)
+(uid "0_-fvi_hrnjywg5_-eih"))
+($7 220 < 0_-fvi_hrnjywg5_-eig "guid" 218
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00024"
+)
+(uid "0_-fvi_hrnjywg5_-eig"))
+($7 221 < 0_-fvi_hrnjywg5_-eif "isDerived" 216
+(name "isDerived"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-eif"))
+($7 222 < 0_-fvi_hrnjywg5_-eie "documentation" 170
+(name "documentation"
+)
+(value "An Atom site on the graph of atoms through which magnetisation passes in an experiment. If there is more than one ExpGraph, each AtomSite may be relevant for one or more of these. The AtomSite may be given even if it is never a carrier of magnetisation, for instance to show that coupling to a given nucleus is used for filtering during an experiment."
+)
+(uid "0_-fvi_hrnjywg5_-eie"))
+($7 223 < 0_-fvi_hrnjywg5_-eid "guid" 170
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00023"
+)
+(uid "0_-fvi_hrnjywg5_-eid"))
+($7 224 < 0_-fvi_hrnjywg5_-eic "keyNames" 170
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "0_-fvi_hrnjywg5_-eic"))
+($5 225 < -yk94ms_85r_eqyymv3f_-f99 "RefExperiment" 1
+(name "RefExperiment"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f99"))
+($6 226 < 0_-fvi_hrnjywg5_-eia "serial" 225
+(changeability "frozen")
+(name "serial"
+)
+(uid "0_-fvi_hrnjywg5_-eia")
+(multiplicity "1"))
+($7 227 < 0_-fvi_hrnjywg5_-ei9 "isAutomatic" 226
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-ei9"))
+($7 228 < 0_-fvi_hrnjywg5_-ei8 "guid" 226
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:59_00010"
+)
+(uid "0_-fvi_hrnjywg5_-ei8"))
+($6 229 < 0_-fvi_hrnjywg5_-ei7 "name" 225
+(name "name"
+)
+(uid "0_-fvi_hrnjywg5_-ei7"))
+($7 230 < 0_-fvi_hrnjywg5_-ei6 "documentation" 229
+(name "documentation"
+)
+(value "name of RefExperiment"
+)
+(uid "0_-fvi_hrnjywg5_-ei6"))
+($7 231 < 0_-fvi_hrnjywg5_-ei5 "guid" 229
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:59_00011"
+)
+(uid "0_-fvi_hrnjywg5_-ei5"))
+($6 232 < 0_-fvi_hrnjywg5_-ei4 "synonym" 225
+(name "synonym"
+)
+(uid "0_-fvi_hrnjywg5_-ei4"))
+($7 233 < 0_-fvi_hrnjywg5_-ei3 "documentation" 232
+(name "documentation"
+)
+(value "Alternative name of RefExperiment. Intended for longer, more precisely descriptive names. Dimensionality, if desired, should be given as a prefix separated by a dot, e.g. '3D.'. Detailed indications of transfer mechanisms (e.g. 'HSQC', 'HMQC', should be given in the same manner as other transfer mechanisms (like 'NOESY')."
+)
+(uid "0_-fvi_hrnjywg5_-ei3"))
+($7 234 < 0_-fvi_hrnjywg5_-ei2 "guid" 232
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:59_00012"
+)
+(uid "0_-fvi_hrnjywg5_-ei2"))
+($6 235 < 0_-fvi_hrnjywg5_-ei1 "isReversed" 225
+(initialValue "False"
+)
+(name "isReversed"
+)
+(uid "0_-fvi_hrnjywg5_-ei1")
+(multiplicity "1"))
+($7 236 < 0_-fvi_hrnjywg5_-ei0 "documentation" 235
+(name "documentation"
+)
+(value "Is experiment carried out with the transfer steps and sequence of ExpMeasurements in reverse  order relative to the order given in the ExpGraphs?"
+)
+(uid "0_-fvi_hrnjywg5_-ei0"))
+($7 237 < 0_-fvi_hrnjywg5_-ehz "guid" 235
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:59_00013"
+)
+(uid "0_-fvi_hrnjywg5_-ehz"))
+($13 238 < 0_85r_if3xpxrt_-p8o "getOrderedDimensions" 225
+(name "getOrderedDimensions"
+)
+(uid "0_85r_if3xpxrt_-p8o")
+(isQuery true))
+($7 239 < 0_85r_if3xpxrt_-p8n "documentation" 238
+(name "documentation"
+)
+(value "getter for derived linkorderedDimensions"
+)
+(uid "0_85r_if3xpxrt_-p8n"))
+($7 240 < 0_85r_if3xpxrt_-p8m "opType" 238
+(name "opType"
+)
+(value "get"
+)
+(uid "0_85r_if3xpxrt_-p8m"))
+($7 241 < 0_85r_if3xpxrt_-p8l "code:python" 238
+(name "code:python"
+)
+(value "result = self.sortedRefExpDims()"
+""
+"import operator"
+""
+"# Get ExpMeasurements in traversal order"
+"steps = self.nmrExpPrototype.sortedExpGraphs()[0].sortedExpSteps()"
+"steps.sort(key=operator.attrgetter('stepNumber'))"
+"stepMeasurements = [x.expMeasurement for x in steps]"
+""
+"if not self.isReversed:"
+"  # start with last in traverse, unless experiment is reversed"
+"  stepMeasurements.reverse()"
+""
+"for measurement in stepMeasurements:"
+"  for expDim in result:"
+"    if expDim.findFirstRefExpDimRef(expMeasurement=measurement) is not None:"
+"      # DImension matches acquisition measurement. This is it"
+"      acqDimension = expDim"
+"      break"
+"  else:"
+"    continue"
+"  break"
+"else:"
+"  # Nothing found - should never happen. Take existing order as a default"
+"  acqDimension = result[0]"
+""
+"if acqDimension is not result[0]:"
+"  # Heuristic - given that most dimensions are given in traversal order for non-reversed"
+"  if not self.isReversed:"
+"    result.reverse()"
+"  result = [acqDimension] + [x for x in result if x is not acqDimension]"
+)
+(uid "0_85r_if3xpxrt_-p8l"))
+($7 242 < 0_63g_if55b3te_-p8n "guid" 238
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2015-09-29-14:12:25_00005"
+)
+(uid "0_63g_if55b3te_-p8n"))
+($6 243 < 0_63g_if55b3te_-p98 "axisCodes" 225
+(changeability "frozen")
+(name "axisCodes"
+)
+(uid "0_63g_if55b3te_-p98")
+(multiplicity "*"))
+($7 244 < 0_63g_if55b3te_-p97 "documentation" 243
+(name "documentation"
+)
+(value "axisCodes in order of orderedDimension (acquisition first)"
+)
+(uid "0_63g_if55b3te_-p97"))
+($7 245 < 0_63g_if55b3te_-p96 "isDerived" 243
+(name "isDerived"
+)
+(value "True"
+)
+(uid "0_63g_if55b3te_-p96"))
+($7 246 < 0_63g_if55b3te_-p8u "baseName" 243
+(name "baseName"
+)
+(value "axisCode"
+)
+(uid "0_63g_if55b3te_-p8u"))
+($7 247 < 0_63g_if55b3te_-p8m "guid" 243
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2015-09-29-14:12:25_00003"
+)
+(uid "0_63g_if55b3te_-p8m"))
+($6 248 < 0_63g_if55b3te_-p95 "nucleusCodes" 225
+(changeability "frozen")
+(name "nucleusCodes"
+)
+(uid "0_63g_if55b3te_-p95")
+(multiplicity "*"))
+($7 249 < 0_63g_if55b3te_-p94 "isDerived" 248
+(name "isDerived"
+)
+(value "True"
+)
+(uid "0_63g_if55b3te_-p94"))
+($7 250 < 0_63g_if55b3te_-p93 "documentation" 248
+(name "documentation"
+)
+(value "nucleus codes for dimensions in dimension order (acquisition first)."
+"Nucleus codes include nucleus names, 'J' (J coupling), 'MQ' (multiple quantum), 'delay', and 'MULTIPLE' (multiple different nuclei, e.g. for projection experiments or C/N alternative axes')."
+)
+(uid "0_63g_if55b3te_-p93"))
+($7 251 < 0_63g_if55b3te_-p8t "baseName" 248
+(name "baseName"
+)
+(value "nucleusCode"
+)
+(uid "0_63g_if55b3te_-p8t"))
+($7 252 < 0_63g_if55b3te_-p8l "guid" 248
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2015-09-29-14:12:25_00004"
+)
+(uid "0_63g_if55b3te_-p8l"))
+($13 253 < 0_63g_if55b3te_-p92 "getAxisCodes" 225
+(name "getAxisCodes"
+)
+(uid "0_63g_if55b3te_-p92")
+(isQuery true))
+($7 254 < 0_63g_if55b3te_-p91 "documentation" 253
+(name "documentation"
+)
+(value "getter for derived attribute axisCodes"
+)
+(uid "0_63g_if55b3te_-p91"))
+($7 255 < 0_63g_if55b3te_-p90 "opType" 253
+(name "opType"
+)
+(value "get"
+)
+(uid "0_63g_if55b3te_-p90"))
+($7 256 < 0_63g_if55b3te_-p8z "code:python" 253
+(name "code:python"
+)
+(value "result = tuple(x.axisCode for x in self.orderedDimensions)"
+)
+(uid "0_63g_if55b3te_-p8z"))
+($7 257 < 0_63g_if55b3te_-p8k "guid" 253
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2015-09-29-14:12:25_00006"
+)
+(uid "0_63g_if55b3te_-p8k"))
+($13 258 < 0_63g_if55b3te_-p8y "getNucleusCodes" 225
+(name "getNucleusCodes"
+)
+(uid "0_63g_if55b3te_-p8y")
+(isQuery true))
+($7 259 < 0_63g_if55b3te_-p8x "documentation" 258
+(name "documentation"
+)
+(value "getter for derived attribtue nucleusCodes"
+)
+(uid "0_63g_if55b3te_-p8x"))
+($7 260 < 0_63g_if55b3te_-p8w "opType" 258
+(name "opType"
+)
+(value "get"
+)
+(uid "0_63g_if55b3te_-p8w"))
+($7 261 < 0_63g_if55b3te_-p8v "code:python" 258
+(name "code:python"
+)
+(value "result = tuple(x.nucleusCode for x in self.orderedDimensions)"
+)
+(uid "0_63g_if55b3te_-p8v"))
+($7 262 < 0_63g_if55b3te_-p8o "guid" 258
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2015-09-29-14:12:25_00007"
+)
+(uid "0_63g_if55b3te_-p8o"))
+($8 263 < 0_-fvi_hrnjywg5_-ehy "#<anon> (RefExperiment, RefExpDim)##," 225
+(name "")
+(uid "0_-fvi_hrnjywg5_-ehy"))
+($9 264 < 0_-fvi_hrnjywg5_-ehx "#0" 263
+(changeability "frozen")
+(aggregation "composite")
+(uid "0_-fvi_hrnjywg5_-ehx")
+(multiplicity "1"))
+($7 265 < 0_-fvi_hrnjywg5_-ehw "guid" 264
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:59_00008"
+)
+(uid "0_-fvi_hrnjywg5_-ehw"))
+($9 266 < 0_-fvi_hrnjywg5_-ehv "#1" 263
+(uid "0_-fvi_hrnjywg5_-ehv")
+(multiplicity "*"))
+($7 267 < 0_-fvi_hrnjywg5_-ehu "guid" 266
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:59_00009"
+)
+(uid "0_-fvi_hrnjywg5_-ehu"))
+($10 268 < 0_-fvi_hrnjywg5_-eht "#<anon> (RefExperiment, DataObject)" 225
+(uid "0_-fvi_hrnjywg5_-eht"))
+($8 269 < 0_-fvi_hrnjywg5_-ehs "#<anon> (RefExperiment, SystematicName)##," 225
+(name "")
+(uid "0_-fvi_hrnjywg5_-ehs"))
+($9 270 < 0_-fvi_hrnjywg5_-ehr "#0" 269
+(changeability "frozen")
+(aggregation "composite")
+(uid "0_-fvi_hrnjywg5_-ehr")
+(multiplicity "1"))
+($7 271 < 0_-fvi_hrnjywg5_-ehq "guid" 270
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-03-30-16:37:37_00001"
+)
+(uid "0_-fvi_hrnjywg5_-ehq"))
+($9 272 < 0_-fvi_hrnjywg5_-ehp "#1" 269
+(uid "0_-fvi_hrnjywg5_-ehp")
+(multiplicity "*"))
+($7 273 < 0_-fvi_hrnjywg5_-eho "guid" 272
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-03-30-16:37:37_00002"
+)
+(uid "0_-fvi_hrnjywg5_-eho"))
+($8 274 < 0_85r_if3xpxrt_-p8u "#<anon> (RefExperiment, RefExpDim)##,orderedDimensions" 225
+(name "")
+(uid "0_85r_if3xpxrt_-p8u"))
+($9 275 < 0_85r_if3xpxrt_-p8s "#0" 274
+(uid "0_85r_if3xpxrt_-p8s")
+(isNavigable false))
+($9 276 < 0_85r_if3xpxrt_-p8r "orderedDimensions#1" 274
+(isOrdered true)
+(changeability "frozen")
+(name "orderedDimensions"
+)
+(uid "0_85r_if3xpxrt_-p8r")
+(multiplicity "*"))
+($7 277 < 0_85r_if3xpxrt_-p8p "documentation" 276
+(name "documentation"
+)
+(value "RefExpDims with the acquisition dimension as the first RefExpDim. The other dimensions are roughly in reverse order of traversal."
+)
+(uid "0_85r_if3xpxrt_-p8p"))
+($7 278 < 0_63g_if55b3te_-p8s "baseName" 276
+(name "baseName"
+)
+(value "orderedDimension"
+)
+(uid "0_63g_if55b3te_-p8s"))
+($7 279 < 0_63g_if55b3te_-p8j "guid" 276
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2015-09-29-14:12:25_00002"
+)
+(uid "0_63g_if55b3te_-p8j"))
+($7 280 < 0_85r_if3xpxrt_-p8q "isDerived" 274
+(name "isDerived"
+)
+(value "True"
+)
+(uid "0_85r_if3xpxrt_-p8q"))
+($7 281 < 0_-fvi_hrnjywg5_-ehn "documentation" 225
+(name "documentation"
+)
+(value "Reference Experiment. Selects experiment dimensions from the steps available in the NmrExpPrototype"
+)
+(uid "0_-fvi_hrnjywg5_-ehn"))
+($7 282 < 0_-fvi_hrnjywg5_-ehm "guid" 225
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00024"
+)
+(uid "0_-fvi_hrnjywg5_-ehm"))
+($7 283 < 0_-fvi_hrnjywg5_-ehl "keyNames" 225
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "0_-fvi_hrnjywg5_-ehl"))
+($5 284 < 0_-fvi_hrnjywg5_-ehk "RefExpDim" 1
+(name "RefExpDim"
+)
+(uid "0_-fvi_hrnjywg5_-ehk"))
+($6 285 < 0_-fvi_hrnjywg5_-ehj "dim" 284
+(changeability "frozen")
+(name "dim"
+)
+(uid "0_-fvi_hrnjywg5_-ehj")
+(multiplicity "1"))
+($7 286 < 0_-fvi_hrnjywg5_-ehi "documentation" 285
+(name "documentation"
+)
+(value "Dimension number. Note that the dim attribute is used to determine which Nmr.ExpDim corresponds to which RefExpDim"
+)
+(uid "0_-fvi_hrnjywg5_-ehi"))
+($7 287 < 0_-fvi_hrnjywg5_-ehh "guid" 285
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00005"
+)
+(uid "0_-fvi_hrnjywg5_-ehh"))
+($6 288 < 0_85r_if3xpxrt_-p98 "axisCode" 284
+(changeability "frozen")
+(name "axisCode"
+)
+(uid "0_85r_if3xpxrt_-p98"))
+($7 289 < 0_85r_if3xpxrt_-p97 "documentation" 288
+(name "documentation"
+)
+(value "axis code for entire dimension - sorted, comma-separated combination of individual RefExpDimRef.axisCode"
+)
+(uid "0_85r_if3xpxrt_-p97"))
+($7 290 < 0_85r_if3xpxrt_-p96 "isDerived" 288
+(name "isDerived"
+)
+(value "True"
+)
+(uid "0_85r_if3xpxrt_-p96"))
+($7 291 < 0_63g_if55b3te_-p8q "guid" 288
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2015-09-29-14:09:44_00001"
+)
+(uid "0_63g_if55b3te_-p8q"))
+($6 292 < 0_85r_if3xpxrt_-p95 "nucleusCode" 284
+(changeability "frozen")
+(name "nucleusCode"
+)
+(uid "0_85r_if3xpxrt_-p95"))
+($7 293 < 0_85r_if3xpxrt_-p94 "documentation" 292
+(name "documentation"
+)
+(value "Nucleus code for dimension. Includes nucleus names, 'J' (J coupling), 'MQ' (multiple quantum), 'delay', and 'MULTIPLE' (alternative nuclei)."
+)
+(uid "0_85r_if3xpxrt_-p94"))
+($7 294 < 0_85r_if3xpxrt_-p93 "isDerived" 292
+(name "isDerived"
+)
+(value "True"
+)
+(uid "0_85r_if3xpxrt_-p93"))
+($7 295 < 0_63g_if55b3te_-p8p "guid" 292
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2015-09-29-14:09:44_00002"
+)
+(uid "0_63g_if55b3te_-p8p"))
+($13 296 < 0_85r_if3xpxrt_-p92 "getAxisCode" 284
+(name "getAxisCode"
+)
+(uid "0_85r_if3xpxrt_-p92")
+(isQuery true))
+($7 297 < 0_85r_if3xpxrt_-p91 "documentation" 296
+(name "documentation"
+)
+(value "getter for derived attribute axisCode"
+)
+(uid "0_85r_if3xpxrt_-p91"))
+($7 298 < 0_85r_if3xpxrt_-p90 "opType" 296
+(name "opType"
+)
+(value "get"
+)
+(uid "0_85r_if3xpxrt_-p90"))
+($7 299 < 0_85r_if3xpxrt_-p8z "code:python" 296
+(name "code:python"
+)
+(value "axisCodes = [x.axisCode for x in self.refExpDimRefs]"
+"if axisCodes and None not in axisCodes:"
+"  result = ','.join(sorted(axisCodes))"
+"else:"
+"  result = None"
+)
+(uid "0_85r_if3xpxrt_-p8z"))
+($7 300 < 0_63g_if55b3te_-p8r "guid" 296
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2015-09-29-14:09:44_00003"
+)
+(uid "0_63g_if55b3te_-p8r"))
+($13 301 < 0_85r_if3xpxrt_-p8y "getNucleusCode" 284
+(name "getNucleusCode"
+)
+(uid "0_85r_if3xpxrt_-p8y")
+(isQuery true))
+($7 302 < 0_85r_if3xpxrt_-p8x "documentation" 301
+(name "documentation"
+)
+(value "getter for derived attribute nucleusCode"
+)
+(uid "0_85r_if3xpxrt_-p8x"))
+($7 303 < 0_85r_if3xpxrt_-p8w "opType" 301
+(name "opType"
+)
+(value "get"
+)
+(uid "0_85r_if3xpxrt_-p8w"))
+($7 304 < 0_85r_if3xpxrt_-p8v "code:python" 301
+(name "code:python"
+)
+(value "from ccpnmodel.ccpncore.lib.Constants import DEFAULT_ISOTOPE_DICT as isoDict"
+"axisCodes = [x.axisCode for x in self.refExpDimRefs]"
+"if axisCodes and None not in axisCodes:"
+"  nucleusCodes = []"
+"  for code in axisCodes:"
+"    for tag in reversed(sorted(isoDict)):"
+"      # Reversed looping guarantees that the longer of two matches will be chosen"
+"      if code.startswith(tag):"
+"        nucleusCodes.append(tag)"
+"        break"
+"    else:"
+"      result = None"
+"      break"
+"  else:"
+"    aSet = set(nucleusCodes)"
+"    if len(aSet) == 1:"
+"      result = aSet.pop()"
+"    else:"
+"      result = 'MULTIPLE'"
+"else:"
+"  result = None"
+)
+(uid "0_85r_if3xpxrt_-p8v"))
+($7 305 < 0_63g_if55b3te_-p8i "guid" 301
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2015-09-29-14:12:25_00001"
+)
+(uid "0_63g_if55b3te_-p8i"))
+($8 306 < 0_-fvi_hrnjywg5_-ehg "#<anon> (RefExpDim, RefExpDimRef)##," 284
+(name "")
+(uid "0_-fvi_hrnjywg5_-ehg"))
+($9 307 < 0_-fvi_hrnjywg5_-ehf "#0" 306
+(changeability "frozen")
+(aggregation "composite")
+(uid "0_-fvi_hrnjywg5_-ehf")
+(multiplicity "1"))
+($7 308 < 0_-fvi_hrnjywg5_-ehe "guid" 307
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:22:59_00014"
+)
+(uid "0_-fvi_hrnjywg5_-ehe"))
+($9 309 < 0_-fvi_hrnjywg5_-ehd "#1" 306
+(uid "0_-fvi_hrnjywg5_-ehd")
+(multiplicity "*"))
+($7 310 < 0_-fvi_hrnjywg5_-ehc "guid" 309
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00001"
+)
+(uid "0_-fvi_hrnjywg5_-ehc"))
+($10 311 < 0_-fvi_hrnjywg5_-ehb "#<anon> (RefExpDim, DataObject)" 284
+(uid "0_-fvi_hrnjywg5_-ehb"))
+($7 312 < 0_-fvi_hrnjywg5_-eh2 "documentation" 284
+(name "documentation"
+)
+(value "Dimension of reference exeriment."
+)
+(uid "0_-fvi_hrnjywg5_-eh2"))
+($7 313 < 0_-fvi_hrnjywg5_-eh1 "guid" 284
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00025"
+)
+(uid "0_-fvi_hrnjywg5_-eh1"))
+($7 314 < 0_-fvi_hrnjywg5_-eh0 "keyNames" 284
+(name "keyNames"
+)
+(value "dim"
+)
+(uid "0_-fvi_hrnjywg5_-eh0"))
+($5 315 < -yk94ms_85r_eqyymv3f_-f81 "RefExpDimRef" 1
+(name "RefExpDimRef"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f81"))
+($6 316 < 0_-fvi_hrnjywg5_-egy "serial" 315
+(changeability "frozen")
+(name "serial"
+)
+(uid "0_-fvi_hrnjywg5_-egy")
+(multiplicity "1"))
+($7 317 < 0_-fvi_hrnjywg5_-egx "isAutomatic" 316
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-egx"))
+($7 318 < 0_-fvi_hrnjywg5_-egw "guid" 316
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00010"
+)
+(uid "0_-fvi_hrnjywg5_-egw"))
+($6 319 < 0_jd_i32229zh_-p98 "axisCode" 315
+(name "axisCode"
+)
+(uid "0_jd_i32229zh_-p98"))
+($7 320 < 0_jd_i32229zh_-p97 "documentation" 319
+(name "documentation"
+)
+(value "axisCode - unique identifier within RefExperiment."
+)
+(uid "0_jd_i32229zh_-p97"))
+($7 321 < 0_jd_i32229zh_-p8z "guid" 319
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2014-11-28-21:31:23_00001"
+)
+(uid "0_jd_i32229zh_-p8z"))
+($6 322 < 0_-fvi_hrnjywg5_-egv "coupledIsotopeCodes" 315
+(name "coupledIsotopeCodes"
+)
+(uid "0_-fvi_hrnjywg5_-egv")
+(multiplicity "*"))
+($7 323 < 0_-fvi_hrnjywg5_-egu "baseName" 322
+(name "baseName"
+)
+(value "coupledIsotopeCode"
+)
+(uid "0_-fvi_hrnjywg5_-egu"))
+($7 324 < 0_-fvi_hrnjywg5_-egt "documentation" 322
+(name "documentation"
+)
+(value "Isotope codes for isotopes, couplings to which are active in the dimension. Note that homonuclear couplings (e.g. proton couplings in a proton dimension) must be specified explicitly if they are to be treated as active. Except for constant-time experiments, homonuclear couplings are normally active, but they may be ignored if they are not resolved and not of interest. "
+)
+(uid "0_-fvi_hrnjywg5_-egt"))
+($7 325 < 0_-fvi_hrnjywg5_-egs "guid" 322
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00012"
+)
+(uid "0_-fvi_hrnjywg5_-egs"))
+($13 326 < 0_-fvi_hrnjywg5_-egr "getCoupledIsotopes" 315
+(name "getCoupledIsotopes"
+)
+(uid "0_-fvi_hrnjywg5_-egr")
+(isQuery true))
+($7 327 < 0_-fvi_hrnjywg5_-egq "documentation" 326
+(name "documentation"
+)
+(value "getter for derived link coupledIsotopes"
+)
+(uid "0_-fvi_hrnjywg5_-egq"))
+($7 328 < 0_-fvi_hrnjywg5_-egp "opType" 326
+(name "opType"
+)
+(value "get"
+)
+(uid "0_-fvi_hrnjywg5_-egp"))
+($7 329 < 0_-fvi_hrnjywg5_-ego "guid" 326
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00014"
+)
+(uid "0_-fvi_hrnjywg5_-ego"))
+($7 330 < 0_-fvi_hrnjywg5_-egn "code:java" 326
+(name "code:java"
+)
+(value "result = new java.util.HashSet<ccp.api.molecule.ChemElement.Isotope>();"
+"for (java.lang.String ss: getCoupledIsotopeCodes()) {"
+"  int nn = ss.length();"
+"  int firstLetter = nn-2;"
+"  if ((nn >= 2) && (\"0123456789\".indexOf(ss.substring(nn-2,nn-1)) >= 0))"
+"    firstLetter = nn-1;"
+"  java.lang.String atomSymbol = ss.substring(firstLetter).toUpperCase();"
+"  java.lang.Integer massNumber = Integer.valueOf(ss.substring(0, firstLetter));"
+"  java.util.List<java.lang.Object> keys = memops.universal.Util.argsToList((java.lang.Object) atomSymbol, massNumber);"
+"  result.add(ccp.api.molecule.ChemElement.Isotope.getByKey(getRoot().getCurrentChemElementStore(), keys));"
+"}"
+)
+(uid "0_-fvi_hrnjywg5_-egn"))
+($7 331 < 0_-fvi_hrnjywg5_-egm "code:python" 326
+(name "code:python"
+)
+(value "result = []"
+"for ss in self.coupledIsotopeCodes:"
+"  if ss[-2] in '0123456789':"
+"    firstLetter = -1"
+"  else:"
+"    firstLetter = -2"
+"  atomSymbol = ss[firstLetter:].capitalize()"
+"  massNumber = int(ss[:firstLetter])"
+"  "
+"  result.append(ccpncore.api.ccp.molecule.ChemElement.Isotope.getByKey(self.root.currentChemElementStore, (atomSymbol, massNumber)))"
+"#"
+"result = frozenset(result)"
+)
+(uid "0_-fvi_hrnjywg5_-egm"))
+($6 332 < 0_-fvi_hrnjywg5_-egl "constantTime" 315
+(initialValue "variable"
+)
+(name "constantTime"
+)
+(uid "0_-fvi_hrnjywg5_-egl")
+(multiplicity "1"))
+($7 333 < 0_-fvi_hrnjywg5_-egk "documentation" 332
+(name "documentation"
+)
+(value "Is the dimension constant time, variable time, or partial (harmonica type)?"
+)
+(uid "0_-fvi_hrnjywg5_-egk"))
+($7 334 < 0_-fvi_hrnjywg5_-egj "guid" 332
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00013"
+)
+(uid "0_-fvi_hrnjywg5_-egj"))
+($6 335 < 0_-fvi_hrnjywg5_-egi "groupingId" 315
+(initialValue "1"
+)
+(name "groupingId"
+)
+(uid "0_-fvi_hrnjywg5_-egi")
+(multiplicity "1"))
+($7 336 < 0_-fvi_hrnjywg5_-egh "documentation" 335
+(name "documentation"
+)
+(value "groupingId divides RefExpDimRef from the same parent into groups - all RefExpDimRef with the same groupingId belong in the same group. RefExpDimRef from the same group can appear on the same peak - RefExpDimRef from different groups can not."
+)
+(uid "0_-fvi_hrnjywg5_-egh"))
+($7 337 < 0_-fvi_hrnjywg5_-egg "guid" 335
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-03-15:13:51_00001"
+)
+(uid "0_-fvi_hrnjywg5_-egg"))
+($6 338 < 0_-fvi_hrnjywg5_-egf "validScalingFactors" 315
+(initialValue "('1.0',)"
+)
+(name "validScalingFactors"
+)
+(uid "0_-fvi_hrnjywg5_-egf")
+(multiplicity "*"))
+($7 339 < 0_-fvi_hrnjywg5_-ege "documentation" 338
+(name "documentation"
+)
+(value "List of valid scaling factors for RefExpDimRef. If empty, many different factors are allowed. The position of a peak is calculated as the sum over ExpDimRef scaling factors times position values (e.g. position in ppm)."
+)
+(uid "0_-fvi_hrnjywg5_-ege"))
+($7 340 < 0_-fvi_hrnjywg5_-egd "guid" 338
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-04-03-15:13:51_00002"
+)
+(uid "0_-fvi_hrnjywg5_-egd"))
+($7 341 < 0_-fvi_hrnjywg5_-egc "baseName" 338
+(name "baseName"
+)
+(value "validScalingFactor"
+)
+(uid "0_-fvi_hrnjywg5_-egc"))
+($7 342 < 0_-fvi_hrnjywg5_-egb "isUnique" 338
+(name "isUnique"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-egb"))
+($10 343 < 0_-fvi_hrnjywg5_-ega "#<anon> (RefExpDimRef, DataObject)" 315
+(uid "0_-fvi_hrnjywg5_-ega"))
+($8 344 < 0_-fvi_hrnjywg5_-eg9 "#<anon> (RefExpDimRef, Isotope)##,coupledIsotopes" 315
+(name "")
+(uid "0_-fvi_hrnjywg5_-eg9"))
+($9 345 < 0_-fvi_hrnjywg5_-eg8 "#0" 344
+(uid "0_-fvi_hrnjywg5_-eg8")
+(isNavigable false))
+($9 346 < 0_-fvi_hrnjywg5_-eg7 "coupledIsotopes#1" 344
+(changeability "frozen")
+(name "coupledIsotopes"
+)
+(uid "0_-fvi_hrnjywg5_-eg7")
+(multiplicity "*"))
+($7 347 < 0_-fvi_hrnjywg5_-eg6 "baseName" 346
+(name "baseName"
+)
+(value "coupledIsotope"
+)
+(uid "0_-fvi_hrnjywg5_-eg6"))
+($7 348 < 0_-fvi_hrnjywg5_-eg5 "documentation" 346
+(name "documentation"
+)
+(value "Isotopes couplings to which are active in a given dimension."
+)
+(uid "0_-fvi_hrnjywg5_-eg5"))
+($7 349 < 0_-fvi_hrnjywg5_-eg4 "guid" 346
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00006"
+)
+(uid "0_-fvi_hrnjywg5_-eg4"))
+($7 350 < 0_-fvi_hrnjywg5_-eg3 "isDerived" 344
+(name "isDerived"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-eg3"))
+($8 351 < 0_-fvi_hrnjywg5_-eg2 "#<anon> (RefExpDimRef, ExpStep)##," 315
+(name "")
+(uid "0_-fvi_hrnjywg5_-eg2"))
+($9 352 < 0_-fvi_hrnjywg5_-eg1 "#0" 351
+(uid "0_-fvi_hrnjywg5_-eg1")
+(multiplicity "*"))
+($7 353 < 0_-fvi_hrnjywg5_-eg0 "documentation" 352
+(name "documentation"
+)
+(value "RefExpDimRefs that correspond to ExpStep"
+)
+(uid "0_-fvi_hrnjywg5_-eg0"))
+($7 354 < 0_-fvi_hrnjywg5_-efz "guid" 352
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00007"
+)
+(uid "0_-fvi_hrnjywg5_-efz"))
+($9 355 < 0_-fvi_hrnjywg5_-efy "#1" 351
+(uid "0_-fvi_hrnjywg5_-efy")
+(multiplicity "*"))
+($7 356 < 0_-fvi_hrnjywg5_-efx "documentation" 355
+(name "documentation"
+)
+(value "ExpSteps that corresponds to RefExpDimRef. The connection to the ExpMeasurenment is handled via the direct link to ExpMeasurement. The expStep link serves to distinguish which of several ExpSteps compatible with the ExpMeasurement was actually to make a measurement (e.g. was the N15 magnetisation measured before or after the CA magnetisaion in an HNCA experiment."
+)
+(uid "0_-fvi_hrnjywg5_-efx"))
+($7 357 < 0_-fvi_hrnjywg5_-efw "guid" 355
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00008"
+)
+(uid "0_-fvi_hrnjywg5_-efw"))
+($11 358 < 0_-fvi_hrnjywg5_-efv "ExpStep_and_RefExpDimRef_must_belong_to_same_ExpMeasurement" 355
+(name "ExpStep_and_RefExpDimRef_must_belong_to_same_ExpMeasurement"
+)
+(uid "0_-fvi_hrnjywg5_-efv")
+(body "code:python"
+"_"
+"self.expMeasurement is value.expMeasurement"
+"_"
+"code:java"
+"_"
+"self.getExpMeasurement() == other.getExpMeasurement()"
+))
+($7 359 < 0_-fvi_hrnjywg5_-efu "guid" 358
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00009"
+)
+(uid "0_-fvi_hrnjywg5_-efu"))
+($7 360 < 0_-fvi_hrnjywg5_-eft "documentation" 315
+(name "documentation"
+)
+(value "ExpDimRef for prototype experiment. Maps ExpDimRef on ExpStep, from which the information necessary for creating ExpDimRef can be found."
+""
+"If there is more than one ExpGraph in the NmrExpPrototype, in general each RefExpDim will have an equivalent set of RefExpDimRef for every ExpGraph. Where this is not the case it may be assumed that the 'missing' RefExpDimRefs are 1) identical in content to those present and 2) correspond to the same ExpStep as those given. This convention is used to avoid having several identical RefExpDimRefs just because there are several ExpGraphs."
+""
+"Note that the serial attribute is used to match Nmr.ExpDimRefs to RefExpDimRefs, so that objects with the same serial correspond to each other. "
+)
+(uid "0_-fvi_hrnjywg5_-eft"))
+($7 361 < 0_-fvi_hrnjywg5_-efs "guid" 315
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00026"
+)
+(uid "0_-fvi_hrnjywg5_-efs"))
+($7 362 < 0_-fvi_hrnjywg5_-efr "keyNames" 315
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "0_-fvi_hrnjywg5_-efr"))
+($5 363 < -yk94ms_85r_eqyymv3f_-f6u "ExpTransferSubType" 1
+(name "ExpTransferSubType"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f6u"))
+($10 364 < 0_-fvi_hrnjywg5_-efp "#<anon> (ExpTransferSubType, Line)" 363
+(uid "0_-fvi_hrnjywg5_-efp"))
+($7 365 < 0_-fvi_hrnjywg5_-efo "isOpen" 363
+(name "isOpen"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-efo"))
+($7 366 < 0_-fvi_hrnjywg5_-efn "enumeration" 363
+(name "enumeration"
+)
+(value "('HMQC','HSQC','HSMQC','TROESY','NOESY','ROESY','CP','TOCSY')"
+)
+(uid "0_-fvi_hrnjywg5_-efn"))
+($7 367 < 0_-fvi_hrnjywg5_-efm "documentation" 363
+(name "documentation"
+)
+(value "Enumeration for subtype of ExpTransferType. E.g. 'ROESY' for main type 'NOESY', or 'HSQC' for main type 'onebond'"
+)
+(uid "0_-fvi_hrnjywg5_-efm"))
+($7 368 < 0_-fvi_hrnjywg5_-efl "guid" 363
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00027"
+)
+(uid "0_-fvi_hrnjywg5_-efl"))
+($5 369 < 0_-fvi_hrnjywg5_-efk "ExpStep" 1
+(name "ExpStep"
+)
+(uid "0_-fvi_hrnjywg5_-efk"))
+($6 370 < 0_-fvi_hrnjywg5_-efj "serial" 369
+(changeability "frozen")
+(name "serial"
+)
+(uid "0_-fvi_hrnjywg5_-efj")
+(multiplicity "1"))
+($7 371 < 0_-fvi_hrnjywg5_-efi "isAutomatic" 370
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-efi"))
+($7 372 < 0_-fvi_hrnjywg5_-efh "guid" 370
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00018"
+)
+(uid "0_-fvi_hrnjywg5_-efh"))
+($6 373 < 0_-fvi_hrnjywg5_-efg "stepNumber" 369
+(name "stepNumber"
+)
+(uid "0_-fvi_hrnjywg5_-efg")
+(multiplicity "1"))
+($7 374 < 0_-fvi_hrnjywg5_-eff "documentation" 373
+(name "documentation"
+)
+(value "Step number. Should be consecutive integers starting at 1."
+)
+(uid "0_-fvi_hrnjywg5_-eff"))
+($7 375 < 0_-fvi_hrnjywg5_-efe "guid" 373
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00001"
+)
+(uid "0_-fvi_hrnjywg5_-efe"))
+($10 376 < 0_-fvi_hrnjywg5_-efd "#<anon> (ExpStep, DataObject)" 369
+(uid "0_-fvi_hrnjywg5_-efd"))
+($8 377 < 0_-fvi_hrnjywg5_-efc "#<anon> (ExpStep, ExpMeasurement)##," 369
+(name "")
+(uid "0_-fvi_hrnjywg5_-efc"))
+($9 378 < 0_-fvi_hrnjywg5_-efb "#0" 377
+(uid "0_-fvi_hrnjywg5_-efb")
+(multiplicity "*"))
+($7 379 < 0_-fvi_hrnjywg5_-efa "documentation" 378
+(name "documentation"
+)
+(value "ExpSteps where ExpMeasurement is being accessed. In a completed NmrExpPrototype all ExpMeasurements must be involved in at least one ExpStep."
+)
+(uid "0_-fvi_hrnjywg5_-efa"))
+($7 380 < 0_-fvi_hrnjywg5_-ef9 "guid" 378
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00016"
+)
+(uid "0_-fvi_hrnjywg5_-ef9"))
+($9 381 < 0_-fvi_hrnjywg5_-ef8 "#1" 377
+(uid "0_-fvi_hrnjywg5_-ef8")
+(multiplicity "1"))
+($7 382 < 0_-fvi_hrnjywg5_-ef7 "documentation" 381
+(name "documentation"
+)
+(value "ExpMeasurements being accesed during ExpStep. Several ExpSteps, either successive or at different place in the transfer sequence, may point to the same Measurement. "
+)
+(uid "0_-fvi_hrnjywg5_-ef7"))
+($7 383 < 0_-fvi_hrnjywg5_-ef6 "guid" 381
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00017"
+)
+(uid "0_-fvi_hrnjywg5_-ef6"))
+($7 384 < 0_-fvi_hrnjywg5_-ef5 "documentation" 369
+(name "documentation"
+)
+(value "Defines the order in which Measurements are encountered within a (non-reversed) experiment, and, implicitly, which ExpMeasurements are involved in a given ExpGraph. The same measurement can appear several times, e.g. for out-and-back experiments."
+)
+(uid "0_-fvi_hrnjywg5_-ef5"))
+($7 385 < 0_-fvi_hrnjywg5_-ef4 "guid" 369
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00028"
+)
+(uid "0_-fvi_hrnjywg5_-ef4"))
+($7 386 < 0_-fvi_hrnjywg5_-ef3 "keyNames" 369
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "0_-fvi_hrnjywg5_-ef3"))
+($5 387 < -yk94ms_85r_eqyymv3f_-f66 "ExpTransferType" 1
+(name "ExpTransferType"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f66"))
+($10 388 < 0_-fvi_hrnjywg5_-ef1 "#<anon> (ExpTransferType, Word)" 387
+(uid "0_-fvi_hrnjywg5_-ef1"))
+($7 389 < 0_-fvi_hrnjywg5_-ef0 "documentation" 387
+(name "documentation"
+)
+(value "Magnetisation transfer types for describing NMR experiments. Of the allowed values, NOESY includes ROESY, onebond is any transfer guaranteed to go along a single bond, Jmultibond is direct J coupling  excluding one-bond coupling, and Jcoupling is direct J coupling regardless of the number of intervening bonds.  Jnonlocal is a J coupling that may connect to any part of the molecule through space or noncovalent bonds. DipDip, SpinDiff, and CP are transfer types for solid state NMR. DipDip is dipole-dipoole transfer with an r-3 distance dependence, SpinDiff is spin diffusion possible mediated by another nucleus, with r-6 dependence, and CP is 'cross-polarization' which could be by a number of methods."
+)
+(uid "0_-fvi_hrnjywg5_-ef0"))
+($7 390 < 0_-fvi_hrnjywg5_-eez "isOpen" 387
+(name "isOpen"
+)
+(value "False"
+)
+(uid "0_-fvi_hrnjywg5_-eez"))
+($7 391 < 0_-fvi_hrnjywg5_-eey "enumeration" 387
+(name "enumeration"
+)
+(value "('onebond', 'Jcoupling', 'Jmultibond', 'relayed', 'through-space', 'relayed-alternate')"
+)
+(uid "0_-fvi_hrnjywg5_-eey"))
+($7 392 < 0_-fvi_hrnjywg5_-eex "guid" 387
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00029"
+)
+(uid "0_-fvi_hrnjywg5_-eex"))
+($5 393 < -yk94ms_85r_eqyymv3f_-f60 "ExpMeasurementType" 1
+(name "ExpMeasurementType"
+)
+(uid "-yk94ms_85r_eqyymv3f_-f60"))
+($10 394 < 0_-fvi_hrnjywg5_-eev "#<anon> (ExpMeasurementType, Line)" 393
+(uid "0_-fvi_hrnjywg5_-eev"))
+($7 395 < 0_-fvi_hrnjywg5_-eet "isOpen" 393
+(name "isOpen"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-eet"))
+($7 396 < 0_-fvi_hrnjywg5_-ees "enumeration" 393
+(name "enumeration"
+)
+(value "('Shift','ShiftAnisotropy','JCoupling','Rdc','TROESY','DipolarCoupling','MQShift','T1','T2','T1rho','T1zz')"
+)
+(uid "0_-fvi_hrnjywg5_-ees"))
+($7 397 < 0_-fvi_hrnjywg5_-eer "guid" 393
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00030"
+)
+(uid "0_-fvi_hrnjywg5_-eer"))
+($7 398 < z8kq45_63g_i7vzecqt_-p98 "documentation" 393
+(name "documentation"
+)
+(value "Type of Measurement that can appear (in the ExpDimRef) of an Nmr experiment. Equal to the Class name of the appropriate measurement class if one exists. "
+)
+(uid "z8kq45_63g_i7vzecqt_-p98"))
+($5 399 < 0_-fvi_hrnjywg5_-eeq "ConstantTimeType" 1
+(name "ConstantTimeType"
+)
+(uid "0_-fvi_hrnjywg5_-eeq"))
+($10 400 < 0_-fvi_hrnjywg5_-eep "#<anon> (ConstantTimeType, Word)" 399
+(uid "0_-fvi_hrnjywg5_-eep"))
+($7 401 < 0_-fvi_hrnjywg5_-eeo "isOpen" 399
+(name "isOpen"
+)
+(value "False"
+)
+(uid "0_-fvi_hrnjywg5_-eeo"))
+($7 402 < 0_-fvi_hrnjywg5_-een "enumeration" 399
+(name "enumeration"
+)
+(value "('constant', 'variable', 'partial')"
+)
+(uid "0_-fvi_hrnjywg5_-een"))
+($7 403 < 0_-fvi_hrnjywg5_-eem "documentation" 399
+(name "documentation"
+)
+(value "Constant time type for dimension. There are three alternatives, 'constant', 'variable', and 'partial'. The latter denotes a harmonica-type experiment."
+)
+(uid "0_-fvi_hrnjywg5_-eem"))
+($7 404 < 0_-fvi_hrnjywg5_-eel "guid" 399
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00031"
+)
+(uid "0_-fvi_hrnjywg5_-eel"))
+($5 405 < 0_-fvi_hrnjywg5_-eek "ExpGraph" 1
+(name "ExpGraph"
+)
+(uid "0_-fvi_hrnjywg5_-eek"))
+($6 406 < 0_-fvi_hrnjywg5_-eej "serial" 405
+(changeability "frozen")
+(name "serial"
+)
+(uid "0_-fvi_hrnjywg5_-eej")
+(multiplicity "1"))
+($7 407 < 0_-fvi_hrnjywg5_-eei "isAutomatic" 406
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-eei"))
+($7 408 < 0_-fvi_hrnjywg5_-eeh "guid" 406
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00010"
+)
+(uid "0_-fvi_hrnjywg5_-eeh"))
+($6 409 < 0_-fvi_hrnjywg5_-eeg "peakSign" 405
+(name "peakSign"
+)
+(uid "0_-fvi_hrnjywg5_-eeg"))
+($7 410 < 0_-fvi_hrnjywg5_-eef "documentation" 409
+(name "documentation"
+)
+(value "Sign of crosspeaks associated with transfer within ExpGraph. If set, all peaks arising from the ExpGraph must have the same sign. Mainly relevant where there are several ExpGraphs that give rise to peaks of different sign."
+)
+(uid "0_-fvi_hrnjywg5_-eef"))
+($7 411 < 0_-fvi_hrnjywg5_-eee "guid" 409
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00011"
+)
+(uid "0_-fvi_hrnjywg5_-eee"))
+($13 412 < 0_-fvi_hrnjywg5_-eed "getExpMeasurements" 405
+(name "getExpMeasurements"
+)
+(uid "0_-fvi_hrnjywg5_-eed")
+(isQuery true))
+($7 413 < 0_-fvi_hrnjywg5_-eec "documentation" 412
+(name "documentation"
+)
+(value "getter for derived link ExpMeasurements"
+)
+(uid "0_-fvi_hrnjywg5_-eec"))
+($7 414 < 0_-fvi_hrnjywg5_-eeb "opType" 412
+(name "opType"
+)
+(value "get"
+)
+(uid "0_-fvi_hrnjywg5_-eeb"))
+($7 415 < 0_-fvi_hrnjywg5_-eea "guid" 412
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00013"
+)
+(uid "0_-fvi_hrnjywg5_-eea"))
+($7 416 < 0_-fvi_hrnjywg5_-ee9 "code:java" 412
+(name "code:java"
+)
+(value "result = new java.util.HashSet<ccp.api.nmr.NmrExpPrototype.ExpMeasurement>();"
+"for (ccp.api.nmr.NmrExpPrototype.ExpStep x: getExpSteps())"
+"  result.add(x.getExpMeasurement());"
+)
+(uid "0_-fvi_hrnjywg5_-ee9"))
+($7 417 < 0_-fvi_hrnjywg5_-ee8 "code:python" 412
+(name "code:python"
+)
+(value "result = frozenset(x.expMeasurement for x in self.expSteps)"
+)
+(uid "0_-fvi_hrnjywg5_-ee8"))
+($13 418 < 0_-fvi_hrnjywg5_-ee7 "getAtomSites" 405
+(name "getAtomSites"
+)
+(uid "0_-fvi_hrnjywg5_-ee7")
+(isQuery true))
+($7 419 < 0_-fvi_hrnjywg5_-ee6 "documentation" 418
+(name "documentation"
+)
+(value "getter for derived link atomSites"
+)
+(uid "0_-fvi_hrnjywg5_-ee6"))
+($7 420 < 0_-fvi_hrnjywg5_-ee5 "opType" 418
+(name "opType"
+)
+(value "get"
+)
+(uid "0_-fvi_hrnjywg5_-ee5"))
+($7 421 < 0_-fvi_hrnjywg5_-ee4 "guid" 418
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00015"
+)
+(uid "0_-fvi_hrnjywg5_-ee4"))
+($7 422 < 0_-fvi_hrnjywg5_-ee3 "code:java" 418
+(name "code:java"
+)
+(value "result = new java.util.HashSet<ccp.api.nmr.NmrExpPrototype.AtomSite>();"
+"for (ccp.api.nmr.NmrExpPrototype.ExpTransfer x: getExpTransfers())"
+"  result.addAll(x.getAtomSites());"
+)
+(uid "0_-fvi_hrnjywg5_-ee3"))
+($7 423 < 0_-fvi_hrnjywg5_-ee2 "code:python" 418
+(name "code:python"
+)
+(value "result = frozenset(y for x in self.expTransfers for y in x.atomSites)"
+)
+(uid "0_-fvi_hrnjywg5_-ee2"))
+($10 424 < 0_-fvi_hrnjywg5_-ee1 "#<anon> (ExpGraph, DataObject)" 405
+(uid "0_-fvi_hrnjywg5_-ee1"))
+($8 425 < 0_-fvi_hrnjywg5_-ee0 "#<anon> (ExpGraph, ExpTransfer)##," 405
+(name "")
+(uid "0_-fvi_hrnjywg5_-ee0"))
+($9 426 < 0_-fvi_hrnjywg5_-edz "#0" 425
+(changeability "frozen")
+(aggregation "composite")
+(uid "0_-fvi_hrnjywg5_-edz")
+(multiplicity "1"))
+($7 427 < 0_-fvi_hrnjywg5_-edy "guid" 426
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00002"
+)
+(uid "0_-fvi_hrnjywg5_-edy"))
+($9 428 < 0_-fvi_hrnjywg5_-edx "#1" 425
+(uid "0_-fvi_hrnjywg5_-edx")
+(multiplicity "*"))
+($7 429 < 0_-fvi_hrnjywg5_-edw "guid" 428
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00003"
+)
+(uid "0_-fvi_hrnjywg5_-edw"))
+($8 430 < 0_-fvi_hrnjywg5_-edv "#<anon> (ExpGraph, ExpStep)##," 405
+(name "")
+(uid "0_-fvi_hrnjywg5_-edv"))
+($9 431 < 0_-fvi_hrnjywg5_-edu "#0" 430
+(changeability "frozen")
+(aggregation "composite")
+(uid "0_-fvi_hrnjywg5_-edu")
+(multiplicity "1"))
+($7 432 < 0_-fvi_hrnjywg5_-edt "guid" 431
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00004"
+)
+(uid "0_-fvi_hrnjywg5_-edt"))
+($9 433 < 0_-fvi_hrnjywg5_-eds "#1" 430
+(uid "0_-fvi_hrnjywg5_-eds")
+(multiplicity "*"))
+($7 434 < 0_-fvi_hrnjywg5_-edr "guid" 433
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00005"
+)
+(uid "0_-fvi_hrnjywg5_-edr"))
+($8 435 < 0_-fvi_hrnjywg5_-edq "#<anon> (ExpGraph, ExpMeasurement)##," 405
+(name "")
+(uid "0_-fvi_hrnjywg5_-edq"))
+($9 436 < 0_-fvi_hrnjywg5_-edp "#0" 435
+(changeability "frozen")
+(uid "0_-fvi_hrnjywg5_-edp")
+(multiplicity "*"))
+($7 437 < 0_-fvi_hrnjywg5_-edo "documentation" 436
+(name "documentation"
+)
+(value "ExpGraphs where ExpMeasurement appears"
+)
+(uid "0_-fvi_hrnjywg5_-edo"))
+($7 438 < 0_-fvi_hrnjywg5_-edn "guid" 436
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00006"
+)
+(uid "0_-fvi_hrnjywg5_-edn"))
+($9 439 < 0_-fvi_hrnjywg5_-edm "#1" 435
+(changeability "frozen")
+(uid "0_-fvi_hrnjywg5_-edm")
+(multiplicity "*"))
+($7 440 < 0_-fvi_hrnjywg5_-edl "documentation" 439
+(name "documentation"
+)
+(value "ExpMeasurements that appear in ExpGraph"
+)
+(uid "0_-fvi_hrnjywg5_-edl"))
+($7 441 < 0_-fvi_hrnjywg5_-edk "guid" 439
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00007"
+)
+(uid "0_-fvi_hrnjywg5_-edk"))
+($7 442 < 0_-fvi_hrnjywg5_-edj "isDerived" 435
+(name "isDerived"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-edj"))
+($8 443 < 0_-fvi_hrnjywg5_-edi "#<anon> (ExpGraph, AtomSite)##," 405
+(name "")
+(uid "0_-fvi_hrnjywg5_-edi"))
+($9 444 < 0_-fvi_hrnjywg5_-edh "#0" 443
+(changeability "frozen")
+(uid "0_-fvi_hrnjywg5_-edh")
+(multiplicity "*"))
+($7 445 < 0_-fvi_hrnjywg5_-edg "documentation" 444
+(name "documentation"
+)
+(value "ExpGraphs whre AtomSite appears"
+)
+(uid "0_-fvi_hrnjywg5_-edg"))
+($7 446 < 0_-fvi_hrnjywg5_-edf "guid" 444
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00008"
+)
+(uid "0_-fvi_hrnjywg5_-edf"))
+($9 447 < 0_-fvi_hrnjywg5_-ede "#1" 443
+(changeability "frozen")
+(uid "0_-fvi_hrnjywg5_-ede")
+(multiplicity "*"))
+($7 448 < 0_-fvi_hrnjywg5_-edd "documentation" 447
+(name "documentation"
+)
+(value "AtomSites connected to ExpGraph"
+)
+(uid "0_-fvi_hrnjywg5_-edd"))
+($7 449 < 0_-fvi_hrnjywg5_-edc "guid" 447
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00009"
+)
+(uid "0_-fvi_hrnjywg5_-edc"))
+($7 450 < 0_-fvi_hrnjywg5_-edb "isDerived" 443
+(name "isDerived"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-edb"))
+($7 451 < 0_-fvi_hrnjywg5_-eda "documentation" 405
+(name "documentation"
+)
+(value "Set of Connected AtomSites, ExpTransfers, ExpSteps and ExpMeasurements that define the allowed magnetisation transfer paths and observables for an NMR experiment. Each ExpGraph, its ExpSteps and ExpTransfers, and the ExpMeasurements and AtomSites these are connected to, effectively define a self-contained NMR experiment. There may be several ExpGraphs that share some, but not all, AtomSites and ExpMeasurementsl, e.g. if you acquire CH and NH 2D HSQC experiments together, or if you have diferent molecule topologies giving rise to peaks of different sign."
+)
+(uid "0_-fvi_hrnjywg5_-eda"))
+($7 452 < 0_-fvi_hrnjywg5_-ed9 "guid" 405
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00032"
+)
+(uid "0_-fvi_hrnjywg5_-ed9"))
+($7 453 < 0_-fvi_hrnjywg5_-ed8 "keyNames" 405
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "0_-fvi_hrnjywg5_-ed8"))
+($11 454 < 0_-fvi_hrnjywg5_-ed7 "stepNumber_is_secondary_key_for_ExpStep" 405
+(name "stepNumber_is_secondary_key_for_ExpStep"
+)
+(uid "0_-fvi_hrnjywg5_-ed7")
+(body "code:python"
+"_"
+"ll = self.expSteps"
+"isValid = (len(ll) == len(set(x.stepNumber for x in ll)))"
+"_"
+"code:java"
+"_"
+"java.util.HashSet<java.lang.Integer> dd = new java.util.HashSet<java.lang.Integer>();"
+"int nn = 0;"
+"for (ccp.api.nmr.NmrExpPrototype.ExpStep xs: getExpSteps()) {"
+"  dd.add(xs.getStepNumber());"
+"  nn++;"
+"}"
+""
+"if (dd.size() == nn)"
+"  isValid = true;"
+"else"
+"  isValid = false;"
+))
+($7 455 < 0_-fvi_hrnjywg5_-ed6 "guid" 454
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00033"
+)
+(uid "0_-fvi_hrnjywg5_-ed6"))
+($5 456 < 0_-fvi_hrnjywg5_-ed5 "ExpMeasurement" 1
+(name "ExpMeasurement"
+)
+(uid "0_-fvi_hrnjywg5_-ed5"))
+($6 457 < 0_-fvi_hrnjywg5_-ed4 "serial" 456
+(changeability "frozen")
+(name "serial"
+)
+(uid "0_-fvi_hrnjywg5_-ed4")
+(multiplicity "1"))
+($7 458 < 0_-fvi_hrnjywg5_-ed3 "isAutomatic" 457
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-ed3"))
+($7 459 < 0_-fvi_hrnjywg5_-ed2 "guid" 457
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00021"
+)
+(uid "0_-fvi_hrnjywg5_-ed2"))
+($6 460 < 0_-fvi_hrnjywg5_-ed1 "measurementType" 456
+(initialValue "shift"
+)
+(name "measurementType"
+)
+(uid "0_-fvi_hrnjywg5_-ed1")
+(multiplicity "1"))
+($7 461 < 0_-fvi_hrnjywg5_-ed0 "documentation" 460
+(name "documentation"
+)
+(value "Property being measured. Typically chemical shift, but could be e.g. J-coupling or multiple quantum magnetisation."
+)
+(uid "0_-fvi_hrnjywg5_-ed0"))
+($7 462 < 0_-fvi_hrnjywg5_-ecz "guid" 460
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00022"
+)
+(uid "0_-fvi_hrnjywg5_-ecz"))
+($6 463 < 0_-fvi_hrnjywg5_-ecy "atomSiteWeights" 456
+(name "atomSiteWeights"
+)
+(uid "0_-fvi_hrnjywg5_-ecy")
+(multiplicity "*"))
+($7 464 < 0_-fvi_hrnjywg5_-ecx "documentation" 463
+(name "documentation"
+)
+(value "Weight of contribution from atomSites to measurement being made, given in same order as the atomSites. Typically +/- 1. Serves to define multiple-quantum magnetisation, distinguishing between e.g. three-spin triple-quantum magnetisation and three-spin single-quantum magnetisation. Has no defined meaning in other cases. If both atomSiteWeights and atomSites are set, their length must be the same."
+)
+(uid "0_-fvi_hrnjywg5_-ecx"))
+($7 465 < 0_-fvi_hrnjywg5_-ecw "baseName" 463
+(name "baseName"
+)
+(value "atomSiteWeight"
+)
+(uid "0_-fvi_hrnjywg5_-ecw"))
+($7 466 < 0_-fvi_hrnjywg5_-ecv "guid" 463
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00023"
+)
+(uid "0_-fvi_hrnjywg5_-ecv"))
+($13 467 < 0_-fvi_hrnjywg5_-ecu "getExpGraphs" 456
+(name "getExpGraphs"
+)
+(uid "0_-fvi_hrnjywg5_-ecu")
+(isQuery true))
+($7 468 < 0_-fvi_hrnjywg5_-ect "documentation" 467
+(name "documentation"
+)
+(value "getter for derived link expGraphs"
+)
+(uid "0_-fvi_hrnjywg5_-ect"))
+($7 469 < 0_-fvi_hrnjywg5_-ecs "opType" 467
+(name "opType"
+)
+(value "get"
+)
+(uid "0_-fvi_hrnjywg5_-ecs"))
+($7 470 < 0_-fvi_hrnjywg5_-ecr "guid" 467
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00024"
+)
+(uid "0_-fvi_hrnjywg5_-ecr"))
+($7 471 < 0_-fvi_hrnjywg5_-ecq "code:java" 467
+(name "code:java"
+)
+(value "result = new java.util.HashSet<ccp.api.nmr.NmrExpPrototype.ExpGraph>();"
+"for (ccp.api.nmr.NmrExpPrototype.ExpStep x: getExpSteps())"
+"  result.add(x.getExpGraph());"
+)
+(uid "0_-fvi_hrnjywg5_-ecq"))
+($7 472 < 0_-fvi_hrnjywg5_-ecp "code:python" 467
+(name "code:python"
+)
+(value "result = frozenset(x.expGraph for x in self.expSteps)"
+)
+(uid "0_-fvi_hrnjywg5_-ecp"))
+($8 473 < 0_-fvi_hrnjywg5_-eco "#<anon> (ExpMeasurement, AtomSite)##," 456
+(name "")
+(uid "0_-fvi_hrnjywg5_-eco"))
+($9 474 < 0_-fvi_hrnjywg5_-ecn "#0" 473
+(uid "0_-fvi_hrnjywg5_-ecn")
+(multiplicity "*"))
+($7 475 < 0_-fvi_hrnjywg5_-ecm "documentation" 474
+(name "documentation"
+)
+(value "ExpMeasurements involving AtomSite"
+)
+(uid "0_-fvi_hrnjywg5_-ecm"))
+($7 476 < 0_-fvi_hrnjywg5_-ecl "guid" 474
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00017"
+)
+(uid "0_-fvi_hrnjywg5_-ecl"))
+($9 477 < 0_-fvi_hrnjywg5_-eck "#1" 473
+(isOrdered true)
+(uid "0_-fvi_hrnjywg5_-eck")
+(multiplicity "*"))
+($7 478 < 0_-fvi_hrnjywg5_-ecj "documentation" 477
+(name "documentation"
+)
+(value "AtomSites defining Measurement. For shifts a single one, defining which shift is being measured. For coupling constants a pair defining the sites coupled. For multiple quantum coherences the number apropriate to define the MQ coherence. The order of atomSites in the link is significant, as it corresponds to the order of Measurement.atomSiteWeights (if set).  "
+)
+(uid "0_-fvi_hrnjywg5_-ecj"))
+($7 479 < 0_-fvi_hrnjywg5_-eci "guid" 477
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00018"
+)
+(uid "0_-fvi_hrnjywg5_-eci"))
+($10 480 < 0_-fvi_hrnjywg5_-ech "#<anon> (ExpMeasurement, DataObject)" 456
+(uid "0_-fvi_hrnjywg5_-ech"))
+($8 481 < 0_-fvi_hrnjywg5_-ecg "#<anon> (ExpMeasurement, RefExpDimRef)##," 456
+(name "")
+(uid "0_-fvi_hrnjywg5_-ecg"))
+($9 482 < 0_-fvi_hrnjywg5_-ecf "#0" 481
+(uid "0_-fvi_hrnjywg5_-ecf")
+(multiplicity "1"))
+($7 483 < 0_-fvi_hrnjywg5_-ece "documentation" 482
+(name "documentation"
+)
+(value "ExpMeasurement to which the RefExpDimRef applies. The reference may be relevant for one or several ExpGraphs."
+)
+(uid "0_-fvi_hrnjywg5_-ece"))
+($7 484 < 0_-fvi_hrnjywg5_-ecd "guid" 482
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00019"
+)
+(uid "0_-fvi_hrnjywg5_-ecd"))
+($9 485 < 0_-fvi_hrnjywg5_-ecc "#1" 481
+(uid "0_-fvi_hrnjywg5_-ecc")
+(multiplicity "*"))
+($7 486 < 0_-fvi_hrnjywg5_-ecb "documentation" 485
+(name "documentation"
+)
+(value "RefExpDimRefs that pertain to the ExpMeasurement."
+)
+(uid "0_-fvi_hrnjywg5_-ecb"))
+($7 487 < 0_-fvi_hrnjywg5_-eca "guid" 485
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00020"
+)
+(uid "0_-fvi_hrnjywg5_-eca"))
+($7 488 < 0_-fvi_hrnjywg5_-ec9 "documentation" 456
+(name "documentation"
+)
+(value "Property being measured on a dimension of a multidimensional NMR experiment. Most common are shifts, but coupling constants, multi-quantum magnetisation, time (for relaxation time measurements) and others are possible."
+)
+(uid "0_-fvi_hrnjywg5_-ec9"))
+($7 489 < 0_-fvi_hrnjywg5_-ec8 "guid" 456
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00034"
+)
+(uid "0_-fvi_hrnjywg5_-ec8"))
+($7 490 < 0_-fvi_hrnjywg5_-ec7 "keyNames" 456
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "0_-fvi_hrnjywg5_-ec7"))
+($11 491 < 0_-fvi_hrnjywg5_-ec6 "lengths_of_atomSites_and_atomSiteWeights_must_conform" 456
+(name "lengths_of_atomSites_and_atomSiteWeights_must_conform"
+)
+(uid "0_-fvi_hrnjywg5_-ec6")
+(body "code:python"
+"_"
+"len1 = len(self.atomSites)"
+"len2 = len(self.atomSiteWeights)"
+"isValid = (not len1 or not len2 or (len1 == len2))"
+""
+"_"
+"code:java"
+"_"
+"int len1 = getAtomSites().size();"
+"int len2 = getAtomSiteWeights().size();"
+"isValid = ((len1 == 0) || (len2 == 0) || (len1 == len2));"
+))
+($7 492 < 0_-fvi_hrnjywg5_-ec5 "guid" 491
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00035"
+)
+(uid "0_-fvi_hrnjywg5_-ec5"))
+($5 493 < 0_-fvi_hrnjywg5_-ec4 "ExpCategory" 1
+(name "ExpCategory"
+)
+(uid "0_-fvi_hrnjywg5_-ec4"))
+($10 494 < 0_-fvi_hrnjywg5_-ec3 "#<anon> (ExpCategory, Line)" 493
+(uid "0_-fvi_hrnjywg5_-ec3"))
+($7 495 < 0_-fvi_hrnjywg5_-ec2 "documentation" 493
+(name "documentation"
+)
+(value "Category of NmrExpPrototype."
+"'through-bond' are though-bond correlation experiments (TOCSY, HSQC, HNCOCA, ...)"
+"'though-space' are through-space correlation experiments (NOESY, ROESY, HSQC-NOESY-HSQC,...)"
+"'quantification' are experiments meant to measure parameters, such as relaxation, heteronuclear NOEs, dipolar and scalar couplings, quantitative exchange rates, ...)"
+"'other' takes care of experiments that do not fit anything else."
+)
+(uid "0_-fvi_hrnjywg5_-ec2"))
+($7 496 < 0_-fvi_hrnjywg5_-ec1 "isOpen" 493
+(name "isOpen"
+)
+(value "False"
+)
+(uid "0_-fvi_hrnjywg5_-ec1"))
+($7 497 < 0_-fvi_hrnjywg5_-ec0 "enumeration" 493
+(name "enumeration"
+)
+(value "('through-bond','through-space','quantification','other')"
+)
+(uid "0_-fvi_hrnjywg5_-ec0"))
+($7 498 < 0_-fvi_hrnjywg5_-ebz "guid" 493
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00036"
+)
+(uid "0_-fvi_hrnjywg5_-ebz"))
+($5 499 < 0_-fvi_hrnjywg5_-eby "ExpKeyword" 1
+(name "ExpKeyword"
+)
+(uid "0_-fvi_hrnjywg5_-eby"))
+($10 500 < 0_-fvi_hrnjywg5_-ebx "#<anon> (ExpKeyword, Line)" 499
+(uid "0_-fvi_hrnjywg5_-ebx"))
+($7 501 < 0_-fvi_hrnjywg5_-ebw "documentation" 499
+(name "documentation"
+)
+(value "Proposed keywords (open enumeration) for NmrExpPrototype.keywords"
+)
+(uid "0_-fvi_hrnjywg5_-ebw"))
+($7 502 < 0_-fvi_hrnjywg5_-ebv "isOpen" 499
+(name "isOpen"
+)
+(value "True"
+)
+(uid "0_-fvi_hrnjywg5_-ebv"))
+($7 503 < 0_-fvi_hrnjywg5_-ebu "enumeration" 499
+(name "enumeration"
+)
+(value "('protein','DNA','RNA','carbohydrate','nonpolymer','backbone','sidechain')"
+)
+(uid "0_-fvi_hrnjywg5_-ebu"))
+($7 504 < 0_-fvi_hrnjywg5_-ebt "guid" 499
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00037"
+)
+(uid "0_-fvi_hrnjywg5_-ebt"))
+($5 505 < 0_-fvi_hrnjywg5_-ebs "SystematicName" 1
+(name "SystematicName"
+)
+(uid "0_-fvi_hrnjywg5_-ebs"))
+($6 506 < 0_-fvi_hrnjywg5_-ebr "namingSystem" 505
+(changeability "frozen")
+(name "namingSystem"
+)
+(uid "0_-fvi_hrnjywg5_-ebr")
+(multiplicity "1"))
+($7 507 < 0_-fvi_hrnjywg5_-ebq "documentation" 506
+(name "documentation"
+)
+(value "Naming system for systematic name"
+)
+(uid "0_-fvi_hrnjywg5_-ebq"))
+($7 508 < 0_-fvi_hrnjywg5_-ebp "guid" 506
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-03-30-16:37:37_00003"
+)
+(uid "0_-fvi_hrnjywg5_-ebp"))
+($6 509 < 0_-fvi_hrnjywg5_-ebo "name" 505
+(name "name"
+)
+(uid "0_-fvi_hrnjywg5_-ebo")
+(multiplicity "1"))
+($7 510 < 0_-fvi_hrnjywg5_-ebn "documentation" 509
+(name "documentation"
+)
+(value "Name within naming system"
+)
+(uid "0_-fvi_hrnjywg5_-ebn"))
+($7 511 < 0_-fvi_hrnjywg5_-ebm "guid" 509
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-03-30-16:37:37_00004"
+)
+(uid "0_-fvi_hrnjywg5_-ebm"))
+($10 512 < 0_-fvi_hrnjywg5_-ebl "#<anon> (SystematicName, DataObject)" 505
+(uid "0_-fvi_hrnjywg5_-ebl"))
+($7 513 < 0_-fvi_hrnjywg5_-ebk "documentation" 505
+(name "documentation"
+)
+(value "Systematic name for RefExperiment"
+)
+(uid "0_-fvi_hrnjywg5_-ebk"))
+($7 514 < 0_-fvi_hrnjywg5_-ebj "keyNames" 505
+(name "keyNames"
+)
+(value "namingSystem"
+)
+(uid "0_-fvi_hrnjywg5_-ebj"))
+($7 515 < 0_-fvi_hrnjywg5_-ebi "guid" 505
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-03-30-16:37:31_00001"
+)
+(uid "0_-fvi_hrnjywg5_-ebi"))
+($5 516 < 0_-fvi_hrnjywg5_-ebh "NamingSystem" 1
+(name "NamingSystem"
+)
+(uid "0_-fvi_hrnjywg5_-ebh"))
+($10 517 < 0_-fvi_hrnjywg5_-ebg "#<anon> (NamingSystem, Line)" 516
+(uid "0_-fvi_hrnjywg5_-ebg"))
+($7 518 < 0_-fvi_hrnjywg5_-ebf "documentation" 516
+(name "documentation"
+)
+(value "NamingSystems accepted for RefExperiments"
+)
+(uid "0_-fvi_hrnjywg5_-ebf"))
+($7 519 < 0_-fvi_hrnjywg5_-ebe "isOpen" 516
+(name "isOpen"
+)
+(value "False"
+)
+(uid "0_-fvi_hrnjywg5_-ebe"))
+($7 520 < 0_-fvi_hrnjywg5_-ebd "enumeration" 516
+(name "enumeration"
+)
+(value "('BMRB',)"
+)
+(uid "0_-fvi_hrnjywg5_-ebd"))
+($7 521 < 0_-fvi_hrnjywg5_-ebc "guid" 516
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2008-03-30-16:37:31_00002"
+)
+(uid "0_-fvi_hrnjywg5_-ebc"))
+($7 522 < 0_-fvi_hrnjywg5_-ebb "shortName" 1
+(name "shortName"
+)
+(value "NMRX"
+)
+(uid "0_-fvi_hrnjywg5_-ebb"))
+($7 523 < 0_-fvi_hrnjywg5_-eba "documentation" 1
+(name "documentation"
+)
+(value "Package for describing NMR experment prototypes, which could also be described as template descriptions."
+)
+(uid "0_-fvi_hrnjywg5_-eba"))
+($7 524 < 0_-fvi_hrnjywg5_-eb9 "packageGroup" 1
+(name "packageGroup"
+)
+(value "nmr"
+)
+(uid "0_-fvi_hrnjywg5_-eb9"))
+($7 525 < 0_-fvi_hrnjywg5_-eb8 "guid" 1
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00019"
+)
+(uid "0_-fvi_hrnjywg5_-eb8"))
+($15 527)
+($15 529)
+($15 531)
+($15 533)
+($15 535)
+($15 538)
+($17 541)
+($17 543)
+($17 545)
+($17 547)
+($17 548)
+($17 550)
+($17 552)
+($17 554)
+($17 556)
+($17 557)
+($17 558)
+($17 559)
+($17 560)
+($17 563)
+($17 564)
+($17 565)
+($17 567)
+($15 569)
+($15 571)
+($15 572)
+($15 574)
+($15 576)
+($15 578)
+($15 580)
+($15 581)
+($15 582)
+($15 583)
+($15 584)
+($15 585)
+($15 586)
+($15 587)
+($15 588)
+($15 589)
+($15 590)
+($15 591)
+($15 593)
+($15 594)
+($15 595)
+($15 597)
+($15 598)
+($15 599)
+($15 600)
+($15 601)
+($15 602)
+($15 603)
+($15 604)
+($15 605)
+($15 606)
+($15 607)
+($15 608)
+($15 609)
+($15 610)
+($15 611)
+($15 612)
+($15 613)
+($15 614)
+($15 616)
+($15 617)
+($15 618)
+($15 619)
+($15 621)
+($15 623)
+($15 625)
+($15 626)
+($15 627)
+($15 628)
+($15 629)
+($15 630)
+($15 631)
+($15 632)
+($15 633)
+($15 634)
+($15 635)
+($15 636)
+($15 637)
+($15 638)
+($15 639)
+($15 640)
+($15 641)
+($15 642)
+($15 643)
+($15 644)
+($15 645)
+($15 646)
+($15 647)
+($15 648)
+($15 649)
+($15 650)
+($15 651)
+($15 652)
+($15 653)
+($15 654)
+($15 655)
+($15 656)
+($15 657)
+($15 658)
+($15 659)
+($15 660)
+($15 661)
+($15 662)
+($15 663)
+($15 664)
+($15 665)
+($15 666)
+($15 667)
+($15 668)
+($15 669)
+($14 526 @ -yk94ms_-e3s_e41656c6_-fvm 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Nmr" $14)
+($5 528 @ 0_-fvi_hrnjywg5_-ob2 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "Experiment" $5)
+($5 530 @ 0_-fvi_hrnjywg5_-i5n 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ExpDim" $5)
+($8 532 @ 0_-fvi_hrnjywg5_-i5e 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ExpDim" $5 "#<anon> (ExpDim, Experiment)##," $8)
+($5 534 @ 0_-fvi_hrnjywg5_-gof 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ExpDimRef" $5)
+($8 536 @ 0_-fvi_hrnjywg5_-gmh 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ExpDimRef" $5 "#<anon> (ExpDimRef, ExpDim)##," $8)
+($14 537 @ -yk94ms_-e3s_e41656c6_-fvg 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "NmrExpPrototype" $14)
+($5 539 @ 0_-fvi_hrnjywg5_-dbb 4 "Logical" $1 "memops" $1 "Implementation" $1 "TopObject" $5)
+($5 540 @ 0_-fvi_hrnjywg5_-dl3 4 "Logical" $1 "memops" $1 "Implementation" $1 "Int" $5)
+($5 542 @ 0_-fvi_hrnjywg5_-dkx 4 "Logical" $1 "memops" $1 "Implementation" $1 "Line" $5)
+($18 544 @ -yk94ms_-e3s_e41656c6_-fw7 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "DataType" $18)
+($5 546 @ 0_-fvi_hrnjywg5_-dkm 4 "Logical" $1 "memops" $1 "Implementation" $1 "String" $5)
+($5 549 @ 0_-fvi_hrnjywg5_-dcl 4 "Logical" $1 "memops" $1 "Implementation" $1 "PositiveInt" $5)
+($5 551 @ 0_-fvi_hrnjywg5_-d9g 4 "Logical" $1 "memops" $1 "Implementation" $1 "DataObject" $5)
+($5 553 @ 0_-fvi_hrnjywg5_-dlv 4 "Logical" $1 "memops" $1 "Implementation" $1 "Boolean" $5)
+($5 555 @ 0_-fvi_hrnjywg5_-dkb 4 "Logical" $1 "memops" $1 "Implementation" $1 "Word" $5)
+($5 561 @ 0_-fvi_hrnjywg5_-dlb 4 "Logical" $1 "memops" $1 "Implementation" $1 "Float" $5)
+($5 562 @ 0_-fvi_hrnjywg5_-lkx 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemElement" $1 "Isotope" $5)
+($5 566 @ 0_-fvi_hrnjywg5_-dbr 4 "Logical" $1 "memops" $1 "Implementation" $1 "NonNegativeInt" $5)
+($5 568 @ 0_-fvi_hrnjywg5_-d2c 4 "Logical" $1 "memops" $1 "Implementation" $1 "IntSign" $5)
+($14 570 @ -yk94ms_-e3s_e41656c6_-fvk 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Nucleus" $14)
+($8 573 @ 0_-fvi_hrnjywg5_-gma 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ExpDimRef" $5 "#<anon> (ExpDimRef, Isotope)##," $8)
+($5 575 @ 0_-fvi_hrnjywg5_-i1l 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ExpTransfer" $5)
+($8 577 @ 0_-fvi_hrnjywg5_-i18 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ExpTransfer" $5 "#<anon> (ExpTransfer, ExpDimRef)##," $8)
+($8 579 @ 0_-fvi_hrnjywg5_-i30 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "Experiment" $5 "#<anon> (Experiment, ExpTransfer)##," $8)
+($8 592 @ 0_-fvi_hrnjywg5_-i2n 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "Experiment" $5 "#<anon> (Experiment, RefExperiment)##," $8)
+($8 596 @ 0_-fvi_hrnjywg5_-gm2 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ExpDimRef" $5 "#<anon> (ExpDimRef, RefExpDimRef)##," $8)
+($8 615 @ 0_-fvi_hrnjywg5_-i29 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "Experiment" $5 "#<anon> (Experiment, )##derivedFrom,derivedTo" $8)
+($5 620 @ 0_-fvi_hrnjywg5_-gqo 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ExpDimRefMapping" $5)
+($8 622 @ 0_-fvi_hrnjywg5_-gqk 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ExpDimRefMapping" $5 "#<anon> (ExpDimRefMapping, ExpDimRef)##derivedTo,derivedFrom" $8)
+($8 624 @ 0_-fvi_hrnjywg5_-glv 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ExpDimRef" $5 "#<anon> (ExpDimRef, ExpDimRefMapping)##," $8)
+($18 670 @ -yk94ms_-e3s_e41656c6_-fwy 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "import" $18)
+($1 671 @ -yk94ms_-e3s_e41656c6_-hj7 4 "Logical" $1 "ccp" $1 "molecule" $1 "ChemElement" $1)
+(styleAssn 3 526)
+(projectionAssn 3 528 527)
+(styleAssn 4 526)
+(projectionAssn 4 530 529)
+(to 5 3)
+(from 5 4)
+(projectionAssn 5 532 531)
+(styleAssn 6 526)
+(projectionAssn 6 534 533)
+(to 7 4)
+(from 7 6)
+(projectionAssn 7 536 535)
+(styleAssn 8 537)
+(typeAssn 123 100)
+(assocEndAssn 100 123)
+(typeAssn 128 100)
+(assocEndAssn 100 128)
+(typeAssn 133 100)
+(assocEndAssn 100 133)
+(typeAssn 138 100)
+(assocEndAssn 100 138)
+(subtypeAssn 142 100)
+(supertypeAssn 142 539)
+(generalizationAssn 100 142)
+(typeRefAssn 101 540)
+(typeExpression 101 541)
+(typeRefAssn 104 542)
+(typeExpression 104 543)
+(stereotypeAssn 493 544)
+(subtypeAssn 494 493)
+(supertypeAssn 494 542)
+(generalizationAssn 493 494)
+(typeRefAssn 107 493)
+(typeExpression 107 545)
+(stereotypeAssn 499 544)
+(subtypeAssn 500 499)
+(supertypeAssn 500 542)
+(generalizationAssn 499 500)
+(typeRefAssn 110 499)
+(typeExpression 110 545)
+(typeRefAssn 114 546)
+(typeExpression 114 547)
+(typeRefAssn 116 542)
+(typeExpression 116 548)
+(typeRefAssn 119 549)
+(typeExpression 119 550)
+(assocEndAssn 225 125)
+(typeAssn 264 225)
+(assocEndAssn 225 264)
+(typeAssn 270 225)
+(assocEndAssn 225 270)
+(typeAssn 275 225)
+(assocEndAssn 225 275)
+(subtypeAssn 268 225)
+(supertypeAssn 268 551)
+(generalizationAssn 225 268)
+(typeRefAssn 226 540)
+(typeExpression 226 543)
+(typeRefAssn 229 542)
+(typeExpression 229 543)
+(typeRefAssn 232 542)
+(typeExpression 232 552)
+(typeRefAssn 235 553)
+(typeExpression 235 554)
+(typeRefAssn 243 555)
+(typeExpression 243 556)
+(typeRefAssn 248 555)
+(typeExpression 248 556)
+(assocEndAssn 284 266)
+(typeAssn 307 284)
+(assocEndAssn 284 307)
+(typeAssn 276 284)
+(assocEndAssn 284 276)
+(subtypeAssn 311 284)
+(supertypeAssn 311 551)
+(generalizationAssn 284 311)
+(typeRefAssn 285 540)
+(typeExpression 285 543)
+(typeRefAssn 288 555)
+(typeExpression 288 557)
+(typeRefAssn 292 555)
+(typeExpression 292 557)
+(assocEndAssn 315 309)
+(typeAssn 345 315)
+(assocEndAssn 315 345)
+(typeAssn 352 315)
+(assocEndAssn 315 352)
+(typeAssn 485 315)
+(assocEndAssn 315 485)
+(subtypeAssn 343 315)
+(supertypeAssn 343 551)
+(generalizationAssn 315 343)
+(typeRefAssn 316 540)
+(typeExpression 316 543)
+(typeRefAssn 319 555)
+(typeExpression 319 558)
+(typeRefAssn 322 555)
+(typeExpression 322 554)
+(stereotypeAssn 399 544)
+(subtypeAssn 400 399)
+(supertypeAssn 400 555)
+(generalizationAssn 399 400)
+(typeRefAssn 332 399)
+(typeExpression 332 559)
+(typeRefAssn 335 540)
+(typeExpression 335 560)
+(typeRefAssn 338 561)
+(typeExpression 338 560)
+(typeAssn 346 562)
+(typeAssn 378 369)
+(assocEndAssn 369 378)
+(typeAssn 433 369)
+(assocEndAssn 369 433)
+(assocEndAssn 369 355)
+(subtypeAssn 376 369)
+(supertypeAssn 376 551)
+(generalizationAssn 369 376)
+(typeRefAssn 370 540)
+(typeExpression 370 563)
+(typeRefAssn 373 540)
+(typeExpression 373 564)
+(typeAssn 474 456)
+(assocEndAssn 456 474)
+(assocEndAssn 456 381)
+(typeAssn 140 456)
+(assocEndAssn 456 140)
+(typeAssn 482 456)
+(assocEndAssn 456 482)
+(typeAssn 439 456)
+(assocEndAssn 456 439)
+(subtypeAssn 480 456)
+(supertypeAssn 480 551)
+(generalizationAssn 456 480)
+(typeRefAssn 457 540)
+(typeExpression 457 565)
+(stereotypeAssn 393 544)
+(subtypeAssn 394 393)
+(supertypeAssn 394 542)
+(generalizationAssn 393 394)
+(typeRefAssn 460 393)
+(typeExpression 460 565)
+(typeRefAssn 463 561)
+(typeExpression 463 565)
+(typeAssn 217 170)
+(assocEndAssn 170 217)
+(typeAssn 161 170)
+(assocEndAssn 170 161)
+(assocEndAssn 170 477)
+(typeAssn 135 170)
+(assocEndAssn 170 135)
+(typeAssn 447 170)
+(assocEndAssn 170 447)
+(subtypeAssn 215 170)
+(supertypeAssn 215 551)
+(generalizationAssn 170 215)
+(typeRefAssn 171 540)
+(typeExpression 171 543)
+(typeRefAssn 174 555)
+(typeExpression 174 543)
+(typeRefAssn 183 555)
+(typeExpression 183 559)
+(typeRefAssn 186 561)
+(typeExpression 186 559)
+(typeRefAssn 191 561)
+(typeExpression 191 559)
+(typeRefAssn 196 566)
+(typeExpression 196 565)
+(typeRefAssn 201 566)
+(typeExpression 201 565)
+(typeRefAssn 206 549)
+(typeExpression 206 565)
+(typeAssn 218 562)
+(typeAssn 477 170)
+(typeAssn 381 456)
+(typeAssn 355 369)
+(typeAssn 309 315)
+(typeAssn 266 284)
+(assocEndAssn 505 272)
+(subtypeAssn 512 505)
+(supertypeAssn 512 551)
+(generalizationAssn 505 512)
+(stereotypeAssn 516 544)
+(subtypeAssn 517 516)
+(supertypeAssn 517 542)
+(generalizationAssn 516 517)
+(typeRefAssn 506 516)
+(typeExpression 506 567)
+(typeRefAssn 509 542)
+(typeExpression 509 567)
+(typeAssn 272 505)
+(typeAssn 125 225)
+(assocEndAssn 405 130)
+(typeAssn 426 405)
+(assocEndAssn 405 426)
+(typeAssn 431 405)
+(assocEndAssn 405 431)
+(typeAssn 436 405)
+(assocEndAssn 405 436)
+(typeAssn 444 405)
+(assocEndAssn 405 444)
+(subtypeAssn 424 405)
+(supertypeAssn 424 551)
+(generalizationAssn 405 424)
+(typeRefAssn 406 540)
+(typeExpression 406 565)
+(typeRefAssn 409 568)
+(typeExpression 409 565)
+(typeAssn 158 146)
+(assocEndAssn 146 158)
+(assocEndAssn 146 428)
+(subtypeAssn 156 146)
+(supertypeAssn 156 551)
+(generalizationAssn 146 156)
+(typeRefAssn 147 540)
+(typeExpression 147 541)
+(stereotypeAssn 387 544)
+(subtypeAssn 388 387)
+(supertypeAssn 388 555)
+(generalizationAssn 387 388)
+(typeRefAssn 150 387)
+(typeExpression 150 541)
+(typeRefAssn 153 553)
+(typeExpression 153 554)
+(typeAssn 428 146)
+(typeAssn 130 405)
+(projectionAssn 8 100 538)
+(styleAssn 9 537)
+(projectionAssn 9 146 569)
+(styleAssn 10 570)
+(projectionAssn 10 562 571)
+(to 11 10)
+(from 11 6)
+(projectionAssn 11 573 572)
+(styleAssn 12 526)
+(projectionAssn 12 575 574)
+(to 13 6)
+(from 13 12)
+(projectionAssn 13 577 576)
+(to 14 12)
+(from 14 3)
+(projectionAssn 14 579 578)
+(styleAssn 15 537)
+(projectionAssn 15 170 580)
+(styleAssn 16 537)
+(projectionAssn 16 225 581)
+(to 17 16)
+(from 17 8)
+(projectionAssn 17 122 582)
+(styleAssn 18 537)
+(projectionAssn 18 284 583)
+(to 19 18)
+(from 19 16)
+(projectionAssn 19 263 584)
+(styleAssn 20 537)
+(projectionAssn 20 315 585)
+(to 21 20)
+(from 21 18)
+(projectionAssn 21 306 586)
+(styleAssn 22 537)
+(stereotypeAssn 363 544)
+(subtypeAssn 364 363)
+(supertypeAssn 364 542)
+(generalizationAssn 363 364)
+(projectionAssn 22 363 587)
+(to 23 10)
+(from 23 20)
+(projectionAssn 23 344 588)
+(to 24 15)
+(from 24 9)
+(projectionAssn 24 157 589)
+(styleAssn 25 537)
+(projectionAssn 25 369 590)
+(to 26 16)
+(from 26 3)
+(projectionAssn 26 592 591)
+(styleAssn 27 537)
+(projectionAssn 27 387 593)
+(styleAssn 28 537)
+(projectionAssn 28 393 594)
+(to 29 20)
+(from 29 6)
+(projectionAssn 29 596 595)
+(styleAssn 30 537)
+(projectionAssn 30 399 597)
+(styleAssn 31 537)
+(projectionAssn 31 405 598)
+(to 32 31)
+(from 32 8)
+(projectionAssn 32 127 599)
+(to 33 9)
+(from 33 31)
+(projectionAssn 33 425 600)
+(styleAssn 34 537)
+(projectionAssn 34 456 601)
+(to 35 15)
+(from 35 34)
+(projectionAssn 35 473 602)
+(to 36 34)
+(from 36 25)
+(projectionAssn 36 377 603)
+(to 37 25)
+(from 37 31)
+(projectionAssn 37 430 604)
+(to 38 25)
+(from 38 20)
+(projectionAssn 38 351 605)
+(styleAssn 39 537)
+(projectionAssn 39 493 606)
+(to 40 15)
+(from 40 8)
+(projectionAssn 40 132 607)
+(to 41 34)
+(from 41 8)
+(projectionAssn 41 137 608)
+(to 42 20)
+(from 42 34)
+(projectionAssn 42 481 609)
+(to 43 34)
+(from 43 31)
+(projectionAssn 43 435 610)
+(to 44 15)
+(from 44 31)
+(projectionAssn 44 443 611)
+(to 45 10)
+(from 45 15)
+(projectionAssn 45 216 612)
+(styleAssn 46 537)
+(projectionAssn 46 499 613)
+(to 47 3)
+(from 47 3)
+(projectionAssn 47 615 614)
+(styleAssn 48 537)
+(projectionAssn 48 505 616)
+(to 49 48)
+(from 49 16)
+(projectionAssn 49 269 617)
+(styleAssn 50 537)
+(projectionAssn 50 516 618)
+(styleAssn 51 526)
+(projectionAssn 51 620 619)
+(to 52 6)
+(from 52 51)
+(projectionAssn 52 622 621)
+(to 53 51)
+(from 53 6)
+(projectionAssn 53 624 623)
+(to 54 18)
+(from 54 16)
+(projectionAssn 54 274 625)
+(styleAssn 56 526)
+(projectionAssn 56 528 626)
+(styleAssn 57 526)
+(projectionAssn 57 530 627)
+(to 58 56)
+(from 58 57)
+(projectionAssn 58 532 628)
+(styleAssn 59 526)
+(projectionAssn 59 534 629)
+(to 60 57)
+(from 60 59)
+(projectionAssn 60 536 630)
+(styleAssn 61 537)
+(projectionAssn 61 100 631)
+(styleAssn 62 537)
+(projectionAssn 62 146 632)
+(styleAssn 63 570)
+(projectionAssn 63 562 633)
+(to 64 63)
+(from 64 59)
+(projectionAssn 64 573 634)
+(styleAssn 65 526)
+(projectionAssn 65 575 635)
+(to 66 59)
+(from 66 65)
+(projectionAssn 66 577 636)
+(to 67 65)
+(from 67 56)
+(projectionAssn 67 579 637)
+(styleAssn 68 537)
+(projectionAssn 68 170 638)
+(to 69 63)
+(from 69 68)
+(projectionAssn 69 216 639)
+(to 70 68)
+(from 70 62)
+(projectionAssn 70 157 640)
+(styleAssn 71 537)
+(projectionAssn 71 284 641)
+(styleAssn 72 537)
+(projectionAssn 72 315 642)
+(to 73 63)
+(from 73 72)
+(projectionAssn 73 344 643)
+(to 74 72)
+(from 74 71)
+(projectionAssn 74 306 644)
+(styleAssn 75 537)
+(projectionAssn 75 225 645)
+(to 76 71)
+(from 76 75)
+(projectionAssn 76 263 646)
+(to 77 75)
+(from 77 61)
+(projectionAssn 77 122 647)
+(to 78 75)
+(from 78 56)
+(projectionAssn 78 592 648)
+(styleAssn 79 537)
+(projectionAssn 79 369 649)
+(to 80 72)
+(from 80 59)
+(projectionAssn 80 596 650)
+(to 81 79)
+(from 81 72)
+(projectionAssn 81 351 651)
+(styleAssn 82 537)
+(projectionAssn 82 405 652)
+(to 83 62)
+(from 83 82)
+(projectionAssn 83 425 653)
+(to 84 79)
+(from 84 82)
+(projectionAssn 84 430 654)
+(to 85 82)
+(from 85 61)
+(projectionAssn 85 127 655)
+(styleAssn 86 537)
+(projectionAssn 86 456 656)
+(to 87 68)
+(from 87 86)
+(projectionAssn 87 473 657)
+(to 88 86)
+(from 88 79)
+(projectionAssn 88 377 658)
+(to 89 68)
+(from 89 61)
+(projectionAssn 89 132 659)
+(to 90 86)
+(from 90 61)
+(projectionAssn 90 137 660)
+(to 91 72)
+(from 91 86)
+(projectionAssn 91 481 661)
+(to 92 68)
+(from 92 82)
+(projectionAssn 92 443 662)
+(to 93 86)
+(from 93 82)
+(projectionAssn 93 435 663)
+(to 94 56)
+(from 94 56)
+(projectionAssn 94 615 664)
+(styleAssn 95 526)
+(projectionAssn 95 620 665)
+(to 96 59)
+(from 96 95)
+(projectionAssn 96 622 666)
+(to 97 95)
+(from 97 59)
+(projectionAssn 97 624 667)
+(styleAssn 98 537)
+(projectionAssn 98 505 668)
+(to 99 98)
+(from 99 75)
+(projectionAssn 99 269 669)
+(stereotypeAssn 169 670)
+(clientAssn 169 1)
+(supplierAssn 169 671)

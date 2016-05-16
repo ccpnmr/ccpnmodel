@@ -1,0 +1,1569 @@
+ObjectDomain_Shared_Package 15
+{-hkpzxr_-nsb_f8y6usm8_-p98 4 "Logical" objectdomain.uml.mechanisms.UmlPackage-owns "ccp" objectdomain.uml.mechanisms.UmlPackage-owns "molecule" objectdomain.uml.mechanisms.UmlPackage-owns "StructureValidation" objectdomain.uml.mechanisms.UmlPackage-owns
+}[objectdomain.uml.core.TypeExpression $17
+objectdomain.uml.mechanisms.UmlPackage-owns $1
+objectdomain.uml.core.Generalization-owns $9
+objectdomain.uml.core.Dependency-owns $14
+objectdomain.uml.core.Projection $15
+objectdomain.uml.core.UmlAttribute-features $7
+objectdomain.uml.core.UmlAssociationEnd-connections $11
+objectdomain.uml.view.style.BaseViewElementStyle-owns $18
+objectdomain.uml.view.ClassView-owns $3
+objectdomain.uml.core.UmlTaggedValue-taggedValues $8
+objectdomain.uml.core.UmlConstraint-constraints $13
+objectdomain.uml.core.UmlAssociation-owns $10
+objectdomain.uml.view.Diagram-owns $2
+objectdomain.uml.core.UmlOperation-features $12
+objectdomain.uml.view.GeneralizationView-owns $5
+objectdomain.uml.core.UmlMultiplicity $16
+objectdomain.uml.core.UmlClass-owns $6
+objectdomain.uml.view.AssociationView-owns $4
+objectdomain.uml.core.Stereotype-owns $19
+]
+($1 1 > -hkpzxr_-nsb_f8y6usm8_-p98 4 "Logical" $1 "ccp" $1 "molecule" $1 "StructureValidation" $1
+(name "StructureValidation"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p98"))
+($2 2 < -hkpzxr_-nsb_f8y6usm8_-p95 "_StructureValidation-details" 1
+(name "_StructureValidation-details"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p95")
+(diagramType "class"))
+($3 3 < -hkpzxr_-nsb_f8y6usm8_-p92 "StructureValidationStore" 2
+(uid "-hkpzxr_-nsb_f8y6usm8_-p92")
+(bbx 620 70 160 60))
+($3 4 < -hkpzxr_-nsb_f8y6usm8_-p62 "MultiTypeValue" 2
+(uid "-hkpzxr_-nsb_f8y6usm8_-p62")
+(bbx 650 390 240 110))
+($3 5 < -hkpzxr_-nsb_f8y6usm8_-p61 "ValidationResult" 2
+(autoSizeToFit true)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p61")
+(bbx 620 200 150 140))
+($3 6 < -hkpzxr_-nsb_f8y6usm8_-p5z "StructureEnsemble" 2
+(uid "-hkpzxr_-nsb_f8y6usm8_-p5z")
+(bbx 50 130 290 110))
+($3 7 < -hkpzxr_-nsb_f8y6usm8_-p5y "Chain" 2
+(uid "-hkpzxr_-nsb_f8y6usm8_-p5y")
+(bbx 80 470 210 80))
+($4 8 < -hkpzxr_-nsb_f8y6usm8_-p81 "" 2
+(toMultiplicityPosition 90 450)
+(toRolePosition 105 450)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p81")
+(points 100 240 100 470)
+(fromMultiplicityPosition 80 245))
+($3 9 < -hkpzxr_-nsb_f8y6usm8_-p5x "Residue" 2
+(uid "-hkpzxr_-nsb_f8y6usm8_-p5x")
+(bbx 70 610 230 110))
+($4 10 < -hkpzxr_-nsb_f8y6usm8_-p80 "" 2
+(toMultiplicityPosition 190 595)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p80")
+(points 185 550 185 610)
+(fromMultiplicityPosition 165 560))
+($3 11 < -hkpzxr_-nsb_f8y6usm8_-p5w "Atom" 2
+(uid "-hkpzxr_-nsb_f8y6usm8_-p5w")
+(bbx 80 780 210 130))
+($4 12 < -hkpzxr_-nsb_f8y6usm8_-p7z "" 2
+(toMultiplicityPosition 190 760)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p7z")
+(points 185 720 185 780)
+(fromMultiplicityPosition 165 730))
+($3 13 < -hkpzxr_-nsb_f8y6usm8_-p5v "AtomValidation" 2
+(autoSizeToFit true)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p5v")
+(bbx 410 770 110 50))
+($5 14 < -hkpzxr_-nsb_f8y6usm8_-p7n "" 2
+(uid "-hkpzxr_-nsb_f8y6usm8_-p7n")
+(points 700 340 700 390))
+($4 15 < -hkpzxr_-nsb_f8y6usm8_-p6b "" 2
+(toMultiplicityPosition 295 785)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p6b")
+(points 410 805 290 805)
+(fromMultiplicityPosition 390 815))
+($5 16 < -hkpzxr_-nsb_f8y6usm8_-p66 "" 2
+(uid "-hkpzxr_-nsb_f8y6usm8_-p66")
+(points 520 805 555 805 555 270 620 270))
+($3 17 < -hkpzxr_-nsb_f8y6usm8_-p5u "ResidueValidation" 2
+(autoSizeToFit true)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p5u")
+(bbx 400 620 120 50))
+($5 18 < -hkpzxr_-nsb_f8y6usm8_-p65 "" 2
+(uid "-hkpzxr_-nsb_f8y6usm8_-p65")
+(points 520 650 555 650 555 270 620 270))
+($4 19 < -hkpzxr_-nsb_f8y6usm8_-p6c "" 2
+(toMultiplicityPosition 390 645)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p6c")
+(points 300 635 400 635)
+(fromMultiplicityPosition 310 615))
+($3 20 < -hkpzxr_-nsb_f8y6usm8_-p5t "ChainValidation" 2
+(autoSizeToFit true)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p5t")
+(bbx 410 480 110 50))
+($4 21 < -hkpzxr_-nsb_f8y6usm8_-p6d "" 2
+(toMultiplicityPosition 400 500)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p6d")
+(points 290 495 410 495)
+(fromMultiplicityPosition 300 470))
+($5 22 < -hkpzxr_-nsb_f8y6usm8_-p64 "" 2
+(uid "-hkpzxr_-nsb_f8y6usm8_-p64")
+(points 520 515 555 515 555 270 620 270))
+($3 23 < -hkpzxr_-nsb_f8y6usm8_-p5s "StructureValidation" 2
+(autoSizeToFit true)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p5s")
+(bbx 390 360 130 50))
+($5 24 < -hkpzxr_-nsb_f8y6usm8_-p63 "" 2
+(uid "-hkpzxr_-nsb_f8y6usm8_-p63")
+(points 520 395 555 395 555 270 620 270))
+($3 25 < -hkpzxr_v5_f8zng6fd_-p8z "KeywordDefinition" 2
+(autoSizeToFit true)
+(uid "-hkpzxr_v5_f8zng6fd_-p8z")
+(bbx 570 550 320 110))
+($4 26 < -hkpzxr_v5_f8zng6fd_-p8y "" 2
+(toMultiplicityPosition 615 530)
+(uid "-hkpzxr_v5_f8zng6fd_-p8y")
+(points 630 340 630 550))
+($3 27 < -hkpzxr_v5_f8zng6fd_-p8c "PeakList" 2
+(uid "-hkpzxr_v5_f8zng6fd_-p8c")
+(bbx 1230 440 190 110))
+($3 28 < -hkpzxr_v5_f8zng6fd_-p5n "Peak" 2
+(uid "-hkpzxr_v5_f8zng6fd_-p5n")
+(bbx 1230 620 260 130))
+($4 29 < -hkpzxr_v5_f8zng6fd_-p86 "" 2
+(toMultiplicityPosition 1320 595)
+(uid "-hkpzxr_v5_f8zng6fd_-p86")
+(points 1315 550 1315 620)
+(fromMultiplicityPosition 1295 555))
+($3 30 < -hkpzxr_v5_f8zng6fd_-p5m "AbstractMeasurement" 2
+(autoSizeToFit true)
+(uid "-hkpzxr_v5_f8zng6fd_-p5m")
+(bbx 1220 270 230 110))
+($4 31 < -hkpzxr_v5_f8zng6fd_-p87 "" 2
+(toMultiplicityPosition 1455 600)
+(toRolePosition 1400 620)
+(uid "-hkpzxr_v5_f8zng6fd_-p87")
+(points 1445 380 1445 620)
+(fromRolePosition 1345 385)
+(fromMultiplicityPosition 1455 385))
+($3 32 < -hkpzxr_v5_f8zng6fd_-p5l "AbstractMeasurementList" 2
+(autoSizeToFit true)
+(uid "-hkpzxr_v5_f8zng6fd_-p5l")
+(bbx 1210 50 250 130))
+($4 33 < -hkpzxr_v5_f8zng6fd_-p88 "" 2
+(autoSizeToFit true)
+(toMultiplicityPosition 1310 250)
+(toRolePosition 1325 250)
+(uid "-hkpzxr_v5_f8zng6fd_-p88")
+(points 1305 180 1305 270)
+(fromRolePosition 1270 210)
+(fromMultiplicityPosition 1285 185))
+($3 34 < -hkpzxr_v5_f8zng6fd_-p5k "AbstractConstraintList" 2
+(autoSizeToFit true)
+(uid "-hkpzxr_v5_f8zng6fd_-p5k")
+(bbx 590 700 300 290))
+($4 35 < -hkpzxr_v5_f8zng6fd_-p89 "" 2
+(toMultiplicityPosition 1470 140)
+(toRolePosition 1380 185)
+(uid "-hkpzxr_v5_f8zng6fd_-p89")
+(points 890 980 1505 980 1505 170 1460 170))
+($3 36 < -hkpzxr_v5_f8zng6fd_-p5j "AbstractConstraint" 2
+(autoSizeToFit true)
+(uid "-hkpzxr_v5_f8zng6fd_-p5j")
+(bbx 1090 800 280 170))
+($4 37 < -hkpzxr_v5_f8zng6fd_-p8b "" 2
+(toMultiplicityPosition 1370 755)
+(toRolePosition 1270 645)
+(uid "-hkpzxr_v5_f8zng6fd_-p8b")
+(points 1355 800 1355 750))
+($4 38 < -hkpzxr_v5_f8zng6fd_-p8a "" 2
+(toMultiplicityPosition 1085 855)
+(toRolePosition 1015 825)
+(uid "-hkpzxr_v5_f8zng6fd_-p8a")
+(points 890 845 1090 845)
+(fromRolePosition 905 860)
+(fromMultiplicityPosition 905 815))
+($3 39 < -hkpzxr_v5_f8zng6fd_-p5i "PeakListValidation" 2
+(uid "-hkpzxr_v5_f8zng6fd_-p5i")
+(bbx 950 450 130 50))
+($4 40 < -hkpzxr_v5_f8zng6fd_-p5v "" 2
+(toMultiplicityPosition 1210 490)
+(uid "-hkpzxr_v5_f8zng6fd_-p5v")
+(points 1080 475 1230 475)
+(fromMultiplicityPosition 1090 455))
+($5 41 < -hkpzxr_v5_f8zng6fd_-p5z "" 2
+(uid "-hkpzxr_v5_f8zng6fd_-p5z")
+(points 950 475 910 475 910 270 770 270))
+($3 42 < -hkpzxr_v5_f8zng6fd_-p5h "PeakValidation" 2
+(uid "-hkpzxr_v5_f8zng6fd_-p5h")
+(bbx 960 590 100 50))
+($5 43 < -hkpzxr_v5_f8zng6fd_-p5x "" 2
+(uid "-hkpzxr_v5_f8zng6fd_-p5x")
+(points 960 615 910 615 910 270 770 270))
+($4 44 < -hkpzxr_v5_f8zng6fd_-p5u "" 2
+(toMultiplicityPosition 1220 640)
+(uid "-hkpzxr_v5_f8zng6fd_-p5u")
+(points 1060 630 1230 630)
+(fromMultiplicityPosition 1065 605))
+($3 45 < -hkpzxr_v5_f8zng6fd_-p5g "NmrMeasurementValidation" 2
+(uid "-hkpzxr_v5_f8zng6fd_-p5g")
+(bbx 940 270 190 50))
+($4 46 < -hkpzxr_v5_f8zng6fd_-p5w "" 2
+(toMultiplicityPosition 1210 290)
+(toRolePosition 1155 250)
+(uid "-hkpzxr_v5_f8zng6fd_-p5w")
+(points 1130 285 1220 285)
+(fromMultiplicityPosition 1140 290))
+($5 47 < -hkpzxr_v5_f8zng6fd_-p62 "" 2
+(uid "-hkpzxr_v5_f8zng6fd_-p62")
+(points 940 300 910 300 910 270 770 270))
+($3 48 < -hkpzxr_v5_f8zng6fd_-p5f "NmrMeasurementListValidation" 2
+(uid "-hkpzxr_v5_f8zng6fd_-p5f")
+(bbx 940 130 210 50))
+($4 49 < -hkpzxr_v5_f8zng6fd_-p5p "" 2
+(toMultiplicityPosition 1200 155)
+(toRolePosition 1135 185)
+(uid "-hkpzxr_v5_f8zng6fd_-p5p")
+(points 1150 175 1210 175)
+(fromMultiplicityPosition 1155 155))
+($5 50 < -hkpzxr_v5_f8zng6fd_-p63 "" 2
+(uid "-hkpzxr_v5_f8zng6fd_-p63")
+(points 940 165 910 165 910 270 770 270))
+($3 51 < -hkpzxr_v5_f8zng6fd_-p5e "NmrConstraintValidation" 2
+(uid "-hkpzxr_v5_f8zng6fd_-p5e")
+(bbx 960 700 170 50))
+($5 52 < -hkpzxr_v5_f8zng6fd_-p5y "" 2
+(uid "-hkpzxr_v5_f8zng6fd_-p5y")
+(points 960 715 910 715 910 270 770 270))
+($4 53 < -hkpzxr_v5_f8zng6fd_-p5q "" 2
+(toMultiplicityPosition 1095 780)
+(toRolePosition 1110 780)
+(uid "-hkpzxr_v5_f8zng6fd_-p5q")
+(points 1105 750 1105 800)
+(fromMultiplicityPosition 1115 760))
+($3 54 < -hkpzxr_v5_f8zng6fd_-p5d "NmrConstraintListValidation" 2
+(uid "-hkpzxr_v5_f8zng6fd_-p5d")
+(bbx 330 910 190 50))
+($4 55 < -hkpzxr_v5_f8zng6fd_-p64 "" 2
+(toMultiplicityPosition 415 890)
+(uid "-hkpzxr_v5_f8zng6fd_-p64")
+(points 590 885 430 885 430 910)
+(fromRolePosition 460 860)
+(fromMultiplicityPosition 580 890))
+($5 56 < -hkpzxr_v5_f8zng6fd_-p61 "" 2
+(uid "-hkpzxr_v5_f8zng6fd_-p61")
+(points 520 940 555 940 555 270 620 270))
+($4 57 < -hkpzxr_v5_f8zng6fd_-p5o "" 2
+(toMultiplicityPosition 675 180)
+(uid "-hkpzxr_v5_f8zng6fd_-p5o")
+(points 685 130 685 200)
+(fromMultiplicityPosition 695 140))
+($3 58 < -hkpzxr_v5_f8zng6fd_-p54 "EnsembleValidation" 2
+(uid "-hkpzxr_v5_f8zng6fd_-p54")
+(bbx 360 250 160 60))
+($5 59 < -hkpzxr_v5_f8zng6fd_-p55 "" 2
+(uid "-hkpzxr_v5_f8zng6fd_-p55")
+(points 520 280 555 280 555 270 620 270))
+($3 60 < -hkpzxr_v5_f8zng6fd_-p53 "EntryValidation" 2
+(uid "-hkpzxr_v5_f8zng6fd_-p53")
+(bbx 410 160 110 50))
+($5 61 < -hkpzxr_v5_f8zng6fd_-p56 "" 2
+(uid "-hkpzxr_v5_f8zng6fd_-p56")
+(points 520 210 555 210 555 270 620 270))
+($3 62 < -hkpzxr_v5_f8zng6fd_-p51 "NmrProject" 2
+(autoSizeToFit true)
+(uid "-hkpzxr_v5_f8zng6fd_-p51")
+(bbx 930 20 160 60))
+($4 63 < -hkpzxr_v5_f8zng6fd_-p50 "" 2
+(toMultiplicityPosition 1195 55)
+(toRolePosition 1150 30)
+(uid "-hkpzxr_v5_f8zng6fd_-p50")
+(points 1090 50 1210 50)
+(fromMultiplicityPosition 1095 60))
+($3 64 < -hkpzxr_v5_f8zng6fd_-p4x "NmrConstraintStore" 2
+(autoSizeToFit true)
+(uid "-hkpzxr_v5_f8zng6fd_-p4x")
+(bbx 20 20 280 60))
+($4 65 < -hkpzxr_v5_f8zng6fd_-p4w "" 2
+(toMultiplicityPosition 575 995)
+(toRolePosition 470 990)
+(uid "-hkpzxr_v5_f8zng6fd_-p4w")
+(points 35 80 35 985 590 985)
+(fromMultiplicityPosition 50 95))
+($4 66 < -hkpzxr_v5_f8zng6fd_-p4t "" 2
+(toMultiplicityPosition 305 10)
+(uid "-hkpzxr_v5_f8zng6fd_-p4t")
+(points 930 35 300 35)
+(fromMultiplicityPosition 910 10))
+($4 67 < -hkpzxr_v5_f8zng6fd_-p3t "" 2
+(toMultiplicityPosition 785 90)
+(uid "-hkpzxr_v5_f8zng6fd_-p3t")
+(points 930 80 780 80))
+($4 68 < -hkpzxr_v5_f8zng6fd_-p3u "" 2
+(toMultiplicityPosition 610 55)
+(uid "-hkpzxr_v5_f8zng6fd_-p3u")
+(points 300 80 620 80))
+($3 69 < -hkpzxr_v5_f9ck4903_-p7u "Model" 2
+(autoSizeToFit true)
+(uid "-hkpzxr_v5_f9ck4903_-p7u")
+(bbx 130 360 210 60))
+($4 70 < -hkpzxr_v5_f9ck4903_-p8f "" 2
+(toMultiplicityPosition 215 340)
+(uid "-hkpzxr_v5_f9ck4903_-p8f")
+(points 230 240 230 360)
+(fromMultiplicityPosition 210 245))
+($4 71 < -hkpzxr_v5_f9ck4903_-p87 "" 2
+(toMultiplicityPosition 610 145)
+(uid "-hkpzxr_v5_f9ck4903_-p87")
+(points 340 130 620 130))
+($4 72 < -hkpzxr_v5_f9ck4903_-p85 "" 2
+(toMultiplicityPosition 340 280)
+(uid "-hkpzxr_v5_f9ck4903_-p85")
+(points 320 240 320 265 360 265))
+($4 73 < -hkpzxr_v5_f9ck4903_-p7v "" 2
+(toMultiplicityPosition 345 370)
+(uid "-hkpzxr_v5_f9ck4903_-p7v")
+(points 390 390 340 390)
+(fromMultiplicityPosition 380 395))
+($6 74 < -hkpzxr_-nsb_f8y6usm8_-p94 "StructureValidationStore" 1
+(name "StructureValidationStore"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p94"))
+($7 75 < -hkpzxr_-nsb_f8y6usm8_-p4x "name" 74
+(changeability "frozen")
+(name "name"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p4x")
+(multiplicity "1"))
+($8 76 < -hkpzxr_-nsb_f8y6usm8_-p4k "guid" 75
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:58:40_00001"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p4k"))
+($9 77 < -hkpzxr_-nsb_f8y6usm8_-p4l "#<anon> (StructureValidationStore, TopObject)" 74
+(uid "-hkpzxr_-nsb_f8y6usm8_-p4l"))
+($10 78 < -hkpzxr_v5_f8zng6fd_-p5t "#<anon> (StructureValidationStore, ValidationResult)##," 74
+(name "")
+(uid "-hkpzxr_v5_f8zng6fd_-p5t"))
+($11 79 < -hkpzxr_v5_f8zng6fd_-p5s "#0" 78
+(changeability "frozen")
+(aggregation "composite")
+(uid "-hkpzxr_v5_f8zng6fd_-p5s")
+(multiplicity "1"))
+($8 80 < -hkpzxr_v5_f8zng6fd_-p1j "guid" 79
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:03:01_00012"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p1j"))
+($11 81 < -hkpzxr_v5_f8zng6fd_-p5r "#1" 78
+(uid "-hkpzxr_v5_f8zng6fd_-p5r")
+(multiplicity "*"))
+($8 82 < -hkpzxr_v5_f8zng6fd_-p1i "guid" 81
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:03:01_00013"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p1i"))
+($8 83 < -hkpzxr_-nsb_f8y6usm8_-p93 "documentation" 74
+(name "documentation"
+)
+(value "TopObject for StructureValidation package"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p93"))
+($8 84 < -hkpzxr_-nsb_f8y6usm8_-p5j "guid" 74
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:55:49_00002"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p5j"))
+($8 85 < -hkpzxr_-nsb_f8y6usm8_-p4v "keyNames" 74
+(name "keyNames"
+)
+(value "name"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p4v"))
+($6 86 < -hkpzxr_-nsb_f8y6usm8_-p8o "ValidationResult" 1
+(name "ValidationResult"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p8o")
+(isAbstract true))
+($7 87 < -hkpzxr_v5_f8zng6fd_-p82 "serial" 86
+(changeability "frozen")
+(name "serial"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p82")
+(multiplicity "1"))
+($8 88 < -hkpzxr_v5_f8zng6fd_-p81 "isAutomatic" 87
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p81"))
+($8 89 < -hkpzxr_v5_f8zng6fd_-p1f "guid" 87
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:03:01_00017"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p1f"))
+($7 90 < -hkpzxr_-nsb_f8y6usm8_-p8n "context" 86
+(changeability "frozen")
+(name "context"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p8n")
+(multiplicity "1"))
+($8 91 < -hkpzxr_-nsb_f8y6usm8_-p8m "documentation" 90
+(name "documentation"
+)
+(value "The context where tthe keyword and value is defined. Typically the name of a program that both defines the parameter and calculates its value.E.g. 'PROCHECK', 'SHIFTX', ...Used to derive the keywordDefinition"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p8m"))
+($8 92 < -hkpzxr_-nsb_f8y6usm8_-p5d "guid" 90
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:55:55_00011"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p5d"))
+($7 93 < -hkpzxr_-nsb_f8y6usm8_-p8l "keyword" 86
+(changeability "frozen")
+(name "keyword"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p8l")
+(multiplicity "1"))
+($8 94 < -hkpzxr_-nsb_f8y6usm8_-p8k "documentation" 93
+(name "documentation"
+)
+(value "keyword that defines the validation result"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p8k"))
+($8 95 < -hkpzxr_-nsb_f8y6usm8_-p5c "guid" 93
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:55:55_00012"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p5c"))
+($7 96 < -hkpzxr_-nsb_f8y6usm8_-p8h "figOfMerit" 86
+(name "figOfMerit"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p8h"))
+($8 97 < -hkpzxr_-nsb_f8y6usm8_-p8g "documentation" 96
+(name "documentation"
+)
+(value "Figure of merit for validated result - 1.0 is perfect, 0.0 is totally wrong."
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p8g"))
+($8 98 < -hkpzxr_-nsb_f8y6usm8_-p5b "guid" 96
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:55:55_00013"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p5b"))
+($7 99 < -hkpzxr_-nsb_f8y6usm8_-p8f "details" 86
+(name "details"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p8f"))
+($8 100 < -hkpzxr_-nsb_f8y6usm8_-p5a "guid" 99
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:55:55_00014"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p5a"))
+($12 101 < -hkpzxr_v5_f8zng6fd_-p2u "getKeywordDefinition" 86
+(name "getKeywordDefinition"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p2u")
+(isQuery true))
+($8 102 < -hkpzxr_v5_f8zng6fd_-p2t "documentation" 101
+(name "documentation"
+)
+(value "getter for derived link keywordDefinition"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p2t"))
+($8 103 < -hkpzxr_v5_f8zng6fd_-p2s "opType" 101
+(name "opType"
+)
+(value "get"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p2s"))
+($8 104 < -hkpzxr_v5_f8zng6fd_-p2r "code:java" 101
+(name "code:java"
+)
+(value "result = getRoot().findFirstKeywordDefinitionStore(\"context\",getContext()).findFirstKeywordDefinition(\"keyword\", getKeyword());"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p2r"))
+($8 105 < -hkpzxr_v5_f8zng6fd_-p2q "code:python" 101
+(name "code:python"
+)
+(value "result = self.root.getByNavigation(( ('keywordDefinitionStores', self.context), ('keywordDefinitions', self.keyword),)) "
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p2q"))
+($8 106 < -hkpzxr_v5_f8zng6fd_-p1e "guid" 101
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:03:01_00018"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p1e"))
+($9 107 < -hkpzxr_-nsb_f8y6usm8_-p7o "#<anon> (ValidationResult, MultiTypeValue)" 86
+(uid "-hkpzxr_-nsb_f8y6usm8_-p7o"))
+($10 108 < -hkpzxr_v5_f8zng6fd_-p93 "#<anon> (ValidationResult, KeywordDefinition)##," 86
+(name "")
+(uid "-hkpzxr_v5_f8zng6fd_-p93"))
+($11 109 < -hkpzxr_v5_f8zng6fd_-p8x "#0" 108
+(uid "-hkpzxr_v5_f8zng6fd_-p8x")
+(isNavigable false))
+($11 110 < -hkpzxr_v5_f8zng6fd_-p8w "#1" 108
+(changeability "frozen")
+(uid "-hkpzxr_v5_f8zng6fd_-p8w")
+(multiplicity "1"))
+($8 111 < -hkpzxr_v5_f8zng6fd_-p1d "guid" 110
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:03:01_00016"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p1d"))
+($8 112 < -hkpzxr_v5_f8zng6fd_-p6z "isDerived" 108
+(name "isDerived"
+)
+(value "True"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p6z"))
+($8 113 < -hkpzxr_-nsb_f8y6usm8_-p59 "guid" 86
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:55:49_00004"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p59"))
+($8 114 < -hkpzxr_v5_f9wv2oya_-p98 "keyNames" 86
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "-hkpzxr_v5_f9wv2oya_-p98"))
+($6 115 < -hkpzxr_-nsb_f8y6usm8_-p7w "AtomValidation" 1
+(name "AtomValidation"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p7w"))
+($10 116 < -hkpzxr_-nsb_f8y6usm8_-p7m "#<anon> (AtomValidation, Atom)##," 115
+(name "")
+(uid "-hkpzxr_-nsb_f8y6usm8_-p7m"))
+($11 117 < -hkpzxr_-nsb_f8y6usm8_-p7l "#0" 116
+(uid "-hkpzxr_-nsb_f8y6usm8_-p7l")
+(multiplicity "*"))
+($8 118 < -hkpzxr_-nsb_f8y6usm8_-p57 "guid" 117
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:55:55_00001"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p57"))
+($8 119 < -hkpzxr_v5_f8zng6fd_-p2d "documentation" 117
+(name "documentation"
+)
+(value "Validation results that include Atom"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p2d"))
+($13 120 < -hkpzxr_v5_f913a6j2_-p95 "KeywordDefinition_fits_Atom" 117
+(name "KeywordDefinition_fits_Atom"
+)
+(uid "-hkpzxr_v5_f913a6j2_-p95")
+(body "code:python"
+"_"
+"ll= value.keywordDefinition.targetNames"
+"isValid = (not ll or self.qualifiedName in ll)"
+"_"
+"code:java"
+"_"
+"java.util.Set<java.lang.String> ll = other.getKeywordDefinition().getTargetNames();"
+"isValid = (ll.isEmpty() || ll.contains(getQualifiedName()));"
+))
+($8 121 < -hkpzxr_v5_f913a6j2_-p8w "guid" 120
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-15-11:19:45_00001"
+)
+(uid "-hkpzxr_v5_f913a6j2_-p8w"))
+($11 122 < -hkpzxr_-nsb_f8y6usm8_-p7k "#1" 116
+(uid "-hkpzxr_-nsb_f8y6usm8_-p7k")
+(multiplicity "*"))
+($8 123 < -hkpzxr_-nsb_f8y6usm8_-p56 "guid" 122
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:55:55_00002"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p56"))
+($8 124 < -hkpzxr_v5_f8zng6fd_-p2m "documentation" 122
+(name "documentation"
+)
+(value "Atoms being validated"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p2m"))
+($9 125 < -hkpzxr_-nsb_f8y6usm8_-p7g "#<anon> (AtomValidation, ValidationResult)" 115
+(uid "-hkpzxr_-nsb_f8y6usm8_-p7g"))
+($8 126 < -hkpzxr_-nsb_f8y6usm8_-p7v "documentation" 115
+(name "documentation"
+)
+(value "Validation result for one or more Atoms"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p7v"))
+($8 127 < -hkpzxr_-nsb_f8y6usm8_-p7b "keyNames" 115
+(name "keyNames"
+)
+(value "serial"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p7b"))
+($8 128 < -hkpzxr_-nsb_f8y6usm8_-p55 "guid" 115
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:55:49_00005"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p55"))
+($6 129 < -hkpzxr_-nsb_f8y6usm8_-p7f "ResidueValidation" 1
+(name "ResidueValidation"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p7f"))
+($9 130 < -hkpzxr_-nsb_f8y6usm8_-p76 "#<anon> (ResidueValidation, ValidationResult)" 129
+(uid "-hkpzxr_-nsb_f8y6usm8_-p76"))
+($8 131 < -hkpzxr_-nsb_f8y6usm8_-p7a "documentation" 129
+(name "documentation"
+)
+(value "Validation result for one or more Residues"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p7a"))
+($8 132 < -hkpzxr_-nsb_f8y6usm8_-p53 "guid" 129
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:55:49_00006"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p53"))
+($6 133 < -hkpzxr_-nsb_f8y6usm8_-p72 "ChainValidation" 1
+(name "ChainValidation"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p72"))
+($9 134 < -hkpzxr_-nsb_f8y6usm8_-p6r "#<anon> (ChainValidation, ValidationResult)" 133
+(uid "-hkpzxr_-nsb_f8y6usm8_-p6r"))
+($8 135 < -hkpzxr_-nsb_f8y6usm8_-p6y "documentation" 133
+(name "documentation"
+)
+(value "Validation result for one or more Chains"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p6y"))
+($8 136 < -hkpzxr_-nsb_f8y6usm8_-p51 "guid" 133
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:55:49_00007"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p51"))
+($6 137 < -hkpzxr_-nsb_f8y6usm8_-p6q "StructureValidation" 1
+(name "StructureValidation"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p6q"))
+($9 138 < -hkpzxr_-nsb_f8y6usm8_-p6l "#<anon> (StructureValidation, ValidationResult)" 137
+(uid "-hkpzxr_-nsb_f8y6usm8_-p6l"))
+($10 139 < -hkpzxr_v5_f9ck4903_-p80 "#<anon> (StructureValidation, Model)##," 137
+(name "")
+(uid "-hkpzxr_v5_f9ck4903_-p80"))
+($11 140 < -hkpzxr_v5_f9ck4903_-p7z "#0" 139
+(uid "-hkpzxr_v5_f9ck4903_-p7z")
+(multiplicity "*"))
+($8 141 < -hkpzxr_v5_f9ck4903_-p7w "documentation" 140
+(name "documentation"
+)
+(value "Validation results for Model"
+)
+(uid "-hkpzxr_v5_f9ck4903_-p7w"))
+($8 142 < -hkpzxr_v5_f9ck4903_-p6t "guid" 140
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-23-12:00:15_00011"
+)
+(uid "-hkpzxr_v5_f9ck4903_-p6t"))
+($11 143 < -hkpzxr_v5_f9ck4903_-p7y "#1" 139
+(uid "-hkpzxr_v5_f9ck4903_-p7y")
+(multiplicity "*"))
+($8 144 < -hkpzxr_v5_f9ck4903_-p7x "documentation" 143
+(name "documentation"
+)
+(value "Structure models being validated"
+)
+(uid "-hkpzxr_v5_f9ck4903_-p7x"))
+($8 145 < -hkpzxr_v5_f9ck4903_-p6s "guid" 143
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-23-12:00:15_00012"
+)
+(uid "-hkpzxr_v5_f9ck4903_-p6s"))
+($8 146 < -hkpzxr_-nsb_f8y6usm8_-p6p "documentation" 137
+(name "documentation"
+)
+(value "Validation result for one or more MolStructures"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p6p"))
+($8 147 < -hkpzxr_-nsb_f8y6usm8_-p4z "guid" 137
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:55:49_00008"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p4z"))
+($6 148 < -hkpzxr_v5_f8zng6fd_-p85 "PeakListValidation" 1
+(name "PeakListValidation"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p85"))
+($10 149 < -hkpzxr_v5_f8zng6fd_-p80 "#<anon> (PeakListValidation, PeakList)##," 148
+(name "")
+(uid "-hkpzxr_v5_f8zng6fd_-p80"))
+($11 150 < -hkpzxr_v5_f8zng6fd_-p7z "#0" 149
+(uid "-hkpzxr_v5_f8zng6fd_-p7z")
+(multiplicity "*"))
+($8 151 < -hkpzxr_v5_f8zng6fd_-p7w "documentation" 150
+(name "documentation"
+)
+(value "Validation result that include PeakLists"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p7w"))
+($8 152 < -hkpzxr_v5_f8zng6fd_-p1c "guid" 150
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:03:01_00008"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p1c"))
+($13 153 < -hkpzxr_v5_f913a6j2_-p91 "KeywordDefinition_fits_PeakList" 150
+(name "KeywordDefinition_fits_PeakList"
+)
+(uid "-hkpzxr_v5_f913a6j2_-p91")
+(body "code:python"
+"_"
+"ll= value.keywordDefinition.targetNames"
+"isValid = (not ll or self.qualifiedName in ll)"
+"_"
+"code:java"
+"_"
+"java.util.Set<java.lang.String> ll = other.getKeywordDefinition().getTargetNames();"
+"isValid = (ll.isEmpty() || ll.contains(getQualifiedName()));"
+))
+($8 154 < -hkpzxr_v5_f913a6j2_-p8v "guid" 153
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-15-11:19:45_00005"
+)
+(uid "-hkpzxr_v5_f913a6j2_-p8v"))
+($11 155 < -hkpzxr_v5_f8zng6fd_-p7y "#1" 149
+(uid "-hkpzxr_v5_f8zng6fd_-p7y")
+(multiplicity "*"))
+($8 156 < -hkpzxr_v5_f8zng6fd_-p7x "documentation" 155
+(name "documentation"
+)
+(value "PeakLists being validated"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p7x"))
+($8 157 < -hkpzxr_v5_f8zng6fd_-p1b "guid" 155
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:03:01_00009"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p1b"))
+($9 158 < -hkpzxr_v5_f8zng6fd_-p7v "#<anon> (PeakListValidation, ValidationResult)" 148
+(uid "-hkpzxr_v5_f8zng6fd_-p7v"))
+($8 159 < -hkpzxr_v5_f8zng6fd_-p84 "documentation" 148
+(name "documentation"
+)
+(value "Validation result for one or more PeakLists"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p84"))
+($8 160 < -hkpzxr_v5_f8zng6fd_-p1a "guid" 148
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:02:54_00004"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p1a"))
+($6 161 < -hkpzxr_v5_f8zng6fd_-p7u "PeakValidation" 1
+(name "PeakValidation"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p7u"))
+($9 162 < -hkpzxr_v5_f8zng6fd_-p7s "#<anon> (PeakValidation, ValidationResult)" 161
+(uid "-hkpzxr_v5_f8zng6fd_-p7s"))
+($10 163 < -hkpzxr_v5_f8zng6fd_-p7r "#<anon> (PeakValidation, Peak)##," 161
+(name "")
+(uid "-hkpzxr_v5_f8zng6fd_-p7r"))
+($11 164 < -hkpzxr_v5_f8zng6fd_-p7q "#0" 163
+(uid "-hkpzxr_v5_f8zng6fd_-p7q")
+(multiplicity "*"))
+($8 165 < -hkpzxr_v5_f8zng6fd_-p7o "documentation" 164
+(name "documentation"
+)
+(value "Validation results that include Peak"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p7o"))
+($8 166 < -hkpzxr_v5_f8zng6fd_-p19 "guid" 164
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:03:01_00010"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p19"))
+($13 167 < -hkpzxr_v5_f913a6j2_-p92 "KeywordDefinition_fits_Peak" 164
+(name "KeywordDefinition_fits_Peak"
+)
+(uid "-hkpzxr_v5_f913a6j2_-p92")
+(body "code:python"
+"_"
+"ll= value.keywordDefinition.targetNames"
+"isValid = (not ll or self.qualifiedName in ll)"
+"_"
+"code:java"
+"_"
+"java.util.Set<java.lang.String> ll = other.getKeywordDefinition().getTargetNames();"
+"isValid = (ll.isEmpty() || ll.contains(getQualifiedName()));"
+))
+($8 168 < -hkpzxr_v5_f913a6j2_-p8u "guid" 167
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-15-11:19:45_00006"
+)
+(uid "-hkpzxr_v5_f913a6j2_-p8u"))
+($11 169 < -hkpzxr_v5_f8zng6fd_-p7p "#1" 163
+(uid "-hkpzxr_v5_f8zng6fd_-p7p")
+(multiplicity "*"))
+($8 170 < -hkpzxr_v5_f8zng6fd_-p7n "documentation" 169
+(name "documentation"
+)
+(value "Peaks being validated"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p7n"))
+($8 171 < -hkpzxr_v5_f8zng6fd_-p18 "guid" 169
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:03:01_00011"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p18"))
+($8 172 < -hkpzxr_v5_f8zng6fd_-p17 "guid" 161
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:02:54_00005"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p17"))
+($6 173 < -hkpzxr_v5_f8zng6fd_-p7m "NmrMeasurementValidation" 1
+(name "NmrMeasurementValidation"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p7m"))
+($10 174 < -hkpzxr_v5_f8zng6fd_-p7k "#<anon> (NmrMeasurementValidation, AbstractMeasurement)##,nmrMeasurements" 173
+(name "")
+(uid "-hkpzxr_v5_f8zng6fd_-p7k"))
+($11 175 < -hkpzxr_v5_f8zng6fd_-p7i "#0" 174
+(uid "-hkpzxr_v5_f8zng6fd_-p7i")
+(multiplicity "*"))
+($8 176 < -hkpzxr_v5_f8zng6fd_-p2g "documentation" 175
+(name "documentation"
+)
+(value "Validation results that include AbstractMeasurement"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p2g"))
+($8 177 < -hkpzxr_v5_f8zng6fd_-p16 "guid" 175
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:03:01_00006"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p16"))
+($13 178 < -hkpzxr_v5_f913a6j2_-p90 "KeywordDefinition_fits_Measurement" 175
+(name "KeywordDefinition_fits_Measurement"
+)
+(uid "-hkpzxr_v5_f913a6j2_-p90")
+(body "code:python"
+"_"
+"ll= value.keywordDefinition.targetNames"
+"isValid = (not ll or self.qualifiedName in ll)"
+"_"
+"code:java"
+"_"
+"java.util.Set<java.lang.String> ll = other.getKeywordDefinition().getTargetNames();"
+"isValid = (ll.isEmpty() || ll.contains(getQualifiedName()));"
+))
+($8 179 < -hkpzxr_v5_f913a6j2_-p8t "guid" 178
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-15-11:19:45_00004"
+)
+(uid "-hkpzxr_v5_f913a6j2_-p8t"))
+($11 180 < -hkpzxr_v5_f8zng6fd_-p7h "nmrMeasurements#1" 174
+(name "nmrMeasurements"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p7h")
+(multiplicity "*"))
+($8 181 < -hkpzxr_v5_f8zng6fd_-p7g "baseName" 180
+(name "baseName"
+)
+(value "nmrMeasurement"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p7g"))
+($8 182 < -hkpzxr_v5_f8zng6fd_-p2j "documentation" 180
+(name "documentation"
+)
+(value "AbstractMeasurements being validated"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p2j"))
+($8 183 < -hkpzxr_v5_f8zng6fd_-p15 "guid" 180
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:03:01_00007"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p15"))
+($9 184 < -hkpzxr_v5_f8zng6fd_-p7j "#<anon> (NmrMeasurementValidation, ValidationResult)" 173
+(uid "-hkpzxr_v5_f8zng6fd_-p7j"))
+($8 185 < -hkpzxr_v5_f8zng6fd_-p7l "documentation" 173
+(name "documentation"
+)
+(value "Validation result for one or more Nmr.Mesurements"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p7l"))
+($8 186 < -hkpzxr_v5_f8zng6fd_-p14 "guid" 173
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:02:54_00006"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p14"))
+($6 187 < -hkpzxr_v5_f8zng6fd_-p7f "NmrMeasurementListValidation" 1
+(name "NmrMeasurementListValidation"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p7f"))
+($10 188 < -hkpzxr_v5_f8zng6fd_-p7d "#<anon> (NmrMeasurementListValidation, AbstractMeasurementList)##,nmrMeasurementLists" 187
+(name "")
+(uid "-hkpzxr_v5_f8zng6fd_-p7d"))
+($11 189 < -hkpzxr_v5_f8zng6fd_-p7c "#0" 188
+(uid "-hkpzxr_v5_f8zng6fd_-p7c")
+(multiplicity "*"))
+($8 190 < -hkpzxr_v5_f8zng6fd_-p2i "documentation" 189
+(name "documentation"
+)
+(value "Validation results that include AbstractMeasurementList"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p2i"))
+($8 191 < -hkpzxr_v5_f8zng6fd_-p13 "guid" 189
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:03:01_00004"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p13"))
+($13 192 < -hkpzxr_v5_f913a6j2_-p8z "KeywordDefinition_fits_MeasurementList" 189
+(name "KeywordDefinition_fits_MeasurementList"
+)
+(uid "-hkpzxr_v5_f913a6j2_-p8z")
+(body "code:python"
+"_"
+"ll= value.keywordDefinition.targetNames"
+"isValid = (not ll or self.qualifiedName in ll)"
+"_"
+"code:java"
+"_"
+"java.util.Set<java.lang.String> ll = other.getKeywordDefinition().getTargetNames();"
+"isValid = (ll.isEmpty() || ll.contains(getQualifiedName()));"
+))
+($8 193 < -hkpzxr_v5_f913a6j2_-p8s "guid" 192
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-15-11:19:45_00003"
+)
+(uid "-hkpzxr_v5_f913a6j2_-p8s"))
+($11 194 < -hkpzxr_v5_f8zng6fd_-p7b "nmrMeasurementLists#1" 188
+(name "nmrMeasurementLists"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p7b")
+(multiplicity "*"))
+($8 195 < -hkpzxr_v5_f8zng6fd_-p7a "baseName" 194
+(name "baseName"
+)
+(value "nmrMeasurementList"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p7a"))
+($8 196 < -hkpzxr_v5_f8zng6fd_-p2h "documentation" 194
+(name "documentation"
+)
+(value "AbstractMeasurementLists being validated"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p2h"))
+($8 197 < -hkpzxr_v5_f8zng6fd_-p12 "guid" 194
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:03:01_00005"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p12"))
+($9 198 < -hkpzxr_v5_f8zng6fd_-p79 "#<anon> (NmrMeasurementListValidation, ValidationResult)" 187
+(uid "-hkpzxr_v5_f8zng6fd_-p79"))
+($8 199 < -hkpzxr_v5_f8zng6fd_-p7e "documentation" 187
+(name "documentation"
+)
+(value "Validation result for one or more Nmr.MeasuermentLists"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p7e"))
+($8 200 < -hkpzxr_v5_f8zng6fd_-p11 "guid" 187
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:02:54_00007"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p11"))
+($6 201 < -hkpzxr_v5_f8zng6fd_-p78 "NmrConstraintValidation" 1
+(name "NmrConstraintValidation"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p78"))
+($9 202 < -hkpzxr_v5_f8zng6fd_-p76 "#<anon> (NmrConstraintValidation, ValidationResult)" 201
+(uid "-hkpzxr_v5_f8zng6fd_-p76"))
+($10 203 < -hkpzxr_v5_f8zng6fd_-p75 "#<anon> (NmrConstraintValidation, AbstractConstraint)##,nmrConstraints" 201
+(name "")
+(uid "-hkpzxr_v5_f8zng6fd_-p75"))
+($11 204 < -hkpzxr_v5_f8zng6fd_-p74 "#0" 203
+(uid "-hkpzxr_v5_f8zng6fd_-p74")
+(multiplicity "*"))
+($8 205 < -hkpzxr_v5_f8zng6fd_-p2f "documentation" 204
+(name "documentation"
+)
+(value "Validation results that include AbstractConstraint"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p2f"))
+($8 206 < -hkpzxr_v5_f8zng6fd_-p10 "guid" 204
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:03:01_00002"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p10"))
+($13 207 < -hkpzxr_v5_f913a6j2_-p93 "KeywordDefinition_fits_Constraint" 204
+(name "KeywordDefinition_fits_Constraint"
+)
+(uid "-hkpzxr_v5_f913a6j2_-p93")
+(body "code:python"
+"_"
+"ll= value.keywordDefinition.targetNames"
+"isValid = (not ll or self.qualifiedName in ll)"
+"_"
+"code:java"
+"_"
+"java.util.Set<java.lang.String> ll = other.getKeywordDefinition().getTargetNames();"
+"isValid = (ll.isEmpty() || ll.contains(getQualifiedName()));"
+))
+($8 208 < -hkpzxr_v5_f913a6j2_-p8r "guid" 207
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-15-11:19:45_00002"
+)
+(uid "-hkpzxr_v5_f913a6j2_-p8r"))
+($11 209 < -hkpzxr_v5_f8zng6fd_-p73 "nmrConstraints#1" 203
+(name "nmrConstraints"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p73")
+(multiplicity "*"))
+($8 210 < -hkpzxr_v5_f8zng6fd_-p72 "baseName" 209
+(name "baseName"
+)
+(value "nmrConstraint"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p72"))
+($8 211 < -hkpzxr_v5_f8zng6fd_-p2k "documentation" 209
+(name "documentation"
+)
+(value "NmrConstraints being validated"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p2k"))
+($8 212 < -hkpzxr_v5_f8zng6fd_-p0z "guid" 209
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:03:01_00003"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p0z"))
+($8 213 < -hkpzxr_v5_f8zng6fd_-p77 "documentation" 201
+(name "documentation"
+)
+(value "Validation result for one or more NmrConstraint.AbstractConstraints"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p77"))
+($8 214 < -hkpzxr_v5_f8zng6fd_-p0y "guid" 201
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:02:54_00008"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p0y"))
+($6 215 < -hkpzxr_v5_f8zng6fd_-p71 "NmrConstraintListValidation" 1
+(name "NmrConstraintListValidation"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p71"))
+($9 216 < -hkpzxr_v5_f8zng6fd_-p6y "#<anon> (NmrConstraintListValidation, ValidationResult)" 215
+(uid "-hkpzxr_v5_f8zng6fd_-p6y"))
+($8 217 < -hkpzxr_v5_f8zng6fd_-p70 "documentation" 215
+(name "documentation"
+)
+(value "Validation result for one or more NmrConstaint.AbstractConstraintLists"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p70"))
+($8 218 < -hkpzxr_v5_f8zng6fd_-p0x "guid" 215
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:02:54_00009"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p0x"))
+($6 219 < -hkpzxr_v5_f8zng6fd_-p5c "EnsembleValidation" 1
+(name "EnsembleValidation"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p5c"))
+($12 220 < -hkpzxr_v5_f8zng6fd_-p48 "getStructureEnsemble" 219
+(name "getStructureEnsemble"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p48")
+(isQuery true))
+($8 221 < -hkpzxr_v5_f8zng6fd_-p47 "documentation" 220
+(name "documentation"
+)
+(value "getter for derived link structureEnsemble"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p47"))
+($8 222 < -hkpzxr_v5_f8zng6fd_-p46 "opType" 220
+(name "opType"
+)
+(value "get"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p46"))
+($8 223 < -hkpzxr_v5_f8zng6fd_-p45 "code:python" 220
+(name "code:python"
+)
+(value "result = self.structureValidationStore.structureEnsemble"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p45"))
+($8 224 < -hkpzxr_v5_f8zng6fd_-p44 "code:java" 220
+(name "code:java"
+)
+(value "result = getStructureValidationStore().getStructureEnsemble();"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p44"))
+($8 225 < -hkpzxr_v5_f8zng6fd_-p0w "guid" 220
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:03:01_00001"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p0w"))
+($9 226 < -hkpzxr_v5_f8zng6fd_-p5a "#<anon> (EnsembleValidation, ValidationResult)" 219
+(uid "-hkpzxr_v5_f8zng6fd_-p5a"))
+($8 227 < -hkpzxr_v5_f8zng6fd_-p5b "documentation" 219
+(name "documentation"
+)
+(value "Validation result for the total structure ensemble"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p5b"))
+($8 228 < -hkpzxr_v5_f8zng6fd_-p0v "guid" 219
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:02:54_00010"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p0v"))
+($6 229 < -hkpzxr_v5_f8zng6fd_-p59 "EntryValidation" 1
+(name "EntryValidation"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p59"))
+($9 230 < -hkpzxr_v5_f8zng6fd_-p57 "#<anon> (EntryValidation, ValidationResult)" 229
+(uid "-hkpzxr_v5_f8zng6fd_-p57"))
+($8 231 < -hkpzxr_v5_f8zng6fd_-p58 "documentation" 229
+(name "documentation"
+)
+(value "Validation results for the entire validation entry"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p58"))
+($8 232 < -hkpzxr_v5_f8zng6fd_-p0u "guid" 229
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-14-17:02:54_00011"
+)
+(uid "-hkpzxr_v5_f8zng6fd_-p0u"))
+($14 233 < -hkpzxr_v5_f8zng6fd_-p4q "#<anon> (StructureValidation, MolSystem)" 1
+(uid "-hkpzxr_v5_f8zng6fd_-p4q"))
+($14 234 < -hkpzxr_v5_f8zng6fd_-p1u "#<anon> (StructureValidation, KeywordDefinition)" 1
+(uid "-hkpzxr_v5_f8zng6fd_-p1u"))
+($14 235 < -hkpzxr_v5_f8zng6fd_-p0o "#<anon> (StructureValidation, Template)" 1
+(uid "-hkpzxr_v5_f8zng6fd_-p0o"))
+($8 236 < -hkpzxr_-nsb_f8y6usm8_-p97 "shortName" 1
+(name "shortName"
+)
+(value "VALD"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p97"))
+($8 237 < -hkpzxr_-nsb_f8y6usm8_-p96 "documentation" 1
+(name "documentation"
+)
+(value "StructureValidation program output"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p96"))
+($8 238 < -hkpzxr_-nsb_f8y6usm8_-p4y "guid" 1
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:55:49_00001"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p4y"))
+($15 239)
+($17 242)
+($17 245)
+($15 250)
+($15 251)
+($15 253)
+($15 255)
+($15 257)
+($15 259)
+($15 261)
+($15 263)
+($15 265)
+($15 267)
+($15 268)
+($15 269)
+($15 270)
+($15 271)
+($15 272)
+($15 273)
+($15 275)
+($15 276)
+($15 278)
+($15 279)
+($15 281)
+($15 282)
+($15 283)
+($15 285)
+($15 287)
+($15 289)
+($15 291)
+($15 293)
+($15 295)
+($15 297)
+($15 300)
+($15 302)
+($15 304)
+($15 306)
+($15 308)
+($15 310)
+($15 311)
+($15 312)
+($15 313)
+($15 314)
+($15 315)
+($15 316)
+($15 317)
+($15 318)
+($15 319)
+($15 320)
+($15 321)
+($15 322)
+($15 323)
+($15 324)
+($15 325)
+($15 326)
+($15 328)
+($15 329)
+($15 330)
+($15 331)
+($15 332)
+($15 333)
+($15 334)
+($15 336)
+($15 338)
+($15 340)
+($15 342)
+($15 344)
+($15 346)
+($15 348)
+($15 349)
+($15 351)
+($15 353)
+($15 355)
+($6 240 @ z8kflu_63g_errlz7sn_-p8u 4 "Logical" $1 "memops" $1 "Implementation" $1 "TopObject" $6)
+($6 241 @ -yk94ms_-e3s_e41656c6_-h0m 4 "Logical" $1 "memops" $1 "Implementation" $1 "Line" $6)
+($6 243 @ -hkpzxr_-nsb_f8y6usm8_-p91 5 "Logical" $1 "ccp" $1 "general" $1 "Template" $1 "MultiTypeValue" $6)
+($6 244 @ -yk94ms_-e3s_e41656c6_-h0t 4 "Logical" $1 "memops" $1 "Implementation" $1 "Int" $6)
+($6 246 @ -yk94ms_-e3s_e41656c6_-gzz 4 "Logical" $1 "memops" $1 "Implementation" $1 "Word" $6)
+($6 247 @ -yk94ms_-e3s_e41656c6_-gnv 4 "Logical" $1 "memops" $1 "Implementation" $1 "FloatRatio" $6)
+($6 248 @ -yk94ms_-e3s_e41656c6_-h04 4 "Logical" $1 "memops" $1 "Implementation" $1 "Text" $6)
+($6 249 @ -hkpzxr_v5_f8zng6fd_-p98 5 "Logical" $1 "ccp" $1 "general" $1 "KeywordDefinition" $1 "KeywordDefinition" $6)
+($18 252 @ -yk94ms_-e3s_e41656c6_-fvs 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Coordinates" $18)
+($6 254 @ -yk94ms_85r_eqyymv3f_-jgs 5 "Logical" $1 "ccp" $1 "molecule" $1 "MolStructure" $1 "StructureEnsemble" $6)
+($6 256 @ -yk94ms_85r_eqyymv3f_-jxj 5 "Logical" $1 "ccp" $1 "molecule" $1 "MolStructure" $1 "Chain" $6)
+($10 258 @ -yk94ms_-e3s_e41656c6_-i0r 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolStructure" $1 "StructureEnsemble" $6 "#<anon> (StructureEnsemble, Chain)##,coordChains" $10)
+($6 260 @ -yk94ms_85r_eqyymv3f_-jws 5 "Logical" $1 "ccp" $1 "molecule" $1 "MolStructure" $1 "Residue" $6)
+($10 262 @ -yk94ms_85r_eqyymv3f_-jx7 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolStructure" $1 "Chain" $6 "#<anon> (Chain, Residue)##," $10)
+($6 264 @ -yk94ms_85r_eqyymv3f_-jvv 5 "Logical" $1 "ccp" $1 "molecule" $1 "MolStructure" $1 "Atom" $6)
+($10 266 @ -yk94ms_85r_eqyymv3f_-jwa 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolStructure" $1 "Residue" $6 "#<anon> (Residue, Atom)##," $10)
+($10 274 @ -hkpzxr_-nsb_f8y6usm8_-p75 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolStructure" $1 "Residue" $6 "#<anon> (Residue, ResidueValidation)##," $10)
+($10 277 @ -hkpzxr_-nsb_f8y6usm8_-p6x 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolStructure" $1 "Chain" $6 "#<anon> (Chain, ChainValidation)##," $10)
+($6 280 @ -hkpzxr_v5_f9ck4903_-p98 5 "Logical" $1 "ccp" $1 "molecule" $1 "MolStructure" $1 "Model" $6)
+($18 284 @ -yk94ms_-e3s_e41656c6_-fvm 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Nmr" $18)
+($6 286 @ -yk94ms_-e3s_e41656c6_-ngq 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "PeakList" $6)
+($6 288 @ -yk94ms_-e3s_e41656c6_-o61 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "Peak" $6)
+($10 290 @ -yk94ms_-e3s_e41656c6_-ngh 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "PeakList" $6 "#<anon> (PeakList, Peak)##," $10)
+($6 292 @ -yk94ms_-e3s_e41656c6_-o7o 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "AbstractMeasurement" $6)
+($10 294 @ -yk94ms_-e3s_e41656c6_-o7g 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "AbstractMeasurement" $6 "#<anon> (AbstractMeasurement, Peak)##measurements," $10)
+($6 296 @ -yk94ms_-e3s_e41656c6_-o6t 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "AbstractMeasurementList" $6)
+($10 298 @ -yk94ms_-e3s_e41656c6_-o6l 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "AbstractMeasurementList" $6 "#<anon> (AbstractMeasurementList, AbstractMeasurement)##parentList,measurements" $10)
+($18 299 @ -yk94ms_-e3s_e41656c6_-fvf 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "NmrConstraints" $18)
+($6 301 @ -yk94ms_-e3s_e41656c6_-l73 5 "Logical" $1 "ccp" $1 "nmr" $1 "NmrConstraint" $1 "AbstractConstraintList" $6)
+($10 303 @ -yk94ms_-e3s_e41656c6_-l4t 6 "Logical" $1 "ccp" $1 "nmr" $1 "NmrConstraint" $1 "AbstractConstraintList" $6 "#<anon> (AbstractConstraintList, AbstractMeasurementList)##,measurementLists" $10)
+($6 305 @ -yk94ms_-e3s_e41656c6_-l4l 5 "Logical" $1 "ccp" $1 "nmr" $1 "NmrConstraint" $1 "AbstractConstraint" $6)
+($10 307 @ -yk94ms_-e3s_e41656c6_-l3e 6 "Logical" $1 "ccp" $1 "nmr" $1 "NmrConstraint" $1 "AbstractConstraint" $6 "#<anon> (AbstractConstraint, Peak)##," $10)
+($10 309 @ -yk94ms_-e3s_e41656c6_-l59 6 "Logical" $1 "ccp" $1 "nmr" $1 "NmrConstraint" $1 "AbstractConstraintList" $6 "#<anon> (AbstractConstraintList, AbstractConstraint)##parentList,constraints" $10)
+($10 327 @ -hkpzxr_v5_f8zng6fd_-p6x 6 "Logical" $1 "ccp" $1 "nmr" $1 "NmrConstraint" $1 "AbstractConstraintList" $6 "#<anon> (AbstractConstraintList, NmrConstraintListValidation)##nmrConstraintLists," $10)
+($6 335 @ -yk94ms_85r_eqyymv3f_-ggr 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "NmrProject" $6)
+($10 337 @ -yk94ms_85r_eqyymv3f_-gey 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "NmrProject" $6 "#<anon> (NmrProject, AbstractMeasurementList)##,measurementLists" $10)
+($6 339 @ -yk94ms_85r_eqyymv3f_-guo 5 "Logical" $1 "ccp" $1 "nmr" $1 "NmrConstraint" $1 "NmrConstraintStore" $6)
+($10 341 @ -yk94ms_85r_eqyymv3f_-gui 6 "Logical" $1 "ccp" $1 "nmr" $1 "NmrConstraint" $1 "NmrConstraintStore" $6 "#<anon> (NmrConstraintStore, AbstractConstraintList)##,constraintLists" $10)
+($10 343 @ -yk94ms_85r_eqyymv3f_-gf3 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "NmrProject" $6 "#<anon> (NmrProject, NmrConstraintStore)##," $10)
+($10 345 @ -hkpzxr_v5_f8zng6fd_-p43 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "NmrProject" $6 "#<anon> (NmrProject, StructureValidationStore)##," $10)
+($10 347 @ -hkpzxr_v5_f8zng6fd_-p42 6 "Logical" $1 "ccp" $1 "nmr" $1 "NmrConstraint" $1 "NmrConstraintStore" $6 "#<anon> (NmrConstraintStore, StructureValidationStore)##," $10)
+($10 350 @ -hkpzxr_v5_f9ck4903_-p92 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolStructure" $1 "StructureEnsemble" $6 "#<anon> (StructureEnsemble, Model)##," $10)
+($10 352 @ -hkpzxr_v5_f9ck4903_-p8d 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolStructure" $1 "StructureEnsemble" $6 "#<anon> (StructureEnsemble, StructureValidationStore)##," $10)
+($10 354 @ -hkpzxr_v5_f9ck4903_-p86 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolStructure" $1 "StructureEnsemble" $6 "#<anon> (StructureEnsemble, EnsembleValidation)##," $10)
+($19 356 @ -yk94ms_-e3s_e41656c6_-fwy 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "import" $19)
+($1 357 @ -yk94ms_-e3s_e41656c6_-ibf 4 "Logical" $1 "ccp" $1 "molecule" $1 "MolSystem" $1)
+($1 358 @ -hkpzxr_v5_f8zng6fd_-p3m 4 "Logical" $1 "ccp" $1 "general" $1 "KeywordDefinition" $1)
+($1 359 @ -yk94ms_-e3s_e41656c6_-jt9 4 "Logical" $1 "ccp" $1 "general" $1 "Template" $1)
+(typeAssn 79 74)
+(assocEndAssn 74 79)
+(subtypeAssn 77 74)
+(supertypeAssn 77 240)
+(generalizationAssn 74 77)
+(typeRefAssn 75 241)
+(typeExpression 75 242)
+(typeAssn 109 86)
+(assocEndAssn 86 109)
+(assocEndAssn 86 81)
+(subtypeAssn 107 86)
+(supertypeAssn 107 243)
+(generalizationAssn 86 107)
+(typeRefAssn 87 244)
+(typeExpression 87 245)
+(typeRefAssn 90 246)
+(typeExpression 90 242)
+(typeRefAssn 93 246)
+(typeExpression 93 242)
+(typeRefAssn 96 247)
+(typeExpression 96 242)
+(typeRefAssn 99 248)
+(typeExpression 99 242)
+(typeAssn 110 249)
+(typeAssn 81 86)
+(projectionAssn 3 74 239)
+(projectionAssn 4 243 250)
+(projectionAssn 5 86 251)
+(styleAssn 6 252)
+(projectionAssn 6 254 253)
+(styleAssn 7 252)
+(projectionAssn 7 256 255)
+(to 8 7)
+(from 8 6)
+(projectionAssn 8 258 257)
+(styleAssn 9 252)
+(projectionAssn 9 260 259)
+(to 10 9)
+(from 10 7)
+(projectionAssn 10 262 261)
+(styleAssn 11 252)
+(projectionAssn 11 264 263)
+(to 12 11)
+(from 12 9)
+(projectionAssn 12 266 265)
+(typeAssn 117 115)
+(assocEndAssn 115 117)
+(subtypeAssn 125 115)
+(supertypeAssn 125 86)
+(generalizationAssn 115 125)
+(typeAssn 122 264)
+(projectionAssn 13 115 267)
+(to 14 4)
+(from 14 5)
+(projectionAssn 14 107 268)
+(to 15 11)
+(from 15 13)
+(projectionAssn 15 116 269)
+(to 16 5)
+(from 16 13)
+(projectionAssn 16 125 270)
+(subtypeAssn 130 129)
+(supertypeAssn 130 86)
+(generalizationAssn 129 130)
+(projectionAssn 17 129 271)
+(to 18 5)
+(from 18 17)
+(projectionAssn 18 130 272)
+(to 19 17)
+(from 19 9)
+(projectionAssn 19 274 273)
+(subtypeAssn 134 133)
+(supertypeAssn 134 86)
+(generalizationAssn 133 134)
+(projectionAssn 20 133 275)
+(to 21 20)
+(from 21 7)
+(projectionAssn 21 277 276)
+(to 22 5)
+(from 22 20)
+(projectionAssn 22 134 278)
+(typeAssn 140 137)
+(assocEndAssn 137 140)
+(subtypeAssn 138 137)
+(supertypeAssn 138 86)
+(generalizationAssn 137 138)
+(typeAssn 143 280)
+(projectionAssn 23 137 279)
+(to 24 5)
+(from 24 23)
+(projectionAssn 24 138 281)
+(projectionAssn 25 249 282)
+(to 26 25)
+(from 26 5)
+(projectionAssn 26 108 283)
+(styleAssn 27 284)
+(projectionAssn 27 286 285)
+(styleAssn 28 284)
+(projectionAssn 28 288 287)
+(to 29 28)
+(from 29 27)
+(projectionAssn 29 290 289)
+(styleAssn 30 284)
+(projectionAssn 30 292 291)
+(to 31 28)
+(from 31 30)
+(projectionAssn 31 294 293)
+(styleAssn 32 284)
+(projectionAssn 32 296 295)
+(to 33 30)
+(from 33 32)
+(projectionAssn 33 298 297)
+(styleAssn 34 299)
+(projectionAssn 34 301 300)
+(to 35 32)
+(from 35 34)
+(projectionAssn 35 303 302)
+(styleAssn 36 299)
+(projectionAssn 36 305 304)
+(to 37 28)
+(from 37 36)
+(projectionAssn 37 307 306)
+(to 38 36)
+(from 38 34)
+(projectionAssn 38 309 308)
+(typeAssn 150 148)
+(assocEndAssn 148 150)
+(subtypeAssn 158 148)
+(supertypeAssn 158 86)
+(generalizationAssn 148 158)
+(typeAssn 155 286)
+(projectionAssn 39 148 310)
+(to 40 27)
+(from 40 39)
+(projectionAssn 40 149 311)
+(to 41 5)
+(from 41 39)
+(projectionAssn 41 158 312)
+(typeAssn 164 161)
+(assocEndAssn 161 164)
+(subtypeAssn 162 161)
+(supertypeAssn 162 86)
+(generalizationAssn 161 162)
+(typeAssn 169 288)
+(projectionAssn 42 161 313)
+(to 43 5)
+(from 43 42)
+(projectionAssn 43 162 314)
+(to 44 28)
+(from 44 42)
+(projectionAssn 44 163 315)
+(typeAssn 175 173)
+(assocEndAssn 173 175)
+(subtypeAssn 184 173)
+(supertypeAssn 184 86)
+(generalizationAssn 173 184)
+(typeAssn 180 292)
+(projectionAssn 45 173 316)
+(to 46 30)
+(from 46 45)
+(projectionAssn 46 174 317)
+(to 47 5)
+(from 47 45)
+(projectionAssn 47 184 318)
+(typeAssn 189 187)
+(assocEndAssn 187 189)
+(subtypeAssn 198 187)
+(supertypeAssn 198 86)
+(generalizationAssn 187 198)
+(typeAssn 194 296)
+(projectionAssn 48 187 319)
+(to 49 32)
+(from 49 48)
+(projectionAssn 49 188 320)
+(to 50 5)
+(from 50 48)
+(projectionAssn 50 198 321)
+(typeAssn 204 201)
+(assocEndAssn 201 204)
+(subtypeAssn 202 201)
+(supertypeAssn 202 86)
+(generalizationAssn 201 202)
+(typeAssn 209 305)
+(projectionAssn 51 201 322)
+(to 52 5)
+(from 52 51)
+(projectionAssn 52 202 323)
+(to 53 36)
+(from 53 51)
+(projectionAssn 53 203 324)
+(subtypeAssn 216 215)
+(supertypeAssn 216 86)
+(generalizationAssn 215 216)
+(projectionAssn 54 215 325)
+(to 55 54)
+(from 55 34)
+(projectionAssn 55 327 326)
+(to 56 5)
+(from 56 54)
+(projectionAssn 56 216 328)
+(to 57 5)
+(from 57 3)
+(projectionAssn 57 78 329)
+(subtypeAssn 226 219)
+(supertypeAssn 226 86)
+(generalizationAssn 219 226)
+(projectionAssn 58 219 330)
+(to 59 5)
+(from 59 58)
+(projectionAssn 59 226 331)
+(subtypeAssn 230 229)
+(supertypeAssn 230 86)
+(generalizationAssn 229 230)
+(projectionAssn 60 229 332)
+(to 61 5)
+(from 61 60)
+(projectionAssn 61 230 333)
+(styleAssn 62 284)
+(projectionAssn 62 335 334)
+(to 63 32)
+(from 63 62)
+(projectionAssn 63 337 336)
+(styleAssn 64 299)
+(projectionAssn 64 339 338)
+(to 65 34)
+(from 65 64)
+(projectionAssn 65 341 340)
+(to 66 64)
+(from 66 62)
+(projectionAssn 66 343 342)
+(to 67 3)
+(from 67 62)
+(projectionAssn 67 345 344)
+(to 68 3)
+(from 68 64)
+(projectionAssn 68 347 346)
+(styleAssn 69 252)
+(projectionAssn 69 280 348)
+(to 70 69)
+(from 70 6)
+(projectionAssn 70 350 349)
+(to 71 3)
+(from 71 6)
+(projectionAssn 71 352 351)
+(to 72 58)
+(from 72 6)
+(projectionAssn 72 354 353)
+(to 73 69)
+(from 73 23)
+(projectionAssn 73 139 355)
+(stereotypeAssn 233 356)
+(clientAssn 233 1)
+(supplierAssn 233 357)
+(stereotypeAssn 234 356)
+(clientAssn 234 1)
+(supplierAssn 234 358)
+(stereotypeAssn 235 356)
+(clientAssn 235 1)
+(supplierAssn 235 359)

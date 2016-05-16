@@ -1,0 +1,1571 @@
+ObjectDomain_Shared_Package 15
+{-yk94ms_-9af_etcy0zwh_-p98 4 "Logical" objectdomain.uml.mechanisms.UmlPackage-owns "ccp" objectdomain.uml.mechanisms.UmlPackage-owns "molecule" objectdomain.uml.mechanisms.UmlPackage-owns "LabeledMolecule" objectdomain.uml.mechanisms.UmlPackage-owns
+}[objectdomain.uml.core.TypeExpression $18
+objectdomain.uml.mechanisms.UmlPackage-owns $1
+objectdomain.uml.core.Generalization-owns $12
+objectdomain.uml.core.Dependency-owns $14
+objectdomain.uml.core.Projection $16
+objectdomain.uml.core.UmlAttribute-features $7
+objectdomain.uml.core.UmlAssociationEnd-connections $11
+objectdomain.uml.view.style.BaseViewElementStyle-owns $15
+objectdomain.uml.view.ClassView-owns $3
+objectdomain.uml.core.UmlTaggedValue-taggedValues $8
+objectdomain.uml.core.UmlConstraint-constraints $13
+objectdomain.uml.core.UmlAssociation-owns $10
+objectdomain.uml.view.Diagram-owns $2
+objectdomain.uml.core.UmlOperation-features $9
+objectdomain.uml.view.GeneralizationView-owns $5
+objectdomain.uml.core.UmlMultiplicity $17
+objectdomain.uml.core.UmlClass-owns $6
+objectdomain.uml.view.AssociationView-owns $4
+objectdomain.uml.core.Stereotype-owns $19
+]
+($1 1 > -yk94ms_-9af_etcy0zwh_-p98 4 "Logical" $1 "ccp" $1 "molecule" $1 "LabeledMolecule" $1
+(name "LabeledMolecule"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p98"))
+($2 2 < -yk94ms_-9af_etcy0zwh_-p97 "_LabeledMolecule-details" 1
+(name "_LabeledMolecule-details"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p97")
+(diagramType "class"))
+($3 3 < -yk94ms_-9af_etcy0zwh_-p61 "Project" 2
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-yk94ms_-9af_etcy0zwh_-p61")
+(bbx 400 20 210 30))
+($3 4 < -yk94ms_-9af_etcy0zwh_-p60 "Molecule" 2
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-yk94ms_-9af_etcy0zwh_-p60")
+(bbx 410 210 210 30))
+($4 5 < -yk94ms_-9af_etcy0zwh_-p6n "" 2
+(toMultiplicityPosition 590 190)
+(uid "-yk94ms_-9af_etcy0zwh_-p6n")
+(points 585 50 585 210)
+(fromMultiplicityPosition 570 65))
+($3 6 < -yk94ms_-9af_etcy0zwh_-p5z "MolResidue" 2
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-yk94ms_-9af_etcy0zwh_-p5z")
+(bbx 350 390 220 30))
+($4 7 < -yk94ms_-9af_etcy0zwh_-p6l "" 2
+(toMultiplicityPosition 570 370)
+(uid "-yk94ms_-9af_etcy0zwh_-p6l")
+(points 565 240 565 390)
+(fromMultiplicityPosition 580 260))
+($3 8 < -yk94ms_-9af_etcy0zwh_-p5y "LabeledMolecule" 2
+(uid "-yk94ms_-9af_etcy0zwh_-p5y")
+(bbx 10 20 120 80))
+($4 9 < -yk94ms_-9af_etcy0zwh_-p6o "" 2
+(toMultiplicityPosition 135 15)
+(uid "-yk94ms_-9af_etcy0zwh_-p6o")
+(points 400 35 130 35)
+(fromMultiplicityPosition 370 15))
+($3 10 < -yk94ms_-9af_etcy0zwh_-p5x "MolLabel" 2
+(uid "-yk94ms_-9af_etcy0zwh_-p5x")
+(bbx 10 240 100 60))
+($4 11 < -yk94ms_-9af_etcy0zwh_-p6h "" 2
+(toMultiplicityPosition 35 210)
+(uid "-yk94ms_-9af_etcy0zwh_-p6h")
+(points 50 100 50 240)
+(fromMultiplicityPosition 30 105))
+($3 12 < -yk94ms_-9af_etcy0zwh_-p5w "ResLabel" 2
+(autoSizeToFit true)
+(uid "-yk94ms_-9af_etcy0zwh_-p5w")
+(bbx 10 360 120 80))
+($4 13 < -yk94ms_-9af_etcy0zwh_-p6g "" 2
+(toMultiplicityPosition 65 340)
+(uid "-yk94ms_-9af_etcy0zwh_-p6g")
+(points 60 300 60 360)
+(fromMultiplicityPosition 40 305))
+($3 14 < -yk94ms_-9af_etcy0zwh_-p5v "AtomLabel" 2
+(uid "-yk94ms_-9af_etcy0zwh_-p5v")
+(bbx 10 510 210 90))
+($3 15 < -yk94ms_-9af_etcy0zwh_-p5u "SingleAtomLabel" 2
+(uid "-yk94ms_-9af_etcy0zwh_-p5u")
+(bbx 210 640 120 60))
+($5 16 < -yk94ms_-9af_etcy0zwh_-p6d "" 2
+(uid "-yk94ms_-9af_etcy0zwh_-p6d")
+(points 270 640 270 625 100 625 100 600))
+($3 17 < -yk94ms_-9af_etcy0zwh_-p5t "UniformAtomLabel" 2
+(uid "-yk94ms_-9af_etcy0zwh_-p5t")
+(bbx 10 640 140 60))
+($5 18 < -yk94ms_-9af_etcy0zwh_-p6e "" 2
+(uid "-yk94ms_-9af_etcy0zwh_-p6e")
+(points 20 640 20 625 120 625 120 600))
+($3 19 < -yk94ms_-9af_etcy0zwh_-p5s "LabeledMixture" 2
+(uid "-yk94ms_-9af_etcy0zwh_-p5s")
+(bbx 210 80 110 60))
+($4 20 < -yk94ms_-9af_etcy0zwh_-p6i "" 2
+(toMultiplicityPosition 200 90)
+(uid "-yk94ms_-9af_etcy0zwh_-p6i")
+(points 130 85 210 85)
+(fromMultiplicityPosition 135 95))
+($3 21 < -yk94ms_-9af_etcy0zwh_-p5r "MolLabelFraction" 2
+(autoSizeToFit true)
+(uid "-yk94ms_-9af_etcy0zwh_-p5r")
+(bbx 170 250 210 60))
+($4 22 < -yk94ms_-9af_etcy0zwh_-p5q "" 2
+(toMultiplicityPosition 310 225)
+(uid "-yk94ms_-9af_etcy0zwh_-p5q")
+(points 305 140 305 250)
+(fromMultiplicityPosition 285 145))
+($4 23 < -yk94ms_-9af_etcy0zwh_-p5p "" 2
+(toMultiplicityPosition 115 285)
+(uid "-yk94ms_-9af_etcy0zwh_-p5p")
+(points 170 280 110 280)
+(fromMultiplicityPosition 160 285))
+($4 24 < -yk94ms_-9af_etcy0zwh_-p6f "" 2
+(toMultiplicityPosition 75 490)
+(uid "-yk94ms_-9af_etcy0zwh_-p6f")
+(points 70 440 70 510)
+(fromMultiplicityPosition 50 445))
+($3 25 < -yk94ms_-9af_etcy0zwh_-p5o "MolComponent" 2
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-yk94ms_-9af_etcy0zwh_-p5o")
+(bbx 200 340 300 30))
+($4 26 < -yk94ms_-9af_etcy0zwh_-p6m "" 2
+(toMultiplicityPosition 470 315)
+(uid "-yk94ms_-9af_etcy0zwh_-p6m")
+(points 460 240 460 340))
+($4 27 < -yk94ms_-9af_etcy0zwh_-p6j "" 2
+(uid "-yk94ms_-9af_etcy0zwh_-p6j")
+(points 395 340 395 140 320 140)
+(fromMultiplicityPosition 400 320))
+($3 28 < -yk94ms_-9af_etcy0zwh_-p5n "Experiment" 2
+(showAttributeCompartment false)
+(autoSizeToFit true)
+(showOperationCompartment false)
+(uid "-yk94ms_-9af_etcy0zwh_-p5n")
+(bbx 360 80 160 30))
+($4 29 < -yk94ms_-9af_etcy0zwh_-p66 "" 2
+(toMultiplicityPosition 340 390)
+(labelPosition 205 415)
+(uid "-yk94ms_-9af_etcy0zwh_-p66")
+(points 130 405 350 405)
+(fromMultiplicityPosition 155 410))
+($4 30 < -yk94ms_-9af_etcy0zwh_-p68 "" 2
+(toMultiplicityPosition 425 190)
+(labelPosition 290 70)
+(uid "-yk94ms_-9af_etcy0zwh_-p68")
+(points 130 65 545 65 545 210))
+($4 31 < -yk94ms_-9af_etcy0zwh_-p62 "" 2
+(toMultiplicityPosition 350 100)
+(uid "-yk94ms_-9af_etcy0zwh_-p62")
+(points 320 95 360 95)
+(fromMultiplicityPosition 325 70))
+($3 32 < -yk94ms_-9af_etcy0zwh_-p4x "AtomLabel" 2
+(autoSizeToFit true)
+(uid "-yk94ms_-9af_etcy0zwh_-p4x")
+(bbx 660 540 270 140))
+($3 33 < -yk94ms_-9af_etcy0zwh_-p4w "ChemCompLabel" 2
+(autoSizeToFit true)
+(uid "-yk94ms_-9af_etcy0zwh_-p4w")
+(bbx 650 180 310 90))
+($3 34 < -yk94ms_-9af_etcy0zwh_-p4v "Isotopomer" 2
+(autoSizeToFit true)
+(uid "-yk94ms_-9af_etcy0zwh_-p4v")
+(bbx 650 350 280 80))
+($4 35 < -yk94ms_-9af_etcy0zwh_-p52 "" 2
+(toMultiplicityPosition 790 330)
+(uid "-yk94ms_-9af_etcy0zwh_-p52")
+(points 800 270 800 350)
+(fromMultiplicityPosition 810 275))
+($4 36 < -yk94ms_-9af_ete3xszb_-p95 "" 2
+(toMultiplicityPosition 810 435)
+(uid "-yk94ms_-9af_ete3xszb_-p95")
+(points 800 540 800 430)
+(fromMultiplicityPosition 790 520))
+($4 37 < -yk94ms_6e6_exa7szdc_-p8b "" 2
+(toMultiplicityPosition 500 115)
+(toRolePosition 455 130)
+(uid "-yk94ms_6e6_exa7szdc_-p8b")
+(points 410 110 410 155 495 155 495 110)
+(fromRolePosition 370 110)
+(fromMultiplicityPosition 415 135))
+($3 38 < -yk94ms_6e6_exa7szdc_-p8a "LabelingScheme" 2
+(autoSizeToFit true)
+(uid "-yk94ms_6e6_exa7szdc_-p8a")
+(bbx 630 20 300 90))
+($4 39 < -yk94ms_6e6_exa7szdc_-p8h "" 2
+(toMultiplicityPosition 790 160)
+(uid "-yk94ms_6e6_exa7szdc_-p8h")
+(points 800 110 800 180)
+(fromMultiplicityPosition 815 110))
+($4 40 < -yk94ms_6e6_exa7szdc_-p84 "" 2
+(toRolePosition 75 215)
+(uid "-yk94ms_6e6_exa7szdc_-p84")
+(points 227 140 98 240)
+(fromRolePosition 105 155)
+(fromMultiplicityPosition 195 135)
+(lineStyle "oblique"))
+($3 41 < -yk94ms_jd_exd99z4z_-p84 "ResLabelFraction" 2
+(uid "-yk94ms_jd_exd99z4z_-p84")
+(bbx 330 470 260 130))
+($4 42 < -yk94ms_jd_exd99z4z_-p8r "" 2
+(toMultiplicityPosition 440 450)
+(uid "-yk94ms_jd_exd99z4z_-p8r")
+(points 130 435 435 435 435 470)
+(fromMultiplicityPosition 130 440))
+($4 43 < -yk94ms_jd_exd99z4z_-p8n "" 2
+(uid "-yk94ms_jd_exd99z4z_-p8n")
+(points 590 480 635 480 635 110))
+($4 44 < -yk94ms_jd_exd99z4z_-p8o "" 2
+(toMultiplicityPosition 695 445)
+(uid "-yk94ms_jd_exd99z4z_-p8o")
+(points 590 495 680 495 680 430))
+($6 45 < -yk94ms_-9af_etcy0zwh_-p96 "LabeledMolecule" 1
+(name "LabeledMolecule"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p96"))
+($7 46 < -yk94ms_-9af_etcy0zwh_-p90 "name" 45
+(changeability "frozen")
+(name "name"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p90")
+(multiplicity "1"))
+($8 47 < -yk94ms_-9af_etcy0zwh_-p8z "documentation" 46
+(name "documentation"
+)
+(value "Molecule name - correspopnds to Molecule.Molecule.name"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p8z"))
+($8 48 < -yk94ms_jd_eto5ij1q_-p8y "guid" 46
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:14_00013"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p8y"))
+($9 49 < -yk94ms_jd_etoak3fa_-p86 "getMolecule" 45
+(name "getMolecule"
+)
+(uid "-yk94ms_jd_etoak3fa_-p86")
+(isQuery true))
+($8 50 < -yk94ms_jd_etoak3fa_-p85 "documentation" 49
+(name "documentation"
+)
+(value "getter for derived link molecule"
+)
+(uid "-yk94ms_jd_etoak3fa_-p85"))
+($8 51 < -yk94ms_jd_etoak3fa_-p84 "opType" 49
+(name "opType"
+)
+(value "get"
+)
+(uid "-yk94ms_jd_etoak3fa_-p84"))
+($8 52 < -yk94ms_jd_etoak3fa_-p83 "pythonCode" 49
+(name "pythonCode"
+)
+(value "result = self.parent.findFirstMolecule(name=self.name)"
+)
+(uid "-yk94ms_jd_etoak3fa_-p83"))
+($8 53 < -yk94ms_jd_etoak3fa_-p7v "guid" 49
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-14:20:16_00001"
+)
+(uid "-yk94ms_jd_etoak3fa_-p7v"))
+($8 54 < -yk94ms_p3u_eywzxf90_-p96 "javaCode" 49
+(name "javaCode"
+)
+(value "return getProject().findFirstMolecule(\"name\", getName());"
+)
+(uid "-yk94ms_p3u_eywzxf90_-p96"))
+($10 55 < -yk94ms_-9af_etcy0zwh_-p8x "#<anon> (LabeledMolecule, MolLabel)##," 45
+(name "")
+(uid "-yk94ms_-9af_etcy0zwh_-p8x"))
+($11 56 < -yk94ms_-9af_etcy0zwh_-p8w "#0" 55
+(changeability "frozen")
+(aggregation "composite")
+(uid "-yk94ms_-9af_etcy0zwh_-p8w")
+(multiplicity "1"))
+($8 57 < -yk94ms_-9af_etcy0zwh_-p8v "documentation" 56
+(name "documentation"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p8v"))
+($8 58 < -yk94ms_jd_eto5ij1q_-p8x "guid" 56
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:14_00007"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p8x"))
+($11 59 < -yk94ms_-9af_etcy0zwh_-p8u "#1" 55
+(uid "-yk94ms_-9af_etcy0zwh_-p8u")
+(multiplicity "*"))
+($8 60 < -yk94ms_jd_eto5ij1q_-p8w "guid" 59
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:14_00008"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p8w"))
+($10 61 < -yk94ms_-9af_etcy0zwh_-p7n "#<anon> (LabeledMolecule, LabeledMixture)##," 45
+(name "")
+(uid "-yk94ms_-9af_etcy0zwh_-p7n"))
+($11 62 < -yk94ms_-9af_etcy0zwh_-p7m "#0" 61
+(changeability "frozen")
+(aggregation "composite")
+(uid "-yk94ms_-9af_etcy0zwh_-p7m")
+(multiplicity "1"))
+($8 63 < -yk94ms_jd_eto5ij1q_-p8v "guid" 62
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:14_00009"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p8v"))
+($11 64 < -yk94ms_-9af_etcy0zwh_-p7l "#1" 61
+(uid "-yk94ms_-9af_etcy0zwh_-p7l")
+(multiplicity "*"))
+($8 65 < -yk94ms_jd_eto5ij1q_-p8u "guid" 64
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:14_00010"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p8u"))
+($10 66 < -yk94ms_-9af_etcy0zwh_-p69 "#<anon> (LabeledMolecule, Molecule)##," 45
+(name "")
+(uid "-yk94ms_-9af_etcy0zwh_-p69"))
+($11 67 < -yk94ms_-9af_etcy0zwh_-p67 "#0" 66
+(uid "-yk94ms_-9af_etcy0zwh_-p67")
+(isNavigable false))
+($8 68 < -yk94ms_jd_eto5ij1q_-p8t "guid" 67
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:14_00011"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p8t"))
+($11 69 < -yk94ms_-9af_etcy0zwh_-p5m "#1" 66
+(changeability "frozen")
+(uid "-yk94ms_-9af_etcy0zwh_-p5m"))
+($8 70 < -yk94ms_jd_eto5ij1q_-p8s "guid" 69
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:14_00012"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p8s"))
+($8 71 < -yk94ms_jd_etoak3fa_-p87 "documentation" 69
+(name "documentation"
+)
+(value "Molecule being labeled"
+)
+(uid "-yk94ms_jd_etoak3fa_-p87"))
+($8 72 < -yk94ms_jd_etoak3fa_-p89 "isDerived" 66
+(name "isDerived"
+)
+(value "True"
+)
+(uid "-yk94ms_jd_etoak3fa_-p89"))
+($8 73 < -yk94ms_jd_etoak3fa_-p88 "documentation" 66
+(name "documentation"
+)
+(uid "-yk94ms_jd_etoak3fa_-p88"))
+($12 74 < -yk94ms_jd_etoak3fa_-p8a "#<anon> (LabeledMolecule, NormalStored)" 45
+(uid "-yk94ms_jd_etoak3fa_-p8a"))
+($8 75 < -yk94ms_-9af_etcy0zwh_-p92 "documentation" 45
+(name "documentation"
+)
+(value "Molecule whose labeling is presented. "
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p92"))
+($8 76 < -yk94ms_-9af_etcy0zwh_-p91 "mainkey" 45
+(name "mainkey"
+)
+(value "name"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p91"))
+($8 77 < -yk94ms_jd_eto5ij1q_-p8r "guid" 45
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:28:55_00002"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p8r"))
+($6 78 < -yk94ms_-9af_etcy0zwh_-p8y "MolLabel" 1
+(name "MolLabel"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p8y"))
+($7 79 < -yk94ms_-9af_etcy0zwh_-p8r "serial" 78
+(changeability "frozen")
+(name "serial"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p8r")
+(multiplicity "1"))
+($8 80 < -yk94ms_-9af_etcy0zwh_-p8q "isAutomatic" 79
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p8q"))
+($8 81 < -yk94ms_-9af_etcy0zwh_-p8j "documentation" 79
+(name "documentation"
+)
+(value "A MolLabel describes a single distribution of isotope fractions. Complex correlated labeling patterns may be described as mixtures of MolLabels."
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p8j"))
+($8 82 < -yk94ms_jd_eto5ij1q_-p8q "guid" 79
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:14_00016"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p8q"))
+($10 83 < -yk94ms_-9af_etcy0zwh_-p8o "#<anon> (MolLabel, ResLabel)##," 78
+(name "")
+(uid "-yk94ms_-9af_etcy0zwh_-p8o"))
+($11 84 < -yk94ms_-9af_etcy0zwh_-p8e "#0" 83
+(changeability "frozen")
+(aggregation "composite")
+(uid "-yk94ms_-9af_etcy0zwh_-p8e")
+(multiplicity "1"))
+($8 85 < -yk94ms_jd_eto5ij1q_-p8p "guid" 84
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:14_00014"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p8p"))
+($11 86 < -yk94ms_-9af_etcy0zwh_-p8d "#1" 83
+(uid "-yk94ms_-9af_etcy0zwh_-p8d")
+(multiplicity "*"))
+($8 87 < -yk94ms_jd_eto5ij1q_-p8o "guid" 86
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:14_00015"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p8o"))
+($12 88 < -yk94ms_jd_etoak3fa_-p8d "#<anon> (MolLabel, NormalStored)" 78
+(uid "-yk94ms_jd_etoak3fa_-p8d"))
+($8 89 < -yk94ms_-9af_etcy0zwh_-p8t "documentation" 78
+(name "documentation"
+)
+(value "Molecule labeling pattern"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p8t"))
+($8 90 < -yk94ms_-9af_etcy0zwh_-p8s "mainkey" 78
+(name "mainkey"
+)
+(value "serial"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p8s"))
+($8 91 < -yk94ms_jd_eto5ij1q_-p8n "guid" 78
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:28:55_00003"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p8n"))
+($6 92 < -yk94ms_-9af_etcy0zwh_-p8p "ResLabel" 1
+(name "ResLabel"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p8p"))
+($9 93 < -yk94ms_jd_etoak3fa_-p80 "getMolResidue" 92
+(name "getMolResidue"
+)
+(uid "-yk94ms_jd_etoak3fa_-p80")
+(isQuery true))
+($8 94 < -yk94ms_jd_etoak3fa_-p7z "documentation" 93
+(name "documentation"
+)
+(value "getter for derived link molResidue"
+)
+(uid "-yk94ms_jd_etoak3fa_-p7z"))
+($8 95 < -yk94ms_jd_etoak3fa_-p7y "opType" 93
+(name "opType"
+)
+(value "get"
+)
+(uid "-yk94ms_jd_etoak3fa_-p7y"))
+($8 96 < -yk94ms_jd_etoak3fa_-p7x "pythonCode" 93
+(name "pythonCode"
+)
+(value "molecule = self.parent.parent.molecule"
+"if molecule:"
+"  result = molecule.findFirstMolResidue(serial=dataDict['resId'])"
+"else:"
+"  result = None"
+)
+(uid "-yk94ms_jd_etoak3fa_-p7x"))
+($8 97 < -yk94ms_jd_etoak3fa_-p7u "guid" 93
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-14:20:16_00002"
+)
+(uid "-yk94ms_jd_etoak3fa_-p7u"))
+($8 98 < -yk94ms_p3u_eywzxf90_-p95 "javaCode" 93
+(name "javaCode"
+)
+(value "ccp.api.molecule.Molecule.Molecule molecule = getMolLabel().getLabeledMolecule().getMolecule();"
+"if (molecule == null)"
+"  return null;"
+"else"
+"  return molecule.findFirstMolResidue(\"serial\", getResId());"
+)
+(uid "-yk94ms_p3u_eywzxf90_-p95"))
+($7 99 < -yk94ms_jd_exd99z4z_-p8t "resId" 92
+(changeability "frozen")
+(name "resId"
+)
+(uid "-yk94ms_jd_exd99z4z_-p8t")
+(multiplicity "1"))
+($8 100 < -yk94ms_jd_exd99z4z_-p8s "documentation" 99
+(name "documentation"
+)
+(value "resId for corresponding MolResidue"
+)
+(uid "-yk94ms_jd_exd99z4z_-p8s"))
+($8 101 < -yk94ms_6e6_exdas1tf_-p97 "guid" 99
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:15_00005"
+)
+(uid "-yk94ms_6e6_exdas1tf_-p97"))
+($10 102 < -yk94ms_-9af_etcy0zwh_-p6x "#<anon> (ResLabel, AtomLabel)##," 92
+(name "")
+(uid "-yk94ms_-9af_etcy0zwh_-p6x"))
+($11 103 < -yk94ms_-9af_etcy0zwh_-p6w "#0" 102
+(changeability "frozen")
+(aggregation "composite")
+(uid "-yk94ms_-9af_etcy0zwh_-p6w")
+(multiplicity "1"))
+($8 104 < -yk94ms_jd_eto5ij1q_-p8k "guid" 103
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:14_00017"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p8k"))
+($11 105 < -yk94ms_-9af_etcy0zwh_-p6v "#1" 102
+(uid "-yk94ms_-9af_etcy0zwh_-p6v")
+(multiplicity "*"))
+($8 106 < -yk94ms_jd_eto5ij1q_-p8j "guid" 105
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:15_00001"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p8j"))
+($10 107 < -yk94ms_-9af_etcy0zwh_-p6c "#<anon> (ResLabel, MolResidue)##," 92
+(name "")
+(uid "-yk94ms_-9af_etcy0zwh_-p6c"))
+($11 108 < -yk94ms_-9af_etcy0zwh_-p6b "#0" 107
+(uid "-yk94ms_-9af_etcy0zwh_-p6b")
+(isNavigable false))
+($8 109 < -yk94ms_jd_eto5ij1q_-p8i "guid" 108
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:15_00002"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p8i"))
+($11 110 < -yk94ms_-9af_etcy0zwh_-p6a "#1" 107
+(changeability "frozen")
+(uid "-yk94ms_-9af_etcy0zwh_-p6a"))
+($8 111 < -yk94ms_jd_eto5ij1q_-p8h "guid" 110
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:15_00003"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p8h"))
+($8 112 < -yk94ms_jd_etoak3fa_-p81 "documentation" 110
+(name "documentation"
+)
+(value "molResidue whose labelling is described"
+)
+(uid "-yk94ms_jd_etoak3fa_-p81"))
+($8 113 < -yk94ms_jd_etoak3fa_-p82 "isDerived" 107
+(name "isDerived"
+)
+(value "True"
+)
+(uid "-yk94ms_jd_etoak3fa_-p82"))
+($12 114 < -yk94ms_jd_etoak3fa_-p8e "#<anon> (ResLabel, NormalStored)" 92
+(uid "-yk94ms_jd_etoak3fa_-p8e"))
+($10 115 < -yk94ms_jd_exd99z4z_-p8y "#<anon> (ResLabel, ResLabelFraction)##," 92
+(name "")
+(uid "-yk94ms_jd_exd99z4z_-p8y"))
+($11 116 < -yk94ms_jd_exd99z4z_-p8x "#0" 115
+(changeability "frozen")
+(aggregation "composite")
+(uid "-yk94ms_jd_exd99z4z_-p8x")
+(multiplicity "1"))
+($8 117 < -yk94ms_jd_exd99z4z_-p8w "documentation" 116
+(name "documentation"
+)
+(value "parent link"
+)
+(uid "-yk94ms_jd_exd99z4z_-p8w"))
+($8 118 < -yk94ms_6e6_exdas1tf_-p96 "guid" 116
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-01-26-13:01:03_00001"
+)
+(uid "-yk94ms_6e6_exdas1tf_-p96"))
+($11 119 < -yk94ms_jd_exd99z4z_-p8v "#1" 115
+(uid "-yk94ms_jd_exd99z4z_-p8v")
+(multiplicity "*"))
+($8 120 < -yk94ms_jd_exd99z4z_-p8u "documentation" 119
+(name "documentation"
+)
+(value "child link"
+)
+(uid "-yk94ms_jd_exd99z4z_-p8u"))
+($8 121 < -yk94ms_6e6_exdas1tf_-p95 "guid" 119
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-01-26-13:01:04_00001"
+)
+(uid "-yk94ms_6e6_exdas1tf_-p95"))
+($8 122 < -yk94ms_-9af_etcy0zwh_-p8n "documentation" 92
+(name "documentation"
+)
+(value "Residue labeling pattern"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p8n"))
+($8 123 < -yk94ms_-9af_etcy0zwh_-p8m "mainkey" 92
+(name "mainkey"
+)
+(value "resId"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p8m"))
+($8 124 < -yk94ms_jd_eto5ij1q_-p8g "guid" 92
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:28:55_00004"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p8g"))
+($6 125 < -yk94ms_-9af_etcy0zwh_-p8a "AtomLabel" 1
+(name "AtomLabel"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p8a")
+(isAbstract true))
+($7 126 < -yk94ms_-9af_etcy0zwh_-p86 "serial" 125
+(changeability "frozen")
+(name "serial"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p86")
+(multiplicity "1"))
+($8 127 < -yk94ms_-9af_etcy0zwh_-p85 "isAutomatic" 126
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p85"))
+($8 128 < -yk94ms_jd_eto5ij1q_-p84 "guid" 126
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:57_00004"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p84"))
+($7 129 < -yk94ms_-9af_etcy0zwh_-p84 "massNumber" 125
+(changeability "frozen")
+(name "massNumber"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p84")
+(multiplicity "1"))
+($8 130 < -yk94ms_-9af_etcy0zwh_-p83 "documentation" 129
+(name "documentation"
+)
+(value "Mass number of relevant Isotope"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p83"))
+($8 131 < -yk94ms_jd_eto5ij1q_-p83 "guid" 129
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:57_00005"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p83"))
+($7 132 < -yk94ms_-9af_etcy0zwh_-p82 "weight" 125
+(initialValue "1.0"
+)
+(name "weight"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p82")
+(multiplicity "1"))
+($8 133 < -yk94ms_-9af_etcy0zwh_-p81 "documentation" 132
+(name "documentation"
+)
+(value "Relative Abundance of atom labeling defined by this object"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p81"))
+($8 134 < -yk94ms_jd_eto5ij1q_-p82 "guid" 132
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:57_00006"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p82"))
+($12 135 < -yk94ms_jd_etoak3fa_-p8f "#<anon> (AtomLabel, NormalStored)" 125
+(uid "-yk94ms_jd_etoak3fa_-p8f"))
+($8 136 < -yk94ms_-9af_etcy0zwh_-p80 "documentation" 125
+(name "documentation"
+)
+(value "Atom label indicators. "
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p80"))
+($8 137 < -yk94ms_-9af_etcy0zwh_-p7z "mainkey" 125
+(name "mainkey"
+)
+(value "serial"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p7z"))
+($8 138 < -yk94ms_jd_eto5ij1q_-p8f "guid" 125
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:28:55_00005"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p8f"))
+($6 139 < -yk94ms_-9af_etcy0zwh_-p7y "SingleAtomLabel" 1
+(name "SingleAtomLabel"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p7y"))
+($7 140 < -yk94ms_-9af_etcy0zwh_-p7v "atomName" 139
+(changeability "frozen")
+(name "atomName"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p7v")
+(multiplicity "1"))
+($8 141 < -yk94ms_-9af_etcy0zwh_-p7u "documentation" 140
+(name "documentation"
+)
+(value "atom name of labeled atom"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p7u"))
+($8 142 < -yk94ms_jd_eto5ij1q_-p81 "guid" 140
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:57_00007"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p81"))
+($12 143 < -yk94ms_-9af_etcy0zwh_-p7x "#<anon> (SingleAtomLabel, AtomLabel)" 139
+(uid "-yk94ms_-9af_etcy0zwh_-p7x"))
+($8 144 < -yk94ms_-9af_etcy0zwh_-p7w "documentation" 139
+(name "documentation"
+)
+(value "Atom label referring to a single atom. Overrides any UniformAtomLabel and ResLabel records present for the same residue ID(s)"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p7w"))
+($8 145 < -yk94ms_jd_eto5ij1q_-p8e "guid" 139
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:28:55_00006"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p8e"))
+($6 146 < -yk94ms_-9af_etcy0zwh_-p7t "UniformAtomLabel" 1
+(name "UniformAtomLabel"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p7t"))
+($7 147 < -yk94ms_-9af_etcy0zwh_-p7q "elementName" 146
+(changeability "frozen")
+(name "elementName"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p7q")
+(multiplicity "1"))
+($8 148 < -yk94ms_-9af_etcy0zwh_-p7p "documentation" 147
+(name "documentation"
+)
+(value "Name of element. E.g. 'C', 'Cu'."
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p7p"))
+($8 149 < -yk94ms_jd_eto5ij1q_-p80 "guid" 147
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:57_00008"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p80"))
+($12 150 < -yk94ms_-9af_etcy0zwh_-p7s "#<anon> (UniformAtomLabel, AtomLabel)" 146
+(uid "-yk94ms_-9af_etcy0zwh_-p7s"))
+($8 151 < -yk94ms_-9af_etcy0zwh_-p7r "documentation" 146
+(name "documentation"
+)
+(value "Atom label description valid for all atoms of a given element in a given residue, except those attached to any SingleAtomLabel object.Overrides any information in teh ResLable object"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p7r"))
+($8 152 < -yk94ms_jd_eto5ij1q_-p8d "guid" 146
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:28:55_00007"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p8d"))
+($6 153 < -yk94ms_-9af_etcy0zwh_-p7o "LabeledMixture" 1
+(name "LabeledMixture"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p7o"))
+($7 154 < -yk94ms_-9af_etcy0zwh_-p7k "serial" 153
+(changeability "frozen")
+(name "serial"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p7k")
+(multiplicity "1"))
+($8 155 < -yk94ms_jd_eto5ij1q_-p7z "guid" 154
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:57_00013"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p7z"))
+($8 156 < -yk94ms_jd_etoak3fa_-p7w "isAutomatic" 154
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "-yk94ms_jd_etoak3fa_-p7w"))
+($10 157 < -yk94ms_-9af_etcy0zwh_-p7g "#<anon> (LabeledMixture, MolLabelFraction)##," 153
+(name "")
+(uid "-yk94ms_-9af_etcy0zwh_-p7g"))
+($11 158 < -yk94ms_-9af_etcy0zwh_-p7f "#0" 157
+(changeability "frozen")
+(aggregation "composite")
+(uid "-yk94ms_-9af_etcy0zwh_-p7f")
+(multiplicity "1"))
+($8 159 < -yk94ms_jd_eto5ij1q_-p7y "guid" 158
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:57_00009"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p7y"))
+($11 160 < -yk94ms_-9af_etcy0zwh_-p7e "#1" 157
+(uid "-yk94ms_-9af_etcy0zwh_-p7e")
+(multiplicity "*"))
+($8 161 < -yk94ms_jd_eto5ij1q_-p7x "guid" 160
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:57_00010"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p7x"))
+($10 162 < -yk94ms_-9af_etcy0zwh_-p65 "#<anon> (LabeledMixture, Experiment)##," 153
+(name "")
+(uid "-yk94ms_-9af_etcy0zwh_-p65"))
+($11 163 < -yk94ms_-9af_etcy0zwh_-p64 "#0" 162
+(uid "-yk94ms_-9af_etcy0zwh_-p64")
+(multiplicity "*"))
+($8 164 < -yk94ms_jd_eto5ij1q_-p7w "guid" 163
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:57_00011"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p7w"))
+($8 165 < -yk94ms_jd_etocyc5h_-p73 "documentation" 163
+(name "documentation"
+)
+(value "LabelledMixtures that describe molecules for Experiment"
+)
+(uid "-yk94ms_jd_etocyc5h_-p73"))
+($11 166 < -yk94ms_-9af_etcy0zwh_-p63 "#1" 162
+(uid "-yk94ms_-9af_etcy0zwh_-p63")
+(multiplicity "*"))
+($8 167 < -yk94ms_jd_eto5ij1q_-p7v "guid" 166
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:57_00012"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p7v"))
+($8 168 < -yk94ms_jd_etocyc5h_-p72 "documentation" 166
+(name "documentation"
+)
+(value "Nmr.Experiments labelled according to LabelledMixture"
+)
+(uid "-yk94ms_jd_etocyc5h_-p72"))
+($12 169 < -yk94ms_jd_etoak3fa_-p8b "#<anon> (LabeledMixture, NormalStored)" 153
+(uid "-yk94ms_jd_etoak3fa_-p8b"))
+($10 170 < -yk94ms_6e6_exa7szdc_-p89 "#<anon> (LabeledMixture, MolLabel)##averageLabeledMixture,averageComposition" 153
+(name "")
+(uid "-yk94ms_6e6_exa7szdc_-p89"))
+($11 171 < -yk94ms_6e6_exa7szdc_-p88 "averageLabeledMixture#0" 170
+(name "averageLabeledMixture"
+)
+(uid "-yk94ms_6e6_exa7szdc_-p88")
+(multiplicity "*"))
+($8 172 < -yk94ms_6e6_exa7szdc_-p87 "documentation" 171
+(name "documentation"
+)
+(value "LabeledMixture where MolLabel describes the average composition."
+)
+(uid "-yk94ms_6e6_exa7szdc_-p87"))
+($8 173 < -yk94ms_6e6_exa7szdc_-p83 "baseName" 171
+(name "baseName"
+)
+(value "averageLabeledMixtures"
+)
+(uid "-yk94ms_6e6_exa7szdc_-p83"))
+($8 174 < -yk94ms_6e6_exa7szdc_-p80 "guid" 171
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-01-24-12:23:55_00006"
+)
+(uid "-yk94ms_6e6_exa7szdc_-p80"))
+($11 175 < -yk94ms_6e6_exa7szdc_-p86 "averageComposition#1" 170
+(name "averageComposition"
+)
+(uid "-yk94ms_6e6_exa7szdc_-p86"))
+($8 176 < -yk94ms_6e6_exa7szdc_-p85 "documentation" 175
+(name "documentation"
+)
+(value "MolLabel that describes the average composition of the LabelledMixture."
+)
+(uid "-yk94ms_6e6_exa7szdc_-p85"))
+($8 177 < -yk94ms_6e6_exa7szdc_-p81 "guid" 175
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-01-24-12:23:56_00001"
+)
+(uid "-yk94ms_6e6_exa7szdc_-p81"))
+($8 178 < -yk94ms_-9af_etcy0zwh_-p7j "documentation" 153
+(name "documentation"
+)
+(value "Mixture of labeled species."
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p7j"))
+($8 179 < -yk94ms_-9af_etcy0zwh_-p7i "mainkey" 153
+(name "mainkey"
+)
+(value "serial"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p7i"))
+($8 180 < -yk94ms_jd_eto5ij1q_-p8c "guid" 153
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:28:55_00008"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p8c"))
+($13 181 < -yk94ms_6e6_exa7szdc_-p8c "only_one_MolLabelFraction_descibes_the_average" 153
+(name "only_one_MolLabelFraction_descibes_the_average"
+)
+(uid "-yk94ms_6e6_exa7szdc_-p8c")
+(body "pythonCode"
+"_"
+"self.findAllMolLabelFractions(isAverage=True) in ((),(self,))"
+"_"
+"javaCode"
+"_"
+"java.util.List molLabelFractions = findAllMolLabelFractions(\"isAverage\", java.lang.Boolean.TRUE);"
+"if (molLabelFractions.size() == 0)"
+"  isValid = true;"
+"else if ((molLabelFractions.size() == 1) && (molLabelFractions.get(0) == this))"
+"  isValid = true;"
+"else"
+"  isValid = false;"
+))
+($8 182 < -yk94ms_6e6_exa7szdc_-p82 "guid" 181
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-01-23-17:38:55_00001"
+)
+(uid "-yk94ms_6e6_exa7szdc_-p82"))
+($6 183 < -yk94ms_-9af_etcy0zwh_-p7h "MolLabelFraction" 1
+(name "MolLabelFraction"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p7h"))
+($7 184 < -yk94ms_-9af_etcy0zwh_-p7b "weight" 183
+(initialValue "1.0"
+)
+(name "weight"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p7b")
+(multiplicity "1"))
+($8 185 < -yk94ms_-9af_etcy0zwh_-p7a "documentation" 184
+(name "documentation"
+)
+(value "Relative abundance of MolLabel present in the Mixture"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p7a"))
+($8 186 < -yk94ms_jd_eto5ij1q_-p7u "guid" 184
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:57_00016"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p7u"))
+($10 187 < -yk94ms_-9af_etcy0zwh_-p79 "#<anon> (MolLabelFraction, MolLabel)##," 183
+(name "")
+(uid "-yk94ms_-9af_etcy0zwh_-p79"))
+($11 188 < -yk94ms_-9af_etcy0zwh_-p78 "#0" 187
+(uid "-yk94ms_-9af_etcy0zwh_-p78")
+(multiplicity "*"))
+($8 189 < -yk94ms_-9af_etcy0zwh_-p75 "documentation" 188
+(name "documentation"
+)
+(value "MolLabelFractions that involve MolLabel"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p75"))
+($8 190 < -yk94ms_jd_eto5ij1q_-p7t "guid" 188
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:57_00014"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p7t"))
+($11 191 < -yk94ms_-9af_etcy0zwh_-p77 "#1" 187
+(changeability "frozen")
+(uid "-yk94ms_-9af_etcy0zwh_-p77")
+(multiplicity "1"))
+($8 192 < -yk94ms_-9af_etcy0zwh_-p76 "documentation" 191
+(name "documentation"
+)
+(value "MolLabel described by Fraction"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p76"))
+($8 193 < -yk94ms_jd_eto5ij1q_-p7s "guid" 191
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:30:57_00015"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p7s"))
+($12 194 < -yk94ms_jd_etoak3fa_-p8c "#<anon> (MolLabelFraction, NormalStored)" 183
+(uid "-yk94ms_jd_etoak3fa_-p8c"))
+($8 195 < -yk94ms_-9af_etcy0zwh_-p7d "documentation" 183
+(name "documentation"
+)
+(value "Describes the fraction of a given MolLabel in a given LabeledMixture (Association class)."
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p7d"))
+($8 196 < -yk94ms_-9af_etcy0zwh_-p7c "mainkey" 183
+(name "mainkey"
+)
+(value "molLabel"
+)
+(uid "-yk94ms_-9af_etcy0zwh_-p7c"))
+($8 197 < -yk94ms_jd_eto5ij1q_-p8b "guid" 183
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:28:55_00009"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p8b"))
+($14 198 < -yk94ms_jd_etoak3fa_-p98 "#<anon> (LabeledMolecule, Molecule)" 1
+(uid "-yk94ms_jd_etoak3fa_-p98"))
+($6 199 < -yk94ms_jd_exd99z4z_-p98 "ResLabelFraction" 1
+(name "ResLabelFraction"
+)
+(uid "-yk94ms_jd_exd99z4z_-p98"))
+($7 200 < -yk94ms_jd_exd99z4z_-p94 "schemeName" 199
+(initialValue "NaturalAbundance"
+)
+(changeability "frozen")
+(name "schemeName"
+)
+(uid "-yk94ms_jd_exd99z4z_-p94")
+(multiplicity "1"))
+($8 201 < -yk94ms_jd_exd99z4z_-p93 "documentation" 200
+(name "documentation"
+)
+(value "Name of labeling scheme referred to. "
+)
+(uid "-yk94ms_jd_exd99z4z_-p93"))
+($8 202 < -yk94ms_6e6_exdas1tf_-p94 "guid" 200
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-01-25-14:45:57_00006"
+)
+(uid "-yk94ms_6e6_exdas1tf_-p94"))
+($7 203 < -yk94ms_jd_exd99z4z_-p92 "isotopomerSerial" 199
+(initialValue "0"
+)
+(changeability "frozen")
+(name "isotopomerSerial"
+)
+(uid "-yk94ms_jd_exd99z4z_-p92")
+(multiplicity "1"))
+($8 204 < -yk94ms_jd_exd99z4z_-p91 "documentation" 203
+(name "documentation"
+)
+(value "Serial number of Isotopomer within the relevant LabelingScheme. If value is 0 this means that all Isotopomers are used in the relative abundance given in the LabelingScheme. "
+)
+(uid "-yk94ms_jd_exd99z4z_-p91"))
+($8 205 < -yk94ms_6e6_exdas1tf_-p93 "guid" 203
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-01-25-14:45:57_00007"
+)
+(uid "-yk94ms_6e6_exdas1tf_-p93"))
+($7 206 < -yk94ms_jd_exd99z4z_-p90 "weight" 199
+(initialValue "1.0"
+)
+(name "weight"
+)
+(uid "-yk94ms_jd_exd99z4z_-p90")
+(multiplicity "1"))
+($8 207 < -yk94ms_jd_exd99z4z_-p8z "documentation" 206
+(name "documentation"
+)
+(value "Weight (relative abundance) relative to sister ResLabelFractions. "
+)
+(uid "-yk94ms_jd_exd99z4z_-p8z"))
+($8 208 < -yk94ms_6e6_exdas1tf_-p92 "guid" 206
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-01-25-14:45:57_00008"
+)
+(uid "-yk94ms_6e6_exdas1tf_-p92"))
+($9 209 < -yk94ms_jd_exd99z4z_-p8e "getLabelingScheme" 199
+(name "getLabelingScheme"
+)
+(uid "-yk94ms_jd_exd99z4z_-p8e")
+(isQuery true))
+($8 210 < -yk94ms_jd_exd99z4z_-p8d "documentation" 209
+(name "documentation"
+)
+(value "getter for derived link labelingScheme"
+)
+(uid "-yk94ms_jd_exd99z4z_-p8d"))
+($8 211 < -yk94ms_jd_exd99z4z_-p8c "opType" 209
+(name "opType"
+)
+(value "get"
+)
+(uid "-yk94ms_jd_exd99z4z_-p8c"))
+($8 212 < -yk94ms_jd_exd99z4z_-p8b "pythonCode" 209
+(name "pythonCode"
+)
+(value "result = self.getByKey(ccp.molecule.ChemCompLabel.LabelingScheme, (dataDict['schemeName']))"
+)
+(uid "-yk94ms_jd_exd99z4z_-p8b"))
+($8 213 < -yk94ms_6e6_exdas1tf_-p91 "guid" 209
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-01-25-14:45:57_00009"
+)
+(uid "-yk94ms_6e6_exdas1tf_-p91"))
+($8 214 < -yk94ms_p3u_eywzxf90_-p94 "javaCode" 209
+(name "javaCode"
+)
+(value "java.lang.Object[] objKey = { getSchemeName() };"
+)
+(uid "-yk94ms_p3u_eywzxf90_-p94"))
+($8 215 < -yk94ms_p3u_eywzxf90_-p93 "getByKey" 209
+(name "getByKey"
+)
+(value "True"
+)
+(uid "-yk94ms_p3u_eywzxf90_-p93"))
+($9 216 < -yk94ms_jd_exd99z4z_-p88 "getIsotopomers" 199
+(name "getIsotopomers"
+)
+(uid "-yk94ms_jd_exd99z4z_-p88")
+(isQuery true))
+($8 217 < -yk94ms_jd_exd99z4z_-p87 "documentation" 216
+(name "documentation"
+)
+(value "getter for derived link isotopomers"
+)
+(uid "-yk94ms_jd_exd99z4z_-p87"))
+($8 218 < -yk94ms_jd_exd99z4z_-p86 "opType" 216
+(name "opType"
+)
+(value "get"
+)
+(uid "-yk94ms_jd_exd99z4z_-p86"))
+($8 219 < -yk94ms_jd_exd99z4z_-p85 "pythonCode" 216
+(name "pythonCode"
+)
+(value "result = ()"
+"molResidue = self.parent.molResidue"
+"if molResidue is not None:"
+"  labelingScheme = self.labelingScheme"
+"  if labelingScheme is not None:"
+"    chemComp = molResidue.chemComp"
+"    chemCompLabel = labelingScheme.findFirstChemCompLabel(molType=chemComp.molType, ccpCode=chemComp.ccpCode)"
+"    serial = self.isotopomerSerial"
+"    if serial:"
+"      result = tuple(chemCompLabel.findAllIsotopomers(serial=serial))"
+"    else:"
+"      result = chemCompLabel.isotopomers"
+"    "
+)
+(uid "-yk94ms_jd_exd99z4z_-p85"))
+($8 220 < -yk94ms_6e6_exdas1tf_-p98 "guid" 216
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-01-25-14:45:57_00010"
+)
+(uid "-yk94ms_6e6_exdas1tf_-p98"))
+($8 221 < -yk94ms_p3u_eywzxf90_-p92 "javaCode" 216
+(name "javaCode"
+)
+(value "ccp.api.molecule.Molecule.MolResidue molResidue = getResLabel().getMolResidue();"
+"if (molResidue != null)"
+"{"
+"  ccp.api.molecule.ChemCompLabel.LabelingScheme labelingScheme = getLabelingScheme();"
+"  if (labelingScheme != null)"
+"  {"
+"    ccp.api.molecule.ChemComp.ChemComp chemComp = molResidue.getChemComp();"
+"    ccp.api.molecule.ChemCompLabel.ChemCompLabel chemCompLabel = labelingScheme.findFirstChemCompLabel(\"molType\", chemComp.getMolType(), \"ccpCode\", chemComp.getCcpCode());"
+"    java.lang.Integer serial = getIsotopomerSerial();"
+"    if (serial == null)"
+"      return chemCompLabel.getIsotopomers();"
+"    else"
+"      return chemCompLabel.findAllIsotopomers(\"serial\", serial);"
+"  }"
+"}"
+"return new java.util.ArrayList();"
+)
+(uid "-yk94ms_p3u_eywzxf90_-p92"))
+($12 222 < -yk94ms_jd_exd99z4z_-p96 "#<anon> (ResLabelFraction, NormalStored)" 199
+(uid "-yk94ms_jd_exd99z4z_-p96"))
+($10 223 < -yk94ms_jd_exd99z4z_-p8q "#<anon> (ResLabelFraction, LabelingScheme)##," 199
+(name "")
+(uid "-yk94ms_jd_exd99z4z_-p8q"))
+($11 224 < -yk94ms_jd_exd99z4z_-p8m "#0" 223
+(uid "-yk94ms_jd_exd99z4z_-p8m")
+(isNavigable false))
+($11 225 < -yk94ms_jd_exd99z4z_-p8l "#1" 223
+(changeability "frozen")
+(uid "-yk94ms_jd_exd99z4z_-p8l"))
+($8 226 < -yk94ms_jd_exd99z4z_-p8k "documentation" 225
+(name "documentation"
+)
+(value "LabelingScheme corresponding to ResLabelFraction"
+)
+(uid "-yk94ms_jd_exd99z4z_-p8k"))
+($8 227 < -yk94ms_6e6_exdas1tf_-p90 "guid" 225
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-01-26-13:01:04_00002"
+)
+(uid "-yk94ms_6e6_exdas1tf_-p90"))
+($8 228 < -yk94ms_jd_exd99z4z_-p8j "isDerived" 223
+(name "isDerived"
+)
+(value "True"
+)
+(uid "-yk94ms_jd_exd99z4z_-p8j"))
+($10 229 < -yk94ms_jd_exd99z4z_-p8p "#<anon> (ResLabelFraction, Isotopomer)##," 199
+(name "")
+(uid "-yk94ms_jd_exd99z4z_-p8p"))
+($11 230 < -yk94ms_jd_exd99z4z_-p8i "#0" 229
+(uid "-yk94ms_jd_exd99z4z_-p8i")
+(isNavigable false))
+($11 231 < -yk94ms_jd_exd99z4z_-p8h "#1" 229
+(changeability "frozen")
+(uid "-yk94ms_jd_exd99z4z_-p8h")
+(multiplicity "*"))
+($8 232 < -yk94ms_jd_exd99z4z_-p8g "documentation" 231
+(name "documentation"
+)
+(value "Isotopomers corresponding to ResLabelFraction"
+)
+(uid "-yk94ms_jd_exd99z4z_-p8g"))
+($8 233 < -yk94ms_6e6_exdas1tf_-p8z "guid" 231
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-01-26-13:01:04_00003"
+)
+(uid "-yk94ms_6e6_exdas1tf_-p8z"))
+($8 234 < -yk94ms_jd_exd99z4z_-p8f "isDerived" 229
+(name "isDerived"
+)
+(value "True"
+)
+(uid "-yk94ms_jd_exd99z4z_-p8f"))
+($8 235 < -yk94ms_jd_exd99z4z_-p97 "documentation" 199
+(name "documentation"
+)
+(value "Fraction of Residue labeling that follows a given labeling scheme"
+)
+(uid "-yk94ms_jd_exd99z4z_-p97"))
+($8 236 < -yk94ms_jd_exd99z4z_-p95 "mainkey" 199
+(name "mainkey"
+)
+(value "schemeName,isotopomerSerial"
+)
+(uid "-yk94ms_jd_exd99z4z_-p95"))
+($8 237 < -yk94ms_6e6_exdas1tf_-p8y "guid" 199
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-01-25-14:45:21_00001"
+)
+(uid "-yk94ms_6e6_exdas1tf_-p8y"))
+($14 238 < -yk94ms_6e6_exdas1tf_-p8x "#<anon> (LabeledMolecule, ChemCompLabel)" 1
+(uid "-yk94ms_6e6_exdas1tf_-p8x"))
+($8 239 < -yk94ms_jd_eto5ij1q_-p8a "guid" 1
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-10-24-11:28:55_00001"
+)
+(uid "-yk94ms_jd_eto5ij1q_-p8a"))
+($8 240 < -yk94ms_jd_etoak3fa_-p8j "shortName" 1
+(name "shortName"
+)
+(value "LMOL"
+)
+(uid "-yk94ms_jd_etoak3fa_-p8j"))
+($8 241 < -yk94ms_jd_etocyc5h_-p76 "documentation" 1
+(name "documentation"
+)
+(value "Package for describing isotope labelling of molecules"
+)
+(uid "-yk94ms_jd_etocyc5h_-p76"))
+($16 243)
+($16 246)
+($16 248)
+($16 250)
+($16 252)
+($16 254)
+($18 257)
+($18 260)
+($16 267)
+($16 269)
+($16 270)
+($16 271)
+($16 272)
+($16 273)
+($16 274)
+($16 275)
+($16 276)
+($16 277)
+($16 278)
+($16 279)
+($16 280)
+($16 281)
+($16 282)
+($16 283)
+($16 285)
+($16 287)
+($16 289)
+($16 292)
+($16 293)
+($16 294)
+($16 295)
+($16 297)
+($16 299)
+($16 301)
+($16 302)
+($16 304)
+($16 306)
+($16 308)
+($16 309)
+($16 311)
+($16 312)
+($16 313)
+($16 314)
+($16 315)
+($15 242 @ -yk94ms_-e3s_e41656c6_-fvw 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "memops.Implementation" $15)
+($6 244 @ -yk94ms_-e3s_e41656c6_-gyg 4 "Logical" $1 "memops" $1 "Implementation" $1 "Project" $6)
+($15 245 @ -yk94ms_-e3s_e41656c6_-fvz 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Molecule" $15)
+($6 247 @ -yk94ms_-e3s_e41656c6_-lyc 5 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "Molecule" $6)
+($10 249 @ -yk94ms_-e3s_e41656c6_-gx2 5 "Logical" $1 "memops" $1 "Implementation" $1 "Project" $6 "#<anon> (Project, Molecule)##," $10)
+($6 251 @ -yk94ms_-e3s_e41656c6_-lsj 5 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "MolResidue" $6)
+($10 253 @ -yk94ms_-e3s_e41656c6_-lua 6 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "Molecule" $6 "#<anon> (Molecule, MolResidue)##," $10)
+($6 255 @ -yk94ms_-e3s_e41656c6_-gpe 4 "Logical" $1 "memops" $1 "Implementation" $1 "NormalStored" $6)
+($6 256 @ -yk94ms_-e3s_e41656c6_-h0m 4 "Logical" $1 "memops" $1 "Implementation" $1 "Line" $6)
+($6 258 @ -yk94ms_-e3s_e41656c6_-h0t 4 "Logical" $1 "memops" $1 "Implementation" $1 "Int" $6)
+($6 259 @ -yk94ms_-e3s_e41656c6_-gnr 4 "Logical" $1 "memops" $1 "Implementation" $1 "PositiveInt" $6)
+($6 261 @ -yk94ms_-e3s_e41656c6_-gn8 4 "Logical" $1 "memops" $1 "Implementation" $1 "NonNegativeFloat" $6)
+($6 262 @ -yk94ms_-e3s_e41656c6_-gzz 4 "Logical" $1 "memops" $1 "Implementation" $1 "Word" $6)
+($6 263 @ -yk94ms_-e3s_e41656c6_-gn4 4 "Logical" $1 "memops" $1 "Implementation" $1 "NonNegativeInt" $6)
+($6 264 @ -yk94ms_-8hi_ex93bgf7_-p98 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemCompLabel" $1 "LabelingScheme" $6)
+($6 265 @ -yk94ms_-9af_etcy0zwh_-p5j 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemCompLabel" $1 "Isotopomer" $6)
+($6 266 @ -yk94ms_-e3s_e41656c6_-ntb 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "Experiment" $6)
+($10 268 @ -yk94ms_-9af_etcy0zwh_-p95 5 "Logical" $1 "memops" $1 "Implementation" $1 "Project" $6 "#<anon> (Project, LabeledMolecule)##," $10)
+($15 284 @ -yk94ms_-e3s_e41656c6_-fw0 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "SampleComponent" $15)
+($6 286 @ -yk94ms_85r_eqyymv3f_-mfi 5 "Logical" $1 "ccp" $1 "lims" $1 "RefSampleComponent" $1 "MolComponent" $6)
+($10 288 @ -yk94ms_-e3s_e41656c6_-ltt 6 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "Molecule" $6 "#<anon> (Molecule, MolComponent)##," $10)
+($10 290 @ -yk94ms_-9af_etcy0zwh_-p6q 6 "Logical" $1 "ccp" $1 "lims" $1 "RefSampleComponent" $1 "MolComponent" $6 "#<anon> (MolComponent, LabeledMixture)##," $10)
+($15 291 @ -yk94ms_-e3s_e41656c6_-fvm 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Nmr" $15)
+($15 296 @ -yk94ms_-e3s_e41656c6_-fvd 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "ChemCompCoord" $15)
+($6 298 @ -yk94ms_85r_eqyymv3f_-km7 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemCompLabel" $1 "AtomLabel" $6)
+($6 300 @ -yk94ms_85r_eqyymv3f_-kp5 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemCompLabel" $1 "ChemCompLabel" $6)
+($10 303 @ -yk94ms_-9af_etcy0zwh_-p5f 6 "Logical" $1 "ccp" $1 "molecule" $1 "ChemCompLabel" $1 "ChemCompLabel" $6 "#<anon> (ChemCompLabel, Isotopomer)##," $10)
+($10 305 @ -yk94ms_-9af_ete3xszb_-p96 6 "Logical" $1 "ccp" $1 "molecule" $1 "ChemCompLabel" $1 "AtomLabel" $6 "#<anon> (AtomLabel, Isotopomer)##," $10)
+($10 307 @ -yk94ms_jd_ews1ucjm_-p98 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "Experiment" $6 "#<anon> (Experiment, )##derivedFrom,derivedTo" $10)
+($10 310 @ -yk94ms_-8hi_ex93bgf7_-p8v 6 "Logical" $1 "ccp" $1 "molecule" $1 "ChemCompLabel" $1 "LabelingScheme" $6 "#<anon> (LabelingScheme, ChemCompLabel)##," $10)
+($19 316 @ -yk94ms_-e3s_e41656c6_-fwy 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "import" $19)
+($1 317 @ -yk94ms_-e3s_e41656c6_-m0p 4 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1)
+($1 318 @ -yk94ms_mbj_el0wdpob_-p97 4 "Logical" $1 "ccp" $1 "molecule" $1 "ChemCompLabel" $1)
+(styleAssn 3 242)
+(projectionAssn 3 244 243)
+(styleAssn 4 245)
+(projectionAssn 4 247 246)
+(to 5 4)
+(from 5 3)
+(projectionAssn 5 249 248)
+(styleAssn 6 245)
+(projectionAssn 6 251 250)
+(to 7 6)
+(from 7 4)
+(projectionAssn 7 253 252)
+(typeAssn 56 45)
+(assocEndAssn 45 56)
+(typeAssn 62 45)
+(assocEndAssn 45 62)
+(typeAssn 67 45)
+(assocEndAssn 45 67)
+(subtypeAssn 74 45)
+(supertypeAssn 74 255)
+(generalizationAssn 45 74)
+(typeRefAssn 46 256)
+(typeExpression 46 257)
+(assocEndAssn 78 59)
+(typeAssn 84 78)
+(assocEndAssn 78 84)
+(typeAssn 191 78)
+(assocEndAssn 78 191)
+(typeAssn 175 78)
+(assocEndAssn 78 175)
+(subtypeAssn 88 78)
+(supertypeAssn 88 255)
+(generalizationAssn 78 88)
+(typeRefAssn 79 258)
+(typeExpression 79 257)
+(assocEndAssn 92 86)
+(typeAssn 103 92)
+(assocEndAssn 92 103)
+(typeAssn 108 92)
+(assocEndAssn 92 108)
+(typeAssn 116 92)
+(assocEndAssn 92 116)
+(subtypeAssn 114 92)
+(supertypeAssn 114 255)
+(generalizationAssn 92 114)
+(typeRefAssn 99 259)
+(typeExpression 99 260)
+(assocEndAssn 125 105)
+(subtypeAssn 135 125)
+(supertypeAssn 135 255)
+(generalizationAssn 125 135)
+(typeRefAssn 126 258)
+(typeExpression 126 257)
+(typeRefAssn 129 259)
+(typeExpression 129 257)
+(typeRefAssn 132 261)
+(typeExpression 132 257)
+(typeAssn 105 125)
+(typeAssn 110 251)
+(assocEndAssn 199 119)
+(typeAssn 224 199)
+(assocEndAssn 199 224)
+(typeAssn 230 199)
+(assocEndAssn 199 230)
+(subtypeAssn 222 199)
+(supertypeAssn 222 255)
+(generalizationAssn 199 222)
+(typeRefAssn 200 262)
+(typeExpression 200 260)
+(typeRefAssn 203 263)
+(typeExpression 203 260)
+(typeRefAssn 206 261)
+(typeExpression 206 260)
+(typeAssn 225 264)
+(typeAssn 231 265)
+(typeAssn 119 199)
+(typeAssn 86 92)
+(typeAssn 59 78)
+(assocEndAssn 153 64)
+(typeAssn 158 153)
+(assocEndAssn 153 158)
+(typeAssn 163 153)
+(assocEndAssn 153 163)
+(typeAssn 171 153)
+(assocEndAssn 153 171)
+(subtypeAssn 169 153)
+(supertypeAssn 169 255)
+(generalizationAssn 153 169)
+(typeRefAssn 154 258)
+(typeExpression 154 257)
+(assocEndAssn 183 160)
+(typeAssn 188 183)
+(assocEndAssn 183 188)
+(subtypeAssn 194 183)
+(supertypeAssn 194 255)
+(generalizationAssn 183 194)
+(typeRefAssn 184 261)
+(typeExpression 184 257)
+(typeAssn 160 183)
+(typeAssn 166 266)
+(typeAssn 64 153)
+(typeAssn 69 247)
+(projectionAssn 8 45 254)
+(to 9 8)
+(from 9 3)
+(projectionAssn 9 268 267)
+(projectionAssn 10 78 269)
+(to 11 10)
+(from 11 8)
+(projectionAssn 11 55 270)
+(projectionAssn 12 92 271)
+(to 13 12)
+(from 13 10)
+(projectionAssn 13 83 272)
+(projectionAssn 14 125 273)
+(subtypeAssn 143 139)
+(supertypeAssn 143 125)
+(generalizationAssn 139 143)
+(typeRefAssn 140 262)
+(typeExpression 140 257)
+(projectionAssn 15 139 274)
+(to 16 14)
+(from 16 15)
+(projectionAssn 16 143 275)
+(subtypeAssn 150 146)
+(supertypeAssn 150 125)
+(generalizationAssn 146 150)
+(typeRefAssn 147 262)
+(typeExpression 147 257)
+(projectionAssn 17 146 276)
+(to 18 14)
+(from 18 17)
+(projectionAssn 18 150 277)
+(projectionAssn 19 153 278)
+(to 20 19)
+(from 20 8)
+(projectionAssn 20 61 279)
+(projectionAssn 21 183 280)
+(to 22 21)
+(from 22 19)
+(projectionAssn 22 157 281)
+(to 23 10)
+(from 23 21)
+(projectionAssn 23 187 282)
+(to 24 14)
+(from 24 12)
+(projectionAssn 24 102 283)
+(styleAssn 25 284)
+(projectionAssn 25 286 285)
+(to 26 25)
+(from 26 4)
+(projectionAssn 26 288 287)
+(to 27 19)
+(from 27 25)
+(projectionAssn 27 290 289)
+(styleAssn 28 291)
+(projectionAssn 28 266 292)
+(to 29 6)
+(from 29 12)
+(projectionAssn 29 107 293)
+(to 30 4)
+(from 30 8)
+(projectionAssn 30 66 294)
+(to 31 28)
+(from 31 19)
+(projectionAssn 31 162 295)
+(styleAssn 32 296)
+(projectionAssn 32 298 297)
+(styleAssn 33 296)
+(projectionAssn 33 300 299)
+(styleAssn 34 296)
+(projectionAssn 34 265 301)
+(to 35 34)
+(from 35 33)
+(projectionAssn 35 303 302)
+(to 36 34)
+(from 36 32)
+(projectionAssn 36 305 304)
+(to 37 28)
+(from 37 28)
+(projectionAssn 37 307 306)
+(styleAssn 38 296)
+(projectionAssn 38 264 308)
+(to 39 33)
+(from 39 38)
+(projectionAssn 39 310 309)
+(to 40 10)
+(from 40 19)
+(projectionAssn 40 170 311)
+(projectionAssn 41 199 312)
+(to 42 41)
+(from 42 12)
+(projectionAssn 42 115 313)
+(to 43 38)
+(from 43 41)
+(projectionAssn 43 223 314)
+(to 44 34)
+(from 44 41)
+(projectionAssn 44 229 315)
+(stereotypeAssn 198 316)
+(clientAssn 198 1)
+(supplierAssn 198 317)
+(stereotypeAssn 238 316)
+(clientAssn 238 1)
+(supplierAssn 238 318)

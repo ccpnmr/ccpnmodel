@@ -1,0 +1,1224 @@
+ObjectDomain_Shared_Package 15
+{-yk94ms_-e3s_e41656c6_-jt9 4 "Logical" objectdomain.uml.mechanisms.UmlPackage-owns "ccp" objectdomain.uml.mechanisms.UmlPackage-owns "general" objectdomain.uml.mechanisms.UmlPackage-owns "Template" objectdomain.uml.mechanisms.UmlPackage-owns
+}[objectdomain.uml.core.TypeExpression $13
+objectdomain.uml.mechanisms.UmlPackage-owns $1
+objectdomain.uml.core.Generalization-owns $8
+objectdomain.uml.core.Projection $12
+objectdomain.uml.core.UmlAttribute-features $6
+objectdomain.uml.view.style.BaseViewElementStyle-owns $15
+objectdomain.uml.view.ClassView-owns $3
+objectdomain.uml.core.UmlTaggedValue-taggedValues $7
+objectdomain.uml.core.UmlConstraint-constraints $9
+objectdomain.uml.core.UmlParameter-parameters $11
+objectdomain.uml.view.Diagram-owns $2
+objectdomain.uml.core.UmlOperation-features $10
+objectdomain.uml.view.GeneralizationView-owns $4
+objectdomain.uml.core.UmlMultiplicity $14
+objectdomain.uml.core.UmlClass-owns $5
+]
+($1 1 > -yk94ms_-e3s_e41656c6_-jt9 4 "Logical" $1 "ccp" $1 "general" $1 "Template" $1
+(name "Template"
+)
+(uid "-yk94ms_-e3s_e41656c6_-jt9"))
+($2 2 < -yk94ms_85r_eqyymv3f_-o75 "_Template" 1
+(name "_Template"
+)
+(uid "-yk94ms_85r_eqyymv3f_-o75")
+(diagramType "class"))
+($3 3 < -yk94ms_85r_eqyymv3f_-o74 "AbstractProbability" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-o74")
+(bbx 20 30 130 60))
+($3 4 < -yk94ms_85r_eqyymv3f_-o73 "DataObject" 2
+(autoSizeToFit true)
+(uid "-yk94ms_85r_eqyymv3f_-o73")
+(bbx 240 30 240 80))
+($4 5 < -yk94ms_85r_eqyymv3f_-o72 "" 2
+(uid "-yk94ms_85r_eqyymv3f_-o72")
+(points 150 60 240 60))
+($3 6 < -hkpzxr_nv3_ff3psu73_-p8t "MultiTypeValue" 2
+(uid "-hkpzxr_nv3_ff3psu73_-p8t")
+(bbx 190 150 150 110))
+($4 7 < -hkpzxr_nv3_ff3psu73_-p98 "" 2
+(uid "-hkpzxr_nv3_ff3psu73_-p98")
+(points 260 150 260 110))
+($3 8 < z8kfsx_-gyy_glpezyz5_-p8m "FloatMatrixObject" 2
+(autoSizeToFit true)
+(uid "z8kfsx_-gyy_glpezyz5_-p8m")
+(bbx 570 30 250 300))
+($5 9 < -yk94ms_85r_eqyymv3f_-o71 "AbstractProbability" 1
+(name "AbstractProbability"
+)
+(uid "-yk94ms_85r_eqyymv3f_-o71")
+(isAbstract true))
+($6 10 < -yk94ms_85r_eqyymv3f_-o70 "weight" 9
+(initialValue "1.0"
+)
+(name "weight"
+)
+(uid "-yk94ms_85r_eqyymv3f_-o70")
+(multiplicity "1"))
+($7 11 < -yk94ms_85r_eqyymv3f_-o6z "documentation" 10
+(name "documentation"
+)
+(value "weight (= non-normalised probability) that the parent is associated with this particular possibility. "
+)
+(uid "-yk94ms_85r_eqyymv3f_-o6z"))
+($7 12 < -yk94ms_85r_eqyymv3f_-o6y "guid" 10
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:38_00025"
+)
+(uid "-yk94ms_85r_eqyymv3f_-o6y"))
+($8 13 < -yk94ms_85r_eqyymv3f_-o6x "#<anon> (AbstractProbability, DataObject)" 9
+(uid "-yk94ms_85r_eqyymv3f_-o6x"))
+($7 14 < -yk94ms_85r_eqyymv3f_-o6w "documentation" 9
+(name "documentation"
+)
+(value "Abstract class defining classes used for probability lists. AbstractProbability objects have a parent that is the object that has the probability (e.g. a ResonanceGroup), a link 'possibility' to various possibilities (e.g. a ChemComp), and a weight to determine their relative probability. Probabilities are calculated by taking the weight of each AbstractProbability object and dividing by the sum of the weights in the (appropriate subset of) AbstractProbability objects linked to a given parent. "
+""
+"Implementation note: The presence of the 'possibility' link must be enforced by the data modeller, as it is not checked by the software. "
+)
+(uid "-yk94ms_85r_eqyymv3f_-o6w"))
+($7 15 < -yk94ms_85r_eqyymv3f_-o6v "guid" 9
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:19:50_00005"
+)
+(uid "-yk94ms_85r_eqyymv3f_-o6v"))
+($5 16 < -hkpzxr_-nsb_f8y6usm8_-p91 "MultiTypeValue" 1
+(name "MultiTypeValue"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p91")
+(isAbstract true))
+($6 17 < -hkpzxr_-nsb_f8y6usm8_-p8w "textValue" 16
+(name "textValue"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p8w"))
+($7 18 < -hkpzxr_-nsb_f8y6usm8_-p8v "documentation" 17
+(name "documentation"
+)
+(value "Text type value"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p8v"))
+($7 19 < -hkpzxr_-nsb_f8y6usm8_-p5i "guid" 17
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:55:55_00005"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p5i"))
+($6 20 < -hkpzxr_-nsb_f8y6usm8_-p8u "intValue" 16
+(name "intValue"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p8u"))
+($7 21 < -hkpzxr_-nsb_f8y6usm8_-p8t "documentation" 20
+(name "documentation"
+)
+(value "Integer type value"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p8t"))
+($7 22 < -hkpzxr_-nsb_f8y6usm8_-p5h "guid" 20
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:55:55_00006"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p5h"))
+($6 23 < -hkpzxr_-nsb_f8y6usm8_-p8s "floatValue" 16
+(name "floatValue"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p8s"))
+($7 24 < -hkpzxr_-nsb_f8y6usm8_-p8r "documentation" 23
+(name "documentation"
+)
+(value "Float type value"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p8r"))
+($7 25 < -hkpzxr_-nsb_f8y6usm8_-p5g "guid" 23
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:55:55_00007"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p5g"))
+($6 26 < -hkpzxr_-nsb_f8y6usm8_-p8q "booleanValue" 16
+(name "booleanValue"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p8q"))
+($7 27 < -hkpzxr_-nsb_f8y6usm8_-p8p "documentation" 26
+(name "documentation"
+)
+(value "Boolean type value"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p8p"))
+($7 28 < -hkpzxr_-nsb_f8y6usm8_-p5f "guid" 26
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:55:55_00008"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p5f"))
+($8 29 < -hkpzxr_v5_f8zng6fd_-p6t "#<anon> (MultiTypeValue, DataObject)" 16
+(uid "-hkpzxr_v5_f8zng6fd_-p6t"))
+($7 30 < -hkpzxr_-nsb_f8y6usm8_-p8x "documentation" 16
+(name "documentation"
+)
+(value "Typed value data"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p8x"))
+($7 31 < -hkpzxr_-nsb_f8y6usm8_-p5e "guid" 16
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2007-11-13-15:55:49_00003"
+)
+(uid "-hkpzxr_-nsb_f8y6usm8_-p5e"))
+($5 32 < z8kfsx_jka_glntyc8x_-p98 "FloatMatrixObject" 1
+(name "FloatMatrixObject"
+)
+(uid "z8kfsx_jka_glntyc8x_-p98")
+(isAbstract true))
+($6 33 < z8kfsx_jka_glntyc8x_-p94 "shape" 32
+(changeability "frozen")
+(name "shape"
+)
+(uid "z8kfsx_jka_glntyc8x_-p94")
+(multiplicity "1..*"))
+($7 34 < z8kfsx_jka_glntyc8x_-p93 "documentation" 33
+(name "documentation"
+)
+(value "Matrix shape, slowest moving index first. SIze in first dimension (only) may be zero."
+)
+(uid "z8kfsx_jka_glntyc8x_-p93"))
+($7 35 < z8kfsx_-i16_glwhwz86_-p7u "guid" 33
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:02:26_00016"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p7u"))
+($7 36 < z8kfsx_-i16_glwhwz86_-p7v "baseName" 33
+(name "baseName"
+)
+(value "dimension"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p7v"))
+($6 37 < z8kfsx_jka_glntyc8x_-p90 "data" 32
+(changeability "frozen")
+(name "data"
+)
+(uid "z8kfsx_jka_glntyc8x_-p90")
+(multiplicity "*"))
+($7 38 < z8kfsx_jka_glntyc8x_-p8z "documentation" 37
+(name "documentation"
+)
+(value "Matrix data as packed list."
+)
+(uid "z8kfsx_jka_glntyc8x_-p8z"))
+($7 39 < z8kfsx_-i16_glwhwz86_-p85 "baseName" 37
+(name "baseName"
+)
+(value "data"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p85"))
+($7 40 < z8kfsx_-i16_glwhwz86_-p7e "guid" 37
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:03:29_00002"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p7e"))
+($9 41 < z8kfsx_-gyy_glwckjdr_-p8i "data_empty_or_equal_to_size" 37
+(name "data_empty_or_equal_to_size"
+)
+(uid "z8kfsx_-gyy_glwckjdr_-p8i")
+(body "code:python"
+"_"
+"len(values) in (0,self.size)"
+"_"
+"code:java"
+"_"
+"true /* NBNB TBD */"
+))
+($7 42 < z8kfsx_-i16_glwhwz86_-p7b "guid" 41
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:05:06_00001"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p7b"))
+($6 43 < z8kfsx_jka_glntyc8x_-p92 "defaultValue" 32
+(initialValue "0.0"
+)
+(changeability "frozen")
+(name "defaultValue"
+)
+(uid "z8kfsx_jka_glntyc8x_-p92")
+(multiplicity "1"))
+($7 44 < z8kfsx_jka_glntyc8x_-p91 "documentation" 43
+(name "documentation"
+)
+(value "default value of data in matrix. Used instead of values that are not explicitly set."
+)
+(uid "z8kfsx_jka_glntyc8x_-p91"))
+($7 45 < z8kfsx_-i16_glwhwz86_-p7d "guid" 43
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:03:29_00001"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p7d"))
+($6 46 < z8kfsx_jka_glntyc8x_-p8y "size" 32
+(changeability "frozen")
+(name "size"
+)
+(uid "z8kfsx_jka_glntyc8x_-p8y")
+(multiplicity "1"))
+($7 47 < z8kfsx_jka_glntyc8x_-p8x "documentation" 46
+(name "documentation"
+)
+(value "Matrix size - product of dimensions sizes"
+)
+(uid "z8kfsx_jka_glntyc8x_-p8x"))
+($7 48 < z8kfsx_jka_glntyc8x_-p8w "isDerived" 46
+(name "isDerived"
+)
+(value "True"
+)
+(uid "z8kfsx_jka_glntyc8x_-p8w"))
+($7 49 < z8kfsx_-i16_glwhwz86_-p7a "guid" 46
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:05:06_00002"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p7a"))
+($6 50 < z8kfsx_jka_glntyc8x_-p8v "ndim" 32
+(changeability "frozen")
+(name "ndim"
+)
+(uid "z8kfsx_jka_glntyc8x_-p8v")
+(multiplicity "1"))
+($7 51 < z8kfsx_jka_glntyc8x_-p8u "documentation" 50
+(name "documentation"
+)
+(value "Number of matrix dimensions"
+)
+(uid "z8kfsx_jka_glntyc8x_-p8u"))
+($7 52 < z8kfsx_jka_glntyc8x_-p8t "isDerived" 50
+(name "isDerived"
+)
+(value "True"
+)
+(uid "z8kfsx_jka_glntyc8x_-p8t"))
+($7 53 < z8kfsx_-i16_glwhwz86_-p79 "guid" 50
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:05:06_00003"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p79"))
+($10 54 < z8kfsx_jka_glntyc8x_-p8s "getSize" 32
+(name "getSize"
+)
+(uid "z8kfsx_jka_glntyc8x_-p8s")
+(isQuery true))
+($7 55 < z8kfsx_jka_glntyc8x_-p8r "opType" 54
+(name "opType"
+)
+(value "get"
+)
+(uid "z8kfsx_jka_glntyc8x_-p8r"))
+($7 56 < z8kfsx_jka_glntyc8x_-p8q "documentation" 54
+(name "documentation"
+)
+(value "getter for derived attribute size"
+)
+(uid "z8kfsx_jka_glntyc8x_-p8q"))
+($7 57 < z8kfsx_jka_glntyc8x_-p8p "code:python" 54
+(name "code:python"
+)
+(value "import operator"
+"result = reduce(operator.mul, self.shape)"
+)
+(uid "z8kfsx_jka_glntyc8x_-p8p"))
+($7 58 < z8kfsx_jka_glntyc8x_-p8o "code:java" 54
+(name "code:java"
+)
+(value "result = null; /* NBNB TBD */"
+)
+(uid "z8kfsx_jka_glntyc8x_-p8o"))
+($7 59 < z8kfsx_-i16_glwhwz86_-p78 "guid" 54
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:05:06_00004"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p78"))
+($10 60 < z8kfsx_jka_glntyc8x_-p8n "getNdim" 32
+(name "getNdim"
+)
+(uid "z8kfsx_jka_glntyc8x_-p8n")
+(isQuery true))
+($7 61 < z8kfsx_jka_glntyc8x_-p8m "documentation" 60
+(name "documentation"
+)
+(value "getter for derived attribute ndim"
+)
+(uid "z8kfsx_jka_glntyc8x_-p8m"))
+($7 62 < z8kfsx_jka_glntyc8x_-p8l "opType" 60
+(name "opType"
+)
+(value "get"
+)
+(uid "z8kfsx_jka_glntyc8x_-p8l"))
+($7 63 < z8kfsx_jka_glntyc8x_-p8k "code:java" 60
+(name "code:java"
+)
+(value "result = null; /* NBNB TBD */"
+)
+(uid "z8kfsx_jka_glntyc8x_-p8k"))
+($7 64 < z8kfsx_jka_glntyc8x_-p8j "code:python" 60
+(name "code:python"
+)
+(value "result = len(self.shape)"
+)
+(uid "z8kfsx_jka_glntyc8x_-p8j"))
+($7 65 < z8kfsx_-i16_glwhwz86_-p77 "guid" 60
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:05:06_00005"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p77"))
+($10 66 < z8kfsx_jka_glntyc8x_-p8i "pointToIndex#Int*##Int" 32
+(name "pointToIndex"
+)
+(uid "z8kfsx_jka_glntyc8x_-p8i")
+(isQuery true))
+($11 67 < z8kfsx_-gyy_glpezyz5_-p96 "point" 66
+(name "point"
+)
+(uid "z8kfsx_-gyy_glpezyz5_-p96"))
+($7 68 < z8kfsx_-i16_glwhwz86_-p76 "guid" 67
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:05:06_00007"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p76"))
+($11 69 < z8kfsx_-gyy_glpezyz5_-p95 "result" 66
+(name "result"
+)
+(kind "return")
+(uid "z8kfsx_-gyy_glpezyz5_-p95"))
+($7 70 < z8kfsx_-i16_glwhwz86_-p75 "guid" 69
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:05:06_00008"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p75"))
+($7 71 < z8kfsx_jka_glntyc8x_-p8h "documentation" 66
+(name "documentation"
+)
+(value "converts point to equivalent array index. Point is padded to matrix dimension with zeros. negative index values -i in point are treated as eqal to (size-i)."
+)
+(uid "z8kfsx_jka_glntyc8x_-p8h"))
+($7 72 < z8kfsx_jka_glntyc8x_-p8g "code:python" 66
+(name "code:python"
+)
+(value "shape = self.shape"
+"lendiff = len(shape) -  len(point)"
+"if lendiff < 0:"
+"  raise ApiError(\"Point %s incompatible with %s-dimensional matrix\" "
+"                 % (point,len(shape)))"
+"elif lendiff:"
+"  point = list(point) + lendiff*[0]"
+""
+"result = 0"
+"factor = 1"
+"for ii in range(len(shape)-1,0,-1):   # loop over dimensions in reverse order"
+"  # skipping the first one"
+"  size = shape[ii]"
+"  num,indx = divmod(point[ii],size) # convert -n to width-n"
+"  if num not in (0,-1):"
+"    raise ApiError(\"Point %s out of range for dimension %s\" % (point,ii))"
+"  result += factor * indx"
+"  factor *= size"
+"    "
+"# treat first dimension differently, because locations beyond the end of"
+"# the data may be relevant and are certainly defined"
+"indx = point[0]"
+"if indx < 0:"
+"  indx += shape[0]"
+"if indx < 0:"
+"  raise ApiError(\"Point %s out of range for dimension %s\" % (point,0))"
+"result += factor * indx"
+)
+(uid "z8kfsx_jka_glntyc8x_-p8g"))
+($7 73 < z8kfsx_jka_glntyc8x_-p8f "code:java" 66
+(name "code:java"
+)
+(value "result = null; /* NBNB TBD */"
+)
+(uid "z8kfsx_jka_glntyc8x_-p8f"))
+($7 74 < z8kfsx_jka_glntyc8x_-p8e "opType" 66
+(name "opType"
+)
+(value "otherQuery"
+)
+(uid "z8kfsx_jka_glntyc8x_-p8e"))
+($7 75 < z8kfsx_-i16_glwhwz86_-p74 "guid" 66
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:05:06_00006"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p74"))
+($10 76 < z8kfsx_-i16_glpcei58_-p8o "indexToPoint#Int##Int*" 32
+(name "indexToPoint"
+)
+(uid "z8kfsx_-i16_glpcei58_-p8o")
+(isQuery true))
+($11 77 < z8kfsx_-gyy_glpezyz5_-p90 "index" 76
+(name "index"
+)
+(uid "z8kfsx_-gyy_glpezyz5_-p90"))
+($7 78 < z8kfsx_-i16_glwhwz86_-p73 "guid" 77
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:05:06_00010"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p73"))
+($11 79 < z8kfsx_-gyy_glpezyz5_-p8z "result" 76
+(name "result"
+)
+(kind "return")
+(uid "z8kfsx_-gyy_glpezyz5_-p8z"))
+($7 80 < z8kfsx_-i16_glwhwz86_-p72 "guid" 79
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:05:06_00011"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p72"))
+($7 81 < z8kfsx_-gyy_glpezyz5_-p94 "documentation" 76
+(name "documentation"
+)
+(value "Converts array index to equivalent point"
+)
+(uid "z8kfsx_-gyy_glpezyz5_-p94"))
+($7 82 < z8kfsx_-gyy_glpezyz5_-p93 "opType" 76
+(name "opType"
+)
+(value "otherQuery"
+)
+(uid "z8kfsx_-gyy_glpezyz5_-p93"))
+($7 83 < z8kfsx_-gyy_glpezyz5_-p92 "code:java" 76
+(name "code:java"
+)
+(value "result = null; /* NBNB TBD */"
+)
+(uid "z8kfsx_-gyy_glpezyz5_-p92"))
+($7 84 < z8kfsx_-gyy_glpezyz5_-p91 "code:python" 76
+(name "code:python"
+)
+(value "import operator"
+"shape = self.shape"
+"if index >= reduce(operator.mul, shape):"
+"  raise ApiError(\"value %s of index to large for matrix of size %s\" % (index, shape))"
+"if index < 0:"
+"  raise ApiError(\"Negative value %s of index not allowed\" % index)"
+"result = len(shape) * [None]"
+"for ii in range(len(shape)-1,-1,-1):"
+"  index,result[ii] = divmod(index,shape[ii])"
+"result = tuple(result)"
+)
+(uid "z8kfsx_-gyy_glpezyz5_-p91"))
+($7 85 < z8kfsx_-i16_glwhwz86_-p71 "guid" 76
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:05:06_00009"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p71"))
+($10 86 < z8kfsx_-i16_glpcei58_-p8k "sizeFirstDim#Int" 32
+(name "sizeFirstDim"
+)
+(uid "z8kfsx_-i16_glpcei58_-p8k"))
+($11 87 < z8kfsx_-gyy_gpfd8yc6_-p98 "value" 86
+(name "value"
+)
+(uid "z8kfsx_-gyy_gpfd8yc6_-p98"))
+($7 88 < z8kfsx_-gyy_gpfd8yc6_-p97 "guid" 87
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-06-27-14:29:37_00001"
+)
+(uid "z8kfsx_-gyy_gpfd8yc6_-p97"))
+($7 89 < z8kfsx_-i16_glun1umz_-p95 "documentation" 86
+(name "documentation"
+)
+(value "Change size in first (slowest) dimension, truncating or padding with self.defaultValue as necessary."
+)
+(uid "z8kfsx_-i16_glun1umz_-p95"))
+($7 90 < z8kfsx_-i16_glun1umz_-p94 "opType" 86
+(name "opType"
+)
+(value "otherModify"
+)
+(uid "z8kfsx_-i16_glun1umz_-p94"))
+($7 91 < z8kfsx_-i16_glun1umz_-p93 "code:java" 86
+(name "code:java"
+)
+(value "/* NBNB TBD */"
+)
+(uid "z8kfsx_-i16_glun1umz_-p93"))
+($7 92 < z8kfsx_-i16_glun1umz_-p92 "code:python" 86
+(name "code:python"
+)
+(value "if value < 0:"
+"  raise ApiError(\"Dimension size must be non-negative: %s\" % value)"
+""
+"shapeList = self.__dict__['shape'] # must bypass API"
+"lendiff = value - shapeList[0]"
+"if lendiff:"
+"  data = self.__dict__['data'] # must bypass API"
+"  if data:"
+"    # if data array is empty we have an all-default matrix"
+"    if lendiff > 0:"
+"      data.extend([self.defaultValue]*self.pointToIndex((lendiff,)))"
+"    else:"
+"      # lendiff < 0"
+"      del data[self.pointToIndex((lendiff,)):]"
+"  shapeList[0] = value"
+)
+(uid "z8kfsx_-i16_glun1umz_-p92"))
+($7 93 < z8kfsx_-i16_glwhwz86_-p70 "guid" 86
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:05:06_00012"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p70"))
+($10 94 < z8kfsx_-gyy_glwckjdr_-p98 "getPointValue#Int*##Float" 32
+(name "getPointValue"
+)
+(uid "z8kfsx_-gyy_glwckjdr_-p98")
+(isQuery true))
+($11 95 < z8kfsx_-gyy_glwckjdr_-p96 "point" 94
+(name "point"
+)
+(uid "z8kfsx_-gyy_glwckjdr_-p96"))
+($7 96 < z8kfsx_-i16_glwhwz86_-p6z "guid" 95
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:05:06_00014"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p6z"))
+($11 97 < z8kfsx_-gyy_glwckjdr_-p95 "result" 94
+(name "result"
+)
+(kind "return")
+(uid "z8kfsx_-gyy_glwckjdr_-p95"))
+($7 98 < z8kfsx_-i16_glwhwz86_-p6y "guid" 97
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:05:06_00015"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p6y"))
+($7 99 < z8kfsx_-gyy_glwckjdr_-p97 "opType" 94
+(name "opType"
+)
+(value "otherQuery"
+)
+(uid "z8kfsx_-gyy_glwckjdr_-p97"))
+($7 100 < z8kfsx_-gyy_glwckjdr_-p94 "documentation" 94
+(name "documentation"
+)
+(value "get value of matrix at position 'point'. Point is converted as for self.pointToIndex."
+)
+(uid "z8kfsx_-gyy_glwckjdr_-p94"))
+($7 101 < z8kfsx_-gyy_glwckjdr_-p93 "code:python" 94
+(name "code:python"
+)
+(value "data = self.__dict__['data']"
+"if data:"
+"  result = data[self.pointToIndex(point)]"
+"else:"
+"  result = self.defaultValue"
+)
+(uid "z8kfsx_-gyy_glwckjdr_-p93"))
+($7 102 < z8kfsx_-i16_glwhwz86_-p6x "guid" 94
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:05:06_00013"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p6x"))
+($7 103 < z8kfsx_-gyy_gm7gaeh2_-p8r "code:java" 94
+(name "code:java"
+)
+(value "/* NBNB TBD */"
+)
+(uid "z8kfsx_-gyy_gm7gaeh2_-p8r"))
+($10 104 < z8kfsx_-gyy_glwckjdr_-p92 "setPointValue#Int*#Float" 32
+(name "setPointValue"
+)
+(uid "z8kfsx_-gyy_glwckjdr_-p92"))
+($11 105 < z8kfsx_-gyy_glwckjdr_-p90 "point" 104
+(name "point"
+)
+(uid "z8kfsx_-gyy_glwckjdr_-p90"))
+($7 106 < z8kfsx_-i16_glwhwz86_-p6w "guid" 105
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:05:06_00017"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p6w"))
+($11 107 < z8kfsx_-gyy_glwckjdr_-p8z "value" 104
+(name "value"
+)
+(uid "z8kfsx_-gyy_glwckjdr_-p8z"))
+($7 108 < z8kfsx_-i16_glwhwz86_-p6v "guid" 107
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:05:06_00018"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p6v"))
+($7 109 < z8kfsx_-gyy_glwckjdr_-p91 "opType" 104
+(name "opType"
+)
+(value "otherModify"
+)
+(uid "z8kfsx_-gyy_glwckjdr_-p91"))
+($7 110 < z8kfsx_-gyy_glwckjdr_-p8y "code:python" 104
+(name "code:python"
+)
+(value "if not isinstance(value, (float, int)):"
+"  raise ApiError(\"parameter value %s is not a float\" % value)"
+"data = self.__dict__['data']"
+"if data:"
+"  data[self.pointToIndex(point)] = value"
+"elif value != self.defaultValue:"
+"    data.extend(self.size*[self.defaultValue])"
+"    data[self.pointToIndex(point)] = value"
+)
+(uid "z8kfsx_-gyy_glwckjdr_-p8y"))
+($7 111 < z8kfsx_-gyy_glwckjdr_-p8x "documentation" 104
+(name "documentation"
+)
+(value "set value of matrix at position 'point'. Point is converted as for self.pointToIndex."
+)
+(uid "z8kfsx_-gyy_glwckjdr_-p8x"))
+($7 112 < z8kfsx_-i16_glwhwz86_-p6u "guid" 104
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:05:06_00016"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p6u"))
+($7 113 < z8kfsx_-gyy_gm7gaeh2_-p8q "code:java" 104
+(name "code:java"
+)
+(value "/* NBNB TBD */"
+)
+(uid "z8kfsx_-gyy_gm7gaeh2_-p8q"))
+($10 114 < z8kfsx_-gyy_glwckjdr_-p8w "getSubmatrixData#Int*#Int*##Float*" 32
+(name "getSubmatrixData"
+)
+(uid "z8kfsx_-gyy_glwckjdr_-p8w")
+(isQuery true))
+($11 115 < z8kfsx_-gyy_glwckjdr_-p8s "point" 114
+(name "point"
+)
+(uid "z8kfsx_-gyy_glwckjdr_-p8s"))
+($7 116 < z8kfsx_-i16_glwhwz86_-p6t "guid" 115
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:05:06_00020"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p6t"))
+($11 117 < z8kfsx_-gyy_glwckjdr_-p8r "shape" 114
+(name "shape"
+)
+(uid "z8kfsx_-gyy_glwckjdr_-p8r"))
+($7 118 < z8kfsx_-i16_glwhwz86_-p6s "guid" 117
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:05:06_00021"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p6s"))
+($11 119 < z8kfsx_-gyy_glwckjdr_-p8q "result" 114
+(name "result"
+)
+(kind "return")
+(uid "z8kfsx_-gyy_glwckjdr_-p8q"))
+($7 120 < z8kfsx_-i16_glwhwz86_-p6r "guid" 119
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:05:06_00022"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p6r"))
+($7 121 < z8kfsx_-gyy_glwckjdr_-p8v "documentation" 114
+(name "documentation"
+)
+(value "get data (packed linear array)  for submatrix of shape 'shape' with 'point' as the corner with the smallest index values. point is convered as for self.pointToIndex. 'shape values that are omitted or set to zero are reset to the (rest of the) dimension size."
+)
+(uid "z8kfsx_-gyy_glwckjdr_-p8v"))
+($7 122 < z8kfsx_-gyy_glwckjdr_-p8u "opType" 114
+(name "opType"
+)
+(value "otherQuery"
+)
+(uid "z8kfsx_-gyy_glwckjdr_-p8u"))
+($7 123 < z8kfsx_-gyy_glwckjdr_-p8t "code:python" 114
+(name "code:python"
+)
+(value "# get starting offset and normalise point -"
+"# padding with zero and converting to positive indices"
+"offset = self.pointToIndex(point)"
+"point = self.indexToPoint(offset)"
+""
+"# set up internal params"
+"ndim = self.ndim"
+"sizes = self.shape"
+""
+"# set widths and check"
+"shape = list(shape)"
+"if len(shape) > ndim:"
+"  raise ApiError(\"Number of dimensions %s exceeds ndim %s\" % (shape,ndim))"
+"for ii,width in enumerate(shape):"
+"  if not width:"
+"    shape[ii] = sizes[ii] - point[ii]"
+"  elif width < 0 or width > sizes[ii] - point[ii]:"
+"    raise ApiError(\"Width %s in dim %s out of permitted range\" % (width,ii))"
+"# Extend shape, padding to dimension sizes."
+"shape.extend(sizes[ii] - point[ii] for ii in range(len(shape),ndim))"
+""
+"# set up strides list and lowest dim with continuous data."
+"strides = ndim*[0]"
+"factor = 1"
+"dodim = 0"
+"for ii in range(ndim-1,-1,-1):"
+"  strides[ii] = factor"
+"  factor *= shape[ii]"
+"  if not dodim and shape[ii] != sizes[ii]:"
+"    dodim = ii"
+"size = factor"
+""
+"# length of contiguous stretch"
+"stretch = strides[dodim] * shape[dodim]"
+""
+"# get hold of data (must bypass API for speed)"
+"data = self.__dict__['data'] "
+""
+"if not data:"
+"  # default-only matrix"
+"  result = size*(self.defaultValue,)"
+""
+"else:"
+""
+"  if dodim <= 0:"
+"    # take single stretch from 1D array"
+"    result = data[offset:offset+stretch]"
+"  "
+"  else:"
+"    # do work for ndim array"
+"  "
+"    # set up result list (optimisation - could be done with extend instead)"
+"    import operator"
+"    subsize = reduce(operator.mul, shape)"
+"    result = subsize*[None]"
+"  "
+"    # set up multidimensional loop"
+"    vector = (dodim)*[0]"
+"    dim = dim0 = dodim - 1"
+"    target = 0"
+"    while dim >= 0:"
+"    "
+"      # do actual work"
+"      next = target+stretch"
+"      result[target:next] = data[offset:offset+stretch]"
+"      target = next"
+"    "
+"      # update reading offset"
+"      vector[dim] += 1"
+"      if vector[dim] < shape[dim]:"
+"        offset += strides[dim]"
+"        if dim < dim0:"
+"          dim += 1"
+"      else:"
+"        vector[dim] = 0"
+"        dim -=1"
+"  #"
+"  result = tuple(result)"
+)
+(uid "z8kfsx_-gyy_glwckjdr_-p8t"))
+($7 124 < z8kfsx_-i16_glwhwz86_-p6q "guid" 114
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:05:06_00019"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p6q"))
+($7 125 < z8kfsx_-gyy_gm7gaeh2_-p8t "code:java" 114
+(name "code:java"
+)
+(value "/* NBNB TBD */"
+)
+(uid "z8kfsx_-gyy_gm7gaeh2_-p8t"))
+($10 126 < z8kfsx_-gyy_glwckjdr_-p8p "setSubmatrixData#Int*#Int*#Float*" 32
+(name "setSubmatrixData"
+)
+(uid "z8kfsx_-gyy_glwckjdr_-p8p"))
+($11 127 < z8kfsx_-gyy_glwckjdr_-p8l "point" 126
+(name "point"
+)
+(uid "z8kfsx_-gyy_glwckjdr_-p8l"))
+($7 128 < z8kfsx_-i16_glwhwz86_-p6p "guid" 127
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:05:06_00024"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p6p"))
+($11 129 < z8kfsx_-gyy_glwckjdr_-p8k "shape" 126
+(name "shape"
+)
+(uid "z8kfsx_-gyy_glwckjdr_-p8k"))
+($7 130 < z8kfsx_-i16_glwhwz86_-p6o "guid" 129
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:05:06_00025"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p6o"))
+($11 131 < z8kfsx_-gyy_glwckjdr_-p8j "values" 126
+(name "values"
+)
+(uid "z8kfsx_-gyy_glwckjdr_-p8j"))
+($7 132 < z8kfsx_-i16_glwhwz86_-p7c "guid" 131
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:05:06_00026"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p7c"))
+($7 133 < z8kfsx_-gyy_glwckjdr_-p8o "documentation" 126
+(name "documentation"
+)
+(value "set data for submatrix of shape 'shape' with 'point' as the corner with the smallest index values to 'values' (packed linear array). Point is converted as for self.pointToIndex.  shape values that are omitted or set to zero are reset to the (rest of the) dimension size."
+)
+(uid "z8kfsx_-gyy_glwckjdr_-p8o"))
+($7 134 < z8kfsx_-gyy_glwckjdr_-p8n "opType" 126
+(name "opType"
+)
+(value "otherModify"
+)
+(uid "z8kfsx_-gyy_glwckjdr_-p8n"))
+($7 135 < z8kfsx_-gyy_glwckjdr_-p8m "code:python" 126
+(name "code:python"
+)
+(value "# get starting offset and normalise point -"
+"# padding with zero and converting to positive indices"
+"offset = self.pointToIndex(point)"
+"point = self.indexToPoint(offset)"
+""
+"# set up internal params"
+"ndim = self.ndim"
+"sizes = self.shape"
+""
+"# set widths and check"
+"shape = list(shape)"
+"if len(shape) > ndim:"
+"  raise ApiError(\"Number of submatrix dimensions %s exceeds ndim %s\" % (shape,ndim))"
+"for ii,width in enumerate(shape):"
+"  if not width:"
+"    shape[ii] = sizes[ii] - point[ii]"
+"  elif width < 0 or width > sizes[ii] - point[ii]:"
+"    raise ApiError(\"Size %s in dim %s out of permitted range\" % (width,ii))"
+"# Extend shape, padding to dimension sizes."
+"shape.extend(sizes[ii] - point[ii] for ii in range(len(shape),ndim))"
+""
+"# set up strides list and lowest dim with continuous data."
+"strides = ndim*[0]"
+"factor = 1"
+"dodim = 0"
+"for ii in range(ndim-1,-1,-1):"
+"  strides[ii] = factor"
+"  factor *= sizes[ii]"
+"  if not dodim and shape[ii] != sizes[ii]:"
+"    dodim = ii"
+""
+"# length of contiguous stretch"
+"stretch = strides[dodim] * shape[dodim]"
+""
+"# get hold of data (must bypass API for speed)"
+"data = self.__dict__['data'] "
+"if not data:"
+"  data.extend(self.size*[self.defaultValue])"
+""
+"# check value types"
+"if [x for x in values if not isinstance(x,(float,int))]:"
+"  raise ApiError(\"Non-numeric values passed to setSubmatrixData: %s\" %  list(set(x for x in values if not isinstance(x,(float,int)))))"
+""
+"if dodim <= 0:"
+"  # set single stretch from 1D array"
+"  data[offset:offset+stretch] =values"
+"  "
+"else:"
+"  # do work for ndim array"
+"  "
+"  # check length and type of values"
+"  import operator"
+"  subsize = reduce(operator.mul, shape)"
+"  if len(values) != subsize:"
+"    raise ApiError(\"Number of values %s do not fit submatrix shape %s\" % (subsize, shape))"
+"  "
+"  # set up multidimensional loop"
+"  vector = (dodim)*[0]"
+"  dim = dim0 = dodim - 1"
+"  target = 0"
+"  while dim >= 0:"
+"    "
+"    # do actual work"
+"    next = target+stretch"
+"    data[offset:offset+stretch] = values[target:next] "
+"    target = next"
+"    "
+"    # update reading offset"
+"    vector[dim] += 1"
+"    if vector[dim] < shape[dim]:"
+"      offset += strides[dim]"
+"      if dim < dim0:"
+"        dim += 1"
+"    else:"
+"      vector[dim] = 0"
+"      dim -=1"
+)
+(uid "z8kfsx_-gyy_glwckjdr_-p8m"))
+($7 136 < z8kfsx_-i16_glwhwz86_-p6n "guid" 126
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-18:05:06_00023"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p6n"))
+($7 137 < z8kfsx_-gyy_gm7gaeh2_-p8s "code:java" 126
+(name "code:java"
+)
+(value "/* NBNB TBD */"
+)
+(uid "z8kfsx_-gyy_gm7gaeh2_-p8s"))
+($10 138 < z8kfsx_cv3_gm60tebe_-p95 "resetData" 32
+(name "resetData"
+)
+(uid "z8kfsx_cv3_gm60tebe_-p95"))
+($7 139 < z8kfsx_cv3_gm60tebe_-p94 "documentation" 138
+(name "documentation"
+)
+(value "Reset data to default values and free memory used."
+)
+(uid "z8kfsx_cv3_gm60tebe_-p94"))
+($7 140 < z8kfsx_cv3_gm60tebe_-p93 "opType" 138
+(name "opType"
+)
+(value "otherModify"
+)
+(uid "z8kfsx_cv3_gm60tebe_-p93"))
+($7 141 < z8kfsx_cv3_gm60tebe_-p92 "code:python" 138
+(name "code:python"
+)
+(value "del self.__dict__['data'][:]"
+)
+(uid "z8kfsx_cv3_gm60tebe_-p92"))
+($7 142 < z8kfsx_cv3_gm60tebe_-p91 "code:java" 138
+(name "code:java"
+)
+(value "/* NBNB TBD */"
+)
+(uid "z8kfsx_cv3_gm60tebe_-p91"))
+($7 143 < z8kfsx_cv3_gm60tebe_-p8t "guid" 138
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-04-06-10:33:07_00001"
+)
+(uid "z8kfsx_cv3_gm60tebe_-p8t"))
+($10 144 < z8kfsx_-gyy_gm7gaeh2_-p8y "removeSlice#Int" 32
+(name "removeSlice"
+)
+(uid "z8kfsx_-gyy_gm7gaeh2_-p8y"))
+($11 145 < z8kfsx_-lxi_gpv44yn0_-p98 "index" 144
+(name "index"
+)
+(uid "z8kfsx_-lxi_gpv44yn0_-p98"))
+($7 146 < z8kfsx_-lxi_gpv44yn0_-p97 "guid" 145
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-07-08-13:22:19_00001"
+)
+(uid "z8kfsx_-lxi_gpv44yn0_-p97"))
+($7 147 < z8kfsx_-gyy_gm7gaeh2_-p8x "documentation" 144
+(name "documentation"
+)
+(value "Remove slice of matrix in slowest verying dimension at offset index."
+)
+(uid "z8kfsx_-gyy_gm7gaeh2_-p8x"))
+($7 148 < z8kfsx_-gyy_gm7gaeh2_-p8w "opType" 144
+(name "opType"
+)
+(value "otherModify"
+)
+(uid "z8kfsx_-gyy_gm7gaeh2_-p8w"))
+($7 149 < z8kfsx_-gyy_gm7gaeh2_-p8v "code:java" 144
+(name "code:java"
+)
+(value "/* NBNB TBD */"
+)
+(uid "z8kfsx_-gyy_gm7gaeh2_-p8v"))
+($7 150 < z8kfsx_-gyy_gm7gaeh2_-p8u "code:python" 144
+(name "code:python"
+)
+(value "data = self.__dict__['data']"
+"if data:"
+"  start = self.pointToIndex((index,))"
+"  end = self.pointToIndex((index+1,))"
+"  del data[start:end]"
+"self.__dict__['shape'][0] -= 1"
+)
+(uid "z8kfsx_-gyy_gm7gaeh2_-p8u"))
+($7 151 < z8kfsx_-gyy_gm7gaeh2_-p8m "guid" 144
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-04-07-12:26:00_00001"
+)
+(uid "z8kfsx_-gyy_gm7gaeh2_-p8m"))
+($7 152 < z8kfsx_jka_glntyc8x_-p95 "documentation" 32
+(name "documentation"
+)
+(value "Numeric matrix, two or more dimensions."
+"Data are stored (and passed in and out) as a packed  linear array."
+"Dimensions are given with the slowest moving index first. The first (slowest moving) dimension size can be modified, the others are frozen. Data and the first dimension size are adapted when the other is modified. Data consisting entirely of the default value are not stored, saving space. "
+)
+(uid "z8kfsx_jka_glntyc8x_-p95"))
+($7 153 < z8kfsx_-i16_glwhwz86_-p96 "guid" 32
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2011-03-30-17:55:17_00001"
+)
+(uid "z8kfsx_-i16_glwhwz86_-p96"))
+($7 154 < -yk94ms_85r_eqyymv3f_-o6u "shortName" 1
+(name "shortName"
+)
+(value "TEMP"
+)
+(uid "-yk94ms_85r_eqyymv3f_-o6u"))
+($7 155 < -yk94ms_85r_eqyymv3f_-o6t "documentation" 1
+(name "documentation"
+)
+(value "Templates, i.e. abstract classes for general use in other parts of the data model."
+)
+(uid "-yk94ms_85r_eqyymv3f_-o6t"))
+($7 156 < -yk94ms_85r_eqyymv3f_-o6s "guid" 1
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2006-08-16-18:19:50_00004"
+)
+(uid "-yk94ms_85r_eqyymv3f_-o6s"))
+($12 157)
+($13 160)
+($12 162)
+($12 163)
+($12 164)
+($13 166)
+($12 169)
+($12 170)
+($13 172)
+($13 174
+(body "*"
+))
+($13 175)
+($13 176
+(body "*"
+))
+($13 177)
+($13 178
+(body "*"
+))
+($13 179)
+($13 180
+(body "*"
+))
+($13 181
+(body "*"
+))
+($13 182
+(body "*"
+))
+($13 183
+(body "*"
+))
+($13 184
+(body "*"
+))
+($13 185
+(body "*"
+))
+($13 186
+(body "*"
+))
+($13 187)
+($5 158 @ -yk94ms_-e3s_e41656c6_-gpe 4 "Logical" $1 "memops" $1 "Implementation" $1 "DataObject" $5)
+($5 159 @ -yk94ms_-e3s_e41656c6_-h10 4 "Logical" $1 "memops" $1 "Implementation" $1 "Float" $5)
+($15 161 @ -yk94ms_-e3s_e41656c6_-fvw 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "memops.Implementation" $15)
+($5 165 @ -yk94ms_-e3s_e41656c6_-h0a 4 "Logical" $1 "memops" $1 "Implementation" $1 "String" $5)
+($5 167 @ -yk94ms_-e3s_e41656c6_-h0t 4 "Logical" $1 "memops" $1 "Implementation" $1 "Int" $5)
+($5 168 @ -yk94ms_-e3s_e41656c6_-h1k 4 "Logical" $1 "memops" $1 "Implementation" $1 "Boolean" $5)
+($5 171 @ -yk94ms_-e3s_e41656c6_-gn4 4 "Logical" $1 "memops" $1 "Implementation" $1 "NonNegativeInt" $5)
+($5 173 @ -yk94ms_-e3s_e41656c6_-gnr 4 "Logical" $1 "memops" $1 "Implementation" $1 "PositiveInt" $5)
+(subtypeAssn 13 9)
+(supertypeAssn 13 158)
+(generalizationAssn 9 13)
+(typeRefAssn 10 159)
+(typeExpression 10 160)
+(projectionAssn 3 9 157)
+(styleAssn 4 161)
+(projectionAssn 4 158 162)
+(to 5 4)
+(from 5 3)
+(projectionAssn 5 13 163)
+(subtypeAssn 29 16)
+(supertypeAssn 29 158)
+(generalizationAssn 16 29)
+(typeRefAssn 17 165)
+(typeExpression 17 166)
+(typeRefAssn 20 167)
+(typeExpression 20 166)
+(typeRefAssn 23 159)
+(typeExpression 23 166)
+(typeRefAssn 26 168)
+(typeExpression 26 166)
+(projectionAssn 6 16 164)
+(to 7 4)
+(from 7 6)
+(projectionAssn 7 29 169)
+(typeRefAssn 33 171)
+(typeExpression 33 172)
+(typeRefAssn 37 159)
+(typeExpression 37 172)
+(typeRefAssn 43 159)
+(typeExpression 43 172)
+(typeRefAssn 46 171)
+(typeExpression 46 172)
+(typeRefAssn 50 173)
+(typeExpression 50 172)
+(typeAssn 67 167)
+(typeExpression 67 174)
+(typeAssn 69 167)
+(typeExpression 69 175)
+(typeAssn 77 167)
+(typeExpression 77 175)
+(typeAssn 79 167)
+(typeExpression 79 176)
+(typeAssn 87 167)
+(typeExpression 87 177)
+(typeAssn 95 167)
+(typeExpression 95 178)
+(typeAssn 97 159)
+(typeExpression 97 179)
+(typeAssn 105 167)
+(typeExpression 105 180)
+(typeAssn 107 159)
+(typeExpression 107 179)
+(typeAssn 115 167)
+(typeExpression 115 181)
+(typeAssn 117 167)
+(typeExpression 117 182)
+(typeAssn 119 159)
+(typeExpression 119 183)
+(typeAssn 127 167)
+(typeExpression 127 184)
+(typeAssn 129 167)
+(typeExpression 129 185)
+(typeAssn 131 159)
+(typeExpression 131 186)
+(typeAssn 145 167)
+(typeExpression 145 187)
+(projectionAssn 8 32 170)
