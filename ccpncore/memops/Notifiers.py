@@ -79,7 +79,7 @@ software development. Bioinformatics 21, 1678-1684.
 
 __author__ = 'rhf22'
 
-from ccpn.util import Common as commonUtil
+from ccpnmodel.ccpncore.lib import Util as coreUtil
 
 
 # Operations that change the data contents will execute registered notifies.
@@ -92,10 +92,10 @@ from ccpn.util import Common as commonUtil
 def registerNotify(notify, classname, funcname=''):
   """register notifiers to class clazz (maybe given as API class or as class qualifiedName"""
 
-  metaClasses = commonUtil.getClassFromFullName(classname)._metaclass.getNonAbstractSubtypes()
+  metaClasses = coreUtil.getClassFromFullName(classname)._metaclass.getNonAbstractSubtypes()
 
   for metaClass in metaClasses:
-    clazz =  commonUtil.getClassFromFullName(metaClass.qualifiedName())
+    clazz =  coreUtil.getClassFromFullName(metaClass.qualifiedName())
     notifies = clazz._notifies
     ll = notifies.get(funcname)
     if ll is None:
@@ -106,10 +106,10 @@ def registerNotify(notify, classname, funcname=''):
 
 def unregisterNotify(notify, classname, funcname=''):
 
-  metaClasses = commonUtil.getClassFromFullName(classname)._metaclass.getNonAbstractSubtypes()
+  metaClasses = coreUtil.getClassFromFullName(classname)._metaclass.getNonAbstractSubtypes()
 
   for metaClass in metaClasses:
-    clazz =  commonUtil.getClassFromFullName(metaClass.qualifiedName())
+    clazz =  coreUtil.getClassFromFullName(metaClass.qualifiedName())
     try:
       clazz._notifies[funcname].remove(notify)
     except ValueError:

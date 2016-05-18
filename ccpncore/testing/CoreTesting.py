@@ -42,6 +42,7 @@ class CoreTesting(unittest.TestCase):
 
   @contextlib.contextmanager
   def initialSetup(self):
+    print ('\n\n@~@~ Core test start', self.__class__.__name__, self.projectPath)
     if self.projectPath is None:
       project = self.project = apiIo.newProject('default', overwriteExisting=True)
       self.nmrProject = project.newNmrProject(name='default')
