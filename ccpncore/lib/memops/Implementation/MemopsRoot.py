@@ -62,8 +62,8 @@ def fetchDataUrl(self:'MemopsRoot', fullPath:str) -> 'DataUrl':
 def fetchNmrProject(self:'MemopsRoot', name:str=None) -> 'NmrProject':
   """Get existing NmrProject from MemopsRoot, or create one if there are no NmrProjects.
 
-  If name i s passeed in, the function will return a matching NmrProject or throw an error
-  If no name is passed, function takes the first nMrProject,
+  If name is passeed in, the function will return a matching NmrProject or throw an error
+  If no name is passed, function takes the first nNmrProject,
   or creates an NmrProject with same name as the project
   """
 
@@ -79,3 +79,15 @@ def fetchNmrProject(self:'MemopsRoot', name:str=None) -> 'NmrProject':
     nmrProject = self.newNmrProject(name=name or self.name)
 
   return nmrProject
+
+
+
+def upgradeV2toV3(self:'NmrProject'):
+  """Load entire project, set to isModified, and rename to name ending in '.ccpn'"""
+
+
+  pass
+
+  # Load all packages and set to isModified
+
+  # change project name and path

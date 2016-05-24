@@ -26,6 +26,7 @@ __version__ = "$Revision$"
 
 import os, os.path
 
+import importlib
 from ccpnmodel.ccpncore.memops.metamodel import Constants as metaConstants
 from ccpn.util import Path
 from ccpnmodel.ccpncore.memops.ApiError import ApiError
@@ -212,3 +213,34 @@ def getTopObjIdFromFileName(fileName, mustBeMultipart=None):
   
   
   return ll[-1][:-lenFileSuffix]
+
+
+def _addModuleFunctionsToApiClass(relModuleName, apiClass, rootModuleName='ccpnmodel.ccpncore.lib'):
+
+  # We import from here, to be sure we get the API-contaning directory no matter what
+  from ccpnmodel.ccpncore.memops.Path import getPythonDirectory
+
+  moduleName = '%s.%s' % (rootModuleName, relModuleName)
+  try:
+    module = importlib.import_module(moduleName)
+  except ImportError:
+    ll = moduleName.split('.')
+    ll[-1] += '.py'
+    if os.path.exists(os.path.join(getPythonDirectory(), *ll)):
+      # The file exists, so there must be an error we should know about
+      raise
+    else:
+      # This happens when there is just no library code for a class - quite common
+      pass
+    return
+
+  for key in dir(module):
+
+    if key.startswith('_'):
+      continue
+
+    value = getattr(module, key)
+    # second condition below excludes functions defined in imported modules (like os, etc.)
+    # third condition checks whether this is a function (rather than a class, etc.)
+    if hasattr(value, '__module__') and value.__module__ == moduleName and callable(value):
+      setattr(apiClass, key, value)

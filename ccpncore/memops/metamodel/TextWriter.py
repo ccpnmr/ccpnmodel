@@ -28,7 +28,7 @@ import os
 from ccpnmodel.ccpncore.memops.metamodel import MetaModel
 MemopsError = MetaModel.MemopsError
 from ccpnmodel.ccpncore.memops.metamodel import Constants as metaConstants
-from ccpnmodel.ccpncore.lib import Path
+from ccpnmodel.ccpncore.memops import Path
 
 from ccpnmodel.ccpncore.memops.metamodel import TextWriter_py_2_1
 

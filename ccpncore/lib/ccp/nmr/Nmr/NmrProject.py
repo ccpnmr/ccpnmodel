@@ -30,6 +30,7 @@ from ccpnmodel.ccpncore.lib.spectrum import Spectrum as spectrumLib
 from ccpnmodel.ccpncore.lib.spectrum.formats import Azara, Bruker, Felix, NmrPipe, NmrView, Ucsf, Varian, Xeasy
 from ccpnmodel.ccpncore.lib.Io.Formats import AZARA, BRUKER, FELIX, NMRPIPE, NMRVIEW, UCSF, VARIAN, XEASY
 from ccpn.util.Path import checkFilePath
+from ccpnmodel.ccpncore.lib import V2Upgrade
 # from ccpnmodel.ccpncore.lib.Io import Api as apiIo
 
 # from ccpnmodel.ccpncore.api.memops.Implementation import Url
@@ -193,3 +194,97 @@ def createExperiment(self:'NmrProject', name:str, numDim:int, sf:Sequence,
       expDim.newExpDimRef(**params)
 
   return experiment
+
+def initialiseData(self:'NmrProject'):
+  """Add objects that must be present from V3 onwards"""
+  # add V3 mandatory objects (code in Project.__init__ and _fixLoadedProject)
+
+  project = self.root
+
+  # PeakLists and Spectrum
+  for experiment in self.experiments:
+    for dataSource in experiment.dataSources:
+
+      if not dataSource.findFirstPeakList(dataType='Peak'):
+        # Set a peakList for every spectrum
+        dataSource.newPeakList()
+
+      if not dataSource.positiveContourColour or not dataSource.negativeContourColour:
+        # set contour colours for every spectrum
+        (dataSource.positiveContourColour,
+         dataSource.negativeContourColour) = dataSource.getDefaultColours()
+      if not dataSource.sliceColour:
+        dataSource.sliceColour = dataSource.positiveContourColour
+
+  # MolSystem
+  if self.molSystem is None:
+    project.newMolSystem(name=self.name, code=self.name,
+                            nmrProjects = (self,))
+
+  # SampleStore
+  apiSampleStore = self.sampleStore
+  if apiSampleStore is None:
+    apiSampleStore = (project.findFirstSampleStore(name='default') or
+                      project.newSampleStore(name='default'))
+    self.sampleStore = apiSampleStore
+
+  # RefSampleComponentStore
+  apiComponentStore = apiSampleStore.refSampleComponentStore
+  if apiComponentStore is None:
+    apiComponentStore = (project.findFirstRefSampleComponentStore(name='default') or
+                         project.newRefSampleComponentStore(name='default'))
+    apiSampleStore.refSampleComponentStore = apiComponentStore
+
+  # Make Substances that match finalised Molecules
+  for apiMolecule in project.sortedMolecules():
+    if apiMolecule.isFinalised:
+      # Create matchingMolComponent if none exists
+      apiComponentStore.fetchMolComponent(apiMolecule)
+
+  # Fix alpha or semi-broken projects. None of this should be necessary, but hey!
+  # NB written to modify nothing for valid projects
+
+  # Get or (re)make default NmrChain
+  defaultChain = self.findFirstNmrChain(code=Constants.defaultNmrChainCode)
+  if defaultChain is None:
+    # NO default chain - probably an alpha project or upgraded from V2
+    defaultChain = self.findFirstNmrChain(code='@-')
+    if defaultChain is None:
+      defaultChain = self.newNmrChain(code=Constants.defaultNmrChainCode)
+    else:
+      defaultChain.code = '@-'
+
+  # Make sure all non-offset ResonanceGroups have directNmrChain set.
+  for rg in self.sortedResonanceGroups():
+    if rg.mainGroupSerial == rg.serial:
+      rg.mainGroupSerial = None
+    if rg.mainGroupSerial is None and rg.directNmrChain is None:
+      if hasattr(rg, 'chainSerial') and rg.chainSerial is not None:
+        rg.directNmrChain = self.findFirstNmrChain(serial=rg.chainSerial)
+      if rg.directNmrChain is None:
+        rg.directNmrChain = defaultChain
+
+  # Upgrade old-style constraint lists
+  for nmrConstraintStore in project.sortedNmrConstraintStores():
+    for constraintList in nmrConstraintStore.sortedConstraintLists():
+      if constraintList.className != 'GenericConstraintList':
+        newConstraintList = V2Upgrade.upgradeConstraintList(constraintList)
+
+  # End of API object fixing
+
+def initialiseGraphicsData(self:'NmrProject'):
+  """Add API objects that must exist for V3 GUI operation"""
+
+  project = self.root
+
+  # Make sure we have a WindowStore attached to the NmrProject - that guarantees a mainWindow
+  # apiNmrProject = self.fetchNmrProject()
+  if self.windowStore is None:
+    self.windowStore = project.newWindowStore(nmrProject=self)
+
+  # Ensure there is a (single) task
+  if not project.findAllGuiTasks(nmrProject=self):
+    guiTask = project.newGuiTask(name='View', nmrProject=self,
+                                 windows=(self.windowStore.mainWindow,))
+
+  # add V3 mandatory objects like MainWindow and Task (code in initProject)

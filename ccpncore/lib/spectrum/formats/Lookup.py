@@ -2,7 +2,7 @@ import csv
 from collections import OrderedDict
 
 import pandas as pd
-from PyQt4 import QtCore, QtGui
+# from PyQt4 import QtCore, QtGui
 
 
 # if project._appBase.applicationName == 'Screen':

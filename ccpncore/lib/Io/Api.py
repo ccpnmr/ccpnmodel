@@ -4,6 +4,7 @@
 #=========================================================================================
 # Licence, Reference and Credits
 #=========================================================================================
+
 __copyright__ = "Copyright (C) CCPN project (www.ccpn.ac.uk) 2014 - $Date$"
 __credits__ = "Wayne Boucher, Rasmus H Fogh, Simon P Skinner, Geerten W Vuister"
 __license__ = ("CCPN license. See www.ccpn.ac.uk/license"
@@ -438,8 +439,7 @@ def loadProject(path:str, projectName:str=None, askFile:"function"=None,
           # Look for an obvious place the data may have moved to
           dataStores =  dataUrl.sortedDataStores()
           fullPaths = [dataStore.fullPath for dataStore in dataStores]
-          baseDir, newPaths = Path.suggestFileLocations(fullPaths,
-                                                        startDir=startDir)
+          baseDir, newPaths = Path.suggestFileLocations(fullPaths,startDir=startDir)
 
           if baseDir is not None:
             # We have a file location that fits all missing files.
@@ -558,7 +558,11 @@ def saveProject(project, newPath=None, newProjectName=None, changeBackup=True,
     newPath = Path.normalisePath(newPath, makeAbsolute=True)
     newPath = ccpnProjectPath(newPath)
   else:
-    newPath = oldPath
+    # NB this ensures that if we are going from V2 to V3 it will save in a new place
+    newPath = ccpnProjectPath(oldPath)
+    if newPath != oldPath:
+      project._logger.info("Project has been upgraded - saved in new location:  %s "
+                           % os.path.basename(newPath))
 
   # if newProjectName isn't specified then use default
   if not newProjectName:
@@ -1277,3 +1281,4 @@ def _compressDataLocations(memopsRoot:Implementation.MemopsRoot):
               dataStore.repointToDataUrl(targetUrl)
               dataStore.path = fullPath[len(directory):]
               break
+

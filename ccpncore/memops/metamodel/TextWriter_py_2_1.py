@@ -27,12 +27,13 @@ __version__ = "$Revision$"
 
 """
 
-import time
 import os
-from ccpnmodel.ccpncore.memops.metamodel import Constants as metaConstants
-from ccpnmodel.ccpncore.lib import Path
+import time
 
+from ccpnmodel.ccpncore.memops import Path
+from ccpnmodel.ccpncore.memops.metamodel import Constants as metaConstants
 from ccpnmodel.ccpncore.memops.metamodel import MetaModel
+
 MemopsError = MetaModel.MemopsError
 
 ######################################################################

@@ -25,7 +25,7 @@ __version__ = "$Revision$"
 import os
 import json
 from collections import OrderedDict
-from ccpnmodel.ccpncore.lib import Path
+from ccpn.util import Path
 from ccpnmodel.ccpncore.memops.metamodel import Constants as metaConstants
 
 apiTopModule = 'ccpnmodel.ccpncore.api'

@@ -88,7 +88,7 @@ software development. Bioinformatics 21, 1678-1684.
 import importlib
 import time
 
-from ccpnmodel.ccpncore.lib import Path
+from ccpn.util import Path
 from ccpn.util.recursive_import import importAllPyfiles
 from ccpnmodel.ccpncore.memops import Version
 from ccpnmodel.ccpncore.memops.scripts import makePython

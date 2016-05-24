@@ -47,7 +47,7 @@ from ccpnmodel.ccpncore.memops.metamodel import Util as metaUtil
 
 #from ccpn.util import Path
 
-from ccpnmodel.ccpncore.lib import Path as modelPath
+from ccpnmodel.ccpncore.memops import Path
 
 baseDataTypeModule = metaConstants.baseDataTypeModule
 infinity = metaConstants.infinity
@@ -201,9 +201,9 @@ class XmlModelRead(TextWriter_py_2_1.TextWriter_py_2_1):
     
     # special parameters: optional with default values
     if self.rootFileName is None or self.rootDirName is None:
-      self.fileName = os.path.join(modelPath.getModelDirectory(self.versionTag),
-                                  modelBaseDir,
-                                  metaConstants.rootPackageDirName + '.' + self.fileSuffix)
+      self.fileName = os.path.join(Path.getModelDirectory(self.versionTag),
+                                   modelBaseDir,
+                                   metaConstants.rootPackageDirName + '.' + self.fileSuffix)
     else:
       self.fileName = os.path.join(self.rootDirName, self.rootFileName)
 
@@ -631,7 +631,7 @@ class XmlModelGen(TextWriter_py_2_1.TextWriter_py_2_1,
       self.rootFileName = metaConstants.rootPackageDirName
 
     if self.rootDirName is None:
-      self.rootDirName = modelPath.getModelDirectory(self.versionTag)
+      self.rootDirName = Path.getModelDirectory(self.versionTag)
 
     
     if self.skipImplicit is None:
