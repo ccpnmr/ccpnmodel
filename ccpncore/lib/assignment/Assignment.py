@@ -58,127 +58,6 @@ def _doNamesMatchBound(lightName:str, heavyName:str) -> bool:
   else:
     return False
 
-# def _boundNamesfromType(chemCompVar, atomName):
-#   """get names of atoms bound to atom names atomName within chemComp"""
-# NBNB TBD What is this for?
-
-
-def _areAtomsBound(atom1, atom2):
-  """Dertemine whether two atoms are bonded together
-  .. describe:: Input
-
-  MolSystem.Atom, MolSystem.Atom
-
-  .. describe:: Output
-
-  Boolean
-  """
-
-  if not hasattr(atom1, 'isAtomBound'):
-    atom1.isAtomBound = {}
-  elif atom2 in atom1.isAtomBound.keys():
-    return atom1.isAtomBound[atom2]
-
-  if not hasattr(atom2, 'isAtomBound'):
-    atom2.isAtomBound = {}
-  elif atom1 in atom2.isAtomBound.keys():
-    return atom2.isAtomBound[atom1]
-
-  isBound = False
-
-  if atom1 is not atom2:
-    residue1 = atom1.residue
-    residue2 = atom2.residue
-
-    if residue2.chain is residue1.chain:
-      if residue2 is not residue1:
-
-        linkEnd1 = residue1.chemCompVar.findFirstLinkEnd(boundChemAtom=atom1.chemAtom)
-        if not linkEnd1:
-          isBound = False
-
-        else:
-          linkEnd2 = residue2.chemCompVar.findFirstLinkEnd(boundChemAtom=atom2.chemAtom)
-          if not linkEnd2:
-            isBound = False
-
-          else:
-            molResLinkEnd1 = residue1.molResidue.findFirstMolResLinkEnd(linkEnd=linkEnd1)
-            if not molResLinkEnd1:
-              isBound = False
-
-            else:
-              molResLinkEnd2 = residue2.molResidue.findFirstMolResLinkEnd(linkEnd=linkEnd2)
-              if not molResLinkEnd2:
-                isBound = False
-
-              elif molResLinkEnd2 in molResLinkEnd1.molResLink.molResLinkEnds:
-                isBound = True
-
-              else:
-                isBound = False
-
-      else:
-        for chemBond in atom1.chemAtom.chemBonds:
-          if atom2.chemAtom in chemBond.chemAtoms:
-            isBound = True
-            break
-
-  atom1.isAtomBound[atom2] = isBound
-  atom2.isAtomBound[atom1] = isBound
-
-  return isBound
-
-def getOnebondDataDims(spectrum):
-  """
-  Get pairs of spectrum data dimensions that are connected by onebond transfers
-
-  .. describe:: Input
-
-  Nmr.DataSource
-
-  .. describe:: Output
-
-  List of 2-List of Nmr.DataDims
-  """
-
-  dataDims = []
-  expDimRefs = getOnebondExpDimRefs(spectrum.experiment)
-
-  for expDimRef0, expDimRef1 in expDimRefs:
-    dataDim0 = spectrum.findFirstDataDim(expDim=expDimRef0.expDim)
-    dataDim1 = spectrum.findFirstDataDim(expDim=expDimRef1.expDim)
-
-    if dataDim0 and dataDim1:
-      dataDims.append( [dataDim0,dataDim1] )
-
-  return dataDims
-
-def getOnebondExpDimRefs(experiment):
-  """
-  Get pairs of experiment dimensions that are connected by onebond transfers
-
-  .. describe:: Input
-
-  Nmr.Experiment
-
-  .. describe:: Output
-
-  List of 2-List of Nmr.ExpDimRefs
-  """
-
-  expDimRefs   = []
-  expTransfers = []
-
-  for expTransfer in experiment.sortedExpTransfers():
-    if expTransfer.transferType in ('onebond',):
-      expTransfers.append(expTransfer)
-
-  for expTransfer in expTransfers:
-    expDimRefs.append(expTransfer.sortedExpDimRefs())
-
-  return expDimRefs
-
 
 def getConnectedAtoms(spectrum):
 
@@ -192,7 +71,7 @@ def getConnectedAtoms(spectrum):
   # drawConnection = self.drawConnection
 
   boundDims = []
-  for dataDim1, dataDim2 in getOnebondDataDims(spectrum):
+  for dataDim1, dataDim2 in spectrum.getOnebondDataDims():
     boundDims.append(set([dataDim1.dim-1, dataDim2.dim-1]))
 
   # includePredicted = self.includePredictedCheck.get()
@@ -236,10 +115,13 @@ def getConnectedAtoms(spectrum):
 
           if set([i,j]) in boundDims:
             for atomA, residueA in dimAtoms[i]:
-              for atomB, residueB in dimAtoms[j]:
-
-                 if _areAtomsBound(atomA, atomB):
-                   atomPairs.append((atomA, residueA, atomB, residueB))
+              for atomB in atomA.boundAtoms:
+                atomPairs.append((atomA, residueA, atomB, atomB.residue))
+              #
+              # for atomB, residueB in dimAtoms[j]:
+              #
+              #    if _areAtomsBound(atomA, atomB):
+              #      atomPairs.append((atomA, residueA, atomB, residueB))
 
           if not atomPairs:
             for atomA, residueA in dimAtoms[i]:

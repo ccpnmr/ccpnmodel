@@ -156,7 +156,6 @@ def save(repositoryPath, topObject, mapping=None,
          comment=None, simplified=True, compact=True, expanded=False): 
   
   fileLocation = ApiPath.findTopObjectPath(repositoryPath, topObject)
-  
   if os.path.exists(fileLocation):
     # File that fits guid already exists - overwrite it
     pass

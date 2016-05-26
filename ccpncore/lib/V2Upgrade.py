@@ -1195,7 +1195,7 @@ def _getBoundResonances(resonance, recalculate=False, contribs=None, recursiveCa
 
 
 def _getBoundAtoms(atom):
-  """Get a list of atoms bound to a given atom. NB ONLYfor use in upgrade
+  """Get a list of atoms bound to a given atom. NB ONLY for use in upgrade
   .. describe:: Input
 
   MolSystem.Atom

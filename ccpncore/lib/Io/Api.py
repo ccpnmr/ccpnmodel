@@ -120,7 +120,8 @@ def newProject(projectName, path:str=None, overwriteExisting:bool=False,
     temporaryDirectory = None
     path = ccpnProjectPath(path)
   else:
-    temporaryDirectory = tempfile.TemporaryDirectory(prefix='CcpnProject_', suffix=CCPN_DIRECTORY_SUFFIX)
+    temporaryDirectory = tempfile.TemporaryDirectory(prefix='CcpnProject_',
+                                                     suffix=CCPN_DIRECTORY_SUFFIX)
     path = temporaryDirectory.name
     
   project = Implementation.MemopsRoot(name=projectName)
@@ -814,7 +815,8 @@ def saveProject(project, newPath=None, newProjectName=None, changeBackup=True,
   if newPath == oldPath:
     logger = _createLogger(project, useFileLogger=useFileLogger)
 
-  if result and (newProjectName != oldProjectName or newPath != oldPath):
+  if result and (newProjectName != oldProjectName or
+                   ccpnProjectPathPrefix(newPath) != ccpnProjectPathPrefix(oldPath)):
     # save in newlocation succeded - remove temporary directories
     deleteTemporaryDirectory(project)
 
