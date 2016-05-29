@@ -68,3 +68,4 @@ class CoreTesting(unittest.TestCase):
 
     self.project = None
     self.nmrProject = None
+    self.undo = None
