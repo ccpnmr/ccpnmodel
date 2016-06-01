@@ -165,11 +165,11 @@ def _cumulativeArray(array):
   return (n, cumul)
   
 
-def getPlaneData(self:'DataSource', position:Sequence=None, xDim=0, yDim=1):
+def getPlaneData(self:'DataSource', position:Sequence=None, xDim=1, yDim=2):
   """ Get plane data through position in dimensions xDim, yDim
       Returns 2D float32 NumPy array in order (y, x) 
       Returns None if numDim < 2 or if there is no dataStore
-      Positions are 0-based not 1-based """
+      Positions are 1-based """
 
   # Import moved here to avoid circular import problems
   from ccpnmodel.ccpncore.lib.spectrum.formats import NmrPipe
@@ -190,11 +190,14 @@ def getPlaneData(self:'DataSource', position:Sequence=None, xDim=0, yDim=1):
     
   assert numDim == 2 or (position and len(position) == numDim), 'numDim = %d, position = %s' % (numDim, position)
   assert xDim != yDim, 'xDim = yDim = %d' % xDim
-  assert 0 <= xDim < numDim, 'xDim = %d' % xDim
-  assert 0 <= yDim < numDim, 'yDim = %d' % yDim
+  assert 1 <= xDim <= numDim, 'xDim = %d' % xDim
+  assert 1 <= yDim <= numDim, 'yDim = %d' % yDim
 
+  xDim -= 1  # make 0 based instead of 1 based
+  yDim -= 1
+  
   if not position:
-    position = numDim*[0]
+    position = numDim*[1]
 
   dataDims = self.sortedDataDims()
   numPoints = [dataDim.numPoints for dataDim in dataDims]
@@ -202,7 +205,7 @@ def getPlaneData(self:'DataSource', position:Sequence=None, xDim=0, yDim=1):
   yPoints = numPoints[yDim]
     
   for dim in range(numDim):
-    point = position[dim]
+    point = position[dim] - 1
     if point >= numPoints[dim]:
       raise ValueError('Plane index %d in dimension %d not within dataSource bounds (%d)' % (point, dim+1, numPoints[dim]))
     if point < 0:
@@ -226,12 +229,12 @@ def getPlaneData(self:'DataSource', position:Sequence=None, xDim=0, yDim=1):
   xblocks = 1 + (xPoints-1) // xblockSize
   yblocks = 1 + (yPoints-1) // yblockSize
 
-  blockCoords = [position[dim] // blockSizes[dim] for dim in range(numDim)]
+  blockCoords = [(position[dim]-1) // blockSizes[dim] for dim in range(numDim)]
   blockSlice = numDim*[0]
     
   for dim in range(numDim):
     if dim not in (xDim, yDim):
-      p = position[dim] % blockSizes[dim]
+      p = (position[dim]-1) % blockSizes[dim]
       blockSlice[numDim-dim-1] = slice(p, p+1)
 
   blockSizes = blockSizes[::-1]  # reverse (dim ordering backwards)
@@ -279,7 +282,7 @@ def getPlaneData(self:'DataSource', position:Sequence=None, xDim=0, yDim=1):
   
   return data
 
-def getSliceData(self:'DataSource', position:Sequence=None, sliceDim:int=0):
+def getSliceData(self:'DataSource', position:Sequence=None, sliceDim:int=1):
   # Get an actual array of data points,
   # spanning blocks as required
   # returns 1D array
@@ -287,19 +290,21 @@ def getSliceData(self:'DataSource', position:Sequence=None, sliceDim:int=0):
   if numDim < 1:
     return None
 
+  sliceDim -= 1  # make 0 based instead of 1 based
+  
   dataStore = self.dataStore
   if not dataStore:
     return None
 
   if not position:
-    position = numDim * [0]
+    position = numDim * [1]
   dataDims = self.sortedDataDims()
   numPoints = [dataDim.numPoints for dataDim in dataDims]
   slicePoints = numPoints[sliceDim]
 
   data = numpy.empty((slicePoints,), dtype=numpy.float32)
   for dim in range(numDim):
-    point = position[dim]
+    point = position[dim] - 1
     if point >= numPoints[dim]:
       raise ValueError('Slice index %d not within dataSource bounds' % point)
     if point < 0:
@@ -319,12 +324,12 @@ def getSliceData(self:'DataSource', position:Sequence=None, sliceDim:int=0):
 
   sliceBlockSize = blockSizes[sliceDim]
   sliceBlocks = 1 + (slicePoints-1)//sliceBlockSize
-  blockCoords = [position[dim]//blockSizes[dim] for dim in range(numDim)]
+  blockCoords = [(position[dim]-1)//blockSizes[dim] for dim in range(numDim)]
   blockSlice = numDim*[0]
 
   for dim in range(numDim):
     if dim != sliceDim:
-      p = position[dim] % blockSizes[dim]
+      p = (position[dim]-1) % blockSizes[dim]
       blockSlice[numDim-dim-1] = slice(p,p+1)
 
   blockSizes = blockSizes[::-1]  # reverse (dim ordering backwards)
@@ -542,7 +547,7 @@ def estimateNoise(self:'DataSource') -> float:
     return self.noiseLevel
 
   if self.numDim > 1:
-    planeData = getPlaneData(self, [0] * self.numDim, 0, 1)
+    planeData = getPlaneData(self, [1] * self.numDim, 1, 2)
     value = 1.1 * numpy.std(planeData.flatten()) # multiplier a guess
   else:
 
@@ -673,10 +678,7 @@ def projectedPlaneData(self:'DataSource', xDim:int=1, yDim:int=2, method:str='ma
     if threshold is None:
       threshold = estimateNoise(self)
 
-  xDim -= 1
-  yDim -= 1
-
-  dims = set(range(numDim))
+  dims = set(range(1,numDim+1))
   dims.remove(xDim)
   dims.remove(yDim)
   zDim = dims.pop()
@@ -686,8 +688,8 @@ def projectedPlaneData(self:'DataSource', xDim:int=1, yDim:int=2, method:str='ma
   dataDims = self.sortedDataDims()
   numZPoints = dataDims[zDim].numPoints
 
-  for zPos in range(numZPoints):
-    position[zDim] = zPos
+  for zPos in range(1,numZPoints+1):
+    position[zDim-1] = zPos
     planeData = getPlaneData(self, position, xDim, yDim)
     if method == 'sum above noise':
       lowIndices = planeData < threshold

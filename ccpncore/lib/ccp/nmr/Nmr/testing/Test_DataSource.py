@@ -42,7 +42,7 @@ class DataSourceSliceDataTest(CoreTesting):
   def Test_GetSliceData(self, *args, **kw):
     spectrum = self.nmrProject.findFirstExperiment(name='HSQC').findFirstDataSource()
     # just check an arbitrary slice
-    sliceData = spectrum.getSliceData(position=(1000, 230), sliceDim=1)
+    sliceData = spectrum.getSliceData(position=(1001, 231), sliceDim=2)
     print('sliceData.shape =', sliceData.shape)
     # check a small part of the returned data
     actualInd = 379

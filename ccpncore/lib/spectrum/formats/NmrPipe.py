@@ -238,15 +238,18 @@ def readData(dataSource):
     
   return data
   
-def getPlaneData(dataSource, position=None, xDim=0, yDim=1):
+def getPlaneData(dataSource, position=None, xDim=1, yDim=2):
     
+  xDim -= 1
+  yDim -= 1
+  
   if not hasattr(dataSource, 'data'):
     dataSource.data = readData(dataSource)
     
   numDim = dataSource.numDim
   
   if not position:
-    position = numDim*[0]
+    position = numDim*[1]
   
   dataDims = dataSource.sortedDataDims()
   
@@ -255,7 +258,7 @@ def getPlaneData(dataSource, position=None, xDim=0, yDim=1):
     if dim in (xDim, yDim):
       slices[numDim-dim-1] = slice(dataDim.numPoints)
     else:
-      slices[numDim-dim-1] = slice(position[dim], position[dim]+1)
+      slices[numDim-dim-1] = slice(position[dim]-1, position[dim])
   
   data = dataSource.data[slices]
   data = data.squeeze() # eliminate dims with size 1
