@@ -162,7 +162,7 @@ def newSpectrumGroup(project, groupNameDicts):
     # loadSpectrumGroupInSideBar(project, newSpectrumGroup)
 
 def createSampleDicts(project, secondSheetExcel):
-  newSpectrumGroup = project.newSpectrumGroup('STD')
+  # newSpectrumGroup = project.newSpectrumGroup('STD')
 
   sampleDicts = []
   for data in secondSheetExcel.to_dict(orient="index").values():
@@ -236,14 +236,14 @@ def addSampleSpectra(project, sample, data):
   if len(sampleSpectrum1Path)>0:
     sampleSpectrum1 = project.loadData(sampleSpectrum1Path[0][1])
     # sampleSpectrum1[0].newPeakList()
-    sampleSpectrum1[0].experimentType = sampleSpectrum1ExpType[0][1]
+    # sampleSpectrum1[0].experimentType = sampleSpectrum1ExpType[0][1]
     sampleSpectrum1[0].comment = sampleSpectrum1Comment[0][1]
     sampleSpectra.append(sampleSpectrum1[0])
 
   if len(sampleSpectrum2Path)>0:
     sampleSpectrum2 = project.loadData(sampleSpectrum2Path[0][1])
     # sampleSpectrum2[0].newPeakList()
-    sampleSpectrum2[0].experimentType = sampleSpectrum2ExpType[0][1]
+    # sampleSpectrum2[0].experimentType = sampleSpectrum2ExpType[0][1]
     sampleSpectrum2[0].comment = sampleSpectrum2Comment[0][1]
     sampleSpectra.append(sampleSpectrum2[0])
 
