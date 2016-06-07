@@ -1,3 +1,4 @@
+import os
 import csv
 from collections import OrderedDict
 
@@ -8,8 +9,26 @@ import pandas as pd
 # if project._appBase.applicationName == 'Screen':
 # if project._appBase.applicationName == 'Metabolomics':
 
-def readXls(project, path=None):
 
+# def readXls(project, path=None):
+#
+#   ex = pd.ExcelFile(path)
+#   for p,f in screenExcelSheetProcessors.items():
+#     if p in ex.sheet_names:
+#       e = ex.parse(p)
+#       e.fillna('Empty',inplace=True)
+#       f(project, e)
+
+def readXls(project, path):
+  ex = pd.ExcelFile(path)
+  if ex.sheet_names == ['Metabolomics']:
+    print('loading metabolomics...')
+    readXlsMetabolomics(ex, project, path)
+  else:
+    readXlsScreen(ex, project, path)
+
+
+def readXlsScreen(ex, project, path=None):
   newSpectrumGroup = project.newSpectrumGroup('STD')
   ex = pd.ExcelFile(path)
   for p,f in screenExcelSheetProcessors.items():
@@ -18,7 +37,71 @@ def readXls(project, path=None):
       e.fillna('Empty',inplace=True)
       f(project, e)
 
+def readXlsMetabolomics(ex, project, path):
+  metsSheet = getMetabolomicsSheet(ex)
+  dataLocations = getRelativeBrukerDataLocations(metsSheet)
+  spectra = loadBrukerSpectra(project, path, dataLocations)
+  try:
+    spectrumNames = getSpectrumNamesFromDf(metsSheet)
+    for spectrum, name in list(zip(spectra, spectrumNames)):
+      spectrum.rename(name)
+  except KeyError:
+    pass
+  groups = getAllSpectrumGroupAssignments(spectra, metsSheet)
+  for k, v in sorted(groups.items()):
+    print('SG:', k)
+    project.newSpectrumGroup(name=k, spectra=v)
 
+def getMetabolomicsSheet(excelFile):
+  sheet = excelFile.parse('Metabolomics')
+  sheet = sheet.replace(regex='^# .*', value=pd.np.nan)
+  sheet = sheet.dropna((0, 1), how='all')
+  sheet['expno'] = sheet['expno'].astype(int)
+  sheet['procno'] = sheet['procno'].astype(int)
+  for column in sheet.columns:
+    sheet[column] = sheet[column].astype(str)
+  return sheet
+
+def getRelativeBrukerDataLocations(df):
+  expnos = df['expno'].values
+  procnos = df['procno'].values
+  return list(zip(expnos, procnos))
+
+def loadBrukerSpectra(project, path, locations):
+  specs = []
+  # path = os.path.join(os.path.split(path)[:-1])[0]
+  path = os.path.split(path)[0]
+  for location in locations:
+    specLocation = os.path.join(path, location[0], 'pdata', location[1])
+    specs.append(project.loadData(specLocation)[0])
+  return specs
+
+def getSpectrumNamesFromDf(df):
+  return list(df['name'].values)
+
+def getAllGroupsFromDf(df):
+  groupsDf = df[[c for c in df.columns if c.startswith('group ')]]
+  groupsDf.columns = [c.split(' ')[1] for c in groupsDf.columns]
+  groupsLists = groupsDf.to_dict(orient='list')
+  groups = []
+  for k, v in groupsLists.items():
+    for g in set(v):
+      groups.append('_'.join((str(k), str(g))))
+  return groups
+
+def getSpecrumGroupsByName(df, name):
+  row = df[df['name'] == name]
+  return getAllGroupsFromDf(row)
+
+def getAllSpectrumGroupAssignments(spectra, df):
+  assembledGroups = {k: [] for k in getAllGroupsFromDf(df)}
+  # print(df)
+  # print(spectrum)
+  for spectrum in spectra:
+    groups = getSpecrumGroupsByName(df, spectrum.name)
+    for group in groups:
+      assembledGroups[group].append(spectrum)
+  return assembledGroups
 
 # def readXls(project, path=None):
 #   ex = pd.ExcelFile(path)
@@ -79,11 +162,17 @@ def newSpectrumGroup(project, groupNameDicts):
     # loadSpectrumGroupInSideBar(project, newSpectrumGroup)
 
 def createSampleDicts(project, secondSheetExcel):
+  newSpectrumGroup = project.newSpectrumGroup('STD')
+
   sampleDicts = []
   for data in secondSheetExcel.to_dict(orient="index").values():
     sampleDict={project.newSample(name=str(sampleName)):data for header, sampleName in data.items() if header == 'sampleName'}
     sampleDicts.append(sampleDict)
   getSampleObj(project, sampleDicts)
+
+screenExcelSheetProcessors = OrderedDict([('Reference', createDataDict),
+                                          ('STD_Samples', createSampleDicts),
+                                         ])
 
 def getSampleObj(project, sampleDicts):
   for sampleDict in sampleDicts:
@@ -99,10 +188,6 @@ def createNewSubstance(project, dataDicts):
       # newChain = project.createChain(sequence=str('A'),compoundName=str(spectrum.name), molType='protein')
       newSubstance.referenceSpectra = [spectrum]
       dispatchSubstanceProperties(newSubstance, data)
-
-screenExcelSheetProcessors = OrderedDict([('Reference', createDataDict),
-                                          ('STD_Samples', createSampleDicts),
-                                         ])
 
 def dispatchSubstanceProperties(substance, data):
   for substanceProperty in substanceProperties:
