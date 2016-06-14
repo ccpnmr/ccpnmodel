@@ -84,6 +84,8 @@ def getConnectedAtoms(spectrum):
       for i in range(nDim):
         dimAtoms[i] = set()
 
+
+      # Find all assigned-to atoms per dimension of the peak:
       if peak.peakContribs:
         for peakContrib in peak.peakContribs:
 
@@ -113,6 +115,7 @@ def getConnectedAtoms(spectrum):
         for j in range(i+1, nDim):
           atomPairs = []
 
+          # if dimensions are bound, add pairs ofbound atoms
           if set([i,j]) in boundDims:
             for atomA, residueA in dimAtoms[i]:
               for atomB in atomA.boundAtoms:
@@ -123,11 +126,13 @@ def getConnectedAtoms(spectrum):
               #    if _areAtomsBound(atomA, atomB):
               #      atomPairs.append((atomA, residueA, atomB, residueB))
 
+          # If dimensions were not bound, or nothing was found, add all possible atom pairs
           if not atomPairs:
             for atomA, residueA in dimAtoms[i]:
               for atomB, residueB in dimAtoms[j]:
                 atomPairs.append((atomA, residueA, atomB, residueB))
 
+          # Filter out connection distances between given limits
           for atomA, residueA, atomB, residueB in atomPairs:
 
             if atomA is atomB:

@@ -26,6 +26,7 @@ __version__ = "$Revision$"
 from typing import Tuple
 from ccpnmodel.ccpncore.lib import MergeObjects
 from ccpnmodel.ccpncore.lib.assignment import Assignment
+from ccpnmodel.ccpncore.lib.molecule import MoleculeQuery
 from ccpnmodel.ccpncore.memops.ApiError import ApiError
 
 def absorbResonance(self:'Resonance', resonanceB) -> 'Resonance':
@@ -136,81 +137,93 @@ def absorbResonance(self:'Resonance', resonanceB) -> 'Resonance':
 
 
 def getBoundResonances(self:'Resonance') -> Tuple['Resonance', ...]:
-  """get resonances that are known to be directly bound to this one, using ONLY resonance assignment
+  """get resonances that are known to be directly bound to this one,
+  WITHOUT using information from assigned peaks.
   """
 
   # heavy-atom intraresidue bonds to standard protein atoms
   # to be used for completely unassigned resonanceGroups
+  # NBNB TODO could be expanded to more names.
   genericProteinBound = {
     'N':('CA',),
     'C':('CA',),
     'CB':('CA',),
     'CA':('C', 'N', 'CB')
   }
+  singleCodes = ('1H', '2H', '3H', '19F')
 
-  resonanceGroup = self.resonanceGroup
-  chemComp = resonanceGroup.chemComp
+  result = []
+
   resonanceName = self.name
-  result = None
-  unassigned = None
+  resonanceGroup = self.resonanceGroup
+  residue = resonanceGroup.assignedResidue
+  unassigned = resonanceGroup.resonances
+  chemCompVar = None
 
-  if chemComp is None:
-    # No assignment even to type
-    unassigned = resonanceGroup.resonances
+  if residue:
+    # resonanceGroup is assigned
+    atom = residue.findFirstAtom(name=resonanceName)
+    if atom:
+      # resonance is assigned - find bound resonances only from assignment
+      names = [x.name for x in atom.boundAtoms]
+      for name in sorted(names):
+        rr = resonanceGroup.findFirstResonance(name=name)
+        if rr is not None:
+          result.append(rr)
+      #
+      return tuple(result)
+
+    else:
+      # Atom is not assigned - look for bound resonances among unassigned only
+      unassigned = [x for x in resonanceGroup.resonances
+                    if residue.findFirstAtom(name=x.name) is None]
 
   else:
-    chemCompVar = resonanceGroup.chemCompVar or chemComp.findFirstChemCopmVar(isDefaultVar=True)
-    residue = resonanceGroup.assignedResidue
+    residueType = resonanceGroup.residueType
+    chemComp = None
+    if residueType:
+      residueType2ChemCompId = MoleculeQuery.fetchStdResNameMap(self.root)
+      tt = residueType2ChemCompId.get(residueType)
+      if tt:
+        chemComp = self.root.findFirstChemComp(molType=tt[0], ccpCode=tt[1])
 
-    if residue:
-      # resonanceGroup is assigned
-      atom = residue.findFirstAtom(name=resonanceName)
-      if atom:
-        # resonance is assigned - find bound resonances only from assignment
-        result = []
-        names = [x.name for x in atom.boundAtoms]
-        for name in sorted(names):
-          rr = resonanceGroup.findFirstResonance(name=name)
-          if rr is not None:
-            result.append(rr)
+    if chemComp:
+      chemCompVar = chemComp.findFirstChemCompVar(linking=resonanceGroup.linking,
+                                                  descriptor=resonanceGroup.descriptor)
+      if not chemCompVar:
+        chemCompVar = chemComp.findFirstChemCopmVar(isDefaultVar=True)
 
-        return tuple(result)
-
-      else:
-        # Atom is not assigned - look for bound resonances among unassigned only
-        unassigned = [x for x in resonanceGroup.resonances
-                      if residue.findFirstAtom(name=x.name) is None]
-
-    elif chemCompVar:
+    if chemCompVar:
       # Type is assigned. Use type to look for bound resonances
-      unassigned = resonanceGroup.resonances  # NBNB this is TEMPORARY
-      pass
-      # NBNB TBD
-      # NBNB this is postponed till later - it needs to be done by making a map
-      # starting from the ChemCompVar and caching those, and that is not for now.
-      # NBNB unassigned must be set
-      # NBNB not all resonance names can be found in chemCompVar
-      # NBNB add interresidue bonds if possible
+      # NBNB TODO optimise by making a map and caching it
+      chemAtom = chemCompVar.findFirstChemAtom(name=resonanceName)
+      chemAtoms = chemCompVar.chemAtoms
+      if chemAtom in chemAtoms:
+        for chemBond in chemAtom.chemBonds:
+          ss = set(chemBond.chemAtoms)
+          ss.remove(chemAtom)
+          chemAtom2 = ss.pop()
+          if chemAtom2 in chemAtoms:
+            rr = resonanceGroup.findFirstResonance(name=chemAtom2.name)
+            if rr is not None:
+              result.append(rr)
 
+        # NB we still need to look for bonds that are not in CHemCompVar - e.g. pseudoatom bonds
+        unassigned = [x for x in resonanceGroup.resonances if x not in result]
 
   if unassigned:
     # resonance is unassigned. Look for bound atoms among other unassigned resonances
 
-    singleCodes = ('1H', '2H', '3H', '19F')
     if self.isotopeCode in singleCodes:
-      partners = [x for x in unassigned if x.isotopeCode in singleCodes]
+      partners = [x for x in unassigned if x.isotopeCode not in singleCodes]
       result = [x for x in partners if Assignment._doNamesMatchBound(resonanceName, x.name)]
     else:
-      partners = [x for x in unassigned if x.isotopeCode not in singleCodes]
+      partners = [x for x in unassigned if x.isotopeCode in singleCodes]
       result = [x for x in partners if Assignment._doNamesMatchBound(x.name, resonanceName)]
 
-    if not residue:
-    # if not chemCompVar:
+    if not chemCompVar :
       # This resonanceGroup is not even type assigned.
       # Special cases - add bonds for protein backbone heavy atoms
-    #
-    # NBNB TBD when type-assigned resonanceGroups are properly handled,
-    # this shoudl say 'if not chemCompVar
 
       extraNames = genericProteinBound.get(self.name)
       resonances = [x for x in unassigned if x.name in extraNames]

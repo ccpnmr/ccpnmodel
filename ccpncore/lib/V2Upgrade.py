@@ -27,32 +27,6 @@ import operator
 
 from ccpnmodel.ccpncore.lib.chemComp.Util import chemAtomSetFromAtoms
 
-# def mapNmrAssignments(apiNmrProject, molSystem=None, chainMap=None):
-#   """V2: make/extend Maps for fully assigned resonance and resonanceGroups, with offsets.
-#   Either molSystem or chainMap must be passed in"""
-#
-#   # Map Resonances that are fully assigned
-#   resonance2Assignment = _mapAssignedResonances(apiNmrProject, molSystem=molSystem,
-#                                                 chainMap=chainMap)
-#
-#   # Map ResonanceGroups that are fully assigned
-#   resonanceGroup2Assignment = _mapAssignedResonanceGroups(apiNmrProject, molSystem=molSystem,
-#                                                           chainMap=chainMap)
-#
-#   # Map unmapped ResonanceGroups that follow from assigned resonances.
-#   # If resonance assignment conflicts with resonanceGroup assignment tha latter takes precedence.
-#   # But in that case data are inconsistent  and any solution is arbitrary.
-#   # Note that resonances will aqlways keep thier assignment
-#   for resonance, resonanceAssignment in sorted(resonance2Assignment.items()):
-#     resonanceGroup = resonance.resonanceGroup
-#     if resonanceGroup is not None and resonanceGroup not in resonanceGroup2Assignment:
-#       resonanceGroup2Assignment[resonanceGroup] = resonanceAssignment[:-1]
-#
-#   # Add Offset resonance groups to map
-#   _addOffsetResonanceGroups(apiNmrProject, resonanceGroup2Assignment)
-#
-#   #
-#   return resonance2Assignment, resonanceGroup2Assignment
 
 def mapResonanceGroupResidues(apiNmrProject, molSystem=None, chainMap=None) -> dict:
   """Map resonanceGroup:assignmentTuple for fully assigned ResonanceGroups """
@@ -136,39 +110,6 @@ def mapUnAssignedFixedResonances(nmrConstraintStore):
   #
   return result
 
-#
-# def _addOffsetResonanceGroups(apiNmrProject, assignmentMap:dict):
-#   # Now add ResonanceGroups defined as offset to those already mapped (and passed in)
-#   for resonanceGroup, assignment in sorted(assignmentMap.items()):
-#
-#     # Add sequential stretches either way
-#     for direction in (+1,-1):
-#       stretch = _findSpinSystemStretch(resonanceGroup, direction=direction)
-#       offset = 0
-#       for rg in stretch:
-#         if rg not in assignmentMap:
-#           # test against assignmentMap instead of assignedGroups in case of inconsistent data
-#
-#           # Identify by seq offset:
-#           chainCode = assignment[0]
-#           offset += direction
-#           sequenceCode = '%s%+d' % (assignment[1], offset)
-#
-#           residueType = rg.residueType
-#           if residueType is None:
-#             chemComp = rg.root.findFirstChemComp(molType=rg.molType, ccpCode=rg.ccpCode)
-#             if chemComp:
-#               residueType = chemComp.code3Letter
-#
-#           assignmentMap[rg] = (chainCode, sequenceCode, residueType)
-#
-#         else:
-#           break
-#
-#     # Add unique, identity-linked ResonanceGroup, if any
-#     rg0 = _findIdentityResonanceGroup(resonanceGroup)
-#     if rg0 is not None and rg0 not in assignmentMap:
-#       assignmentMap[rg0] = (assignment[0], assignment[1] + '+0', assignment[2])
 
 def addOffsetResonanceGroup(addToGroup:'ResonanceGroup', addGroup:'ResonanceGroup',
                              offset:int) -> bool:
@@ -201,225 +142,6 @@ def addOffsetResonanceGroup(addToGroup:'ResonanceGroup', addGroup:'ResonanceGrou
 
     return False
 
-
-# def mapAllAssignments(topObject, assignmentMap=None, molSystem=None, chainMap=None):
-#   """V2: make/extend resonance:assignmentList map for all assignments in NmrConstraintStore
-#   Either molSystem or chainMap must be passed in"""
-#
-#   if assignmentMap is None:
-#     assignmentMap = {}
-#
-#   # We need either chainMap or molSystem, and chainMap takes precedence
-#   if chainMap:
-#     molSystem = None
-#
-#   # Map assigned resonances
-#   _mapAssignedResonances(topObject, assignmentMap, chainMap=chainMap, molSystem=molSystem)
-#
-#   # For NmrProject map partly assigned resonances
-#   if topObject.className == 'NmrProject':
-#     _mapUnAssignedResonances(topObject, assignmentMap, molSystem=molSystem, chainMap=chainMap)
-#   else:
-#     # map unassigned resonances
-#     _mapUnAssignedFixedResonances(topObject, assignmentMap)
-#
-#   _testAssignmentMap(assignmentMap)
-#
-#   #
-#   return assignmentMap
-
-# def _testAssignmentMap(assignmentMap):
-#   dd = {}
-#   for res,ass in assignmentMap.items():
-#     if res.className == 'Resonance':
-#       # Fixed resonance duplications do not matter
-#       # NB this test must be standard - these problems likely arise from incorrect assignments
-#       ass = tuple(ass)
-#       ll = dd.get(ass,[])
-#       ll.append(res)
-#       dd[ass] = ll
-#
-#   for ass,ll in sorted(dd.items()):
-#     if len(ll) > 1:
-#       print ('### DUPLICATE RESONANCE %s %s' % (ass, ll))
-
-#
-# def OLD_mapResonanceGroups(nmrProject, molSystem=None, chainMap=None, defaultChainCode=None):
-#   """Map ResonanceGroups to three-string assignments"""
-#
-#   # We need either chainMap or molSystem, and chainMap takes precedence
-#   if chainMap:
-#     molSystem = None
-#
-#   result = {}
-#
-#   assignedGroups = []
-#
-#   # Handle properly assigned ResonanceGroups
-#   for resonanceGroup in nmrProject.sortedResonanceGroups():
-#
-#     # Find residue
-#     residue = resonanceGroup.residue
-#     if residue is None:
-#       ll = []
-#       for residueProb in resonanceGroup.residueProbs:
-#         if residueProb.weight:
-#           ll.append(residueProb)
-#       if len(ll) == 1:
-#         # In principle this should never happen, but it does not hurt to be careful
-#         residue = ll[0].possibility
-#
-#     if residue:
-#
-#       # Remap chain and residue if necessary,
-#
-#       chain = residue.chain
-#       if chainMap:
-#         # If there is a chainMap the chain MUST be in it.
-#         chain = chainMap[chain]
-#         # get residue in new chain
-#         residue = chain.findFirstResidue(seqCode=residue.seqCode,
-#                                          seqInsertCode=residue.seqInsertCode)
-#
-#       elif residue.topObject is not molSystem:
-#           raise ValueError("Cannot generate consistent assignment names from mixed MolSystems - 1")
-#
-#       # set residue assignment strings
-#       chainCode = chain.code
-#       sequenceCode = str(residue.seqCode)+ (residue.seqInsertCode or '').strip()
-#       residueType = residue.molResidue.chemComp.code3Letter
-#
-#       result[resonanceGroup] = (chainCode, sequenceCode, residueType)
-#       assignedGroups.append(resonanceGroup)
-#
-#
-#   # Now add dependent ResonanceGroups
-#   for resonanceGroup in assignedGroups:
-#     assignment = result[resonanceGroup]
-#
-#     # Add sequential stretches either way
-#     for direction in (+1,-1):
-#       stretch = _findSpinSystemStretch(resonanceGroup, direction=direction)
-#       offset = 0
-#       for rg in stretch:
-#         if rg in result:
-#           break
-#         else:
-#           # Identify by seq offset:
-#           chainCode = assignment[0]
-#           offset += direction
-#           sequenceCode = '%s%+s' % (assignment[1], offset)
-#
-#           chemComp = rg.root.findFirstChemComp(molType=rg.molType, ccpCode=rg.ccpCode)
-#           if chemComp:
-#             residueType = chemComp.code3Letter
-#           else:
-#             residueType = None
-#
-#           result[rg] = (chainCode, sequenceCode, residueType)
-#
-#
-#   # Now look for stretches of ResonanceGroups
-#   newChainCounter = 0
-#   for resonanceGroup in nmrProject.sortedResonanceGroups():
-#
-#     if resonanceGroup not in result:
-#
-#       if not  _findSpinSystemStretch(resonanceGroup, direction=+1):
-#         # Start only at +1 end of stretches
-#
-#         stretch =  _findSpinSystemStretch(resonanceGroup, direction=-1)
-#
-#         if not stretch:
-#           # Do nothing if no residue stretch found
-#           pass
-#
-#         elif len(stretch) > 2:
-#           # proper assigned stretch - treat at pseudochain
-#           stretch.reverse()
-#           stretch.append(resonanceGroup)
-#           newChainCounter += 1
-#           chainCode = '@%s' % newChainCounter
-#           sequenceCode = 0
-#           for rg in stretch:
-#             sequenceCode += 1
-#             chemComp = rg.root.findFirstChemComp(molType=rg.molType, ccpCode=rg.ccpCode)
-#             if chemComp:
-#               residueType = chemComp.code3Letter
-#             else:
-#               residueType = None
-#
-#             result[rg] = (chainCode, str(sequenceCode), residueType)
-#
-#         elif stretch[0] not in result:
-#           # 2-3 residue stretch, not assigned.
-#           # Set as a residue with +/- markers on neighbours
-#           if len(stretch) == 1 or stretch[-1] in result:
-#             # Two-residue stretch.
-#             rg = resonanceGroup
-#             rgprev = stretch[0]
-#             rgnext = None
-#           else:
-#             # assert len(stretch) == 2
-#             rg = stretch[0]
-#             rgprev = stretch[-1]
-#             rgnext = resonanceGroup
-#
-#           # set codes for rg
-#           chainCode = defaultChainCode
-#           sequenceCode = '@%s' % rg.serial
-#           chemComp = rg.root.findFirstChemComp(molType=rg.molType, ccpCode=rg.ccpCode)
-#           if chemComp:
-#             residueType = chemComp.code3Letter
-#           else:
-#             residueType = None
-#           result[rg] = (chainCode, sequenceCode, residueType)
-#
-#
-#           # Now set for rgprev
-#           chemComp = rgprev.root.findFirstChemComp(molType=rgprev.molType,
-#                                                    ccpCode=rgprev.ccpCode)
-#           if chemComp:
-#             residueType = chemComp.code3Letter
-#           else:
-#             residueType = None
-#           result[rgprev] = (chainCode, '%s-1' % sequenceCode, residueType)
-#
-#           if rgnext is not None:
-#             # Now set for rgnext
-#             chemComp = rgnext.root.findFirstChemComp(molType=rgnext.molType,
-#                                                      ccpCode=rgnext.ccpCode)
-#             if chemComp:
-#               residueType = chemComp.code3Letter
-#             else:
-#               residueType = None
-#             result[rgnext] = (chainCode, '%s+1' % sequenceCode, residueType)
-#
-#
-#   # Finally deal with ResonanceGroups neither assigned nor in sequential stretches
-#   for resonanceGroup in nmrProject.sortedResonanceGroups():
-#     if resonanceGroup not in result:
-#
-#       # Is it identity-linked to one there:
-#       rg0 = _findIdentityResonanceGroup(resonanceGroup)
-#       assignment = result.get(rg0)
-#       if (assignment is not None and rg0 is not None and
-#           not (assignment[1][-2] in '+-' and assignment[1][-1].isdigit())):
-#         # Identity-linked to existing residue - set accordingly
-#         result[resonanceGroup] = (assignment[0], assignment[1] + '+0', assignment[2])
-#
-#       else:
-#         # Not linked to anything - set on its own merits
-#         chemComp = resonanceGroup.root.findFirstChemComp(molType=resonanceGroup.molType,
-#                                                          ccpCode=resonanceGroup.ccpCode)
-#         if chemComp:
-#           residueType = chemComp.code3Letter
-#         else:
-#           residueType = None
-#         sequenceCode = '@%s' % resonanceGroup.serial
-#         result[resonanceGroup] = (defaultChainCode, sequenceCode, residueType)
-#   #
-#   return result
 
 
 def mapAssignedResonances(topObject, molSystem=None, chainMap=None):
@@ -813,31 +535,6 @@ def upgradeConstraintList(constraintList):
   finally:
     constraintStore.root.override = False
 
-# def _mapUnAssignedResonances(nmrProject, assignmentMap, molSystem, chainMap=None):
-#   """Map part- or un-assigned resonances for NmrProject"""
-#
-#   if molSystem is None:
-#     # Set molSystem from chainMap
-#     for key,val in chainMap:
-#       molSystem = val.molSystem
-#       break
-#
-#   if molSystem and len(molSystem.chains) == 1:
-#     defaultChainCode = molSystem.findFirstChain().code
-#   else:
-#     defaultChainCode = None
-#
-#   resonanceGroupMap =  mapResonanceGroups(nmrProject, molSystem=molSystem,
-#                                            defaultChainCode=defaultChainCode)
-#
-#   resonanceGroupMap[None] = (None, None, None)
-#
-#   for resonance in nmrProject.sortedResonances():
-#     if resonance not in assignmentMap:
-#       groupAssignment = resonanceGroupMap[resonance.resonanceGroup]
-#       name =  regularisedResonanceName(resonance)
-#       assignmentMap[resonance] = groupAssignment + (name,)
-
 
 def findSpinSystemStretch(spinSystem, direction=1):
   """
@@ -1069,7 +766,7 @@ def _getBoundResonances(resonance, recalculate=False, contribs=None, recursiveCa
             for resonance2 in resonanceSet2.resonances:
               if resonance2 is resonance: # should not happen
                 if resonance not in funnyResonances:
-                  resonance.root._logger.warning( 'in getBoundResonances():'
+                  resonance.root._logger.warning( 'in _getBoundResonances():'
                                                   'resonance %d tried to be linked to itself'
                                                   % resonance.serial)
                   funnyResonances.add(resonance)

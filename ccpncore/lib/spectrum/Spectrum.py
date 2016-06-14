@@ -151,6 +151,8 @@ def _axisCodeMapIndices(axisCodes:Sequence, refAxisCodes:Sequence)->list:
   all axisCodes must match, but result can contain None if refAxisCodes is longer
   if axisCodes contain duplicates, you will get one of possible matches"""
 
+  #CCPNINTERNAL - used in multiple places to map display order and spectrumo order
+
 
   lenDifference = len(refAxisCodes) - len(axisCodes)
   if lenDifference < 0 :

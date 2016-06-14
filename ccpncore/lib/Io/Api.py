@@ -1199,7 +1199,7 @@ def setRepositoryPath(project, repositoryName, path):
 
 
 def movePackageData(root, newPackageName, oldPackageName):
-  """Move all data from package oldPackageNAme to newPackageName"""
+  """Move all data from package oldPackageName to newPackageName"""
   ff = root.findFirstPackageLocator
   repositories = (ff(targetName=newPackageName) or ff(targetName='any')).repositories
   newLocations = [x.getFileLocation(newPackageName) for x in repositories]

@@ -96,3 +96,12 @@ def assignByContrbutions(self:'Peak', value:Sequence):
     ll = [peakDim.findFirstPeakDimContrib(resonance=value[0][ii])
           for ii,peakDim in enumerate(peakDims)]
     firstPeakContrib.peakDimContribs = ll
+
+
+# NBNB unit operations needed:
+#
+# clearAssignments
+# _setToPerDimension
+# _setToPerAssignment
+# addAssignment
+# assignDimension
