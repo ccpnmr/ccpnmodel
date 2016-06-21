@@ -23,7 +23,7 @@ __version__ = "$Revision$"
 #=========================================================================================
 import os
 
-from ccpn.util.Path import checkFilePath
+from ccpn.util import Path
 from ccpn.util import Common as commonUtil
 
 # Spectrum formats
@@ -62,7 +62,7 @@ def analyseUrl(filePath):
   For Bruker and Varian Spectrum data, the usePath returned is the directory containing the spectrum
   """
 
-  isOk, msg = checkFilePath(filePath)
+  isOk, msg = Path.checkFilePath(filePath)
   if not isOk:
     print (msg)
     return (None, None, filePath)
@@ -73,9 +73,12 @@ def analyseUrl(filePath):
     # url is a directory
     fileNames = os.listdir(filePath)
 
+    if filePath.endswith(Path.CCPN_DIRECTORY_SUFFIX) and Path.CCPN_API_DIRECTORY in fileNames:
+      # V3 CCPN Project
+      return ('Project', CCPN, filePath)
 
-
-    if 'memops' in fileNames:
+    elif 'memops' in fileNames:
+      # V2 CCPN project, or 'ccpnv3' subdirectory of a V3 project (handled downstream)
 
       # CCPN Project
       return ('Project', CCPN, filePath)
