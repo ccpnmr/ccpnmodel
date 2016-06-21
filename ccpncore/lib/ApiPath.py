@@ -35,13 +35,27 @@ fileSuffix = ".xml"
 lenFileSuffix = len(fileSuffix)
 keySep = '+'
 
+CCPN_DIRECTORY_SUFFIX = Path.CCPN_DIRECTORY_SUFFIX
+
+def addCcpnDirectorySuffix(path:str) -> str:
+  """Add ccpn directory suffix ('.ccpn' to path, unless present already"""
+  if not path.endswith(CCPN_DIRECTORY_SUFFIX):
+    path += CCPN_DIRECTORY_SUFFIX
+  return path
+
+def removeCcpnDirectorySuffix(path:str) -> str:
+  """Remove ccpn directory suffix ('.ccpn') from path, if present"""
+  if path.endswith(CCPN_DIRECTORY_SUFFIX):
+    path = path[:-len(CCPN_DIRECTORY_SUFFIX)]
+  return path
+
 def getProjectFile(repositoryPath, projectName=None):
   """Get project file given the repositoryPath and optionally the projectName
      (if none given then determined from repositoryPath)
   """
 
   if not projectName:
-    projectName = os.path.basename(repositoryPath)
+    projectName = os.path.basename(removeCcpnDirectorySuffix(repositoryPath))
     
   implDirectory = getImplementationDirectory(repositoryPath)
   
@@ -51,7 +65,7 @@ def getImplementationDirectory(repositoryPath):
   """Get implementation directory from the repositoryPath
   """
 
-  return Path.joinPath(repositoryPath, metaConstants.modellingPackageName,
+  return Path.joinPath(repositoryPath, Path.CCPN_API_DIRECTORY, metaConstants.modellingPackageName,
                        metaConstants.implementationPackageName)
 
 def getTopObjectFile(topObject):
@@ -110,7 +124,7 @@ def findTopObjectPath(repositoryPath, topObject):
     objId = topObject.guid
   
   # get default file name
-  topObjectDir = Path.joinPath(repositoryPath,
+  topObjectDir = Path.joinPath(repositoryPath, Path.CCPN_API_DIRECTORY,
                                 *topObject.packageName.split('.'))
   result = Path.joinPath(topObjectDir, getTopObjectFile(topObject))
   
@@ -151,7 +165,7 @@ def areAllTopObjectsPresent(project):
         allLocations[locator] = locations
  
       # check for file presence
-      ll = topObject.packageName.split('.')
+      ll = [Path.CCPN_API_DIRECTORY] + topObject.packageName.split('.')
       ll.append(getTopObjectFile(topObject))
       for location in locations:
         if os.path.isfile(Path.joinPath(location, *ll)):

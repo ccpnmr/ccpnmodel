@@ -3174,7 +3174,7 @@ objectdomain.uml.core.Stereotype-owns $19
 ""
 "if protocol == 'file':"
 "  from ccpn.util import Path"
-"  result = Path.joinPath(url.getDataLocation(), *packageName.split('.'))"
+"  result = Path.joinPath(url.getDataLocation(), Path.CCPN_API_DIRECTORY,  *packageName.split('.'))"
 ""
 "else:"
 "  raise ApiError(\"getFileLocation not implemented for url.protocol == '%s'\" % protocol)"
@@ -4305,10 +4305,10 @@ objectdomain.uml.core.Stereotype-owns $19
 (uid "0_-fvi_hrnjywg5_-d4o")
 (points 560 80 870 80 870 260))
 ($6 719 < 0_-fvi_hrnjywg5_-d4n "" 674
-(toMultiplicityPosition 190 265)
+(toMultiplicityPosition 190 270)
 (toRolePosition 305 290)
 (uid "0_-fvi_hrnjywg5_-d4n")
-(points 830 265 180 265)
+(points 830 270 180 270)
 (fromRolePosition 790 235))
 ($3 720 < 0_-fvi_hrnjywg5_-d4m "PathString" 674
 (autoSizeToFit true)

@@ -112,7 +112,7 @@ protocol = url.protocol
 
 if protocol == 'file':
   from ccpn.util import Path
-  result = Path.joinPath(url.getDataLocation(), *packageName.split('.'))
+  result = Path.joinPath(url.getDataLocation(), Path.CCPN_API_DIRECTORY,  *packageName.split('.'))
 
 else:
   raise ApiError("getFileLocation not implemented for url.protocol == '%s'" % protocol)</item>

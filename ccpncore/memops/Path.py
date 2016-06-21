@@ -77,8 +77,8 @@ def getTopDirectory():
 
   """Returns the 'top' directory of the containing repository (ccpn)."""
   func = os.path.dirname
-  from ccpn.util import OrderedSet
-  return func(func(func(func(func(OrderedSet.__file__)))))
+  from ccpn.util import Anchor
+  return func(func(func(func(func(Anchor.__file__)))))
 
 
 def getModelDirectory(versionTag):

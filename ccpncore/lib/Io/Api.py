@@ -46,9 +46,9 @@ from ccpnmodel.ccpncore.api.ccp.general.DataLocation import AbstractDataStore
 # and the error is not properly caught on some VMs.
 import ccpn.util.LocalShutil as shutil
 
-CCPN_DIRECTORY_SUFFIX = '.ccpn'
-
-printWarning = None
+CCPN_DIRECTORY_SUFFIX = ApiPath.CCPN_DIRECTORY_SUFFIX
+addCcpnDirectorySuffix = ApiPath.addCcpnDirectorySuffix
+removeCcpnDirectorySuffix = ApiPath.removeCcpnDirectorySuffix
 
 class DefaultIoHandler:
   """Class to handle interactions with user and logging
@@ -74,16 +74,16 @@ def _createLogger(project, applicationName=None, useFileLogger=None):
   
   return logger
   
-def ccpnProjectPath(path:str):
-  if not path.endswith(CCPN_DIRECTORY_SUFFIX):
-    path += CCPN_DIRECTORY_SUFFIX
-  return path
-
-def ccpnProjectPathPrefix(path:str):
-  if path.endswith(CCPN_DIRECTORY_SUFFIX):
-    path = path[:-len(CCPN_DIRECTORY_SUFFIX)]
-    
-  return path
+# def ccpnProjectPath(path:str):
+#   if not path.endswith(CCPN_DIRECTORY_SUFFIX):
+#     path += CCPN_DIRECTORY_SUFFIX
+#   return path
+#
+# def ccpnProjectPathPrefix(path:str):
+#   if path.endswith(CCPN_DIRECTORY_SUFFIX):
+#     path = path[:-len(CCPN_DIRECTORY_SUFFIX)]
+#
+#   return path
   
 def newProject(projectName, path:str=None, overwriteExisting:bool=False,
                showYesNo:"function"=None, applicationName='ccpn',
@@ -106,19 +106,19 @@ def newProject(projectName, path:str=None, overwriteExisting:bool=False,
   """
 
   # relies on knowing that repositories to move have these names, and these values for path suffix
-  repositoryNameMap = {'userData': '', 'backup': '_backup'}
+  repositoryNameMap = {'userData': '', 'backup': Path.CCPN_BACKUP_SUFFIX}
 
   if path:
     for name in repositoryNameMap.keys():
       fullPath = Path.joinPath(path, projectName) + repositoryNameMap[name]
-      fullPath = ccpnProjectPath(fullPath)
+      fullPath = addCcpnDirectorySuffix(fullPath)
       if not absentOrRemoved(Path.joinPath(fullPath, 'memops', 'Implementation'),
                              overwriteExisting, showYesNo):
         errMsg = 'Path ("%s") contains existing project.' % fullPath
         Logging.getLogger().warning(errMsg)
         raise Exception(errMsg)
     temporaryDirectory = None
-    path = ccpnProjectPath(path)
+    path = addCcpnDirectorySuffix(path)
   else:
     temporaryDirectory = tempfile.TemporaryDirectory(prefix='CcpnProject_',
                                                      suffix=CCPN_DIRECTORY_SUFFIX)
@@ -147,7 +147,6 @@ def newProject(projectName, path:str=None, overwriteExisting:bool=False,
 
   # create logger
   logger = _createLogger(project, applicationName, useFileLogger)
-  
   logger.info("Project is %s", project)
 
   return project
@@ -233,6 +232,9 @@ def loadProject(path:str, projectName:str=None, askFile:"function"=None,
 
   path = Path.normalisePath(path, makeAbsolute=True)
 
+  # Copies V2 projects to V3-compliant location, does some path clean-up and returns new path
+  path = copyV2ToV3Location(path)
+
   warningMessages = []
 
   # check if path exists and is directory
@@ -257,11 +259,13 @@ def loadProject(path:str, projectName:str=None, askFile:"function"=None,
       elif len(projectFiles) == 1:
         projectFile = projectFiles[0]
       elif askFile:
-        projectFile = askFile('Select project file', 'Select project file', initial_value=projectFiles[0])
+        projectFile = askFile('Select project file', 'Select project file',
+                              initial_value=projectFiles[0])
         if not projectFile: # cancelled
           raise IOError('Cancelled')
       else:
-        raise IOError('"%s" contains %d project files, not sure which to use' % (path, len(projectFiles)))
+        raise IOError('"%s" contains %d project files, not sure which to use' % (path,
+                                                                                 len(projectFiles)))
 
     # TBD: should projectName be based on projectFile or on path???
     # the way it is set here do not need to change project.name
@@ -311,20 +315,20 @@ def loadProject(path:str, projectName:str=None, askFile:"function"=None,
   backupRepository = project.findFirstRepository(name="backup")
   if backupRepository:
     backupUrl = backupRepository.url
-    oldBackupPath = ccpnProjectPathPrefix(backupUrl.path)
-    newBackupPath = ccpnProjectPathPrefix(path) + '_backup'
-    oldPathPrefix = ccpnProjectPathPrefix(oldPath)
+    oldBackupPath = removeCcpnDirectorySuffix(backupUrl.path)
+    newBackupPath = removeCcpnDirectorySuffix(path) + Path.CCPN_BACKUP_SUFFIX
+    oldPathPrefix = removeCcpnDirectorySuffix(oldPath)
     if oldBackupPath.startswith(oldPathPrefix): # hopefully true
       if path != oldPath:
-        oldBackupPath = ccpnProjectPath(oldBackupPath)
-        newBackupPath = ccpnProjectPath(newBackupPath)
+        oldBackupPath = addCcpnDirectorySuffix(oldBackupPath)
+        newBackupPath = addCcpnDirectorySuffix(newBackupPath)
         warningMessages.append('Backup is being changed from\n"%s"\nto\n"%s"' %
                                (oldBackupPath, newBackupPath))
         backupRepository.url = Implementation.Url(path=newBackupPath)
     else:
-      oldBackupPath = ccpnProjectPath(oldBackupPath)
+      oldBackupPath = addCcpnDirectorySuffix(oldBackupPath)
       if not os.path.exists(oldBackupPath):
-        newBackupPath = ccpnProjectPath(newBackupPath)
+        newBackupPath = addCcpnDirectorySuffix(newBackupPath)
         warningMessages.append('Backup is being changed from\n"%s"\nto\n"%s"' %
                                (oldBackupPath, newBackupPath))
         backupRepository.url = Implementation.Url(path=newBackupPath)
@@ -452,10 +456,9 @@ def loadProject(path:str, projectName:str=None, askFile:"function"=None,
             for ii,dataStore in enumerate(dataStores):
               dataStore.path = newPaths[ii]
 
-  if hasattr(project, '_movedPackageNames'):
-    # Special hack for moving data of renamed packages on upgrade
-    for newName, oldName in project._movedPackageNames.items():
-      movePackageData(project, newName, oldName)
+  # Special hack for moving data of renamed packages on upgrade
+  for newName, oldName in project._movedPackageNames.items():
+    movePackageData(project, newName, oldName)
       
   logger = _createLogger(project, applicationName, useFileLogger)
 
@@ -470,7 +473,7 @@ def loadProject(path:str, projectName:str=None, askFile:"function"=None,
 
   # NBNB Hack: do data upgrade for V2-V3transition
   # TBD FIXME remove for future versions
-  if hasattr(project,'_isUpgraded') and project._isUpgraded:
+  if project._upgradedFromV2:
     from ccpnmodel.v_3_0_2.upgrade import correctFinalResult
     correctFinalResult(project)
     project.checkAllValid()
@@ -557,10 +560,10 @@ def saveProject(project, newPath=None, newProjectName=None, changeBackup=True,
   if newPath:
     # normalise newPath
     newPath = Path.normalisePath(newPath, makeAbsolute=True)
-    newPath = ccpnProjectPath(newPath)
+    newPath = addCcpnDirectorySuffix(newPath)
   else:
     # NB this ensures that if we are going from V2 to V3 it will save in a new place
-    newPath = ccpnProjectPath(oldPath)
+    newPath = addCcpnDirectorySuffix(oldPath)
     if newPath != oldPath:
       project._logger.info("Project has been upgraded - saved in new location:  %s "
                            % os.path.basename(newPath))
@@ -572,7 +575,7 @@ def saveProject(project, newPath=None, newProjectName=None, changeBackup=True,
     else:
       newProjectName = os.path.basename(newPath)
 
-  newProjectName = ccpnProjectPathPrefix(newProjectName)
+  newProjectName = removeCcpnDirectorySuffix(newProjectName)
 
   # below is because of data model limit
   newProjectName = newProjectName[:32]
@@ -644,8 +647,7 @@ def saveProject(project, newPath=None, newProjectName=None, changeBackup=True,
         shutil.copytree(oldPath, newPath)
 
         # but need to remove all implementation files
-        implPath = Path.joinPath(newPath, metaConstants.modellingPackageName,
-                            metaConstants.implementationPackageName)
+        implPath = ApiPath.getImplementationDirectory(newPath)
         #implPath = pathImplDirectory(newPath)
         Path.deletePath(implPath)
 
@@ -671,8 +673,8 @@ def saveProject(project, newPath=None, newProjectName=None, changeBackup=True,
 
       if changeBackup:
         # change project backup repository url to point to new path
-        path = ccpnProjectPathPrefix(newPath)
-        backupRepository.url = Implementation.Url(path=path+'_backup'+CCPN_DIRECTORY_SUFFIX)
+        path = removeCcpnDirectorySuffix(newPath)
+        backupRepository.url = Implementation.Url(path=path+Path.CCPN_BACKUP_SUFFIX+CCPN_DIRECTORY_SUFFIX)
 
     # change project name
     if newProjectName != oldProjectName:
@@ -816,7 +818,7 @@ def saveProject(project, newPath=None, newProjectName=None, changeBackup=True,
     logger = _createLogger(project, useFileLogger=useFileLogger)
 
   if result and (newProjectName != oldProjectName or
-                   ccpnProjectPathPrefix(newPath) != ccpnProjectPathPrefix(oldPath)):
+                   removeCcpnDirectorySuffix(newPath) != removeCcpnDirectorySuffix(oldPath)):
     # save in newlocation succeded - remove temporary directories
     deleteTemporaryDirectory(project)
 
@@ -1284,3 +1286,58 @@ def _compressDataLocations(memopsRoot:Implementation.MemopsRoot):
               dataStore.path = fullPath[len(directory):]
               break
 
+
+def copyV2ToV3Location(projectPath) -> str:
+  """Copy V2 data to new directory with correct name and structure for V3
+
+  If project is already V3 does nothing (except converting 'xyz.ccpn/ccpn' to 'xyz.ccpn'"""
+
+  apiDirNames = ('memops', 'ccp', 'ccpnmr', 'cambridge', 'molsim', 'utrecht' )
+
+  logger = Logging.getLogger()
+
+  if projectPath.endswith(CCPN_DIRECTORY_SUFFIX):
+    version = 'V3'
+  else:
+    pt,dr = os.path.split(projectPath)
+    if dr == Path.CCPN_API_DIRECTORY and pt.endswith(CCPN_DIRECTORY_SUFFIX):
+      logger.debug("Interpreting path %s as project path %s" % (projectPath, pt))
+      projectPath = pt
+      version = 'V3'
+    else:
+      version = 'V2'
+
+  if not os.path.isdir(projectPath):
+    raise IOError("No directory named %s" % projectPath)
+
+  if version == 'V2':
+    newProjectPath = addCcpnDirectorySuffix(projectPath)
+    ii = 0
+    while os.path.exists(newProjectPath):
+      ii += 1
+      newProjectPath = addCcpnDirectorySuffix('%s_%s' % (projectPath, ii))
+
+    logger.warning(
+      'Copying directory %s to %s (this might take some time if there are big files)'
+      % (projectPath, newProjectPath))
+
+    newApiFileDir = os.path.join(newProjectPath, Path.CCPN_API_DIRECTORY)
+    if not os.path.exists(newApiFileDir):
+      os.makedirs(newApiFileDir)
+
+    for name in os.listdir(projectPath):
+      source = os.path.join(projectPath, name)
+      if name in apiDirNames:
+        target = os.path.join(newApiFileDir, name)
+      else:
+        target = os.path.join(newProjectPath, name)
+      #
+      if os.path.isdir(source):
+        shutil.copytree(source, target)
+      else:
+        shutil.copyfile(source, target)
+    #
+    return newProjectPath
+  else:
+    #
+    return projectPath

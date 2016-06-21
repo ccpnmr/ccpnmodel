@@ -2695,7 +2695,7 @@ require some code modifications.
     self.writeNewline()
 
     tt = self.getDictValues('objectDict')
-    self.startIf(self.negate("hasattr(memopsRoot, '_isUpgraded') and memopsRoot._isUpgraded"))
+    self.startIf(self.negate("memopsRoot._upgradedFromV2"))
     self.startLoop('obj', tt, isUnique=False, isOrdered=False,
                    varType=self.rootClassVarType)
     self.callFunc('checkValid', 'obj')

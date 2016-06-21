@@ -110,3 +110,4 @@ def correctData(topObj, delayDataDict, toNewObjDict, mapping=None):
 
   if pName == 'memops.Implementation':
     topObj._movedPackageNames = movedPackageNames
+    topObj._upgradedFromV2 = True

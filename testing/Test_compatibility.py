@@ -175,8 +175,8 @@ def testProject(target, outDir):
     for extra in (os.path.basename(target), ccpnProject.name):
       if extra not in newPath:
         newPath = corePath.joinPath(newPath, extra)
-    if not newPath.endswith('.ccpn.'):
-      newPath += '.ccpn'
+    if not newPath.endswith(corePath.CCPN_DIRECTORY_SUFFIX):
+      newPath += corePath.CCPN_DIRECTORY_SUFFIX
     logger.info('### saving %s to %s' % (ccpnProject.name, newPath))
     apiIo.saveProject(ccpnProject, newPath=newPath, newProjectName=ccpnProject.name,
                        overwriteExisting=True)
