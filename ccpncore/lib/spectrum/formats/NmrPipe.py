@@ -22,6 +22,7 @@ __version__ = "$Revision$"
 # Start of code
 #=========================================================================================
 import os, re, sys
+from typing import Sequence
 
 import numpy
 
@@ -238,7 +239,7 @@ def readData(dataSource):
     
   return data
   
-def getPlaneData(dataSource, position=None, xDim=1, yDim=2):
+def getPlaneData(dataSource:'DataSource', position:Sequence=None, xDim:int=1, yDim:int=2):
     
   xDim -= 1
   yDim -= 1
@@ -256,16 +257,58 @@ def getPlaneData(dataSource, position=None, xDim=1, yDim=2):
   slices = numDim * [0]
   for dim, dataDim in enumerate(dataDims):
     if dim in (xDim, yDim):
-      slices[numDim-dim-1] = slice(dataDim.numPoints)
+      numPoints = dataDim.numPoints
+      slices[numDim-dim-1] = slice(numPoints)
+      if dim == xDim:
+        xNumPoints = numPoints
+      else:
+        yNumPoints = numPoints
     else:
       slices[numDim-dim-1] = slice(position[dim]-1, position[dim])
   
-  data = dataSource.data[slices]
-  data = data.squeeze() # eliminate dims with size 1
+  data = dataSource.data[tuple(slices)]
   
   if xDim > yDim:
-    data = data.transpose()
-    
+    # swap x and y
+    axes = numpy.arange(numDim)
+    axes[numDim-xDim-1] = numDim-yDim-1
+    axes[numDim-yDim-1] = numDim-xDim-1
+    data = data.transpose(axes)
+ 
+  data = data.reshape((yNumPoints, xNumPoints))
+
   return data
 
-    
+def getSliceData(dataSource:'DataSource', position:Sequence=None, sliceDim:int=1):
+
+  sliceDim -= 1
+
+  if not hasattr(dataSource, 'data'):
+    dataSource.data = readData(dataSource)
+
+  numDim = dataSource.numDim
+
+  if not position:
+    position = numDim*[1]
+
+  dataDims = dataSource.sortedDataDims()
+
+  dataStore = dataSource.dataStore
+  filePath = dataStore.fullPath
+
+  hdf5file = h5py.File(filePath, 'r')
+  dataset = hdf5file[SPECTRUM_DATASET_NAME]
+
+  slices = numDim * [0]
+  for dim, dataDim in enumerate(dataDims):
+    if dim == sliceDim:
+      numPoints = dataDim.numPoints
+      slices[numDim-dim-1] = slice(numPoints)
+    else:
+      slices[numDim-dim-1] = slice(position[dim]-1, position[dim])
+
+  data = dataSource.data[tuple(slices)]
+  data = data.reshape((numPoints,))
+ 
+  return data
+
