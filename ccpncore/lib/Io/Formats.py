@@ -30,6 +30,7 @@ from ccpn.util import Common as commonUtil
 AZARA = 'Azara'
 BRUKER = 'Bruker'
 FELIX = 'Felix'
+HDF5 = 'Hdf5'
 NMRPIPE = 'NmrPipe'
 NMRVIEW = 'NmrView'
 UCSF = 'UCSF'
@@ -108,9 +109,11 @@ def analyseUrl(filePath):
     # No match
     return (None, None, filePath)
 
+  if filePath.endswith('.hdf5'): # TBD: is this what we want?
+    return ('Spectrum', HDF5, filePath)
+    
   # Set up for further analysis
   dirName, fileName = os.path.split(filePath)
-
 
   # Check for binary files
   fileObj = open(filePath, 'rb')
