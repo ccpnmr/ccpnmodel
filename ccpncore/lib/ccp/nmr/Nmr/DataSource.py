@@ -165,14 +165,14 @@ def _cumulativeArray(array):
   return (n, cumul)
   
 
-def getPlaneData(self:'DataSource', position:Sequence=None, xDim=1, yDim=2):
+def getPlaneData(self:'DataSource', position:Sequence=None, xDim:int=1, yDim:int=2):
   """ Get plane data through position in dimensions xDim, yDim
       Returns 2D float32 NumPy array in order (y, x) 
       Returns None if numDim < 2 or if there is no dataStore
       Positions are 1-based """
 
   # Import moved here to avoid circular import problems
-  from ccpnmodel.ccpncore.lib.spectrum.formats import NmrPipe
+  from ccpnmodel.ccpncore.lib.spectrum.formats import Hdf5, NmrPipe
 
   numDim = self.numDim
   if numDim < 2:
@@ -187,6 +187,9 @@ def getPlaneData(self:'DataSource', position:Sequence=None, xDim=1, yDim=2):
       dataStore.template = NmrPipe.guessFileTemplate(self)
     if dataStore.template:
       return NmrPipe.getPlaneData(self, position, xDim, yDim)
+    
+  if dataStore.fileType == 'Hdf5':
+    return Hdf5.getPlaneData(self, position, xDim, yDim)
     
   assert numDim == 2 or (position and len(position) == numDim), 'numDim = %d, position = %s' % (numDim, position)
   assert xDim != yDim, 'xDim = yDim = %d' % xDim
@@ -286,15 +289,28 @@ def getSliceData(self:'DataSource', position:Sequence=None, sliceDim:int=1):
   # Get an actual array of data points,
   # spanning blocks as required
   # returns 1D array
+  
+  # Import moved here to avoid circular import problems
+  from ccpnmodel.ccpncore.lib.spectrum.formats import Hdf5, NmrPipe
+
   numDim = self.numDim
   if numDim < 1:
     return None
-
-  sliceDim -= 1  # make 0 based instead of 1 based
   
   dataStore = self.dataStore
   if not dataStore:
     return None
+
+  if dataStore.fileType == 'NMRPipe': # data is not blocked but multi-file in general
+    if not hasattr(dataStore, 'template'):
+      dataStore.template = NmrPipe.guessFileTemplate(self)
+    if dataStore.template:
+      return NmrPipe.getSliceData(self, position, sliceDim)
+
+  if dataStore.fileType == 'Hdf5':
+    return Hdf5.getSliceData(self, position, sliceDim)
+
+  sliceDim -= 1  # make 0 based instead of 1 based
 
   if not position:
     position = numDim * [1]

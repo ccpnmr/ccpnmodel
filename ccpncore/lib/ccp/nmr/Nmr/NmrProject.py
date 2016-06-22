@@ -27,8 +27,8 @@ from ccpn.util import Common as commonUtil
 from typing import Sequence
 from ccpnmodel.ccpncore.lib import Constants
 from ccpnmodel.ccpncore.lib.spectrum import Spectrum as spectrumLib
-from ccpnmodel.ccpncore.lib.spectrum.formats import Azara, Bruker, Felix, NmrPipe, NmrView, Ucsf, Varian, Xeasy
-from ccpnmodel.ccpncore.lib.Io.Formats import AZARA, BRUKER, FELIX, NMRPIPE, NMRVIEW, UCSF, VARIAN, XEASY
+from ccpnmodel.ccpncore.lib.spectrum.formats import Azara, Bruker, Felix, Hdf5, NmrPipe, NmrView, Ucsf, Varian, Xeasy
+from ccpnmodel.ccpncore.lib.Io.Formats import AZARA, BRUKER, FELIX, HDF5, NMRPIPE, NMRVIEW, UCSF, VARIAN, XEASY
 from ccpn.util.Path import checkFilePath
 from ccpnmodel.ccpncore.lib import V2Upgrade
 # from ccpnmodel.ccpncore.lib.Io import Api as apiIo
@@ -59,8 +59,8 @@ def loadDataSource(self:'NmrProject', filePath, dataFileFormat):
   numPoints = None
 
   paramModules = {AZARA:Azara, BRUKER:Bruker, FELIX:Felix,
-                  NMRPIPE:NmrPipe, NMRVIEW:NmrView, UCSF:Ucsf,
-                  VARIAN:Varian, XEASY:Xeasy}
+                  HDF5:Hdf5, NMRPIPE:NmrPipe, NMRVIEW:NmrView,
+                  UCSF:Ucsf, VARIAN:Varian, XEASY:Xeasy}
 
   # dataFileFormat = getSpectrumFileFormat(filePath)
   if dataFileFormat is None:
