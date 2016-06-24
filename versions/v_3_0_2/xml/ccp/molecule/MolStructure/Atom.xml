@@ -111,6 +111,17 @@ for atom in orderedAtoms[ii:]:
   atom.__dict__['index'] -= 1</item>
   </destructorCodeStubs>
 
+  <!-- Start constraints for <MetaClass: ccp.molecule.MolStructure.Atom>: -->
+  <MetaConstraint name="implSpecificNames_must_be_either_empty_or_have_one_entry_per_model"
+   guid="www.ccpn.ac.uk_Fogh_2016-06-23-02:49:12_00001"
+   container="www.ccpn.ac.uk_Fogh_2006-08-16-14:22:55_00004"
+   isImplicit="false">
+    <codeStubs>
+      <item tag="python">len(self.implSpecificNames) in (0, len(self.topObject.models))</item>
+    </codeStubs>
+  </MetaConstraint>
+  <!-- End constraints for <MetaClass: ccp.molecule.MolStructure.Atom>: -->
+
 
   <MetaAttribute name="altLocationCode"
    guid="www.ccpn.ac.uk_Fogh_2011-03-22-17:23:27_00005"
@@ -191,6 +202,51 @@ isValid = (not ll or self.qualifiedName in ll)
     <valueType>www.ccpn.ac.uk_Fogh_2015-10-26-11:28:17_00001</valueType>
   </MetaAttribute>
 
+  <MetaOperation name="changeModelSpecificName"
+   guid="www.ccpn.ac.uk_Fogh_2016-06-23-02:54:31_00004"
+   container="www.ccpn.ac.uk_Fogh_2006-08-16-14:22:55_00004"
+   isAbstract="false" isImplicit="false" isQuery="false" opType="other"
+   scope="instance_level" visibility="public_vis">
+    <documentation>Set modelSpecificName to value 'value' for model 'model'</documentation>
+    <target>www.ccpn.ac.uk_Fogh_2016-06-23-02:54:31_00004</target>
+    <codeStubs>
+      <item tag="python">if not isinstance(model, Model):
+  raise ApiError("input parameter 'model' is not of class ccp.molecule.MolStructure.Model")
+
+if not isinstance(value, str):
+  raise ApiError("input parameter 'value' is not a string")
+
+if model.topObject is not self.topObject:
+  raise ApiError(" Model %s and Atom %s do not belong to the same StructureEnsemble" % (model, self))
+
+index = model.index
+ll = self.__dict__['implSpecificNames']
+if not ll:
+  nModels = len(self.topObject.models)
+  ll = self.__dict__['implSpecificNames'] = nModels * [self.name]
+ll[index] = value</item>
+    </codeStubs>
+
+
+    <MetaParameter name="model"
+     guid="www.ccpn.ac.uk_Fogh_2016-06-23-02:54:31_00006"
+     container="www.ccpn.ac.uk_Fogh_2016-06-23-02:54:31_00004"
+     direction="in_dir" hicard="1" isImplicit="false" isOrdered="false"
+     isUnique="true" locard="1">
+      <documentation>Model whose modelSpecific name we want to set</documentation>
+      <valueType>www.ccpn.ac.uk_Fogh_2007-11-23-12:00:10_00001</valueType>
+    </MetaParameter>
+
+    <MetaParameter name="value"
+     guid="www.ccpn.ac.uk_Fogh_2016-06-23-02:54:31_00005"
+     container="www.ccpn.ac.uk_Fogh_2016-06-23-02:54:31_00004"
+     direction="in_dir" hicard="1" isImplicit="false" isOrdered="false"
+     isUnique="true" locard="1">
+      <documentation>value of new name</documentation>
+      <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00033</valueType>
+    </MetaParameter>
+  </MetaOperation>
+
   <MetaRole name="chemAtom"
    guid="www.ccpn.ac.uk_Fogh_2006-08-16-18:23:36_00065"
    container="www.ccpn.ac.uk_Fogh_2006-08-16-14:22:55_00004"
@@ -246,9 +302,50 @@ isValid = (not ll or self.qualifiedName in ll)
    hicard="1" isAbstract="false" isAutomatic="false" isDerived="true"
    isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
    locard="1" scope="instance_level" visibility="public_vis">
-    <documentation>Element Symbol (e.g. 'C', 'He', 'Sn'). Derived from link to Atom. Deprecated - used for V&quot; compatibility only.</documentation>
+    <documentation>Element Symbol (e.g. 'C', 'He', 'Sn'). Derived from link to Atom. Deprecated - used for V2 compatibility only.</documentation>
     <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00037</valueType>
   </MetaAttribute>
+
+  <MetaOperation name="fetchModelSpecificName"
+   guid="www.ccpn.ac.uk_Fogh_2016-06-23-02:54:31_00007"
+   container="www.ccpn.ac.uk_Fogh_2006-08-16-14:22:55_00004"
+   isAbstract="false" isImplicit="false" isQuery="true" opType="other"
+   scope="instance_level" visibility="public_vis">
+    <documentation>Get modelSpecificName value for model 'model'</documentation>
+    <target>www.ccpn.ac.uk_Fogh_2016-06-23-02:54:31_00007</target>
+    <codeStubs>
+      <item tag="python">if model.topObject is not self.topObject:
+  raise ApiError(" Model %s and Atom %s do not belong to the same StructureEnsemble" % (model, self))
+
+if model.qualifiedName != 'ccp.molecule.MolStructure.Model':
+  raise ApiError("input parameter 'model' is not of class ccp.molecule.MolStructure.Model")
+
+index = model.index
+ll = self.__dict__['implSpecificNames']
+if ll:
+  result = ll[index]
+else:
+  result = self.name</item>
+    </codeStubs>
+
+
+    <MetaParameter name="model"
+     guid="www.ccpn.ac.uk_Fogh_2016-06-23-02:54:31_00008"
+     container="www.ccpn.ac.uk_Fogh_2016-06-23-02:54:31_00007"
+     direction="in_dir" hicard="1" isImplicit="false" isOrdered="false"
+     isUnique="true" locard="1">
+      <documentation>Model defining which specific name to fetch.</documentation>
+      <valueType>www.ccpn.ac.uk_Fogh_2007-11-23-12:00:10_00001</valueType>
+    </MetaParameter>
+
+    <MetaParameter name="result"
+     guid="www.ccpn.ac.uk_Fogh_2016-06-23-02:54:31_00009"
+     container="www.ccpn.ac.uk_Fogh_2016-06-23-02:54:31_00007"
+     direction="return_dir" hicard="1" isImplicit="false" isOrdered="false"
+     isUnique="true" locard="1">
+      <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00033</valueType>
+    </MetaParameter>
+  </MetaOperation>
 
   <MetaOperation name="getAtom"
    guid="www.ccpn.ac.uk_Fogh_2006-08-16-18:23:36_00068"
@@ -350,6 +447,21 @@ if result == 'Unknown':
     </codeStubs>
   </MetaOperation>
 
+  <MetaOperation name="getModelSpecificNames"
+   guid="www.ccpn.ac.uk_Fogh_2016-06-23-02:54:31_00002"
+   container="www.ccpn.ac.uk_Fogh_2006-08-16-14:22:55_00004"
+   isAbstract="false" isImplicit="false" isQuery="true" opType="get"
+   scope="instance_level" visibility="public_vis">
+    <documentation>getter for derived attribute modelSpecificNames</documentation>
+    <target>www.ccpn.ac.uk_Fogh_2016-06-23-02:54:31_00001</target>
+    <codeStubs>
+      <item tag="python">result = self.implSpecificNames
+if not result:
+  nModels = len(self.topObject.models)
+  result = nModels * (self.name,)</item>
+    </codeStubs>
+  </MetaOperation>
+
   <MetaOperation name="getOccupancies"
    guid="www.ccpn.ac.uk_Fogh_2011-03-22-17:23:27_00014"
    container="www.ccpn.ac.uk_Fogh_2006-08-16-14:22:55_00004"
@@ -401,6 +513,18 @@ else:
     </MetaParameter>
   </MetaOperation>
 
+  <MetaAttribute name="implSpecificNames"
+   guid="www.ccpn.ac.uk_Fogh_2016-06-23-02:49:16_00001"
+   container="www.ccpn.ac.uk_Fogh_2006-08-16-14:22:55_00004"
+   baseName="implSpecificName" changeability="frozen" forceUndoNotify="true"
+   hicard="-1" isAbstract="false" isAutomatic="false" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="true" isUnique="false"
+   locard="0" scope="instance_level" visibility="public_vis">
+    <documentation>Implementation attribute. Stores model-specific atom names.
+Used by Atom.modelSpecificNames and Model.specificAtomNames</documentation>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00033</valueType>
+  </MetaAttribute>
+
   <MetaAttribute name="index"
    guid="www.ccpn.ac.uk_Fogh_2011-03-22-17:23:27_00006"
    container="www.ccpn.ac.uk_Fogh_2006-08-16-14:22:55_00004"
@@ -434,6 +558,17 @@ else:
     <documentation>Corresponding IUPAC names,that can be used for coordinates.
 NBNB TBD this list goes with a iupacNameIndex matrix, so that every atom in every model can have a different IUPAC name (e.g. for assignments like HBX.</documentation>
     <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00037</valueType>
+  </MetaAttribute>
+
+  <MetaAttribute name="modelSpecificNames"
+   guid="www.ccpn.ac.uk_Fogh_2016-06-23-02:54:31_00001"
+   container="www.ccpn.ac.uk_Fogh_2006-08-16-14:22:55_00004"
+   baseName="modelSpecificNames" changeability="changeable"
+   forceUndoNotify="true" hicard="-1" isAbstract="false" isAutomatic="false"
+   isDerived="true" isImplementation="false" isImplicit="false" isOrdered="true"
+   isUnique="false" locard="0" scope="instance_level" visibility="public_vis">
+    <documentation>Model-specific atom names. Defaults to Atom.name</documentation>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00033</valueType>
   </MetaAttribute>
 
   <MetaAttribute name="name"
@@ -537,6 +672,24 @@ else:
      isUnique="false" locard="3">
       <valueType>www.ccpn.ac.uk_Fogh_2015-10-26-11:28:17_00001</valueType>
     </MetaParameter>
+  </MetaOperation>
+
+  <MetaOperation name="setModelSpecificNames"
+   guid="www.ccpn.ac.uk_Fogh_2016-06-23-02:54:31_00003"
+   container="www.ccpn.ac.uk_Fogh_2006-08-16-14:22:55_00004"
+   isAbstract="false" isImplicit="false" isQuery="false" opType="set"
+   scope="instance_level" visibility="public_vis">
+    <documentation>setter for derived attribute modelSpecificNames</documentation>
+    <target>www.ccpn.ac.uk_Fogh_2016-06-23-02:54:31_00001</target>
+    <codeStubs>
+      <item tag="python">if values:
+  if len(values) == len(self.topObject.models):
+    self.__dict__['implSpecificNames'] = list(values)
+  else:
+    raise ApiError("Number of specificAtomNames must match number of models")
+else:
+  self.__dict__['implSpecificNames'] = []</item>
+    </codeStubs>
   </MetaOperation>
 
   <MetaOperation name="setOccupancy"

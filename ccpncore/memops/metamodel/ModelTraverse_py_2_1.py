@@ -425,6 +425,7 @@ class ModelTraverse_py_2_1:
     docString = self.getDocString(op)
     returnType = self.getReturnType(op)
     throwsTypes = self.getThrowsTypes(op)
+    
     # TBD: exceptions
     self.startFunc(funcName, params, docString, returnType, throwsTypes)
     

@@ -85,7 +85,11 @@ if structureEnsemble.findFirstDataMatrix(name='coordinates') is None:
   structureEnsemble.newDataMatrix(name='coordinates', shape=(nModels,structureEnsemble.nAtoms,3))
 for tag in ('bFactors','occupancies'):
   if structureEnsemble.findFirstDataMatrix(name=tag) is None:
-    structureEnsemble.newDataMatrix(name=tag, shape=(nModels,structureEnsemble.nAtoms))</item>
+    structureEnsemble.newDataMatrix(name=tag, shape=(nModels,structureEnsemble.nAtoms))
+for atom in self.structureEnsemble.orderedAtoms:
+  ll = atom.__dict__['implSpecificNames']
+  if ll:
+    ll.append(atom.name)</item>
   </constructorCodeStubs>
   <postDestructorCodeStubs>
     <item tag="java">/* NBNB TBD */</item>
@@ -94,6 +98,10 @@ if not structureEnsemble in objsToBeDeleted:
   index = self.index
   for matrix in self.structureEnsemble.dataMatrices:
     matrix.removeSlice(index)
+  for atom in self.structureEnsemble.orderedAtoms:
+    ll = atom.__dict__['implSpecificNames']
+    if ll:
+      del ll[index]
   for model in self.structureEnsemble.models:
     ii = model.index
     if ii &gt; index:
@@ -182,6 +190,27 @@ if dataMatrix:
   result = dataMatrix.getSubmatrixData(point=(self.index,), shape=(1,))
 else:
   raise ApiError("%s lacks DataMatrix named 'occupancies''" % self.structureEnsemble)</item>
+    </codeStubs>
+  </MetaOperation>
+
+  <MetaOperation name="getSpecificAtomNames"
+   guid="www.ccpn.ac.uk_Fogh_2016-06-23-02:54:31_00011"
+   container="www.ccpn.ac.uk_Fogh_2007-11-23-12:00:10_00001"
+   isAbstract="false" isImplicit="false" isQuery="true" opType="get"
+   scope="instance_level" visibility="public_vis">
+    <documentation>getter for derived attribute specificAtomNames</documentation>
+    <target>www.ccpn.ac.uk_Fogh_2016-06-23-02:54:31_00010</target>
+    <codeStubs>
+      <item tag="python">index = self.index
+result = self.structureEnsemble.nAtoms * [None]
+for ii, atom in enumerate(self.structureEnsemble.orderedAtoms):
+  ll = atom.__dict__['implSpecificNames']
+  if ll:
+    result[ii] = ll[index]
+  else:
+    result[ii] = atom.name
+#
+result = tuple(result)</item>
     </codeStubs>
   </MetaOperation>
 
@@ -296,6 +325,17 @@ else:
       <valueType>www.ccpn.ac.uk_Fogh_2015-10-26-11:28:17_00001</valueType>
     </MetaParameter>
   </MetaOperation>
+
+  <MetaAttribute name="specificAtomNames"
+   guid="www.ccpn.ac.uk_Fogh_2016-06-23-02:54:31_00010"
+   container="www.ccpn.ac.uk_Fogh_2007-11-23-12:00:10_00001"
+   baseName="specificAtomName" changeability="frozen" forceUndoNotify="true"
+   hicard="-1" isAbstract="false" isAutomatic="false" isDerived="true"
+   isImplementation="false" isImplicit="false" isOrdered="true" isUnique="false"
+   locard="0" scope="instance_level" visibility="public_vis">
+    <documentation>Model-specific atom names for atoms in order. Equal to standard atomn names if no alternative value has been set.</documentation>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00033</valueType>
+  </MetaAttribute>
 
   <MetaRole name="structureEnsemble"
    guid="www.ccpn.ac.uk_Fogh_2007-11-23-12:00:15_00006"
