@@ -22,6 +22,7 @@ __version__ = "$Revision$"
 # Start of code
 #=========================================================================================
 from ccpnmodel.ccpncore.api.ccp.molecule.Molecule import Molecule
+from ccpn.util.Common import DEFAULT_LABELING
 
 def fetchMolComponent(self:"RefSampleComponentStore", molecule:Molecule,
                       labeling:str=None) -> "AbstractComponent":
@@ -32,14 +33,8 @@ def fetchMolComponent(self:"RefSampleComponentStore", molecule:Molecule,
   """
   name = molecule.name
   if labeling is None:
-    # Pick any MolComponent regardless of labeling
-    result = (self.findFirstComponent(name=name, labeling='std') or
-              self.findFirstComponent(name=name))
-    # Any new molComponent must be 'std'
-    labeling = 'std'
-  else:
-    # labeling passed in. Use it.
-    result = self.findFirstComponent(name=name, labeling=labeling)
+    labeling = DEFAULT_LABELING
+  result = self.findFirstComponent(name=name, labeling=labeling)
 
   if result is None:
     # Finalise, so molecule does not change 'underneath' substance

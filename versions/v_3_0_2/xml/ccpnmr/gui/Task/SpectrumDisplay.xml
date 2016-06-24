@@ -106,6 +106,7 @@ isValid = ('intensity' not in axisCodes[:1] and 'intensity' not in axisCodes[2:]
    container="www.ccpn.ac.uk_Fogh_2014-11-04-17:39:35_00005"
    isAbstract="false" isImplicit="false" isQuery="false" opType="other"
    scope="instance_level" visibility="public_vis">
+    <documentation>Copy Module to target task.  NOT IN USE</documentation>
     <target>www.ccpn.ac.uk_Fogh_2014-11-11-18:25:59_00005</target>
     <codeStubs>
       <item tag="python">from ccpnmodel.ccpncore.lib import CopyData
@@ -166,7 +167,7 @@ for spectrumView in newModule.sortedSpectrumViews:
    container="www.ccpn.ac.uk_Fogh_2014-11-04-17:39:35_00005"
    isAbstract="false" isImplicit="false" isQuery="false" opType="other"
    scope="instance_level" visibility="public_vis">
-    <documentation>Disconnect task from NmrProject and windows, for inactivation, storage, and exchange.</documentation>
+    <documentation>Disconnect module from NmrProject and windows, for inactivation, storage, and exchange. NOT IN USE</documentation>
     <target>www.ccpn.ac.uk_Fogh_2014-11-10-13:49:17_00007</target>
     <codeStubs>
       <item tag="python"># disconnect windows
@@ -276,6 +277,19 @@ result = tuple(dd[x] for x in sorted(dd))</item>
     <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00028</valueType>
   </MetaAttribute>
 
+  <MetaAttribute name="moduleType"
+   guid="www.ccpn.ac.uk_Fogh_2016-06-22-02:40:58_00001"
+   container="www.ccpn.ac.uk_Fogh_2014-11-04-17:39:35_00005"
+   baseName="moduleType" changeability="frozen" forceUndoNotify="true"
+   hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="1" scope="instance_level" visibility="public_vis">
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00037</valueType>
+    <defaultValue>
+      <item>SpectrumDisplay</item>
+    </defaultValue>
+  </MetaAttribute>
+
   <MetaRole name="orderedAxes"
    guid="www.ccpn.ac.uk_Fogh_2014-11-05-13:11:24_00001"
    container="www.ccpn.ac.uk_Fogh_2014-11-04-17:39:35_00005"
@@ -304,7 +318,7 @@ result = tuple(dd[x] for x in sorted(dd))</item>
    container="www.ccpn.ac.uk_Fogh_2014-11-04-17:39:35_00005"
    isAbstract="false" isImplicit="false" isQuery="false" opType="other"
    scope="instance_level" visibility="public_vis">
-    <documentation>Reconnect Module to Nmr data and window, assuming that the NmrProject data fit. Data that do not fit are removed (except for SpectrumViews)</documentation>
+    <documentation>Reconnect Module to Nmr data and window, assuming that the NmrProject data fit. Data that do not fit are removed (except for SpectrumViews)  NOT IN USE</documentation>
     <target>www.ccpn.ac.uk_Fogh_2014-11-10-13:49:17_00008</target>
     <codeStubs>
       <item tag="python"># Reset window ID.

@@ -72,13 +72,6 @@ and contains original contributions embedded in the framework
   <supertypes>
     <item>www.ccpn.ac.uk_Fogh_2006-09-14-16:28:57_00005</item>
   </supertypes>
-  <constructorCodeStubs>
-    <item tag="python">if self.title is None:
-  if self.serial == 1:
-    self.title = 'Main'
-  else:
-    self.title = 'W%s' % self.serial</item>
-  </constructorCodeStubs>
   <destructorCodeStubs>
     <item tag="python">if any(x for x in self.modules if x not in objsToBeDeleted and x.guiTask not in objsToBeDeleted):
   raise ApiError("Window %s is not empty - first delete or disconnect modules %s." % (self, self.modules))
@@ -153,7 +146,7 @@ NBNB The main window is created automatically whe the GuiStore is created - it w
    isAbstract="false" isAutomatic="false" isDerived="false"
    isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
    locard="1" scope="instance_level" visibility="public_vis">
-    <documentation>Window label. Defaults to 'Main' for serial == 1 and to 'W%s' % serial for other windows.</documentation>
+    <documentation>Window label. Recommended to be 'Main' for serial == 1 and 'W%s' % serial for other windows.</documentation>
     <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00037</valueType>
   </MetaAttribute>
 

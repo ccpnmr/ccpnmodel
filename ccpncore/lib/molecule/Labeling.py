@@ -4,6 +4,7 @@
 #=========================================================================================
 # Licence, Reference and Credits
 #=========================================================================================
+from ccpn.util.Common import DEFAULT_LABELING
 
 __copyright__ = "Copyright (C) CCPN project (www.ccpn.ac.uk) 2014 - $Date$"
 __credits__ = "Wayne Boucher, Rasmus H Fogh, Simon Skinner, Geerten Vuister"
@@ -25,9 +26,6 @@ __version__ = "$Revision$"
 
 from ccpn.util import Common as commonUtil
 from typing import Sequence
-
-# Default labeling - must be treated as 'not labeled'
-NULL_LABELING = 'std'
 
 def _getIsotopomerSingleAtomFractions(isotopomers, atomName, subType=1):
   """Descrn: Get the isotope proportions for a names atom in over a set
@@ -334,3 +332,29 @@ def chemAtomPairLabelFractions(project, labeling:str, ccpCode:str, atomNamePair:
   #
   return result
 
+
+def sampleChainLabeling(sample, chainCode:str) -> str:
+  """Get labeling string for chain chainCode in sample
+  If chainCode does not match a SampleComponent, look for unambiguous global labeling:
+  Heuristics: If there is only one SampleComponent, use that labeling
+  If all SampleComponents with explicit chainCodes have the same labeling, use that labeling"""
+
+  labeling = DEFAULT_LABELING
+
+  sampleComponents = sample.sortedSampleComponents()
+  if len(sampleComponents) == 1:
+    labeling = sampleComponents[0].labeling
+
+  else:
+    for sampleComponent in sampleComponents:
+      if chainCode in sampleComponent.chainCodes:
+        labeling = sampleComponent.labeling
+        break
+
+    else:
+      labelings = [x.labeling for x in sample.sampleComponents if x.chainCodes]
+      if len(labelings) == 1:
+        # Only one labeling in use in sample - use it
+        labeling = labelings.pop()
+  #
+  return labeling

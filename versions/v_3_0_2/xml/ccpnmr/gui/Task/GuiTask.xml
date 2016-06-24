@@ -87,11 +87,14 @@ if self.nmrProject is not None:
   if not self.windows:
     windowStore = self.nmrProject.windowStore
     if windowStore is not None:
-      for window in windowStore.sortedWindows():
+      windows = windowStore.sortedWindows()
+      for window in windows:
         if window.guiTask is None:
           break
       else:
-        window = windowStore.newWindow()
+        # There will always be at least one window - the Main one.
+        nextSerial = windows[-1].serial + 1
+        window = windowStore.newWindow(title='W%s' % nextSerial)
         objectsCreated.add(window)
       window.guiTask = self</item>
   </constructorCodeStubs>
@@ -154,9 +157,15 @@ if windowStore is None:
 # map windowId to windows, making new windows as necessary
 windowIds = list(sorted(set(x.windowId for x in self.modules)))
 
+windows = windowStore.sortedWindows()
+nextSerial = 1
+if windows:
+  nextSerial = windows[-1].serial + 1
+
 if window is None:
   #No window passed in - make all new windows
-  windowMap = dict((oldId, windowStore.newWindow()) for oldId in windowIds)
+  windowMap = dict((oldId, windowStore.newWindow(title='W%s' % (nextSerial + ii)))
+                   for ii,oldId in enumerate(windowIds))
 
 else:
   # window is passed in. Empty and use this, and successive windows with higher serials
@@ -169,9 +178,9 @@ else:
   for ii, window in enumerate(oldWindows[:len(windowIds)]):
     window.empty()
     windowMap[windowIds[ii]] = window
-  for windowId in windowIds[oldWindowCount:]:
+  for ii,windowId in enumerate(windowIds[oldWindowCount:]):
   # We do not have enough windows = make the remainder
-    windowMap[windowId] = windowStore.newWindow()
+    windowMap[windowId] = windowStore.newWindow(title='W%s' % (nextSerial + ii))
 
 # Reconnect project
 self.root.override = True
