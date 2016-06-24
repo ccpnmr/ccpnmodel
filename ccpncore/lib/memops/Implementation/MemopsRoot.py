@@ -62,9 +62,8 @@ def fetchDataUrl(self:'MemopsRoot', fullPath:str) -> 'DataUrl':
 def fetchNmrProject(self:'MemopsRoot', name:str=None) -> 'NmrProject':
   """Get existing NmrProject from MemopsRoot, or create one if there are no NmrProjects.
 
-  If name is passeed in, the function will return a matching NmrProject or throw an error
-  If no name is passed, function takes the first nNmrProject,
-  or creates an NmrProject with same name as the project
+  If name is passed in, the function will return a matching NmrProject or throw an error
+  If no name is passed, function takes the first NmrProject alphabetically by name
   """
 
   nmrProjects = self.sortedNmrProjects()
