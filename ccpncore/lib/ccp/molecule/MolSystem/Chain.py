@@ -39,6 +39,8 @@ def expandMolSystemAtoms(self:'Chain'):
   """Add extra atoms to chain corresponding to AtomSets
   Called on V2 upgrade, or on finalisation of chain."""
 
+  molSystem = self.molSystem
+
   # Set elementSymbol and add missing atoms (lest something breaks lower down)
   for residue in self.sortedResidues():
     chemCompVar = residue.chemCompVar
@@ -63,21 +65,27 @@ def expandMolSystemAtoms(self:'Chain'):
             if boundAtom is not None and boundAtom not in atom.boundAtoms:
               atom.addBoundAtom(boundAtom)
 
-    # Add boundAtoms for MolResLinks
+    # Add boundAtoms for MolResLinks - Now add as GenericBond
       for molResLink in self.molecule.molResLinks:
         ff = self.findFirstResidue
-        atoms = [ff(seqId=x.molResidue.serial).findFirstAtom(name=x.linkEnd.boundChemAtom.name)
-                 for x in molResLink.molResLinkEnds]
-        if atoms[1] not in atoms[0].boundAtoms:
-          atoms[0].addBoundAtom(atoms[1])
+        atoms = frozenset(
+          ff(seqId=x.molResidue.serial).findFirstAtom(name=x.linkEnd.boundChemAtom.name)
+          for x in molResLink.molResLinkEnds
+        )
+        if molSystem.findFirstGenericBond(atoms=atoms) is None:
+          molSystem.newGenericBond(atoms=atoms)
+    #     if atoms[1] not in atoms[0].boundAtoms:
+    #       atoms[0].addBoundAtom(atoms[1])
 
-    # Add boundAtoms for MolSystemLinks
+    # Add boundAtoms for MolSystemLinks - Now add as GenericBond
     for linkEnd in residue.sortedMolSystemLinkEnds():
       molSystemLink = linkEnd.molSystemLink
-      atoms = [x.residue.findFirstAtom(name=x.linkEnd.boundChemAtom.name)
-               for x in molSystemLink.molSystemLinkEnds]
-      if atoms[1] not in  atoms[0].boundAtoms:
-        atoms[0].addBoundAtom(atoms[1])
+      atoms = frozenset(x.residue.findFirstAtom(name=x.linkEnd.boundChemAtom.name)
+                        for x in molSystemLink.molSystemLinkEnds)
+      if molSystem.findFirstGenericBond(atoms=atoms) is None:
+        molSystem.newGenericBond(atoms=atoms)
+    #   if atoms[1] not in  atoms[0].boundAtoms:
+    #     atoms[0].addBoundAtom(atoms[1])
 
     # NB we do NOT add boundAtoms for NonCovalentBonds
 
@@ -189,7 +197,7 @@ def expandMolSystemAtoms(self:'Chain'):
     eqvTypeAtoms = [x for x in residue.sortedAtoms() if x.atomType == 'equivalent']
     for ii,eqvAtom in enumerate(eqvTypeAtoms):
       components = eqvAtom.sortedComponents()
-      for eqvAtom2 in eqvTypeAtoms[ii+1:]:
+      for eqvAtom2 in eqvTypeAtoms:
         components2 = eqvAtom2.sortedComponents()
         if len(components) == len(components2):
           if all((x in components2[jj].boundAtoms) for jj,x in enumerate(components)):
@@ -199,7 +207,8 @@ def expandMolSystemAtoms(self:'Chain'):
             # CG1,CG2 matching HG1*,HG2* etc.
 
             # Add bond between equivalent atoms
-            eqvAtom.addBoundAtom(eqvAtom2)
+            if eqvAtom2 not in eqvAtom.boundAtoms:
+              eqvAtom.addBoundAtom(eqvAtom2)
 
             nsNames1 = nonStereoNames.get(eqvAtom.atomSetName)
             nsNames2 = nonStereoNames.get(eqvAtom2.atomSetName)
@@ -207,9 +216,10 @@ def expandMolSystemAtoms(self:'Chain'):
               # Non-stereoAtoms are defined for both - add X,Y bonds
               # NB We rely on names being sorted (X then Y in both cases)
               for kk,name in enumerate(nsNames1):
+                atom1 = residue.findFirstAtom(name=name)
                 atom2 = residue.findFirstAtom(name=nsNames2[kk])
-                residue.findFirstAtom(name=name).addBoundAtom(atom2)
-
+                if atom2 not in atom1.boundAtoms:
+                  atom1.addBoundAtom(atom2)
             break
 
 def renameChain(self:'Chain', newCode:str):

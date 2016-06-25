@@ -47,7 +47,7 @@ def doTest(target=None, workDir=None, maskErrors=True):
     removeTarget=False
   else:
     # We are testing all projects.
-    target = corePath.joinPath(corePath.getPathToImport('ccpnmodel', *testDataPath))
+    target = corePath.joinPath(corePath.getPathToImport('ccpnmodel'), *testDataPath)
     removeTarget=True
   
   if os.path.isfile(target):
