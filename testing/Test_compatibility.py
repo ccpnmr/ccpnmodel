@@ -178,8 +178,11 @@ def testProject(target, outDir):
     if not newPath.endswith(corePath.CCPN_DIRECTORY_SUFFIX):
       newPath += corePath.CCPN_DIRECTORY_SUFFIX
     logger.info('### saving %s to %s' % (ccpnProject.name, newPath))
-    apiIo.saveProject(ccpnProject, newPath=newPath, newProjectName=ccpnProject.name,
-                       overwriteExisting=True)
+    # apiIo.saveProject(ccpnProject, newPath=newPath, newProjectName=ccpnProject.name,
+    #                    overwriteExisting=True)
+    result = apiIo.saveProject(ccpnProject, newPath=newPath, overwriteExisting=True)
+    if not result:
+      raise ValueError("CCPN save failed - apiIo.saveProject did not return Trus")
     shutil.make_archive(newPath, 'gztar', newPath)
     shutil.rmtree(newPath)
     t4 = time.time()

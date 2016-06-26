@@ -253,7 +253,7 @@ ll[index] = value</item>
    baseName="chemAtom" changeability="frozen" forceUndoNotify="true" hicard="1"
    isAbstract="false" isAutomatic="false" isDerived="true"
    isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
-   locard="1" noDeleteIfSet="false" partitionsChildren="false"
+   locard="0" noDeleteIfSet="false" partitionsChildren="false"
    scope="instance_level" visibility="public_vis">
     <documentation>ChemAtom corresponding to Atom</documentation>
     <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:52_00037</valueType>
@@ -400,9 +400,13 @@ if (rr instanceof ccp.api.molecule.ChemComp.ChemAtom)
   result = (ccp.api.molecule.ChemComp.ChemAtom) rr;
 else
   result = null;</item>
-      <item tag="python">result = self.residue.residue.chemCompVar.findFirstChemAtom(name=self.name)
-if result.className != 'ChemAtom':
-  result = None</item>
+      <item tag="python">residue = self.residue.residue
+if residue is None:
+  result = None
+else:
+  result = residue.chemCompVar.findFirstChemAtom(name=self.name)
+  if result.className != 'ChemAtom':
+    result = None</item>
     </codeStubs>
   </MetaOperation>
 
@@ -439,9 +443,9 @@ else
   result = null;</item>
       <item tag="python">result = self.elementName
 if result == 'Unknown':
-  residue = self.residue
+  residue = self.residue.residue
   if residue is not None:
-    atom = residue.residue.chemCompVar.findFirstChemAtom(name=self.name)
+    atom = residue.chemCompVar.findFirstChemAtom(name=self.name)
     if atom is not None and atom.className == 'ChemAtom':
       result = atom.elementSymbol</item>
     </codeStubs>

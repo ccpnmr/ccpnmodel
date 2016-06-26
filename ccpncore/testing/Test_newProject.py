@@ -47,7 +47,9 @@ def doTest():
   del project
 
   project2 = apiIo.loadProject(path=projectPath, projectName=projectName)
-  apiIo.saveProject(project2, newProjectName=projectName+'_out')
+  successful = apiIo.saveProject(project2, newPath=projectPath+'_out')
+  if not successful:
+    raise ValueError("Project save was not successful")
 
 
 

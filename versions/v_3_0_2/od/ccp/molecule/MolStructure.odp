@@ -1010,9 +1010,9 @@ objectdomain.uml.core.Stereotype-owns $20
 )
 (value "result = self.elementName"
 "if result == 'Unknown':"
-"  residue = self.residue"
+"  residue = self.residue.residue"
 "  if residue is not None:"
-"    atom = residue.residue.chemCompVar.findFirstChemAtom(name=self.name)"
+"    atom = residue.chemCompVar.findFirstChemAtom(name=self.name)"
 "    if atom is not None and atom.className == 'ChemAtom':"
 "      result = atom.elementSymbol"
 )
@@ -1054,9 +1054,13 @@ objectdomain.uml.core.Stereotype-owns $20
 ($9 185 < 0_-fvi_hrnjywg5_-kl4 "code:python" 180
 (name "code:python"
 )
-(value "result = self.residue.residue.chemCompVar.findFirstChemAtom(name=self.name)"
-"if result.className != 'ChemAtom':"
+(value "residue = self.residue.residue"
+"if residue is None:"
 "  result = None"
+"else:"
+"  result = residue.chemCompVar.findFirstChemAtom(name=self.name)"
+"  if result.className != 'ChemAtom':"
+"    result = None"
 )
 (uid "0_-fvi_hrnjywg5_-kl4"))
 ($8 186 < 0_63g_i1m6g9jk_-p98 "iupacNames" 146
@@ -1954,8 +1958,7 @@ objectdomain.uml.core.Stereotype-owns $20
 (isNavigable false))
 ($12 335 < 0_-fvi_hrnjywg5_-khp "#1" 333
 (changeability "frozen")
-(uid "0_-fvi_hrnjywg5_-khp")
-(multiplicity "1"))
+(uid "0_-fvi_hrnjywg5_-khp"))
 ($9 336 < 0_-fvi_hrnjywg5_-kho "documentation" 335
 (name "documentation"
 )

@@ -671,6 +671,7 @@ def copyMolSystemContents(molSystem, toMolSystem, chainMap):
     chainMap[chain] = newChain
     newChains.append(newChain)
 
+  chainCodeMap = dict(((key.code, val.code) for key,val in chainMap.items()))
 
   # copy ChainInteractions
   for chainInteraction in molSystem.sortedChainInteractions():
@@ -715,7 +716,11 @@ def copyMolSystemContents(molSystem, toMolSystem, chainMap):
     # reset molSystem link
     molSystem.root.override=True
     try:
+      parentDict = molSystem.root.__dict__['structureEnsembles']
+      del parentDict[(molSystem, structureEnsemble.ensembleId)]
+      newCode = (toMolSystem, structureEnsemble.ensembleId)
       structureEnsemble.molSystem = toMolSystem
+      parentDict[newCode] = structureEnsemble
     finally:
       molSystem.root.override = False
 
@@ -723,7 +728,17 @@ def copyMolSystemContents(molSystem, toMolSystem, chainMap):
     for haddock in molSystem.root.sortedHaddockProjects():
       for partner in haddock.sortedHaddockPartners():
         if partner.structureEnsemble is structureEnsemble:
-          partner.nolSystem = toMolSystem
+          partner.molSystem = toMolSystem
+          for hchain in partner.sortedChains():
+            oldChainCode = hchain.chainCode
+            newChainCode = chainCodeMap.get(oldChainCode)
+            if newChainCode != oldChainCode:
+              if newChainCode:
+                # Should always be true, but it should fail more gracefully this way
+                parentDict = partner.__dict__['chains']
+                del parentDict[oldChainCode]
+                hchain.__dict__['chainCode'] = newChainCode
+                parentDict[newChainCode] = hchain
 
   # Fix NmrCalc instances
   for nmrCalcStore in molSystem.root.sortedNmrCalcStores():

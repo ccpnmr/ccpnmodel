@@ -67,7 +67,7 @@ and contains original contributions embedded in the framework
  visibility="public_vis">
   <documentation>CCPN Residue.</documentation>
   <keyNames>
-    <item>residue</item>
+    <item>residueSeqId</item>
   </keyNames>
   <supertypes>
     <item>www.ccpn.ac.uk_Fogh_2006-09-14-16:28:57_00005</item>
@@ -101,6 +101,20 @@ and contains original contributions embedded in the framework
     </defaultValue>
   </MetaAttribute>
 
+  <MetaOperation name="getResidue"
+   guid="www.ccpn.ac.uk_Fogh_2016-06-24-07:05:24_00001"
+   container="www.ccpn.ac.uk_Fogh_2008-02-27-16:13:11_00002"
+   isAbstract="false" isImplicit="false" isQuery="true" opType="get"
+   scope="instance_level" visibility="public_vis">
+    <documentation>getter for derived link residue</documentation>
+    <target>www.ccpn.ac.uk_Fogh_2008-02-27-16:15:25_00006</target>
+    <codeStubs>
+      <item tag="python">result = self.chain.chain
+if result is not None:
+  result = result.findFirstResidue(seqId=self.residueSeqId)</item>
+    </codeStubs>
+  </MetaOperation>
+
   <MetaAttribute name="haddockSeqId"
    guid="www.ccpn.ac.uk_Fogh_2008-02-27-16:20:33_00001"
    container="www.ccpn.ac.uk_Fogh_2008-02-27-16:13:11_00002"
@@ -129,13 +143,36 @@ and contains original contributions embedded in the framework
   <MetaRole name="residue"
    guid="www.ccpn.ac.uk_Fogh_2008-02-27-16:15:25_00006"
    container="www.ccpn.ac.uk_Fogh_2008-02-27-16:13:11_00002"
-   baseName="residue" changeability="frozen" forceUndoNotify="true" hicard="1"
-   isAbstract="false" isAutomatic="false" isDerived="false"
+   baseName="residue" changeability="changeable" forceUndoNotify="true"
+   hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
    isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
-   locard="1" noDeleteIfSet="false" partitionsChildren="false"
+   locard="0" noDeleteIfSet="false" partitionsChildren="false"
    scope="instance_level" visibility="public_vis">
     <documentation>MolSystem.Residue corresponding to Haddock.Residue</documentation>
     <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00030</valueType>
   </MetaRole>
+
+  <MetaAttribute name="residueSeqId"
+   guid="www.ccpn.ac.uk_Fogh_2016-06-24-07:05:23_00004"
+   container="www.ccpn.ac.uk_Fogh_2008-02-27-16:13:11_00002"
+   baseName="residueSeqId" changeability="frozen" forceUndoNotify="true"
+   hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="1" scope="instance_level" visibility="public_vis">
+    <documentation>seqId of corresponding residue. Key attribute</documentation>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00032</valueType>
+  </MetaAttribute>
+
+  <MetaOperation name="setResidue"
+   guid="www.ccpn.ac.uk_Fogh_2016-06-24-07:05:24_00002"
+   container="www.ccpn.ac.uk_Fogh_2008-02-27-16:13:11_00002"
+   isAbstract="false" isImplicit="false" isQuery="false" opType="set"
+   scope="instance_level" visibility="public_vis">
+    <documentation>setter for derived link residue</documentation>
+    <target>www.ccpn.ac.uk_Fogh_2008-02-27-16:15:25_00006</target>
+    <codeStubs>
+      <item tag="python">self.residueSeqId = value.seqId</item>
+    </codeStubs>
+  </MetaOperation>
 </MetaClass>
 

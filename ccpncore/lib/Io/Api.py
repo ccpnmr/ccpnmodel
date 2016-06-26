@@ -85,8 +85,7 @@ def _createLogger(project, applicationName=None, useFileLogger=None):
 #
 #   return path
   
-def newProject(projectName, path:str=None, overwriteExisting:bool=False,
-               showYesNo:"function"=None, applicationName='ccpn',
+def newProject(projectName, path:str=None, overwriteExisting:bool=False, applicationName='ccpn',
                useFileLogger:bool=True) -> Implementation.MemopsRoot:
   """
   Create, and return, a new project using a specified path (directory).
@@ -113,7 +112,7 @@ def newProject(projectName, path:str=None, overwriteExisting:bool=False,
       fullPath = Path.joinPath(path, projectName) + repositoryNameMap[name]
       fullPath = addCcpnDirectorySuffix(fullPath)
       if not absentOrRemoved(Path.joinPath(fullPath, 'memops', 'Implementation'),
-                             overwriteExisting, showYesNo):
+                             overwriteExisting):
         errMsg = 'Path ("%s") contains existing project.' % fullPath
         Logging.getLogger().warning(errMsg)
         raise Exception(errMsg)
@@ -151,7 +150,7 @@ def newProject(projectName, path:str=None, overwriteExisting:bool=False,
 
   return project
 
-def absentOrRemoved(path:str, overwriteExisting:bool=False, showYesNo:"function"=None) -> bool:
+def absentOrRemoved(path:str, overwriteExisting:bool=False) -> bool:
   """Check if file is present, possibly removing it first.
 
   If path already exists:
@@ -175,27 +174,27 @@ def absentOrRemoved(path:str, overwriteExisting:bool=False, showYesNo:"function"
       Path.deletePath(path)
       return True
 
-    elif showYesNo:
-      if os.path.isdir(path):
-        files = os.listdir(path)
-        n = 5
-        if len(files) > n:
-          files = files[:n]
-          files.append('...')
-        ss = ', '.join(files)
-        message = '%s already exists, remove it and all of its contents (%s) (if no, then no action taken)?' % (path, ss)
-        if not showYesNo('Remove directory', message):
-          return False
-        else:
-          Path.deletePath(path)
-          return True
-      else:
-        message = '%s already exists (not as a directory), remove it?' % path
-        if not showYesNo('Remove file', message):
-          return False
-        else:
-          Path.deletePath(path)
-          return True
+    # elif showYesNo:
+    #   if os.path.isdir(path):
+    #     files = os.listdir(path)
+    #     n = 5
+    #     if len(files) > n:
+    #       files = files[:n]
+    #       files.append('...')
+    #     ss = ', '.join(files)
+    #     message = '%s already exists, remove it and all of its contents (%s) (if no, then no action taken)?' % (path, ss)
+    #     if not showYesNo('Remove directory', message):
+    #       return False
+    #     else:
+    #       Path.deletePath(path)
+    #       return True
+    #   else:
+    #     message = '%s already exists (not as a directory), remove it?' % path
+    #     if not showYesNo('Remove file', message):
+    #       return False
+    #     else:
+    #       Path.deletePath(path)
+    #       return True
     else:
       return False
   else:
@@ -499,12 +498,14 @@ def deleteTemporaryDirectory(project):
     project._temporaryDirectory.cleanup()
     del project._temporaryDirectory 
   
-def saveProject(project, newPath=None, newProjectName=None, changeBackup=True,
-                createFallback=False, overwriteExisting=False, showYesNo=None,
-                checkValid=False, changeDataLocations=False, useFileLogger:bool=True):
+def saveProject(project, newPath=None, changeBackup=True,
+                createFallback=False, overwriteExisting=False,
+                checkValid=False, changeDataLocations=False,
+                useFileLogger:bool=True) -> bool:
   """
   Save the userData for a project to a location given by newPath (the url.path
   of the userData repository) if set, or the existing location if not.
+  Return True if save succeeded otherwise return False (or throw error)
 
   NB Changes to project in the function can NOT be undone, but previous contents of the undo
   queue are left active, so you can undo backwards.
@@ -555,7 +556,6 @@ def saveProject(project, newPath=None, newProjectName=None, changeBackup=True,
     raise IOError('Problem: userData not found')
 
   oldPath = userData.url.path
-  oldProjectName = project.name
 
   if newPath:
     # normalise newPath
@@ -568,49 +568,45 @@ def saveProject(project, newPath=None, newProjectName=None, changeBackup=True,
       project._logger.info("Project has been upgraded - saved in new location:  %s "
                            % os.path.basename(newPath))
 
-  # if newProjectName isn't specified then use default
-  if not newProjectName:
-    if newPath == oldPath:
-      newProjectName = oldProjectName
-    else:
-      newProjectName = os.path.basename(newPath)
+  # set newProjectName
+  oldProjectName = project.name
+  if newPath == oldPath:
+    newProjectName = oldProjectName
+  else:
+    newProjectName = os.path.basename(newPath)
 
   newProjectName = removeCcpnDirectorySuffix(newProjectName)
 
   # below is because of data model limit
   newProjectName = newProjectName[:32]
 
-  if newProjectName != project.name:
-    renameProject(project, newProjectName)
+  # if newProjectName != oldProjectName:
+  #   _renameProject(project, newProjectName)
 
   # if newPath same as oldPath, check if newProjectName already exists if it's not same as oldProjectName
-  if newPath == oldPath:
-    if newProjectName != oldProjectName:
-      location = ApiPath.getTopObjectPath(project)
-      if not absentOrRemoved(location, overwriteExisting, showYesNo):
-        project.__dict__['name'] = oldProjectName  # TBD: for now name is frozen so change this way
-        # deleteTemporaryDirectory(project)
-        if undo is not None:
-          undo.decreaseBlocking()
-        return False
-  else: # check instead if newPath already exists
-    if absentOrRemoved(newPath, overwriteExisting, showYesNo):
-      # NBNB 2008/04/03 Rasmus Fogh. Added because it otherwise fell over when
-      # target path did not exist
+  # if newPath == oldPath:
+  #   if newProjectName != oldProjectName:
+  #     location = ApiPath.getTopObjectPath(project)
+  #     if not absentOrRemoved(location, overwriteExisting, showYesNo):
+  #       project.__dict__['name'] = oldProjectName  # TBD: for now name is frozen so change this way
+  #       # deleteTemporaryDirectory(project)
+  #       if undo is not None:
+  #         undo.decreaseBlocking()
+  #       return False
+  # else: # check instead if newPath already exists
+  if newPath != oldPath:
+    if absentOrRemoved(newPath, overwriteExisting):
       upDir = os.path.dirname(newPath)
       if not os.path.exists(upDir):
         os.makedirs(upDir)
-    else:
       if newProjectName != oldProjectName:
-        project.__dict__['name'] = oldProjectName  # TBD: for now name is frozen so change this way
-        # deleteTemporaryDirectory(project)
-        if undo is not None:
-          undo.decreaseBlocking()
-        logger = _createLogger(project, useFileLogger=useFileLogger)
-        return False
-      else:
-        # TBD: should we be removing it?
-        Path.deletePath(newPath)
+        _renameProject(project, newProjectName)
+    else:
+      if undo is not None:
+        undo.decreaseBlocking()
+      logger = _createLogger(project, useFileLogger=useFileLogger)
+      logger.warning("Aborting Project.save - new target path already exists: %s" % newPath)
+      return False
 
     # check if any topObject activeRepository is not either of above
     refData = project.findFirstRepository(name='refData')
@@ -874,7 +870,7 @@ def createTopObjectFallback(topObject):
   shutil.copy(location, backupLocation)
 
 
-def renameProject(project, newProjectName):
+def _renameProject(project, newProjectName):
   """ Rename project.
   """
   oldProjectName = project.name
@@ -909,11 +905,12 @@ def renameProject(project, newProjectName):
 
       # below checks for length of name as well
       project.name = newProjectName
+      project.touch()
     finally:
       project.override = False
       if undo is not None:
         undo.decreaseBlocking()
-        undo.newItem(renameProject, renameProject, undoArgs=(project,oldProjectName),
+        undo.newItem(_renameProject, _renameProject, undoArgs=(project,oldProjectName),
                      redoArgs=(project, newProjectName))
 
 
