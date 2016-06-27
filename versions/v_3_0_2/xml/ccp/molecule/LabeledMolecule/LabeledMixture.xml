@@ -119,8 +119,12 @@ and contains original contributions embedded in the framework
    isAbstract="false" isAutomatic="false" isDerived="false"
    isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
    locard="1" scope="instance_level" visibility="public_vis">
-    <documentation>User intelligible name of LabeledMixture. The name serves as a secondary key, and is used generally to identify hte relevant object. Should ALWAYS be set (is left non=mandatory for difficulty of backwards compatibility only). </documentation>
+    <documentation>User intelligible name of LabeledMixture. The name serves as a key, and is used generally to identify the relevant object. 
+Default value is set to allow backwards compatibility in the (common) case where a LabeledMolecule has only one LabeledMixture.</documentation>
     <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00033</valueType>
+    <defaultValue>
+      <item>Mixture1</item>
+    </defaultValue>
 
     <!-- Start constraints for <MetaAttribute: ccp.molecule.LabeledMolecule.LabeledMixture.name>: -->
     <MetaConstraint name="name_may_not_clash_with_labeling_scheme_name"

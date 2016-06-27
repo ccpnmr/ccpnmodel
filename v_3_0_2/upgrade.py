@@ -29,8 +29,6 @@ from ccpnmodel.ccpncore.memops.ApiError import ApiError
 from ccpn.util import Common as commonUtil
 from ccpn.util import Sorting
 from ccpnmodel.ccpncore.lib.spectrum import Spectrum as spectrumLib
-# from ccpnmodel.ccpncore.lib.molecule import MoleculeModify
-
 
 versionSequence = ['2.0.a0', '2.0.a1', '2.0.a2', '2.0.a3', '2.0.b1', '2.0.b2', '2.0.b3',
                    '2.0.4',  '2.0.5',  '2.1.0',  '2.1.1', '2.1.2', '3.0.a1', '3.0.2']
@@ -56,13 +54,19 @@ elementPairings = []
 def extraMapChanges(globalMapping):
   """ Extra map changes specific for a given step
   """
+  pass
 
   # set proc to skip for unsettable now-derived ExpDim.refExpDim
   # skip seems not to work properly for exolinks. Try delay
-  dd = {'proc':'delay'}
+  # dd = {'proc':'delay'}
   # globalMapping['loadMaps']['NMR.ExpDim']['content']['refExpDim'] = dd
   # globalMapping['loadMaps']['NMR.ExpDim.refExpDim'] = dd
   # globalMapping['mapsByGuid']['www.ccpn.ac.uk_Fogh_2006-08-16-18:23:00_00002'] = dd
+
+  # Suspend processing of SampleComponent.refComponent, now derived with changed key
+  # and requires special handling
+  globalMapping['mapsByGuid']['www.ccpn.ac.uk_Fogh_2006-08-16-18:22:42_00002']['proc'] = 'delay'
+
 
 
 def correctData(topObj, delayDataDict, toNewObjDict, mapping=None):
@@ -78,6 +82,17 @@ def correctData(topObj, delayDataDict, toNewObjDict, mapping=None):
   doGet = delayDataDict.get
   pName = topObj.packageName
 
+  # Correct SampleComponent key, based on the old refComponent link (previous key)
+  if pName == 'ccp.lims.Sample':
+    for sample in doGet(topObj, emptyDict).get('samples', emptyList):
+      for sampleComponent in doGet(sample, emptyDict).get('sampleComponents', emptyList):
+        dd = doGet(sampleComponent, emptyDict)
+        inDataList = dd.get('refComponent')
+        if inDataList:
+          keyList = inDataList[0]
+          name = keyList[1]
+          sampleComponent.__dict__['name'] = name
+
 
 def correctFinalResult(memopsRoot):
   """Correct final result in situ, after loading has finished
@@ -91,6 +106,11 @@ def correctFinalResult(memopsRoot):
   chainMap = {}
   for nmrProject in memopsRoot.sortedNmrProjects():
     nmrProject.isModifiable = True
+
+    # Link to SampleStore - if unique
+    sampleStores = memopsRoot.sortedSampleStores()
+    if len(sampleStores) == 1:
+      nmrProject.sampleStore = sampleStores[0]
 
     molSystemCounts =  getNmrMolSystems(nmrProject)
     if molSystemCounts:
@@ -666,7 +686,7 @@ def copyMolSystemContents(molSystem, toMolSystem, chainMap):
   newChains = []
   for chain in molSystem.sortedChains():
     newCode = '-'.join((molSystemCode, chain.code))
-    newChain = CopyData.copySubTree(chain, molSystem, topObjectParameters={'code':newCode,},
+    newChain = CopyData.copySubTree(chain, toMolSystem, topObjectParameters={'code':newCode,},
                                     maySkipCrosslinks=True)
     chainMap[chain] = newChain
     newChains.append(newChain)
@@ -724,21 +744,40 @@ def copyMolSystemContents(molSystem, toMolSystem, chainMap):
     finally:
       molSystem.root.override = False
 
-    # Fix Haddock Partners
-    for haddock in molSystem.root.sortedHaddockProjects():
-      for partner in haddock.sortedHaddockPartners():
-        if partner.structureEnsemble is structureEnsemble:
-          partner.molSystem = toMolSystem
-          for hchain in partner.sortedChains():
-            oldChainCode = hchain.chainCode
-            newChainCode = chainCodeMap.get(oldChainCode)
-            if newChainCode != oldChainCode:
+    # # Fix Haddock Partners
+    # for haddock in molSystem.root.sortedHaddockProjects():
+    #   for partner in haddock.sortedHaddockPartners():
+    #     if partner.structureEnsemble is structureEnsemble:
+    #       partner.molSystem = toMolSystem
+    #       for hchain in partner.sortedChains():
+    #         oldChainCode = hchain.chainCode
+    #         newChainCode = chainCodeMap.get(oldChainCode)
+    #         if newChainCode != oldChainCode:
+    #           if newChainCode:
+    #             # Should always be true, but it should fail more gracefully this way
+    #             parentDict = partner.__dict__['chains']
+    #             del parentDict[oldChainCode]
+    #             hchain.__dict__['chainCode'] = newChainCode
+    #             parentDict[newChainCode] = hchain
+
+  # Fix Haddock Partners
+  for haddock in molSystem.root.sortedHaddockProjects():
+    for partner in haddock.sortedHaddockPartners():
+      if partner.molSystem is molSystem:
+        for hchain in partner.sortedChains():
+          oldChain = hchain.chain
+          newChain = chainMap.get(oldChain, oldChain)
+          if newChain is not oldChain:
+            newChainCode = newChain.code
+            if newChainCode != oldChain.code:
               if newChainCode:
                 # Should always be true, but it should fail more gracefully this way
                 parentDict = partner.__dict__['chains']
-                del parentDict[oldChainCode]
+                del parentDict[oldChain.code]
                 hchain.__dict__['chainCode'] = newChainCode
                 parentDict[newChainCode] = hchain
+        #
+        partner.molSystem = toMolSystem
 
   # Fix NmrCalc instances
   for nmrCalcStore in molSystem.root.sortedNmrCalcStores():

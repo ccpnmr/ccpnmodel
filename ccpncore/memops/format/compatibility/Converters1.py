@@ -288,13 +288,15 @@ def fixElementMap(newGuid, action, prefix, globalMapping, newElementsByGuid,
           del contDict[newName]
  
           # fix attribute lists
-          for tag in ('simpleAttrs', 'headerAttrs', 'optLinks', 'cplxAttrs',
-                      'children'):
+          for tag in ('simpleAttrs', 'headerAttrs', 'optLinks', 'cplxAttrs'):
+          # For technical reasons 'children' must stay with the original name:
+          # for tag in ('simpleAttrs', 'headerAttrs', 'optLinks', 'cplxAttrs',
+          #             'children'):
             ll = fixMap.get(tag)
             if ll and newName in ll:
               ll[ll.index(newName)] = elemName
     else:
-      # classifier - stil needs renaming
+      # classifier - still needs renaming
       # as we use the type name to find the right map
       # put map in abstractTypes
       abstractTypes = mapping['abstractTypes']

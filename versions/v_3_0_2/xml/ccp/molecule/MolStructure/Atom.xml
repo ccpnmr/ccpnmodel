@@ -405,7 +405,7 @@ if residue is None:
   result = None
 else:
   result = residue.chemCompVar.findFirstChemAtom(name=self.name)
-  if result.className != 'ChemAtom':
+  if result and result.className != 'ChemAtom':
     result = None</item>
     </codeStubs>
   </MetaOperation>

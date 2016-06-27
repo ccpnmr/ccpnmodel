@@ -413,17 +413,21 @@ def loadProject(path:str, projectName:str=None, askFile:"function"=None,
     dataStores = []
     for dataLocationStore in project.dataLocationStores:
       for dataStore in dataLocationStore.dataStores:
-        if hasattr(dataStore, 'nmrDataSources') and not dataStore.nmrDataSources:
-          warningMessages.append('deleting empty dataStore %s with path %s'
-                                  % (dataStore, dataStore.fullPath))
-          dataStore.delete()
-        # We do nto use these, and if we ever did, who knows what else ehy might be used for
-        # elif isinstance(dataStore, MimeTypeDataStore) and not dataStore.nmrDataSourceImages:
+
+        # # We cannot prune these, as it causes them to be loaded out of turn.
+        # # NBNB keep this comment, to remind of the problem
+        # if hasattr(dataStore, 'nmrDataSources') and not dataStore.nmrDataSources:
         #   warningMessages.append('deleting empty dataStore %s with path %s'
-        #                          % (dataStore, dataStore.fullPath))
+        #                           % (dataStore, dataStore.fullPath))
         #   dataStore.delete()
-        else:
-          dataStores.append(dataStore)
+        # # We do not use these, and if we ever did, who knows what else they might be used for
+        # # elif isinstance(dataStore, MimeTypeDataStore) and not dataStore.nmrDataSourceImages:
+        # #   warningMessages.append('deleting empty dataStore %s with path %s'
+        # #                          % (dataStore, dataStore.fullPath))
+        # #   dataStore.delete()
+        # else:
+        #   dataStores.append(dataStore)
+        dataStores.append(dataStore)
 
     badDataStores = [dataStore for dataStore in dataStores
                      if not os.path.exists(dataStore.fullPath)]

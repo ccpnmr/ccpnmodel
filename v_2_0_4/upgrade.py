@@ -73,6 +73,11 @@ def extraMapChanges(globalMapping):
   guid = 'www.ccpn.ac.uk_Fogh_2006-10-25-11:33:28_00005'
   globalMapping['mapsByGuid'][guid]['proc'] = 'ignore'
 
+  # Disable reading of MolComponent.labeledMixture link -
+  # Key was changed from serial to name at this stage, there is no general way to fix the problem,
+  # it is likely to be very rare in so old data (only in test APLF_RADAR),
+  # and we can simply not set the link
+  globalMapping['mapsByGuid']['www.ccpn.ac.uk_Fogh_2007-01-24-15:26:23_00001']['proc'] = 'delay'
 
 def correctData(topObj, delayDataDict, toNewObjDict, mapping=None):
   """ update topObj object tree using information in delayDataDict

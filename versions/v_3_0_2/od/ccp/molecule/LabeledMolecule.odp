@@ -49,7 +49,7 @@ objectdomain.uml.core.Stereotype-owns $19
 ($3 6 < 0_-fvi_hrnjywg5_-lhf "LabeledMolecule" 2
 (autoSizeToFit true)
 (uid "0_-fvi_hrnjywg5_-lhf")
-(bbx 60 30 120 90))
+(bbx 60 30 100 70))
 ($3 7 < 0_-fvi_hrnjywg5_-lhe "MolLabel" 2
 (uid "0_-fvi_hrnjywg5_-lhe")
 (bbx 60 270 100 70))
@@ -85,7 +85,7 @@ objectdomain.uml.core.Stereotype-owns $19
 ($3 16 < 0_-fvi_hrnjywg5_-lh5 "LabeledMixture" 2
 (autoSizeToFit true)
 (uid "0_-fvi_hrnjywg5_-lh5")
-(bbx 390 150 90 70))
+(bbx 390 150 130 60))
 ($4 17 < 0_-fvi_hrnjywg5_-lh4 "" 2
 (toMultiplicityPosition 385 160)
 (uid "0_-fvi_hrnjywg5_-lh4")
@@ -97,8 +97,8 @@ objectdomain.uml.core.Stereotype-owns $19
 ($4 19 < 0_-fvi_hrnjywg5_-lh2 "" 2
 (toMultiplicityPosition 400 280)
 (uid "0_-fvi_hrnjywg5_-lh2")
-(points 395 240 395 300)
-(fromMultiplicityPosition 405 245))
+(points 395 220 395 300)
+(fromMultiplicityPosition 405 225))
 ($4 20 < 0_-fvi_hrnjywg5_-lh1 "" 2
 (toMultiplicityPosition 165 330)
 (uid "0_-fvi_hrnjywg5_-lh1")
@@ -128,10 +128,10 @@ objectdomain.uml.core.Stereotype-owns $19
 (points 180 455 440 455)
 (fromMultiplicityPosition 155 410))
 ($4 25 < 0_-fvi_hrnjywg5_-lgv "" 2
-(toMultiplicityPosition 500 245)
+(toMultiplicityPosition 530 245)
 (labelPosition 290 70)
 (uid "0_-fvi_hrnjywg5_-lgv")
-(points 180 45 520 45 520 270))
+(points 180 45 550 45 550 270))
 ($4 26 < 0_-fvi_hrnjywg5_-lgu "" 2
 (toMultiplicityPosition 475 115)
 (uid "0_-fvi_hrnjywg5_-lgu")
@@ -160,9 +160,9 @@ objectdomain.uml.core.Stereotype-owns $19
 ($4 32 < 0_-fvi_hrnjywg5_-lgo "" 2
 (toRolePosition 165 260)
 (uid "0_-fvi_hrnjywg5_-lgo")
-(points 390 213 160 289)
-(fromRolePosition 225 210)
-(fromMultiplicityPosition 380 215)
+(points 390 202 160 287)
+(fromRolePosition 225 215)
+(fromMultiplicityPosition 380 205)
 (lineStyle "oblique"))
 ($3 33 < 0_-fvi_hrnjywg5_-lgn "LabelingScheme" 2
 (uid "0_-fvi_hrnjywg5_-lgn")
@@ -175,7 +175,7 @@ objectdomain.uml.core.Stereotype-owns $19
 ($4 35 < 0_-fvi_hrnjywg5_-lgl "" 2
 (toMultiplicityPosition 460 370)
 (uid "0_-fvi_hrnjywg5_-lgl")
-(points 455 240 455 390))
+(points 455 220 455 390))
 ($3 36 < 0_-fvi_hrnjywg5_-lgk "ResLabelFraction" 2
 (uid "0_-fvi_hrnjywg5_-lgk")
 (bbx 370 510 260 150))
@@ -681,6 +681,8 @@ objectdomain.uml.core.Stereotype-owns $19
 )
 (uid "0_-fvi_hrnjywg5_-ldw"))
 ($7 133 < 0_-fvi_hrnjywg5_-lds "name" 132
+(initialValue "Mixture1"
+)
 (changeability "frozen")
 (name "name"
 )
@@ -689,7 +691,8 @@ objectdomain.uml.core.Stereotype-owns $19
 ($8 134 < 0_-fvi_hrnjywg5_-ldr "documentation" 133
 (name "documentation"
 )
-(value "User intelligible name of LabeledMixture. The name serves as a secondary key, and is used generally to identify hte relevant object. Should ALWAYS be set (is left non=mandatory for difficulty of backwards compatibility only). "
+(value "User intelligible name of LabeledMixture. The name serves as a key, and is used generally to identify the relevant object. "
+"Default value is set to allow backwards compatibility in the (common) case where a LabeledMolecule has only one LabeledMixture."
 )
 (uid "0_-fvi_hrnjywg5_-ldr"))
 ($8 135 < 0_-fvi_hrnjywg5_-ldq "guid" 133
@@ -1076,8 +1079,7 @@ objectdomain.uml.core.Stereotype-owns $19
 (uid "0_-fvi_hrnjywg5_-lbr"))
 ($10 211 < 0_-fvi_hrnjywg5_-lbq "#1" 208
 (changeability "frozen")
-(uid "0_-fvi_hrnjywg5_-lbq")
-(multiplicity "1"))
+(uid "0_-fvi_hrnjywg5_-lbq"))
 ($8 212 < 0_-fvi_hrnjywg5_-lbp "guid" 211
 (name "guid"
 )
