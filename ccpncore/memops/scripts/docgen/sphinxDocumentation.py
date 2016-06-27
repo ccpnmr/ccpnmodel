@@ -35,7 +35,7 @@ joinPath = corePath.joinPath
 
 
 # Relative path to documentation directory
-documentationPath = 'doc'
+documentationPath = 'doc/source/sphinx'
 
 def refreshSphinxDocumentation():
   """(Re)create sphinx documentation. Locations are hardwired"""
@@ -44,7 +44,7 @@ def refreshSphinxDocumentation():
   docDirectory = joinPath(corePath.getTopDirectory(), documentationPath)
 
   # Remove sphinx-apidoc files
-  for ss in ('ccpn', 'ccpncore', 'application'):
+  for ss in ('ccpn', 'ccpnmodel'):
     inDirectory = joinPath(docDirectory, 'source', ss)
     if os.path.exists(inDirectory):
       print ("Removing %s" % inDirectory)
@@ -56,8 +56,8 @@ def refreshSphinxDocumentation():
 
   # Recreate apidoc
   # The parameters are command, option, output directory, module to document, dirs to skip
-  # First ccpncore
-  ll = ['../doc/source/ccpncore', 'ccpncore',
+  # First ccpn
+  ll = ['../doc/source/sphinx/source', 'ccpn',
         'ccpncore/memops/', 'ccpncore/testing/', 'ccpncore/xml/', 'ccpncore/api',
         'ccpncore/lib/Bmrb/unit_tests']
         #'ccpncore/gui', 'ccpncore/memops/', 'ccpncore/testing/', 'ccpncore/xml/']
