@@ -39,7 +39,7 @@ def fetchMolComponent(self:"RefSampleComponentStore", molecule:Molecule,
   if result is None:
     # Finalise, so molecule does not change 'underneath' substance
     molecule.isFinalised = True
-    seqString = molecule.seqString or '(%s)' % ','.join(x.code3Letter
+    seqString = molecule.seqString or '(%s)' % ','.join(x.chemComp.code3Letter
                                                         for x in molecule.sortedMolResidues())
     # Make new MolComponent
     result = self.newMolComponent(name=name, labeling=labeling, synonyms=molecule.commonNames,
