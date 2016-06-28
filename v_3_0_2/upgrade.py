@@ -714,25 +714,6 @@ def copyMolSystemContents(molSystem, toMolSystem, chainMap):
       coordChain.__dict__['code'] = newCode
       parentDict[newCode] = coordChain
 
-      # # Make sure code3Letter is set
-      # for coordResidue in coordChain.sortedResidues():
-      #   code3Letter = coordResidue.code3Letter
-      #   print ('@~@~1', code3Letter, coordResidue.seqId, coordResidue.seqCode,
-      #          coordResidue.seqInsertCode, coordResidue.chain.chain)
-      #   if not code3Letter:
-      #     chain = coordResidue.chain.chain
-      #     if chain is not None:
-      #       residue = (chain.findFirstResidue(seqId=coordResidue.seqId) or
-      #                 chain.findFirstResidue(seqCode=coordResidue.seqCode,
-      #                                        seqInsertCode=coordResidue.seqInsertCode))
-      #       if residue:
-      #         print ('@~@~2', residue.code3Letter, residue.ccpCode, residue.seqId, residue.seqCode,
-      #                residue.seqInsertCode, )
-      #         coordResidue.code3Letter = residue.code3Letter or residue.ccpCode
-      #       else:
-      #         print ('@~@~2 NO RESIDUE')
-
-
     # reset molSystem link
     molSystem.root.override=True
     try:
@@ -743,22 +724,6 @@ def copyMolSystemContents(molSystem, toMolSystem, chainMap):
       parentDict[newCode] = structureEnsemble
     finally:
       molSystem.root.override = False
-
-    # # Fix Haddock Partners
-    # for haddock in molSystem.root.sortedHaddockProjects():
-    #   for partner in haddock.sortedHaddockPartners():
-    #     if partner.structureEnsemble is structureEnsemble:
-    #       partner.molSystem = toMolSystem
-    #       for hchain in partner.sortedChains():
-    #         oldChainCode = hchain.chainCode
-    #         newChainCode = chainCodeMap.get(oldChainCode)
-    #         if newChainCode != oldChainCode:
-    #           if newChainCode:
-    #             # Should always be true, but it should fail more gracefully this way
-    #             parentDict = partner.__dict__['chains']
-    #             del parentDict[oldChainCode]
-    #             hchain.__dict__['chainCode'] = newChainCode
-    #             parentDict[newChainCode] = hchain
 
   # Fix Haddock Partners
   for haddock in molSystem.root.sortedHaddockProjects():

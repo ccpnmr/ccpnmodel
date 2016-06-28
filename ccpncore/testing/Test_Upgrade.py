@@ -38,27 +38,39 @@ class UpgradeMolSystemTest(CoreTesting):
   projectPath = 'HaddockGUItest'
 
   def testMolsystemUpgrade(self):
+
+    molSystemSummary = dict((
+      ('1P91',['A', 'B', 'C', 'DNA-A', 'RNA-A', 'SAM-A', 'T33-A']),
+      ('DNA',['A']),
+      ('RNA',['A']),
+      ('SAM',['A']),
+      ('T33',['A']),
+  ))
+
     project = self.project
 
     dd = {}
     for molSystem in project.sortedMolSystems():
       dd[molSystem.code] = [x.code for x in molSystem.sortedChains()]
 
-    for key, val in sorted(dd.items()):
-      print ("('%s',%s)," % (key, val))
+    self.assertTrue(dd == molSystemSummary)
 
   def testHaddockUpgrade(self):
+    haddockPartnerSummary = dict((
+      ('A', ('1P91',['RNA-A'])),
+      ('B', ('1P91',['T33-A']))
+    ))
+
     project = self.project
 
     dd = {}
 
     for haddock in project.sortedHaddockProjects():
       for partner in haddock.sortedHaddockPartners():
-        dd[partner.name] = (partner.molSystem.code,
+        dd[partner.code] = (partner.molSystem.code,
                             [x.chain.code for x in partner.sortedChains()])
 
-    for key, val in sorted(dd.items()):
-      print ("('%s',%s)," % (key, val))
+    self.assertTrue(dd == haddockPartnerSummary)
 
 
 class UpgradeSamplesTest(CoreTesting):
@@ -67,13 +79,26 @@ class UpgradeSamplesTest(CoreTesting):
   projectPath = '2x8n_str3_CCPN'
 
   def testSamplesUpgrade(self):
+
+    defaultLabeling = '_NATURAL_ABUNDANCE'
+
+    testComponentNames = [('CV0863:sample'), ('DTT:sample'), ('NaCl:sample'),
+                   ('NaN3:sample'), ('Roche inhibitor cocktail:sample'),
+                   ('TRIS:sample'), ('ZnSO4:sample'), ('benzamidine:sample')]
+
     project = self.project
 
-    dd = {}
-    for sample in project.sortedSamples():
-      dd[sample.name] = [(x.name, x.labeling) for x in sample.sortedSamplecomponents()]
+    sampleStores = project.sortedSampleStores()
+    self.assertTrue(len(sampleStores) == 1)
+    self.assertEqual(sampleStores[0].name, '2x8n_str3_CCPN')
+    samples = sampleStores[0].sortedSamples()
+    self.assertListEqual([x.name for x in samples], ['sample_1_1', 'sample_2_1',])
 
-    for key, val in sorted(dd.items):
-      print ("('%s',%s)," % (key, val))
 
+    for sample in samples:
+      ss = sample.name[-4:]
+      componentNames =  [x + ss for x in testComponentNames]
+      ll = sample.sortedSampleComponents()
+      self.assertListEqual([x.labeling for x in ll], 8*[defaultLabeling])
+      self.assertListEqual([x.name for x in ll], componentNames)
 
