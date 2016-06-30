@@ -22,7 +22,8 @@ __version__ = "$Revision$"
 # Start of code
 #=========================================================================================
 from ccpnmodel.ccpncore.api.ccp.molecule.Molecule import Molecule
-from ccpn.util.Common import DEFAULT_LABELING
+from ccpn.util.Constants import DEFAULT_LABELING
+
 
 def fetchMolComponent(self:"RefSampleComponentStore", molecule:Molecule,
                       labeling:str=None) -> "AbstractComponent":

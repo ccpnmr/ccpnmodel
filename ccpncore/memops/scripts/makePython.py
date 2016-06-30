@@ -90,7 +90,9 @@ from ccpnmodel.ccpncore.memops.scripts.core import PyFileModelAdapt
 from ccpnmodel.ccpncore.memops.scripts.api import PyFileApiGen
 from ccpnmodel.ccpncore.memops.scripts.xmlio import PyXmlMapWrite
 from ccpnmodel.ccpncore.memops.scripts.docgen import PyApiDocGen
-from ccpnmodel.ccpncore.memops.scripts.docgen import sphinxDocumentation
+# from ccpnmodel.ccpncore.memops.scripts.docgen import sphinxDocumentation
+from ccpn.core.lib import Documentation
+
 
 defaultIgnoreModules = []
 
@@ -157,23 +159,23 @@ def makePython(modelPortal, rootDirName=None, rootFileName=None,
   Memops done Api generation, time %s
   """ % (end-start))
 
-  # generate documentation
-  start = time.time()
-  PyApiDocGen.writeApiDoc(modelPortal, rootDirName=rootDirName,
-    rootFileName=rootFileName, releaseVersion=releaseVersion)
-  end = time.time()
-  print("""
-  Memops done ApiDocGen, time %s
-  """ % (end-start))
 
-  # NBNB TEMPORARY removal only. FIx documentation later
-
+  # Temporarily suspended. Do we even distrib ute it?
+  # # generate documentation
   # start = time.time()
-  # sphinxDocumentation.refreshSphinxDocumentation()
+  # PyApiDocGen.writeApiDoc(modelPortal, rootDirName=rootDirName,
+  #   rootFileName=rootFileName, releaseVersion=releaseVersion)
   # end = time.time()
   # print("""
-  # Memops refreshed sphinx documentation, time %s
+  # Memops done ApiDocGen, time %s
   # """ % (end-start))
+
+  start = time.time()
+  Documentation.refreshSphinxDocumentation()
+  end = time.time()
+  print("""
+  Memops refreshed sphinx documentation, time %s
+  """ % (end-start))
         
 
 if __name__ == '__main__':

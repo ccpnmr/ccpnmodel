@@ -76,7 +76,7 @@ class UpgradeMolSystemTest(CoreTesting):
 class UpgradeSamplesTest(CoreTesting):
 
   # Path of project to load (None for new project)
-  projectPath = '2x8n_str3_CCPN'
+  projectPath = '2x8n_str3_CCPN_mod'
 
   def testSamplesUpgrade(self):
 

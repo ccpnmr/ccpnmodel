@@ -57,6 +57,7 @@ def doTest(target=None, workDir=None, maskErrors=True):
       testProjects(newTarget, testDir, maskErrors=maskErrors, removeTarget=removeTarget)
                  
     elif target.endswith('.xml'):
+      print ('@~@~ xml - direct')
       outDir = corePath.joinPath(testDir, stdOutDir)
       testProject(target, outDir)
     
@@ -191,10 +192,10 @@ def testProject(target, outDir):
     #print ('+++ Project Test ', t3-t2)
     #print ('+++ Load and test', t3-t0)
     #print ('+++ Project Save ', t4-t3)
-    message = ('+++ Testing OK, project %s. Total time %s. %s  '
+    message = ('+++ Testing OK, project %s. Total time %s. %s  \n\n'
            % (ccpnProject.name , t4-t0, target))
   except:
-    message = ('+++ Error, target %s' %  target)
+    message = ('+++ Error, target %s\n\n' %  target)
     raise
   finally:
     # logger.info(message)
