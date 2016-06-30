@@ -214,13 +214,17 @@ def pickNewPeaks(self:PeakList, startPoint:Sequence[int], endPoint:Sequence[int]
       undo.decreaseBlocking()
 
   if undo is not None:
-    undo.newItem(Undo.deleteAll, self.pickNewPeaks, undoArgs=(peaks,), redoKwargs={
-      'startPoint':startPoint, 'endPoint':endPoint, 'posLevel':posLevel, 'negLevel':negLevel,
-      'minLinewidth':minLinewidth, 'exclusionBuffer':exclusionBuffer, 'minDropfactor':minDropfactor,
-      'checkAllAdjacent':checkAllAdjacent,  'fitMethod':fitMethod,
-      'excludedRegions':excludedRegions, 'excludedDiagonalDims':excludedDiagonalDims,
-      'excludedDiagonalTransform':excludedDiagonalTransform, })
-    
+    # undo.newItem(Undo.deleteAll, self.pickNewPeaks, undoArgs=(peaks,), redoKwargs={
+    #   'startPoint':startPoint, 'endPoint':endPoint, 'posLevel':posLevel, 'negLevel':negLevel,
+    #   'minLinewidth':minLinewidth, 'exclusionBuffer':exclusionBuffer, 'minDropfactor':minDropfactor,
+    #   'checkAllAdjacent':checkAllAdjacent,  'fitMethod':fitMethod,
+    #   'excludedRegions':excludedRegions, 'excludedDiagonalDims':excludedDiagonalDims,
+    #   'excludedDiagonalTransform':excludedDiagonalTransform, })
+
+    undo.newItem(Undo.deleteAll, self.root._unDelete, undoArgs=(peaks,),
+                 redoArgs=(peaks,  set(x.topObject for x in peaks)))
+
+
   return peaks
 
 def fitExistingPeakList(self:PeakList, fitMethod:str=None):
