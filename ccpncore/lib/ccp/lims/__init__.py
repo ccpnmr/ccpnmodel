@@ -1,4 +1,4 @@
-"""Module Documentation here
+"""MFunctions for insertion into ccp.lims classes
 
 """
 #=========================================================================================

@@ -1,4 +1,4 @@
-"""Module Documentation here
+"""Functions for insertion into ccp.molecule.Molecule.Molecule
 
 """
 #=========================================================================================

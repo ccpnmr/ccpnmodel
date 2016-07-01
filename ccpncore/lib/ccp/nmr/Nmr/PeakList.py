@@ -1,4 +1,4 @@
-"""Module Documentation here
+"""Functions for insertion into ccp.nmr.Nmr.PeakList
 
 """
 #=========================================================================================
