@@ -383,7 +383,7 @@ if _undo is not None:''')
   _undo.clear()''')
       else:
         self.write('''
-  _undo.newItem(deleteAllApiObjects, root._unDelete, undoArgs=(objectsCreated,),
+  _undo.newItem(_deleteAllApiObjects, root._unDelete, undoArgs=(objectsCreated,),
                 redoArgs=(objectsCreated, set(x.topObject for x in objectsCreated)))
 ''')
 
@@ -782,7 +782,7 @@ containsNonAlphanumeric = re.compile('[^a-zA-Z0-9_]').search
 # Global NaN constant
 NaN = float('NaN')
 
-from ccpn.util.Undo import deleteAllApiObjects, restoreOriginalLinks, no_op
+from ccpn.util.Undo import _deleteAllApiObjects, restoreOriginalLinks, no_op
  
 from ccpnmodel.ccpncore.%s.ApiError import ApiError
 """ % metaConstants.modellingPackageName)

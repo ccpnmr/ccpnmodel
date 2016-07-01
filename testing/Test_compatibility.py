@@ -57,7 +57,6 @@ def doTest(target=None, workDir=None, maskErrors=True):
       testProjects(newTarget, testDir, maskErrors=maskErrors, removeTarget=removeTarget)
                  
     elif target.endswith('.xml'):
-      print ('@~@~ xml - direct')
       outDir = corePath.joinPath(testDir, stdOutDir)
       testProject(target, outDir)
     

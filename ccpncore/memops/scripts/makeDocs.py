@@ -82,83 +82,47 @@ software development. Bioinformatics 21, 1678-1684.
 
 import time
 
+from ccpn.core.lib import Documentation
+from ccpnmodel.ccpncore.memops.scripts.docgen import PyApiDocGen
+from ccpnmodel.ccpncore.memops.scripts.makePython import getModelPortal
 
-from ccpnmodel.ccpncore.memops.metamodel import XmlModelIo
-from ccpnmodel.ccpncore.memops.metamodel.ModelPortal import ModelPortal
-
-from ccpnmodel.ccpncore.memops.scripts.core import PyFileModelAdapt
-from ccpnmodel.ccpncore.memops.scripts.api import PyFileApiGen
-from ccpnmodel.ccpncore.memops.scripts.xmlio import PyXmlMapWrite
 
 defaultIgnoreModules = []
 
-def getModelPortal(dataModelVersion=None, includePackageNames=None,
-                   excludePackageNames=None):
-  """ get adapted ModelPortal
-  
-  - dataModelVersion object of version to generate(default: current)
-  - includePackageNames: package qualified names to generate from;
-    only leaf package names should be put in includePackageNames.
-  - excludePackageNames: qualified names of packages that will be 
-    ignored together with their contents.
-  """
-  # load model
-  topPackage = XmlModelIo.readModel(dataModelVersion, includePackageNames=includePackageNames,
-                                    excludePackageNames=excludePackageNames)
-  
-  start = time.time()
-  modelPortal = ModelPortal(topPackage, dataModelVersion=dataModelVersion)
-  end = time.time()
-  print("""
-  Memops made ModelPortal, time %s
-  """ % (end-start))
-  
-  # pre-process model
-  start = time.time()
-  PyFileModelAdapt.processModel(modelPortal)
-  end = time.time()
-  print("""
-  Memops done FileAdapt, time %s
-  """ % (end-start))
-  
-  #
-  return modelPortal
 
-def makePython(modelPortal, rootDirName=None, rootFileName=None, 
+def makeSphnxDoc():
+  """ Generate Sphinx documentation')
+  """
+
+  start = time.time()
+  Documentation.refreshSphinxDocumentation()
+  end = time.time()
+  print("""
+  Memops refreshed sphinx documentation, time %s
+  """ % (end-start))
+
+
+def makeApiDoc(modelPortal, rootDirName=None, rootFileName=None,
                releaseVersion=None, ignoreModules=None):
   """ Generate all python relevant code for a version
   - rootDirName: topmost directory to write to (defaults to current cvsroot)
   - rootFileName: file/dir name for root package (defaults to 'RootPackage')
   - releaseVersion: release version object (defaults to  'unknown')
   """
-  
-  
-  if ignoreModules is None:
-    # modules known not to import - should not be checked
-    ignoreModules = defaultIgnoreModules
-    
-  # generate XML map
-  start = time.time()
-  PyXmlMapWrite.writeXmlIo(modelPortal, rootDirName=rootDirName,
-   rootFileName=rootFileName, releaseVersion=releaseVersion)
-  end = time.time()
-  print("""
-  Memops done XML map generation, time %s
-  """ % (end-start))
-  
-  # generate API
-  start = time.time()
-  PyFileApiGen.writeApi(modelPortal, rootDirName=rootDirName,
-   rootFileName=rootFileName, releaseVersion=releaseVersion)
-  end = time.time()
-  print("""
-  Memops done Api generation, time %s
-  """ % (end-start))
 
+  # generate documentation
+  start = time.time()
+  PyApiDocGen.writeApiDoc(modelPortal, rootDirName=rootDirName,
+    rootFileName=rootFileName, releaseVersion=releaseVersion)
+  end = time.time()
+  print("""
+  Memops done ApiDocGen, time %s
+  """ % (end-start))
 
         
 
 if __name__ == '__main__':
   
-
-  makePython(getModelPortal())
+  makeSphnxDoc()
+  # Temporarily suspended. Do we even distribute it?
+  # makeApiDoc(getModelPortal())

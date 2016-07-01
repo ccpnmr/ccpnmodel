@@ -150,6 +150,7 @@ def pickNewPeaks(self:PeakList, startPoint:Sequence[int], endPoint:Sequence[int]
     numpyExclusionBuffer = numpy.array(exclusionBuffer)
 
     peaks = []
+    objectsCreated = []
     for position, height in peakPoints:
 
       position += startPointBuffer
@@ -208,6 +209,7 @@ def pickNewPeaks(self:PeakList, startPoint:Sequence[int], endPoint:Sequence[int]
 
         peak.height = height
         peaks.append(peak)
+        objectsCreated.extend(peakDims)
 
   finally:
     if undo is not None:
@@ -221,8 +223,12 @@ def pickNewPeaks(self:PeakList, startPoint:Sequence[int], endPoint:Sequence[int]
     #   'excludedRegions':excludedRegions, 'excludedDiagonalDims':excludedDiagonalDims,
     #   'excludedDiagonalTransform':excludedDiagonalTransform, })
 
-    undo.newItem(Undo.deleteAll, self.root._unDelete, undoArgs=(peaks,),
-                 redoArgs=(peaks,  set(x.topObject for x in peaks)))
+    # NB we want the peaks before the peakdims as per normal crate/delete behaviour)
+    objectsCreated = peaks + objectsCreated
+
+    undo.newItem(Undo._deleteAllApiObjects, self.root._unDelete,
+                 undoArgs=(objectsCreated,),
+                 redoArgs=(objectsCreated,  set(x.topObject for x in peaks)))
 
 
   return peaks

@@ -335,7 +335,9 @@ def extendLinearSequence(self:'Molecule', sequence:Sequence[Tuple[str, str]], se
 
   if undo is not None and (molResidues or molResLinks):
     objectsCreated = molResidues+molResLinks
-    undo.newItem(Undo.deleteAllApiObjects, self.root._unDelete,
+    for molResidue in molResidues:
+      objectsCreated.extend(molResidue.molResLinkEnds)
+    undo.newItem(Undo._deleteAllApiObjects, self.root._unDelete,
                  undoArgs=(objectsCreated,), redoArgs=(objectsCreated,
                                                        set(x.topObject for x in objectsCreated)))
 
