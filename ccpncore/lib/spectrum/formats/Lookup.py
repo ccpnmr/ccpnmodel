@@ -1,7 +1,7 @@
 import os
 import csv
 from collections import OrderedDict
-
+import pathlib
 import pandas as pd
 # from PyQt4 import QtCore, QtGui
 
@@ -27,15 +27,62 @@ def readXls(project, path):
   else:
     readXlsScreen(ex, project, path)
 
+screeningSheetNames = ['Reference', 'STD_Samples']
 
 def readXlsScreen(ex, project, path=None):
-  newSpectrumGroup = project.newSpectrumGroup('STD')
+
   ex = pd.ExcelFile(path)
-  for p,f in screenExcelSheetProcessors.items():
-    if p in ex.sheet_names:
-      e = ex.parse(p)
-      e.fillna('Empty',inplace=True)
-      f(project, e)
+  for sheetName in screeningSheetNames:
+    if sheetName in ex.sheet_names:
+      dataFrame = ex.parse(sheetName)
+      dataFrame.fillna('Empty',inplace=True)
+      workingDirectoryPath = getWorkingDirectoryPath(path)
+      brukerDirs = getBrukerTopDirs(workingDirectoryPath)
+
+      if sheetName == 'Reference':
+        dataDicts =  createSpectrumDataDicts(project, workingDirectoryPath, brukerDirs, dataFrame)
+        loadReferenceSheet(project, dataDicts)
+      if sheetName == 'STD_Samples':
+        loadSTDSheet(project, workingDirectoryPath, brukerDirs, dataFrame)
+
+
+def getWorkingDirectoryPath(xlsPath):
+  xlsLookupPath = pathlib.Path(xlsPath)
+  return str(xlsLookupPath.parent)
+
+def getBrukerTopDirs(workingDirectoryPath):
+  dirs = os.listdir(str(workingDirectoryPath))
+  excludedFiles = ('.DS_Store', '.xls')
+  brukerDirs = [dir for dir in dirs if not dir.endswith(excludedFiles)]
+  return brukerDirs
+
+
+def createSpectrumDataDicts(project, workingDirectoryPath, brukerDirs, dataFrame):
+  dataDicts = []
+  for spectrumName, spectrumPath in zip(brukerDirs, getFullFilePaths(brukerDirs, workingDirectoryPath)) :
+    for name in dataFrame['name']:
+      if str(spectrumName) == str(name):
+        for data in dataFrame.to_dict(orient="index").values():
+          for key, value in data.items():
+            if key == 'name':
+              if str(value) == str(spectrumName):
+                spectrum = project.loadData(spectrumPath)
+                dataDict = {spectrum[0]:data}
+                dataDicts.append(dataDict)
+  return dataDicts
+
+def getFullFilePaths(brukerDirs, workingDirectoryPath):
+  fullPaths = []
+  for spectrumName in brukerDirs:
+    path = workingDirectoryPath + '/' + spectrumName
+    for dirname, dirnames, filenames in os.walk(path):
+      for filename in filenames:
+        if filename == '1r':
+          fullPath = os.path.join(dirname, filename)
+          fullPaths.append(fullPath)
+  return fullPaths
+
+
 
 def readXlsMetabolomics(ex, project, path):
   metsSheet = getMetabolomicsSheet(ex)
@@ -125,22 +172,13 @@ def readCsv(project, path=None):
       filenamePath = '/'.join(filename)
       spectrum = project.loadData(filenamePath)
 
-def createDataDict(project, excelSheet):
-  ''' excelSheet: data frame containing all data from the look up file.
-  This function will read the spectrum file path and load the spectrum to the project.
-  For each obj spectrum creates a dictionary containing all its data '''
-  dataDicts = []
-  for data in excelSheet.to_dict(orient="index").values():
-    dataDict= {project.loadData(spectrumPath)[0]:data for header, spectrumPath in data.items() if header == 'SpectrumPath'}
-    dataDicts.append(dataDict)
-  loadDataToProject(project, dataDicts)
 
-def loadDataToProject(project, dataDicts):
+def loadReferenceSheet(project, dataDicts):
   ''' dispatch data to the project'''
   createGroupNameDicts(project, dataDicts)
-
   if project._appBase.applicationName == 'Screen':
-    createNewSubstance(project, dataDicts)
+      createNewSubstance(project, dataDicts)
+
 
 def createGroupNameDicts(project,dataDicts):
   ''' creates dicts group name with its spectrum '''
@@ -149,7 +187,6 @@ def createGroupNameDicts(project,dataDicts):
     for spectrum, data in dataDict.items():
       groupNameDict= {str(groupName):spectrum for header, groupName in data.items() if header == 'groupName'}
       groupNameDicts.append(groupNameDict)
-
   newSpectrumGroup(project, groupNameDicts)
 
 def newSpectrumGroup(project, groupNameDicts):
@@ -158,33 +195,46 @@ def newSpectrumGroup(project, groupNameDicts):
   for groupName in set(k for d in groupNameDicts for k in d):
     newGroupsDict[groupName] = [d[groupName] for d in groupNameDicts if groupName in d]
   for groupName, spectra in newGroupsDict.items():
+    print(groupName, spectra)
     newSpectrumGroup = project.newSpectrumGroup(name=groupName, spectra=spectra)
-    # loadSpectrumGroupInSideBar(project, newSpectrumGroup)
 
-def createSampleDicts(project, secondSheetExcel):
-  # newSpectrumGroup = project.newSpectrumGroup('STD')
 
-  sampleDicts = []
-  for data in secondSheetExcel.to_dict(orient="index").values():
-    sampleDict={project.newSample(name=str(sampleName)):data for header, sampleName in data.items() if header == 'sampleName'}
-    sampleDicts.append(sampleDict)
-  getSampleObj(project, sampleDicts)
 
-screenExcelSheetProcessors = OrderedDict([('Reference', createDataDict),
-                                          ('STD_Samples', createSampleDicts),
-                                         ])
 
-def getSampleObj(project, sampleDicts):
-  for sampleDict in sampleDicts:
-    for sample, data in sampleDict.items():
-      addSampleSpectra(project, sample, data)
-      dispatchSampleProperties(sample, data)
+def _loadSTDtoProject(project, dataFrame, workingDirectoryPath):
+  '''creates new sample for the project and associate all value in a dict'''
+  STDs_Off_Res_SP = []
+  STDs_ON_Res_SP = []
+  for data in dataFrame.to_dict(orient="index").values():
+    for key, value in data.items():
+        if key == 'SampleName':
+          sample = project.newSample(str(value))
+          loadSTDspectra(project, sample,data, workingDirectoryPath)
+          STDs_Off_Res_SP.append(getSTDoffResonance(sample))
+          STDs_ON_Res_SP.append(getSTDonResonance(sample))
+          for sampleProperty in sampleProperties:
+            sampleProperty(sample, data)
+
+  project.newSpectrumGroup('STD_OFF_RES', spectra=STDs_Off_Res_SP)
+  project.newSpectrumGroup('STD_ON_RES', spectra=STDs_ON_Res_SP)
+  project.newSpectrumGroup('STD_DIFF')
+
+def getSTDoffResonance(sample):
+  return sample.spectra[0]
+
+def getSTDonResonance(sample):
+  return sample.spectra[1]
+
+
+def loadSTDSheet(project, workingDirectoryPath, brukerDirs, dataFrame):
+  _loadSTDtoProject(project, dataFrame, workingDirectoryPath)
+
 
 def createNewSubstance(project, dataDicts):
   for dataDict in dataDicts:
     for spectrum, data in dataDict.items():
       expType = ([[key, value] for key, value in data.items() if key == 'expType'])
-      newSubstance = project.newSubstance(name=spectrum.name, labeling=str(expType[0][1]))
+      newSubstance = project.newSubstance(name=spectrum.id, labeling=str(expType[0][1]))
       # newChain = project.createChain(sequence=str('A'),compoundName=str(spectrum.name), molType='protein')
       newSubstance.referenceSpectra = [spectrum]
       dispatchSubstanceProperties(newSubstance, data)
@@ -200,57 +250,8 @@ def dispatchSampleProperties(sample, data):
 def addSampleComponents(sample, data):
   sampleComponents = [[header, sampleComponentName] for header, sampleComponentName in data.items() if header == 'sampleComponents']
   for name in sampleComponents[0][1].split(','):
-    sampleComponent = sample.newSampleComponent(name=(str(name) +'-1'), labeling='H')
+    sampleComponent = sample.newSampleComponent(name=(str(name)+'-1'), labeling='H')
 
-# def addSampleSpectra(project, sample, data):
-#   sampleSpectra = []
-#   sampleSpectraPath = [[header, sampleSpectra] for header, sampleSpectra in data.items() if header == 'sampleSpectraPaths']
-#   experimentType = [[excelHeader, value] for excelHeader, value in data.items() if excelHeader == 'expType']
-#
-#   for sampleSpectrumPath in sampleSpectraPath[0][1].split(','):
-#     sampleSpectrum = project.loadData(sampleSpectrumPath)
-#     sampleSpectrum[0].newPeakList()
-#     sampleSpectrum[0].experimentType = experimentType[0][1]
-#     sampleSpectra.append(sampleSpectrum[0])
-#   sample.spectra = sampleSpectra
-
-# To fix soon:
-
-
-def addSampleSpectra(project, sample, data):
-  sampleSpectra = []
-  sampleSpectrum1Path = [[header, sampleSpectra] for header, sampleSpectra in data.items()
-                         if header == 'sampleSpectrum1Path' and sampleSpectra != 'Empty']
-  sampleSpectrum1ExpType = [[excelHeader, value] for excelHeader, value in data.items()
-                            if excelHeader == 'sampleSpectrum1ExpType' and value != 'Empty']
-  sampleSpectrum1Comment = [[excelHeader, value] for excelHeader, value in data.items()
-                            if excelHeader == 'sampleSpectrum1Comment']
-
-  sampleSpectrum2Path = [[header, sampleSpectra] for header, sampleSpectra in data.items()
-                         if header == 'sampleSpectrum2Path' and sampleSpectra != 'Empty']
-  sampleSpectrum2ExpType = [[excelHeader, value] for excelHeader, value in data.items()
-                            if excelHeader == 'sampleSpectrum2ExpType'and sampleSpectra != 'Empty']
-  sampleSpectrum2Comment = [[excelHeader, value] for excelHeader, value in data.items()
-                            if excelHeader == 'sampleSpectrum2Comment']
-
-  if len(sampleSpectrum1Path)>0:
-    sampleSpectrum1 = project.loadData(sampleSpectrum1Path[0][1])
-    # sampleSpectrum1[0].newPeakList()
-    # sampleSpectrum1[0].experimentType = sampleSpectrum1ExpType[0][1]
-    sampleSpectrum1[0].comment = sampleSpectrum1Comment[0][1]
-    sampleSpectra.append(sampleSpectrum1[0])
-
-  if len(sampleSpectrum2Path)>0:
-    sampleSpectrum2 = project.loadData(sampleSpectrum2Path[0][1])
-    # sampleSpectrum2[0].newPeakList()
-    # sampleSpectrum2[0].experimentType = sampleSpectrum2ExpType[0][1]
-    sampleSpectrum2[0].comment = sampleSpectrum2Comment[0][1]
-    sampleSpectra.append(sampleSpectrum2[0])
-
-  sample.spectra = sampleSpectra
-
-  # allSpectra.append(sample.spectra)
-  createStdSpectrumGroup(project)
 
 def createStdSpectrumGroup(project,):
   spectra = []
@@ -260,6 +261,16 @@ def createStdSpectrumGroup(project,):
   for spectrumGroup in project.spectrumGroups:
     if spectrumGroup.name == 'STD':
       spectrumGroup.spectra = spectra
+
+def loadSTDspectra(project, sample, data, workingDirectoryPath):
+  stdOffSpectrumName = [[excelHeader, value] for excelHeader, value in data.items()
+                   if excelHeader == 'spectrumOFF_Resonance' and value != 'Empty']
+  stdOnSpectrumName = [[excelHeader, value] for excelHeader, value in data.items()
+                        if excelHeader == 'spectrumON_Resonance' and value != 'Empty']
+  brukerDirNames = [str(stdOffSpectrumName[0][1]), str(stdOnSpectrumName[0][1])]
+  fullPaths = getFullFilePaths(brukerDirNames, workingDirectoryPath)
+  spectra = [project.loadData(path)[0] for  path in fullPaths]
+  sample.spectra = spectra
 
 
 def setSamplepH(sample, data):
