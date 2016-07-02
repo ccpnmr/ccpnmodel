@@ -1,4 +1,4 @@
-"""Module Documentation here
+"""Assignment-related library functions at API (data storage) level
 
 """
 #=========================================================================================

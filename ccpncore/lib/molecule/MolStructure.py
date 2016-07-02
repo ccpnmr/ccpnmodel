@@ -1,4 +1,4 @@
-"""Module Documentation here
+"""API (data storage) level functionality for handling Molecular structures
 
 """
 #=========================================================================================

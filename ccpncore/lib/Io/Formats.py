@@ -1,4 +1,4 @@
-"""Module Documentation here
+"""Code for recognising and analysing external data formats
 
 """
 #=========================================================================================

@@ -82,7 +82,7 @@ class UpgradeSamplesTest(CoreTesting):
 
     defaultLabeling = '_NATURAL_ABUNDANCE'
 
-    testComponentNames = [('CV0863:sample'), ('DTT:sample'), ('NaCl:sample'),
+    testComponentNames = [('CV:sample'), ('DTT:sample'), ('NaCl:sample'),
                    ('NaN3:sample'), ('Roche inhibitor cocktail:sample'),
                    ('TRIS:sample'), ('ZnSO4:sample'), ('benzamidine:sample')]
 

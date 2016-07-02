@@ -1,4 +1,4 @@
-"""Module Documentation here
+"""Utility functions for ChemComp handling
 
 """
 #=========================================================================================

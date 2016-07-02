@@ -24,7 +24,7 @@ __version__ = "$Revision$"
 
 from typing import Sequence
 
-def assignByDimensions(self:'Peak', value:Sequence):
+def assignByDimensions(self:'Peak', value:Sequence[Sequence['Resonance']]):
   """Set per-dimension assignments on peak.
   value is a list of lists (one per dimension) of resonances.
   NB only works for single-PeakContrib, one-ref-per-dimension assignments
@@ -60,7 +60,7 @@ def assignByDimensions(self:'Peak', value:Sequence):
       peakDim.newPeakDimContrib(resonance=resonance, peakContribs=(peakContrib,))
 
 
-def assignByContrbutions(self:'Peak', value:Sequence):
+def assignByContributions(self:'Peak', value:Sequence[Sequence['Resonance']]):
   """Set assignments on peak.
   value is a list of lists (one per combination) of resonances.
   NB only works for single-resonance, one-ref-per-dimension assignments

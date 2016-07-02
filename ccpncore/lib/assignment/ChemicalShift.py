@@ -1,4 +1,4 @@
-"""Module Documentation here
+"""Chemical shift-related library functions at API (data storage) level
 
 """
 #=========================================================================================

@@ -1,5 +1,4 @@
-"""Module Documentation here
-
+"""API (data storage) level path and I/O handling utilities
 """
 #=========================================================================================
 # Licence, Reference and Credits
@@ -21,8 +20,6 @@ __version__ = "$Revision$"
 #=========================================================================================
 # Start of code
 #=========================================================================================
-""" I/O and path handling code for CCPN data model files
-"""
 
 import os, os.path
 
@@ -234,7 +231,7 @@ def _addModuleFunctionsToApiClass(relModuleName, apiClass, rootModuleName='ccpnm
   # We import from here, to be sure we get the API-contaning directory no matter what
   from ccpnmodel.ccpncore.memops.Path import getPythonDirectory
 
-  moduleName = '%s.%s' % (rootModuleName, relModuleName)
+  moduleName = '%s._%s' % (rootModuleName, relModuleName)
   try:
     module = importlib.import_module(moduleName)
   except ImportError:

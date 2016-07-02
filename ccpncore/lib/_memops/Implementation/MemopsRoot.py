@@ -1,4 +1,4 @@
-"""Module Documentation here
+"""Functions for insertion into memops.Implementaiton.MemopsRoot
 
 """
 #=========================================================================================

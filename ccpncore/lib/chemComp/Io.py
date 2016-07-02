@@ -1,4 +1,4 @@
-"""Module Documentation here
+"""!/O functions for ChemComp handling
 
 """
 #=========================================================================================

@@ -1,5 +1,4 @@
-"""Module Documentation here
-
+"""API (data storage) level miscellaneous utilities
 """
 #=========================================================================================
 # Licence, Reference and Credits
