@@ -546,6 +546,8 @@ def saveProject(project, newPath=None, changeBackup=True,
   
   undo = project._undo
   if undo is not None:
+    # TODO NBNB This should be put in a proper try-except block to avoid
+    # errors preventing reset
     undo.increaseBlocking()
 
   logger = project._logger

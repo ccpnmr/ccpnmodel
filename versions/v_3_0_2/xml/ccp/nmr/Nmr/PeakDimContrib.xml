@@ -113,7 +113,7 @@ if shiftList:
           shift.recalculateValue()
       finally:
         if _undo is not None:
-          _undo.increaseBlocking()</item>
+          _undo.decreaseBlocking()</item>
   </postConstructorCodeStubs>
   <postDestructorCodeStubs>
     <item tag="python">if self.peakDim.peak.peakList.topObject.shiftAveraging:
