@@ -184,7 +184,7 @@ def getPlaneData(self:'DataSource', position:Sequence=None, xDim:int=1, yDim:int
          
   if dataStore.fileType == 'NMRPipe': # data is not blocked but multi-file in general
     if not hasattr(dataStore, 'template'):
-      dataStore.template = NmrPipe.guessFileTemplate(self)
+      dataStore.template = NmrPipe._guessFileTemplate(self)
     if dataStore.template:
       return NmrPipe.getPlaneData(self, position, xDim, yDim)
     

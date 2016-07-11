@@ -159,8 +159,12 @@ def readParams(filePath, getFileCount=False):
 
   return data
 
-def guessFileTemplate(dataSource):
-  
+def _guessFileTemplate(dataSource):
+  """
+  ##CCPNINTERNAL
+  Called from ccpnmodel.ccpncore.lib._ccp.nmr.Nmr.DataSource
+  """
+
   dataStore = dataSource.dataStore
 
   if not dataStore:
@@ -173,7 +177,7 @@ def guessFileTemplate(dataSource):
     
   fileName = os.path.basename(fullPath)
   numDim = dataSource.numDim
-  
+
   if numDim < 3:
     template = fileName
     
@@ -181,7 +185,13 @@ def guessFileTemplate(dataSource):
     template = re.sub('\d\d\d', '%03d', fileName)
     
   else: # numDim == 4
-    template = re.sub('\d\d\d\d\d', '%02d%03d', fileName)
+    # don't understand NmrPipe templates (how many 0's are allowed) so a hack here for now
+    numPoints0 = [dataDim.numPoints for dataDim in dataSource.sortedDataDims()][-1]
+
+    if numPoints0 < 100:
+      template = re.sub('\d\d\d\d\d', '%02d%03d', fileName)
+    else:
+      template = re.sub('\d\d\d\d\d\d', '%03d%03d', fileName)
 
   return os.path.join(os.path.dirname(fullPath), template)
   
@@ -209,7 +219,7 @@ def readData(dataSource):
     return None
   
   if not hasattr(dataStore, 'template'):
-    dataStore.template = guessFileTemplate(dataSource)
+    dataStore.template = _guessFileTemplate(dataSource)
     # TBD: for now assume that above works
   
   fullPath = dataStore.fullPath
@@ -229,13 +239,22 @@ def readData(dataSource):
   elif numDim == 3:
     yxPoints = numPoints[-2:]
     data = numpy.zeros(numPoints, dtype='float32')
-    template = dataSource.template
+    template = dataStore.template
     for z in range(numPoints[0]):
       zdata = _getFileData(template % (z+1), yxPoints, headerSize, dtype)
       data[z,:,:] = zdata
-      
+
+  elif numDim == 4:
+    yxPoints = numPoints[-2:]
+    data = numpy.zeros(numPoints, dtype='float32')
+    template = dataStore.template
+    for w in range(numPoints[0]):
+      for z in range(numPoints[1]):
+        planedata = _getFileData(template % (w+1, z+1), yxPoints, headerSize, dtype)
+        data[w, z, :, :] = planedata
+
   else:
-    raise Exception('numDim > 3 not implemented yet')
+    raise Exception('numDim > 4 not implemented yet')
     
   return data
   
