@@ -22,7 +22,7 @@ __version__ = "$Revision$"
 # Start of code
 #=========================================================================================
 
-from ccpnmodel.ccpncore.lib.Constants import DEFAULT_ISOTOPE_DICT
+from ccpn.util.Constants import DEFAULT_ISOTOPE_DICT
 from ccpnmodel.ccpncore.lib.molecule import Labeling
 
 def findLinkedResidue(self:"Residue", linkCode:str='prev'):

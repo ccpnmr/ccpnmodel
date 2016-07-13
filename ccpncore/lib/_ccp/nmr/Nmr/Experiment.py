@@ -166,10 +166,10 @@ def resetAxisCodes(self:'Experiment'):
 
 
 
-def createDataSource(self:'Experiment', name:str, numPoints:Sequence, sw:Sequence,
-                     refppm:Sequence, refpt:Sequence, dataStore:'DataStore'=None,
-                     scale:float=1.0, details:str=None, numPointsOrig:Sequence=None,
-                     pointOffset:Sequence=None, isComplex:Sequence=None,
+def createDataSource(self:'Experiment', name:str, numPoints:Sequence[int], sw:Sequence[float],
+                     refppm:Sequence[float], refpt:Sequence[float], dataStore:'DataStore'=None,
+                     scale:float=1.0, details:str=None, numPointsOrig:Sequence[int]=None,
+                     pointOffset:Sequence[int]=None, isComplex:Sequence[bool]=None,
                      **additionalParameters) -> 'DataSource':
   """Create a processed DataSource, with FreqDataDims, and one DataDimRef for each DataDim.
   NB Assumes that number and order of dimensions match the Experiment.

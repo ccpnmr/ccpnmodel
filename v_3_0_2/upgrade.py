@@ -253,6 +253,12 @@ def fixExperiments(nmrProject):
       usedNames.add(name)
       dataSource.name = name
 
+    # set experiment.name - now used for refExperiment common name
+    if refExperiment:
+      experiment.name = refExperiment.synonym
+    else:
+      experiment.name = '?'
+
     # set expDimRef.axisCodes if not set already
     for expDim in experiment.expDims:
       if expDim.findFirstExpDimRef(axisCode=None) is not None:

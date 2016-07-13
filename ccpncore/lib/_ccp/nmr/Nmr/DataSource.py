@@ -165,7 +165,7 @@ def _cumulativeArray(array):
   return (n, cumul)
   
 
-def getPlaneData(self:'DataSource', position:Sequence=None, xDim:int=1, yDim:int=2):
+def getPlaneData(self:'DataSource', position=None, xDim:int=1, yDim:int=2):
   """ Get plane data through position in dimensions xDim, yDim
       Returns 2D float32 NumPy array in order (y, x) 
       Returns None if numDim < 2 or if there is no dataStore
@@ -285,7 +285,7 @@ def getPlaneData(self:'DataSource', position:Sequence=None, xDim:int=1, yDim:int
   
   return data
 
-def getSliceData(self:'DataSource', position:Sequence=None, sliceDim:int=1):
+def getSliceData(self:'DataSource', position=None, sliceDim:int=1):
   # Get an actual array of data points,
   # spanning blocks as required
   # returns 1D array
@@ -399,7 +399,7 @@ def get1dSpectrumData(self:'DataSource'):
 
 
 
-def getRegionData(self:'DataSource', startPoint:Sequence, endPoint:Sequence):
+def getRegionData(self:'DataSource', startPoint:Sequence[float], endPoint:Sequence[float]):
 
   # NBNB TBD BROKEN!!
 

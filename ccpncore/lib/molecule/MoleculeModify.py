@@ -24,8 +24,11 @@ __version__ = "$Revision$"
 #=========================================================================================
 """Code for generating and modifying Molecules and MolSystems"""
 
+import typing
+from ccpn.util.nef import StarIo
 from ccpnmodel.ccpncore.memops.ApiError import ApiError
 from ccpnmodel.ccpncore.lib.chemComp import Io as chemCompIo
+from ccpnmodel.ccpncore.lib.molecule import MoleculeQuery
 
 
 ###from ccp.general.Io import getChemComp
@@ -147,6 +150,64 @@ def _getLinearChemCompData(project, molType, ccpCode, linking):
     raise ApiError("Illegal linking %s with seqLinks %s" % (linking,seqLinks))
   
   return molResData, otherLinkCodes
+
+def createMoleculeFromNef(project, name:str, sequence:typing.Sequence[dict]) -> 'Molecule':
+  """Create a Molecule from a sequence of NEF row dictionaries (or equivalent)"""
+
+  residueName2chemCompId = MoleculeQuery.fetchStdResNameMap(project)
+
+  stretches = StarIo.splitNefSequence(sequence)
+  molecule =  project.newMolecule(name=name)
+
+  startNumber = 1
+  for stretch in stretches:
+
+    # Create new MolResidues
+    residueTypes = [row.get('residue_type', 'UNK') for row in stretch]
+    firstLinking = stretch[0].get('linking')
+    if len(residueTypes) > 1:
+      lastLinking = stretch[-1].get('linking')
+      if (firstLinking in ('start', 'single', 'nonlinear', 'dummy') or
+          lastLinking == 'end'):
+        isCyclic = False
+      else:
+        # We use isCyclic to set the ends to 'middle'. It gets sorted out below
+        isCyclic = True
+      molResidues = molecule.extendMolResidues(residueTypes, startNumber, isCyclic)
+
+      # Adjust linking and descriptor
+      if isCyclic:
+        if firstLinking != 'cyclic' or lastLinking != 'cyclic':
+          # not cyclic after all - remove cyclising link
+          cyclicLink = molResidues[-1].findFirstMolResLinkEnd(linkCode='next').molResLink
+          cyclicLink.delete()
+      else:
+        if firstLinking != 'start':
+          molResidues[0].linking = 'middle'
+        if lastLinking != 'end':
+          molResidues[-1].linking = 'middle'
+    else:
+      # Only one residue
+      tt = residueName2chemCompId.get(residueTypes[0])
+      if tt:
+        chemComp = chemCompIo.fetchChemComp(project, tt[0], tt[1])
+        if chemComp:
+          chemCompVar  = (chemComp.findFirstChemCompVar(linking='none') or
+                          chemComp.findFirstChemCompVar()) # just a default
+          molResidues = [molecule.newMolResidue(startNumber=startNumber, chemCompVar=chemCompVar)]
+
+        else:
+          raise ValueError("Residue type %s : Error in getting template information"
+                           % residueTypes[0])
+
+      else:
+        raise ValueError("Residue type %s not recognised" % residueTypes[0])
+
+    startNumber += len(residueTypes)
+
+    # TODO Add residue variant information
+
+
 
 
 #################################################################

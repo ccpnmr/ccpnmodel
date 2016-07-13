@@ -40,6 +40,7 @@ XEASY = 'XEASY'
 ANSIG = 'ANSIG'
 AUTOASSIGN = 'AutoAssign'
 CCPN = 'CCPN'
+NEF = 'nef'
 SPARKY = 'Sparky'
 NMRDRAW = 'NMRDraw'
 NMRSTAR = 'NMR-STAR'
@@ -70,6 +71,11 @@ def analyseUrl(filePath):
 
   # Deal with directories as input
   if os.path.isdir(filePath):
+
+    # remove trailing '/',  lest subsequent code fail
+    baseName, junk = os.path.split(filePath)
+    if not junk:
+      filePath = baseName
 
     # url is a directory
     fileNames = os.listdir(filePath)
@@ -111,6 +117,10 @@ def analyseUrl(filePath):
 
   if filePath.endswith('.hdf5'): # TBD: is this what we want?
     return ('Spectrum', HDF5, filePath)
+
+  elif filePath.endswith('.nef'):
+    # NBNB TODO is this OK? enough?
+    return ('Project', NEF, filePath)
     
   # Set up for further analysis
   dirName, fileName = os.path.split(filePath)

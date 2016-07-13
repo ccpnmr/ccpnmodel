@@ -3821,7 +3821,10 @@ objectdomain.uml.core.Stereotype-owns $20
 ($8 634 < 0_6e6_i2eonilu_-oqq "code:python" 629
 (name "code:python"
 )
-(value "ii = 0"
+(value "if not isinstance(newIndex, int) or newIndex < 0:"
+"  raise ApiError(\"Parameter to moveTo function is not a non-negative integer: %s\" % newIndex)"
+""
+"ii = 0"
 "oldIndex = self.index"
 "for strip in self.spectrumDisplay.orderedStrips:"
 "  if strip is self:"

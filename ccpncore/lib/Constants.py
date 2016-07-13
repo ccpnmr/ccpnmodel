@@ -4,6 +4,7 @@
 #=========================================================================================
 # Licence, Reference and Credits
 #=========================================================================================
+
 __copyright__ = "Copyright (C) CCPN project (www.ccpn.ac.uk) 2014 - $Date$"
 __credits__ = "Wayne Boucher, Rasmus H Fogh, Simon P Skinner, Geerten W Vuister"
 __license__ = ("CCPN license. See www.ccpn.ac.uk/license"
@@ -30,29 +31,6 @@ ccpnmrJsonData = 'ccpnmr-json'
 # Timestamp formats
 stdTimeFormat = "%Y-%m-%d %%H:M:%S.%f"
 isoTimeFormat = "%Y-%m-%dT%%H:M:%S.%f"
-
-
-# default isotopes and nucleus codes
-DEFAULT_ISOTOPE_DICT = {
-  'H':'1H',
-  'C':'13C',
-  'N':'15N',
-  'P':'31P',
-  'Si':'29Si',
-  'F':'19F',
-  'O':'17O',
-  'Br':'79Br',
-  'D':'2H',
-  'T':'3H',
-  'J':None,
-  'MQ':None,
-  'delay':None,
-  'ALT':None,
-}
-for tag, val in list(DEFAULT_ISOTOPE_DICT.items()):
-  # Add lower-case versions of single-letter codes
-  if val and len(tag) == 1:
-    DEFAULT_ISOTOPE_DICT[tag.lower()] = val
 
 # Default NmrChain code
 defaultNmrChainCode = '@-'

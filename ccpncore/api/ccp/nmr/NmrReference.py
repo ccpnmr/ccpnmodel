@@ -2586,7 +2586,7 @@ _addModuleFunctionsToApiClass('ccp.nmr.NmrReference.ChemAtomNmrDistrib', ChemAto
 
 ###############################################################################
 class ChemAtomNmrRef(ccpnmodel.ccpncore.api.memops.Implementation.DataObject):
-  r"""Information about refrence chemical shift for a ChemAtom. The 
+  r"""Information about reference chemical shift for a ChemAtom. The
 information may apply to a ChemAtom in all ChemCompVars (linking and 
 descriptor both 'any'), in some ChemCompVars (either linking or 
 descriptor 'any') or in a specific ChemCompVar (all other cases). Either 

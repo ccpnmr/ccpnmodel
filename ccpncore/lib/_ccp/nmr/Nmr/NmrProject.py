@@ -4,6 +4,7 @@
 #=========================================================================================
 # Licence, Reference and Credits
 #=========================================================================================
+
 __copyright__ = "Copyright (C) CCPN project (www.ccpn.ac.uk) 2014 - $Date$"
 __credits__ = "Wayne Boucher, Rasmus H Fogh, Simon P Skinner, Geerten W Vuister"
 __license__ = ("CCPN license. See www.ccpn.ac.uk/license"
@@ -24,6 +25,7 @@ __version__ = "$Revision$"
 import os
 
 from ccpn.util import Common as commonUtil
+from ccpn.util.Constants import DEFAULT_SPECTRUM_PARAMETERS
 from typing import Sequence
 from ccpnmodel.ccpncore.lib import Constants
 from ccpnmodel.ccpncore.lib.spectrum import Spectrum as spectrumLib
@@ -36,16 +38,6 @@ from ccpnmodel.ccpncore.lib import V2Upgrade
 # from ccpnmodel.ccpncore.api.memops.Implementation import Url
 # from ccpnmodel.ccpncore.lib.spectrum.Spectrum import createBlockedMatrix
 
-# Default parameters - 10Hz/pt, 0.1ppm/point for 1H; 10 Hz/pt, 1ppm/pt for 13C
-# NB this is in order to give simple numbers. it does NOT match the gyromagnetic ratios
-DEFAULT_SPECTRUM_PARAMETERS = {
-  '1H':{'numPoints':128, 'sf':100., 'sw':1280, 'refppm':11.8, 'refpt':0, },
-  '13C':{'numPoints':256, 'sf':10., 'sw':2560, 'refppm':236., 'refpt':0, }
-}
-for tag,val in Constants.DEFAULT_ISOTOPE_DICT.items():
-  # Without additional info, set other one-letter isotopes (including 15N) to match carbon 13
-  if len(tag) == 1 and val and val not in DEFAULT_SPECTRUM_PARAMETERS:
-    DEFAULT_SPECTRUM_PARAMETERS[val] = DEFAULT_SPECTRUM_PARAMETERS['13C']
 
 def loadDataSource(self:'NmrProject', filePath, dataFileFormat):
 
@@ -160,8 +152,9 @@ def createDummySpectrum(self:'NmrProject', axisCodes:Sequence[str],
 
   return experiment.createDataSource(name=specName, **params)
 
-def createExperiment(self:'NmrProject', name:str, numDim:int, sf:Sequence,
-                     isotopeCodes:Sequence, isAcquisition:Sequence=None, axisCodes=None,
+def createExperiment(self:'NmrProject', name:str, numDim:int, sf:Sequence[float],
+                     isotopeCodes:Sequence[str], isAcquisition:Sequence[bool]=None,
+                     axisCodes:Sequence[str]=None,
                      **additionalParameters) -> 'Experiment':
   """Create Experiment object ExpDim, and one ExpDimRef per ExpDim.
   Additional parameters to Experiment object are passed in additionalParameters"""

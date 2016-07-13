@@ -80,35 +80,30 @@ software development. Bioinformatics 21, 1678-1684.
 ===========================REFERENCE END===============================
 """
 
-# repository tags for old version to make compatibilty for
-#By default takes complete linear versoin list fro current oldVersionTag
-#NBNB TODO version 2.0.6 not supported yet.
-# NBNB TODO data downgrade not supported yet
-
-import importlib
 import time
 
-from ccpnmodel.ccpncore.memops import Version
-from ccpnmodel.ccpncore.memops.scripts import makePython
-from ccpnmodel.ccpncore.memops.scripts.xmlio import CompatibilityGen
+from ccpn.util import Path
+from ccpn.util.recursive_import import importAllPyfiles
 
-# Default situation - upgrade from all old versions to current one
-currentVersion = Version.currentModelVersion
-currentUpgradeModule = importlib.import_module('ccpnmodel.%s.upgrade' % currentVersion.getDirName())
-oldVersionTags = currentUpgradeModule.versionSequence
+# Ignore for test import:
+ignoreDirs = ('.svn', 'CVS','macros', 'tmp')
+ignoreFiles = ('ODextract.py', 'junk.py')
 
         
 if __name__ == '__main__':
-  
-  # make compatibility code
+
+
+  # check for compile errors
+  print("""
+  Memops start test importing
+  """)
   start = time.time()
-  modelPortal = makePython.getModelPortal(currentVersion)
-  for oldTag in oldVersionTags[:-1]:
-    CompatibilityGen.makeUpgrade(Version.Version(oldTag), currentVersion, modelPortal=modelPortal)
+  # commonUtil.recursiveImport(Path.getPythonDirectory(),ignoreModules=ignoreModules,
+  #                        force=True)
+  # commonUtil.recursiveImport(modelPath.getPythonDirectory(),ignoreModules=ignoreModules,
+  #                        force=True)
+  importAllPyfiles(Path.getPythonDirectory(), ignoreDirs=ignoreDirs, ignoreFiles=ignoreFiles)
   end = time.time()
-  print ("""
-  Memops made Compatibility maps, time %s
+  print("""
+  Memops done Test Importing, time %s
   """ % (end-start))
-  
-  # make rest of code
-  makePython.makePython(modelPortal)

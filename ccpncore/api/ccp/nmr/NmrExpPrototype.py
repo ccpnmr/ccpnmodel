@@ -12135,7 +12135,7 @@ class RefExpDim(ccpnmodel.ccpncore.api.memops.Implementation.DataObject):
     getter for derived attribute nucleusCode
     """
     dataDict = self.__dict__
-    from ccpnmodel.ccpncore.lib.Constants import DEFAULT_ISOTOPE_DICT as isoDict
+    from ccpn.util.Constants import DEFAULT_ISOTOPE_DICT as isoDict
     axisCodes = [x.axisCode for x in self.refExpDimRefs]
     if axisCodes and None not in axisCodes:
       nucleusCodes = []

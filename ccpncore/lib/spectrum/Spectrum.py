@@ -4,6 +4,7 @@
 #=========================================================================================
 # Licence, Reference and Credits
 #=========================================================================================
+
 __copyright__ = "Copyright (C) CCPN project (www.ccpn.ac.uk) 2014 - $Date$"
 __credits__ = "Wayne Boucher, Rasmus H Fogh, Simon P Skinner, Geerten W Vuister"
 __license__ = ("CCPN license. See www.ccpn.ac.uk/license"
@@ -26,7 +27,7 @@ import itertools
 
 from typing import Sequence
 from ccpn.util import Path
-from ccpnmodel.ccpncore.lib import Constants
+from ccpn.util import Constants
 from ccpnmodel.ccpncore.lib.spectrum.BlockData import determineBlockSizes
 from ccpnmodel.ccpncore.memops.ApiError import ApiError
 
@@ -41,7 +42,7 @@ _isotopeRefExperimentMap = None
 
 STANDARD_ISOTOPES = set(x for x in Constants.DEFAULT_ISOTOPE_DICT.values() if x is not None)
 
-def name2IsotopeCode(name:str) -> str:
+def name2IsotopeCode(name:str=None) -> str:
   """Get standard isotope code matching name or axisCode string"""
   if not name:
     return None
@@ -87,7 +88,8 @@ def checkIsotope(text:str) -> str:
     return name2IsotopeCode(text) or '1H'
 
 
-def createBlockedMatrix(dataUrl:'Url', path:str, numPoints:Sequence, blockSizes:Sequence=None,
+def createBlockedMatrix(dataUrl:'Url', path:str, numPoints:Sequence[int],
+                        blockSizes:Sequence[int]=None,
                         isBigEndian:bool=True, numberType:str='float', isComplex:bool=None,
                         headerSize:int=0, blockHeaderSize:int=0, nByte=4, fileType=None,
                        **additionalParameters) -> 'BlockedBinaryMatrix':
@@ -122,7 +124,7 @@ def createBlockedMatrix(dataUrl:'Url', path:str, numPoints:Sequence, blockSizes:
 
   return matrix
 
-def axisCodeMatch(axisCode:str, refAxisCodes:Sequence)->str:
+def axisCodeMatch(axisCode:str, refAxisCodes:Sequence[str])->str:
   """Get refAxisCode that best matches axisCode """
   for ii,indx in enumerate(_axisCodeMapIndices([axisCode], refAxisCodes)):
     if indx == 0:
@@ -131,7 +133,7 @@ def axisCodeMatch(axisCode:str, refAxisCodes:Sequence)->str:
   else:
     return None
 
-def axisCodeMapping(axisCodes:Sequence, refAxisCodes:Sequence)->dict:
+def axisCodeMapping(axisCodes:Sequence[str], refAxisCodes:Sequence[str])->dict:
   """get {axisCode:refAxisCode} mapping dictionary
   all axisCodes must match, or dictionary will be empty
   NB a series of single-letter axisCodes (e.g. 'N;, 'HCN') can be passed in as a string"""
@@ -146,7 +148,7 @@ def axisCodeMapping(axisCodes:Sequence, refAxisCodes:Sequence)->dict:
   return result
 
 #
-def _axisCodeMapIndices(axisCodes:Sequence, refAxisCodes:Sequence)->list:
+def _axisCodeMapIndices(axisCodes:Sequence[str], refAxisCodes:Sequence[str])->list:
   """get mapping tuple so that axisCodes[result[ii]] matches refAxisCodes[ii]
   all axisCodes must match, but result can contain None if refAxisCodes is longer
   if axisCodes contain duplicates, you will get one of possible matches"""
@@ -216,7 +218,7 @@ def axisCodesCompare(code:str, code2:str, mismatch:int=0) -> int:
   #
   return score
 
-def doAxisCodesMatch(axisCodes:Sequence, refAxisCodes:Sequence)->bool:
+def doAxisCodesMatch(axisCodes:Sequence[str], refAxisCodes:Sequence[str])->bool:
   """Return True if axisCodes match refAxisCodes else False"""
   if len(axisCodes) != len(refAxisCodes):
     return False
@@ -227,7 +229,7 @@ def doAxisCodesMatch(axisCodes:Sequence, refAxisCodes:Sequence)->bool:
   #
   return True
 
-def dimensionTransferType(dataDims:Sequence)->str:
+def dimensionTransferType(dataDims:Sequence['DataDim'])->str:
   """Get ExpTransferType connecting two dataDims - uses heuristics"""
 
   expDimRefs = [x.expDim.sortedExpDimRefs()[0] for x in dataDims]

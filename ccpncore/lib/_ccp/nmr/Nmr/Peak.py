@@ -76,7 +76,7 @@ def assignByContributions(self:'Peak', value:Sequence[Sequence['Resonance']]):
   # get per-dimension resonances
   for tt in value:
     for ii,resonance in enumerate(tt):
-      if resonance not in dimResonances[ii]:
+      if resonance is not None and resonance not in dimResonances[ii]:
         dimResonances[ii].append(resonance)
 
   # reassign dimension resonances
@@ -90,12 +90,12 @@ def assignByContributions(self:'Peak', value:Sequence[Sequence['Resonance']]):
     for tt in value[1:]:
       ll = [peakDim.findFirstPeakDimContrib(resonance=tt[ii])
             for ii,peakDim in enumerate(peakDims)]
-      self.newPeakContrib(peakDimContribs=ll)
+      self.newPeakContrib(peakDimContribs=[x for x in ll if x is not None])
 
     # reset PeakDimContribs for first PeakContrib
     ll = [peakDim.findFirstPeakDimContrib(resonance=value[0][ii])
           for ii,peakDim in enumerate(peakDims)]
-    firstPeakContrib.peakDimContribs = ll
+    firstPeakContrib.peakDimContribs = [x for x in ll if x is not None]
 
 
 # NBNB unit operations needed:

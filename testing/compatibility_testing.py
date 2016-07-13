@@ -49,13 +49,14 @@ def doTest(target=None, workDir=None, maskErrors=True):
     # We are testing all projects.
     target = corePath.joinPath(corePath.getPathToImport('ccpnmodel'), *testDataPath)
     removeTarget=True
-  
+
+  print ('+++ Start Testing ', target)
+
   if os.path.isfile(target):
   
     if target.endswith('.tgz'):
       newTarget = unzipFile(target, testDir)
       testProjects(newTarget, testDir, maskErrors=maskErrors, removeTarget=removeTarget)
-                 
     elif target.endswith('.xml'):
       outDir = corePath.joinPath(testDir, stdOutDir)
       testProject(target, outDir)
