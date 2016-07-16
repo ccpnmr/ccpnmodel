@@ -28,6 +28,40 @@ __version__ = "$Revision$"
 import operator
 from typing import Dict
 
+# Dictionary of experiment names that should come first in the list
+#  - with optional remapping of names
+priorityNameRemapping = {
+# C,H experiments
+'13C HSQC/HMQC':'13C HSQC/HMQC',
+
+# C,H,H experiments
+'13C NOESY-HSQC':'13C NOESY-HSQC',
+'13C HSQC-NOESY':'13C HSQC-NOESY',
+'HcCH-TOCSY':'HcCH-TOCSY',
+'HCcH-TOCSY':'HCcH-TOCSY',
+'HcCH-COSY':'HcCH-COSY',
+'HCcH-COSY':'HCcH-COSY',
+
+# H,N experiments
+'15N HSQC/HMQC':'15N HSQC/HMQC',
+
+# H,H,N experiments
+'15N HSQC-TOCSY':'15N HSQC-TOCSY',
+'15N TOCSY-HSQC':'15N TOCSY-HSQC',
+'15N NOESY-HSQC':'15N NOESY-HSQC',
+'15N HSQC-NOESY':'15N HSQC-NOESY',
+'HBcb/HAcacoNH':'HB/HAcoNH',
+
+# C,H,N experiments
+'HNCA/CB':'HNCA/CB',
+'HNcoCA/CB':'HNcoCA/CB',
+'HNCA':'HNCA',
+'H-detected HNcaCO':'HNcaCO',
+'H-detected HNcoCA':'HNcoCA',
+'HNCO':'HNCO',
+'hbCB/haCAcoNH':'CB/CAcoNH',
+}
+
 def resetAllAxisCodes(nmrProject):
   """Reset all axisCodes (ExpDimRef.name) in project to be unique, match the isotope,
   and match the standard Prototype where a prototype is known"""
@@ -458,6 +492,9 @@ def fetchIsotopeRefExperimentMap(project:'MemopsRoot') -> Dict:
           nucleusAcquisitionSort = ord(acqNucleusCode)
 
         refExperimentName = refExperiment.name
+        # Ad-hoc - give absolute priority for preferred experiments
+        if (refExperiment.synonym or refExperimentName) in priorityNameRemapping:
+          multiAxisCodeSort = -100
 
         # Ad hoc modifications - to get more common experiments first:
         downgrade = ('(', 'base','coupling', '[n')
