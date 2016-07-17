@@ -29,7 +29,8 @@ __version__ = "$Revision$"
 
 import os
 import re
-from urllib.request import urlopen
+# from urllib.request import urlopen
+from ccpn.util import  Url
 
 from ccpnmodel.ccpncore.lib.Io import Api as apiIo
 from ccpn.util import Common as commonUtil
@@ -343,23 +344,26 @@ def downloadChemCompInfoFromCcpForge(repository, molType, ccpCode, sourceName=No
   try:
 
     # Get the file list, needs to be decomposed to get direct links
-    r1 = urlopen(ccpForgeDirUrl)
+    # r1 = Url.fetchUrl(ccpForgeDirUrl)
 
     try:
-      dirData = r1.read()
-      r1.close()      
+      # dirData = r1.read()
+      # r1.close()
+      # Get the file list, needs to be decomposed to get direct links
+      dirData = Url.fetchUrl(ccpForgeDirUrl)
 
       urlLocation, chemCompXmlFile = findCcpForgeDownloadLink(dirData,fileType,ccpCode,
                                                                 ccpForgeDownloadUrl)
       
       if urlLocation:
  
-        r2 = urlopen(urlLocation)
+        # r2 = urlopen(urlLocation)
     
         try:
-          data = r2.read()
-          r2.close()
-  
+          # data = r2.read()
+          # r2.close()
+          data = Url.fetchUrl(urlLocation)
+
           try:
             saveChemCompPath = repository.getFileLocation('ccp.molecule.%s' % fileType)
             if not os.path.exists(saveChemCompPath):
@@ -375,26 +379,24 @@ def downloadChemCompInfoFromCcpForge(repository, molType, ccpCode, sourceName=No
             result = chemCompFile
   
           except IOError as e:
-            logger.error("Cannot write file",  "Cannot write %s XML file %s%s, %s: %s"  %
+            logger.error("Cannot write %s XML file %s%s, %s: %s"  %
                          (fileType,sourceText,molType,ccpCode,str(e)))
   
         except IOError as e:
-          logger.error("Cannot read file", "Cannot read %s %s%s, %s: %s"
+          logger.error("Cannot read %s %s%s, %s: %s"
                        % (fileType,sourceText,molType,ccpCode,str(e)))
       
         
       else:
-        logger.error("Cannot find file", "Cannot find %s XML file %s%s, %s."
+        logger.error("Cannot find %s XML file %s%s, %s."
                      % (fileType,sourceText,molType,ccpCode))
       
     except IOError as e:
-      logger.error("Cannot read directory",
-                   "Cannot read directory information for %s%s, %s: %s"
+      logger.error("Cannot read directory information for %s%s, %s: %s"
                    % (sourceText,molType,ccpCode,str(e)))
 
   except IOError as e:
-    logger.error("No connection",
-                 "Cannot connect to download server %s, or file does not exist...: %s "
+    logger.error("Cannot connect to download server %s, or file does not exist...: %s "
                  % (ccpForgeDownloadUrl,str(e)))
   #
   return result

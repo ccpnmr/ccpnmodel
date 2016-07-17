@@ -151,7 +151,8 @@ def _getLinearChemCompData(project, molType, ccpCode, linking):
   
   return molResData, otherLinkCodes
 
-def createMoleculeFromNef(project, name:str, sequence:typing.Sequence[dict]) -> 'Molecule':
+def createMoleculeFromNef(project, name:str, sequence:typing.Sequence[dict],
+                          defaultType:str='UNK') -> 'Molecule':
   """Create a Molecule from a sequence of NEF row dictionaries (or equivalent)"""
 
   residueName2chemCompId = MoleculeQuery.fetchStdResNameMap(project)
@@ -163,7 +164,7 @@ def createMoleculeFromNef(project, name:str, sequence:typing.Sequence[dict]) -> 
   for stretch in stretches:
 
     # Create new MolResidues
-    residueTypes = [row.get('residue_type', 'UNK') for row in stretch]
+    residueTypes = [row.get('residue_type', defaultType) for row in stretch]
     firstLinking = stretch[0].get('linking')
     if len(residueTypes) > 1:
       lastLinking = stretch[-1].get('linking')
@@ -189,6 +190,11 @@ def createMoleculeFromNef(project, name:str, sequence:typing.Sequence[dict]) -> 
     else:
       # Only one residue
       tt = residueName2chemCompId.get(residueTypes[0])
+      if not tt:
+        project._logger.warning("Could not access ChemComp for %s - replacing with %s\n"
+                                "NB - could be a failure 8in fetching remote information.\n"
+                                 "Are you off line?")
+        tt = residueName2chemCompId.get(defaultType)
       if tt:
         chemComp = chemCompIo.fetchChemComp(project, tt[0], tt[1])
         if chemComp:
@@ -204,6 +210,8 @@ def createMoleculeFromNef(project, name:str, sequence:typing.Sequence[dict]) -> 
         raise ValueError("Residue type %s not recognised" % residueTypes[0])
 
     startNumber += len(residueTypes)
+  #
+  return molecule
 
     # TODO Add residue variant information
 

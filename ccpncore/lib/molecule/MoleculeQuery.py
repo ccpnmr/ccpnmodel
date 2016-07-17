@@ -26,7 +26,9 @@ __version__ = "$Revision$"
 import re
 from ccpnmodel.ccpncore.lib.chemComp import ChemCompOverview
 from ccpnmodel.ccpncore.lib.chemComp import ObsoleteChemComps
+from ccpnmodel.ccpncore.lib.chemComp import Io as chemCompIo
 from ccpn.util import Logging
+import urllib
 
 
 ###from ccp.util.LabeledMolecule import getIsotopomerSingleAtomFractions, getIsotopomerAtomPairFractions
@@ -571,6 +573,19 @@ def fetchStdResNameMap(project:'MemopsRoot', reset:bool=False, debug:bool=False)
       # elif prevId != val:
       #   print ("CWARNING\tclash2\tfor %s chemComp %s, %s v. cifCode %s:%s"
       #         % (tag, ccId, prevId, cifCode,  val))
+
+  # # Add UPPERCASE synonym for all ChemChomps
+  # for tag, val in result.items():
+  #   uptag = tag.upper()
+  #   if uptag != tag:
+  #     upval = result.get(uptag)
+  #     if upval is None:
+  #       print ('@~@~        overwriting', uptag, result[uptag])
+  #       result[upval] = val
+  #     elif upval != val:
+  #       print ('@~@~ ERROR, overwriting', uptag, result[uptag])
+  #       result[upval] = val
+
   #
   return result
 
@@ -637,6 +652,75 @@ def fetchStdResNameMap(project:'MemopsRoot', reset:bool=False, debug:bool=False)
 #   return result
 
 
+def fetchChemCompVar(project:'MemopsRoot', residueType:str, linking:str=None, descriptor:str=None,
+                     fallBackType:str=None ):
+  """Get a ChemCompVar matching residueType,
+   May download from central CcpRepository if necessary.
+   if fallBackType is set will use that if the main type gives no answer"""
+
+
+  residueName2chemCompId =  fetchStdResNameMap(project)
+  chemCompVar = None
+
+  tt = residueName2chemCompId.get(residueType)
+  if not tt and fallBackType:
+    project._logger.warning(
+      "Could not find ChemComp for %s - replacing with %s" % (residueType, fallBackType)
+    )
+    residueType = fallBackType
+    tt = residueName2chemCompId.get(residueType)
+
+  if tt:
+    try:
+      chemComp = chemCompIo.fetchChemComp(project, tt[0], tt[1])
+    except IOError:
+      project._logger.warning(
+        "Could not read known ChemComp %s: %s %s - Files missing, or are you off line?"
+        % (residueType, tt[0], tt[1])
+      )
+      return
+    except urllib.error.URLError:
+      project._logger.warning(
+        "Could not download known ChemComp %s: %s %s - are you off line?"
+        % (residueType, tt[0], tt[1])
+      )
+      return
+
+    if chemComp:
+      if linking:
+        if descriptor:
+          chemCompVar  = chemComp.findFirstChemCompVar(linking=linking, descriptor=descriptor)
+        if chemCompVar is None:
+          chemCompVar  = (chemComp.findFirstChemCompVar(linking=linking, isDefaultVar=True) or
+                          chemComp.findFirstChemCompVar(linking=linking))
+        if chemCompVar is None and linking == 'none':
+          chemCompVar  = chemComp.findFirstChemCompVar()
+      else:
+        chemCompVar = (chemComp.findFirstChemCompVar(isDefaultVar=True) or
+                       chemComp.findFirstChemCompVar())
+    #
+    return chemCompVar
+
+  else:
+    project._logger.warning("Could not find ChemComp for %s - returning None" % residueType)
+
+
+  # from Resonance:
+
+    chemComp = None
+    if residueType:
+      residueType2ChemCompId = MoleculeQuery.fetchStdResNameMap(self.root)
+      tt = residueType2ChemCompId.get(residueType)
+      if tt:
+        chemComp = self.root.findFirstChemComp(molType=tt[0], ccpCode=tt[1])
+
+    if chemComp:
+      chemCompVar = chemComp.findFirstChemCompVar(linking=resonanceGroup.linking,
+                                                  descriptor=resonanceGroup.descriptor)
+      if not chemCompVar:
+        chemCompVar = chemComp.findFirstChemCopmVar(isDefaultVar=True)
+
+
 if __name__ == '__main__':
   from ccpnmodel.ccpncore.lib.Io import Api as apiIo
   project = apiIo.newProject('ChemCompNameTest')
@@ -647,3 +731,7 @@ if __name__ == '__main__':
   # import json
   # data = _parseObsoleteChemCompTable(open('/home/rhf22/rhf22/Dropbox/RHFnotes/ChemComp/ResidueNameMap3.txt'))
   # print(json.dumps(data, sort_keys=True, indent=4))
+
+
+    #from NEF molecule creation
+

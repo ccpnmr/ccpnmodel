@@ -63,7 +63,8 @@ def _createLogger(project, applicationName=None, useFileLogger=None):
   if useFileLogger is None:
     useFileLogger = project._useFileLogger
 
-  logger = Logging.createLogger(applicationName, project, stream=sys.stdout) if useFileLogger else Logging.getLogger()
+  logger = (Logging.createLogger(applicationName, project, stream=sys.stderr) if useFileLogger
+            else Logging.getLogger())
   # # NBNB FIXME TBD temporary redirect to stdout for debug purposes
   # import sys
   # logger = Logging.createLogger(applicationName, project,
@@ -278,17 +279,21 @@ def loadProject(path:str, projectName:str=None, askFile:"function"=None,
     project = XmlIO.loadProject(path, projectName, partialLoad=False)
 
   except:
-    warningMessages.append("\nFirst loading attempt failed - compatibility problem?.")
+    warningMessages.append(
+      "First loading attempt failed (compatibility problem?) - reloading in lenient mode "
+    )
     project = None
 
   if project is not None and (not ApiPath.areAllTopObjectsPresent(project) or
       not isGeneralDataOk(project)):
     # if not all loaded (shell) TopObjects can be found, try again
     project = None
-    warningMessages.append("\nSome files unfindable - project may have moved.")
+    warningMessages.append(
+      "Some files unfindable - project may have moved - reloading in lenient mode"
+    )
 
   if project is None:
-    warningMessages.append("Re-trying load, skipping cached TopObjects:")
+    # warningMessages.append("Re-trying load, skipping cached TopObjects:")
     project = XmlIO.loadProject(path, projectName, partialLoad=True)
 
   # try and fix project repository path, if needed
@@ -302,7 +307,7 @@ def loadProject(path:str, projectName:str=None, askFile:"function"=None,
     # change first repository path to point to this one, and also change backup
     repository = repositories[0]
     oldPath = repository.url.path
-    warningMessages.append('Project file has moved from\n"%s"\nto\n"%s"' % (oldPath, path))
+    warningMessages.append('Project file has moved from "%s" to "%s"' % (oldPath, path))
     repository.url = Implementation.Url(path=path)
     # Necessary because activeRepositories are not set right
     # if file names do not match:
@@ -321,14 +326,14 @@ def loadProject(path:str, projectName:str=None, askFile:"function"=None,
       if path != oldPath:
         oldBackupPath = addCcpnDirectorySuffix(oldBackupPath)
         newBackupPath = addCcpnDirectorySuffix(newBackupPath)
-        warningMessages.append('Backup is being changed from\n"%s"\nto\n"%s"' %
+        warningMessages.append('Backup is being changed from "%s" to "%s"' %
                                (oldBackupPath, newBackupPath))
         backupRepository.url = Implementation.Url(path=newBackupPath)
     else:
       oldBackupPath = addCcpnDirectorySuffix(oldBackupPath)
       if not os.path.exists(oldBackupPath):
         newBackupPath = addCcpnDirectorySuffix(newBackupPath)
-        warningMessages.append('Backup is being changed from\n"%s"\nto\n"%s"' %
+        warningMessages.append('Backup is being changed from "%s" to "%s"' %
                                (oldBackupPath, newBackupPath))
         backupRepository.url = Implementation.Url(path=newBackupPath)
 
@@ -354,7 +359,7 @@ def loadProject(path:str, projectName:str=None, askFile:"function"=None,
             newDataUrlPath = newDirectory + dataLocation[len(oldDirectory):]
             newPath = Path.joinPath(newDataUrlPath, dataStore.path)
             if os.path.exists(newPath):
-              warningMessages.append('DataStore %s:%s path has been changed from\n"%s"\nto\n"%s"' % (dataStore.dataLocationStore.name, dataStore.serial, oldDirectory, newDataUrlPath))
+              warningMessages.append('DataStore %s:%s path has been changed from "%s" to "%s"' % (dataStore.dataLocationStore.name, dataStore.serial, oldDirectory, newDataUrlPath))
               dataUrl.url = dataUrl.url.clone(path=newDataUrlPath)
 
   # change refData to current one if need be
@@ -363,7 +368,7 @@ def loadProject(path:str, projectName:str=None, askFile:"function"=None,
     oldPath = refDataRepository.url.path
     newPath = Path.joinPath(Path.getPathToImport('ccpnmodel'), 'data')
     if newPath != oldPath:
-      warningMessages.append('refData has been changed from\n"%s"\nto\n"%s"' % (oldPath, newPath))
+      # warningMessages.append('refData has been changed from "%s" to "%s"' % (oldPath, newPath))
       refDataRepository.url = Implementation.Url(path=newPath)
   else:
     warningMessages.append('Project has no repository with name "refData"')
@@ -376,7 +381,7 @@ def loadProject(path:str, projectName:str=None, askFile:"function"=None,
       newPath = Path.normalisePath(os.path.expanduser('~/.ccpn/data'))
       if not os.path.exists(newPath):
         os.makedirs(newPath)
-      warningMessages.append('generalData has been changed from\n"%s"\nto\n"%s"' % (oldPath, newPath))
+      # warningMessages.append('generalData has been changed from "%s" to "%s"' % (oldPath, newPath))
       generalDataRepository.url = Implementation.Url(path=newPath)
 
   # check other repository paths
@@ -452,7 +457,7 @@ def loadProject(path:str, projectName:str=None, askFile:"function"=None,
           if baseDir is not None:
             # We have a file location that fits all missing files.
             # Change dataStores to use it
-            warningMessages.append('WARNING, resetting data locations to: \n%s\n'
+            warningMessages.append('resetting data locations to: \n%s\n'
                                    % baseDir)
 
             AbstractDataStore.changeDataStoreUrl(dataStores[0], baseDir)
@@ -472,7 +477,7 @@ def loadProject(path:str, projectName:str=None, askFile:"function"=None,
   if warningMessages:
     # log warnings
     for msg in warningMessages:
-      logger.warning(msg)
+      logger.info(msg)
 
   # NBNB Hack: do data upgrade for V2-V3transition
   # TBD FIXME remove for future versions

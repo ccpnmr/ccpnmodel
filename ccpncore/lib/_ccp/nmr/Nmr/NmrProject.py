@@ -135,10 +135,10 @@ def createDummySpectrum(self:'NmrProject', axisCodes:Sequence[str],
   # Set up parameters and make Experiment
   numDim = len(axisCodes)
   isotopeCodes = tuple(spectrumLib.name2IsotopeCode(x) for x in axisCodes)
-  if name is None:
-    expName = ''.join(x for x in ''.join(axisCodes) if not x.isdigit())
-  else:
-    expName = name
+
+  # This is used as the user-readable experiment type
+  expName = ''.join(x for x in ''.join(axisCodes) if not x.isdigit())
+  specName = name or expName
 
   experiment = self.createExperiment(name=expName, numDim=numDim,
                                            sf=[DEFAULT_SPECTRUM_PARAMETERS[x]['sf']
@@ -148,7 +148,19 @@ def createDummySpectrum(self:'NmrProject', axisCodes:Sequence[str],
   params = dict((tag,[DEFAULT_SPECTRUM_PARAMETERS[x][tag] for x in isotopeCodes])
                 for tag in ('sw', 'refppm', 'refpt', 'numPoints'))
   #
-  specName = '%s@%s' %(expName, experiment.serial) if name is None else name
+  while True:
+    #print ('@~@~ specName', specName)
+    for exp in self.experiments:
+      if exp.findFirstDataSource(name=specName) is not None:
+        # We should only get here once, but if there is a name clash
+        # this keeps adding '@n' till the name is unique
+        #
+        #print ('@~@~', specName, exp.findFirstDataSource(name=specName))
+        specName = '%s@%s' %(specName, experiment.serial)
+        break
+    else:
+      # No name clash - we are done
+      break
 
   return experiment.createDataSource(name=specName, **params)
 

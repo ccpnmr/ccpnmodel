@@ -56,16 +56,16 @@ def doTest(target=None, workDir=None, maskErrors=True):
   
     if target.endswith('.tgz'):
       newTarget = unzipFile(target, testDir)
-      testProjects(newTarget, testDir, maskErrors=maskErrors, removeTarget=removeTarget)
+      checkProjects(newTarget, testDir, maskErrors=maskErrors, removeTarget=removeTarget)
     elif target.endswith('.xml'):
       outDir = corePath.joinPath(testDir, stdOutDir)
-      testProject(target, outDir)
+      checkProject(target, outDir)
     
     else:
       print('Not a valid testing target: ', target)
   
   else:
-    testProjects(target=target, workDir=testDir, maskErrors=maskErrors, removeTarget=removeTarget)
+    checkProjects(target=target, workDir=testDir, maskErrors=maskErrors, removeTarget=removeTarget)
 
 def unzipFile(target, workDir):
   global dirIndex
@@ -82,12 +82,10 @@ def unzipFile(target, workDir):
   return tempDir
 
 
-def testProjects(target, workDir, extraDirs=None, maskErrors=True, removeTarget=False):
+def checkProjects(target, workDir, extraDirs=None, maskErrors=True, removeTarget=False):
   """ Test all potential projects (.../memops/Implementation/*.xml or *.tgz)
   within directory target, putting temporary directories in workDir
   """
-  
-  #print '@~@~ Testing Projects in %s' % target
 
   # # Make dummy project as location for logs
   # now ='_'.join((str(x) for x in datetime.datetime.now().timetuple()[:6]))
@@ -107,7 +105,7 @@ def testProjects(target, workDir, extraDirs=None, maskErrors=True, removeTarget=
       try:
         work = True
         logger.info("Testing %s ..." % projDir)
-        testProject(projDir, corePath.joinPath(outDir, projDir[len(target)+1:]))
+        checkProject(projDir, corePath.joinPath(outDir, projDir[len(target)+1:]))
       except:
         print ("Error in test of %s" % projDir)
         if maskErrors:
@@ -127,7 +125,7 @@ def testProjects(target, workDir, extraDirs=None, maskErrors=True, removeTarget=
             xx = dirpath[len(target)+1:]
             if extraDirs:
               xx = os.path.join(extraDirs, xx)
-            testProjects(newTarget, workDir, extraDirs=xx,
+            checkProjects(newTarget, workDir, extraDirs=xx,
                          maskErrors=maskErrors, removeTarget=removeTarget)
             shutil.rmtree(newTarget)
           except:
@@ -146,7 +144,7 @@ def testProjects(target, workDir, extraDirs=None, maskErrors=True, removeTarget=
   if work is None:
     raise Exception("Error, No work done in directory %s" % target)
 
-def testProject(target, outDir):
+def checkProject(target, outDir):
   """ Test a single project
   target is the directory containing it, or the Implementation.xml file
   outDir the directory to which it is written
