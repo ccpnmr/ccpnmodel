@@ -1,4 +1,4 @@
-"""Functions to be copied automatically into ccpn.api.ccp.molecule.Molecule.molecule
+"""Functions to be copied automatically into ccpnmodel.ccpncore..api.ccp.molecule.Molecule.molecule
 
 """
 #=========================================================================================
