@@ -176,7 +176,7 @@ def readCsv(project, path=None):
 def loadReferenceSheet(project, dataDicts):
   ''' dispatch data to the project'''
   createGroupNameDicts(project, dataDicts)
-  if project._appBase.applicationName == 'Screen':
+  if project._appBase.applicationName == 'AnalysisScreen':
       createNewSubstance(project, dataDicts)
 
 
