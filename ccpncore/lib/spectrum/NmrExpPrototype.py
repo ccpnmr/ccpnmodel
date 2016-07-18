@@ -189,7 +189,7 @@ def _connectedShiftMeasurements(expMeasurement):
   return result
 
 def _orderedMeasurements(nmrExpPrototype, forReversed=False):
-  """get ExpMeasurements in order: acquisition last, furthest from acquisition last,
+  """get ExpMeasurements in order: acquisition first, furthest from acquisition last,
   connected measurements grouped together. If forReversed, get with acquisition last
   (for reversed experiments"""
 
