@@ -6829,7 +6829,7 @@ objectdomain.uml.core.Stereotype-owns $22
 (value "dataDict['position'] = value"
 "if notIsReading and notInConstructor and self.topObject.shiftAveraging:"
 "  shiftList = self.peak.peakList.dataSource.experiment.shiftList"
-"  if shiftList is not None:"
+"  if shiftList is not None and shiftList.autoUpdate:"
 "    for peakDimContrib in self.findAllPeakDimContribs(className='PeakDimContrib'):"
 "      shift = shiftList.findFirstMeasurement(resonance=peakDimContrib.resonance)"
 "      shift.recalculateValue()"
@@ -6863,7 +6863,7 @@ objectdomain.uml.core.Stereotype-owns $22
 (value "dataDict['realValueImpl'] = value"
 "if notIsReading and notInConstructor and self.topObject.shiftAveraging:"
 "  shiftList = self.peak.peakList.dataSource.experiment.shiftList"
-"  if shiftList is not None:"
+"  if shiftList is not None and shiftList.autoUpdate:"
 "    for peakDimContrib in self.findAllPeakDimContribs(className='PeakDimContrib'):"
 "      shift = shiftList.findFirstMeasurement(resonance=peakDimContrib.resonance)"
 "      shift.recalculateValue()"
@@ -6897,7 +6897,7 @@ objectdomain.uml.core.Stereotype-owns $22
 (value "dataDict['numAliasing'] = value"
 "if notIsReading and notInConstructor and self.topObject.shiftAveraging:"
 "  shiftList = self.peak.peakList.dataSource.experiment.shiftList"
-"  if shiftList is not None:"
+"  if shiftList is not None and shiftList.autoUpdate:"
 "    for peakDimContrib in self.findAllPeakDimContribs(className='PeakDimContrib'):"
 "      shift = shiftList.findFirstMeasurement(resonance=peakDimContrib.resonance)"
 "      shift.recalculateValue()"
@@ -6931,7 +6931,7 @@ objectdomain.uml.core.Stereotype-owns $22
 (value "dataDict['dataDimRef'] = value"
 "if notIsReading and notInConstructor and self.topObject.shiftAveraging:"
 "  shiftList = self.peak.peakList.dataSource.experiment.shiftList"
-"  if shiftList is not None:"
+"  if shiftList is not None and shiftList.autoUpdate:"
 "    for peakDimContrib in self.findAllPeakDimContribs(className='PeakDimContrib'):"
 "      shift = shiftList.findFirstMeasurement(resonance=peakDimContrib.resonance)"
 "      shift.recalculateValue()"
@@ -7694,7 +7694,7 @@ objectdomain.uml.core.Stereotype-owns $22
 (value "dataDict['localValuePerPoint'] = value"
 "if notIsReading and notInConstructor and self.topObject.shiftAveraging:"
 "  shiftList = self.dataDim.dataSource.experiment.shiftList"
-"  if shiftList is not None:"
+"  if shiftList is not None and shiftList.autoUpdate:"
 "    shiftList.recalculateShifts()"
 )
 (uid "z8kq45_6e6_i9b9vrj8_-p8p"))
@@ -7726,7 +7726,7 @@ objectdomain.uml.core.Stereotype-owns $22
 (value "dataDict['refPoint'] = value"
 "if notIsReading and notInConstructor and self.topObject.shiftAveraging:"
 "  shiftList = self.dataDim.dataSource.experiment.shiftList"
-"  if shiftList is not None:"
+"  if shiftList is not None and shiftList.autoUpdate:"
 "    shiftList.recalculateShifts()"
 )
 (uid "z8kq45_6e6_i9b9vrj8_-p8l"))
@@ -7758,7 +7758,7 @@ objectdomain.uml.core.Stereotype-owns $22
 (value "dataDict['refValue'] = value"
 "if notIsReading and notInConstructor and self.topObject.shiftAveraging:"
 "  shiftList = self.dataDim.dataSource.experiment.shiftList"
-"  if shiftList is not None:"
+"  if shiftList is not None and shiftList.autoUpdate:"
 "    shiftList.recalculateShifts()"
 )
 (uid "z8kq45_6e6_i9b9vrj8_-p8h"))
@@ -9722,7 +9722,7 @@ objectdomain.uml.core.Stereotype-owns $22
 ""
 "if self.nmrProject.shiftAveraging:"
 "  # Postponed till now, when links are set."
-"  if (value is not None):"
+"  if (value is not None and value.autoUpdate):"
 "    value.recalculateShifts()"
 "  if (currentValue is not None):"
 "    currentValue.recalculateShifts()"
@@ -11106,7 +11106,7 @@ objectdomain.uml.core.Stereotype-owns $22
 (value "dataDict['valuePerPoint'] = value"
 "if notIsReading and notInConstructor and self.topObject.shiftAveraging:"
 "  shiftList = self.dataSource.experiment.shiftList"
-"  if shiftList is not None:"
+"  if shiftList is not None and shiftList.autoUpdate:"
 "    shiftList.recalculateShifts()"
 )
 (uid "z8kq45_6e6_i9b9vrj8_-p8d"))
@@ -18812,7 +18812,7 @@ objectdomain.uml.core.Stereotype-owns $22
 "            objectsCreated.add(shift)"
 "          else:"
 "            raise ValueError(\"DataDimRef unit %s does not match ShiftList unit %s\" % (unit, shiftList.unit))"
-"        elif shiftList.nmrProject.shiftAveraging:"
+"        elif shiftList.nmrProject.shiftAveraging and shiftList.autoUpdate:"
 "          shift.recalculateValue()"
 "      finally:"
 "        if _undo is not None:"
@@ -18825,7 +18825,8 @@ objectdomain.uml.core.Stereotype-owns $22
 (value "if self.peakDim.peak.peakList.topObject.shiftAveraging:"
 "  if not self.root.override and self.topObject not in objsToBeDeleted:"
 "    for shift in self.resonance.shifts:"
-"      shift.recalculateValue()"
+"      if shift.parentList.autoUpdate:"
+"        shift.recalculateValue()"
 )
 (uid "0_6e6_i9b479g0_-p96"))
 ($13 3455 < 0_-fvi_hrnjywg5_-h14 "resonance_and_peakDimComponent_form_secondary_key_for_PeakDimContrib" 3441
@@ -21819,7 +21820,7 @@ objectdomain.uml.core.Stereotype-owns $22
 (value "dataDict['sf'] = value"
 "if notIsReading and notInConstructor and self.topObject.shiftAveraging:"
 "  shiftList = self.expDim.experiment.shiftList"
-"  if shiftList is not None:"
+"  if shiftList is not None and shiftList.autoUpdate:"
 "    shiftList.recalculateShifts()"
 )
 (uid "z8kq45_6e6_i9b9vrj8_-p89"))
