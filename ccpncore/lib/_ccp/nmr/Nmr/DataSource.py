@@ -187,10 +187,10 @@ def getPlaneData(self:'DataSource', position=None, xDim:int=1, yDim:int=2):
       dataStore.template = NmrPipe._guessFileTemplate(self)
     if dataStore.template:
       return NmrPipe.getPlaneData(self, position, xDim, yDim)
-    
+
   if dataStore.fileType == 'Hdf5':
     return Hdf5.getPlaneData(self, position, xDim, yDim)
-    
+
   assert numDim == 2 or (position and len(position) == numDim), 'numDim = %d, position = %s' % (numDim, position)
   assert xDim != yDim, 'xDim = yDim = %d' % xDim
   assert 1 <= xDim <= numDim, 'xDim = %d' % xDim
@@ -403,32 +403,47 @@ def getRegionData(self:'DataSource', startPoint:Sequence[float], endPoint:Sequen
 
   # NBNB TBD BROKEN!!
 
+  # Import moved here to avoid circular import problems
+  from ccpnmodel.ccpncore.lib.spectrum.formats import Hdf5, NmrPipe
+
   dataStore = self.dataStore
   if not dataStore:
     return None
-      
-  blockSizes = dataStore.blockSizes
+
+  numDim = self.numDim
+  assert len(startPoint) == numDim, 'len(startPoint) = %d, numDim=%d' % (len(startPoint), numDim)
+  assert len(endPoint) == numDim, 'len(endPoint) = %d, numDim=%d' % (len(endPoint), numDim)
+
   dataDims = self.sortedDataDims()
   numPoints = [dataDim.numPoints for dataDim in dataDims]
-  numDim = self.numDim
-    
-  blockRanges = []
-  rangeSizes = []
-  regionSizes = []
-   
   startPoint = list(startPoint)
   endPoint = list(endPoint)
   for dim in range(numDim):
     start = min(startPoint[dim], endPoint[dim])
     end = max(startPoint[dim], endPoint[dim])
-      
+
     start = min(max(0, int(start)), numPoints[dim])
     end = min(max(0, int(end)), numPoints[dim])
-   
+
     startPoint[dim] = start
     endPoint[dim] = end
 
   intRegion = (startPoint, endPoint)
+
+  if dataStore.fileType == 'NMRPipe':  # data is not blocked but multi-file in general
+    if not hasattr(dataStore, 'template'):
+      dataStore.template = NmrPipe._guessFileTemplate(self)
+    if dataStore.template:
+      return NmrPipe.getRegionData(self, startPoint, endPoint), intRegion
+
+  if dataStore.fileType == 'Hdf5':
+    return Hdf5.getRegionData(self, startPoint, endPoint), intRegion
+
+  blockSizes = dataStore.blockSizes
+
+  blockRanges = []
+  rangeSizes = []
+  regionSizes = []
    
   n = 1
   for dim in range(numDim):

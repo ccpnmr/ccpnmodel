@@ -103,22 +103,22 @@ def getPlaneData(dataSource:'DataSource', position:Sequence=None, xDim:int=1, yD
   dataStore = dataSource.dataStore
   filePath = dataStore.fullPath
 
-  hdf5file = h5py.File(filePath, 'r')
-  dataset = hdf5file[SPECTRUM_DATASET_NAME]
+  with h5py.File(filePath, 'r') as hdf5file:
+    dataset = hdf5file[SPECTRUM_DATASET_NAME]
   
-  slices = numDim * [0]
-  for dim, dataDim in enumerate(dataDims):
-    if dim in (xDim, yDim):
-      numPoints = dataDim.numPoints
-      slices[numDim-dim-1] = slice(numPoints)
-      if dim == xDim:
-        xNumPoints = numPoints
+    slices = numDim * [0]
+    for dim, dataDim in enumerate(dataDims):
+      if dim in (xDim, yDim):
+        numPoints = dataDim.numPoints
+        slices[numDim-dim-1] = slice(numPoints)
+        if dim == xDim:
+          xNumPoints = numPoints
+        else:
+          yNumPoints = numPoints
       else:
-        yNumPoints = numPoints
-    else:
-      slices[numDim-dim-1] = slice(position[dim]-1, position[dim])
+        slices[numDim-dim-1] = slice(position[dim]-1, position[dim])
  
-  data = dataset[tuple(slices)]
+    data = dataset[tuple(slices)]
  
   if xDim > yDim:
     # swap x and y
@@ -129,8 +129,6 @@ def getPlaneData(dataSource:'DataSource', position:Sequence=None, xDim:int=1, yD
 
   data = data.reshape((yNumPoints, xNumPoints))
 
-  hdf5file.close()
-  
   return data
 
 def getSliceData(dataSource:'DataSource', position:Sequence=None, sliceDim:int=1):
@@ -149,21 +147,36 @@ def getSliceData(dataSource:'DataSource', position:Sequence=None, sliceDim:int=1
   dataStore = dataSource.dataStore
   filePath = dataStore.fullPath
 
-  hdf5file = h5py.File(filePath, 'r')
-  dataset = hdf5file[SPECTRUM_DATASET_NAME]
+  with h5py.File(filePath, 'r') as hdf5file:
+    dataset = hdf5file[SPECTRUM_DATASET_NAME]
   
-  slices = numDim * [0]
-  for dim, dataDim in enumerate(dataDims):
-    if dim == sliceDim:
-      numPoints = dataDim.numPoints
-      slices[numDim-dim-1] = slice(numPoints)
-    else:
-      slices[numDim-dim-1] = slice(position[dim]-1, position[dim])
+    slices = numDim * [0]
+    for dim, dataDim in enumerate(dataDims):
+      if dim == sliceDim:
+        numPoints = dataDim.numPoints
+        slices[numDim-dim-1] = slice(numPoints)
+      else:
+        slices[numDim-dim-1] = slice(position[dim]-1, position[dim])
  
-  data = dataset[tuple(slices)]
+    data = dataset[tuple(slices)]
+
   data = data.reshape((numPoints,))
-  
-  hdf5file.close()
-  
+
   return data
  
+def getRegionData(dataSource:'DataSource', startPoint:Sequence[float], endPoint:Sequence[float]):
+
+  numDim = dataSource.numDim
+  dataStore = dataSource.dataStore
+  filePath = dataStore.fullPath
+
+  with h5py.File(filePath, 'r') as hdf5file:
+    dataset = hdf5file[SPECTRUM_DATASET_NAME]
+
+    slices = numDim * [0]
+    for dim in range(numDim):
+      slices[numDim - dim - 1] = slice(startPoint[dim], endPoint[dim])
+
+    data = dataset[tuple(slices)]
+
+  return data

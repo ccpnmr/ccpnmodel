@@ -331,3 +331,17 @@ def getSliceData(dataSource:'DataSource', position:Sequence=None, sliceDim:int=1
  
   return data
 
+def getRegionData(dataSource:'DataSource', startPoint:Sequence[float], endPoint:Sequence[float]):
+
+
+  if not hasattr(dataSource, 'data'):
+    dataSource.data = readData(dataSource)
+
+  numDim = dataSource.numDim
+  slices = numDim * [0]
+  for dim in range(numDim):
+    slices[numDim-dim-1] = slice(startPoint[dim], endPoint[dim])
+
+  data = dataSource.data[tuple(slices)]
+
+  return data
