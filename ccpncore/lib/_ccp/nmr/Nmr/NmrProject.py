@@ -117,11 +117,8 @@ def loadDataSource(self:'NmrProject', filePath, dataFileFormat):
                                                 numberType=numberType, headerSize=headerSize,
                                                 nByte=wordSize, fileType=fileType)
   dataSource = experiment.createDataSource(name=name, numPoints=numPoints, sw=specWidths,
-                                refppm=refPpms, refpt=refPoints, dataStore=blockMatrix)
-
-  for i, values in enumerate(sampledValues):
-    if values:
-      dataSource.setSampledData(i, values, sampledErrors[i] or None)
+                                refppm=refPpms, refpt=refPoints, dataStore=blockMatrix,
+                                sampledValues=sampledValues, sampledErrors=sampledErrors)
 
   experiment.resetAxisCodes()
 

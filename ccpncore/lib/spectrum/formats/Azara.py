@@ -156,6 +156,7 @@ def readParams(filePath):
 
     elif keyword == 'params':
       sampledValues[dim] = [float(x) for x in data[1:]]
+      isotopes[dim] = None
 
     elif keyword == 'sigmas':
       sampledSigmas[dim] = [float(x) for x in data[1:]]
