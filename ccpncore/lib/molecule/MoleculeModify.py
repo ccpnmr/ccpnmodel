@@ -26,6 +26,7 @@ __version__ = "$Revision$"
 
 import typing
 from ccpn.util.nef import StarIo
+from ccpn.util import Common as commonUtil
 from ccpnmodel.ccpncore.memops.ApiError import ApiError
 from ccpnmodel.ccpncore.lib.chemComp import Io as chemCompIo
 from ccpnmodel.ccpncore.lib.molecule import MoleculeQuery
@@ -160,8 +161,15 @@ def createMoleculeFromNef(project, name:str, sequence:typing.Sequence[dict],
   stretches = StarIo.splitNefSequence(sequence)
   molecule =  project.newMolecule(name=name)
 
-  startNumber = 1
   for stretch in stretches:
+
+    # Try setting start number
+    sequenceCode = stretch[0]['sequence_code']
+    seqCode, seqInsertCode,offset = commonUtil.parseSequenceCode(sequenceCode)
+    if seqCode is None:
+      startNumber = 1
+    else:
+      startNumber = seqCode
 
     # Create new MolResidues
     residueTypes = [row.get('residue_type', defaultType) for row in stretch]
@@ -174,7 +182,8 @@ def createMoleculeFromNef(project, name:str, sequence:typing.Sequence[dict],
       else:
         # We use isCyclic to set the ends to 'middle'. It gets sorted out below
         isCyclic = True
-      molResidues = molecule.extendMolResidues(residueTypes, startNumber, isCyclic)
+      molResidues = molecule.extendMolResidues(sequence=residueTypes, startNumber=startNumber,
+                                               isCyclic=isCyclic)
 
       # Adjust linking and descriptor
       if isCyclic:
@@ -184,15 +193,21 @@ def createMoleculeFromNef(project, name:str, sequence:typing.Sequence[dict],
           cyclicLink.delete()
       else:
         if firstLinking != 'start':
-          molResidues[0].linking = 'middle'
+          ff = molResidues[0].chemComp.findFirstChemCompVar
+          chemCompVar = (ff(linking='middle', isDefaultVar=True) or ff(linking='middle'))
+          molResidues[0].__dict__['linking'] = 'middle'
+          molResidues[0].__dict__['descriptor'] = chemCompVar.descriptor
         if lastLinking != 'end':
-          molResidues[-1].linking = 'middle'
+          ff = molResidues[-1].chemComp.findFirstChemCompVar
+          chemCompVar = (ff(linking='middle', isDefaultVar=True) or ff(linking='middle'))
+          molResidues[-1].__dict__['linking'] = 'middle'
+          molResidues[-1].__dict__['descriptor'] = chemCompVar.descriptor
     else:
       # Only one residue
       tt = residueName2chemCompId.get(residueTypes[0])
       if not tt:
         project._logger.warning("Could not access ChemComp for %s - replacing with %s\n"
-                                "NB - could be a failure 8in fetching remote information.\n"
+                                "NB - could be a failure in fetching remote information.\n"
                                  "Are you off line?")
         tt = residueName2chemCompId.get(defaultType)
       if tt:
@@ -200,7 +215,7 @@ def createMoleculeFromNef(project, name:str, sequence:typing.Sequence[dict],
         if chemComp:
           chemCompVar  = (chemComp.findFirstChemCompVar(linking='none') or
                           chemComp.findFirstChemCompVar()) # just a default
-          molResidues = [molecule.newMolResidue(startNumber=startNumber, chemCompVar=chemCompVar)]
+          molResidues = [molecule.newMolResidue(seqCode=startNumber, chemCompVar=chemCompVar)]
 
         else:
           raise ValueError("Residue type %s : Error in getting template information"

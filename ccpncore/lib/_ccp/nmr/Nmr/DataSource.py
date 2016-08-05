@@ -27,15 +27,15 @@ import numpy
 import os
 # import re
 import sys
+from typing import Sequence, Tuple
+from ccpnmodel.ccpncore.lib.spectrum import Spectrum as spectrumLib
+from ccpnmodel.ccpncore.lib.spectrum.Integral import Integral as spInt
+from ccpnmodel.ccpncore.lib.Io import Formats
 
 # Additional functions for ccp.nmr.Nmr.DataSource
 #
 # NB All functions must have a mandatory DataSource as the first parameter
 # so they can be used as DataSource methods
-# from ccpnmodel.ccpncore.lib.spectrum.Integral import getIntegralRegions, setIntegrals, calculateIntegralValues
-from typing import Sequence, Tuple
-from ccpnmodel.ccpncore.lib.spectrum.Integral import Integral as spInt
-from ccpnmodel.ccpncore.lib.Io import Formats
 
 def getDimCodes(self:'DataSource'):
   """ Get dimcode of form hx1, hx2, x1, x2, where the x's are directly bound to 
@@ -746,3 +746,16 @@ def projectedToFile(self:'DataSource', path:str, xDim:int=1, yDim:int=2, method:
     _saveNmrPipe2DHeader(self, fp, xDim, yDim)
     projectedData.tofile(fp)
 
+
+def addDataStore(self: 'DataSource', spectrumPath, **params):
+  """Create and set DataSource.dataStore.
+  The values of params are given by the 'tags' tuple, below"""
+
+  dirName, fileName = os.path.split(spectrumPath)
+  dataUrl = self.root.fetchDataUrl(dirName)
+  tags = ('numPoints', 'blockSizes', 'isBigEndian', 'numberType', 'headerSize', 'nByte',
+          'fileType', 'complexStoredBy')
+  attributeDict = dict((x, params.get(x)) for x in tags)
+
+  blockMatrix = spectrumLib.createBlockedMatrix(dataUrl, spectrumPath, **attributeDict)
+  self.dataStore = blockMatrix

@@ -127,7 +127,7 @@ def extendMolResidues(self:'Molecule', sequence:Sequence[str], startNumber:int=1
   if not sequence:
     return []
 
-  # Reset startNumber to match pre-existing MOlResidues
+  # Reset startNumber to match pre-existing MolResidues
   oldMolResidues = self.molResidues
   if oldMolResidues:
     nn = max([x.seqCode for x in oldMolResidues]) + 1

@@ -54,6 +54,10 @@ priorityNameRemapping = {
 
 # C,H,N experiments
 'HNCA/CB':'HNCA/CB',
+'hCca-TOCSY-coNH':'hCcacoNH-TOCSY',
+'Hcca-TOCSY-coNH':'HccacoNH-TOCSY',
+'hCc-TOCSY-NH':'hCcaNH-TOCSY',
+'Hcc-TOCSY-NH':'HccaNH-TOCSY',
 'HNcoCA/CB':'HNcoCA/CB',
 'HNCA':'HNCA',
 'H-detected HNcaCO':'HNcaCO',

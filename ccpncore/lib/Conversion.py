@@ -114,11 +114,15 @@ def getConversionInfo(fromVersionString, toVersionString):
   return result
 
 
-
 def setNmrExpPrototypeLink(obj, tag, topObjByGuid, delayDataDict,
                            linkmapper):
   """ redirect certain NmrExpPrototype links to other experiments
   """
+
+  if tag == 'refExpDim':
+    # After model changes this is no longer set
+    return
+
   doGet = delayDataDict.get
   objDataDict = doGet(obj)
   inDataList = objDataDict.get(tag)
@@ -139,5 +143,7 @@ def setNmrExpPrototypeLink(obj, tag, topObjByGuid, delayDataDict,
     if oo is not None:
       # If the experiment is not found, hopefully it wil be picked up at a later
       # compatibility step.
-      obj.__dict__[tag] = clazz.getByKey(oo, keyList[1:-1])
+      # Aftere V3 these links are derived, settable, and must be set properly
+      # obj.__dict__[tag] = clazz.getByKey(oo, keyList[1:-1])
+      setattr(obj,tag, clazz.getByKey(oo, keyList[1:-1]))
       del objDataDict[tag]

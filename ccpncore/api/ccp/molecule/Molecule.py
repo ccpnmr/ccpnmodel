@@ -5344,10 +5344,12 @@ the data bypassing the API.
     result = None
     linkEnd = self.findFirstMolResLinkEnd(linkCode='next')
     if linkEnd is not None:
-      for otherEnd in linkEnd.molResLink.molResLinkEnds:
-        if otherEnd is not linkEnd:
-          result = otherEnd.molResidue
-          break
+      molResLink =  linkEnd.molResLink
+      if molResLink is not None:
+        for otherEnd in molResLink.molResLinkEnds:
+          if otherEnd is not linkEnd:
+            result = otherEnd.molResidue
+            break
     return result
 
   getPackageName = ccpnmodel.ccpncore.api.memops.Implementation.ComplexDataType.getPackageName
@@ -5370,10 +5372,12 @@ the data bypassing the API.
     result = None
     linkEnd = self.findFirstMolResLinkEnd(linkCode='prev')
     if linkEnd is not None:
-      for otherEnd in linkEnd.molResLink.molResLinkEnds:
-        if otherEnd is not linkEnd:
-          result = otherEnd.molResidue
-          break
+      molResLink =  linkEnd.molResLink
+      if molResLink is not None:
+        for otherEnd in molResLink.molResLinkEnds:
+          if otherEnd is not linkEnd:
+            result = otherEnd.molResidue
+            break
     return result
 
   getQualifiedName = ccpnmodel.ccpncore.api.memops.Implementation.ComplexDataType.getQualifiedName

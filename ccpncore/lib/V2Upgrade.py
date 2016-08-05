@@ -500,6 +500,12 @@ def upgradeConstraintList(constraintList):
         params['vectorLength'] = constraint.vectorLength
       newConstraint = newList.newGenericConstraint(**params)
 
+      for peakContrib in constraint.sortedPeakContribs():
+        dd = {}
+        for tag in ('experimentSerial', 'dataSourceSerial', 'peakListSerial', 'peakSerial'):
+          dd[tag] = getattr(peakContrib, tag)
+        newConstraint.newConstraintPeakContrib(**dd)
+
       for contribution in constraint.sortedContributions():
         # Make new Contribution
         params = {}
