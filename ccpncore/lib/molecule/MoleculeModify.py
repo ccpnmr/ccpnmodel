@@ -182,6 +182,7 @@ def createMoleculeFromNef(project, name:str, sequence:typing.Sequence[dict],
       else:
         # We use isCyclic to set the ends to 'middle'. It gets sorted out below
         isCyclic = True
+
       molResidues = molecule.extendMolResidues(sequence=residueTypes, startNumber=startNumber,
                                                isCyclic=isCyclic)
 
@@ -206,9 +207,9 @@ def createMoleculeFromNef(project, name:str, sequence:typing.Sequence[dict],
       # Only one residue
       tt = residueName2chemCompId.get(residueTypes[0])
       if not tt:
-        project._logger.warning("Could not access ChemComp for %s - replacing with %s\n"
-                                "NB - could be a failure in fetching remote information.\n"
-                                 "Are you off line?")
+        project._logger.warning("""Could not access ChemComp for %s - replacing with %s
+NB - could be a failure in fetching remote information.
+Are you off line?""" % (residueTypes[0], defaultType))
         tt = residueName2chemCompId.get(defaultType)
       if tt:
         chemComp = chemCompIo.fetchChemComp(project, tt[0], tt[1])
@@ -218,8 +219,8 @@ def createMoleculeFromNef(project, name:str, sequence:typing.Sequence[dict],
           molResidues = [molecule.newMolResidue(seqCode=startNumber, chemCompVar=chemCompVar)]
 
         else:
-          raise ValueError("Residue type %s : Error in getting template information"
-                           % residueTypes[0])
+          raise ValueError("Residue type %s %s: Error in getting template information"
+                           % (residueTypes[0], tt))
 
       else:
         raise ValueError("Residue type %s not recognised" % residueTypes[0])

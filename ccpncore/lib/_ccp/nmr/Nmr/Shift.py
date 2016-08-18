@@ -51,6 +51,10 @@ def recalculateValue(self:'Shift', simulatedPeakScale:float=0.0001) -> float:
     return
 
   shiftList = self.parentList
+
+  if not shiftList.autoUpdate:
+    return
+
   experiments = shiftList.experiments
   resonance = self.resonance
   sum1  = 0.0

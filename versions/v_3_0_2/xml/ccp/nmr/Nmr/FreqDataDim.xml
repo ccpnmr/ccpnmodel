@@ -228,7 +228,7 @@ finally:
       <item tag="python">dataDict['valuePerPoint'] = value
 if notIsReading and notInConstructor and self.topObject.shiftAveraging:
   shiftList = self.dataSource.experiment.shiftList
-  if shiftList is not None:
+  if shiftList is not None and shiftList.autoUpdate:
     shiftList.recalculateShifts()</item>
     </codeStubs>
   </MetaOperation>

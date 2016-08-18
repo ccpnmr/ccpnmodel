@@ -536,15 +536,19 @@ self.name = value.name</item>
   self.implName = None
 else:
   index = value.find('@')
-  if index &gt;= 0 and value[index:].isdigit():
-    # 
-    implName = self.implName
-    self.implName = None
-    if value != self.name:
-      # If they are equal this was teh default name and it is now set.
-      self.implName = implName
+  if index &gt;= 0 and value[index+1:].isdigit():
+    # Name is of reserved type
+    serial = int(value[index+1:])
+    if serial == self.serial:
+      # Name matches serial. OK.
+      self.implName = None
+      if value != self.name:
+        # Name does not match default name. Set it
+        self.implName = value
+    else:
       raise ValueError("Illegal Resonance name %s - names of the form 'xyz@integer' are reserved." % value)
   else:
+    # Not reserved type. Set the name
     self.implName = value</item>
     </codeStubs>
   </MetaOperation>

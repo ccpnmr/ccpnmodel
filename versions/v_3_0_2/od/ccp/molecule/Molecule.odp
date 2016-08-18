@@ -35,7 +35,7 @@ objectdomain.uml.core.Stereotype-owns $18
 ($3 4 < 0_-fvi_hrnjywg5_-l93 "MolResidue" 2
 (autoSizeToFit true)
 (uid "0_-fvi_hrnjywg5_-l93")
-(bbx 630 900 170 330))
+(bbx 630 900 170 240))
 ($4 5 < 0_-fvi_hrnjywg5_-l92 "" 2
 (toMultiplicityPosition 615 955)
 (toRolePosition 645 220)
@@ -104,16 +104,16 @@ objectdomain.uml.core.Stereotype-owns $18
 ($3 19 < 0_-fvi_hrnjywg5_-l8o "MolResLink" 2
 (autoSizeToFit true)
 (uid "0_-fvi_hrnjywg5_-l8o")
-(bbx 100 70 210 110))
+(bbx 110 30 210 110))
 ($4 20 < 0_-fvi_hrnjywg5_-l8n "" 2
-(toMultiplicityPosition 315 185)
+(toMultiplicityPosition 325 145)
 (uid "0_-fvi_hrnjywg5_-l8n")
-(points 390 175 310 175)
-(fromMultiplicityPosition 380 190))
+(points 390 160 390 135 320 135)
+(fromMultiplicityPosition 370 140))
 ($4 21 < 0_-fvi_hrnjywg5_-l8m "" 2
-(toMultiplicityPosition 190 185)
+(toMultiplicityPosition 200 185)
 (uid "0_-fvi_hrnjywg5_-l8m")
-(points 205 180 205 210))
+(points 215 140 215 210))
 ($3 22 < 0_-fvi_hrnjywg5_-l8l "LinkDihedralAngle" 2
 (autoSizeToFit true)
 (uid "0_-fvi_hrnjywg5_-l8l")
@@ -2405,10 +2405,12 @@ objectdomain.uml.core.Stereotype-owns $18
 (value "result = None"
 "linkEnd = self.findFirstMolResLinkEnd(linkCode='next')"
 "if linkEnd is not None:"
-"  for otherEnd in linkEnd.molResLink.molResLinkEnds:"
-"    if otherEnd is not linkEnd:"
-"      result = otherEnd.molResidue"
-"      break"
+"  molResLink =  linkEnd.molResLink"
+"  if molResLink is not None:"
+"    for otherEnd in molResLink.molResLinkEnds:"
+"      if otherEnd is not linkEnd:"
+"        result = otherEnd.molResidue"
+"        break"
 )
 (uid "0_jd_i2lweh8x_-p8y"))
 ($7 370 < 0_jd_i2lweh8x_-p8a "guid" 366
@@ -2440,10 +2442,12 @@ objectdomain.uml.core.Stereotype-owns $18
 (value "result = None"
 "linkEnd = self.findFirstMolResLinkEnd(linkCode='prev')"
 "if linkEnd is not None:"
-"  for otherEnd in linkEnd.molResLink.molResLinkEnds:"
-"    if otherEnd is not linkEnd:"
-"      result = otherEnd.molResidue"
-"      break"
+"  molResLink =  linkEnd.molResLink"
+"  if molResLink is not None:"
+"    for otherEnd in molResLink.molResLinkEnds:"
+"      if otherEnd is not linkEnd:"
+"        result = otherEnd.molResidue"
+"        break"
 )
 (uid "0_jd_i2lweh8x_-p8u"))
 ($7 375 < 0_jd_i2lweh8x_-p89 "guid" 371

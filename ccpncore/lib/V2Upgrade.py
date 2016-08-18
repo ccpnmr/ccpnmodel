@@ -206,10 +206,15 @@ def mapAssignedResonances(topObject, molSystem=None, chainMap=None):
         atomSetNames = [x.name for x in atomSets]
         starpos = chemAtomSet.name.find('*')
         newNames = []
-        for ii, newChar in enumerate('XY'):
-          chars = list(atomSetNames[ii])
-          chars[starpos] = newChar
-          newNames.append(''.join(chars))
+        if [x[starpos:] for x in sorted(atomSetNames)] == ["", "'"]:
+          # special case - names are "abc'", "abc''"
+          ss = atomSetNames[0][:starpos-1]
+          newNames = [ss + 'X', ss + 'Y']
+        else:
+          for ii, newChar in enumerate('XY'):
+            chars = list(atomSetNames[ii])
+            chars[starpos] = newChar
+            newNames.append(''.join(chars))
 
         # select new name to use
         if topObject.className == 'NmrProject':

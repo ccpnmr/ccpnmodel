@@ -442,6 +442,10 @@ class XmlGen(ModelTraverse):
       else:
         # string, none of the above - use complex element
         result['toEtype'] = 'cplx'
+
+    elif xx.typeCodes.get('python') == metaConstants.multiple_code:
+      # This is a multiline string representation - must be complex
+      result['toEtype'] = 'cplx'
         
     
     self.globalMap[self.prefix]['abstractTypes'][xx.name] = result

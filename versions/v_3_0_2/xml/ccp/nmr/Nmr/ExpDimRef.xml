@@ -464,7 +464,7 @@ else:
       <item tag="python">dataDict['sf'] = value
 if notIsReading and notInConstructor and self.topObject.shiftAveraging:
   shiftList = self.expDim.experiment.shiftList
-  if shiftList is not None:
+  if shiftList is not None and shiftList.autoUpdate:
     shiftList.recalculateShifts()</item>
     </codeStubs>
   </MetaOperation>

@@ -100,9 +100,19 @@ and contains original contributions embedded in the framework
    hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
    isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
    locard="0" scope="instance_level" visibility="public_vis">
-    <documentation>Multiple-type attribute - can be of any of the several types supported by the Multiple data type.
-Allows storing arbitrty data structures. For use by CCPN applicatoins only.</documentation>
+    <documentation>Multiple-type attribute - A dictionary that can contain any of the several types supported by the Multiple data type. Allows storing arbitrary data structures. For use by CCPN applications only.</documentation>
     <valueType>www.ccpn.ac.uk_Fogh_2016-02-21-22:03:00_00001</valueType>
+
+    <!-- Start constraints for <MetaAttribute: memops.Implementation.DataObject.ccpnInternalData>: -->
+    <MetaConstraint name="ccpnInternalData_must_be_None_or_dictionary"
+     guid="www.ccpn.ac.uk_Fogh_2016-08-06-16:11:51_00001"
+     container="www.ccpn.ac.uk_Fogh_2016-06-28-10:49:27_00001"
+     isImplicit="false">
+      <codeStubs>
+        <item tag="python">value is None or isinstance(value, dict)</item>
+      </codeStubs>
+    </MetaConstraint>
+    <!-- End constraints for <MetaAttribute: memops.Implementation.DataObject.ccpnInternalData>: -->
   </MetaAttribute>
 
   <MetaRole name="topObject"

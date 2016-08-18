@@ -754,6 +754,10 @@ self.experimentType = name
 from ccpnmodel.ccpncore.lib.spectrum.Spectrum import _axisCodeMapIndices
 expDimRefs= [y for x in self.sortedExpDims() for y in x.sortedExpDimRefs()]
 refAxisCodes = [y.axisCode for x in value.sortedRefExpDims() for y in x.sortedRefExpDimRefs()]
+if not value.isReversed:
+  # expDims are in order of first traversd, but we want to give priority
+  # to the acquisition dimension, so map them in order acquisition-first. Hence the reversal
+  refAxisCodes.reverse()
 indexMapping = _axisCodeMapIndices([x.axisCode for x in expDimRefs], refAxisCodes)
 if indexMapping:
   for ii, axisCode in enumerate(refAxisCodes):
@@ -788,7 +792,7 @@ dataDict['shiftList'] = value
 
 if self.nmrProject.shiftAveraging:
   # Postponed till now, when links are set.
-  if (value is not None):
+  if (value is not None and value.autoUpdate):
     value.recalculateShifts()
   if (currentValue is not None):
     currentValue.recalculateShifts()</item>

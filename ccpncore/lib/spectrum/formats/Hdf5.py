@@ -101,6 +101,8 @@ def getPlaneData(dataSource:'DataSource', position:Sequence=None, xDim:int=1, yD
   dataDims = dataSource.sortedDataDims()
 
   dataStore = dataSource.dataStore
+
+  # TODO Can dataStore ever be None?
   filePath = dataStore.fullPath
 
   with h5py.File(filePath, 'r') as hdf5file:

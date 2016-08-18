@@ -109,7 +109,7 @@ if shiftList:
             objectsCreated.add(shift)
           else:
             raise ValueError("DataDimRef unit %s does not match ShiftList unit %s" % (unit, shiftList.unit))
-        elif shiftList.nmrProject.shiftAveraging:
+        elif shiftList.nmrProject.shiftAveraging and shiftList.autoUpdate:
           shift.recalculateValue()
       finally:
         if _undo is not None:
@@ -119,7 +119,8 @@ if shiftList:
     <item tag="python">if self.peakDim.peak.peakList.topObject.shiftAveraging:
   if not self.root.override and self.topObject not in objsToBeDeleted:
     for shift in self.resonance.shifts:
-      shift.recalculateValue()</item>
+      if shift.parentList.autoUpdate:
+        shift.recalculateValue()</item>
   </postDestructorCodeStubs>
 
   <!-- Start constraints for <MetaClass: ccp.nmr.Nmr.PeakDimContrib>: -->

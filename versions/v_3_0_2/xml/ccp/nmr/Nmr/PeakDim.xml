@@ -559,7 +559,7 @@ decayRate - fitted decay rate (in Hz)</documentation>
       <item tag="python">dataDict['dataDimRef'] = value
 if notIsReading and notInConstructor and self.topObject.shiftAveraging:
   shiftList = self.peak.peakList.dataSource.experiment.shiftList
-  if shiftList is not None:
+  if shiftList is not None and shiftList.autoUpdate:
     for peakDimContrib in self.findAllPeakDimContribs(className='PeakDimContrib'):
       shift = shiftList.findFirstMeasurement(resonance=peakDimContrib.resonance)
       shift.recalculateValue()</item>
@@ -577,7 +577,7 @@ if notIsReading and notInConstructor and self.topObject.shiftAveraging:
       <item tag="python">dataDict['numAliasing'] = value
 if notIsReading and notInConstructor and self.topObject.shiftAveraging:
   shiftList = self.peak.peakList.dataSource.experiment.shiftList
-  if shiftList is not None:
+  if shiftList is not None and shiftList.autoUpdate:
     for peakDimContrib in self.findAllPeakDimContribs(className='PeakDimContrib'):
       shift = shiftList.findFirstMeasurement(resonance=peakDimContrib.resonance)
       shift.recalculateValue()</item>
@@ -595,7 +595,7 @@ if notIsReading and notInConstructor and self.topObject.shiftAveraging:
       <item tag="python">dataDict['position'] = value
 if notIsReading and notInConstructor and self.topObject.shiftAveraging:
   shiftList = self.peak.peakList.dataSource.experiment.shiftList
-  if shiftList is not None:
+  if shiftList is not None and shiftList.autoUpdate:
     for peakDimContrib in self.findAllPeakDimContribs(className='PeakDimContrib'):
       shift = shiftList.findFirstMeasurement(resonance=peakDimContrib.resonance)
       shift.recalculateValue()</item>
@@ -627,7 +627,7 @@ if notIsReading and notInConstructor and self.topObject.shiftAveraging:
       <item tag="python">dataDict['realValueImpl'] = value
 if notIsReading and notInConstructor and self.topObject.shiftAveraging:
   shiftList = self.peak.peakList.dataSource.experiment.shiftList
-  if shiftList is not None:
+  if shiftList is not None and shiftList.autoUpdate:
     for peakDimContrib in self.findAllPeakDimContribs(className='PeakDimContrib'):
       shift = shiftList.findFirstMeasurement(resonance=peakDimContrib.resonance)
       shift.recalculateValue()</item>

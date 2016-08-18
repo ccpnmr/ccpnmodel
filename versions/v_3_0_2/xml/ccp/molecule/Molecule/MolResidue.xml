@@ -224,10 +224,12 @@ finally:
       <item tag="python">result = None
 linkEnd = self.findFirstMolResLinkEnd(linkCode='next')
 if linkEnd is not None:
-  for otherEnd in linkEnd.molResLink.molResLinkEnds:
-    if otherEnd is not linkEnd:
-      result = otherEnd.molResidue
-      break</item>
+  molResLink =  linkEnd.molResLink
+  if molResLink is not None:
+    for otherEnd in molResLink.molResLinkEnds:
+      if otherEnd is not linkEnd:
+        result = otherEnd.molResidue
+        break</item>
     </codeStubs>
   </MetaOperation>
 
@@ -242,10 +244,12 @@ if linkEnd is not None:
       <item tag="python">result = None
 linkEnd = self.findFirstMolResLinkEnd(linkCode='prev')
 if linkEnd is not None:
-  for otherEnd in linkEnd.molResLink.molResLinkEnds:
-    if otherEnd is not linkEnd:
-      result = otherEnd.molResidue
-      break</item>
+  molResLink =  linkEnd.molResLink
+  if molResLink is not None:
+    for otherEnd in molResLink.molResLinkEnds:
+      if otherEnd is not linkEnd:
+        result = otherEnd.molResidue
+        break</item>
     </codeStubs>
   </MetaOperation>
 

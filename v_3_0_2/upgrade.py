@@ -255,7 +255,7 @@ def fixExperiments(nmrProject):
 
     # set experiment.name - now used for refExperiment common name
     if refExperiment:
-      experiment.name = refExperiment.synonym
+      experiment.name = refExperiment.synonym or refExperiment.name
     else:
       experiment.name = '?'
 

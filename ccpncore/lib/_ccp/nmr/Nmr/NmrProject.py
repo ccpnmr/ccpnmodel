@@ -131,7 +131,7 @@ def createDummySpectrum(self:'NmrProject', axisCodes:Sequence[str],
 
   # Set up parameters and make Experiment
   numDim = len(axisCodes)
-  isotopeCodes = tuple(spectrumLib.name2IsotopeCode(x) for x in axisCodes)
+  isotopeCodes = tuple(spectrumLib.name2IsotopeCode(x) or x for x in axisCodes)
 
   # This is used as the user-readable experiment type
   expName = ''.join(x for x in ''.join(axisCodes) if not x.isdigit())

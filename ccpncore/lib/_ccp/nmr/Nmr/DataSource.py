@@ -579,7 +579,10 @@ def estimateNoise(self:'DataSource') -> float:
 
   if self.numDim > 1:
     planeData = getPlaneData(self, [1] * self.numDim, 1, 2)
-    value = 1.1 * numpy.std(planeData.flatten()) # multiplier a guess
+    if planeData is None:
+      value = 0.0
+    else:
+      value = 1.1 * numpy.std(planeData.flatten()) # multiplier a guess
   else:
 
     if hasattr(self, 'valueArray') and len(self.valueArray) != 0:

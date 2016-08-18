@@ -180,7 +180,10 @@ else:
     <documentation>Move strip in stripOrder to position determined by newIndex</documentation>
     <target>www.ccpn.ac.uk_Fogh_2014-11-05-12:31:24_00004</target>
     <codeStubs>
-      <item tag="python">ii = 0
+      <item tag="python">if not isinstance(newIndex, int) or newIndex &lt; 0:
+  raise ApiError("Parameter to moveTo function is not a non-negative integer: %s" % newIndex)
+
+ii = 0
 oldIndex = self.index
 for strip in self.spectrumDisplay.orderedStrips:
   if strip is self:

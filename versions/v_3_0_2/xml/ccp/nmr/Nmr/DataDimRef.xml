@@ -245,7 +245,7 @@ result = self.refValue + (point-self.refPoint) * valuePerPoint</item>
       <item tag="python">dataDict['localValuePerPoint'] = value
 if notIsReading and notInConstructor and self.topObject.shiftAveraging:
   shiftList = self.dataDim.dataSource.experiment.shiftList
-  if shiftList is not None:
+  if shiftList is not None and shiftList.autoUpdate:
     shiftList.recalculateShifts()</item>
     </codeStubs>
   </MetaOperation>
@@ -261,7 +261,7 @@ if notIsReading and notInConstructor and self.topObject.shiftAveraging:
       <item tag="python">dataDict['refPoint'] = value
 if notIsReading and notInConstructor and self.topObject.shiftAveraging:
   shiftList = self.dataDim.dataSource.experiment.shiftList
-  if shiftList is not None:
+  if shiftList is not None and shiftList.autoUpdate:
     shiftList.recalculateShifts()</item>
     </codeStubs>
   </MetaOperation>
@@ -277,7 +277,7 @@ if notIsReading and notInConstructor and self.topObject.shiftAveraging:
       <item tag="python">dataDict['refValue'] = value
 if notIsReading and notInConstructor and self.topObject.shiftAveraging:
   shiftList = self.dataDim.dataSource.experiment.shiftList
-  if shiftList is not None:
+  if shiftList is not None and shiftList.autoUpdate:
     shiftList.recalculateShifts()</item>
     </codeStubs>
   </MetaOperation>
