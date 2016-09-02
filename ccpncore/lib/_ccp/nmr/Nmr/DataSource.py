@@ -206,7 +206,7 @@ def getPlaneData(self:'DataSource', position=None, xDim:int=1, yDim:int=2):
   numPoints = [dataDim.numPoints for dataDim in dataDims]
   xPoints = numPoints[xDim]
   yPoints = numPoints[yDim]
-    
+
   for dim in range(numDim):
     point = position[dim] - 1
     if point >= numPoints[dim]:
@@ -717,10 +717,10 @@ def projectedPlaneData(self:'DataSource', xDim:int=1, yDim:int=2, method:str='ma
   dims.remove(yDim)
   zDim = dims.pop()
 
-  position = [0] * numDim
+  position = [1] * numDim
   projectedData = None
   dataDims = self.sortedDataDims()
-  numZPoints = dataDims[zDim].numPoints
+  numZPoints = dataDims[zDim-1].numPoints
 
   for zPos in range(1,numZPoints+1):
     position[zDim-1] = zPos
