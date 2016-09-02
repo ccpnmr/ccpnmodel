@@ -670,10 +670,9 @@ def _saveNmrPipe2DHeader(self:'DataSource', fp:'file', xDim:int=1, yDim:int=2):
     y[npts_index[n]] = dataDim.numPoints
     y[complex_index[n]] = 1  # real
     y[sf_index[n]] = expDimRef.sf
+    # note that spectralWidth is in ppm and NmrPipe wants it in Hz, so multiply by sf
     y[sw_index[n]] = dataDimRef.spectralWidth * expDimRef.sf
-    # wb104: I don't understand the -2 below, but in Analysis v2 the fundamental regions and the contours
-    # do not line up unless you have this
-    y[origin_index[n]] = (dataDimRef.refValue - ((dataDimRef.refPoint-2)/dataDim.numPoints)*dataDimRef.spectralWidth) * expDimRef.sf
+    y[origin_index[n]] = expDimRef.sf * (dataDimRef.refValue + dataDimRef.refPoint * dataDimRef.spectralWidth / dataDim.numPoints - dataDimRef.spectralWidth)
     if expDimRef.isotopeCodes:
       isotopeCode = expDimRef.isotopeCodes[0][:4]
       isotopeCode += (4 - len(isotopeCode)) * ' '
