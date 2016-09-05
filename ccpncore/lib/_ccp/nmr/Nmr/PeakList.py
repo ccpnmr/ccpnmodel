@@ -63,9 +63,7 @@ def pickNewPeaks(self:PeakList, startPoint:Sequence[int], endPoint:Sequence[int]
                  excludedDiagonalDims=None, excludedDiagonalTransform=None):
 
   # startPoint and endPoint are 0-based not 1-based
-  
-  # TBD: ignores aliasing for now
-  
+
   from ccpnc.peak import Peak as CPeak
 
   undo = self.root._undo
