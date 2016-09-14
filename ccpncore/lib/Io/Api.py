@@ -50,6 +50,8 @@ CCPN_DIRECTORY_SUFFIX = ApiPath.CCPN_DIRECTORY_SUFFIX
 addCcpnDirectorySuffix = ApiPath.addCcpnDirectorySuffix
 removeCcpnDirectorySuffix = ApiPath.removeCcpnDirectorySuffix
 
+CCPN_ARCHIVES_DIRECTORY = ApiPath.CCPN_ARCHIVES_DIRECTORY
+
 class DefaultIoHandler:
   """Class to handle interactions with user and logging
   Should be subclassed for actual functionality
@@ -1087,7 +1089,8 @@ def modifyPackageLocators(project,repositoryName,repositoryPath,packageNames,res
 
   return repository
 
-def packageProject(project, filePrefix=None, includeBackups=False, includeData=False, includeLogs=False):
+def packageProject(project, filePrefix=None, includeBackups=False, includeData=False, includeLogs=False,
+                   includeArchives=False):
   """
   Package up project userData into one gzipped tar file.
   If filePrefix is None then instead use the userData path.
@@ -1099,22 +1102,25 @@ def packageProject(project, filePrefix=None, includeBackups=False, includeData=F
 
   # NBNB TBD FIXME check how many dataLocatoins to package (and make sure you reset first)
 
+  import datetime
   import tarfile
 
-  userPath = getRepositoryPath(project, 'userData')
-  userDir = os.path.dirname(userPath)
+  projectPath = getRepositoryPath(project, 'userData')
+
+  if not filePrefix:
+    now = datetime.datetime.now().strftime('%Y%m%d-%H%M%S')
+    filePrefix = '%s-%s' % (os.path.basename(projectPath), now)
+    filePrefix = os.path.join(projectPath, CCPN_ARCHIVES_DIRECTORY, filePrefix)
 
   if includeData:
-    userPathP = userPath + '/'
-    n = len(userDir) + 1
+    projectPathP = projectPath + '/'
+    n = len(projectPath) + 1
     includedDataPaths = set()
     for dataLocationStore in project.dataLocationStores:
       for dataStore in dataLocationStore.dataStores:
         fullPath = dataStore.fullPath
-        if fullPath.startswith(userPathP):
+        if fullPath.startswith(projectPathP):
           includedDataPaths.add(fullPath[n:])
-
-  userPath = os.path.basename(userPath)
 
   def visitDir(directory):
     tarFiles = []
@@ -1122,7 +1128,8 @@ def packageProject(project, filePrefix=None, includeBackups=False, includeData=F
       fullfile = os.path.join(directory, relfile)
       include = False
       if os.path.isdir(fullfile):
-        tarFiles.extend(visitDir(fullfile))
+        if relfile != CCPN_ARCHIVES_DIRECTORY or includeArchives:
+          tarFiles.extend(visitDir(fullfile))
       elif relfile.endswith('.xml'):
         include = True
       elif includeBackups and relfile.endswith('.xml.bak'):
@@ -1141,17 +1148,18 @@ def packageProject(project, filePrefix=None, includeBackups=False, includeData=F
 
     return tarFiles
 
-  if not filePrefix:
-    filePrefix = userPath
-
   tarFileName = '%s.tgz' % filePrefix
+  tarDirectory = os.path.dirname(tarFileName)
+  if not os.path.exists(tarDirectory):
+    os.makedirs(tarDirectory)
   tarFp = tarfile.open(tarFileName, 'w:gz')
 
   cwd = os.getcwd()
-  os.chdir(userDir)
+  os.chdir(os.path.dirname(projectPath))
+
   try:
     project._logger.info('Files included in tar file:')
-    files = visitDir(userPath)
+    files = visitDir(os.path.basename(projectPath))
     for tarFile in files:
       tarFp.add(tarFile, recursive=False)
   finally:
