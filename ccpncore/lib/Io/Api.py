@@ -1109,7 +1109,7 @@ def packageProject(project, filePrefix=None, includeBackups=False, includeData=F
 
   if not filePrefix:
     now = datetime.datetime.now().strftime('%Y%m%d-%H%M%S')
-    filePrefix = '%s-%s' % (os.path.basename(projectPath), now)
+    filePrefix = '%s-%s' % (os.path.basename(projectPath)[:-len(CCPN_DIRECTORY_SUFFIX)], now)
     filePrefix = os.path.join(projectPath, CCPN_ARCHIVES_DIRECTORY, filePrefix)
 
   if includeData:
