@@ -33,6 +33,7 @@ lenFileSuffix = len(fileSuffix)
 keySep = '+'
 
 CCPN_DIRECTORY_SUFFIX = Path.CCPN_DIRECTORY_SUFFIX
+CCPN_ARCHIVES_DIRECTORY = Path.CCPN_ARCHIVES_DIRECTORY
 
 def addCcpnDirectorySuffix(path:str) -> str:
   """Add ccpn directory suffix ('.ccpn' to path, unless present already"""
