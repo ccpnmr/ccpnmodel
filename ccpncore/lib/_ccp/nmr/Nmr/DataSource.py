@@ -378,7 +378,7 @@ def get1dSpectrumData(self:'DataSource'):
   dataDimRef = self.findFirstDataDim().findFirstDataDimRef()
   firstPoint = dataDimRef.pointToValue(1)
   pointCount = self.findFirstDataDim().numPoints
-  lastPoint = dataDimRef.pointToValue(pointCount)
+  lastPoint = dataDimRef.pointToValue(1+pointCount) # sw goes from 1 to n+1
   pointSpacing = (lastPoint-firstPoint)/pointCount
   position = numpy.array([firstPoint + n*pointSpacing for n in range(pointCount)],numpy.float32)
   sliceData = self.getSliceData()
