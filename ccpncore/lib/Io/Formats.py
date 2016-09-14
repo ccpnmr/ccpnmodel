@@ -51,11 +51,14 @@ FASTA = 'Fasta'
 # Structure formats
 PDB = 'PDB'
 
+# Macro formats
+PYTHON = 'Python'
+
 #  Look-up formats
 CSV = 'csv'
 XLS = 'xls'
 
-DataTypes = ['Project', 'Spectrum', 'Text', 'Sequence', 'LookupFile', 'Structure']
+DataTypes = ['Project', 'Spectrum', 'Text', 'Sequence', 'LookupFile', 'Structure', 'Macro']
 
 def analyseUrl(filePath):
   """ Analyse filePath, and return (dataType, subType, usePath) tuple
@@ -224,6 +227,8 @@ def analyseUrl(filePath):
     if filePath.endswith('.fasta') or text.startswith('>'):
       # FASTA file
       return ('Sequence', FASTA, filePath)
+    elif filePath.endswith('.py'):
+      return ('Macro', PYTHON, filePath)
 
     if textblock.startswith('##TITLE'):
       return ('Spectrum', BRUKER, dirName)
