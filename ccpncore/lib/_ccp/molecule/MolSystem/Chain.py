@@ -52,6 +52,19 @@ def expandMolSystemAtoms(self:'Chain'):
       else:
         atom.elementSymbol = chemAtom.elementSymbol
 
+
+  # Add boundAtoms for MolResLinks - Now add as GenericBond
+  for molResLink in self.molecule.molResLinks:
+    ff = self.findFirstResidue
+    atoms = frozenset(
+      ff(seqId=x.molResidue.serial).findFirstAtom(name=x.linkEnd.boundChemAtom.name)
+      for x in molResLink.molResLinkEnds
+    )
+    if molSystem.findFirstGenericBond(atoms=atoms) is None:
+      molSystem.newGenericBond(atoms=atoms)
+  #     if atoms[1] not in atoms[0].boundAtoms:
+  #       atoms[0].addBoundAtom(atoms[1])
+
   # Set boundAtoms for existing atoms within residue
   for residue in self.sortedResidues():
     chemCompVar = residue.chemCompVar
@@ -64,18 +77,6 @@ def expandMolSystemAtoms(self:'Chain'):
             boundAtom = residue.findFirstAtom(name=boundChemAtom.name)
             if boundAtom is not None and boundAtom not in atom.boundAtoms:
               atom.addBoundAtom(boundAtom)
-
-    # Add boundAtoms for MolResLinks - Now add as GenericBond
-      for molResLink in self.molecule.molResLinks:
-        ff = self.findFirstResidue
-        atoms = frozenset(
-          ff(seqId=x.molResidue.serial).findFirstAtom(name=x.linkEnd.boundChemAtom.name)
-          for x in molResLink.molResLinkEnds
-        )
-        if molSystem.findFirstGenericBond(atoms=atoms) is None:
-          molSystem.newGenericBond(atoms=atoms)
-    #     if atoms[1] not in atoms[0].boundAtoms:
-    #       atoms[0].addBoundAtom(atoms[1])
 
     # Add boundAtoms for MolSystemLinks - Now add as GenericBond
     for linkEnd in residue.sortedMolSystemLinkEnds():

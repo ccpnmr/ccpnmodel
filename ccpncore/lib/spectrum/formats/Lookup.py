@@ -96,7 +96,6 @@ def readXlsMetabolomics(ex, project, path):
     pass
   groups = getAllSpectrumGroupAssignments(spectra, metsSheet)
   for k, v in sorted(groups.items()):
-    print('SG:', k)
     project.newSpectrumGroup(name=k, spectra=v)
 
 def getMetabolomicsSheet(excelFile):

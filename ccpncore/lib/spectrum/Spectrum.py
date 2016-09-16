@@ -136,7 +136,7 @@ def axisCodeMatch(axisCode:str, refAxisCodes:Sequence[str])->str:
 def axisCodeMapping(axisCodes:Sequence[str], refAxisCodes:Sequence[str])->dict:
   """get {axisCode:refAxisCode} mapping dictionary
   all axisCodes must match, or dictionary will be empty
-  NB a series of single-letter axisCodes (e.g. 'N;, 'HCN') can be passed in as a string"""
+  NB a series of single-letter axisCodes (e.g. 'N', 'HCN') can be passed in as a string"""
   result = {}
   mapIndices =  _axisCodeMapIndices(axisCodes, refAxisCodes)
   if mapIndices:
@@ -153,7 +153,7 @@ def _axisCodeMapIndices(axisCodes:Sequence[str], refAxisCodes:Sequence[str])->li
   all axisCodes must match, but result can contain None if refAxisCodes is longer
   if axisCodes contain duplicates, you will get one of possible matches"""
 
-  #CCPNINTERNAL - used in multiple places to map display order and spectrumo order
+  #CCPNINTERNAL - used in multiple places to map display order and spectrum order
 
 
   lenDifference = len(refAxisCodes) - len(axisCodes)
