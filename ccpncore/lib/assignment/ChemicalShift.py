@@ -723,7 +723,7 @@ ALL_ATOMS_SORTED = {'alphas': ['CA', 'HA', 'HAX', 'HAY', 'HA2', 'HA3'],
                     }
 
 
-# End moved-in data - functions from original CHemicalShift
+# End moved-in data - functions from original ChemicalShift
 
 
 
