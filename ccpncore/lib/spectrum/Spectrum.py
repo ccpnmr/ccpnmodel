@@ -53,6 +53,17 @@ def name2IsotopeCode(name:str=None) -> str:
   else:
     return None
 
+def isotopeCode2Nucleus(isotopeCode:str=None):
+  if not isotopeCode:
+    return None
+
+  for tag,val in sorted(Constants.DEFAULT_ISOTOPE_DICT.items()):
+    if val == isotopeCode:
+      return tag
+  else:
+    return None
+
+
 def name2ElementSymbol(name:str) -> str:
   """Get standard element symbol matching name or axisCode"""
   for tag in reversed(sorted(Constants.DEFAULT_ISOTOPE_DICT)):
