@@ -22,6 +22,7 @@ __version__ = "$Revision$"
 # Start of code
 #=========================================================================================
 import os
+import tarfile
 
 from ccpn.util import Path
 from ccpn.util import Common as commonUtil
@@ -40,6 +41,7 @@ XEASY = 'XEASY'
 ANSIG = 'ANSIG'
 AUTOASSIGN = 'AutoAssign'
 CCPN = 'CCPN'
+CCPNTARFILE = 'CCPNTARFILE'
 NEF = 'nef'
 SPARKY = 'Sparky'
 NMRDRAW = 'NMRDraw'
@@ -186,6 +188,17 @@ def analyseUrl(filePath):
     if (0 < vals[0] < 6) and (vals[1] == 1):
       return ('Spectrum', FELIX, filePath)
 
+    if fileName.endswith('.tar.gz') or fileName.endswith('.tgz'):
+      tp = tarfile.open(filePath, 'r')
+      ok = False
+      for tarPath in tp.getnames():
+        allButTopDirectory = Path.converseSplitPath(tarPath)[1]
+        oneLevelDownDirectory = Path.converseSplitPath(allButTopDirectory)[0]
+        if oneLevelDownDirectory in ('ccpnv3', 'memops'): # v3 and v2 projects, respectively
+          ok = True
+          break
+      if ok:
+        return ('Project', CCPNTARFILE, filePath)
 
   # Test Lookup format
   # import csv
