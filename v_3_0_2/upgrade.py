@@ -386,9 +386,13 @@ def fixNmrConstraintStore(nmrConstraintStore, molSystem, chainMap):
           # Transfer resonances to new Items objects and delete old ones.
           for constraintItem in constraint.sortedItems():
             assignments = (assignmentMap[resonanceMap.get(x,x)] for x in constraintItem.resonances)
-            getattr(contribution, newItem)(resonances=tuple(assignment2Resonance[x]
-                                                            for x in sorted(assignments,
-                                                                            key=sortKey)))
+            resonances = tuple(assignment2Resonance[x] for x in sorted(assignments, key=sortKey))
+            if not contribution.findFirstItem(resonances=resonances):
+              # The 'if' statements protects against the case where a contribution has two items
+              # from different FixedResonances that map out to the same pair of assignments
+              # Rare and messy, but better skip one than crash
+              getattr(contribution, newItem)(resonances=resonances)
+
             constraintItem.delete()
 
       elif restraintType in ('Csa', 'ChemicalShift'):
