@@ -26,6 +26,7 @@ __version__ = "$Revision$"
 #=========================================================================================
 
 import operator
+import collections
 from typing import Dict
 
 # Dictionary of experiment names that should come first in the list
@@ -537,26 +538,77 @@ def fetchIsotopeRefExperimentMap(project:'MemopsRoot') -> Dict:
   return result
 
 
+# ExperimentClassification namedtuple, showing which groups a given RefExperiment falls into
+ExperimentClassification = collections.namedtuple('ExperimentCharacteristic',
+                                                  ('dimensionCount', 'acquisitionNucleus',
+                                                   'isThroughSpace','isRelayed',
+                                                   'isRelaxation', 'isQuantification', 'isJResolved',
+                                                   'isMultipleQuantum', 'isProjection', ))
+
+def getExperimentClassification(refExperiment:'RefExperiment') -> ExperimentClassification:
+  """Get ExperimentClassification namedtuple, showing which groups a given RefExperiment falls into
+
+  The field names should be self-explanatory, except for 'isQuantification' - this covers
+  experiments that are classified as 'quantification' in the NmrExpPrototype description, and are
+  *not* relaxation measurements. In practice these are J-measurement experiments (for now)."""
+
+  nmrExpPrototype = refExperiment.nmrExpPrototype
+  transferTypes = set(y.transferType for x in nmrExpPrototype.expGraphs for y in x.expTransfers)
+  measurementTypes = set(x.measurementType for x in nmrExpPrototype.expMeasurements)
+
+  dimensionCount = len(refExperiment.refExpDims)
+
+  expMeasurement = _orderedMeasurements(nmrExpPrototype, forReversed=refExperiment.isReversed)[0]
+  acquisitionNucleus = expMeasurement.atomSites[0].isotopeCode
+
+  isThroughSpace = 'through-space' in transferTypes
+
+  isRelayed = ('relayed' in transferTypes or 'relayed-alternate' in transferTypes)
+
+  isRelaxation = (nmrExpPrototype.category == 'quantification' and any (x for x in measurementTypes
+                                                                        if x.startswith('T')))
+
+  isQuantification = (nmrExpPrototype.category == 'quantification' and not isRelaxation)
+
+  isJResolved = 'JCoupling' in measurementTypes
+
+  isMultipleQuantum = 'MQShift' in measurementTypes
+
+  isProjection = ('.2D.' in refExperiment.name or '.3D.' in refExperiment.name)
+
+  result = ExperimentClassification(dimensionCount, acquisitionNucleus, isThroughSpace, isRelayed,
+                                    isRelaxation, isQuantification, isJResolved, isMultipleQuantum,
+                                    isProjection)
+  #
+  return result
+
+
+# def testExpermentFilter(project):
+#   allData = {}
+#   counters = {}
+#   for nxp in project.sortedNmrExpPrototypes():
+#     for rx in nxp.sortedRefExperiments():
+#       filterData = getExperimentClassification(rx)
+#       allData[rx.name] = filterData
+#       if filterData.isThroughSpace and filterData.isRelayed:
+#         print (rx.name, tuple(filterData))
+#
+#   fields = list(allData.values())[0]._fields
+#   byColumns = list(zip(*allData.values()))
+#
+#   for ii,field in enumerate(fields):
+#     counters[field] = collections.Counter(byColumns[ii])
+#
+#   #
+#   return counters
+
+
 if __name__ == '__main__':
   pass
-  # testExpPrototypes(resetCodes=True)
-  # allAxisCodes, synonymTable = experimentSynonymSummary()
-  # print("Axis Codes: %s" % list(sorted(allAxisCodes)))
-  # for line in synonymTable:
-  #   print(line)
 
   # from ccpnmodel.ccpncore.lib.Io.Api import newProject
   # project = newProject("ExpPrototypeTest", overwriteExisting=True)
-  # refMap = fetchIsotopeRefExperimentMap(project)
+  #
+  # for item in sorted(testExpermentFilter(project).items()):
+  #   print ('\n%s:\n%s' % item)
 
-  # for tt in sorted ((len(key), key, val) for key,val in sorted(refMap.items())):
-  #   # print ("@~@~", tt[0], tt[1])
-  #   for refExp in tt[2]:
-  #     if refExp.name == 'CO_CO[N]':
-  #       expGraph = refExp.nmrExpPrototype.findFirstExpGraph()
-  #       step2 = expGraph.findFirstExpStep(stepNumber=2)
-  #       print(step2, step2.expMeasurement)
-  #       expGraph.newExpStep(stepNumber=4, expMeasurement=step2.expMeasurement)
-  #       for step in expGraph.sortedExpSteps():
-  #         print('@~@~ CO_CO[N]',step, step.stepNumber, step.refExpDimRefs, step.expMeasurement)
-  # project.saveModified()
