@@ -122,7 +122,8 @@ def _transferData(newParent, sourceObj, oldToNew=None,
   to a new tree where the new targetObj is a child of newParent
 
   - If oldVersionStr is set, do as  backwards compatibility, 
-  including minor post-processing, otherwise do as subtree copying
+  including minor post-processing,
+  otherwise do as subtree copying, including resetting of _ID
 
   - targetObjParams: parameters to be passed to the copy of sourceObj.
     Only meaningful for subtree copy, and ignored for
@@ -331,6 +332,9 @@ def _transferData(newParent, sourceObj, oldToNew=None,
                   if proc == 'direct':
                     # direct setting if simple non-constrained attribute
                     obj.__dict__[name] = val
+                  elif oldVersionStr is None and name == '_ID':
+                    # We are doing tree copy, not compatibility. Reset _ID.
+                    setattr(obj, name, -1)
                   else:
                     setattr(obj, name, val)
                 
