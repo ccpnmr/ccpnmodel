@@ -543,7 +543,27 @@ ExperimentClassification = collections.namedtuple('ExperimentCharacteristic',
                                                   ('dimensionCount', 'acquisitionNucleus',
                                                    'isThroughSpace','isRelayed',
                                                    'isRelaxation', 'isQuantification', 'isJResolved',
-                                                   'isMultipleQuantum', 'isProjection', ))
+                                                   'isMultipleQuantum', 'isProjection',
+                                                   'name', 'synonym'))
+
+
+def getExpClassificationDict(nmrProject):
+  """
+  Get a dictionary of dictionaries of dimensionCount:sortedNuclei:ExperimentClassification named tuples.
+  """
+  classificationDict = {}
+  for nmrExpProtoType in nmrProject.root.sortedNmrExpPrototypes():
+    for refExperiment in nmrExpProtoType.sortedRefExperiments():
+      dimensionCount = len(refExperiment.refExpDims)
+      if dimensionCount not in classificationDict.keys():
+        classificationDict[dimensionCount] = {}
+      nucleusCodes = tuple(sorted(refExperiment.nucleusCodes))
+      if nucleusCodes not in classificationDict[dimensionCount].keys():
+        classificationDict[dimensionCount][nucleusCodes] = []
+      classification = getExperimentClassification(refExperiment)
+      classificationDict[dimensionCount][nucleusCodes].append(classification)
+  return classificationDict
+
 
 def getExperimentClassification(refExperiment:'RefExperiment') -> ExperimentClassification:
   """Get ExperimentClassification namedtuple, showing which groups a given RefExperiment falls into
@@ -565,7 +585,7 @@ def getExperimentClassification(refExperiment:'RefExperiment') -> ExperimentClas
 
   isRelayed = ('relayed' in transferTypes or 'relayed-alternate' in transferTypes)
 
-  isRelaxation = (nmrExpPrototype.category == 'quantification' and any (x for x in measurementTypes
+  isRelaxation = (nmrExpPrototype.category == 'quantification' and any(x for x in measurementTypes
                                                                         if x.startswith('T')))
 
   isQuantification = (nmrExpPrototype.category == 'quantification' and not isRelaxation)
@@ -576,9 +596,13 @@ def getExperimentClassification(refExperiment:'RefExperiment') -> ExperimentClas
 
   isProjection = ('.2D.' in refExperiment.name or '.3D.' in refExperiment.name)
 
+  name = refExperiment.name
+
+  synonym = refExperiment.synonym or name
+
   result = ExperimentClassification(dimensionCount, acquisitionNucleus, isThroughSpace, isRelayed,
                                     isRelaxation, isQuantification, isJResolved, isMultipleQuantum,
-                                    isProjection)
+                                    isProjection, name, synonym)
   #
   return result
 
