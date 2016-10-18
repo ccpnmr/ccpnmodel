@@ -72,9 +72,9 @@ objectdomain.uml.core.Stereotype-owns $19
 ($5 13 < 0_-fvi_hrnjywg5_-naq "" 2
 (toMultiplicityPosition 1535 580)
 (uid "0_-fvi_hrnjywg5_-naq")
-(points 930 235 1530 235 1530 600)
-(fromRolePosition 950 240)
-(fromMultiplicityPosition 935 240))
+(points 1010 235 1530 235 1530 600)
+(fromRolePosition 1030 240)
+(fromMultiplicityPosition 1015 240))
 ($3 14 < 0_-fvi_hrnjywg5_-nap "ComponentDbRef" 2
 (autoSizeToFit true)
 (uid "0_-fvi_hrnjywg5_-nap")
@@ -107,7 +107,7 @@ objectdomain.uml.core.Stereotype-owns $19
 ($3 20 < 0_-fvi_hrnjywg5_-naj "MolComponent" 2
 (autoSizeToFit true)
 (uid "0_-fvi_hrnjywg5_-naj")
-(bbx 500 380 180 270))
+(bbx 500 380 220 270))
 ($4 21 < 0_-fvi_hrnjywg5_-nai "" 2
 (uid "0_-fvi_hrnjywg5_-nai")
 (points 590 380 590 350 855 350 855 300))
@@ -118,7 +118,7 @@ objectdomain.uml.core.Stereotype-owns $19
 (toMultiplicityPosition 1530 265)
 (toRolePosition 1480 275)
 (uid "0_-fvi_hrnjywg5_-nag")
-(points 930 215 1570 215)
+(points 1010 215 1570 215)
 (fromMultiplicityPosition 1055 265))
 ($3 24 < 0_-fvi_hrnjywg5_-naf "Molecule" 2
 (autoSizeToFit true)
@@ -142,9 +142,9 @@ objectdomain.uml.core.Stereotype-owns $19
 (bbx 1160 250 230 30))
 ($5 28 < 0_-fvi_hrnjywg5_-naa "" 2
 (toMultiplicityPosition 935 270)
-(toRolePosition 950 280)
+(toRolePosition 1030 280)
 (uid "0_-fvi_hrnjywg5_-naa")
-(points 1160 270 930 270)
+(points 1160 270 1010 270)
 (fromRolePosition 630 65)
 (fromMultiplicityPosition 1150 205))
 ($5 29 < 0_-fvi_hrnjywg5_-na9 "" 2
@@ -255,10 +255,10 @@ objectdomain.uml.core.Stereotype-owns $19
 (uid "0_-fvi_hrnjywg5_-n9m")
 (bbx 1140 130 180 60))
 ($5 53 < 0_-fvi_hrnjywg5_-n9l "" 2
-(toMultiplicityPosition 935 165)
-(toRolePosition 955 190)
+(toMultiplicityPosition 1015 165)
+(toRolePosition 1035 190)
 (uid "0_-fvi_hrnjywg5_-n9l")
-(points 1140 190 930 190)
+(points 1140 190 1010 190)
 (fromMultiplicityPosition 1125 165))
 ($3 54 < 0_85r_iex08zep_-p95 "Experiment" 2
 (showAttributeCompartment false)
@@ -2659,9 +2659,12 @@ objectdomain.uml.core.Stereotype-owns $19
 )
 (uid "0_6e6_iey2eqhb_-p8s"))
 ($7 512 < 0_63g_ifty4htg_-p98 "atomCount" 484
+(initialValue "0"
+)
 (name "atomCount"
 )
-(uid "0_63g_ifty4htg_-p98"))
+(uid "0_63g_ifty4htg_-p98")
+(multiplicity "1"))
 ($8 513 < 0_63g_ifty4htg_-p97 "documentation" 512
 (name "documentation"
 )
@@ -2675,9 +2678,12 @@ objectdomain.uml.core.Stereotype-owns $19
 )
 (uid "0_63g_ifty4htg_-p8t"))
 ($7 515 < 0_63g_ifty4htg_-p96 "bondCount" 484
+(initialValue "0"
+)
 (name "bondCount"
 )
-(uid "0_63g_ifty4htg_-p96"))
+(uid "0_63g_ifty4htg_-p96")
+(multiplicity "1"))
 ($8 516 < 0_63g_ifty4htg_-p95 "documentation" 515
 (name "documentation"
 )
@@ -2691,9 +2697,12 @@ objectdomain.uml.core.Stereotype-owns $19
 )
 (uid "0_63g_ifty4htg_-p8s"))
 ($7 518 < 0_63g_ifty4htg_-p94 "ringCount" 484
+(initialValue "0"
+)
 (name "ringCount"
 )
-(uid "0_63g_ifty4htg_-p94"))
+(uid "0_63g_ifty4htg_-p94")
+(multiplicity "1"))
 ($8 519 < 0_63g_ifty4htg_-p93 "documentation" 518
 (name "documentation"
 )
@@ -2707,9 +2716,12 @@ objectdomain.uml.core.Stereotype-owns $19
 )
 (uid "0_63g_ifty4htg_-p8r"))
 ($7 521 < 0_63g_ifty4htg_-p92 "hBondDonorCount" 484
+(initialValue "0"
+)
 (name "hBondDonorCount"
 )
-(uid "0_63g_ifty4htg_-p92"))
+(uid "0_63g_ifty4htg_-p92")
+(multiplicity "1"))
 ($8 522 < 0_63g_ifty4htg_-p91 "documentation" 521
 (name "documentation"
 )
@@ -2723,9 +2735,12 @@ objectdomain.uml.core.Stereotype-owns $19
 )
 (uid "0_63g_ifty4htg_-p8q"))
 ($7 524 < 0_63g_ifty4htg_-p90 "hBondAcceptorCount" 484
+(initialValue "0"
+)
 (name "hBondAcceptorCount"
 )
-(uid "0_63g_ifty4htg_-p90"))
+(uid "0_63g_ifty4htg_-p90")
+(multiplicity "1"))
 ($8 525 < 0_63g_ifty4htg_-p8z "documentation" 524
 (name "documentation"
 )
@@ -3116,7 +3131,7 @@ objectdomain.uml.core.Stereotype-owns $19
 ($6 592 @ 0_-fvi_hrnjywg5_-dct 4 "Logical" $1 "memops" $1 "Implementation" $1 "FloatRatio" $6)
 ($6 593 @ 0_-fvi_hrnjywg5_-dlv 4 "Logical" $1 "memops" $1 "Implementation" $1 "Boolean" $6)
 ($6 595 @ -yk94ms_-e3s_e41656c6_-kas 5 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "MolType" $6)
-($6 601 @ 0_-fvi_hrnjywg5_-dcl 4 "Logical" $1 "memops" $1 "Implementation" $1 "PositiveInt" $6)
+($6 601 @ 0_-fvi_hrnjywg5_-dbr 4 "Logical" $1 "memops" $1 "Implementation" $1 "NonNegativeInt" $6)
 ($6 603 @ 0_-fvi_hrnjywg5_-dc3 4 "Logical" $1 "memops" $1 "Implementation" $1 "PositiveFloat" $6)
 ($6 606 @ -yk94ms_-e3s_e41656c6_-lsj 5 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "MolResidue" $6)
 ($6 607 @ -yk94ms_-e3s_e41656c6_-lyc 5 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "Molecule" $6)

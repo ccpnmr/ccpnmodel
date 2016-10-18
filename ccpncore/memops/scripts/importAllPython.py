@@ -81,16 +81,19 @@ software development. Bioinformatics 21, 1678-1684.
 """
 
 import time
+import sys
+import os
 
 from ccpn.util import Path
 from ccpn.util.recursive_import import importAllPyfiles
 
 # Ignore for test import:
 ignoreDirs = ('.svn', 'CVS','macros', 'tmp')
-ignoreFiles = ('ODextract.py', 'junk.py')
+ignoreFiles = ('ODextract.py', 'junk.py', 'farseer_user_variables.py')
 
         
 if __name__ == '__main__':
+  chemBuildPath = os.path.join(Path.getPythonDirectory(), 'chemBuild')
 
 
   # check for compile errors
@@ -102,7 +105,10 @@ if __name__ == '__main__':
   #                        force=True)
   # commonUtil.recursiveImport(modelPath.getPythonDirectory(),ignoreModules=ignoreModules,
   #                        force=True)
-  importAllPyfiles(Path.getPythonDirectory(), ignoreDirs=ignoreDirs, ignoreFiles=ignoreFiles)
+  importAllPyfiles(Path.getPythonDirectory(), ignoreDirs=ignoreDirs + ('chemBuild',),
+                   ignoreFiles=ignoreFiles)
+  importAllPyfiles(chemBuildPath, ignoreDirs=ignoreDirs, ignoreFiles=ignoreFiles,
+                   addToSysPath=chemBuildPath)
   end = time.time()
   print("""
   Memops done Test Importing, time %s

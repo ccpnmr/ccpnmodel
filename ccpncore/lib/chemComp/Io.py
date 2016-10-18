@@ -334,7 +334,7 @@ def downloadChemCompInfoFromCcpForge(repository, molType, ccpCode, sourceName=No
   
   (fileType, ccpForgeDirUrl, ccpForgeDownloadUrl) = getCcpForgeUrls(molType,ccpCode,
                                                                     sourceName=sourceName)
-  
+
   if sourceName:
     # For displaying error info
     sourceText = "%s, " % sourceName
@@ -354,7 +354,7 @@ def downloadChemCompInfoFromCcpForge(repository, molType, ccpCode, sourceName=No
 
       urlLocation, chemCompXmlFile = findCcpForgeDownloadLink(dirData,fileType,ccpCode,
                                                                 ccpForgeDownloadUrl)
-      
+
       if urlLocation:
  
         # r2 = urlopen(urlLocation)
@@ -398,6 +398,7 @@ def downloadChemCompInfoFromCcpForge(repository, molType, ccpCode, sourceName=No
   except IOError as e:
     logger.error("Cannot connect to download server %s, or file does not exist...: %s "
                  % (ccpForgeDownloadUrl,str(e)))
+    raise
   #
   return result
 

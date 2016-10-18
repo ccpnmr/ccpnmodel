@@ -487,6 +487,9 @@ def loadProject(path:str, projectName:str=None, askFile:"function"=None,
     from ccpnmodel.v_3_0_2.upgrade import correctFinalResult
     correctFinalResult(project)
     project.checkAllValid()
+
+    # Necessary to avoid having a V2 project inside  V3 directory structure
+    project.saveModified()
   #
   return project
 

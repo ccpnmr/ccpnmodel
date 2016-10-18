@@ -50,7 +50,7 @@ def findLinkedResidue(self:"Residue", linkCode:str='prev'):
     return self.chain.findFirstResidue(seqId=newMolResidue.serial)
 
 
-# NBNB TBD FIXME update this to work.
+# NBNB TODO FIXME update this to work.
 
 def findResidueObservableAtoms(residue, refExperiment=None, labeling=None,
                               minFraction:float=0.1, jCouplingBonds=(1,2,3),

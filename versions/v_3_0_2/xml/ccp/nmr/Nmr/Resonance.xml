@@ -283,7 +283,7 @@ if result  is None:
       <codeStubs>
         <item tag="python">isValid = True
 if value is not None and self.isotopeCode != '?':
-  from ccpnmodel.ccpncore.lib.spectrum.Spectrum import name2IsotopeCode
+  from ccpn.util.Common import name2IsotopeCode
   impliedIsotopeCode = name2IsotopeCode(value)
   if impliedIsotopeCode and impliedIsotopeCode != self.isotopeCode:
     isValid = False

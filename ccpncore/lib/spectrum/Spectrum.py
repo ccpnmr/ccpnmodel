@@ -23,15 +23,14 @@ __version__ = "$Revision$"
 # Start of code
 #=========================================================================================
 import os
-import itertools
-
 from typing import Sequence
+
 from ccpn.util import Path
-from ccpn.util import Constants
 from ccpnmodel.ccpncore.lib.spectrum.BlockData import determineBlockSizes
 from ccpnmodel.ccpncore.memops.ApiError import ApiError
 
-_isotopeRefExperimentMap = None
+
+# _isotopeRefExperimentMap = None
 
 # All known axisCodes: ['Br', 'C', 'CA', 'CA1', 'CO', 'CO1', 'C1', 'C2', 'Ch', 'Ch1',
 # 'F', 'H', 'H1', 'H2', 'H3', 'H4', 'Hc', 'Hc1', 'Hcn', 'Hcn1', 'Hn', 'Hn1',
@@ -39,64 +38,6 @@ _isotopeRefExperimentMap = None
 # 'P', 'delay']
 #
 # 'J' matches 'Jx...'
-
-STANDARD_ISOTOPES = set(x for x in Constants.DEFAULT_ISOTOPE_DICT.values() if x is not None)
-
-def name2IsotopeCode(name:str=None) -> str:
-  """Get standard isotope code matching name or axisCode string"""
-  if not name:
-    return None
-
-  for tag,val in sorted(Constants.DEFAULT_ISOTOPE_DICT.items()):
-    if name.startswith(tag):
-      return val
-  else:
-    return None
-
-def isotopeCode2Nucleus(isotopeCode:str=None):
-  if not isotopeCode:
-    return None
-
-  for tag,val in sorted(Constants.DEFAULT_ISOTOPE_DICT.items()):
-    if val == isotopeCode:
-      return tag
-  else:
-    return None
-
-
-def name2ElementSymbol(name:str) -> str:
-  """Get standard element symbol matching name or axisCode"""
-  for tag in reversed(sorted(Constants.DEFAULT_ISOTOPE_DICT)):
-    # Reversed looping guarantees that the longer of two matches will be chosen
-    if name.startswith(tag):
-      result = tag
-      break
-  else:
-    result = None
-  #
-  return result
-
-
-def checkIsotope(text:str) -> str:
-  """Convert string to most probable isotope code - defaulting to '1H"""
-
-  text = text.strip()
-
-  if not text:
-    return '1H'
-
-  if text in STANDARD_ISOTOPES:
-    return text
-
-  if text in Constants.DEFAULT_ISOTOPE_DICT:
-    return Constants.DEFAULT_ISOTOPE_DICT[text]
-
-  for isotope in STANDARD_ISOTOPES:
-    if isotope in text:
-      return isotope
-
-  else:
-    return name2IsotopeCode(text) or '1H'
 
 
 def createBlockedMatrix(dataUrl:'Url', path:str, numPoints:Sequence[int],
@@ -135,110 +76,8 @@ def createBlockedMatrix(dataUrl:'Url', path:str, numPoints:Sequence[int],
 
   return matrix
 
-def axisCodeMatch(axisCode:str, refAxisCodes:Sequence[str])->str:
-  """Get refAxisCode that best matches axisCode """
-  for ii,indx in enumerate(_axisCodeMapIndices([axisCode], refAxisCodes)):
-    if indx == 0:
-      # We have a match
-      return refAxisCodes[ii]
-  else:
-    return None
-
-def axisCodeMapping(axisCodes:Sequence[str], refAxisCodes:Sequence[str])->dict:
-  """get {axisCode:refAxisCode} mapping dictionary
-  all axisCodes must match, or dictionary will be empty
-  NB a series of single-letter axisCodes (e.g. 'N', 'HCN') can be passed in as a string"""
-  result = {}
-  mapIndices =  _axisCodeMapIndices(axisCodes, refAxisCodes)
-  if mapIndices:
-    for ii, refAxisCode in enumerate(refAxisCodes):
-      indx = mapIndices[ii]
-      if indx is not None:
-        result[axisCodes[indx]] = refAxisCode
-  #
-  return result
 
 #
-def _axisCodeMapIndices(axisCodes:Sequence[str], refAxisCodes:Sequence[str])->list:
-  """get mapping tuple so that axisCodes[result[ii]] matches refAxisCodes[ii]
-  all axisCodes must match, but result can contain None if refAxisCodes is longer
-  if axisCodes contain duplicates, you will get one of possible matches"""
-
-  #CCPNINTERNAL - used in multiple places to map display order and spectrum order
-
-
-  lenDifference = len(refAxisCodes) - len(axisCodes)
-  if lenDifference < 0 :
-    return None
-
-  # Set up match matrix
-  matches = []
-  for code in axisCodes:
-    matches.append([axisCodesCompare(code, x, mismatch=-999999) for x in refAxisCodes])
-
-  # find best mapping
-  maxScore = sum(len(x) for x in axisCodes)
-  bestscore = -1
-  result = None
-  values = list(range(len(axisCodes))) + [None] * lenDifference
-  for permutation in itertools.permutations(values):
-    score = 0
-    for ii, jj in enumerate(permutation):
-      if jj is not None:
-        score += matches[jj][ii]
-    if score > bestscore:
-      bestscore = score
-      result = permutation
-    if score >= maxScore:
-      # it cannot get any higher
-      break
-  #
-  return result
-
-def axisCodesCompare(code:str, code2:str, mismatch:int=0) -> int:
-  """Score code, code2 for matching. Score is length of common prefix, or 'mismatch' if None"""
-
-  if not code or not code2 or code[0] != code2[0]:
-    score = mismatch
-  elif code == code2:
-    score = len(code)
-  elif  code[0].islower():
-    # 'fidX...' 'delay', etc. must match exactly
-    score = mismatch
-  elif code.startswith('MQ'):
-    # 'MQxy...' must match exactly
-    score = mismatch
-  elif len(code) == 1 or code[1].isdigit() or len(code2) == 1 or code2[1].isdigit():
-    # Match against a single upper-case letter on one side. Always OK
-    score = 1
-  else:
-    # Partial match of two strings with at least two significant chars each
-    score = len(os.path.commonprefix((code, code2))) or mismatch
-    if score == 1:
-      # Only first letter matches, second does not
-      if ((code.startswith('Hn') and code2.startswith('Hcn')) or
-            (code.startswith('Hcn') and code2.startswith('Hn'))):
-        # Hn must matches Hcn
-        score = 2
-      else:
-        # except as above we need at least two char match
-        score = mismatch
-    elif code.startswith('J') and score == 2:
-      # 'Jab' matches 'J' or 'Jab...', but NOT 'Ja...'
-      score = mismatch
-  #
-  return score
-
-def doAxisCodesMatch(axisCodes:Sequence[str], refAxisCodes:Sequence[str])->bool:
-  """Return True if axisCodes match refAxisCodes else False"""
-  if len(axisCodes) != len(refAxisCodes):
-    return False
-
-  for ii, code in enumerate(axisCodes):
-    if not axisCodesCompare(code, refAxisCodes[ii]):
-      return False
-  #
-  return True
 
 def dimensionTransferType(dataDims:Sequence['DataDim'])->str:
   """Get ExpTransferType connecting two dataDims - uses heuristics"""

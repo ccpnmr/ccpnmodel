@@ -664,61 +664,61 @@ RESCUE2_STATS_MISSING = [('Ala','H',0.033675),
 
 PROTEIN_ATOM_NAMES = {
   'ALA': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HB%'],
-  'ARG': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBX', 'HBY', 'HB2', 'HB3', 'CG', 'HGX', 'HGY',
-          'HG2', 'HG3', 'CD', 'HDX', 'HDY', 'HD2', 'HD3', 'NE', 'HE', 'CZ', 'NHX', 'NHY',
-          'NH1', 'NH2', 'HH1X', 'HH1Y', 'HH11', 'HH12', 'HH2X', 'HH2Y', 'HH21', 'HH22'],
-  'ASN': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBX', 'HBY', 'HB2', 'HB3', 'CG', 'ND2',
-          'HD2X', 'HD2Y', 'HD21', 'HD22'],
-  'ASP': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBX', 'HBY', 'HB2', 'HB3', 'CG'],
-  'CYS': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBX', 'HBY', 'HB2', 'HB3', 'HG'],
-  'GLN': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBX', 'HBY', 'HB2', 'HB3', 'CG', 'HGX', 'HGY',
-          'HG2', 'HG3', 'CD', 'NE2', 'HE2X', 'HE2Y', 'HE21', 'HE22'],
-  'GLU': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBX', 'HBY', 'HB2', 'HB3', 'CG', 'HGX', 'HGY',
+  'ARG': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBx', 'HBy', 'HB2', 'HB3', 'CG', 'HGx', 'HGy',
+          'HG2', 'HG3', 'CD', 'HDx', 'HDy', 'HD2', 'HD3', 'NE', 'HE', 'CZ', 'NHx', 'NHy',
+          'NH1', 'NH2', 'HH1x', 'HH1y', 'HH11', 'HH12', 'HH2x', 'HH2y', 'HH21', 'HH22'],
+  'ASN': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBx', 'HBy', 'HB2', 'HB3', 'CG', 'ND2',
+          'HD2x', 'HD2y', 'HD21', 'HD22'],
+  'ASP': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBx', 'HBy', 'HB2', 'HB3', 'CG'],
+  'CyS': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBx', 'HBy', 'HB2', 'HB3', 'HG'],
+  'GLN': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBx', 'HBy', 'HB2', 'HB3', 'CG', 'HGx', 'HGy',
+          'HG2', 'HG3', 'CD', 'NE2', 'HE2x', 'HE2y', 'HE21', 'HE22'],
+  'GLU': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBx', 'HBy', 'HB2', 'HB3', 'CG', 'HGx', 'HGy',
           'HG2', 'HG3', 'CD'],
-  'GLY': ['H', 'N', 'C', 'CA', 'HAX', 'HAY', 'HA2', 'HA3'],
-  'HIS': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBX', 'HBY', 'HB2', 'HB3', 'CG', 'ND1', 'HD1',
+  'GLy': ['H', 'N', 'C', 'CA', 'HAx', 'HAy', 'HA2', 'HA3'],
+  'HIS': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBx', 'HBy', 'HB2', 'HB3', 'CG', 'ND1', 'HD1',
           'CD2', 'HD2', 'CE1', 'HE1', 'NE2', 'HE2'],
-  'ILE': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HB', 'CG1', 'HG1X', 'HG1Y',
+  'ILE': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HB', 'CG1', 'HG1x', 'HG1y',
           'HG12', 'HG13', 'CG2', 'HG2%', 'CD1', 'HD1%'],
-  'LEU': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBX', 'HBY', 'HB2', 'HB3', 'CG', 'HG', 'CDX',
-          'CDY', 'CD1', 'CD2', 'HDX%', 'HDY%', 'HD1%', 'HD2%'],
-  'LYS': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBX', 'HBY', 'HB2', 'HB3', 'CG', 'HGX', 'HGY',
-          'HG2', 'HG3', 'CD', 'HDX', 'HDY', 'HD2', 'HD3', 'CE', 'HEX', 'HEY', 'HE2', 'HE3',
+  'LEU': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBx', 'HBy', 'HB2', 'HB3', 'CG', 'HG', 'CDx',
+          'CDy', 'CD1', 'CD2', 'HDx%', 'HDy%', 'HD1%', 'HD2%'],
+  'LyS': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBx', 'HBy', 'HB2', 'HB3', 'CG', 'HGx', 'HGy',
+          'HG2', 'HG3', 'CD', 'HDx', 'HDy', 'HD2', 'HD3', 'CE', 'HEx', 'HEy', 'HE2', 'HE3',
           'NZ', 'HZ%'],
-  'MET': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBX', 'HBY', 'HB2', 'HB3', 'CG', 'HGX', 'HGY',
+  'MET': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBx', 'HBy', 'HB2', 'HB3', 'CG', 'HGx', 'HGy',
           'HG2', 'HG3', 'CE', 'HE%'],
-  'PHE': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBX', 'HBY', 'HB2', 'HB3', 'CG', 'CDX', 'CDY',
-          'CD1', 'CD2', 'HDX', 'HDY', 'HD1', 'HD2', 'CEX', 'CEY', 'CE1', 'CE2', 'HEX', 'HEY',
+  'PHE': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBx', 'HBy', 'HB2', 'HB3', 'CG', 'CDx', 'CDy',
+          'CD1', 'CD2', 'HDx', 'HDy', 'HD1', 'HD2', 'CEx', 'CEy', 'CE1', 'CE2', 'HEx', 'HEy',
           'HE1', 'HE2', 'CZ', 'HZ'],
-  'PRO': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBX', 'HBY', 'HB2', 'HB3', 'CG', 'HGX', 'HGY',
-          'HG2', 'HG3', 'CD', 'HDX', 'HDY', 'HD2', 'HD3'],
-  'SER': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBX', 'HBY', 'HB2', 'HB3', 'HG'],
+  'PRO': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBx', 'HBy', 'HB2', 'HB3', 'CG', 'HGx', 'HGy',
+          'HG2', 'HG3', 'CD', 'HDx', 'HDy', 'HD2', 'HD3'],
+  'SER': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBx', 'HBy', 'HB2', 'HB3', 'HG'],
   'THR': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HB', 'CG2', 'HG1', 'HG2%'],
-  'TRP': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBX', 'HBY', 'HB2', 'HB3', 'CG', 'CD1', 'CD2', 'HD1',
+  'TRP': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBx', 'HBy', 'HB2', 'HB3', 'CG', 'CD1', 'CD2', 'HD1',
           'NE1', 'HE1', 'CE2', 'CE3', 'HE3', 'CZ2', 'CZ3', 'HZ2', 'HZ3', 'CH2', 'HH2'],
-  'TYR': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBX', 'HBY', 'HB2', 'HB3', 'CG', 'CDX', 'CDY', 'CD1',
-          'CD2', 'HDX', 'HDY', 'HD2', 'HD3', 'CEX', 'CEY', 'CE1', 'CE2', 'HEX', 'HEY', 'HE2', 'HE3',
+  'TyR': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HBx', 'HBy', 'HB2', 'HB3', 'CG', 'CDx', 'CDy', 'CD1',
+          'CD2', 'HDx', 'HDy', 'HD2', 'HD3', 'CEx', 'CEy', 'CE1', 'CE2', 'HEx', 'HEy', 'HE2', 'HE3',
           'CZ', 'HH'],
-  'VAL': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HB', 'CGX', 'CGY', 'CG1', 'CG2',
-          'HGX%', 'HGY%', 'HG1%', 'HG2%']
+  'VAL': ['H', 'N', 'C', 'CA', 'HA', 'CB', 'HB', 'CGx', 'CGy', 'CG1', 'CG2',
+          'HGx%', 'HGy%', 'HG1%', 'HG2%']
 }
 
 
-ALL_ATOMS_SORTED = {'alphas': ['CA', 'HA', 'HAX', 'HAY', 'HA2', 'HA3'],
-                    'betas':  ['CB', 'HB', 'HBX', 'HBY', 'HB%', 'HB2', 'HB3'],
-                    'gammas': ['CG', 'CGX', 'CGY', 'CG1', 'CG2', 'HG', 'HGX', 'HGY', 'HG2', 'HG3',
-                               'HGX%', 'HGY%'],
-                    'moreGammas': ['HG1', 'HG1X', 'HG1Y', 'HG12', 'HG13', 'HG1%', 'HG2%'],
-                    'deltas': ['CD', 'CDX', 'CDY', 'CD1', 'CD2', 'HDX', 'HDX', 'HD1', 'HD2', 'HD3',
-                               'HDX%', 'HDY%'],
-                    'moreDeltas': ['ND1', 'ND2', 'HD1%', 'HD2%', 'HD2X', 'HD2Y', 'HD21', 'HD22'],
-                    'epsilons': ['CE', 'CEX', 'CEY', 'CE1', 'CE2', 'HE', 'HEX', 'HEY', 'HE1', 'HE2',
-                                 'HE2X', 'HE2Y'],
+ALL_ATOMS_SORTED = {'alphas': ['CA', 'HA', 'HAx', 'HAy', 'HA2', 'HA3'],
+                    'betas':  ['CB', 'HB', 'HBx', 'HBy', 'HB%', 'HB2', 'HB3'],
+                    'gammas': ['CG', 'CGx', 'CGy', 'CG1', 'CG2', 'HG', 'HGx', 'HGy', 'HG2', 'HG3',
+                               'HGx%', 'HGy%'],
+                    'moreGammas': ['HG1', 'HG1x', 'HG1y', 'HG12', 'HG13', 'HG1%', 'HG2%'],
+                    'deltas': ['CD', 'CDx', 'CDy', 'CD1', 'CD2', 'HDx', 'HDx', 'HD1', 'HD2', 'HD3',
+                               'HDx%', 'HDy%'],
+                    'moreDeltas': ['ND1', 'ND2', 'HD1%', 'HD2%', 'HD2x', 'HD2y', 'HD21', 'HD22'],
+                    'epsilons': ['CE', 'CEx', 'CEy', 'CE1', 'CE2', 'HE', 'HEx', 'HEy', 'HE1', 'HE2',
+                                 'HE2x', 'HE2y'],
                     'moreEpsilons': ['CE3', 'NE', 'NE1', 'NE2', 'HE1', 'HE2', 'HE3', 'HE21', 'HE22',
                                      'HE%'],
                     'zetas': ['CZ', 'CZ2', 'CZ3', 'HZ', 'HZ2', 'HZ3', 'HZ%', 'NZ'],
-                    'etas': ['CH2', 'HH2', 'HH1X', 'HH1Y', 'HH2X', 'HH2Y', 'NH1', 'NH2',
-                             'NHX', 'NHY', 'HH21', 'HH22'],
+                    'etas': ['CH2', 'HH2', 'HH1x', 'HH1y', 'HH2x', 'HH2y', 'NH1', 'NH2',
+                             'NHx', 'NHy', 'HH21', 'HH22'],
                     'moreEtas': ['HH', 'HH11', 'HH12']
                     }
 
@@ -776,7 +776,7 @@ def _getResidueProbability(ppms, ccpCode, elements, shiftNames=None, ppmsBound=N
 
       if bound and (ppmB is not None):
         boundData = shiftRefs.get(bound)
-	
+
         if boundData:
           meanB, sdB, pMissingB, boundB = boundData
           dB = ppmB-meanB
@@ -940,8 +940,8 @@ def getSpinSystemResidueProbability(spinSystem, shiftList, ccpCode,
 def _isAssignmentCompatible(assignName:str, atomName:str) -> bool:
   """Is assignName compatible with assignment to atomName?
   NB allows for non-standard assignment strings
-  NB does NOT do case conversions - upcase both parameters if you wish case-insensitive behaviour.
-  NB does NOT accept 'x' and 'y' as wildcards, only 'X' and 'Y'"""
+  NB does NOT do case conversions (nor should it - names are case-sensitive).
+  NB does NOT accept 'x' and 'y' as wildcards, only 'x' and 'y'"""
 
   # convert pseudoAtom names to proton wildcard names
   if assignName[0] in 'QM':
@@ -960,14 +960,14 @@ def _isAssignmentCompatible(assignName:str, atomName:str) -> bool:
 
   elif lenAtomName - lenPrefix == 1:
     if atomName[-1] in '123%*':
-      if assignName[lenPrefix:] in ('', 'X', 'Y', '*', '%'):
-        # assigned wildcard v. wildcard or single digit, e.g. HGX v. HG* or HG1
+      if assignName[lenPrefix:] in ('', 'x', 'y', '*', '%'):
+        # assigned wildcard v. wildcard or single digit, e.g. HGx v. HG* or HG1
         return True
 
   elif lenAtomName - lenPrefix == 2:
     if atomName[-2] in '123' and atomName[-1] in '123*%':
-      if assignName[lenPrefix:] in ('', 'X', 'Y', '*', '%', 'X%', 'Y%', 'X*', 'Y*'):
-        # E.g. HG, HG%, or HGY* v. HG21 or HG1*
+      if assignName[lenPrefix:] in ('', 'x', 'y', '*', '%', 'x%', 'y%', 'x*', 'y*'):
+        # E.g. HG, HG%, or HGy* v. HG21 or HG1*
         return True
 
   #

@@ -4,6 +4,7 @@
 #=========================================================================================
 # Licence, Reference and Credits
 #=========================================================================================
+
 __copyright__ = "Copyright (C) CCPN project (www.ccpn.ac.uk) 2002 - $Date$"
 __credits__ = "Wayne Boucher, Rasmus H Fogh, Simon Skinner, Timothy J. Stevens, Geerten Vuister"
 __license__ = ("CCPN license. See www.ccpn.ac.uk/license"
@@ -22,13 +23,14 @@ __version__ = "$Revision$"
 # Start of code
 #=========================================================================================
 
+import time
+
 from ccpnmodel.ccpncore.lib import CopyData
 from ccpnmodel.ccpncore.lib import V2Upgrade
 from ccpnmodel.ccpncore.lib import Constants
 from ccpnmodel.ccpncore.memops.ApiError import ApiError
 from ccpn.util import Common as commonUtil
 from ccpn.util import Sorting
-from ccpnmodel.ccpncore.lib.spectrum import Spectrum as spectrumLib
 
 versionSequence = ['2.0.a0', '2.0.a1', '2.0.a2', '2.0.a3', '2.0.b1', '2.0.b2', '2.0.b3',
                    '2.0.4',  '2.0.5',  '2.1.0',  '2.1.1', '2.1.2', '3.0.a1', '3.0.2']
@@ -105,6 +107,10 @@ def correctFinalResult(memopsRoot):
   molSystemMap = {}
   chainMap = {}
   for nmrProject in memopsRoot.sortedNmrProjects():
+
+    # time0 = time.time()
+    # print ('@~@~ top time0', time0)
+
     nmrProject.isModifiable = True
 
     # Link to SampleStore - if unique
@@ -125,6 +131,8 @@ def correctFinalResult(memopsRoot):
       molSystemCounts[mainMolSystem] = 1
     molSystemMap[mainMolSystem] = mainMolSystem
 
+    # print ('@~@~ in molSystems 1', time.time() - time0)
+
     # Set link to NmrProject
     mainMolSystem.isModifiable = True
     nmrProject.molSystem = mainMolSystem
@@ -138,6 +146,8 @@ def correctFinalResult(memopsRoot):
     spaceChain = mainMolSystem.findFirstChain(code=' ')
     if spaceChain is not None:
       spaceChain.renameChain(replaceSpaceCode)
+
+    # print ('@~@~ in molSystems 2', time.time() - time0)
 
     # Keep a list for use in chainMap
     mainMolSystemChains = mainMolSystem.sortedChains()
@@ -158,6 +168,8 @@ def correctFinalResult(memopsRoot):
           spaceChain._renameChain(ss)
         copyMolSystemContents(molSystem, mainMolSystem, chainMap=chainMap)
 
+    # print ('@~@~ in molSystems 3', time.time() - time0)
+
     if chainMap:
       # Add mainMolSystem chains to chainMap if it is not empty
       for ch in mainMolSystemChains:
@@ -167,6 +179,8 @@ def correctFinalResult(memopsRoot):
     # Add new atoms to MolSystem
     for chain in mainMolSystem.sortedChains():
       chain.expandMolSystemAtoms()
+
+    # print ('@~@~ done molSystems', time.time() - time0)
 
     # Transfer residue Types to structure residues
 
@@ -186,9 +200,13 @@ def correctFinalResult(memopsRoot):
                 coordResidue.code3Letter = residue.code3Letter or residue.ccpCode
 
 
+    # print ('@~@~ done structures', time.time() - time0)
+
     for nmrConstraintStore in nmrProject.sortedNmrConstraintStores():
       nmrConstraintStore.isModifiable = True
       fixNmrConstraintStore(nmrConstraintStore ,mainMolSystem, chainMap)
+
+    # print ('@~@~ done constraints', time.time() - time0)
 
     # Fix measurementList names
     for obj in nmrProject.measurementLists:
@@ -202,6 +220,8 @@ def correctFinalResult(memopsRoot):
         name = commonUtil.incrementName(name)
 
       obj.name = name
+
+    # print ('@~@~ done measurements', time.time() - time0)
 
     # Fix experiments
     fixExperiments(nmrProject)
@@ -220,6 +240,8 @@ def correctFinalResult(memopsRoot):
     # Remove ResonanceGroup.residue - no longer needed, and superseded in new model
     for resonanceGroup in nmrProject.resonanceGroups:
       resonanceGroup.residue = None
+
+    # print ('@~@~ done experiments and assignmetns', time.time() - time0)
 
 def fixExperiments(nmrProject):
   """ensure DataSource.name is unique"""
@@ -438,6 +460,11 @@ def fixNmrConstraintStore(nmrConstraintStore, molSystem, chainMap):
 def transferAssignments(nmrProject, mainMolSystem, chainMap):
   """Transfer NmrProject assignments"""
 
+  # @~@~ debug:
+  # import time
+  # time0 = time.time()
+  # print ('@~@~ time0', time0)
+
 
   # Map Resonances that are fully assigned
   resonance2Assignment = V2Upgrade.mapAssignedResonances(nmrProject, molSystem=mainMolSystem,
@@ -446,6 +473,9 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
   resonanceGroup2Residue = V2Upgrade.mapResonanceGroupResidues(nmrProject,
                                                                molSystem=mainMolSystem,
                                                                chainMap=chainMap)
+
+  # print ('@~@~ time1', time.time() - time0)
+
   # Map unmapped ResonanceGroups that follow from assigned resonances.
   # If resonance assignment conflicts with resonanceGroup assignment tha latter takes precedence.
   # But in that case data are inconsistent  and any solution is arbitrary.
@@ -459,6 +489,8 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
 
   handledResonanceGroups = set(resonanceGroup2Residue.keys())
 
+  # print ('@~@~ time2', time.time() - time0)
+
   # Set mandatory default NmrChain - must have serial == 1.
   # NB Looks like this is (sometimes?) set in wrapper init, hence the if statement
   defaultNmrChain = nmrProject.findFirstNmrChain(code=Constants.defaultNmrChainCode)
@@ -470,6 +502,8 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
                            nmrProject.newResonanceGroup(directNmrChain=defaultNmrChain,
                                                        seqInsertCode = '@',
                                                        details="Default ResonanceGroup"))
+
+  # print ('@~@~ time3', time.time() - time0)
 
   # Now set up assigned ResonanceGroups and add their offset groups
   reverseGroupMap = {}
@@ -523,6 +557,8 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
       #   resonance.resonanceGroup = useResonanceGroup
       # resonanceGroup.delete()
 
+  # print ('@~@~ time4', time.time() - time0)
+
   # Now deal with stretches of connected resonanceGroups
   for resonanceGroup in nmrProject.sortedResonanceGroups():
     if (resonanceGroup not in handledResonanceGroups
@@ -538,6 +574,8 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
           else:
             newNmrChain.addMainResonanceGroup(rg)
             handledResonanceGroups.add(rg)
+
+  # print ('@~@~ time5', time.time() - time0)
 
   # Deal with isolated resonanceGroups
 
@@ -590,6 +628,8 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
             resonanceGroup.sequenceCode = None
             resonanceGroup.directNmrChain = defaultNmrChain
         handledResonanceGroups.add(resonanceGroup)
+
+  # print ('@~@~ time6', time.time() - time0)
 
   # Almost done with resonanceGroups. Now for resonances.
 
@@ -650,9 +690,10 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
           convertResonance.resonanceGroup = resonanceGroup
           convertResonance.name = name
           if convertResonance.isotopeCode in ('?', 'unknown', None):
-            convertResonance.isotopeCode = spectrumLib.name2IsotopeCode(name) or '?'
+            convertResonance.isotopeCode = commonUtil.name2IsotopeCode(name) or '?'
           handledResonances.add(resonance)
 
+  # print ('@~@~ time7', time.time() - time0)
 
   # Now do unassigned resonances:
   for resonance in nmrProject.sortedResonances():
@@ -667,8 +708,9 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
 
       name = V2Upgrade.regularisedResonanceName(resonance)
       oldResonance = resonanceGroup.findFirstResonance(name=name)
-      if oldResonance not in (None, resonance):
-        # Name clash. Should never happen here, but to avoid trouble, ...
+      if oldResonance is not None:
+        if oldResonance is not resonance or len(resonanceGroup.findAllResonances(name=name)) > 1:
+          # Name clash. Should never happen here, but to avoid trouble, ...
           name = None
 
       resonance.name = None
@@ -676,7 +718,9 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
       resonance.name = name
       handledResonances.add(resonance)
       if name and resonance.isotopeCode in ('?', 'unknown', None):
-        resonance.isotopeCode = spectrumLib.name2IsotopeCode(name) or '?'
+        resonance.isotopeCode = commonUtil.name2IsotopeCode(name) or '?'
+
+  # print ('@~@~ time8', time.time() - time0)
 
   # Clean up merged ResonanceGroups
   for resonanceGroup in groupsToMerge:
@@ -684,6 +728,8 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
       raise ApiError("Resonances left in what should be empty ResonanceGroup before deletion: %s: %s"
       % (resonanceGroup, resonanceGroup.sortedResonances()))
     resonanceGroup.delete()
+
+  # print ('@~@~ time9', time.time() - time0)
 
 
 def copyMolSystemContents(molSystem, toMolSystem, chainMap):

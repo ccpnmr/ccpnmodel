@@ -33,10 +33,6 @@ from ccpnmodel.ccpncore.lib.spectrum.formats import Azara, Bruker, Felix, Hdf5, 
 from ccpnmodel.ccpncore.lib.Io.Formats import AZARA, BRUKER, FELIX, HDF5, NMRPIPE, NMRVIEW, UCSF, VARIAN, XEASY
 from ccpn.util.Path import checkFilePath
 from ccpnmodel.ccpncore.lib import V2Upgrade
-# from ccpnmodel.ccpncore.lib.Io import Api as apiIo
-
-# from ccpnmodel.ccpncore.api.memops.Implementation import Url
-# from ccpnmodel.ccpncore.lib.spectrum.Spectrum import createBlockedMatrix
 
 
 def loadDataSource(self:'NmrProject', filePath, dataFileFormat):
@@ -131,7 +127,7 @@ def createDummySpectrum(self:'NmrProject', axisCodes:Sequence[str],
 
   # Set up parameters and make Experiment
   numDim = len(axisCodes)
-  isotopeCodes = tuple(spectrumLib.name2IsotopeCode(x) or x for x in axisCodes)
+  isotopeCodes = tuple(commonUtil.name2IsotopeCode(x) or x for x in axisCodes)
 
   # This is used as the user-readable experiment type
   expName = ''.join(x for x in ''.join(axisCodes) if not x.isdigit())

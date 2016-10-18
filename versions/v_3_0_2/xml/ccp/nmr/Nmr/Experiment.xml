@@ -751,7 +751,7 @@ else:
 self.experimentType = name
 
 # Set expDimRef.axisCode to match RefExpDimRef axisCodes, linking the two objects
-from ccpnmodel.ccpncore.lib.spectrum.Spectrum import _axisCodeMapIndices
+from ccpn.util.Common import _axisCodeMapIndices
 expDimRefs= [y for x in self.sortedExpDims() for y in x.sortedExpDimRefs()]
 refAxisCodes = [y.axisCode for x in value.sortedRefExpDims() for y in x.sortedRefExpDimRefs()]
 if not value.isReversed:

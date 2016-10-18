@@ -40,9 +40,9 @@ class StructureEnsembleTest(CoreTesting):
 
   def testSpecificNames(self):
     chainAtomNames = [
-      'C', 'CA', 'H%', 'H1', 'H2', 'H3', 'HA%', 'HA2', 'HA3', 'HAX', 'HAY',  'N', 'O', 'QA',
+      'C', 'CA', 'H%', 'H1', 'H2', 'H3', 'HA%', 'HA2', 'HA3', 'HAx', 'HAy',  'N', 'O', 'QA',
       'C', 'CA', 'CB', 'H', 'HA', 'HB%', 'HB1', 'HB2', 'HB3', 'MB', 'N', 'O',
-      'C', 'CA', 'H', 'HA%', 'HA2', 'HA3', 'HAX', 'HAY', 'N', "O'", "O''", 'QA']
+      'C', 'CA', 'H', 'HA%', 'HA2', 'HA3', 'HAx', 'HAy', 'N', "O'", "O''", 'QA']
 
     project = self.project
     molSystem = project.newMolSystem(code='A')

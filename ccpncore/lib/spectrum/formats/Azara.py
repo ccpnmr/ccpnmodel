@@ -23,7 +23,6 @@ __version__ = "$Revision$"
 #=========================================================================================
 import os, sys
 
-from ccpnmodel.ccpncore.lib.spectrum.Spectrum import checkIsotope
 from ccpn.util import Common as commonUtil
 
 # from memops.qtgui.MessageDialog import showError
@@ -152,7 +151,7 @@ def readParams(filePath):
       refPoints[dim] = float(data[1])
 
     elif keyword == 'nuc':
-      isotopes[dim] = checkIsotope(data[1])
+      isotopes[dim] = commonUtil.checkIsotope(data[1])
 
     elif keyword == 'params':
       sampledValues[dim] = [float(x) for x in data[1:]]

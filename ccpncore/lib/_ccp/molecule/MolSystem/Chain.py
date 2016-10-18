@@ -174,7 +174,7 @@ def expandMolSystemAtoms(self:'Chain'):
             starpos = cas.name.find('*')
             for ii,component in enumerate(components):
               # NB components are sorted by key, which means by name
-              newChar = 'XY'[ii]
+              newChar = 'xy'[ii]
               ll = list(component.name)
               if len(ll) > starpos:
                 ll[starpos] = newChar
@@ -214,8 +214,8 @@ def expandMolSystemAtoms(self:'Chain'):
             nsNames1 = nonStereoNames.get(eqvAtom.atomSetName)
             nsNames2 = nonStereoNames.get(eqvAtom2.atomSetName)
             if nsNames1 and nsNames2:
-              # Non-stereoAtoms are defined for both - add X,Y bonds
-              # NB We rely on names being sorted (X then Y in both cases)
+              # Non-stereoAtoms are defined for both - add x,y bonds
+              # NB We rely on names being sorted (x then y in both cases)
               for kk,name in enumerate(nsNames1):
                 atom1 = residue.findFirstAtom(name=name)
                 atom2 = residue.findFirstAtom(name=nsNames2[kk])
@@ -284,7 +284,7 @@ def renameChain(self:'Chain', newCode:str):
       undo.decreaseBlocking()
 
 
-  # Fix NmrChains - DOne outside overr8ide to trigger rename notifiers for NmrChains
+  # Fix NmrChains - Done outside override to trigger rename notifiers for NmrChains
   for nmrProject in molSystem.nmrProjects:
     nmrChain = nmrProject.findFirstNmrChain(code=oldCode)
     if nmrChain:

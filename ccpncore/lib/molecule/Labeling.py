@@ -4,7 +4,7 @@
 #=========================================================================================
 # Licence, Reference and Credits
 #=========================================================================================
-from ccpn.util.Constants import DEFAULT_LABELING
+from ccpn.util.Constants import DEFAULT_LABELLING
 
 __copyright__ = "Copyright (C) CCPN project (www.ccpn.ac.uk) 2014 - $Date$"
 __credits__ = "Wayne Boucher, Rasmus H Fogh, Simon Skinner, Geerten Vuister"
@@ -339,7 +339,7 @@ def sampleChainLabeling(sample, chainCode:str) -> str:
   Heuristics: If there is only one SampleComponent, use that labeling
   If all SampleComponents with explicit chainCodes have the same labeling, use that labeling"""
 
-  labeling = DEFAULT_LABELING
+  labeling = DEFAULT_LABELLING
 
   sampleComponents = sample.sortedSampleComponents()
   if len(sampleComponents) == 1:

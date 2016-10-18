@@ -23,7 +23,8 @@ __version__ = "$Revision$"
 #=========================================================================================
 import os, sys
 
-from ccpnmodel.ccpncore.lib.spectrum.Spectrum import checkIsotope
+from ccpn.util.Common import checkIsotope
+
 # from memops.qtgui.MessageDialog import showError
 
 UCSF_FILE_HEADER = 180

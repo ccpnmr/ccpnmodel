@@ -26,7 +26,7 @@ from typing import Sequence
 
 import numpy
 
-from ccpnmodel.ccpncore.lib.spectrum.Spectrum import checkIsotope
+from ccpn.util.Common import checkIsotope
 # from memops.qtgui.MessageDialog import showError
 
 from array import array

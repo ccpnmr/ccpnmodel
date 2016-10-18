@@ -200,7 +200,7 @@ def mapAssignedResonances(topObject, molSystem=None, chainMap=None):
 
       # Now for the atom name
       if chemAtomSet and len(atomSets) == 2 and len(resonances) <= 2:
-        # prochiral pair. Use _getAmbigProchiralLabel for priority, and set 'X' for 'a', 'Y' for 'b'
+        # prochiral pair. Use _getAmbigProchiralLabel for priority, and set 'x' for 'a', 'y' for 'b'
 
         # get non-stereo names
         atomSetNames = [x.name for x in atomSets]
@@ -209,9 +209,9 @@ def mapAssignedResonances(topObject, molSystem=None, chainMap=None):
         if [x[starpos:] for x in sorted(atomSetNames)] == ["", "'"]:
           # special case - names are "abc'", "abc''"
           ss = atomSetNames[0][:starpos-1]
-          newNames = [ss + 'X', ss + 'Y']
+          newNames = [ss + 'x', ss + 'y']
         else:
-          for ii, newChar in enumerate('XY'):
+          for ii, newChar in enumerate('xy'):
             chars = list(atomSetNames[ii])
             chars[starpos] = newChar
             newNames.append(''.join(chars))
@@ -379,6 +379,7 @@ def regularisedResonanceName(resonance):
   result = None
 
   if resonance.className == 'Resonance':
+
     # Exclude fixedResonances
     assignNames = list(set(resonance.assignNames))
     if len(assignNames) == 1:
@@ -395,8 +396,8 @@ def regularisedResonanceName(resonance):
       if assignNames[0][lenPrefix].isdigit() and assignNames[1][lenPrefix].isdigit():
         if assignNames[0][lenPrefix+1:] == assignNames[1][lenPrefix+1:]:
 
-          # Heuristics, try to get X or Y right
-          # NB 'X' will not always match the lowest sorting - it fails for
+          # Heuristics, try to get x or y right
+          # NB 'x' will not always match the lowest sorting - it fails for
           # ordinary HB2/HB3 methylenes and must be caught later
           # But the crucial isopropyl and aromatic cases should work
           newChar = None
@@ -406,13 +407,14 @@ def regularisedResonanceName(resonance):
           else:
             char = None
           if assignNames[0][lenPrefix] == char:
-            newChar = 'X'
+            newChar = 'x'
           elif assignNames[1][lenPrefix] == char:
-            newChar = 'Y'
+            newChar = 'y'
           elif 'a' in resonanceName and not 'b' in resonanceName:
-            newChar = 'X'
+            newChar = 'x'
           elif 'b' in resonanceName and not 'a' in resonanceName:
-            newChar = 'Y'
+            newChar = 'y'
+
           if newChar is not None:
             ll = list(assignNames[0])
             ll[lenPrefix] = newChar
@@ -426,9 +428,9 @@ def regularisedResonanceName(resonance):
         # name is OK except possibly for casing - fix the casing
         ss = resonanceName[len(elementCode):]
 
-        if 'X' in ss or 'Y' in ss:
+        if 'x' in ss or 'y' in ss:
           # Necessary to avoid potential clashes with XY names set above
-          # No actual assigned names contain 'X' or 'Y' anyway
+          # No actual assigned names contain 'x' or 'y' anyway
           result = '%s@%s-%s' % (elementCode, resonance.serial, resonanceName)
         else:
           # Name might be proper assignment name. Change to new wildcard convention

@@ -607,32 +607,32 @@ def getExperimentClassification(refExperiment:'RefExperiment') -> ExperimentClas
   return result
 
 
-# def testExpermentFilter(project):
-#   allData = {}
-#   counters = {}
-#   for nxp in project.sortedNmrExpPrototypes():
-#     for rx in nxp.sortedRefExperiments():
-#       filterData = getExperimentClassification(rx)
-#       allData[rx.name] = filterData
-#       if filterData.isThroughSpace and filterData.isRelayed:
-#         print (rx.name, tuple(filterData))
-#
-#   fields = list(allData.values())[0]._fields
-#   byColumns = list(zip(*allData.values()))
-#
-#   for ii,field in enumerate(fields):
-#     counters[field] = collections.Counter(byColumns[ii])
-#
-#   #
-#   return counters
+def testExpermentFilter(project):
+  allData = {}
+  counters = {}
+  for nxp in project.sortedNmrExpPrototypes():
+    for rx in nxp.sortedRefExperiments():
+      filterData = getExperimentClassification(rx)
+      allData[rx.name] = filterData
+      if filterData.isThroughSpace and filterData.isRelayed:
+        print (rx.name, tuple(filterData))
+
+  fields = list(allData.values())[0]._fields
+  byColumns = list(zip(*allData.values()))
+
+  for ii,field in enumerate(fields):
+    counters[field] = collections.Counter(byColumns[ii])
+
+  #
+  return counters
 
 
 if __name__ == '__main__':
   pass
 
-  # from ccpnmodel.ccpncore.lib.Io.Api import newProject
-  # project = newProject("ExpPrototypeTest", overwriteExisting=True)
-  #
-  # for item in sorted(testExpermentFilter(project).items()):
-  #   print ('\n%s:\n%s' % item)
+  from ccpnmodel.ccpncore.lib.Io.Api import newProject
+  project = newProject("ExpPrototypeTest", overwriteExisting=True)
+
+  for item in sorted(testExpermentFilter(project).items()):
+    print ('\n%s:\n%s' % item)
 

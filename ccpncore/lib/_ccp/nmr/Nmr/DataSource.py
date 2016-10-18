@@ -25,7 +25,6 @@ __version__ = "$Revision$"
 import array
 import numpy
 import os
-# import re
 import sys
 from typing import Sequence, Tuple
 from ccpnmodel.ccpncore.lib.spectrum import Spectrum as spectrumLib
@@ -38,7 +37,7 @@ from ccpnmodel.ccpncore.lib.Io import Formats
 # so they can be used as DataSource methods
 
 def getDimCodes(self:'DataSource'):
-  """ Get dimcode of form hx1, hx2, x1, x2, where the x's are directly bound to 
+  """ Get dimcode of form hx1, hx2, x1, x2, where the x's are directly bound to def save
   the corresponding H. suffix '1' is given to the acquisition proton dimension.
   Dimensions not matching the specs are given code None
   """

@@ -22,7 +22,7 @@ __version__ = "$Revision$"
 # Start of code
 #=========================================================================================
 from ccpnmodel.ccpncore.api.ccp.molecule.Molecule import Molecule
-from ccpn.util.Constants import DEFAULT_LABELING
+from ccpn.util.Constants import DEFAULT_LABELLING
 
 
 def fetchMolComponent(self:"RefSampleComponentStore", molecule:Molecule,
@@ -34,14 +34,17 @@ def fetchMolComponent(self:"RefSampleComponentStore", molecule:Molecule,
   """
   name = molecule.name
   if labeling is None:
-    labeling = DEFAULT_LABELING
+    labeling = DEFAULT_LABELLING
   result = self.findFirstComponent(name=name, labeling=labeling)
 
   if result is None:
     # Finalise, so molecule does not change 'underneath' substance
     molecule.isFinalised = True
-    seqString = molecule.seqString or '(%s)' % ','.join(x.chemComp.code3Letter
-                                                        for x in molecule.sortedMolResidues())
+    seqString = molecule.seqString
+    if not seqString or '*' in seqString:
+      # Set seqString (one-letter or comma-separated) that allows recreating the molecule
+      seqString = ','.join(x.chemComp.code3Letter for x in molecule.sortedMolResidues())
+
     # Make new MolComponent
     result = self.newMolComponent(name=name, labeling=labeling, synonyms=molecule.commonNames,
                                   details=molecule.details, smiles=molecule.smiles,

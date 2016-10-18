@@ -158,6 +158,14 @@ def createMoleculeFromNef(project, name:str, sequence:typing.Sequence[dict],
 
   residueName2chemCompId = MoleculeQuery.fetchStdResNameMap(project)
 
+
+  # TODO NBNB handle dummy residues properly
+  # This is a temporary HACK
+  for dd in sequence:
+    if dd['linking'] == 'dummy':
+      dd['residue_name'] = 'UNK'
+      dd['linking'] = 'single'
+
   stretches = StarIo.splitNefSequence(sequence)
   molecule =  project.newMolecule(name=name)
 
@@ -172,7 +180,7 @@ def createMoleculeFromNef(project, name:str, sequence:typing.Sequence[dict],
       startNumber = seqCode
 
     # Create new MolResidues
-    residueTypes = [row.get('residue_type', defaultType) for row in stretch]
+    residueTypes = [row.get('residue_name', defaultType) for row in stretch]
     firstLinking = stretch[0].get('linking')
     if len(residueTypes) > 1:
       lastLinking = stretch[-1].get('linking')

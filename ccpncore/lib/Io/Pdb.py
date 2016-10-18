@@ -4,6 +4,7 @@
 #=========================================================================================
 # Licence, Reference and Credits
 #=========================================================================================
+
 __copyright__ = "Copyright (C) CCPN project (www.ccpn.ac.uk) 2014 - $Date$"
 __credits__ = "Wayne Boucher, Rasmus H Fogh, Simon Skinner, Geerten Vuister"
 __license__ = ("CCPN license. See www.ccpn.ac.uk/license"
@@ -23,9 +24,9 @@ __version__ = "$Revision$"
 #=========================================================================================
 
 NaN = float('NaN')
-from ccpnmodel.ccpncore.lib.Io import PyMMLibPDB as PdbLib
 from typing import List, Tuple
-from ccpnmodel.ccpncore.lib.spectrum import Spectrum as spectrumLib
+from ccpn.util import Common as commonUtil
+from ccpnmodel.ccpncore.lib.Io import PyMMLibPDB as PdbLib
 
 class PdbRecordProcessor(PdbLib.RecordProcessor):
   """Class for custom record processing"""
@@ -121,7 +122,8 @@ def loadStructureEnsemble(molSystem:"MolSystem", fil) -> "StructureEnsemble":
                                   code3Letter=rec.get('resName')))
 
       # NBNB Heuristic. We need an elementName
-      elementName = rec.get('element') or spectrumLib.name2ElementSymbol(rec.get('name')) or 'Unknown'
+      elementName = (rec.get('element') or commonUtil.name2ElementSymbol(rec.get('name'))
+                     or 'Unknown')
       # NBNB wil likely break with altLocated atoms. Meanwhile do it right
       residue.newAtom(name=rec.get('name'), altLocationCode=rec.get('altLoc', ' '),
                       elementName=elementName.title())

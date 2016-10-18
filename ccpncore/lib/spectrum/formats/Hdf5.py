@@ -27,7 +27,7 @@ from typing import Sequence
 import h5py
 import numpy
 
-from ccpnmodel.ccpncore.lib.spectrum.Spectrum import checkIsotope
+from ccpn.util.Common import checkIsotope
 
 FILE_TYPE = 'Hdf5'
 

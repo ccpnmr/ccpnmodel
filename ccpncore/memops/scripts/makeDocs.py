@@ -90,7 +90,7 @@ from ccpnmodel.ccpncore.memops.scripts.makePython import getModelPortal
 defaultIgnoreModules = []
 
 
-def makeSphnxDoc():
+def makeSphinxDoc():
   """ Generate Sphinx documentation')
   """
 
@@ -123,6 +123,6 @@ def makeApiDoc(modelPortal, rootDirName=None, rootFileName=None,
 
 if __name__ == '__main__':
   
-  makeSphnxDoc()
+  makeSphinxDoc()
   # Temporarily suspended. Do we even distribute it?
   # makeApiDoc(getModelPortal())
