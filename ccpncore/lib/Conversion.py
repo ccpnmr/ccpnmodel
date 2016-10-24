@@ -64,6 +64,12 @@ def getConversionInfo(fromVersionString, toVersionString):
   else:
     fromVersion = Version.Version(fromVersionString)
 
+  # HACK - 2,0,6 is  aside branch, and a lot of extra work to upfgrade correctly.
+  # Treating it as identical to 2.0.5 should (hopefully) work most of the time.
+  # Alternatively one could try treating it as 2.1.0 instead
+  if str(fromVersion) == '2.0.6':
+    fromVersion = Version.Version('2.0.5')
+
   if toVersionString:
     if isinstance(toVersionString, Version.Version):
       toVersion = toVersionString
