@@ -42,7 +42,7 @@ def loadDataSource(self:'NmrProject', filePath, dataFileFormat):
   if not isOk:
     print(msg)
     # showError('Error', msg)
-    return
+    return None
 
   numPoints = None
 

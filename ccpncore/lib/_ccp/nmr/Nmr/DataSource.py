@@ -317,7 +317,7 @@ def getSliceData(self:'DataSource', position=None, sliceDim:int=1):
   numPoints = [dataDim.numPoints for dataDim in dataDims]
   slicePoints = numPoints[sliceDim]
 
-  data = numpy.empty((slicePoints,), dtype=numpy.float32)
+  data = numpy.zeros((slicePoints,), dtype=numpy.float32)
   for dim in range(numDim):
     point = position[dim] - 1
     if point >= numPoints[dim]:
