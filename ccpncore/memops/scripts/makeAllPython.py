@@ -80,8 +80,8 @@ software development. Bioinformatics 21, 1678-1684.
 ===========================REFERENCE END===============================
 """
 
-# repository tags for old version to make compatibilty for
-#By default takes complete linear versoin list fro current oldVersionTag
+# repository tags for old version to make compatibility for
+#By default takes complete linear version list fro current oldVersionTag
 #NBNB TODO version 2.0.6 not supported yet.
 # NBNB TODO data downgrade not supported yet
 

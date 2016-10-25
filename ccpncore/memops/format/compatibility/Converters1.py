@@ -84,6 +84,12 @@ def modifyIoMap(fromVersionStr, globalMapping):
   """ Adapt globalMapping to read oldVersion data
   """
 
+  # HACK - 2,0,6 is  aside branch, and a lot of extra work to upgrade correctly.
+  # Treating it as identical to 2.0.5 should (hopefully) work most of the time.
+  # Alternatively one could try treating it as 2.1.0 instead
+  if fromVersionStr == '2.0.6':
+    fromVersionStr = '2.0.5'
+
   fromVersion = Version.Version(fromVersionStr)
 
   infodd = Conversion.getConversionInfo(fromVersion, currentVersion)
