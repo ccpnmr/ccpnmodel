@@ -300,6 +300,11 @@ def getSliceData(self:'DataSource', position=None, sliceDim:int=1):
   if not dataStore:
     return None
 
+  fileName = dataStore.fullPath
+  if not os.path.exists(fileName):
+    self.root._logger.warning("File does not exist: %s" % fileName)
+    return None
+
   if dataStore.fileType == 'NMRPipe': # data is not blocked but multi-file in general
     if not hasattr(dataStore, 'template'):
       dataStore.template = NmrPipe.guessFileTemplate(self)
@@ -349,10 +354,6 @@ def getSliceData(self:'DataSource', position=None, sliceDim:int=1):
 
   blockSizes = blockSizes[::-1]  # reverse (dim ordering backwards)
 
-  fileName = dataStore.fullPath
-  if not os.path.exists(fileName):
-    self.root._logger.warning("File does not exist: %s" % fileName)
-    return data
   fp = open(fileName, 'rb')
 
   for sliceBlock in range(sliceBlocks):
