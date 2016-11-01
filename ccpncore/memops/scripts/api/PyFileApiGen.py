@@ -741,14 +741,15 @@ except:
     self.returnStatement(self.comparison(self.varNames['self'], 'is', self.varNames['other']))
     self.endFunc()
 
-    # __hash__ function
-    self.startFunc('__hash__',
-     params=(self.varNames['self'],),
-     docString=""" hash function. Necessary now we have __eq__."""
-    )
-    ss = self.callFunc('id', params=[self.varNames['self']], doWrite=False,)
-    self.returnStatement(self.callFunc('hash',params=[ss], doWrite=False))
-    self.endFunc()
+    self.write("__hash__ = object.__hash__")
+    # # __hash__ function
+    # self.startFunc('__hash__',
+    #  params=(self.varNames['self'],),
+    #  docString=""" hash function. Necessary now we have __eq__."""
+    # )
+    # ss = self.callFunc('id', params=[self.varNames['self']], doWrite=False,)
+    # self.returnStatement(self.callFunc('hash',params=[ss], doWrite=False))
+    # self.endFunc()
 
     # __lt__ function
     self.startFunc('__lt__',
