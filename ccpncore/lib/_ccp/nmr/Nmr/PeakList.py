@@ -58,7 +58,7 @@ def _arrayOfIndex(index, cumul):
 def pickNewPeaks(self:PeakList, startPoint:Sequence[int], endPoint:Sequence[int],
                  posLevel:float=None, negLevel:float=None,
                  minLinewidth=None, exclusionBuffer=None,
-                 minDropfactor:float=0.0, checkAllAdjacent:bool=True,
+                 minDropfactor:float=0.1, checkAllAdjacent:bool=True,
                  fitMethod:str=None, excludedRegions=None,
                  excludedDiagonalDims=None, excludedDiagonalTransform=None):
 
