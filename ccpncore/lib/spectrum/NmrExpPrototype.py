@@ -61,8 +61,8 @@ priorityNameRemapping = {
 'Hcc-TOCSY-NH':'HccaNH-TOCSY',
 'HNcoCA/CB':'HNcoCA/CB',
 'HNCA':'HNCA',
-'H-detected HNcaCO':'HNcaCO',
-'H-detected HNcoCA':'HNcoCA',
+'HNcaCO':'HNcaCO',
+'HNcoCA':'HNcoCA',
 'HNCO':'HNCO',
 'hbCB/haCAcoNH':'CB/CAcoNH',
 }
@@ -600,6 +600,9 @@ def getExperimentClassification(refExperiment:'RefExperiment') -> ExperimentClas
 
   synonym = refExperiment.synonym or name
 
+  # NEW - bug fix:
+  synonym = priorityNameRemapping.get(synonym, synonym)
+
   result = ExperimentClassification(dimensionCount, acquisitionNucleus, isThroughSpace, isRelayed,
                                     isRelaxation, isQuantification, isJResolved, isMultipleQuantum,
                                     isProjection, name, synonym)
@@ -607,15 +610,13 @@ def getExperimentClassification(refExperiment:'RefExperiment') -> ExperimentClas
   return result
 
 
-def testExpermentFilter(project):
+def testExperimentFilter(project):
   allData = {}
   counters = {}
   for nxp in project.sortedNmrExpPrototypes():
     for rx in nxp.sortedRefExperiments():
       filterData = getExperimentClassification(rx)
       allData[rx.name] = filterData
-      if filterData.isThroughSpace and filterData.isRelayed:
-        print (rx.name, tuple(filterData))
 
   fields = list(allData.values())[0]._fields
   byColumns = list(zip(*allData.values()))
@@ -630,9 +631,10 @@ def testExpermentFilter(project):
 if __name__ == '__main__':
   pass
 
-  from ccpnmodel.ccpncore.lib.Io.Api import newProject
-  project = newProject("ExpPrototypeTest", overwriteExisting=True)
+  # from ccpnmodel.ccpncore.lib.Io.Api import newProject
+  # project = newProject("ExpPrototypeTest", overwriteExisting=True)
 
-  for item in sorted(testExpermentFilter(project).items()):
-    print ('\n%s:\n%s' % item)
+  # for item in sorted(testExperimentFilter(project).items()):
+  #   pass
+  #   # print ('\n%s:\n%s' % item)
 
