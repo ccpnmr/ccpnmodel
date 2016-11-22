@@ -242,15 +242,19 @@ def initialiseData(self:'NmrProject'):
   # Fix alpha or semi-broken projects. None of this should be necessary, but hey!
   # NB written to modify nothing for valid projects
 
+  # # Get or (re)make default NmrChain
+  # defaultChain = self.findFirstNmrChain(code=Constants.defaultNmrChainCode)
+  # if defaultChain is None:
+  #   # NO default chain - probably an alpha project or upgraded from V2
+  #   defaultChain = self.findFirstNmrChain(code='@-')
+  #   if defaultChain is None:
+  #     defaultChain = self.newNmrChain(code=Constants.defaultNmrChainCode)
+  #   else:
+  #     defaultChain.code = '@-'
   # Get or (re)make default NmrChain
   defaultChain = self.findFirstNmrChain(code=Constants.defaultNmrChainCode)
   if defaultChain is None:
-    # NO default chain - probably an alpha project or upgraded from V2
-    defaultChain = self.findFirstNmrChain(code='@-')
-    if defaultChain is None:
-      defaultChain = self.newNmrChain(code=Constants.defaultNmrChainCode)
-    else:
-      defaultChain.code = '@-'
+    defaultChain = self.newNmrChain(code=Constants.defaultNmrChainCode)
 
   # Make sure all non-offset ResonanceGroups have directNmrChain set.
   for rg in self.sortedResonanceGroups():
@@ -261,6 +265,21 @@ def initialiseData(self:'NmrProject'):
         rg.directNmrChain = self.findFirstNmrChain(serial=rg.chainSerial)
       if rg.directNmrChain is None:
         rg.directNmrChain = defaultChain
+
+  # Make ResonanceGroup for Resonances without them
+  # Should not be necessary, for a well-set-up project, but for dodgy ones ...?
+  resonances = [x for x in self.sortedResonances() if x.resonanceGroup is None]
+  if resonances:
+    defaultNmrChain = self.findFirstNmrChain(code=Constants.defaultNmrChainCode)
+    if defaultNmrChain is None:
+      defaultNmrChain = self.newNmrChain(code=Constants.defaultNmrChainCode)
+    # Also set defaultResonanceGroup
+    defaultResonanceGroup = (
+      defaultNmrChain.findFirstResonanceGroup(seqCode=None,seqInsertCode='@')
+      or self.newResonanceGroup(directNmrChain=defaultNmrChain, seqInsertCode='@',
+                                details="Default ResonanceGroup")
+    )
+    defaultResonanceGroup.resonances = resonances
 
   # Upgrade old-style constraint lists
   for nmrConstraintStore in project.sortedNmrConstraintStores():
