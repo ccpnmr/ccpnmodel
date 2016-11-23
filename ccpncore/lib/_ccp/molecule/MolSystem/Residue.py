@@ -99,6 +99,7 @@ def findResidueObservableAtoms(residue, refExperiment=None, labeling=None,
   else:
     isotopes = []
     for element in chemElements:
+      # NBNB FIXME update to use new isotope dictionaries
       isotope = DEFAULT_ISOTOPE_DICT.get(element)
 
       if isotope:

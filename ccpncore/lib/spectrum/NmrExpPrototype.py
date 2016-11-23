@@ -7,6 +7,8 @@ refExpDimRefs and the map.
 #=========================================================================================
 # Licence, Reference and Credits
 #=========================================================================================
+import ccpn.util.Constants
+
 __copyright__ = "Copyright (C) CCPN project (www.ccpn.ac.uk) 2014 - $Date$"
 __credits__ = "Wayne Boucher, Rasmus H Fogh, Simon P Skinner, Geerten W Vuister"
 __license__ = ("CCPN license. See www.ccpn.ac.uk/license"
@@ -28,6 +30,7 @@ __version__ = "$Revision$"
 import operator
 import collections
 from typing import Dict
+from ccpn.util import Constants
 
 # Dictionary of experiment names that should come first in the list
 #  - with optional remapping of names
@@ -66,6 +69,7 @@ priorityNameRemapping = {
 'HNCO':'HNCO',
 'hbCB/haCAcoNH':'CB/CAcoNH',
 }
+
 
 def resetAllAxisCodes(nmrProject):
   """Reset all axisCodes (ExpDimRef.name) in project to be unique, match the isotope,
@@ -226,43 +230,50 @@ def _orderedMeasurements(nmrExpPrototype, forReversed=False):
 
 def rawAxisCode(expMeasurement):
   """Get raw expMeasurement axisCode (without number suffixes) from NmrExpPrototype.ExpMeasurement"""
-  tagMapping = {
-  'shift':'shift',
-  'jcoupling':'J',
-  'mqshift':'MQ',
-  'rdc':'RDC',
-  'shiftanisotropy':'ANISO',
-  'troesy':'TROESY',
-  'dipolarcoupling':'DIPOLAR',
-  't1':'delay',
-  't2':'delay',
-  't1rho':'delay',
-  't1zz':'delay'
-  }
-
 
   em = expMeasurement
   emType = em.measurementType.lower()
 
-  tag = tagMapping.get(emType, emType)
+  tag = Constants.measurementType2ElementCode.get(emType, emType)
   if tag == 'delay':
     result = tag
   elif tag == 'shift':
     result = ''.join(sorted(atomSiteAxisCode(x) for x in em.atomSites))
   else:
     result = tag + ''.join(sorted(isotope2Nucleus(x.isotopeCode).lower() for x in em.atomSites))
-
   #
   return result
+
+# def nucleusCode(expMeasurement):
+#   """Get nucleusCode from NmrExpPrototype.ExpMeasurement"""
+#   from ccpn.util import Constants
+#
+#   em = expMeasurement
+#   emType = em.measurementType.lower()
+#
+#   tag = Constants.measurementType2ElementCode.get(emType, emType)
+#   if tag == 'delay':
+#     result = tag
+#   else:
+#     records = [Constants.isotopeRecords.get(x.isotopeCode.upper() for x in em.atomSites)]
+#     if None in records:
+#       raise ValueError("Invalid NmrExpPrototype, unknown isotopeCode for atomSite at %s "
+#                        % expMeasurement)
+#     else:
+#       result = ''.join(sorted(x.symbol for x in records))
+#       if tag != 'shift':
+#         result = tag + result.lower()
+#   #
+#   return result
 
 
 def isotope2Nucleus(isotopeCode):
   """remove integer prefix from integer+string string"""
-  ii = 0
-  for ii,char in enumerate(isotopeCode):
-    if char not in '0123456789':
-      break
-  return isotopeCode[ii:]
+  record = Constants.isotopeRecords.get(isotopeCode)
+  if record is None:
+    raise ValueError("Isotope %s not recognised")
+  else:
+    return record.symbol.upper()
 
 
 def atomSiteAxisCode(atomSite):
@@ -547,7 +558,7 @@ ExperimentClassification = collections.namedtuple('ExperimentCharacteristic',
                                                    'name', 'synonym'))
 
 
-def getExpClassificationDict(nmrProject):
+def getExpClassificationDict(nmrProject) -> dict:
   """
   Get a dictionary of dictionaries of dimensionCount:sortedNuclei:ExperimentClassification named tuples.
   """
@@ -631,10 +642,18 @@ def testExperimentFilter(project):
 if __name__ == '__main__':
   pass
 
-  # from ccpnmodel.ccpncore.lib.Io.Api import newProject
-  # project = newProject("ExpPrototypeTest", overwriteExisting=True)
+  from ccpnmodel.ccpncore.lib.Io.Api import newProject
+  project = newProject("ExpPrototypeTest", overwriteExisting=True)
 
   # for item in sorted(testExperimentFilter(project).items()):
   #   pass
   #   # print ('\n%s:\n%s' % item)
+
+  counter = collections.Counter()
+  for nxp in project.nmrExpPrototypes:
+    for xx in nxp.atomSites:
+      counter[(xx.name, xx.isotopeCode)] += 1
+
+  # for item in sorted(counter.items()):
+  #   print ('@~@~', item)
 

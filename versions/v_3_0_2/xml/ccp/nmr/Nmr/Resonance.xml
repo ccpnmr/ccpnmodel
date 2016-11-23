@@ -218,15 +218,16 @@ else:
       <item tag="python">result = self.implName
 if result  is None:
   ss = self.isotopeCode
-  if not ss or ss == '?':
+  if not ss:
     atomSymbol = ''
+  elif ss.isdigit():
+    atomSymbol = ss
   else:
-    if ss[-2].isdigit():
-      firstLetter = -1
-    else:
-      firstLetter = -2
-    atomSymbol = ss[firstLetter:].capitalize()
-
+    firstLetter = 0
+    while ss[firstLetter].isdigit():
+      firstLetter += 1
+    atomSymbol = ss[firstLetter:].upper()
+  #
   result = '%s@%s' % (atomSymbol, self.serial)</item>
     </codeStubs>
   </MetaOperation>
@@ -281,12 +282,13 @@ if result  is None:
      container="www.ccpn.ac.uk_Fogh_2014-12-30-11:21:22_00002"
      isImplicit="false">
       <codeStubs>
-        <item tag="python">isValid = True
-if value is not None and self.isotopeCode != '?':
-  from ccpn.util.Common import name2IsotopeCode
-  impliedIsotopeCode = name2IsotopeCode(value)
-  if impliedIsotopeCode and impliedIsotopeCode != self.isotopeCode:
-    isValid = False
+        <item tag="python">isValid=True
+isotopeCode = self.isotopeCode.upper()
+if not value.startswith(isotopeCode):
+  from ccpn.util.Constants import isotopeRecords
+  record = isotopeRecords.get(isotopeCode)
+  if record:
+    isValid = value.startswith(record.symbol)
 </item>
       </codeStubs>
     </MetaConstraint>

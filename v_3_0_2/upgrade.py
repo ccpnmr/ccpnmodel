@@ -482,10 +482,16 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
   # Note that resonances will always keep their assignment
   for resonance, tt in sorted(resonance2Assignment.items()):
     resonanceGroup = resonance.resonanceGroup
-    if resonanceGroup is not None and resonanceGroup not in resonanceGroup2Residue:
+    if resonanceGroup is not None:
+      previousResidue = resonanceGroup2Residue.get(resonanceGroup)
       residue, resonanceName = tt
-      if residue is not None:
-        resonanceGroup2Residue[resonanceGroup] = residue
+      if previousResidue is None:
+        if residue is not None:
+          resonanceGroup2Residue[resonanceGroup] = residue
+      elif residue is not previousResidue:
+        print ('WARNING, ResonanceGroup %s, %s, does not match resonance %s, %s'
+               % (resonanceGroup.serial, previousResidue, resonance.serial, residue)
+               )
 
   handledResonanceGroups = set(resonanceGroup2Residue.keys())
 
@@ -654,8 +660,10 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
                           or nmrProject.newResonanceGroup(sequenceCode=sequenceCode,
                                                           directNmrChain=nmrChain))
         if resonance.resonanceGroup not in (None, resonanceGroup):
-          print ('WARNING, %s ResonanceGroup %s does not match assignment to %s.%s' %
-                 (resonance, resonance.resonanceGroup, chainCode, sequenceCode))
+          print (
+            'WARNING, %s ResonanceGroup %s does not match assignment to %s.%s (resonanceGroup %s' %
+            (resonance, resonance.resonanceGroup, chainCode, sequenceCode, resonanceGroup)
+          )
 
         # Move or merge resonance in position
         convertResonance = None

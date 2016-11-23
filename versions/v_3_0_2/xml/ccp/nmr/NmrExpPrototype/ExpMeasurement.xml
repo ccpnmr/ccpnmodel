@@ -157,6 +157,30 @@ for (ccp.api.nmr.NmrExpPrototype.ExpStep x: getExpSteps())
     </codeStubs>
   </MetaOperation>
 
+  <MetaOperation name="getNucleusCode"
+   guid="www.ccpn.ac.uk_Fogh_2016-11-17-23:10:44_00002"
+   container="www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00034"
+   isAbstract="false" isImplicit="false" isQuery="true" opType="get"
+   scope="instance_level" visibility="public_vis">
+    <documentation>getter for derived attribute nucleusCode</documentation>
+    <target>www.ccpn.ac.uk_Fogh_2016-11-17-23:10:44_00001</target>
+    <codeStubs>
+      <item tag="python">from ccpn.util import Constants
+emType = self.measurementType.lower()
+tag = Constants.measurementType2ElementCode.get(emType, emType)
+if tag == 'delay':
+  result = tag
+else:
+  records = [Constants.isotopeRecords.get(x.isotopeCode) for x in self.atomSites]
+  if None in records:
+    raise ValueError("Invalid NmrExpPrototype, unknown isotopeCode for atomSite at %s " % self)
+  else:
+    result = ''.join(sorted(x.symbol.upper() for x in records))
+    if tag != 'shift':
+      result = tag + result.lower()</item>
+    </codeStubs>
+  </MetaOperation>
+
   <MetaAttribute name="measurementType"
    guid="www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00022"
    container="www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00034"
@@ -183,6 +207,17 @@ for (ccp.api.nmr.NmrExpPrototype.ExpStep x: getExpSteps())
     <otherRole>www.ccpn.ac.uk_Fogh_2006-08-16-18:22:58_00012</otherRole>
     <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00020</valueType>
   </MetaRole>
+
+  <MetaAttribute name="nucleusCode"
+   guid="www.ccpn.ac.uk_Fogh_2016-11-17-23:10:44_00001"
+   container="www.ccpn.ac.uk_Fogh_2006-08-16-14:22:45_00034"
+   baseName="nucleusCode" changeability="frozen" forceUndoNotify="true"
+   hicard="1" isAbstract="false" isAutomatic="false" isDerived="true"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="1" scope="instance_level" visibility="public_vis">
+    <documentation>Measurement nucleus (for type shift) or measurement code (e.g. 'delay', MQcc, Jhc, RDChn, ...) for other types</documentation>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00037</valueType>
+  </MetaAttribute>
 
   <MetaRole name="refExpDimRefs"
    guid="www.ccpn.ac.uk_Fogh_2006-08-16-18:23:01_00020"

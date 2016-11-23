@@ -158,7 +158,6 @@ def createMoleculeFromNef(project, name:str, sequence:typing.Sequence[dict],
 
   residueName2chemCompId = MoleculeQuery.fetchStdResNameMap(project)
 
-
   # TODO NBNB handle dummy residues properly
   # This is a temporary HACK
   for dd in sequence:

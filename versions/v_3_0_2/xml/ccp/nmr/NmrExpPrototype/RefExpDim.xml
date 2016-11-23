@@ -120,27 +120,11 @@ else:
     <documentation>getter for derived attribute nucleusCode</documentation>
     <target>www.ccpn.ac.uk_Fogh_2015-09-29-14:09:44_00002</target>
     <codeStubs>
-      <item tag="python">from ccpn.util.Constants import DEFAULT_ISOTOPE_DICT as isoDict
-axisCodes = [x.axisCode for x in self.refExpDimRefs]
-if axisCodes and None not in axisCodes:
-  nucleusCodes = []
-  for code in axisCodes:
-    for tag in reversed(sorted(isoDict)):
-      # Reversed looping guarantees that the longer of two matches will be chosen
-      if code.startswith(tag):
-        nucleusCodes.append(tag)
-        break
-    else:
-      result = None
-      break
-  else:
-    aSet = set(nucleusCodes)
-    if len(aSet) == 1:
-      result = aSet.pop()
-    else:
-      result = 'MULTIPLE'
+      <item tag="python">nucleusCodes = set(x.expMeasurement.nucleusCode for x in self.refExpDimRefs)
+if len(nucleusCodes) == 1:
+  result = nucleusCodes.pop()
 else:
-  result = None</item>
+  result = 'MULTIPLE'</item>
     </codeStubs>
   </MetaOperation>
 
