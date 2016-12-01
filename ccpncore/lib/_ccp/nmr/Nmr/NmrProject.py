@@ -279,6 +279,10 @@ def initialiseData(self:'NmrProject'):
       or self.newResonanceGroup(directNmrChain=defaultNmrChain, seqInsertCode='@',
                                 details="Default ResonanceGroup")
     )
+    for resonance in resonances:
+      implName = resonance.implName
+      if resonance.implName:
+        resonance.implName = '%s@%s' % (implName, resonance.serial)
     defaultResonanceGroup.resonances = resonances
 
   # Upgrade old-style constraint lists
