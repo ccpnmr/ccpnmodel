@@ -29,6 +29,21 @@ from ccpn.util.Common import checkIsotope
 
 FILE_TYPE = 'Bruker'
 
+def _parseBrukerFile(filePath, paramsDict):
+
+  if not os.path.exists(filePath): # files should exist but play conservative
+    return
+
+  with open(filePath, 'rU', encoding='utf-8') as paramFileObj:
+
+    for line in paramFileObj:
+      if line.startswith('##'):
+        remainder = line[2:].strip()
+        key, value = remainder.split('=')
+        key = key.strip()
+        value = value.strip()
+        paramsDict[key] = value
+
 def readParams(filePath):
 
   if os.path.isdir(filePath):
@@ -72,19 +87,15 @@ def readParams(filePath):
   for i, procsFile in enumerate(procsFiles):
     procsPath = os.path.join(dirName, procsFile)
     procsDict = {}
-    
-    paramFileObj = open(procsPath, 'rU')
-    
-    for line in paramFileObj:
-      if line.startswith('##'):
-        remainder = line[2:].strip()
-        key, value = remainder.split('=')
-        key = key.strip()
-        value = value.strip()
-        procsDict[key] = value
-    
+    _parseBrukerFile(procsPath, procsDict)
     dimDicts.append(procsDict)
-    
+
+  acqusDirName = os.path.dirname(os.path.dirname(dirName))
+  for i in range(numDim):
+    acqusPath = os.path.join(acqusDirName, 'acqu%ss' % ('' if i == 0 else i+1))
+    procsDict = dimDicts[i]
+    _parseBrukerFile(acqusPath, procsDict)
+
   dataFile = os.path.join(dirName, '%d%s' % (numDim, numDim * 'r'))
   isBigEndian = dimDicts[0]['$BYTORDP'] == '1'
   if '$NC_proc' in dimDicts[0]:
@@ -120,7 +131,7 @@ def readParams(filePath):
     origNumPoints[i] = int(dimDict.get('$FTSIZE', 0))
     pointOffsets[i] = int(dimDict.get('$STSR', 0))
     specWidths[i] = float(dimDict.get('$SW_p', 10000.0))
-    specFreqs[i] = float(dimDict.get('$SF', 500.0))
+    specFreqs[i] = float(dimDict.get('$SFO1', dimDict.get('$SF', 500.0)))
     refPpms[i] = float(dimDict.get('$OFFSET', 0.0))
     refPoints[i] = float(dimDict.get('$refPoint', 0.0))
     isotopes[i] = checkIsotope(dimDict.get('$AXNUC', '<1H>')[1:-1])
