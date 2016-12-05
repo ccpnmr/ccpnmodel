@@ -779,6 +779,24 @@ dataDict['directNmrChain'] = value</item>
     </codeStubs>
   </MetaOperation>
 
+  <MetaOperation name="setResonances"
+   guid="www.ccpn.ac.uk_Fogh_2016-11-19-13:08:57_00001"
+   container="www.ccpn.ac.uk_Fogh_2006-08-16-14:22:47_00034"
+   isAbstract="false" isImplicit="false" isQuery="false" opType="set"
+   scope="instance_level" visibility="public_vis">
+    <documentation>Setter for resonances link - ensures resonance uniqueness constraint checking, which default one did not.</documentation>
+    <target>www.ccpn.ac.uk_Fogh_2006-08-16-18:20:09_00052</target>
+    <codeStubs>
+      <item tag="python">for cv in currentValues:
+  if (not (cv in values)):
+    cv.resonanceGroup = None
+
+for cv in values:
+  if (not (cv in currentValues)):
+    cv.resonanceGroup = self</item>
+    </codeStubs>
+  </MetaOperation>
+
   <MetaOperation name="setSequenceCode"
    guid="www.ccpn.ac.uk_Fogh_2014-10-24-16:26:38_00003"
    container="www.ccpn.ac.uk_Fogh_2006-08-16-14:22:47_00034"

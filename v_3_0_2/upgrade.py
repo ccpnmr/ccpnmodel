@@ -755,7 +755,7 @@ def copyMolSystemContents(molSystem, toMolSystem, chainMap):
     chainMap[chain] = newChain
     newChains.append(newChain)
 
-  chainCodeMap = dict(((key.code, val.code) for key,val in chainMap.items()))
+  # chainCodeMap = dict(((key.code, val.code) for key,val in chainMap.items()))
 
   # copy ChainInteractions
   for chainInteraction in molSystem.sortedChainInteractions():

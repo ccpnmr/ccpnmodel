@@ -22,6 +22,7 @@ __version__ = "$Revision$"
 # Start of code
 #=========================================================================================
 
+from typing import Tuple, List
 from ccpn.util.Constants import DEFAULT_ISOTOPE_DICT
 from ccpnmodel.ccpncore.lib.molecule import Labeling
 
@@ -48,6 +49,80 @@ def findLinkedResidue(self:"Residue", linkCode:str='prev'):
     return None
   else:
     return self.chain.findFirstResidue(seqId=newMolResidue.serial)
+
+def _getReferenceChemCompVar(self) -> 'ChemCompVar':
+  """Get Reference ChemCompVar, as used in the NEF standard.
+
+  Could be a derived, immutable link in the API model, but implemented as
+  function for flexibility.
+
+  NBNB - This does *NOT* always give the correct variant according to the NEF standard:
+  In some cases there is no ChemCompVar that matches - see comments in code.
+  These cases must be tested and compensated for in the calling code.
+  """
+  chemComp = self. chemComp
+  molType = chemComp.molType
+  residueType = chemComp.code3Letter
+
+  if molType == 'other':
+    result = chemComp.findFirstChemCompVar(linking='none', isDefaultVar=True)
+
+  elif residueType == 'HIS':
+    for ccv in chemComp.findAllChemCompVars(linking=self.linking):
+      variantParts = ccv.descriptor.split(';')
+      if (len(variantParts) > 1 and 'HD1' in variantParts[0] and 'HE2' in variantParts[1]):
+        result = ccv
+        break
+    else:
+      raise ValueError("No ChemCompVar with prot:HD1, deprot:HE2 found for HIS, linking %s"
+                       % self.linking)
+
+  elif self.linking == 'start' and residueType in ('DA', 'DC', 'DG', 'DT', 'A', 'C', 'G', 'U', ):
+    # NBNB This is NOT the correct result, but it is the closest we can get.
+    # Must be fixed downstream
+    result = chemComp.findFirstChemCompVar(linking='start', isDefaultVar=True)
+
+  elif (chemComp.className == 'StdChemComp' and (molType == 'protein' or
+            residueType in ('DA', 'DC', 'DG', 'DT', 'A', 'C', 'G', 'U', ))):
+    # NEF Standard Residue - OK
+    result = chemComp.findFirstChemCompVar(linking=self.linking, isDefaultVar=True)
+
+  else:
+    # protein, DNA, or RNA, but not a standard residue.
+    # NBNB This is NOT the correct result, but it is the closest we can get.
+    # Must be fixed downstream
+    result = chemComp.findFirstChemCompVar(linking='none', isDefaultVar=True)
+
+  #
+  return result
+
+def getAtomNameDifferences(self) -> Tuple[List[str], List[str]]:
+  """return list of atomNamesRemoved, atomNamesAdded, relative to reference standard"""
+  refChemCompVar = self._getReferenceChemCompVar()
+  chemComp = refChemCompVar.chemComp
+  refAtomNames = set(x.name for x in refChemCompVar.chemAtoms
+                   if x.className == 'ChemAtom')
+  residueType = chemComp.code3Letter
+
+  if chemComp.className == 'StdChemComp':
+    if self.linking == 'start' and residueType in ('DA', 'DC', 'DG', 'DT', 'A', 'C', 'G', 'U', ):
+      # Remove phosphate
+      for name in ('P', 'OP1', 'OP2', 'OP3'):
+        if name in refAtomNames:
+          refAtomNames.remove(name)
+      if "HO5'" not in refAtomNames:
+        refAtomNames.add("HO5'")
+
+  elif chemComp.molType != 'other':
+    # protein, DNA, or RNA, but not a standard residue.
+    # Correct for terminals to get to 'neutral' reference standard
+
+    # NBNB this may need fixes depending whether we use IUPAC (O', O'', H'')
+    # or PDB_REMED (O, OXT, HXT)
+    if 'H3' in refAtomNames:
+      refAtomNames.remove('H3')
+    if not "H''" in refAtomNames and chemComp.findFirstChemAtom(name="H''"):
+      refAtomNames.add("H''")
 
 
 # NBNB TODO FIXME update this to work.

@@ -856,7 +856,7 @@ def _getBoundResonances(resonance, recalculate=False, contribs=None, recursiveCa
 
   if foundBothPaired and not [x for x in expResonances if x in pairResonances]:
     # particular special case.
-    # Resonance is bound to both prochiral altrnatives but always as a pair.
+    # Resonance is bound to both prochiral alternatives but always as a pair.
 
     if recursiveCall:
       # This was called from elsewhere. We could resolve nothing, so send back to caller

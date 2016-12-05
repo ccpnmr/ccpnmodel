@@ -4486,7 +4486,6 @@ class MetaConstraint(MetaModelElement):
     if isinstance(self.container, MetaParameter):
       raise MemopsError("Attempt to add constraint to %s" % self.container)
 
-
   def addCodeStub(self, tag, value):
     """ Add codeStub
     """

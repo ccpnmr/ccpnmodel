@@ -642,18 +642,49 @@ def testExperimentFilter(project):
 if __name__ == '__main__':
   pass
 
+  counter = collections.Counter()
+
   from ccpnmodel.ccpncore.lib.Io.Api import newProject
   project = newProject("ExpPrototypeTest", overwriteExisting=True)
+  for cc in project.sortedChemComps():
+    counter['ChemComp'] += 1
+
+    for ns in cc.namingSystems:
+      counter[ns.name] += 1
+
+    if False: #cc.className == 'StdChemComp':
+      for ccv in cc.sortedChemCompVars():
+        if ccv.isDefaultVar:
+        #   print ('@~@~', cc.molType, cc.code3Letter, cc.code1Letter, ccv.linking, ccv.descriptor)
+          ll = sorted(x.name for x in ccv.chemAtoms if x.className == 'ChemAtom' and x.name.startswith('H'))
+          print ('\t'.join((cc.molType, cc.code3Letter, str(cc.code1Letter), str(ccv.isDefaultVar),
+                            ccv.linking, ccv.descriptor, str(ll))))
 
   # for item in sorted(testExperimentFilter(project).items()):
   #   pass
   #   # print ('\n%s:\n%s' % item)
 
-  counter = collections.Counter()
-  for nxp in project.nmrExpPrototypes:
-    for xx in nxp.atomSites:
-      counter[(xx.name, xx.isotopeCode)] += 1
+  # counter = collections.Counter()
+  # for nxp in project.nmrExpPrototypes:
+  #   for xx in nxp.atomSites:
+  #     counter[(xx.name, xx.isotopeCode)] += 1
 
   # for item in sorted(counter.items()):
   #   print ('@~@~', item)
+
+  for key, val in sorted(counter.items()):
+    print ('@~@~', key, val)
+
+  dd = {}
+  ala = project.findFirstChemComp(code3Letter='ALA')
+  for ns in ala.namingSystems:
+    dd[ns.name] = ll = []
+    for asn in ns.atomSysNames:
+      name = asn.atomName
+      sysName = asn.sysName
+      if name != sysName:
+        ll.append((name, sysName))
+
+  for key, ll in sorted(dd.items()):
+    print ('-->', key, ll)
 
