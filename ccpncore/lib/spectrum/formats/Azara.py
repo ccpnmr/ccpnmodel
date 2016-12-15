@@ -31,35 +31,34 @@ FILE_TYPE = 'Azara'
 
 def readParams(filePath):
   
-  # Check we didn't get a binary file
-  
-  fileObj = open(filePath, 'rb')
-  firstData = fileObj.read(1024)
-  
-  testData = set([c for c in firstData]) - commonUtil.WHITESPACE_AND_NULL
-  if min([ord(chr(c)) for c in testData]) < 32:
-    dataFile = filePath
-    dirName, fileName = os.path.split(filePath)
-    
-    for otherFile in os.listdir(dirName):
-      if otherFile == fileName:
-        continue
-    
-      if ('.par' in otherFile) and otherFile.startswith(fileName):
-        filePath = os.path.join(dirName, otherFile)
-        break
-    
+  # Check whether we have a binary file
+
+  with open(filePath, 'rb') as fileObj:
+    firstData = fileObj.read(1024)
+
+    testData = set([c for c in firstData]) - set([ord(w) for w in commonUtil.WHITESPACE_AND_NULL])
+    if min([ord(chr(c)) for c in testData]) < 32:
+      dataFile = filePath
+      filePath = dataFile + '.par'
+      if not os.path.exists(filePath):
+        dirName, fileName = os.path.split(filePath)
+
+        for otherFile in os.listdir(dirName):
+          if otherFile == fileName:
+            continue
+
+          if ('.par' in otherFile) and otherFile.startswith(fileName):
+            filePath = os.path.join(dirName, otherFile)
+            break
+
+        else:
+          msg = "Cannot find AZARA parameter file to go with binary file %s"
+          # showError('Error', msg % filePath)
+          return
     else:
-      msg = "Cannot find AZARA parameter file to go with binary file %s"
-      # showError('Error', msg % filePath)
-      return
-     
-  else:
-    dataFile = None
+      dataFile = None
       
-    
-  fileObj.close()
-  
+
   # Format invariant
 
   wordSize = 4
@@ -83,84 +82,82 @@ def readParams(filePath):
   isFloatData = True
   isBigEndian = sys.byteorder == 'big'
 
-  fileObj = open(filePath, 'rU')
+  with open(filePath, 'rU', encoding='utf-8') as fileObj:
 
-  dim = 0
-  for line in fileObj:
-    line = line.strip()
+    dim = 0
+    for line in fileObj:
+      line = line.strip()
 
-    if not line:
-      continue
+      if not line:
+        continue
 
-    if line.startswith('!'):
-      continue
+      if line.startswith('!'):
+        continue
 
-    if '!' in line:
-      line = line.split('!')[0]
+      if '!' in line:
+        line = line.split('!')[0]
 
-    data = line.split()
-    keyword = data[0]
+      data = line.split()
+      keyword = data[0]
 
-    if keyword == 'file':
-      if not dataFile:
-        dataFile = data[1]
+      if keyword == 'file':
+        if not dataFile:
+          dataFile = data[1]
 
-    elif keyword == 'int':
-      isFloatData = False
+      elif keyword == 'int':
+        isFloatData = False
 
-    elif keyword == 'swap':
-      isBigEndian = not isBigEndian
+      elif keyword == 'swap':
+        isBigEndian = not isBigEndian
 
-    elif keyword == 'big_endian':
-      isBigEndian = True
+      elif keyword == 'big_endian':
+        isBigEndian = True
 
-    elif keyword == 'little_endian':
-      isBigEndian = False
+      elif keyword == 'little_endian':
+        isBigEndian = False
 
-    elif keyword == 'ndim':
-      nDim = int(data[1])
-      numPoints = [None] * nDim
-      blockSizes = [1] * nDim
-      refPpms = [1.0] * nDim
-      refPoints = [1.0] * nDim
-      specWidths = [1000.0] * nDim
-      specFreqs = [500.0] * nDim
-      isotopes = ['1H'] * nDim
-      sampledSigmas = [[]] * nDim
-      sampledValues = [[]] * nDim
+      elif keyword == 'ndim':
+        nDim = int(data[1])
+        numPoints = [None] * nDim
+        blockSizes = [1] * nDim
+        refPpms = [1.0] * nDim
+        refPoints = [1.0] * nDim
+        specWidths = [1000.0] * nDim
+        specFreqs = [500.0] * nDim
+        isotopes = ['1H'] * nDim
+        sampledSigmas = [[]] * nDim
+        sampledValues = [[]] * nDim
 
-    elif keyword == 'dim':
-      dim = int(data[1]) - 1
+      elif keyword == 'dim':
+        dim = int(data[1]) - 1
 
-    elif keyword == 'npts':
-      numPoints[dim] = int(data[1])
+      elif keyword == 'npts':
+        numPoints[dim] = int(data[1])
 
-    elif keyword == 'block':
-      blockSizes[dim] = int(data[1])
+      elif keyword == 'block':
+        blockSizes[dim] = int(data[1])
 
-    elif keyword == 'sw':
-      specWidths[dim] = float(data[1])
+      elif keyword == 'sw':
+        specWidths[dim] = float(data[1])
 
-    elif keyword == 'sf':
-      specFreqs[dim] = float(data[1])
+      elif keyword == 'sf':
+        specFreqs[dim] = float(data[1])
 
-    elif keyword == 'refppm':
-      refPpms[dim] = float(data[1])
+      elif keyword == 'refppm':
+        refPpms[dim] = float(data[1])
 
-    elif keyword == 'refpt':
-      refPoints[dim] = float(data[1])
+      elif keyword == 'refpt':
+        refPoints[dim] = float(data[1])
 
-    elif keyword == 'nuc':
-      isotopes[dim] = commonUtil.checkIsotope(data[1])
+      elif keyword == 'nuc':
+        isotopes[dim] = commonUtil.checkIsotope(data[1])
 
-    elif keyword == 'params':
-      sampledValues[dim] = [float(x) for x in data[1:]]
-      isotopes[dim] = None
+      elif keyword == 'params':
+        sampledValues[dim] = [float(x) for x in data[1:]]
+        isotopes[dim] = None
 
-    elif keyword == 'sigmas':
-      sampledSigmas[dim] = [float(x) for x in data[1:]]
-
-  fileObj.close()
+      elif keyword == 'sigmas':
+        sampledSigmas[dim] = [float(x) for x in data[1:]]
 
   if dataFile is None:
     msg = "AZARA spectrum file not set in parameters"
