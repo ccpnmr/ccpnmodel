@@ -175,7 +175,7 @@ def analyseUrl(filePath):
       return ('Spectrum', VARIAN, dirName)
 
     if fileName.endswith('.spc'):
-      return ('Spectrum', AZARA, filePath)
+      return ('Spectrum', AZARA, filePath+'.par')
 
     from array import array
 
@@ -253,11 +253,9 @@ def analyseUrl(filePath):
     if fileName == 'procpar':
       return ('Spectrum', VARIAN, dirName)
 
-    if (fileName.endswith('.par') and ('ndim ' in textblock) and ('file ' in textblock) and
+    if (('.par' in fileName) and ('ndim ' in textblock) and ('file ' in textblock) and
         ('npts ' in textblock) and ('block ' in textblock)):
-      spectrumPath = filePath[:-4]
-      if os.path.isfile(spectrumPath):
-        return ('Spectrum', AZARA, spectrumPath)
+      return ('Spectrum', AZARA, filePath)
 
     if any(line for line in textblock.splitlines() if line.startswith('ATOM  ')):
       # Assume it is a PDB-type file
