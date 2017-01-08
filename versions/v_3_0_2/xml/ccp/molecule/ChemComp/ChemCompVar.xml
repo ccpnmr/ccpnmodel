@@ -150,7 +150,7 @@ linking = self.linking
 isValid = True
 
 # none means no links, except for linear polymers
-if linking == 'none':
+if linking in ('none', 'dummy'):
   if le and not self.chemComp.isLinearPolymer:
     isValid = False
 
@@ -1091,7 +1091,7 @@ if (!("start".equals(value) || "middle".equals(value) || "end".equals(value) ||
 }
 </item>
         <item tag="python">isValid = True
-if value not in ('start', 'middle', 'end', 'none'):
+if value not in ('start', 'middle', 'end', 'none', 'dummy'):
   if value.startswith('link:'):
     chemComp = self.chemComp
     for lc in value[5:].split(','):

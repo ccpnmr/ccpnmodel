@@ -113,7 +113,7 @@ objectdomain.uml.core.Stereotype-owns $19
 ($3 21 < 0_-fvi_hrnjywg5_-k9z "StructureEnsemble" 2
 (autoSizeToFit true)
 (uid "0_-fvi_hrnjywg5_-k9z")
-(bbx 1100 430 290 200))
+(bbx 1100 430 290 210))
 ($4 22 < 0_-fvi_hrnjywg5_-k9y "" 2
 (toMultiplicityPosition 1125 410)
 (uid "0_-fvi_hrnjywg5_-k9y")
@@ -258,8 +258,8 @@ objectdomain.uml.core.Stereotype-owns $19
 (fromRolePosition 950 705)
 (fromMultiplicityPosition 965 680))
 ($4 53 < 0_63g_hy9wq6if_-p86 "" 2
-(toMultiplicityPosition 930 865)
-(toRolePosition 955 870)
+(toMultiplicityPosition 955 865)
+(toRolePosition 955 880)
 (uid "0_63g_hy9wq6if_-p86")
 (points 990 825 1075 825 1075 915 945 915 945 860)
 (fromRolePosition 1010 830)
@@ -289,15 +289,16 @@ objectdomain.uml.core.Stereotype-owns $19
 (lineStyle "oblique"))
 ($3 59 < ajvq9s_-dfu_it04jl4i_-p8t "ChainGroup" 2
 (uid "ajvq9s_-dfu_it04jl4i_-p8t")
-(bbx 340 120 100 60))
+(bbx 340 120 100 70))
 ($4 60 < ajvq9s_-dfu_it04jl4i_-p92 "" 2
 (autoSizeToFit true)
 (toMultiplicityPosition 400 100)
 (uid "ajvq9s_-dfu_it04jl4i_-p92")
 (points 930 30 410 30 410 120)
-(fromRolePosition 895 20))
+(fromRolePosition 895 20)
+(fromMultiplicityPosition 910 45))
 ($4 61 < ajvq9s_-dfu_it04jl4i_-p8y "" 2
-(toMultiplicityPosition 445 140)
+(toMultiplicityPosition 445 155)
 (uid "ajvq9s_-dfu_it04jl4i_-p8y")
 (points 490 155 440 155)
 (fromMultiplicityPosition 485 160))
@@ -2841,7 +2842,19 @@ objectdomain.uml.core.Stereotype-owns $19
 (value "name"
 )
 (uid "0_-fvi_hrnjywg5_-jzq"))
-($13 451 < 0_63g_hy9wq6if_-p85 "non_single_atoms_have_components" 385
+($8 451 < 0_-f39_ivsq1uvl_-p98 "destructorCode:python" 385
+(name "destructorCode:python"
+)
+(value "# The following code interacts directly with the deletion implementation (use of 'objsToBeDeleted'). "
+"# This is bad, but the only way to accomplish the desired result."
+"for atomGroup in self.atomGroups:"
+"  if len(atomGroup.components) <= 2:"
+"    #  NB there is nothing to check for cascading, so wee can put this to delete directly."
+"    objsToBeDeleted.add(atomGroup)"
+"    "
+)
+(uid "0_-f39_ivsq1uvl_-p98"))
+($13 452 < 0_63g_hy9wq6if_-p85 "non_single_atoms_have_components" 385
 (name "non_single_atoms_have_components"
 )
 (uid "0_63g_hy9wq6if_-p85")
@@ -2853,108 +2866,108 @@ objectdomain.uml.core.Stereotype-owns $19
 "_"
 "(self.atomType == 'single') == (not self.components)"
 ))
-($8 452 < 0_63g_hy9wq6if_-p7s "guid" 451
+($8 453 < 0_63g_hy9wq6if_-p7s "guid" 452
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-07-31-11:44:56_00001"
 )
 (uid "0_63g_hy9wq6if_-p7s"))
-($6 453 < 0_-fvi_hrnjywg5_-jzp "Residue" 1
+($6 454 < 0_-fvi_hrnjywg5_-jzp "Residue" 1
 (name "Residue"
 )
 (uid "0_-fvi_hrnjywg5_-jzp"))
-($7 454 < 0_-fvi_hrnjywg5_-jzo "seqId" 453
+($7 455 < 0_-fvi_hrnjywg5_-jzo "seqId" 454
 (changeability "frozen")
 (name "seqId"
 )
 (uid "0_-fvi_hrnjywg5_-jzo")
 (multiplicity "1"))
-($8 455 < 0_-fvi_hrnjywg5_-jzn "documentation" 454
+($8 456 < 0_-fvi_hrnjywg5_-jzn "documentation" 455
 (name "documentation"
 )
 (value "Identifier corresponding to the molResidue identifier (self.molResidue.serial)"
 )
 (uid "0_-fvi_hrnjywg5_-jzn"))
-($8 456 < 0_-fvi_hrnjywg5_-jzm "guid" 454
+($8 457 < 0_-fvi_hrnjywg5_-jzm "guid" 455
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:32_00043"
 )
 (uid "0_-fvi_hrnjywg5_-jzm"))
-($7 457 < 0_-fvi_hrnjywg5_-jzl "seqCode" 453
+($7 458 < 0_-fvi_hrnjywg5_-jzl "seqCode" 454
 (name "seqCode"
 )
 (uid "0_-fvi_hrnjywg5_-jzl")
 (multiplicity "1"))
-($8 458 < 0_-fvi_hrnjywg5_-jzk "documentation" 457
+($8 459 < 0_-fvi_hrnjywg5_-jzk "documentation" 458
 (name "documentation"
 )
 (value "Author sequence identifier. Set to MolResidue.seqCode when the Residue is"
 "created as part of the Chain constructor."
 )
 (uid "0_-fvi_hrnjywg5_-jzk"))
-($8 459 < 0_-fvi_hrnjywg5_-jzj "guid" 457
+($8 460 < 0_-fvi_hrnjywg5_-jzj "guid" 458
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00001"
 )
 (uid "0_-fvi_hrnjywg5_-jzj"))
-($9 460 < 0_-fvi_hrnjywg5_-jzi "getMolResidue" 453
+($9 461 < 0_-fvi_hrnjywg5_-jzi "getMolResidue" 454
 (name "getMolResidue"
 )
 (uid "0_-fvi_hrnjywg5_-jzi")
 (isQuery true))
-($8 461 < 0_-fvi_hrnjywg5_-jzh "documentation" 460
+($8 462 < 0_-fvi_hrnjywg5_-jzh "documentation" 461
 (name "documentation"
 )
 (value "getter function for derived link molResidue"
 )
 (uid "0_-fvi_hrnjywg5_-jzh"))
-($8 462 < 0_-fvi_hrnjywg5_-jzg "opType" 460
+($8 463 < 0_-fvi_hrnjywg5_-jzg "opType" 461
 (name "opType"
 )
 (value "get"
 )
 (uid "0_-fvi_hrnjywg5_-jzg"))
-($8 463 < 0_-fvi_hrnjywg5_-jzf "guid" 460
+($8 464 < 0_-fvi_hrnjywg5_-jzf "guid" 461
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00009"
 )
 (uid "0_-fvi_hrnjywg5_-jzf"))
-($8 464 < 0_-fvi_hrnjywg5_-jze "code:java" 460
+($8 465 < 0_-fvi_hrnjywg5_-jze "code:java" 461
 (name "code:java"
 )
 (value "result = getChain().getMolecule().findFirstMolResidue(\"serial\", getSeqId());"
 )
 (uid "0_-fvi_hrnjywg5_-jze"))
-($8 465 < 0_-fvi_hrnjywg5_-jzd "code:python" 460
+($8 466 < 0_-fvi_hrnjywg5_-jzd "code:python" 461
 (name "code:python"
 )
 (value "result = self.getByNavigation('chain', 'molecule', ('molResidues', self.seqId))"
 )
 (uid "0_-fvi_hrnjywg5_-jzd"))
-($7 466 < 0_-fvi_hrnjywg5_-jzc "seqInsertCode" 453
+($7 467 < 0_-fvi_hrnjywg5_-jzc "seqInsertCode" 454
 (initialValue " "
 )
 (name "seqInsertCode"
 )
 (uid "0_-fvi_hrnjywg5_-jzc")
 (multiplicity "1"))
-($8 467 < 0_-fvi_hrnjywg5_-jzb "documentation" 466
+($8 468 < 0_-fvi_hrnjywg5_-jzb "documentation" 467
 (name "documentation"
 )
 (value "Author insertion code. Defaults to MolResidue.seqInsertCode (which again defaults to a single white space ' ') when the Residue is"
 "created as part of the Chain constructor.."
 )
 (uid "0_-fvi_hrnjywg5_-jzb"))
-($8 468 < 0_-fvi_hrnjywg5_-jza "guid" 466
+($8 469 < 0_-fvi_hrnjywg5_-jza "guid" 467
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00002"
 )
 (uid "0_-fvi_hrnjywg5_-jza"))
-($13 469 < 0_-fvi_hrnjywg5_-jz9 "length_is_one" 466
+($13 470 < 0_-fvi_hrnjywg5_-jz9 "length_is_one" 467
 (name "length_is_one"
 )
 (uid "0_-fvi_hrnjywg5_-jz9")
@@ -2966,84 +2979,84 @@ objectdomain.uml.core.Stereotype-owns $19
 "_"
 "value.length() == 1"
 ))
-($8 470 < 0_-fvi_hrnjywg5_-jz8 "guid" 469
+($8 471 < 0_-fvi_hrnjywg5_-jz8 "guid" 470
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00003"
 )
 (uid "0_-fvi_hrnjywg5_-jz8"))
-($7 471 < 0_-fvi_hrnjywg5_-jz7 "molType" 453
+($7 472 < 0_-fvi_hrnjywg5_-jz7 "molType" 454
 (changeability "frozen")
 (name "molType"
 )
 (uid "0_-fvi_hrnjywg5_-jz7")
 (multiplicity "1"))
-($8 472 < 0_-fvi_hrnjywg5_-jz6 "isDerived" 471
+($8 473 < 0_-fvi_hrnjywg5_-jz6 "isDerived" 472
 (name "isDerived"
 )
 (value "True"
 )
 (uid "0_-fvi_hrnjywg5_-jz6"))
-($8 473 < 0_-fvi_hrnjywg5_-jz5 "documentation" 471
+($8 474 < 0_-fvi_hrnjywg5_-jz5 "documentation" 472
 (name "documentation"
 )
 (value "molType of ChemComp corresponding to Residue"
 )
 (uid "0_-fvi_hrnjywg5_-jz5"))
-($8 474 < 0_-fvi_hrnjywg5_-jz4 "guid" 471
+($8 475 < 0_-fvi_hrnjywg5_-jz4 "guid" 472
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00004"
 )
 (uid "0_-fvi_hrnjywg5_-jz4"))
-($7 475 < 0_-fvi_hrnjywg5_-jz3 "ccpCode" 453
+($7 476 < 0_-fvi_hrnjywg5_-jz3 "ccpCode" 454
 (changeability "frozen")
 (name "ccpCode"
 )
 (uid "0_-fvi_hrnjywg5_-jz3")
 (multiplicity "1"))
-($8 476 < 0_-fvi_hrnjywg5_-jz2 "isDerived" 475
+($8 477 < 0_-fvi_hrnjywg5_-jz2 "isDerived" 476
 (name "isDerived"
 )
 (value "True"
 )
 (uid "0_-fvi_hrnjywg5_-jz2"))
-($8 477 < 0_-fvi_hrnjywg5_-jz1 "documentation" 475
+($8 478 < 0_-fvi_hrnjywg5_-jz1 "documentation" 476
 (name "documentation"
 )
 (value "ccpCode of ChemComp corresponding to Residue"
 )
 (uid "0_-fvi_hrnjywg5_-jz1"))
-($8 478 < 0_-fvi_hrnjywg5_-jz0 "guid" 475
+($8 479 < 0_-fvi_hrnjywg5_-jz0 "guid" 476
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00005"
 )
 (uid "0_-fvi_hrnjywg5_-jz0"))
-($7 479 < 0_-fvi_hrnjywg5_-jyz "linking" 453
+($7 480 < 0_-fvi_hrnjywg5_-jyz "linking" 454
 (name "linking"
 )
 (uid "0_-fvi_hrnjywg5_-jyz")
 (multiplicity "1"))
-($8 480 < 0_-fvi_hrnjywg5_-jyy "documentation" 479
+($8 481 < 0_-fvi_hrnjywg5_-jyy "documentation" 480
 (name "documentation"
 )
 (value "linking (substitution pattern) of ChemCompVar corresponding to Residue. linking and descriptor may be changed for existing Residues, thus changing the identity of the corresponding ChemCompVar. "
 "The new chemCompVar must contain a ChemAtom to correspond to every existing Atom, and a LinkEnd to correspond to every existing MolSystemLinkEnd, as well as every existing MolResLinkEnd in the MolResidue. Note that this may require that Atom and MolSystemLinkEnd objects be deleted before the linking and descriptor can be modified. "
 )
 (uid "0_-fvi_hrnjywg5_-jyy"))
-($8 481 < 0_-fvi_hrnjywg5_-jyx "guid" 479
+($8 482 < 0_-fvi_hrnjywg5_-jyx "guid" 480
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00006"
 )
 (uid "0_-fvi_hrnjywg5_-jyx"))
-($7 482 < 0_-fvi_hrnjywg5_-jyw "descriptor" 453
+($7 483 < 0_-fvi_hrnjywg5_-jyw "descriptor" 454
 (name "descriptor"
 )
 (uid "0_-fvi_hrnjywg5_-jyw")
 (multiplicity "1"))
-($8 483 < 0_-fvi_hrnjywg5_-jyv "documentation" 482
+($8 484 < 0_-fvi_hrnjywg5_-jyv "documentation" 483
 (name "documentation"
 )
 (value "descriptor of ChemCompVar corresponding to Residue. Describes topological variant, i.e. protonation state or (for Polymers) non-polymer type substitution."
@@ -3052,274 +3065,274 @@ objectdomain.uml.core.Stereotype-owns $19
 "The new chemCompVar must contain a ChemAtom to correspond to every existing Atom, and a LinkEnd to correspond to every existing MolSystemLinkEnd, as well as every existing MolResLinkEnd in the MolResidue. Note that this may require that Atom and MolSsytemLinkEnd objects be deleted before the linking and descriptor can be modified. "
 )
 (uid "0_-fvi_hrnjywg5_-jyv"))
-($8 484 < 0_-fvi_hrnjywg5_-jyu "guid" 482
+($8 485 < 0_-fvi_hrnjywg5_-jyu "guid" 483
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00007"
 )
 (uid "0_-fvi_hrnjywg5_-jyu"))
-($7 485 < 0_6e6_hy7f8lhz_-p8q "code3Letter" 453
+($7 486 < 0_6e6_hy7f8lhz_-p8q "code3Letter" 454
 (changeability "frozen")
 (name "code3Letter"
 )
 (uid "0_6e6_hy7f8lhz_-p8q")
 (multiplicity "1"))
-($8 486 < 0_6e6_hy7f8lhz_-p8p "documentation" 485
+($8 487 < 0_6e6_hy7f8lhz_-p8p "documentation" 486
 (name "documentation"
 )
 (value "ChemComp.code3Letter for residue"
 )
 (uid "0_6e6_hy7f8lhz_-p8p"))
-($8 487 < 0_6e6_hy7f8lhz_-p7l "guid" 485
+($8 488 < 0_6e6_hy7f8lhz_-p7l "guid" 486
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-07-30-17:44:23_00009"
 )
 (uid "0_6e6_hy7f8lhz_-p7l"))
-($8 488 < 0_6e6_hzvfbxnm_-p98 "isDerived" 485
+($8 489 < 0_6e6_hzvfbxnm_-p98 "isDerived" 486
 (name "isDerived"
 )
 (value "True"
 )
 (uid "0_6e6_hzvfbxnm_-p98"))
-($7 489 < 0_-fvi_hrnjywg5_-jyt "details" 453
+($7 490 < 0_-fvi_hrnjywg5_-jyt "details" 454
 (name "details"
 )
 (uid "0_-fvi_hrnjywg5_-jyt"))
-($8 490 < 0_-fvi_hrnjywg5_-jys "documentation" 489
+($8 491 < 0_-fvi_hrnjywg5_-jys "documentation" 490
 (name "documentation"
 )
 (value "free text for notes, etc."
 )
 (uid "0_-fvi_hrnjywg5_-jys"))
-($8 491 < 0_-fvi_hrnjywg5_-jyr "guid" 489
+($8 492 < 0_-fvi_hrnjywg5_-jyr "guid" 490
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00008"
 )
 (uid "0_-fvi_hrnjywg5_-jyr"))
-($9 492 < 0_-fvi_hrnjywg5_-jyq "getMolType" 453
+($9 493 < 0_-fvi_hrnjywg5_-jyq "getMolType" 454
 (name "getMolType"
 )
 (uid "0_-fvi_hrnjywg5_-jyq")
 (isQuery true))
-($8 493 < 0_-fvi_hrnjywg5_-jyp "documentation" 492
+($8 494 < 0_-fvi_hrnjywg5_-jyp "documentation" 493
 (name "documentation"
 )
 (value "getter for derived attribute molType"
 )
 (uid "0_-fvi_hrnjywg5_-jyp"))
-($8 494 < 0_-fvi_hrnjywg5_-jyo "opType" 492
+($8 495 < 0_-fvi_hrnjywg5_-jyo "opType" 493
 (name "opType"
 )
 (value "get"
 )
 (uid "0_-fvi_hrnjywg5_-jyo"))
-($8 495 < 0_-fvi_hrnjywg5_-jyn "guid" 492
+($8 496 < 0_-fvi_hrnjywg5_-jyn "guid" 493
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00011"
 )
 (uid "0_-fvi_hrnjywg5_-jyn"))
-($8 496 < 0_-fvi_hrnjywg5_-jym "code:java" 492
+($8 497 < 0_-fvi_hrnjywg5_-jym "code:java" 493
 (name "code:java"
 )
 (value "result = getChain().getMolecule().findFirstMolResidue(\"serial\", getSeqId()).getChemComp().getMolType();"
 )
 (uid "0_-fvi_hrnjywg5_-jym"))
-($8 497 < 0_-fvi_hrnjywg5_-jyl "code:python" 492
+($8 498 < 0_-fvi_hrnjywg5_-jyl "code:python" 493
 (name "code:python"
 )
 (value "result = self.getByNavigation('chain', 'molecule', ('molResidues', self.seqId), 'chemComp', 'molType')"
 )
 (uid "0_-fvi_hrnjywg5_-jyl"))
-($9 498 < 0_-fvi_hrnjywg5_-jyk "getCcpCode" 453
+($9 499 < 0_-fvi_hrnjywg5_-jyk "getCcpCode" 454
 (name "getCcpCode"
 )
 (uid "0_-fvi_hrnjywg5_-jyk")
 (isQuery true))
-($8 499 < 0_-fvi_hrnjywg5_-jyj "documentation" 498
+($8 500 < 0_-fvi_hrnjywg5_-jyj "documentation" 499
 (name "documentation"
 )
 (value "getter for derived attribute ccpCode"
 )
 (uid "0_-fvi_hrnjywg5_-jyj"))
-($8 500 < 0_-fvi_hrnjywg5_-jyi "opType" 498
+($8 501 < 0_-fvi_hrnjywg5_-jyi "opType" 499
 (name "opType"
 )
 (value "get"
 )
 (uid "0_-fvi_hrnjywg5_-jyi"))
-($8 501 < 0_-fvi_hrnjywg5_-jyh "guid" 498
+($8 502 < 0_-fvi_hrnjywg5_-jyh "guid" 499
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00013"
 )
 (uid "0_-fvi_hrnjywg5_-jyh"))
-($8 502 < 0_-fvi_hrnjywg5_-jyg "code:java" 498
+($8 503 < 0_-fvi_hrnjywg5_-jyg "code:java" 499
 (name "code:java"
 )
 (value "result = getChain().getMolecule().findFirstMolResidue(\"serial\", getSeqId()).getChemComp().getCcpCode();"
 )
 (uid "0_-fvi_hrnjywg5_-jyg"))
-($8 503 < 0_-fvi_hrnjywg5_-jyf "code:python" 498
+($8 504 < 0_-fvi_hrnjywg5_-jyf "code:python" 499
 (name "code:python"
 )
 (value "result = self.getByNavigation('chain', 'molecule', ('molResidues', self.seqId), 'chemComp', 'ccpCode')"
 )
 (uid "0_-fvi_hrnjywg5_-jyf"))
-($9 504 < 0_-fvi_hrnjywg5_-jye "getChemCompVar" 453
+($9 505 < 0_-fvi_hrnjywg5_-jye "getChemCompVar" 454
 (name "getChemCompVar"
 )
 (uid "0_-fvi_hrnjywg5_-jye")
 (isQuery true))
-($8 505 < 0_-fvi_hrnjywg5_-jyd "documentation" 504
+($8 506 < 0_-fvi_hrnjywg5_-jyd "documentation" 505
 (name "documentation"
 )
 (value "getter for derived link chemCompVar"
 )
 (uid "0_-fvi_hrnjywg5_-jyd"))
-($8 506 < 0_-fvi_hrnjywg5_-jyc "opType" 504
+($8 507 < 0_-fvi_hrnjywg5_-jyc "opType" 505
 (name "opType"
 )
 (value "get"
 )
 (uid "0_-fvi_hrnjywg5_-jyc"))
-($8 507 < 0_-fvi_hrnjywg5_-jyb "guid" 504
+($8 508 < 0_-fvi_hrnjywg5_-jyb "guid" 505
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00015"
 )
 (uid "0_-fvi_hrnjywg5_-jyb"))
-($8 508 < 0_-fvi_hrnjywg5_-jya "code:java" 504
+($8 509 < 0_-fvi_hrnjywg5_-jya "code:java" 505
 (name "code:java"
 )
 (value "result = getChain().getMolecule().findFirstMolResidue(\"serial\", getSeqId()).getChemComp().findFirstChemCompVar(\"linking\", getLinking(), \"descriptor\", getDescriptor());"
 )
 (uid "0_-fvi_hrnjywg5_-jya"))
-($8 509 < 0_-fvi_hrnjywg5_-jy9 "code:python" 504
+($8 510 < 0_-fvi_hrnjywg5_-jy9 "code:python" 505
 (name "code:python"
 )
 (value "# NB left with direct access for speed only"
 "result = self.getByNavigation('chain', 'molecule', ('molResidues', dataDict['seqId']), 'chemComp', ('chemCompVars',(dataDict['linking'],dataDict['descriptor'])))"
 )
 (uid "0_-fvi_hrnjywg5_-jy9"))
-($9 510 < 0_6e6_hzvfbxnm_-p97 "getCode3Letter" 453
+($9 511 < 0_6e6_hzvfbxnm_-p97 "getCode3Letter" 454
 (name "getCode3Letter"
 )
 (uid "0_6e6_hzvfbxnm_-p97")
 (isQuery true))
-($8 511 < 0_6e6_hzvfbxnm_-p96 "documentation" 510
+($8 512 < 0_6e6_hzvfbxnm_-p96 "documentation" 511
 (name "documentation"
 )
 (value "getter for derived linik code3Letter"
 )
 (uid "0_6e6_hzvfbxnm_-p96"))
-($8 512 < 0_6e6_hzvfbxnm_-p95 "code:python" 510
+($8 513 < 0_6e6_hzvfbxnm_-p95 "code:python" 511
 (name "code:python"
 )
 (value "result = self.getByNavigation('chain', 'molecule', ('molResidues', self.seqId), 'chemComp', 'code3Letter')"
 )
 (uid "0_6e6_hzvfbxnm_-p95"))
-($8 513 < 0_6e6_hzvfbxnm_-p94 "opType" 510
+($8 514 < 0_6e6_hzvfbxnm_-p94 "opType" 511
 (name "opType"
 )
 (value "get"
 )
 (uid "0_6e6_hzvfbxnm_-p94"))
-($8 514 < 0_6e6_hzvfbxnm_-p93 "code:java" 510
+($8 515 < 0_6e6_hzvfbxnm_-p93 "code:java" 511
 (name "code:java"
 )
 (value "result = getChain().getMolecule().findFirstMolResidue(\"serial\", getSeqId()).getChemComp().getCode3Letter();"
 )
 (uid "0_6e6_hzvfbxnm_-p93"))
-($8 515 < 0_63g_hzzn6zkl_-p98 "guid" 510
+($8 516 < 0_63g_hzzn6zkl_-p98 "guid" 511
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-09-12-15:51:34_00001"
 )
 (uid "0_63g_hzzn6zkl_-p98"))
-($10 516 < 0_-fvi_hrnjywg5_-jy8 "#<anon> (Residue, Atom)##," 453
+($10 517 < 0_-fvi_hrnjywg5_-jy8 "#<anon> (Residue, Atom)##," 454
 (name "")
 (uid "0_-fvi_hrnjywg5_-jy8"))
-($11 517 < 0_-fvi_hrnjywg5_-jy7 "#0" 516
+($11 518 < 0_-fvi_hrnjywg5_-jy7 "#0" 517
 (changeability "frozen")
 (aggregation "composite")
 (uid "0_-fvi_hrnjywg5_-jy7")
 (multiplicity "1"))
-($8 518 < 0_-fvi_hrnjywg5_-jy6 "documentation" 517
+($8 519 < 0_-fvi_hrnjywg5_-jy6 "documentation" 518
 (name "documentation"
 )
 (value "parent link"
 )
 (uid "0_-fvi_hrnjywg5_-jy6"))
-($8 519 < 0_-fvi_hrnjywg5_-jy5 "guid" 517
+($8 520 < 0_-fvi_hrnjywg5_-jy5 "guid" 518
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:32_00032"
 )
 (uid "0_-fvi_hrnjywg5_-jy5"))
-($11 520 < 0_-fvi_hrnjywg5_-jy4 "#1" 516
+($11 521 < 0_-fvi_hrnjywg5_-jy4 "#1" 517
 (uid "0_-fvi_hrnjywg5_-jy4")
 (multiplicity "*"))
-($8 521 < 0_-fvi_hrnjywg5_-jy3 "documentation" 520
+($8 522 < 0_-fvi_hrnjywg5_-jy3 "documentation" 521
 (name "documentation"
 )
 (value "child link"
 )
 (uid "0_-fvi_hrnjywg5_-jy3"))
-($8 522 < 0_-fvi_hrnjywg5_-jy2 "guid" 520
+($8 523 < 0_-fvi_hrnjywg5_-jy2 "guid" 521
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:32_00033"
 )
 (uid "0_-fvi_hrnjywg5_-jy2"))
-($10 523 < 0_-fvi_hrnjywg5_-jy1 "#<anon> (Residue, ChemCompVar)##," 453
+($10 524 < 0_-fvi_hrnjywg5_-jy1 "#<anon> (Residue, ChemCompVar)##," 454
 (name "")
 (uid "0_-fvi_hrnjywg5_-jy1"))
-($11 524 < 0_-fvi_hrnjywg5_-jy0 "#0" 523
+($11 525 < 0_-fvi_hrnjywg5_-jy0 "#0" 524
 (uid "0_-fvi_hrnjywg5_-jy0")
 (isNavigable false))
-($11 525 < 0_-fvi_hrnjywg5_-jxz "#1" 523
+($11 526 < 0_-fvi_hrnjywg5_-jxz "#1" 524
 (changeability "frozen")
 (uid "0_-fvi_hrnjywg5_-jxz")
 (multiplicity "1"))
-($8 526 < 0_-fvi_hrnjywg5_-jxy "documentation" 525
+($8 527 < 0_-fvi_hrnjywg5_-jxy "documentation" 526
 (name "documentation"
 )
 (value "ChemCompVar (that is, specific protonation state etc.) of the chemComp corresponding to this particular residue. "
 )
 (uid "0_-fvi_hrnjywg5_-jxy"))
-($8 527 < 0_-fvi_hrnjywg5_-jxx "guid" 525
+($8 528 < 0_-fvi_hrnjywg5_-jxx "guid" 526
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:32_00034"
 )
 (uid "0_-fvi_hrnjywg5_-jxx"))
-($8 528 < 0_-fvi_hrnjywg5_-jxw "isDerived" 523
+($8 529 < 0_-fvi_hrnjywg5_-jxw "isDerived" 524
 (name "isDerived"
 )
 (value "True"
 )
 (uid "0_-fvi_hrnjywg5_-jxw"))
-($10 529 < 0_-fvi_hrnjywg5_-jxm "#<anon> (Residue, ResonanceGroup)##," 453
+($10 530 < 0_-fvi_hrnjywg5_-jxm "#<anon> (Residue, ResonanceGroup)##," 454
 (name "")
 (uid "0_-fvi_hrnjywg5_-jxm"))
-($11 530 < 0_-fvi_hrnjywg5_-jxl "#0" 529
+($11 531 < 0_-fvi_hrnjywg5_-jxl "#0" 530
 (uid "0_-fvi_hrnjywg5_-jxl"))
-($8 531 < 0_-fvi_hrnjywg5_-jxk "documentation" 530
+($8 532 < 0_-fvi_hrnjywg5_-jxk "documentation" 531
 (name "documentation"
 )
 (value "Residue to which ResonanceGroup definitely belongs. In case of conflict, this link overrides conflicting ResidueType or Residue probabilities. OBSOLETE. TO BE REMOVED"
 )
 (uid "0_-fvi_hrnjywg5_-jxk"))
-($8 532 < 0_-fvi_hrnjywg5_-jxj "guid" 530
+($8 533 < 0_-fvi_hrnjywg5_-jxj "guid" 531
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:32_00038"
 )
 (uid "0_-fvi_hrnjywg5_-jxj"))
-($13 533 < 0_-fvi_hrnjywg5_-jxi "residue_consistent_with_chemComp" 530
+($13 534 < 0_-fvi_hrnjywg5_-jxi "residue_consistent_with_chemComp" 531
 (name "residue_consistent_with_chemComp"
 )
 (uid "0_-fvi_hrnjywg5_-jxi")
@@ -3332,127 +3345,127 @@ objectdomain.uml.core.Stereotype-owns $19
 "_"
 "(self.getChemComp() == null) || (self.getChemComp() == other.getMolResidue().getChemComp())"
 ))
-($8 534 < 0_-fvi_hrnjywg5_-jxh "guid" 533
+($8 535 < 0_-fvi_hrnjywg5_-jxh "guid" 534
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:32_00040"
 )
 (uid "0_-fvi_hrnjywg5_-jxh"))
-($11 535 < 0_-fvi_hrnjywg5_-jxe "#1" 529
+($11 536 < 0_-fvi_hrnjywg5_-jxe "#1" 530
 (uid "0_-fvi_hrnjywg5_-jxe")
 (multiplicity "*"))
-($8 536 < 0_-fvi_hrnjywg5_-jxd "documentation" 535
+($8 537 < 0_-fvi_hrnjywg5_-jxd "documentation" 536
 (name "documentation"
 )
 (value "ResonanceGroups that are definitely assigned to this residue. OBSOLETE. TO BE REMOVED"
 )
 (uid "0_-fvi_hrnjywg5_-jxd"))
-($8 537 < 0_-fvi_hrnjywg5_-jxc "guid" 535
+($8 538 < 0_-fvi_hrnjywg5_-jxc "guid" 536
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:32_00039"
 )
 (uid "0_-fvi_hrnjywg5_-jxc"))
-($12 538 < 0_-fvi_hrnjywg5_-jxb "#<anon> (Residue, DataObject)" 453
+($12 539 < 0_-fvi_hrnjywg5_-jxb "#<anon> (Residue, DataObject)" 454
 (uid "0_-fvi_hrnjywg5_-jxb"))
-($10 539 < 0_-fvi_hrnjywg5_-jxa "#<anon> (Residue, MolSystemLinkEnd)##," 453
+($10 540 < 0_-fvi_hrnjywg5_-jxa "#<anon> (Residue, MolSystemLinkEnd)##," 454
 (name "")
 (uid "0_-fvi_hrnjywg5_-jxa"))
-($11 540 < 0_-fvi_hrnjywg5_-jx9 "#0" 539
+($11 541 < 0_-fvi_hrnjywg5_-jx9 "#0" 540
 (changeability "frozen")
 (aggregation "composite")
 (uid "0_-fvi_hrnjywg5_-jx9")
 (multiplicity "1"))
-($8 541 < 0_-fvi_hrnjywg5_-jx8 "guid" 540
+($8 542 < 0_-fvi_hrnjywg5_-jx8 "guid" 541
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:32_00041"
 )
 (uid "0_-fvi_hrnjywg5_-jx8"))
-($11 542 < 0_-fvi_hrnjywg5_-jx7 "#1" 539
+($11 543 < 0_-fvi_hrnjywg5_-jx7 "#1" 540
 (uid "0_-fvi_hrnjywg5_-jx7")
 (multiplicity "*"))
-($8 543 < 0_-fvi_hrnjywg5_-jx6 "guid" 542
+($8 544 < 0_-fvi_hrnjywg5_-jx6 "guid" 543
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:32_00042"
 )
 (uid "0_-fvi_hrnjywg5_-jx6"))
-($10 544 < 0_-fvi_hrnjywg5_-jx5 "#<anon> (Residue, Segment)##," 453
+($10 545 < 0_-fvi_hrnjywg5_-jx5 "#<anon> (Residue, Segment)##," 454
 (name "")
 (uid "0_-fvi_hrnjywg5_-jx5"))
-($11 545 < 0_-fvi_hrnjywg5_-jx4 "#0" 544
+($11 546 < 0_-fvi_hrnjywg5_-jx4 "#0" 545
 (isOrdered true)
 (changeability "frozen")
 (uid "0_-fvi_hrnjywg5_-jx4")
 (multiplicity "*"))
-($8 546 < 0_-fvi_hrnjywg5_-jx3 "documentation" 545
+($8 547 < 0_-fvi_hrnjywg5_-jx3 "documentation" 546
 (name "documentation"
 )
 (value "Residues that make up segment"
 )
 (uid "0_-fvi_hrnjywg5_-jx3"))
-($8 547 < 0_-fvi_hrnjywg5_-jx2 "guid" 545
+($8 548 < 0_-fvi_hrnjywg5_-jx2 "guid" 546
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2008-02-20-18:17:59_00005"
 )
 (uid "0_-fvi_hrnjywg5_-jx2"))
-($11 548 < 0_-fvi_hrnjywg5_-jx1 "#1" 544
+($11 549 < 0_-fvi_hrnjywg5_-jx1 "#1" 545
 (uid "0_-fvi_hrnjywg5_-jx1")
 (isNavigable false))
-($8 549 < 0_-fvi_hrnjywg5_-jx0 "isDerived" 544
+($8 550 < 0_-fvi_hrnjywg5_-jx0 "isDerived" 545
 (name "isDerived"
 )
 (value "True"
 )
 (uid "0_-fvi_hrnjywg5_-jx0"))
-($10 550 < 0_-fvi_hrnjywg5_-jwz "#<anon> (Residue, MolSysResidueValidation)##," 453
+($10 551 < 0_-fvi_hrnjywg5_-jwz "#<anon> (Residue, MolSysResidueValidation)##," 454
 (name "")
 (uid "0_-fvi_hrnjywg5_-jwz"))
-($11 551 < 0_-fvi_hrnjywg5_-jwy "#0" 550
+($11 552 < 0_-fvi_hrnjywg5_-jwy "#0" 551
 (uid "0_-fvi_hrnjywg5_-jwy")
 (multiplicity "*"))
-($8 552 < 0_-fvi_hrnjywg5_-jwx "documentation" 551
+($8 553 < 0_-fvi_hrnjywg5_-jwx "documentation" 552
 (name "documentation"
 )
 (value "MolSystem Residues being validated"
 )
 (uid "0_-fvi_hrnjywg5_-jwx"))
-($8 553 < 0_-fvi_hrnjywg5_-jww "guid" 551
+($8 554 < 0_-fvi_hrnjywg5_-jww "guid" 552
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2009-09-08-17:17:13_00007"
 )
 (uid "0_-fvi_hrnjywg5_-jww"))
-($11 554 < 0_-fvi_hrnjywg5_-jwv "#1" 550
+($11 555 < 0_-fvi_hrnjywg5_-jwv "#1" 551
 (uid "0_-fvi_hrnjywg5_-jwv")
 (multiplicity "*"))
-($8 555 < 0_-fvi_hrnjywg5_-jwu "documentation" 554
+($8 556 < 0_-fvi_hrnjywg5_-jwu "documentation" 555
 (name "documentation"
 )
 (value "Validation results for Residue"
 )
 (uid "0_-fvi_hrnjywg5_-jwu"))
-($8 556 < 0_-fvi_hrnjywg5_-jwt "guid" 554
+($8 557 < 0_-fvi_hrnjywg5_-jwt "guid" 555
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2009-09-08-17:17:13_00008"
 )
 (uid "0_-fvi_hrnjywg5_-jwt"))
-($8 557 < 0_-fvi_hrnjywg5_-jws "documentation" 453
+($8 558 < 0_-fvi_hrnjywg5_-jws "documentation" 454
 (name "documentation"
 )
 (value "A monomer part of a specific molecule in a specific environment (Chain)). "
 )
 (uid "0_-fvi_hrnjywg5_-jws"))
-($8 558 < 0_-fvi_hrnjywg5_-jwr "guid" 453
+($8 559 < 0_-fvi_hrnjywg5_-jwr "guid" 454
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00030"
 )
 (uid "0_-fvi_hrnjywg5_-jwr"))
-($8 559 < 0_-fvi_hrnjywg5_-jwq "postConstructorCode:java" 453
+($8 560 < 0_-fvi_hrnjywg5_-jwq "postConstructorCode:java" 454
 (name "postConstructorCode:java"
 )
 (value "for (ccp.api.molecule.ChemComp.AbstractChemAtom chemAtom: getChemCompVar().getChemAtoms()) {"
@@ -3461,7 +3474,7 @@ objectdomain.uml.core.Stereotype-owns $19
 "}"
 )
 (uid "0_-fvi_hrnjywg5_-jwq"))
-($8 560 < 0_-fvi_hrnjywg5_-jwp "postConstructorCode:python" 453
+($8 561 < 0_-fvi_hrnjywg5_-jwp "postConstructorCode:python" 454
 (name "postConstructorCode:python"
 )
 (value "_undo = root._undo"
@@ -3481,13 +3494,13 @@ objectdomain.uml.core.Stereotype-owns $19
 "    _undo.decreaseBlocking()"
 )
 (uid "0_-fvi_hrnjywg5_-jwp"))
-($8 561 < 0_-fvi_hrnjywg5_-jwo "keyNames" 453
+($8 562 < 0_-fvi_hrnjywg5_-jwo "keyNames" 454
 (name "keyNames"
 )
 (value "seqId"
 )
 (uid "0_-fvi_hrnjywg5_-jwo"))
-($13 562 < 0_-fvi_hrnjywg5_-jwn "linking_and_descriptor_must_be_consistent_with_Atoms_and_LinkEnds" 453
+($13 563 < 0_-fvi_hrnjywg5_-jwn "linking_and_descriptor_must_be_consistent_with_Atoms_and_LinkEnds" 454
 (name "linking_and_descriptor_must_be_consistent_with_Atoms_and_LinkEnds"
 )
 (uid "0_-fvi_hrnjywg5_-jwn")
@@ -3556,185 +3569,185 @@ objectdomain.uml.core.Stereotype-owns $19
 "    isValid = false;"
 "}"
 ))
-($8 563 < 0_-fvi_hrnjywg5_-jwm "guid" 562
+($8 564 < 0_-fvi_hrnjywg5_-jwm "guid" 563
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00031"
 )
 (uid "0_-fvi_hrnjywg5_-jwm"))
-($14 564 < -yk94ms_85r_eqyymv3f_-jgv "#<anon> (MolSystem, Citation)" 1
+($14 565 < -yk94ms_85r_eqyymv3f_-jgv "#<anon> (MolSystem, Citation)" 1
 (uid "-yk94ms_85r_eqyymv3f_-jgv"))
-($14 565 < -yk94ms_85r_eqyymv3f_-jgu "#<anon> (MolSystem, ChemComp)" 1
+($14 566 < -yk94ms_85r_eqyymv3f_-jgu "#<anon> (MolSystem, ChemComp)" 1
 (uid "-yk94ms_85r_eqyymv3f_-jgu"))
-($14 566 < -yk94ms_85r_eqyymv3f_-jgt "#<anon> (MolSystem, Molecule)" 1
+($14 567 < -yk94ms_85r_eqyymv3f_-jgt "#<anon> (MolSystem, Molecule)" 1
 (uid "-yk94ms_85r_eqyymv3f_-jgt"))
-($6 567 < 0_-fvi_hrnjywg5_-jwi "StructureGroup" 1
+($6 568 < 0_-fvi_hrnjywg5_-jwi "StructureGroup" 1
 (name "StructureGroup"
 )
 (uid "0_-fvi_hrnjywg5_-jwi"))
-($7 568 < 0_-fvi_hrnjywg5_-jwh "serial" 567
+($7 569 < 0_-fvi_hrnjywg5_-jwh "serial" 568
 (changeability "frozen")
 (name "serial"
 )
 (uid "0_-fvi_hrnjywg5_-jwh")
 (multiplicity "1"))
-($8 569 < 0_-fvi_hrnjywg5_-jwg "documentation" 568
+($8 570 < 0_-fvi_hrnjywg5_-jwg "documentation" 569
 (name "documentation"
 )
 (value "The serial number is the key for class StructureModelGroup and together with the parent object serves as a unique identifier for the StructureModelGroup."
 "Serial numbers are generated by the API. Serial numbers of deleted objects are not reused."
 )
 (uid "0_-fvi_hrnjywg5_-jwg"))
-($8 570 < 0_-fvi_hrnjywg5_-jwf "isAutomatic" 568
+($8 571 < 0_-fvi_hrnjywg5_-jwf "isAutomatic" 569
 (name "isAutomatic"
 )
 (value "True"
 )
 (uid "0_-fvi_hrnjywg5_-jwf"))
-($8 571 < 0_-fvi_hrnjywg5_-jwe "guid" 568
+($8 572 < 0_-fvi_hrnjywg5_-jwe "guid" 569
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00027"
 )
 (uid "0_-fvi_hrnjywg5_-jwe"))
-($7 572 < 0_-fvi_hrnjywg5_-jwd "name" 567
+($7 573 < 0_-fvi_hrnjywg5_-jwd "name" 568
 (name "name"
 )
 (uid "0_-fvi_hrnjywg5_-jwd"))
-($8 573 < 0_-fvi_hrnjywg5_-jwc "documentation" 572
+($8 574 < 0_-fvi_hrnjywg5_-jwc "documentation" 573
 (name "documentation"
 )
 (value "name of StructureModelGroup"
 )
 (uid "0_-fvi_hrnjywg5_-jwc"))
-($8 574 < 0_-fvi_hrnjywg5_-jwb "guid" 572
+($8 575 < 0_-fvi_hrnjywg5_-jwb "guid" 573
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00028"
 )
 (uid "0_-fvi_hrnjywg5_-jwb"))
-($7 575 < 0_-fvi_hrnjywg5_-jwa "details" 567
+($7 576 < 0_-fvi_hrnjywg5_-jwa "details" 568
 (name "details"
 )
 (uid "0_-fvi_hrnjywg5_-jwa"))
-($8 576 < 0_-fvi_hrnjywg5_-jw9 "documentation" 575
+($8 577 < 0_-fvi_hrnjywg5_-jw9 "documentation" 576
 (name "documentation"
 )
 (value "Detailed description of StructureModelGroup"
 )
 (uid "0_-fvi_hrnjywg5_-jw9"))
-($8 577 < 0_-fvi_hrnjywg5_-jw8 "guid" 575
+($8 578 < 0_-fvi_hrnjywg5_-jw8 "guid" 576
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00030"
 )
 (uid "0_-fvi_hrnjywg5_-jw8"))
-($12 578 < 0_-fvi_hrnjywg5_-jw7 "#<anon> (StructureGroup, DataObject)" 567
+($12 579 < 0_-fvi_hrnjywg5_-jw7 "#<anon> (StructureGroup, DataObject)" 568
 (uid "0_-fvi_hrnjywg5_-jw7"))
-($10 579 < 0_-fvi_hrnjywg5_-jw6 "#<anon> (StructureGroup, Model)##," 567
+($10 580 < 0_-fvi_hrnjywg5_-jw6 "#<anon> (StructureGroup, Model)##," 568
 (name "")
 (uid "0_-fvi_hrnjywg5_-jw6"))
-($11 580 < 0_-fvi_hrnjywg5_-jw5 "#0" 579
+($11 581 < 0_-fvi_hrnjywg5_-jw5 "#0" 580
 (uid "0_-fvi_hrnjywg5_-jw5")
 (multiplicity "*"))
-($8 581 < 0_-fvi_hrnjywg5_-jw4 "documentation" 580
+($8 582 < 0_-fvi_hrnjywg5_-jw4 "documentation" 581
 (name "documentation"
 )
 (value "StructureGroups that Model belongs to."
 )
 (uid "0_-fvi_hrnjywg5_-jw4"))
-($8 582 < 0_-fvi_hrnjywg5_-jw3 "guid" 580
+($8 583 < 0_-fvi_hrnjywg5_-jw3 "guid" 581
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2007-11-23-12:00:15_00013"
 )
 (uid "0_-fvi_hrnjywg5_-jw3"))
-($11 583 < 0_-fvi_hrnjywg5_-jw2 "#1" 579
+($11 584 < 0_-fvi_hrnjywg5_-jw2 "#1" 580
 (uid "0_-fvi_hrnjywg5_-jw2")
 (multiplicity "*"))
-($8 584 < 0_-fvi_hrnjywg5_-jw1 "documentation" 583
+($8 585 < 0_-fvi_hrnjywg5_-jw1 "documentation" 584
 (name "documentation"
 )
 (value "Models belonging to StructureGroup"
 )
 (uid "0_-fvi_hrnjywg5_-jw1"))
-($8 585 < 0_-fvi_hrnjywg5_-jw0 "guid" 583
+($8 586 < 0_-fvi_hrnjywg5_-jw0 "guid" 584
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2007-11-23-12:00:15_00014"
 )
 (uid "0_-fvi_hrnjywg5_-jw0"))
-($8 586 < 0_-fvi_hrnjywg5_-jvz "documentation" 567
+($8 587 < 0_-fvi_hrnjywg5_-jvz "documentation" 568
 (name "documentation"
 )
 (value "Group of Structure models. General purpose grouping mechanism for structures. May be from same or different generation cycles."
 )
 (uid "0_-fvi_hrnjywg5_-jvz"))
-($8 587 < 0_-fvi_hrnjywg5_-jvy "guid" 567
+($8 588 < 0_-fvi_hrnjywg5_-jvy "guid" 568
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00033"
 )
 (uid "0_-fvi_hrnjywg5_-jvy"))
-($8 588 < 0_-fvi_hrnjywg5_-jvx "keyNames" 567
+($8 589 < 0_-fvi_hrnjywg5_-jvx "keyNames" 568
 (name "keyNames"
 )
 (value "serial"
 )
 (uid "0_-fvi_hrnjywg5_-jvx"))
-($6 589 < 0_-fvi_hrnjywg5_-jvw "MolSystemLinkEnd" 1
+($6 590 < 0_-fvi_hrnjywg5_-jvw "MolSystemLinkEnd" 1
 (name "MolSystemLinkEnd"
 )
 (uid "0_-fvi_hrnjywg5_-jvw"))
-($7 590 < 0_-fvi_hrnjywg5_-jvv "linkCode" 589
+($7 591 < 0_-fvi_hrnjywg5_-jvv "linkCode" 590
 (changeability "frozen")
 (name "linkCode"
 )
 (uid "0_-fvi_hrnjywg5_-jvv")
 (multiplicity "1"))
-($8 591 < 0_-fvi_hrnjywg5_-jvu "documentation" 590
+($8 592 < 0_-fvi_hrnjywg5_-jvu "documentation" 591
 (name "documentation"
 )
 (value "Link Code identifying Link End for Residue. Part of Key for the derived link 'linkEnd'. "
 )
 (uid "0_-fvi_hrnjywg5_-jvu"))
-($8 592 < 0_-fvi_hrnjywg5_-jvt "guid" 590
+($8 593 < 0_-fvi_hrnjywg5_-jvt "guid" 591
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00034"
 )
 (uid "0_-fvi_hrnjywg5_-jvt"))
-($9 593 < 0_-fvi_hrnjywg5_-jvs "getLinkEnd" 589
+($9 594 < 0_-fvi_hrnjywg5_-jvs "getLinkEnd" 590
 (name "getLinkEnd"
 )
 (uid "0_-fvi_hrnjywg5_-jvs")
 (isQuery true))
-($8 594 < 0_-fvi_hrnjywg5_-jvr "documentation" 593
+($8 595 < 0_-fvi_hrnjywg5_-jvr "documentation" 594
 (name "documentation"
 )
 (value "getter for derived link linkEnd"
 )
 (uid "0_-fvi_hrnjywg5_-jvr"))
-($8 595 < 0_-fvi_hrnjywg5_-jvq "opType" 593
+($8 596 < 0_-fvi_hrnjywg5_-jvq "opType" 594
 (name "opType"
 )
 (value "get"
 )
 (uid "0_-fvi_hrnjywg5_-jvq"))
-($8 596 < 0_-fvi_hrnjywg5_-jvp "guid" 593
+($8 597 < 0_-fvi_hrnjywg5_-jvp "guid" 594
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00035"
 )
 (uid "0_-fvi_hrnjywg5_-jvp"))
-($8 597 < 0_-fvi_hrnjywg5_-jvo "code:java" 593
+($8 598 < 0_-fvi_hrnjywg5_-jvo "code:java" 594
 (name "code:java"
 )
 (value "ccp.api.molecule.MolSystem.Residue residue = getResidue();"
 "result = residue.getChain().getMolecule().findFirstMolResidue(\"serial\",residue.getSeqId()).getChemComp().findFirstChemCompVar(\"linking\", residue.getLinking(), \"descriptor\", residue.getDescriptor()).findFirstLinkEnd(\"linkCode\",getLinkCode()); "
 )
 (uid "0_-fvi_hrnjywg5_-jvo"))
-($8 598 < 0_-fvi_hrnjywg5_-jvn "code:python" 593
+($8 599 < 0_-fvi_hrnjywg5_-jvn "code:python" 594
 (name "code:python"
 )
 (value "residue = self.residue"
@@ -3746,88 +3759,88 @@ objectdomain.uml.core.Stereotype-owns $19
 ")"
 )
 (uid "0_-fvi_hrnjywg5_-jvn"))
-($12 599 < 0_-fvi_hrnjywg5_-jvm "#<anon> (MolSystemLinkEnd, DataObject)" 589
+($12 600 < 0_-fvi_hrnjywg5_-jvm "#<anon> (MolSystemLinkEnd, DataObject)" 590
 (uid "0_-fvi_hrnjywg5_-jvm"))
-($10 600 < 0_-fvi_hrnjywg5_-jvl "#<anon> (MolSystemLinkEnd, MolSystemLink)##," 589
+($10 601 < 0_-fvi_hrnjywg5_-jvl "#<anon> (MolSystemLinkEnd, MolSystemLink)##," 590
 (name "")
 (uid "0_-fvi_hrnjywg5_-jvl"))
-($11 601 < 0_-fvi_hrnjywg5_-jvk "#0" 600
+($11 602 < 0_-fvi_hrnjywg5_-jvk "#0" 601
 (changeability "frozen")
 (uid "0_-fvi_hrnjywg5_-jvk")
 (multiplicity "2"))
-($8 602 < 0_-fvi_hrnjywg5_-jvj "documentation" 601
+($8 603 < 0_-fvi_hrnjywg5_-jvj "documentation" 602
 (name "documentation"
 )
 (value "LinkEnds that make up the MolSystemLink"
 )
 (uid "0_-fvi_hrnjywg5_-jvj"))
-($8 603 < 0_-fvi_hrnjywg5_-jvi "guid" 601
+($8 604 < 0_-fvi_hrnjywg5_-jvi "guid" 602
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00031"
 )
 (uid "0_-fvi_hrnjywg5_-jvi"))
-($11 604 < 0_-fvi_hrnjywg5_-jvh "#1" 600
+($11 605 < 0_-fvi_hrnjywg5_-jvh "#1" 601
 (uid "0_-fvi_hrnjywg5_-jvh"))
-($8 605 < 0_-fvi_hrnjywg5_-jvg "documentation" 604
+($8 606 < 0_-fvi_hrnjywg5_-jvg "documentation" 605
 (name "documentation"
 )
 (value "Link made up from the two LinkEnds."
 )
 (uid "0_-fvi_hrnjywg5_-jvg"))
-($8 606 < 0_-fvi_hrnjywg5_-jvf "guid" 604
+($8 607 < 0_-fvi_hrnjywg5_-jvf "guid" 605
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00032"
 )
 (uid "0_-fvi_hrnjywg5_-jvf"))
-($10 607 < 0_-fvi_hrnjywg5_-jve "#<anon> (MolSystemLinkEnd, LinkEnd)##," 589
+($10 608 < 0_-fvi_hrnjywg5_-jve "#<anon> (MolSystemLinkEnd, LinkEnd)##," 590
 (name "")
 (uid "0_-fvi_hrnjywg5_-jve"))
-($11 608 < 0_-fvi_hrnjywg5_-jvd "#0" 607
+($11 609 < 0_-fvi_hrnjywg5_-jvd "#0" 608
 (uid "0_-fvi_hrnjywg5_-jvd")
 (isNavigable false))
-($11 609 < 0_-fvi_hrnjywg5_-jvc "#1" 607
+($11 610 < 0_-fvi_hrnjywg5_-jvc "#1" 608
 (changeability "frozen")
 (uid "0_-fvi_hrnjywg5_-jvc")
 (multiplicity "1"))
-($8 610 < 0_-fvi_hrnjywg5_-jvb "documentation" 609
+($8 611 < 0_-fvi_hrnjywg5_-jvb "documentation" 610
 (name "documentation"
 )
 (value "ChemComp LinkEnd corresponding to MolSysLinkEnd"
 )
 (uid "0_-fvi_hrnjywg5_-jvb"))
-($8 611 < 0_-fvi_hrnjywg5_-jva "guid" 609
+($8 612 < 0_-fvi_hrnjywg5_-jva "guid" 610
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00033"
 )
 (uid "0_-fvi_hrnjywg5_-jva"))
-($8 612 < 0_-fvi_hrnjywg5_-jv9 "isDerived" 607
+($8 613 < 0_-fvi_hrnjywg5_-jv9 "isDerived" 608
 (name "isDerived"
 )
 (value "True"
 )
 (uid "0_-fvi_hrnjywg5_-jv9"))
-($8 613 < 0_-fvi_hrnjywg5_-jv8 "documentation" 589
+($8 614 < 0_-fvi_hrnjywg5_-jv8 "documentation" 590
 (name "documentation"
 )
 (value "LinkEnd, equivalent to ChemComp.LinkEnd. Part of the description of MolSystem level additional links. Note that the MolSeqLinkEnds defined in the Molecule corresponding to this Chain are also valid for the Chain, so that both need to be considered when describing the topology of the MolSystem"
 )
 (uid "0_-fvi_hrnjywg5_-jv8"))
-($8 614 < 0_-fvi_hrnjywg5_-jv7 "guid" 589
+($8 615 < 0_-fvi_hrnjywg5_-jv7 "guid" 590
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00034"
 )
 (uid "0_-fvi_hrnjywg5_-jv7"))
-($8 615 < 0_-fvi_hrnjywg5_-jv6 "keyNames" 589
+($8 616 < 0_-fvi_hrnjywg5_-jv6 "keyNames" 590
 (name "keyNames"
 )
 (value "linkCode"
 )
 (uid "0_-fvi_hrnjywg5_-jv6"))
-($13 616 < 0_-fvi_hrnjywg5_-jv5 "link_must_not_be_made_in_Molecule" 589
+($13 617 < 0_-fvi_hrnjywg5_-jv5 "link_must_not_be_made_in_Molecule" 590
 (name "link_must_not_be_made_in_Molecule"
 )
 (uid "0_-fvi_hrnjywg5_-jv5")
@@ -3848,373 +3861,373 @@ objectdomain.uml.core.Stereotype-owns $19
 "else"
 "  isValid = false;"
 ))
-($8 617 < 0_-fvi_hrnjywg5_-jv4 "guid" 616
+($8 618 < 0_-fvi_hrnjywg5_-jv4 "guid" 617
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00035"
 )
 (uid "0_-fvi_hrnjywg5_-jv4"))
-($6 618 < 0_-fvi_hrnjywg5_-jv3 "ChainFragment" 1
+($6 619 < 0_-fvi_hrnjywg5_-jv3 "ChainFragment" 1
 (name "ChainFragment"
 )
 (uid "0_-fvi_hrnjywg5_-jv3"))
-($7 619 < 0_-fvi_hrnjywg5_-jv2 "serial" 618
+($7 620 < 0_-fvi_hrnjywg5_-jv2 "serial" 619
 (changeability "frozen")
 (name "serial"
 )
 (uid "0_-fvi_hrnjywg5_-jv2")
 (multiplicity "1"))
-($8 620 < 0_-fvi_hrnjywg5_-jv1 "isAutomatic" 619
+($8 621 < 0_-fvi_hrnjywg5_-jv1 "isAutomatic" 620
 (name "isAutomatic"
 )
 (value "True"
 )
 (uid "0_-fvi_hrnjywg5_-jv1"))
-($8 621 < 0_-fvi_hrnjywg5_-jv0 "guid" 619
+($8 622 < 0_-fvi_hrnjywg5_-jv0 "guid" 620
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00039"
 )
 (uid "0_-fvi_hrnjywg5_-jv0"))
-($7 622 < 0_-fvi_hrnjywg5_-juz "molType" 618
+($7 623 < 0_-fvi_hrnjywg5_-juz "molType" 619
 (changeability "frozen")
 (name "molType"
 )
 (uid "0_-fvi_hrnjywg5_-juz")
 (multiplicity "1"))
-($8 623 < 0_-fvi_hrnjywg5_-juy "documentation" 622
+($8 624 < 0_-fvi_hrnjywg5_-juy "documentation" 623
 (name "documentation"
 )
 (value "molType of residues in ChainFragment. Must apply to all residues"
 )
 (uid "0_-fvi_hrnjywg5_-juy"))
-($8 624 < 0_-fvi_hrnjywg5_-jux "guid" 622
+($8 625 < 0_-fvi_hrnjywg5_-jux "guid" 623
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00040"
 )
 (uid "0_-fvi_hrnjywg5_-jux"))
-($7 625 < 0_-fvi_hrnjywg5_-juw "isLinearPolymer" 618
+($7 626 < 0_-fvi_hrnjywg5_-juw "isLinearPolymer" 619
 (changeability "frozen")
 (name "isLinearPolymer"
 )
 (uid "0_-fvi_hrnjywg5_-juw")
 (multiplicity "1"))
-($8 626 < 0_-fvi_hrnjywg5_-juv "documentation" 625
+($8 627 < 0_-fvi_hrnjywg5_-juv "documentation" 626
 (name "documentation"
 )
 (value "Is ChainFragment a linear polymer? Implies that each residue, in the order given in the residues link, is linked to the next one by a link of linear polymer type (linkEnds 'next','prev')."
 )
 (uid "0_-fvi_hrnjywg5_-juv"))
-($8 627 < 0_-fvi_hrnjywg5_-juu "guid" 625
+($8 628 < 0_-fvi_hrnjywg5_-juu "guid" 626
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00041"
 )
 (uid "0_-fvi_hrnjywg5_-juu"))
-($12 628 < 0_-fvi_hrnjywg5_-jut "#<anon> (ChainFragment, DataObject)" 618
+($12 629 < 0_-fvi_hrnjywg5_-jut "#<anon> (ChainFragment, DataObject)" 619
 (uid "0_-fvi_hrnjywg5_-jut"))
-($10 629 < 0_-fvi_hrnjywg5_-jus "#<anon> (ChainFragment, Residue)##," 618
+($10 630 < 0_-fvi_hrnjywg5_-jus "#<anon> (ChainFragment, Residue)##," 619
 (name "")
 (uid "0_-fvi_hrnjywg5_-jus"))
-($11 630 < 0_-fvi_hrnjywg5_-jur "#0" 629
+($11 631 < 0_-fvi_hrnjywg5_-jur "#0" 630
 (uid "0_-fvi_hrnjywg5_-jur"))
-($8 631 < 0_-fvi_hrnjywg5_-juq "documentation" 630
+($8 632 < 0_-fvi_hrnjywg5_-juq "documentation" 631
 (name "documentation"
 )
 (value "ChainFragment to which Residue belongs. When Chains are created, each Residue will automatically be linked to a ChainFragment, so that the Chain is divided in Fragments of uniform molType."
 )
 (uid "0_-fvi_hrnjywg5_-juq"))
-($8 632 < 0_-fvi_hrnjywg5_-jup "guid" 630
+($8 633 < 0_-fvi_hrnjywg5_-jup "guid" 631
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00037"
 )
 (uid "0_-fvi_hrnjywg5_-jup"))
-($11 633 < 0_-fvi_hrnjywg5_-juo "#1" 629
+($11 634 < 0_-fvi_hrnjywg5_-juo "#1" 630
 (isOrdered true)
 (changeability "frozen")
 (uid "0_-fvi_hrnjywg5_-juo")
 (multiplicity "*"))
-($8 634 < 0_-fvi_hrnjywg5_-jun "documentation" 633
+($8 635 < 0_-fvi_hrnjywg5_-jun "documentation" 634
 (name "documentation"
 )
 (value "residues making up ChainFragment"
 )
 (uid "0_-fvi_hrnjywg5_-jun"))
-($8 635 < 0_-fvi_hrnjywg5_-jum "guid" 633
+($8 636 < 0_-fvi_hrnjywg5_-jum "guid" 634
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00038"
 )
 (uid "0_-fvi_hrnjywg5_-jum"))
-($8 636 < 0_-fvi_hrnjywg5_-jul "documentation" 618
+($8 637 < 0_-fvi_hrnjywg5_-jul "documentation" 619
 (name "documentation"
 )
 (value "Fragment of Chain with defined MolType for all residues. ChainFragments are generated automatically by the Chain initialiser function. See documentation of Chain.createChainFragments for a description of the normal way of dividing a Chain in ChainFragments."
 )
 (uid "0_-fvi_hrnjywg5_-jul"))
-($8 637 < 0_-fvi_hrnjywg5_-juk "guid" 618
+($8 638 < 0_-fvi_hrnjywg5_-juk "guid" 619
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00036"
 )
 (uid "0_-fvi_hrnjywg5_-juk"))
-($8 638 < 0_-fvi_hrnjywg5_-juj "keyNames" 618
+($8 639 < 0_-fvi_hrnjywg5_-juj "keyNames" 619
 (name "keyNames"
 )
 (value "serial"
 )
 (uid "0_-fvi_hrnjywg5_-juj"))
-($6 639 < 0_-fvi_hrnjywg5_-jui "GenericBond" 1
+($6 640 < 0_-fvi_hrnjywg5_-jui "GenericBond" 1
 (name "GenericBond"
 )
 (uid "0_-fvi_hrnjywg5_-jui"))
-($7 640 < ajvq9s_joo_ijzr5f4t_-p8s "bondType" 639
+($7 641 < ajvq9s_joo_ijzr5f4t_-p8s "bondType" 640
 (name "bondType"
 )
 (uid "ajvq9s_joo_ijzr5f4t_-p8s"))
-($8 641 < ajvq9s_joo_ijzr5f4t_-p8r "documentation" 640
+($8 642 < ajvq9s_joo_ijzr5f4t_-p8r "documentation" 641
 (name "documentation"
 )
 (value "Bond type. Should eventually become an enumeration"
 )
 (uid "ajvq9s_joo_ijzr5f4t_-p8r"))
-($8 642 < ajvq9s_joo_ijzr5f4t_-p8q "guid" 640
+($8 643 < ajvq9s_joo_ijzr5f4t_-p8q "guid" 641
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2016-01-29-09:12:56_00001"
 )
 (uid "ajvq9s_joo_ijzr5f4t_-p8q"))
-($12 643 < 0_-fvi_hrnjywg5_-juh "#<anon> (GenericBond, DataObject)" 639
+($12 644 < 0_-fvi_hrnjywg5_-juh "#<anon> (GenericBond, DataObject)" 640
 (uid "0_-fvi_hrnjywg5_-juh"))
-($10 644 < 0_-fvi_hrnjywg5_-jug "#<anon> (GenericBond, Atom)##," 639
+($10 645 < 0_-fvi_hrnjywg5_-jug "#<anon> (GenericBond, Atom)##," 640
 (name "")
 (uid "0_-fvi_hrnjywg5_-jug"))
-($11 645 < 0_-fvi_hrnjywg5_-juf "#0" 644
+($11 646 < 0_-fvi_hrnjywg5_-juf "#0" 645
 (uid "0_-fvi_hrnjywg5_-juf")
 (multiplicity "*"))
-($8 646 < 0_-fvi_hrnjywg5_-jue "documentation" 645
+($8 647 < 0_-fvi_hrnjywg5_-jue "documentation" 646
 (name "documentation"
 )
 (value "Non-covalent bonds in which the atom takes part."
 )
 (uid "0_-fvi_hrnjywg5_-jue"))
-($8 647 < 0_-fvi_hrnjywg5_-jud "guid" 645
+($8 648 < 0_-fvi_hrnjywg5_-jud "guid" 646
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00042"
 )
 (uid "0_-fvi_hrnjywg5_-jud"))
-($11 648 < 0_-fvi_hrnjywg5_-juc "#1" 644
+($11 649 < 0_-fvi_hrnjywg5_-juc "#1" 645
 (changeability "frozen")
 (uid "0_-fvi_hrnjywg5_-juc")
 (multiplicity "2"))
-($8 649 < 0_-fvi_hrnjywg5_-jub "documentation" 648
+($8 650 < 0_-fvi_hrnjywg5_-jub "documentation" 649
 (name "documentation"
 )
 (value "Atoms in non-covalent bond"
 )
 (uid "0_-fvi_hrnjywg5_-jub"))
-($8 650 < 0_-fvi_hrnjywg5_-jua "guid" 648
+($8 651 < 0_-fvi_hrnjywg5_-jua "guid" 649
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:33_00043"
 )
 (uid "0_-fvi_hrnjywg5_-jua"))
-($8 651 < 0_-fvi_hrnjywg5_-ju9 "documentation" 639
+($8 652 < 0_-fvi_hrnjywg5_-ju9 "documentation" 640
 (name "documentation"
 )
 (value "Bond between two atoms, used for anything except sequential bonds (for now)."
 "(was 'NonCovalent bond, e.g. hydrogen bond, metal coordination bond')"
 )
 (uid "0_-fvi_hrnjywg5_-ju9"))
-($8 652 < 0_-fvi_hrnjywg5_-ju8 "guid" 639
+($8 653 < 0_-fvi_hrnjywg5_-ju8 "guid" 640
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00037"
 )
 (uid "0_-fvi_hrnjywg5_-ju8"))
-($8 653 < 0_-fvi_hrnjywg5_-ju7 "keyNames" 639
+($8 654 < 0_-fvi_hrnjywg5_-ju7 "keyNames" 640
 (name "keyNames"
 )
 (value "atoms"
 )
 (uid "0_-fvi_hrnjywg5_-ju7"))
-($14 654 < 0_-fvi_hrnjywg5_-ju6 "#<anon> (MolSystem, DbRef)" 1
+($14 655 < 0_-fvi_hrnjywg5_-ju6 "#<anon> (MolSystem, DbRef)" 1
 (uid "0_-fvi_hrnjywg5_-ju6"))
-($2 655 < 0_-fvi_hrnjywg5_-ju5 "Hinxton_MolSystem" 1
+($2 656 < 0_-fvi_hrnjywg5_-ju5 "Hinxton_MolSystem" 1
 (name "Hinxton_MolSystem"
 )
 (uid "0_-fvi_hrnjywg5_-ju5")
 (diagramType "class"))
-($3 656 < 0_-fvi_hrnjywg5_-ju4 "MolSystem" 655
+($3 657 < 0_-fvi_hrnjywg5_-ju4 "MolSystem" 656
 (showOperationCompartment false)
 (uid "0_-fvi_hrnjywg5_-ju4")
 (bbx 10 110 180 210))
-($3 657 < 0_-fvi_hrnjywg5_-ju3 "Chain" 655
+($3 658 < 0_-fvi_hrnjywg5_-ju3 "Chain" 656
 (showOperationCompartment false)
 (uid "0_-fvi_hrnjywg5_-ju3")
 (bbx 230 110 190 220))
-($4 658 < 0_-fvi_hrnjywg5_-ju2 "" 655
+($4 659 < 0_-fvi_hrnjywg5_-ju2 "" 656
 (toMultiplicityPosition 220 225)
 (uid "0_-fvi_hrnjywg5_-ju2")
 (points 190 220 230 220)
 (fromMultiplicityPosition 195 195))
-($3 659 < 0_-fvi_hrnjywg5_-ju1 "Residue" 655
+($3 660 < 0_-fvi_hrnjywg5_-ju1 "Residue" 656
 (showOperationCompartment false)
 (uid "0_-fvi_hrnjywg5_-ju1")
 (bbx 460 150 170 170))
-($4 660 < 0_-fvi_hrnjywg5_-ju0 "" 655
+($4 661 < 0_-fvi_hrnjywg5_-ju0 "" 656
 (toMultiplicityPosition 450 225)
 (uid "0_-fvi_hrnjywg5_-ju0")
 (points 420 220 460 220)
 (fromMultiplicityPosition 425 190))
-($3 661 < 0_-fvi_hrnjywg5_-jtz "Atom" 655
+($3 662 < 0_-fvi_hrnjywg5_-jtz "Atom" 656
 (showOperationCompartment false)
 (uid "0_-fvi_hrnjywg5_-jtz")
 (bbx 840 140 90 60))
-($4 662 < 0_-fvi_hrnjywg5_-jty "" 655
+($4 663 < 0_-fvi_hrnjywg5_-jty "" 656
 (toMultiplicityPosition 825 170)
 (uid "0_-fvi_hrnjywg5_-jty")
 (points 630 165 840 165)
 (fromMultiplicityPosition 635 140))
-($3 663 < 0_-fvi_hrnjywg5_-jtx "MolSystemLink" 655
+($3 664 < 0_-fvi_hrnjywg5_-jtx "MolSystemLink" 656
 (showOperationCompartment false)
 (uid "0_-fvi_hrnjywg5_-jtx")
 (bbx 170 30 210 60))
-($4 664 < 0_-fvi_hrnjywg5_-jtw "" 655
+($4 665 < 0_-fvi_hrnjywg5_-jtw "" 656
 (toMultiplicityPosition 160 70)
 (uid "0_-fvi_hrnjywg5_-jtw")
 (points 145 110 145 65 170 65)
 (fromMultiplicityPosition 125 90))
-($3 665 < 0_-fvi_hrnjywg5_-jtv "MolSystemLinkEnd" 655
+($3 666 < 0_-fvi_hrnjywg5_-jtv "MolSystemLinkEnd" 656
 (showOperationCompartment false)
 (uid "0_-fvi_hrnjywg5_-jtv")
 (bbx 460 30 130 60))
-($4 666 < 0_-fvi_hrnjywg5_-jtu "" 655
+($4 667 < 0_-fvi_hrnjywg5_-jtu "" 656
 (uid "0_-fvi_hrnjywg5_-jtu")
 (points 460 60 380 60)
 (fromMultiplicityPosition 450 65))
-($4 667 < 0_-fvi_hrnjywg5_-jtt "" 655
+($4 668 < 0_-fvi_hrnjywg5_-jtt "" 656
 (toMultiplicityPosition 525 90)
 (uid "0_-fvi_hrnjywg5_-jtt")
 (points 535 150 535 90)
 (fromMultiplicityPosition 545 130))
-($3 668 < 0_-fvi_hrnjywg5_-jts "GenericBond" 655
+($3 669 < 0_-fvi_hrnjywg5_-jts "GenericBond" 656
 (showOperationCompartment false)
 (uid "0_-fvi_hrnjywg5_-jts")
 (bbx 800 10 120 50))
-($4 669 < 0_-fvi_hrnjywg5_-jtr "" 655
+($4 670 < 0_-fvi_hrnjywg5_-jtr "" 656
 (toMultiplicityPosition 910 115)
 (uid "0_-fvi_hrnjywg5_-jtr")
 (points 905 60 905 140)
 (fromMultiplicityPosition 910 65))
-($4 670 < 0_-fvi_hrnjywg5_-jtq "" 655
+($4 671 < 0_-fvi_hrnjywg5_-jtq "" 656
 (toMultiplicityPosition 785 25)
 (uid "0_-fvi_hrnjywg5_-jtq")
 (points 70 110 70 20 800 20)
 (fromMultiplicityPosition 50 90))
-($3 671 < 0_-fvi_hrnjywg5_-jtp "MolResidue" 655
+($3 672 < 0_-fvi_hrnjywg5_-jtp "MolResidue" 656
 (showOperationCompartment false)
 (uid "0_-fvi_hrnjywg5_-jtp")
 (bbx 670 270 220 160))
-($4 672 < 0_-fvi_hrnjywg5_-jto "" 655
+($4 673 < 0_-fvi_hrnjywg5_-jto "" 656
 (uid "0_-fvi_hrnjywg5_-jto")
 (points 670 310 630 310)
 (fromMultiplicityPosition 655 315))
-($3 673 < 0_-fvi_hrnjywg5_-jtn "MolResLinkEnd" 655
+($3 674 < 0_-fvi_hrnjywg5_-jtn "MolResLinkEnd" 656
 (showOperationCompartment false)
 (uid "0_-fvi_hrnjywg5_-jtn")
 (bbx 280 420 250 60))
-($4 674 < 0_-fvi_hrnjywg5_-jtm "" 655
+($4 675 < 0_-fvi_hrnjywg5_-jtm "" 656
 (toMultiplicityPosition 535 430)
 (uid "0_-fvi_hrnjywg5_-jtm")
 (points 670 425 530 425)
 (fromMultiplicityPosition 665 435))
-($3 675 < 0_-fvi_hrnjywg5_-jtl "MolResLink" 655
+($3 676 < 0_-fvi_hrnjywg5_-jtl "MolResLink" 656
 (showOperationCompartment false)
 (uid "0_-fvi_hrnjywg5_-jtl")
 (bbx 10 370 220 80))
-($4 676 < 0_-fvi_hrnjywg5_-jtk "" 655
+($4 677 < 0_-fvi_hrnjywg5_-jtk "" 656
 (toMultiplicityPosition 140 450)
 (uid "0_-fvi_hrnjywg5_-jtk")
 (points 135 450 135 470 280 470))
-($3 677 < 0_-fvi_hrnjywg5_-jtj "Molecule" 655
+($3 678 < 0_-fvi_hrnjywg5_-jtj "Molecule" 656
 (showAttributeCompartment false)
 (showOperationCompartment false)
 (uid "0_-fvi_hrnjywg5_-jtj")
 (bbx 300 370 210 30))
-($4 678 < 0_-fvi_hrnjywg5_-jti "" 655
+($4 679 < 0_-fvi_hrnjywg5_-jti "" 656
 (toMultiplicityPosition 405 335)
 (uid "0_-fvi_hrnjywg5_-jti")
 (points 400 370 400 330)
 (fromMultiplicityPosition 385 350))
-($4 679 < 0_-fvi_hrnjywg5_-jth "" 655
+($4 680 < 0_-fvi_hrnjywg5_-jth "" 656
 (toMultiplicityPosition 655 380)
 (uid "0_-fvi_hrnjywg5_-jth")
 (points 510 375 670 375)
 (fromMultiplicityPosition 515 350))
-($4 680 < 0_-fvi_hrnjywg5_-jtg "" 655
+($4 681 < 0_-fvi_hrnjywg5_-jtg "" 656
 (toMultiplicityPosition 235 370)
 (uid "0_-fvi_hrnjywg5_-jtg")
 (points 300 390 230 390)
 (fromMultiplicityPosition 285 365))
-($3 681 < 0_-fvi_hrnjywg5_-jtf "ChemAtom" 655
+($3 682 < 0_-fvi_hrnjywg5_-jtf "ChemAtom" 656
 (showAttributeCompartment false)
 (showOperationCompartment false)
 (uid "0_-fvi_hrnjywg5_-jtf")
 (bbx 630 80 240 30))
-($4 682 < 0_-fvi_hrnjywg5_-jte "" 655
+($4 683 < 0_-fvi_hrnjywg5_-jte "" 656
 (toMultiplicityPosition 840 115)
 (uid "0_-fvi_hrnjywg5_-jte")
 (points 855 140 855 110))
-($3 683 < 0_-fvi_hrnjywg5_-jtd "ChemCompVar" 655
+($3 684 < 0_-fvi_hrnjywg5_-jtd "ChemCompVar" 656
 (showAttributeCompartment false)
 (showOperationCompartment false)
 (uid "0_-fvi_hrnjywg5_-jtd")
 (bbx 670 210 260 30))
-($4 684 < 0_-fvi_hrnjywg5_-jtc "" 655
+($4 685 < 0_-fvi_hrnjywg5_-jtc "" 656
 (toMultiplicityPosition 800 245)
 (uid "0_-fvi_hrnjywg5_-jtc")
 (points 790 270 790 240))
-($4 685 < 0_-fvi_hrnjywg5_-jtb "" 655
+($4 686 < 0_-fvi_hrnjywg5_-jtb "" 656
 (toMultiplicityPosition 660 235)
 (uid "0_-fvi_hrnjywg5_-jtb")
 (points 630 225 670 225))
-($3 686 < 0_-fvi_hrnjywg5_-jta "ChemComp" 655
+($3 687 < 0_-fvi_hrnjywg5_-jta "ChemComp" 656
 (showAttributeCompartment false)
 (showOperationCompartment false)
 (uid "0_-fvi_hrnjywg5_-jta")
 (bbx 690 460 240 30))
-($4 687 < 0_-fvi_hrnjywg5_-jt9 "" 655
+($4 688 < 0_-fvi_hrnjywg5_-jt9 "" 656
 (toMultiplicityPosition 920 245)
 (uid "0_-fvi_hrnjywg5_-jt9")
 (points 910 460 910 240)
 (fromMultiplicityPosition 920 435))
-($4 688 < 0_-fvi_hrnjywg5_-jt8 "" 655
+($4 689 < 0_-fvi_hrnjywg5_-jt8 "" 656
 (toMultiplicityPosition 775 440)
 (uid "0_-fvi_hrnjywg5_-jt8")
 (points 795 430 795 460))
-($6 689 < 0_63g_hy9wq6if_-p8z "AtomType" 1
+($6 690 < 0_63g_hy9wq6if_-p8z "AtomType" 1
 (name "AtomType"
 )
 (uid "0_63g_hy9wq6if_-p8z"))
-($12 690 < 0_63g_hy9wq6if_-p8v "#<anon> (AtomType, Word)" 689
+($12 691 < 0_63g_hy9wq6if_-p8v "#<anon> (AtomType, Word)" 690
 (uid "0_63g_hy9wq6if_-p8v"))
-($8 691 < 0_63g_hy9wq6if_-p8y "isOpen" 689
+($8 692 < 0_63g_hy9wq6if_-p8y "isOpen" 690
 (name "isOpen"
 )
 (value "False"
 )
 (uid "0_63g_hy9wq6if_-p8y"))
-($8 692 < 0_63g_hy9wq6if_-p8x "enumeration" 689
+($8 693 < 0_63g_hy9wq6if_-p8x "enumeration" 690
 (name "enumeration"
 )
 (value "('single', 'equivalent', 'pseudo', 'nonstereo')"
 )
 (uid "0_63g_hy9wq6if_-p8x"))
-($8 693 < 0_63g_hy9wq6if_-p8w "documentation" 689
+($8 694 < 0_63g_hy9wq6if_-p8w "documentation" 690
 (name "documentation"
 )
 (value "Type of atom:"
@@ -4224,152 +4237,178 @@ objectdomain.uml.core.Stereotype-owns $19
 "'nonstereo': SIngle atom that is not stereospecifically assigned. E.g. Ser HBX, Try HGY, Val HGX*, CGY."
 )
 (uid "0_63g_hy9wq6if_-p8w"))
-($8 694 < 0_63g_hy9wq6if_-p7t "guid" 689
+($8 695 < 0_63g_hy9wq6if_-p7t "guid" 690
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-07-31-11:44:56_00002"
 )
 (uid "0_63g_hy9wq6if_-p7t"))
-($6 695 < ajvq9s_-dfu_it04jl4i_-p98 "ChainGroup" 1
+($6 696 < ajvq9s_-dfu_it04jl4i_-p98 "ChainGroup" 1
 (name "ChainGroup"
 )
 (uid "ajvq9s_-dfu_it04jl4i_-p98"))
-($7 696 < ajvq9s_-dfu_it04jl4i_-p95 "name" 695
+($7 697 < 0_-imz_ivpx7czc_-p98 "serial" 696
+(changeability "frozen")
+(name "serial"
+)
+(uid "0_-imz_ivpx7czc_-p98")
+(multiplicity "1"))
+($8 698 < 0_-imz_ivpx7czc_-p97 "isAutomatic" 697
+(name "isAutomatic"
+)
+(value "True"
+)
+(uid "0_-imz_ivpx7czc_-p97"))
+($8 699 < 0_-imz_ivpx7czc_-p8o "guid" 697
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2016-11-19-20:33:21_00003"
+)
+(uid "0_-imz_ivpx7czc_-p8o"))
+($7 700 < ajvq9s_-dfu_it04jl4i_-p95 "name" 696
 (changeability "frozen")
 (name "name"
 )
 (uid "ajvq9s_-dfu_it04jl4i_-p95")
 (multiplicity "1"))
-($8 697 < ajvq9s_-dfu_it04jl4i_-p94 "documentation" 696
+($8 701 < ajvq9s_-dfu_it04jl4i_-p94 "documentation" 700
 (name "documentation"
 )
-(value "Chain group name - key attribute"
+(value "Chain group name - secondary key attribute"
 )
 (uid "ajvq9s_-dfu_it04jl4i_-p94"))
-($8 698 < ajvq9s_-dfu_it04jl4i_-p8n "guid" 696
+($8 702 < ajvq9s_-dfu_it04jl4i_-p8n "guid" 700
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2016-09-12-10:13:31_00003"
 )
 (uid "ajvq9s_-dfu_it04jl4i_-p8n"))
-($12 699 < ajvq9s_-dfu_it04jl4i_-p96 "#<anon> (ChainGroup, DataObject)" 695
+($12 703 < ajvq9s_-dfu_it04jl4i_-p96 "#<anon> (ChainGroup, DataObject)" 696
 (uid "ajvq9s_-dfu_it04jl4i_-p96"))
-($8 700 < ajvq9s_-dfu_it04jl4i_-p97 "documentation" 695
+($8 704 < ajvq9s_-dfu_it04jl4i_-p97 "documentation" 696
 (name "documentation"
 )
 (value "User settable group of chains"
 )
 (uid "ajvq9s_-dfu_it04jl4i_-p97"))
-($8 701 < ajvq9s_-dfu_it04jl4i_-p8m "guid" 695
+($8 705 < ajvq9s_-dfu_it04jl4i_-p8m "guid" 696
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2016-09-12-10:13:24_00001"
 )
 (uid "ajvq9s_-dfu_it04jl4i_-p8m"))
-($8 702 < ajvq9s_-dfu_it04jl4i_-p8s "keyNames" 695
+($8 706 < ajvq9s_-dfu_it04jl4i_-p8s "keyNames" 696
 (name "keyNames"
 )
-(value "name"
+(value "serial"
 )
 (uid "ajvq9s_-dfu_it04jl4i_-p8s"))
-($8 703 < 0_-fvi_hrnjywg5_-jt7 "documentation" 1
+($13 707 < 0_-imz_ivpx7czc_-p96 "name_uniquely_identifies_ChainGroup" 696
+(name "name_uniquely_identifies_ChainGroup"
+)
+(uid "0_-imz_ivpx7czc_-p96")
+(body "code:python"
+"_"
+"self.molSystem.findAllChainGroups(name=value) in (set(), set((self,)))"
+))
+($8 708 < 0_-imz_ivpx7czc_-p8n "guid" 707
+(name "guid"
+)
+(value "www.ccpn.ac.uk_Fogh_2016-11-19-20:33:12_00001"
+)
+(uid "0_-imz_ivpx7czc_-p8n"))
+($8 709 < 0_-fvi_hrnjywg5_-jt7 "documentation" 1
 (name "documentation"
 )
 (value "Molecular system with various chains, their residues, atoms, interactions etc., independent of any coordinate set. Describes not the covalent structure of the molecule  as such (given in the Molecule package),  but the individual molecules and atoms and their role in context of the larger system. Attributes specific to X-ray, NMR or other techniques are given in other packages."
 )
 (uid "0_-fvi_hrnjywg5_-jt7"))
-($8 704 < 0_-fvi_hrnjywg5_-jt6 "shortName" 1
+($8 710 < 0_-fvi_hrnjywg5_-jt6 "shortName" 1
 (name "shortName"
 )
 (value "MOLS"
 )
 (uid "0_-fvi_hrnjywg5_-jt6"))
-($8 705 < 0_-fvi_hrnjywg5_-jt5 "guid" 1
+($8 711 < 0_-fvi_hrnjywg5_-jt5 "guid" 1
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00022"
 )
 (uid "0_-fvi_hrnjywg5_-jt5"))
-($16 707)
-($18 710)
-($18 711)
-($18 712)
+($16 713)
 ($18 716)
+($18 717)
 ($18 718)
-($18 721)
-($18 723)
-($18 725)
+($18 722)
+($18 724)
 ($18 727)
-($18 728)
+($18 729)
+($18 731)
+($18 733)
 ($18 734)
-($18 739)
 ($18 740)
-($18 744)
-($16 745)
-($16 746)
-($16 747)
-($16 748)
-($16 750)
+($18 745)
+($18 746)
+($18 750)
+($18 751)
 ($16 752)
+($16 753)
 ($16 754)
 ($16 755)
-($18 757)
-($18 758)
-($18 763)
-($16 766)
-($16 767)
-($16 768)
-($16 769)
-($16 770)
-($16 771)
-($16 772)
+($16 757)
+($16 759)
+($16 761)
+($16 762)
+($18 764)
+($18 765)
+($18 770)
+($16 773)
 ($16 774)
 ($16 775)
+($16 776)
 ($16 777)
 ($16 778)
 ($16 779)
-($16 780)
 ($16 781)
 ($16 782)
-($16 783)
 ($16 784)
 ($16 785)
 ($16 786)
 ($16 787)
+($16 788)
 ($16 789)
+($16 790)
 ($16 791)
 ($16 792)
 ($16 793)
 ($16 794)
-($16 795)
-($16 797)
+($16 796)
 ($16 798)
 ($16 799)
+($16 800)
 ($16 801)
 ($16 802)
-($16 803)
 ($16 804)
 ($16 805)
-($16 807)
+($16 806)
 ($16 808)
+($16 809)
 ($16 810)
+($16 811)
 ($16 812)
 ($16 814)
 ($16 815)
-($16 816)
 ($16 817)
-($16 818)
-($16 820)
+($16 819)
+($16 821)
 ($16 822)
+($16 823)
 ($16 824)
-($16 826)
-($16 828)
+($16 825)
+($16 827)
 ($16 829)
-($16 830)
 ($16 831)
-($16 832)
 ($16 833)
-($16 834)
 ($16 835)
 ($16 836)
 ($16 837)
@@ -4398,15 +4437,15 @@ objectdomain.uml.core.Stereotype-owns $19
 ($16 860)
 ($16 861)
 ($16 862)
+($16 863)
 ($16 864)
+($16 865)
 ($16 866)
+($16 867)
 ($16 868)
 ($16 869)
-($16 870)
 ($16 871)
-($16 872)
 ($16 873)
-($16 874)
 ($16 875)
 ($16 876)
 ($16 877)
@@ -4415,13 +4454,13 @@ objectdomain.uml.core.Stereotype-owns $19
 ($16 880)
 ($16 881)
 ($16 882)
+($16 883)
+($16 884)
+($16 885)
+($16 886)
+($16 887)
 ($16 888)
 ($16 889)
-($16 890)
-($16 891)
-($16 892)
-($16 893)
-($16 894)
 ($16 895)
 ($16 896)
 ($16 897)
@@ -4433,87 +4472,94 @@ objectdomain.uml.core.Stereotype-owns $19
 ($16 903)
 ($16 904)
 ($16 905)
+($16 906)
 ($16 907)
+($16 908)
 ($16 909)
+($16 910)
 ($16 911)
-($16 913)
+($16 912)
 ($16 914)
-($16 915)
 ($16 916)
 ($16 918)
-($16 919)
 ($16 920)
 ($16 921)
 ($16 922)
 ($16 923)
 ($16 925)
+($16 926)
 ($16 927)
-($15 706 @ -yk94ms_-e3s_e41656c6_-fvn 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "MolSystem" $15)
-($6 708 @ 0_-fvi_hrnjywg5_-d9g 4 "Logical" $1 "memops" $1 "Implementation" $1 "DataObject" $6)
-($6 709 @ 0_-fvi_hrnjywg5_-dkx 4 "Logical" $1 "memops" $1 "Implementation" $1 "Line" $6)
-($6 713 @ 0_-fvi_hrnjywg5_-dlb 4 "Logical" $1 "memops" $1 "Implementation" $1 "Float" $6)
-($6 714 @ 0_-fvi_hrnjywg5_-dl3 4 "Logical" $1 "memops" $1 "Implementation" $1 "Int" $6)
-($6 715 @ 0_-fvi_hrnjywg5_-dkm 4 "Logical" $1 "memops" $1 "Implementation" $1 "String" $6)
-($6 717 @ 0_-fvi_hrnjywg5_-m5a 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "MolType" $6)
-($6 719 @ 0_-fvi_hrnjywg5_-d6u 4 "Logical" $1 "memops" $1 "Implementation" $1 "LongWord" $6)
-($6 720 @ 0_-fvi_hrnjywg5_-m54 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "ChemCompLinking" $6)
-($6 722 @ 0_-fvi_hrnjywg5_-m5f 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "ThreeLetterCode" $6)
-($6 724 @ 0_-fvi_hrnjywg5_-dkb 4 "Logical" $1 "memops" $1 "Implementation" $1 "Word" $6)
-($19 726 @ -yk94ms_-e3s_e41656c6_-fw7 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "DataType" $19)
-($6 729 @ 0_-fvi_hrnjywg5_-m17 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "ChemAtom" $6)
-($6 730 @ 0_-fvi_hrnjywg5_-jjb 5 "Logical" $1 "ccp" $1 "molecule" $1 "Validation" $1 "MolSysAtomValidation" $6)
-($6 731 @ 0_-fvi_hrnjywg5_-m77 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "ChemAtomSet" $6)
-($6 732 @ 0_-fvi_hrnjywg5_-md1 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "ChemCompVar" $6)
-($6 733 @ 0_-fvi_hrnjywg5_-hhe 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ResonanceGroup" $6)
-($6 735 @ 0_-fvi_hrnjywg5_-kuz 5 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "LinkDihedralAngle" $6)
-($6 736 @ 0_-fvi_hrnjywg5_-m37 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "LinkEnd" $6)
-($6 737 @ -hkpzxr_-li2_fcvq0su4_-p40 5 "Logical" $1 "ccp" $1 "molecule" $1 "Symmetry" $1 "Segment" $6)
-($6 738 @ 0_-fvi_hrnjywg5_-jjf 5 "Logical" $1 "ccp" $1 "molecule" $1 "Validation" $1 "MolSysResidueValidation" $6)
-($6 741 @ 0_-fvi_hrnjywg5_-dlv 4 "Logical" $1 "memops" $1 "Implementation" $1 "Boolean" $6)
-($6 742 @ 0_-fvi_hrnjywg5_-p4r 4 "Logical" $1 "cambridge" $1 "Dangle" $1 "DangleChain" $6)
-($6 743 @ 0_-fvi_hrnjywg5_-jjj 5 "Logical" $1 "ccp" $1 "molecule" $1 "Validation" $1 "MolSysChainValidation" $6)
-($15 749 @ -yk94ms_-e3s_e41656c6_-fvz 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Molecule" $15)
-($6 751 @ -yk94ms_-e3s_e41656c6_-lyc 5 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "Molecule" $6)
-($10 753 @ 0_-fvi_hrnjywg5_-l2b 6 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "Molecule" $6 "#<anon> (Molecule, Chain)##," $10)
-($6 756 @ 0_-fvi_hrnjywg5_-dbb 4 "Logical" $1 "memops" $1 "Implementation" $1 "TopObject" $6)
-($6 759 @ 0_-fvi_hrnjywg5_-ogh 5 "Logical" $1 "ccp" $1 "general" $1 "Citation" $1 "Citation" $6)
-($6 760 @ 0_-fvi_hrnjywg5_-khd 5 "Logical" $1 "ccp" $1 "molecule" $1 "MolStructure" $1 "StructureEnsemble" $6)
-($6 761 @ 0_-fvi_hrnjywg5_-kev 5 "Logical" $1 "ccp" $1 "molecule" $1 "MolStructure" $1 "Model" $6)
-($6 762 @ 0_-fvi_hrnjywg5_-ob2 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "Experiment" $6)
-($6 764 @ 0_-fvi_hrnjywg5_-o2a 5 "Logical" $1 "ccp" $1 "general" $1 "DbRef" $1 "Entry" $6)
-($6 765 @ 0_-fvi_hrnjywg5_-jjn 5 "Logical" $1 "ccp" $1 "molecule" $1 "Validation" $1 "MolSystemValidation" $6)
-($15 773 @ -yk94ms_-e3s_e41656c6_-fvu 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "ChemComp" $15)
-($15 776 @ -yk94ms_-e3s_e41656c6_-fvs 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Coordinates" $15)
-($10 788 @ 0_-fvi_hrnjywg5_-m2w 6 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "LinkEnd" $6 "#<anon> (LinkEnd, ChemAtom)##boundLinkEnds,boundChemAtom" $10)
-($10 790 @ 0_-fvi_hrnjywg5_-m2d 6 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "LinkEnd" $6 "#<anon> (LinkEnd, ChemCompVar)##," $10)
-($10 796 @ 0_-fvi_hrnjywg5_-m25 6 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "LinkEnd" $6 "#<anon> (LinkEnd, ChemAtom)##remoteLinkEnds,remoteChemAtom" $10)
-($15 800 @ -yk94ms_-e3s_e41656c6_-fvr 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "DbRef" $15)
-($10 806 @ 0_-fvi_hrnjywg5_-kg5 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolStructure" $1 "StructureEnsemble" $6 "#<anon> (StructureEnsemble, Model)##," $10)
-($10 809 @ 0_-fvi_hrnjywg5_-m6f 6 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "ChemAtomSet" $6 "#<anon> (ChemAtomSet, )##," $10)
-($10 811 @ 0_-fvi_hrnjywg5_-m67 6 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "ChemAtomSet" $6 "#<anon> (ChemAtomSet, ChemAtom)##," $10)
-($10 813 @ 0_-fvi_hrnjywg5_-m9h 6 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "ChemCompVar" $6 "#<anon> (ChemCompVar, ChemAtomSet)##," $10)
-($6 819 @ -yk94ms_-e3s_e41656c6_-lsj 5 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "MolResidue" $6)
-($10 821 @ 0_-fvi_hrnjywg5_-kyt 6 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "MolResidue" $6 "#<anon> (MolResidue, Residue)##," $10)
-($10 823 @ 0_-fvi_hrnjywg5_-ky7 6 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "MolResidue" $6 "#<anon> (MolResidue, ChemCompVar)##," $10)
-($10 825 @ 0_jd_i2lweh8x_-p98 6 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "MolResidue" $6 "#<anon> (MolResidue, )##nextMolResidue,previousMolResidue" $10)
-($10 827 @ -yk94ms_-e3s_e41656c6_-lua 6 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "Molecule" $6 "#<anon> (Molecule, MolResidue)##," $10)
-($6 863 @ 0_-fvi_hrnjywg5_-mfr 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "AbstractChemAtom" $6)
-($10 865 @ 0_-fvi_hrnjywg5_-mfh 6 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "AbstractChemAtom" $6 "#<anon> (AbstractChemAtom, ChemCompVar)##chemAtoms," $10)
-($12 867 @ 0_-fvi_hrnjywg5_-m0l 6 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "ChemAtom" $6 "#<anon> (ChemAtom, AbstractChemAtom)" $12)
-($19 883 @ -yk94ms_-e3s_e41656c6_-fwy 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "import" $19)
-($1 884 @ -yk94ms_-e3s_e41656c6_-iio 4 "Logical" $1 "ccp" $1 "general" $1 "Citation" $1)
-($1 885 @ -yk94ms_-e3s_e41656c6_-p0n 4 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1)
-($1 886 @ -yk94ms_-e3s_e41656c6_-m0p 4 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1)
-($1 887 @ -yk94ms_-e3s_e41656c6_-id3 4 "Logical" $1 "ccp" $1 "general" $1 "DbRef" $1)
-($6 906 @ 0_-fvi_hrnjywg5_-kwc 5 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "MolResLinkEnd" $6)
-($10 908 @ 0_-fvi_hrnjywg5_-ky1 6 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "MolResidue" $6 "#<anon> (MolResidue, MolResLinkEnd)##," $10)
-($6 910 @ 0_-fvi_hrnjywg5_-kvo 5 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "MolResLink" $6)
-($10 912 @ 0_-fvi_hrnjywg5_-kv9 6 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "MolResLink" $6 "#<anon> (MolResLink, MolResLinkEnd)##," $10)
-($10 917 @ 0_-fvi_hrnjywg5_-l15 6 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "Molecule" $6 "#<anon> (Molecule, MolResLink)##," $10)
-($6 924 @ 0_-fvi_hrnjywg5_-mjz 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "ChemComp" $6)
-($10 926 @ 0_-fvi_hrnjywg5_-mh6 6 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "ChemComp" $6 "#<anon> (ChemComp, ChemCompVar)##," $10)
-($10 928 @ 0_-fvi_hrnjywg5_-kxw 6 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "MolResidue" $6 "#<anon> (MolResidue, ChemComp)##," $10)
-(styleAssn 3 706)
+($16 928)
+($16 929)
+($16 930)
+($16 932)
+($16 934)
+($15 712 @ -yk94ms_-e3s_e41656c6_-fvn 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "MolSystem" $15)
+($6 714 @ 0_-fvi_hrnjywg5_-d9g 4 "Logical" $1 "memops" $1 "Implementation" $1 "DataObject" $6)
+($6 715 @ 0_-fvi_hrnjywg5_-dkx 4 "Logical" $1 "memops" $1 "Implementation" $1 "Line" $6)
+($6 719 @ 0_-fvi_hrnjywg5_-dlb 4 "Logical" $1 "memops" $1 "Implementation" $1 "Float" $6)
+($6 720 @ 0_-fvi_hrnjywg5_-dl3 4 "Logical" $1 "memops" $1 "Implementation" $1 "Int" $6)
+($6 721 @ 0_-fvi_hrnjywg5_-dkm 4 "Logical" $1 "memops" $1 "Implementation" $1 "String" $6)
+($6 723 @ 0_-fvi_hrnjywg5_-m5a 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "MolType" $6)
+($6 725 @ 0_-fvi_hrnjywg5_-d6u 4 "Logical" $1 "memops" $1 "Implementation" $1 "LongWord" $6)
+($6 726 @ 0_-fvi_hrnjywg5_-m54 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "ChemCompLinking" $6)
+($6 728 @ 0_-fvi_hrnjywg5_-m5f 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "ThreeLetterCode" $6)
+($6 730 @ 0_-fvi_hrnjywg5_-dkb 4 "Logical" $1 "memops" $1 "Implementation" $1 "Word" $6)
+($19 732 @ -yk94ms_-e3s_e41656c6_-fw7 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "DataType" $19)
+($6 735 @ 0_-fvi_hrnjywg5_-m17 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "ChemAtom" $6)
+($6 736 @ 0_-fvi_hrnjywg5_-jjb 5 "Logical" $1 "ccp" $1 "molecule" $1 "Validation" $1 "MolSysAtomValidation" $6)
+($6 737 @ 0_-fvi_hrnjywg5_-m77 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "ChemAtomSet" $6)
+($6 738 @ 0_-fvi_hrnjywg5_-md1 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "ChemCompVar" $6)
+($6 739 @ 0_-fvi_hrnjywg5_-hhe 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ResonanceGroup" $6)
+($6 741 @ 0_-fvi_hrnjywg5_-kuz 5 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "LinkDihedralAngle" $6)
+($6 742 @ 0_-fvi_hrnjywg5_-m37 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "LinkEnd" $6)
+($6 743 @ -hkpzxr_-li2_fcvq0su4_-p40 5 "Logical" $1 "ccp" $1 "molecule" $1 "Symmetry" $1 "Segment" $6)
+($6 744 @ 0_-fvi_hrnjywg5_-jjf 5 "Logical" $1 "ccp" $1 "molecule" $1 "Validation" $1 "MolSysResidueValidation" $6)
+($6 747 @ 0_-fvi_hrnjywg5_-dlv 4 "Logical" $1 "memops" $1 "Implementation" $1 "Boolean" $6)
+($6 748 @ 0_-fvi_hrnjywg5_-p4r 4 "Logical" $1 "cambridge" $1 "Dangle" $1 "DangleChain" $6)
+($6 749 @ 0_-fvi_hrnjywg5_-jjj 5 "Logical" $1 "ccp" $1 "molecule" $1 "Validation" $1 "MolSysChainValidation" $6)
+($15 756 @ -yk94ms_-e3s_e41656c6_-fvz 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Molecule" $15)
+($6 758 @ -yk94ms_-e3s_e41656c6_-lyc 5 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "Molecule" $6)
+($10 760 @ 0_-fvi_hrnjywg5_-l2b 6 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "Molecule" $6 "#<anon> (Molecule, Chain)##," $10)
+($6 763 @ 0_-fvi_hrnjywg5_-dbb 4 "Logical" $1 "memops" $1 "Implementation" $1 "TopObject" $6)
+($6 766 @ 0_-fvi_hrnjywg5_-ogh 5 "Logical" $1 "ccp" $1 "general" $1 "Citation" $1 "Citation" $6)
+($6 767 @ 0_-fvi_hrnjywg5_-khd 5 "Logical" $1 "ccp" $1 "molecule" $1 "MolStructure" $1 "StructureEnsemble" $6)
+($6 768 @ 0_-fvi_hrnjywg5_-kev 5 "Logical" $1 "ccp" $1 "molecule" $1 "MolStructure" $1 "Model" $6)
+($6 769 @ 0_-fvi_hrnjywg5_-ob2 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "Experiment" $6)
+($6 771 @ 0_-fvi_hrnjywg5_-o2a 5 "Logical" $1 "ccp" $1 "general" $1 "DbRef" $1 "Entry" $6)
+($6 772 @ 0_-fvi_hrnjywg5_-jjn 5 "Logical" $1 "ccp" $1 "molecule" $1 "Validation" $1 "MolSystemValidation" $6)
+($15 780 @ -yk94ms_-e3s_e41656c6_-fvu 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "ChemComp" $15)
+($15 783 @ -yk94ms_-e3s_e41656c6_-fvs 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Coordinates" $15)
+($10 795 @ 0_-fvi_hrnjywg5_-m2w 6 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "LinkEnd" $6 "#<anon> (LinkEnd, ChemAtom)##boundLinkEnds,boundChemAtom" $10)
+($10 797 @ 0_-fvi_hrnjywg5_-m2d 6 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "LinkEnd" $6 "#<anon> (LinkEnd, ChemCompVar)##," $10)
+($10 803 @ 0_-fvi_hrnjywg5_-m25 6 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "LinkEnd" $6 "#<anon> (LinkEnd, ChemAtom)##remoteLinkEnds,remoteChemAtom" $10)
+($15 807 @ -yk94ms_-e3s_e41656c6_-fvr 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "DbRef" $15)
+($10 813 @ 0_-fvi_hrnjywg5_-kg5 6 "Logical" $1 "ccp" $1 "molecule" $1 "MolStructure" $1 "StructureEnsemble" $6 "#<anon> (StructureEnsemble, Model)##," $10)
+($10 816 @ 0_-fvi_hrnjywg5_-m6f 6 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "ChemAtomSet" $6 "#<anon> (ChemAtomSet, )##," $10)
+($10 818 @ 0_-fvi_hrnjywg5_-m67 6 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "ChemAtomSet" $6 "#<anon> (ChemAtomSet, ChemAtom)##," $10)
+($10 820 @ 0_-fvi_hrnjywg5_-m9h 6 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "ChemCompVar" $6 "#<anon> (ChemCompVar, ChemAtomSet)##," $10)
+($6 826 @ -yk94ms_-e3s_e41656c6_-lsj 5 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "MolResidue" $6)
+($10 828 @ 0_-fvi_hrnjywg5_-kyt 6 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "MolResidue" $6 "#<anon> (MolResidue, Residue)##," $10)
+($10 830 @ 0_-fvi_hrnjywg5_-ky7 6 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "MolResidue" $6 "#<anon> (MolResidue, ChemCompVar)##," $10)
+($10 832 @ 0_jd_i2lweh8x_-p98 6 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "MolResidue" $6 "#<anon> (MolResidue, )##nextMolResidue,previousMolResidue" $10)
+($10 834 @ -yk94ms_-e3s_e41656c6_-lua 6 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "Molecule" $6 "#<anon> (Molecule, MolResidue)##," $10)
+($6 870 @ 0_-fvi_hrnjywg5_-mfr 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "AbstractChemAtom" $6)
+($10 872 @ 0_-fvi_hrnjywg5_-mfh 6 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "AbstractChemAtom" $6 "#<anon> (AbstractChemAtom, ChemCompVar)##chemAtoms," $10)
+($12 874 @ 0_-fvi_hrnjywg5_-m0l 6 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "ChemAtom" $6 "#<anon> (ChemAtom, AbstractChemAtom)" $12)
+($19 890 @ -yk94ms_-e3s_e41656c6_-fwy 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "import" $19)
+($1 891 @ -yk94ms_-e3s_e41656c6_-iio 4 "Logical" $1 "ccp" $1 "general" $1 "Citation" $1)
+($1 892 @ -yk94ms_-e3s_e41656c6_-p0n 4 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1)
+($1 893 @ -yk94ms_-e3s_e41656c6_-m0p 4 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1)
+($1 894 @ -yk94ms_-e3s_e41656c6_-id3 4 "Logical" $1 "ccp" $1 "general" $1 "DbRef" $1)
+($6 913 @ 0_-fvi_hrnjywg5_-kwc 5 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "MolResLinkEnd" $6)
+($10 915 @ 0_-fvi_hrnjywg5_-ky1 6 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "MolResidue" $6 "#<anon> (MolResidue, MolResLinkEnd)##," $10)
+($6 917 @ 0_-fvi_hrnjywg5_-kvo 5 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "MolResLink" $6)
+($10 919 @ 0_-fvi_hrnjywg5_-kv9 6 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "MolResLink" $6 "#<anon> (MolResLink, MolResLinkEnd)##," $10)
+($10 924 @ 0_-fvi_hrnjywg5_-l15 6 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "Molecule" $6 "#<anon> (Molecule, MolResLink)##," $10)
+($6 931 @ 0_-fvi_hrnjywg5_-mjz 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "ChemComp" $6)
+($10 933 @ 0_-fvi_hrnjywg5_-mh6 6 "Logical" $1 "ccp" $1 "molecule" $1 "ChemComp" $1 "ChemComp" $6 "#<anon> (ChemComp, ChemCompVar)##," $10)
+($10 935 @ 0_-fvi_hrnjywg5_-kxw 6 "Logical" $1 "ccp" $1 "molecule" $1 "Molecule" $1 "MolResidue" $6 "#<anon> (MolResidue, ChemComp)##," $10)
+(styleAssn 3 712)
 (typeAssn 310 243)
 (assocEndAssn 243 310)
 (typeAssn 359 243)
@@ -4529,71 +4575,71 @@ objectdomain.uml.core.Stereotype-owns $19
 (typeAssn 338 243)
 (assocEndAssn 243 338)
 (subtypeAssn 316 243)
-(supertypeAssn 316 708)
+(supertypeAssn 316 714)
 (generalizationAssn 243 316)
-(typeRefAssn 244 709)
-(typeExpression 244 710)
-(typeRefAssn 251 709)
-(typeExpression 251 710)
-(typeRefAssn 256 709)
-(typeExpression 256 711)
-(typeRefAssn 259 709)
-(typeExpression 259 711)
-(typeRefAssn 262 709)
-(typeExpression 262 711)
-(typeRefAssn 265 709)
-(typeExpression 265 711)
-(typeRefAssn 268 709)
-(typeExpression 268 711)
-(typeRefAssn 271 709)
-(typeExpression 271 712)
-(typeRefAssn 275 713)
-(typeExpression 275 712)
-(typeRefAssn 279 714)
-(typeExpression 279 712)
-(typeRefAssn 283 715)
-(typeExpression 283 710)
-(assocEndAssn 453 313)
-(typeAssn 517 453)
-(assocEndAssn 453 517)
-(typeAssn 524 453)
-(assocEndAssn 453 524)
-(typeAssn 530 453)
-(assocEndAssn 453 530)
-(typeAssn 540 453)
-(assocEndAssn 453 540)
-(typeAssn 633 453)
-(assocEndAssn 453 633)
-(typeAssn 545 453)
-(assocEndAssn 453 545)
-(typeAssn 551 453)
-(assocEndAssn 453 551)
-(subtypeAssn 538 453)
-(supertypeAssn 538 708)
-(generalizationAssn 453 538)
-(typeRefAssn 454 714)
-(typeExpression 454 710)
-(typeRefAssn 457 714)
-(typeExpression 457 710)
-(typeRefAssn 466 709)
-(typeExpression 466 716)
-(typeRefAssn 471 717)
-(typeExpression 471 718)
-(typeRefAssn 475 719)
-(typeExpression 475 718)
-(typeRefAssn 479 720)
-(typeExpression 479 721)
-(typeRefAssn 482 709)
-(typeExpression 482 721)
-(typeRefAssn 485 722)
-(typeExpression 485 723)
-(typeRefAssn 489 715)
-(typeExpression 489 711)
-(assocEndAssn 385 520)
+(typeRefAssn 244 715)
+(typeExpression 244 716)
+(typeRefAssn 251 715)
+(typeExpression 251 716)
+(typeRefAssn 256 715)
+(typeExpression 256 717)
+(typeRefAssn 259 715)
+(typeExpression 259 717)
+(typeRefAssn 262 715)
+(typeExpression 262 717)
+(typeRefAssn 265 715)
+(typeExpression 265 717)
+(typeRefAssn 268 715)
+(typeExpression 268 717)
+(typeRefAssn 271 715)
+(typeExpression 271 718)
+(typeRefAssn 275 719)
+(typeExpression 275 718)
+(typeRefAssn 279 720)
+(typeExpression 279 718)
+(typeRefAssn 283 721)
+(typeExpression 283 716)
+(assocEndAssn 454 313)
+(typeAssn 518 454)
+(assocEndAssn 454 518)
+(typeAssn 525 454)
+(assocEndAssn 454 525)
+(typeAssn 531 454)
+(assocEndAssn 454 531)
+(typeAssn 541 454)
+(assocEndAssn 454 541)
+(typeAssn 634 454)
+(assocEndAssn 454 634)
+(typeAssn 546 454)
+(assocEndAssn 454 546)
+(typeAssn 552 454)
+(assocEndAssn 454 552)
+(subtypeAssn 539 454)
+(supertypeAssn 539 714)
+(generalizationAssn 454 539)
+(typeRefAssn 455 720)
+(typeExpression 455 716)
+(typeRefAssn 458 720)
+(typeExpression 458 716)
+(typeRefAssn 467 715)
+(typeExpression 467 722)
+(typeRefAssn 472 723)
+(typeExpression 472 724)
+(typeRefAssn 476 725)
+(typeExpression 476 724)
+(typeRefAssn 480 726)
+(typeExpression 480 727)
+(typeRefAssn 483 715)
+(typeExpression 483 727)
+(typeRefAssn 486 728)
+(typeExpression 486 729)
+(typeRefAssn 490 721)
+(typeExpression 490 717)
+(assocEndAssn 385 521)
 (typeAssn 412 385)
 (assocEndAssn 385 412)
-(typeAssn 648 385)
-(assocEndAssn 385 648)
+(typeAssn 649 385)
+(assocEndAssn 385 649)
 (typeAssn 418 385)
 (assocEndAssn 385 418)
 (typeAssn 425 385)
@@ -4607,93 +4653,95 @@ objectdomain.uml.core.Stereotype-owns $19
 (typeAssn 444 385)
 (assocEndAssn 385 444)
 (subtypeAssn 410 385)
-(supertypeAssn 410 708)
+(supertypeAssn 410 714)
 (generalizationAssn 385 410)
-(typeRefAssn 386 724)
-(typeExpression 386 725)
-(stereotypeAssn 689 726)
-(subtypeAssn 690 689)
-(supertypeAssn 690 724)
-(generalizationAssn 689 690)
-(typeRefAssn 395 689)
-(typeExpression 395 727)
-(typeRefAssn 404 724)
-(typeExpression 404 728)
-(typeRefAssn 407 724)
-(typeExpression 407 728)
-(typeAssn 413 729)
-(typeAssn 421 730)
-(typeAssn 426 731)
-(typeAssn 520 385)
-(typeAssn 525 732)
-(typeAssn 535 733)
-(assocEndAssn 589 542)
-(typeAssn 601 589)
-(assocEndAssn 589 601)
-(typeAssn 608 589)
-(assocEndAssn 589 608)
-(subtypeAssn 599 589)
-(supertypeAssn 599 708)
-(generalizationAssn 589 599)
-(typeRefAssn 590 724)
-(typeExpression 590 734)
+(typeRefAssn 386 730)
+(typeExpression 386 731)
+(stereotypeAssn 690 732)
+(subtypeAssn 691 690)
+(supertypeAssn 691 730)
+(generalizationAssn 690 691)
+(typeRefAssn 395 690)
+(typeExpression 395 733)
+(typeRefAssn 404 730)
+(typeExpression 404 734)
+(typeRefAssn 407 730)
+(typeExpression 407 734)
+(typeAssn 413 735)
+(typeAssn 421 736)
+(typeAssn 426 737)
+(typeAssn 521 385)
+(typeAssn 526 738)
+(typeAssn 536 739)
+(assocEndAssn 590 543)
+(typeAssn 602 590)
+(assocEndAssn 590 602)
+(typeAssn 609 590)
+(assocEndAssn 590 609)
+(subtypeAssn 600 590)
+(supertypeAssn 600 714)
+(generalizationAssn 590 600)
+(typeRefAssn 591 730)
+(typeExpression 591 740)
 (typeAssn 184 366)
 (assocEndAssn 366 184)
-(assocEndAssn 366 604)
+(assocEndAssn 366 605)
 (subtypeAssn 370 366)
-(supertypeAssn 370 708)
+(supertypeAssn 370 714)
 (generalizationAssn 366 370)
-(typeRefAssn 367 735)
-(typeExpression 367 734)
-(typeAssn 604 366)
-(typeAssn 609 736)
-(typeAssn 542 589)
-(typeAssn 548 737)
-(typeAssn 554 738)
-(typeAssn 313 453)
-(assocEndAssn 618 320)
-(typeAssn 630 618)
-(assocEndAssn 618 630)
-(subtypeAssn 628 618)
-(supertypeAssn 628 708)
-(generalizationAssn 618 628)
-(typeRefAssn 619 714)
-(typeExpression 619 739)
-(typeRefAssn 622 724)
-(typeExpression 622 740)
-(typeRefAssn 625 741)
-(typeExpression 625 740)
-(typeAssn 320 618)
-(typeAssn 326 742)
-(typeAssn 334 743)
-(typeAssn 238 695)
-(assocEndAssn 695 238)
-(assocEndAssn 695 341)
-(subtypeAssn 699 695)
-(supertypeAssn 699 708)
-(generalizationAssn 695 699)
-(typeRefAssn 696 709)
-(typeExpression 696 744)
-(typeAssn 341 695)
-(projectionAssn 3 243 707)
-(styleAssn 4 706)
-(projectionAssn 4 385 745)
-(styleAssn 5 706)
-(projectionAssn 5 453 746)
+(typeRefAssn 367 741)
+(typeExpression 367 740)
+(typeAssn 605 366)
+(typeAssn 610 742)
+(typeAssn 543 590)
+(typeAssn 549 743)
+(typeAssn 555 744)
+(typeAssn 313 454)
+(assocEndAssn 619 320)
+(typeAssn 631 619)
+(assocEndAssn 619 631)
+(subtypeAssn 629 619)
+(supertypeAssn 629 714)
+(generalizationAssn 619 629)
+(typeRefAssn 620 720)
+(typeExpression 620 745)
+(typeRefAssn 623 730)
+(typeExpression 623 746)
+(typeRefAssn 626 747)
+(typeExpression 626 746)
+(typeAssn 320 619)
+(typeAssn 326 748)
+(typeAssn 334 749)
+(typeAssn 238 696)
+(assocEndAssn 696 238)
+(assocEndAssn 696 341)
+(subtypeAssn 703 696)
+(supertypeAssn 703 714)
+(generalizationAssn 696 703)
+(typeRefAssn 697 720)
+(typeExpression 697 750)
+(typeRefAssn 700 715)
+(typeExpression 700 751)
+(typeAssn 341 696)
+(projectionAssn 3 243 713)
+(styleAssn 4 712)
+(projectionAssn 4 385 752)
+(styleAssn 5 712)
+(projectionAssn 5 454 753)
 (to 6 4)
 (from 6 5)
-(projectionAssn 6 516 747)
+(projectionAssn 6 517 754)
 (to 7 5)
 (from 7 3)
-(projectionAssn 7 309 748)
-(styleAssn 8 749)
-(projectionAssn 8 751 750)
+(projectionAssn 7 309 755)
+(styleAssn 8 756)
+(projectionAssn 8 758 757)
 (to 9 3)
 (from 9 8)
-(projectionAssn 9 753 752)
-(styleAssn 10 706)
-(projectionAssn 10 366 754)
-(styleAssn 11 706)
+(projectionAssn 9 760 759)
+(styleAssn 10 712)
+(projectionAssn 10 366 761)
+(styleAssn 11 712)
 (typeAssn 167 112)
 (assocEndAssn 112 167)
 (typeAssn 172 112)
@@ -4719,430 +4767,430 @@ objectdomain.uml.core.Stereotype-owns $19
 (typeAssn 236 112)
 (assocEndAssn 112 236)
 (subtypeAssn 219 112)
-(supertypeAssn 219 756)
+(supertypeAssn 219 763)
 (generalizationAssn 112 219)
-(typeRefAssn 113 724)
-(typeExpression 113 710)
-(typeRefAssn 116 715)
-(typeExpression 116 757)
-(typeRefAssn 119 714)
-(typeExpression 119 710)
-(typeRefAssn 123 741)
-(typeExpression 123 710)
-(typeRefAssn 126 715)
-(typeExpression 126 758)
-(typeRefAssn 130 709)
-(typeExpression 130 758)
-(typeRefAssn 134 709)
-(typeExpression 134 758)
-(typeRefAssn 138 741)
-(typeExpression 138 758)
-(typeRefAssn 142 713)
-(typeExpression 142 758)
-(typeRefAssn 146 715)
-(typeExpression 146 758)
+(typeRefAssn 113 730)
+(typeExpression 113 716)
+(typeRefAssn 116 721)
+(typeExpression 116 764)
+(typeRefAssn 119 720)
+(typeExpression 119 716)
+(typeRefAssn 123 747)
+(typeExpression 123 716)
+(typeRefAssn 126 721)
+(typeExpression 126 765)
+(typeRefAssn 130 715)
+(typeExpression 130 765)
+(typeRefAssn 134 715)
+(typeExpression 134 765)
+(typeRefAssn 138 747)
+(typeExpression 138 765)
+(typeRefAssn 142 719)
+(typeExpression 142 765)
+(typeRefAssn 146 721)
+(typeExpression 146 765)
 (typeAssn 356 351)
 (assocEndAssn 351 356)
 (assocEndAssn 351 174)
 (subtypeAssn 362 351)
-(supertypeAssn 362 708)
+(supertypeAssn 362 714)
 (generalizationAssn 351 362)
-(typeRefAssn 352 709)
-(typeExpression 352 710)
+(typeRefAssn 352 715)
+(typeExpression 352 716)
 (typeAssn 174 351)
 (assocEndAssn 374 179)
 (subtypeAssn 381 374)
-(supertypeAssn 381 708)
+(supertypeAssn 381 714)
 (generalizationAssn 374 381)
-(typeRefAssn 375 724)
-(typeExpression 375 710)
-(typeRefAssn 378 709)
-(typeExpression 378 710)
+(typeRefAssn 375 730)
+(typeExpression 375 716)
+(typeRefAssn 378 715)
+(typeExpression 378 716)
 (typeAssn 179 374)
-(typeAssn 190 759)
-(typeAssn 197 760)
-(assocEndAssn 567 204)
-(typeAssn 580 567)
-(assocEndAssn 567 580)
-(subtypeAssn 578 567)
-(supertypeAssn 578 708)
-(generalizationAssn 567 578)
-(typeRefAssn 568 714)
-(typeExpression 568 710)
-(typeRefAssn 572 709)
-(typeExpression 572 710)
-(typeRefAssn 575 715)
-(typeExpression 575 710)
-(typeAssn 583 761)
-(typeAssn 204 567)
-(typeAssn 210 762)
-(assocEndAssn 639 217)
-(typeAssn 645 639)
-(assocEndAssn 639 645)
-(subtypeAssn 643 639)
-(supertypeAssn 643 708)
-(generalizationAssn 639 643)
-(typeRefAssn 640 724)
-(typeExpression 640 763)
-(typeAssn 217 639)
-(typeAssn 224 764)
-(typeAssn 232 765)
-(projectionAssn 11 112 755)
+(typeAssn 190 766)
+(typeAssn 197 767)
+(assocEndAssn 568 204)
+(typeAssn 581 568)
+(assocEndAssn 568 581)
+(subtypeAssn 579 568)
+(supertypeAssn 579 714)
+(generalizationAssn 568 579)
+(typeRefAssn 569 720)
+(typeExpression 569 716)
+(typeRefAssn 573 715)
+(typeExpression 573 716)
+(typeRefAssn 576 721)
+(typeExpression 576 716)
+(typeAssn 584 768)
+(typeAssn 204 568)
+(typeAssn 210 769)
+(assocEndAssn 640 217)
+(typeAssn 646 640)
+(assocEndAssn 640 646)
+(subtypeAssn 644 640)
+(supertypeAssn 644 714)
+(generalizationAssn 640 644)
+(typeRefAssn 641 730)
+(typeExpression 641 770)
+(typeAssn 217 640)
+(typeAssn 224 771)
+(typeAssn 232 772)
+(projectionAssn 11 112 762)
 (to 12 3)
 (from 12 11)
-(projectionAssn 12 166 766)
-(styleAssn 13 706)
-(projectionAssn 13 351 767)
+(projectionAssn 12 166 773)
+(styleAssn 13 712)
+(projectionAssn 13 351 774)
 (to 14 13)
 (from 14 11)
-(projectionAssn 14 171 768)
+(projectionAssn 14 171 775)
 (to 15 3)
 (from 15 13)
-(projectionAssn 15 355 769)
-(styleAssn 16 706)
-(projectionAssn 16 374 770)
+(projectionAssn 15 355 776)
+(styleAssn 16 712)
+(projectionAssn 16 374 777)
 (to 17 16)
 (from 17 11)
-(projectionAssn 17 176 771)
+(projectionAssn 17 176 778)
 (to 18 10)
 (from 18 11)
-(projectionAssn 18 181 772)
-(styleAssn 19 773)
-(projectionAssn 19 732 774)
+(projectionAssn 18 181 779)
+(styleAssn 19 780)
+(projectionAssn 19 738 781)
 (to 20 19)
 (from 20 5)
-(projectionAssn 20 523 775)
-(styleAssn 21 776)
-(projectionAssn 21 760 777)
+(projectionAssn 20 524 782)
+(styleAssn 21 783)
+(projectionAssn 21 767 784)
 (to 22 21)
 (from 22 11)
-(projectionAssn 22 193 778)
-(styleAssn 23 706)
-(projectionAssn 23 567 779)
+(projectionAssn 22 193 785)
+(styleAssn 23 712)
+(projectionAssn 23 568 786)
 (to 24 23)
 (from 24 11)
-(projectionAssn 24 201 780)
-(styleAssn 25 773)
-(projectionAssn 25 729 781)
+(projectionAssn 24 201 787)
+(styleAssn 25 780)
+(projectionAssn 25 735 788)
 (to 26 25)
 (from 26 4)
-(projectionAssn 26 411 782)
-(styleAssn 27 706)
-(projectionAssn 27 589 783)
+(projectionAssn 26 411 789)
+(styleAssn 27 712)
+(projectionAssn 27 590 790)
 (to 28 27)
 (from 28 5)
-(projectionAssn 28 539 784)
+(projectionAssn 28 540 791)
 (to 29 10)
 (from 29 27)
-(projectionAssn 29 600 785)
-(styleAssn 30 773)
-(projectionAssn 30 736 786)
+(projectionAssn 29 601 792)
+(styleAssn 30 780)
+(projectionAssn 30 742 793)
 (to 31 25)
 (from 31 30)
-(projectionAssn 31 788 787)
+(projectionAssn 31 795 794)
 (to 32 19)
 (from 32 30)
-(projectionAssn 32 790 789)
+(projectionAssn 32 797 796)
 (to 33 30)
 (from 33 27)
-(projectionAssn 33 607 791)
-(styleAssn 34 706)
-(projectionAssn 34 618 792)
+(projectionAssn 33 608 798)
+(styleAssn 34 712)
+(projectionAssn 34 619 799)
 (to 35 34)
 (from 35 3)
-(projectionAssn 35 317 793)
+(projectionAssn 35 317 800)
 (to 36 5)
 (from 36 34)
-(projectionAssn 36 629 794)
+(projectionAssn 36 630 801)
 (to 37 25)
 (from 37 30)
-(projectionAssn 37 796 795)
-(styleAssn 38 706)
-(projectionAssn 38 639 797)
+(projectionAssn 37 803 802)
+(styleAssn 38 712)
+(projectionAssn 38 640 804)
 (to 39 38)
 (from 39 11)
-(projectionAssn 39 214 798)
+(projectionAssn 39 214 805)
 (to 40 4)
 (from 40 38)
-(projectionAssn 40 644 799)
-(styleAssn 41 800)
-(projectionAssn 41 764 801)
+(projectionAssn 40 645 806)
+(styleAssn 41 807)
+(projectionAssn 41 771 808)
 (to 42 41)
 (from 42 11)
-(projectionAssn 42 220 802)
-(styleAssn 43 776)
-(projectionAssn 43 761 803)
+(projectionAssn 42 220 809)
+(styleAssn 43 783)
+(projectionAssn 43 768 810)
 (to 44 43)
 (from 44 23)
-(projectionAssn 44 579 804)
+(projectionAssn 44 580 811)
 (to 45 43)
 (from 45 21)
-(projectionAssn 45 806 805)
-(styleAssn 46 773)
-(projectionAssn 46 731 807)
+(projectionAssn 45 813 812)
+(styleAssn 46 780)
+(projectionAssn 46 737 814)
 (to 47 46)
 (from 47 46)
-(projectionAssn 47 809 808)
+(projectionAssn 47 816 815)
 (to 48 25)
 (from 48 46)
-(projectionAssn 48 811 810)
+(projectionAssn 48 818 817)
 (to 49 46)
 (from 49 19)
-(projectionAssn 49 813 812)
+(projectionAssn 49 820 819)
 (to 50 46)
 (from 50 4)
-(projectionAssn 50 424 814)
-(styleAssn 51 706)
-(projectionAssn 51 689 815)
+(projectionAssn 50 424 821)
+(styleAssn 51 712)
+(projectionAssn 51 690 822)
 (to 52 4)
 (from 52 4)
-(projectionAssn 52 430 816)
+(projectionAssn 52 430 823)
 (to 53 4)
 (from 53 4)
-(projectionAssn 53 439 817)
-(styleAssn 54 749)
-(projectionAssn 54 819 818)
+(projectionAssn 53 439 824)
+(styleAssn 54 756)
+(projectionAssn 54 826 825)
 (to 55 5)
 (from 55 54)
-(projectionAssn 55 821 820)
+(projectionAssn 55 828 827)
 (to 56 19)
 (from 56 54)
-(projectionAssn 56 823 822)
+(projectionAssn 56 830 829)
 (to 57 54)
 (from 57 54)
-(projectionAssn 57 825 824)
+(projectionAssn 57 832 831)
 (to 58 54)
 (from 58 8)
-(projectionAssn 58 827 826)
-(styleAssn 59 706)
-(projectionAssn 59 695 828)
+(projectionAssn 58 834 833)
+(styleAssn 59 712)
+(projectionAssn 59 696 835)
 (to 60 59)
 (from 60 11)
-(projectionAssn 60 235 829)
+(projectionAssn 60 235 836)
 (to 61 59)
 (from 61 3)
-(projectionAssn 61 337 830)
-(styleAssn 63 706)
-(projectionAssn 63 243 831)
-(styleAssn 64 706)
-(projectionAssn 64 385 832)
-(styleAssn 65 706)
-(projectionAssn 65 453 833)
+(projectionAssn 61 337 837)
+(styleAssn 63 712)
+(projectionAssn 63 243 838)
+(styleAssn 64 712)
+(projectionAssn 64 385 839)
+(styleAssn 65 712)
+(projectionAssn 65 454 840)
 (to 66 64)
 (from 66 65)
-(projectionAssn 66 516 834)
+(projectionAssn 66 517 841)
 (to 67 65)
 (from 67 63)
-(projectionAssn 67 309 835)
-(styleAssn 68 749)
-(projectionAssn 68 751 836)
+(projectionAssn 67 309 842)
+(styleAssn 68 756)
+(projectionAssn 68 758 843)
 (to 69 63)
 (from 69 68)
-(projectionAssn 69 753 837)
-(styleAssn 70 749)
-(projectionAssn 70 819 838)
+(projectionAssn 69 760 844)
+(styleAssn 70 756)
+(projectionAssn 70 826 845)
 (to 71 65)
 (from 71 70)
-(projectionAssn 71 821 839)
+(projectionAssn 71 828 846)
 (to 72 70)
 (from 72 68)
-(projectionAssn 72 827 840)
-(styleAssn 73 706)
-(projectionAssn 73 366 841)
-(styleAssn 74 706)
-(projectionAssn 74 112 842)
+(projectionAssn 72 834 847)
+(styleAssn 73 712)
+(projectionAssn 73 366 848)
+(styleAssn 74 712)
+(projectionAssn 74 112 849)
 (to 75 63)
 (from 75 74)
-(projectionAssn 75 166 843)
-(styleAssn 76 706)
-(projectionAssn 76 351 844)
+(projectionAssn 75 166 850)
+(styleAssn 76 712)
+(projectionAssn 76 351 851)
 (to 77 76)
 (from 77 74)
-(projectionAssn 77 171 845)
+(projectionAssn 77 171 852)
 (to 78 63)
 (from 78 76)
-(projectionAssn 78 355 846)
-(styleAssn 79 706)
-(projectionAssn 79 374 847)
+(projectionAssn 78 355 853)
+(styleAssn 79 712)
+(projectionAssn 79 374 854)
 (to 80 79)
 (from 80 74)
-(projectionAssn 80 176 848)
+(projectionAssn 80 176 855)
 (to 81 73)
 (from 81 74)
-(projectionAssn 81 181 849)
-(styleAssn 82 773)
-(projectionAssn 82 732 850)
+(projectionAssn 81 181 856)
+(styleAssn 82 780)
+(projectionAssn 82 738 857)
 (to 83 82)
 (from 83 65)
-(projectionAssn 83 523 851)
-(styleAssn 84 776)
-(projectionAssn 84 760 852)
+(projectionAssn 83 524 858)
+(styleAssn 84 783)
+(projectionAssn 84 767 859)
 (to 85 84)
 (from 85 74)
-(projectionAssn 85 193 853)
-(styleAssn 86 706)
-(projectionAssn 86 567 854)
+(projectionAssn 85 193 860)
+(styleAssn 86 712)
+(projectionAssn 86 568 861)
 (to 87 86)
 (from 87 74)
-(projectionAssn 87 201 855)
-(styleAssn 88 706)
-(projectionAssn 88 589 856)
+(projectionAssn 87 201 862)
+(styleAssn 88 712)
+(projectionAssn 88 590 863)
 (to 89 73)
 (from 89 88)
-(projectionAssn 89 600 857)
+(projectionAssn 89 601 864)
 (to 90 88)
 (from 90 65)
-(projectionAssn 90 539 858)
+(projectionAssn 90 540 865)
 (to 91 82)
 (from 91 70)
-(projectionAssn 91 823 859)
-(styleAssn 92 773)
-(projectionAssn 92 729 860)
+(projectionAssn 91 830 866)
+(styleAssn 92 780)
+(projectionAssn 92 735 867)
 (to 93 92)
 (from 93 64)
-(projectionAssn 93 411 861)
-(styleAssn 94 773)
-(projectionAssn 94 863 862)
+(projectionAssn 93 411 868)
+(styleAssn 94 780)
+(projectionAssn 94 870 869)
 (to 95 82)
 (from 95 94)
-(projectionAssn 95 865 864)
+(projectionAssn 95 872 871)
 (to 96 94)
 (from 96 92)
-(projectionAssn 96 867 866)
-(styleAssn 97 773)
-(projectionAssn 97 736 868)
+(projectionAssn 96 874 873)
+(styleAssn 97 780)
+(projectionAssn 97 742 875)
 (to 98 92)
 (from 98 97)
-(projectionAssn 98 788 869)
+(projectionAssn 98 795 876)
 (to 99 82)
 (from 99 97)
-(projectionAssn 99 790 870)
+(projectionAssn 99 797 877)
 (to 100 97)
 (from 100 88)
-(projectionAssn 100 607 871)
-(styleAssn 101 706)
-(projectionAssn 101 618 872)
+(projectionAssn 100 608 878)
+(styleAssn 101 712)
+(projectionAssn 101 619 879)
 (to 102 65)
 (from 102 101)
-(projectionAssn 102 629 873)
+(projectionAssn 102 630 880)
 (to 103 101)
 (from 103 63)
-(projectionAssn 103 317 874)
+(projectionAssn 103 317 881)
 (to 104 92)
 (from 104 97)
-(projectionAssn 104 796 875)
-(styleAssn 105 706)
-(projectionAssn 105 639 876)
+(projectionAssn 104 803 882)
+(styleAssn 105 712)
+(projectionAssn 105 640 883)
 (to 106 64)
 (from 106 105)
-(projectionAssn 106 644 877)
+(projectionAssn 106 645 884)
 (to 107 105)
 (from 107 74)
-(projectionAssn 107 214 878)
-(styleAssn 108 776)
-(projectionAssn 108 761 879)
+(projectionAssn 107 214 885)
+(styleAssn 108 783)
+(projectionAssn 108 768 886)
 (to 109 108)
 (from 109 84)
-(projectionAssn 109 806 880)
-(styleAssn 110 800)
-(projectionAssn 110 764 881)
+(projectionAssn 109 813 887)
+(styleAssn 110 807)
+(projectionAssn 110 771 888)
 (to 111 110)
 (from 111 74)
-(projectionAssn 111 220 882)
-(stereotypeAssn 564 883)
-(clientAssn 564 1)
-(supplierAssn 564 884)
-(stereotypeAssn 565 883)
+(projectionAssn 111 220 889)
+(stereotypeAssn 565 890)
 (clientAssn 565 1)
-(supplierAssn 565 885)
-(stereotypeAssn 566 883)
+(supplierAssn 565 891)
+(stereotypeAssn 566 890)
 (clientAssn 566 1)
-(supplierAssn 566 886)
-(stereotypeAssn 654 883)
-(clientAssn 654 1)
-(supplierAssn 654 887)
-(styleAssn 656 706)
-(projectionAssn 656 112 888)
-(styleAssn 657 706)
-(projectionAssn 657 243 889)
-(to 658 657)
-(from 658 656)
-(projectionAssn 658 166 890)
-(styleAssn 659 706)
-(projectionAssn 659 453 891)
-(to 660 659)
-(from 660 657)
-(projectionAssn 660 309 892)
-(styleAssn 661 706)
-(projectionAssn 661 385 893)
-(to 662 661)
-(from 662 659)
-(projectionAssn 662 516 894)
-(styleAssn 663 706)
-(projectionAssn 663 366 895)
-(to 664 663)
-(from 664 656)
-(projectionAssn 664 181 896)
-(styleAssn 665 706)
-(projectionAssn 665 589 897)
-(to 666 663)
-(from 666 665)
-(projectionAssn 666 600 898)
-(to 667 665)
-(from 667 659)
-(projectionAssn 667 539 899)
-(styleAssn 668 706)
-(projectionAssn 668 639 900)
-(to 669 661)
-(from 669 668)
-(projectionAssn 669 644 901)
-(to 670 668)
-(from 670 656)
-(projectionAssn 670 214 902)
-(styleAssn 671 749)
-(projectionAssn 671 819 903)
-(to 672 659)
-(from 672 671)
-(projectionAssn 672 821 904)
-(styleAssn 673 749)
-(projectionAssn 673 906 905)
-(to 674 673)
-(from 674 671)
-(projectionAssn 674 908 907)
-(styleAssn 675 749)
-(projectionAssn 675 910 909)
-(to 676 673)
-(from 676 675)
-(projectionAssn 676 912 911)
-(styleAssn 677 749)
-(projectionAssn 677 751 913)
-(to 678 657)
-(from 678 677)
-(projectionAssn 678 753 914)
-(to 679 671)
-(from 679 677)
-(projectionAssn 679 827 915)
-(to 680 675)
-(from 680 677)
-(projectionAssn 680 917 916)
-(styleAssn 681 773)
-(projectionAssn 681 729 918)
-(to 682 681)
-(from 682 661)
-(projectionAssn 682 411 919)
-(styleAssn 683 773)
-(projectionAssn 683 732 920)
-(to 684 683)
-(from 684 671)
-(projectionAssn 684 823 921)
-(to 685 683)
-(from 685 659)
-(projectionAssn 685 523 922)
-(styleAssn 686 773)
-(projectionAssn 686 924 923)
-(to 687 683)
-(from 687 686)
-(projectionAssn 687 926 925)
-(to 688 686)
-(from 688 671)
-(projectionAssn 688 928 927)
+(supplierAssn 566 892)
+(stereotypeAssn 567 890)
+(clientAssn 567 1)
+(supplierAssn 567 893)
+(stereotypeAssn 655 890)
+(clientAssn 655 1)
+(supplierAssn 655 894)
+(styleAssn 657 712)
+(projectionAssn 657 112 895)
+(styleAssn 658 712)
+(projectionAssn 658 243 896)
+(to 659 658)
+(from 659 657)
+(projectionAssn 659 166 897)
+(styleAssn 660 712)
+(projectionAssn 660 454 898)
+(to 661 660)
+(from 661 658)
+(projectionAssn 661 309 899)
+(styleAssn 662 712)
+(projectionAssn 662 385 900)
+(to 663 662)
+(from 663 660)
+(projectionAssn 663 517 901)
+(styleAssn 664 712)
+(projectionAssn 664 366 902)
+(to 665 664)
+(from 665 657)
+(projectionAssn 665 181 903)
+(styleAssn 666 712)
+(projectionAssn 666 590 904)
+(to 667 664)
+(from 667 666)
+(projectionAssn 667 601 905)
+(to 668 666)
+(from 668 660)
+(projectionAssn 668 540 906)
+(styleAssn 669 712)
+(projectionAssn 669 640 907)
+(to 670 662)
+(from 670 669)
+(projectionAssn 670 645 908)
+(to 671 669)
+(from 671 657)
+(projectionAssn 671 214 909)
+(styleAssn 672 756)
+(projectionAssn 672 826 910)
+(to 673 660)
+(from 673 672)
+(projectionAssn 673 828 911)
+(styleAssn 674 756)
+(projectionAssn 674 913 912)
+(to 675 674)
+(from 675 672)
+(projectionAssn 675 915 914)
+(styleAssn 676 756)
+(projectionAssn 676 917 916)
+(to 677 674)
+(from 677 676)
+(projectionAssn 677 919 918)
+(styleAssn 678 756)
+(projectionAssn 678 758 920)
+(to 679 658)
+(from 679 678)
+(projectionAssn 679 760 921)
+(to 680 672)
+(from 680 678)
+(projectionAssn 680 834 922)
+(to 681 676)
+(from 681 678)
+(projectionAssn 681 924 923)
+(styleAssn 682 780)
+(projectionAssn 682 735 925)
+(to 683 682)
+(from 683 662)
+(projectionAssn 683 411 926)
+(styleAssn 684 780)
+(projectionAssn 684 738 927)
+(to 685 684)
+(from 685 672)
+(projectionAssn 685 830 928)
+(to 686 684)
+(from 686 660)
+(projectionAssn 686 524 929)
+(styleAssn 687 780)
+(projectionAssn 687 931 930)
+(to 688 684)
+(from 688 687)
+(projectionAssn 688 933 932)
+(to 689 687)
+(from 689 672)
+(projectionAssn 689 935 934)

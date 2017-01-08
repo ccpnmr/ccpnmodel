@@ -158,12 +158,12 @@ def createMoleculeFromNef(project, name:str, sequence:typing.Sequence[dict],
 
   residueName2chemCompId = MoleculeQuery.fetchStdResNameMap(project)
 
-  # TODO NBNB handle dummy residues properly
-  # This is a temporary HACK
-  for dd in sequence:
-    if dd['linking'] == 'dummy':
-      dd['residue_name'] = 'UNK'
-      dd['linking'] = 'single'
+  # # TODO NBNB handle dummy residues properly
+  # # This is a temporary HACK
+  # for dd in sequence:
+  #   if dd['linking'] == 'dummy':
+  #     dd['residue_name'] = 'UNK'
+  #     dd['linking'] = 'single'
 
   stretches = StarIo.splitNefSequence(sequence)
   molecule =  project.newMolecule(name=name)
@@ -212,7 +212,11 @@ def createMoleculeFromNef(project, name:str, sequence:typing.Sequence[dict],
           molResidues[-1].__dict__['descriptor'] = chemCompVar.descriptor
     else:
       # Only one residue
-      tt = residueName2chemCompId.get(residueTypes[0])
+      residueType = residueTypes[0]
+      if residueType.startswith('dummy.'):
+        tt = ('dummy',residueType[6:])
+      else:
+        tt = residueName2chemCompId.get(residueTypes[0])
       if not tt:
         project._logger.warning("""Could not access ChemComp for %s - replacing with %s
 NB - could be a failure in fetching remote information.

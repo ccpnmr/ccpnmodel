@@ -46,7 +46,7 @@ def fetchChemComp(project, molType, ccpCode, download=True, partialLoad=False):
   """ get ChemComp corresponding to molType,ccpCode, 
   looking 1) in memory, 2) in Repositories on lookup path,
   3)  downloading from PDBe ChemComp server.
-  For 3) save new ChemComp in first Repository on PAckageLocator lookup path
+  For 3) save new ChemComp in first Repository on PackageLocator lookup path
   Do 3) only if download==True
 
   partialLoad controls if only the TopObject (default) or the entire file is loaded
@@ -73,26 +73,31 @@ def fetchChemComp(project, molType, ccpCode, download=True, partialLoad=False):
     if chemCompXmlFile:
       chemComp = XmlIO.loadFromFile(project, chemCompXmlFile, partialLoad=partialLoad)
 
-    if chemComp is None and download:
-      # # try to get it from chemCompArchiveDir directory, if any, or to download it.
-      # # Use custom directory if it was passed in!!!!
-      # if not chemCompArchiveDir:
-      #   chemCompPath = getChemCompArchiveDataDir()
-      # else:
-      #   chemCompPath = chemCompArchiveDir
+    if chemComp is None:
+      if molType == 'dummy':
+        chemComp = project.newNonStdChemComp(molType=molType, ccpCode=ccpCode, code3Letter=ccpCode)
+        chemComp.newChemCompVar(linking='dummy', descriptor='neutral', isDefaultVar=True,
+                                formalCharge=0, isParamagnetic=False, isAromatic=False)
+      elif download:
+        # # try to get it from chemCompArchiveDir directory, if any, or to download it.
+        # # Use custom directory if it was passed in!!!!
+        # if not chemCompArchiveDir:
+        #   chemCompPath = getChemCompArchiveDataDir()
+        # else:
+        #   chemCompPath = chemCompArchiveDir
 
-      ccLocator = (project.findFirstPackageLocator(targetName=packageName) or
-                   project.findFirstPackageLocator(targetName='any'))
-      repository = ccLocator.findFirstRepository()
+        ccLocator = (project.findFirstPackageLocator(targetName=packageName) or
+                     project.findFirstPackageLocator(targetName='any'))
+        repository = ccLocator.findFirstRepository()
 
-      # fileFound = getChemCompXmlFile(repository, chemCompPath, molType, ccpCode,
-      #                               copyFile=copyFile)
-      # if not fileFound and download:
-        # Replaced by direct download from CcpForge (Wim 15/06/2010)
-        #fileFound = downloadChemCompXmlFile(repository, molType, ccpCode)
-      fileFound = downloadChemCompInfoFromCcpForge(repository, molType, ccpCode)
-      if fileFound:
-        chemComp = XmlIO.loadFromFile(project, fileFound,  partialLoad=partialLoad)
+        # fileFound = getChemCompXmlFile(repository, chemCompPath, molType, ccpCode,
+        #                               copyFile=copyFile)
+        # if not fileFound and download:
+          # Replaced by direct download from CcpForge (Wim 15/06/2010)
+          #fileFound = downloadChemCompXmlFile(repository, molType, ccpCode)
+        fileFound = downloadChemCompInfoFromCcpForge(repository, molType, ccpCode)
+        if fileFound:
+          chemComp = XmlIO.loadFromFile(project, fileFound,  partialLoad=partialLoad)
   #
   return chemComp
   

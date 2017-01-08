@@ -2199,7 +2199,7 @@ objectdomain.uml.core.Stereotype-owns $18
 (body "code:python"
 "_"
 "isValid = True"
-"if value not in ('start', 'middle', 'end', 'none'):"
+"if value not in ('start', 'middle', 'end', 'none', 'dummy'):"
 "  if value.startswith('link:'):"
 "    chemComp = self.chemComp"
 "    for lc in value[5:].split(','):"
@@ -3552,7 +3552,7 @@ objectdomain.uml.core.Stereotype-owns $18
 "isValid = True"
 ""
 "# none means no links, except for linear polymers"
-"if linking == 'none':"
+"if linking in ('none', 'dummy'):"
 "  if le and not self.chemComp.isLinearPolymer:"
 "    isValid = False"
 ""
@@ -4473,31 +4473,25 @@ objectdomain.uml.core.Stereotype-owns $18
 (uid "0_-fvi_hrnjywg5_-m5f"))
 ($12 671 < 0_-fvi_hrnjywg5_-m5e "#<anon> (ThreeLetterCode, Word)" 670
 (uid "0_-fvi_hrnjywg5_-m5e"))
-($8 672 < 0_-fvi_hrnjywg5_-m5d "documentation" 670
-(name "documentation"
-)
-(value "Chemical Component three-letter code, as used in PDB. "
-)
-(uid "0_-fvi_hrnjywg5_-m5d"))
-($8 673 < 0_-fvi_hrnjywg5_-m5c "length" 670
-(name "length"
-)
-(value "3"
-)
-(uid "0_-fvi_hrnjywg5_-m5c"))
-($8 674 < 0_-fvi_hrnjywg5_-m5b "guid" 670
+($8 672 < 0_-fvi_hrnjywg5_-m5b "guid" 670
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:52_00023"
 )
 (uid "0_-fvi_hrnjywg5_-m5b"))
-($6 675 < 0_-fvi_hrnjywg5_-m5a "MolType" 1
+($8 673 < ajvq9s_-pn_ixfze445_-p98 "documentation" 670
+(name "documentation"
+)
+(value "Chemical Component three-letter code, as used in PDB. NB, obsolete (no longer length restricted)"
+)
+(uid "ajvq9s_-pn_ixfze445_-p98"))
+($6 674 < 0_-fvi_hrnjywg5_-m5a "MolType" 1
 (name "MolType"
 )
 (uid "0_-fvi_hrnjywg5_-m5a"))
-($12 676 < 0_-fvi_hrnjywg5_-m59 "#<anon> (MolType, Word)" 675
+($12 675 < 0_-fvi_hrnjywg5_-m59 "#<anon> (MolType, Word)" 674
 (uid "0_-fvi_hrnjywg5_-m59"))
-($8 677 < 0_-fvi_hrnjywg5_-m58 "documentation" 675
+($8 676 < 0_-fvi_hrnjywg5_-m58 "documentation" 674
 (name "documentation"
 )
 (value "Basic Molecule Type of ChemComp. "
@@ -4505,31 +4499,31 @@ objectdomain.uml.core.Stereotype-owns $18
 "'protein', 'DNA', 'RNA','otherpolymer' are all classes of *linear* polymers. 'nonpolymer' stands for anything that is not part of a *linear* polymer, including e.g. sugars."
 )
 (uid "0_-fvi_hrnjywg5_-m58"))
-($8 678 < 0_-fvi_hrnjywg5_-m57 "enumeration" 675
+($8 677 < 0_-fvi_hrnjywg5_-m57 "enumeration" 674
 (name "enumeration"
 )
-(value "('protein','DNA','RNA','carbohydrate','other')"
+(value "('protein','DNA','RNA','carbohydrate','other','dummy')"
 )
 (uid "0_-fvi_hrnjywg5_-m57"))
-($8 679 < 0_-fvi_hrnjywg5_-m56 "isOpen" 675
+($8 678 < 0_-fvi_hrnjywg5_-m56 "isOpen" 674
 (name "isOpen"
 )
 (value "False"
 )
 (uid "0_-fvi_hrnjywg5_-m56"))
-($8 680 < 0_-fvi_hrnjywg5_-m55 "guid" 675
+($8 679 < 0_-fvi_hrnjywg5_-m55 "guid" 674
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:52_00024"
 )
 (uid "0_-fvi_hrnjywg5_-m55"))
-($6 681 < 0_-fvi_hrnjywg5_-m54 "ChemCompLinking" 1
+($6 680 < 0_-fvi_hrnjywg5_-m54 "ChemCompLinking" 1
 (name "ChemCompLinking"
 )
 (uid "0_-fvi_hrnjywg5_-m54"))
-($12 682 < 0_-fvi_hrnjywg5_-m53 "#<anon> (ChemCompLinking, Word)" 681
+($12 681 < 0_-fvi_hrnjywg5_-m53 "#<anon> (ChemCompLinking, Word)" 680
 (uid "0_-fvi_hrnjywg5_-m53"))
-($8 683 < 0_-fvi_hrnjywg5_-m52 "documentation" 681
+($8 682 < 0_-fvi_hrnjywg5_-m52 "documentation" 680
 (name "documentation"
 )
 (value "Tag for describing a ChemCompVar, more precisely (part of) substitution pattern.."
@@ -4545,153 +4539,153 @@ objectdomain.uml.core.Stereotype-owns $18
 "For ChemComps other than parts of linear polymers, values 'start', 'middle', 'end' are illegal, and other values could be chosen. ChemCompLinking should be used to describe substitution pattern "
 )
 (uid "0_-fvi_hrnjywg5_-m52"))
-($8 684 < 0_-fvi_hrnjywg5_-m51 "enumeration" 681
+($8 683 < 0_-fvi_hrnjywg5_-m51 "enumeration" 680
 (name "enumeration"
 )
-(value "('start','middle','end','none','any')"
+(value "('start','middle','end','none','any','dummy')"
 )
 (uid "0_-fvi_hrnjywg5_-m51"))
-($8 685 < 0_-fvi_hrnjywg5_-m50 "guid" 681
+($8 684 < 0_-fvi_hrnjywg5_-m50 "guid" 680
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:52_00025"
 )
 (uid "0_-fvi_hrnjywg5_-m50"))
-($6 686 < 0_-fvi_hrnjywg5_-m4z "BondStereochemistry" 1
+($6 685 < 0_-fvi_hrnjywg5_-m4z "BondStereochemistry" 1
 (name "BondStereochemistry"
 )
 (uid "0_-fvi_hrnjywg5_-m4z"))
-($12 687 < 0_-fvi_hrnjywg5_-m4y "#<anon> (BondStereochemistry, Word)" 686
+($12 686 < 0_-fvi_hrnjywg5_-m4y "#<anon> (BondStereochemistry, Word)" 685
 (uid "0_-fvi_hrnjywg5_-m4y"))
-($8 688 < 0_-fvi_hrnjywg5_-m4x "isOpen" 686
+($8 687 < 0_-fvi_hrnjywg5_-m4x "isOpen" 685
 (name "isOpen"
 )
 (value "False"
 )
 (uid "0_-fvi_hrnjywg5_-m4x"))
-($8 689 < 0_-fvi_hrnjywg5_-m4w "enumeration" 686
+($8 688 < 0_-fvi_hrnjywg5_-m4w "enumeration" 685
 (name "enumeration"
 )
 (value "('E','Z','unknown')"
 )
 (uid "0_-fvi_hrnjywg5_-m4w"))
-($8 690 < 0_-fvi_hrnjywg5_-m4v "documentation" 686
+($8 689 < 0_-fvi_hrnjywg5_-m4v "documentation" 685
 (name "documentation"
 )
 (value "IUPAC bond stereochemistry. Values are 'E', 'Z', 'unknown' (for 'not applicable') "
 )
 (uid "0_-fvi_hrnjywg5_-m4v"))
-($8 691 < 0_-fvi_hrnjywg5_-m4u "guid" 686
+($8 690 < 0_-fvi_hrnjywg5_-m4u "guid" 685
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:52_00026"
 )
 (uid "0_-fvi_hrnjywg5_-m4u"))
-($6 692 < 0_-fvi_hrnjywg5_-m4t "AtomChirality" 1
+($6 691 < 0_-fvi_hrnjywg5_-m4t "AtomChirality" 1
 (name "AtomChirality"
 )
 (uid "0_-fvi_hrnjywg5_-m4t"))
-($12 693 < 0_-fvi_hrnjywg5_-m4s "#<anon> (AtomChirality, Word)" 692
+($12 692 < 0_-fvi_hrnjywg5_-m4s "#<anon> (AtomChirality, Word)" 691
 (uid "0_-fvi_hrnjywg5_-m4s"))
-($8 694 < 0_-fvi_hrnjywg5_-m4r "isOpen" 692
+($8 693 < 0_-fvi_hrnjywg5_-m4r "isOpen" 691
 (name "isOpen"
 )
 (value "False"
 )
 (uid "0_-fvi_hrnjywg5_-m4r"))
-($8 695 < 0_-fvi_hrnjywg5_-m4q "enumeration" 692
+($8 694 < 0_-fvi_hrnjywg5_-m4q "enumeration" 691
 (name "enumeration"
 )
 (value "('R','S','unknown')"
 )
 (uid "0_-fvi_hrnjywg5_-m4q"))
-($8 696 < 0_-fvi_hrnjywg5_-m4p "documentation" 692
+($8 695 < 0_-fvi_hrnjywg5_-m4p "documentation" 691
 (name "documentation"
 )
 (value "IUPAC chirality for Atom. Values are 'R', 'S', 'unknown'."
 )
 (uid "0_-fvi_hrnjywg5_-m4p"))
-($8 697 < 0_-fvi_hrnjywg5_-m4o "guid" 692
+($8 696 < 0_-fvi_hrnjywg5_-m4o "guid" 691
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:52_00027"
 )
 (uid "0_-fvi_hrnjywg5_-m4o"))
-($6 698 < 0_-fvi_hrnjywg5_-m4n "Stereochemistry" 1
+($6 697 < 0_-fvi_hrnjywg5_-m4n "Stereochemistry" 1
 (name "Stereochemistry"
 )
 (uid "0_-fvi_hrnjywg5_-m4n"))
-($7 699 < 0_-fvi_hrnjywg5_-m4m "serial" 698
+($7 698 < 0_-fvi_hrnjywg5_-m4m "serial" 697
 (changeability "frozen")
 (name "serial"
 )
 (uid "0_-fvi_hrnjywg5_-m4m")
 (multiplicity "1"))
-($8 700 < 0_-fvi_hrnjywg5_-m4l "isAutomatic" 699
+($8 699 < 0_-fvi_hrnjywg5_-m4l "isAutomatic" 698
 (name "isAutomatic"
 )
 (value "True"
 )
 (uid "0_-fvi_hrnjywg5_-m4l"))
-($8 701 < 0_-fvi_hrnjywg5_-m4k "guid" 699
+($8 700 < 0_-fvi_hrnjywg5_-m4k "guid" 698
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00004"
 )
 (uid "0_-fvi_hrnjywg5_-m4k"))
-($7 702 < 0_-fvi_hrnjywg5_-m4j "stereoClass" 698
+($7 701 < 0_-fvi_hrnjywg5_-m4j "stereoClass" 697
 (changeability "frozen")
 (name "stereoClass"
 )
 (uid "0_-fvi_hrnjywg5_-m4j")
 (multiplicity "1"))
-($8 703 < 0_-fvi_hrnjywg5_-m4i "documentation" 702
+($8 702 < 0_-fvi_hrnjywg5_-m4i "documentation" 701
 (name "documentation"
 )
 (value "Type of stereochemistry represented. Used to derive link to RefStereochemistry"
 )
 (uid "0_-fvi_hrnjywg5_-m4i"))
-($8 704 < 0_-fvi_hrnjywg5_-m4h "guid" 702
+($8 703 < 0_-fvi_hrnjywg5_-m4h "guid" 701
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00007"
 )
 (uid "0_-fvi_hrnjywg5_-m4h"))
-($7 705 < 0_-fvi_hrnjywg5_-m4g "value" 698
+($7 704 < 0_-fvi_hrnjywg5_-m4g "value" 697
 (name "value"
 )
 (uid "0_-fvi_hrnjywg5_-m4g")
 (multiplicity "1"))
-($8 706 < 0_-fvi_hrnjywg5_-m4f "documentation" 705
+($8 705 < 0_-fvi_hrnjywg5_-m4f "documentation" 704
 (name "documentation"
 )
 (value "Value for the stereochemistry."
 )
 (uid "0_-fvi_hrnjywg5_-m4f"))
-($8 707 < 0_-fvi_hrnjywg5_-m4e "guid" 705
+($8 706 < 0_-fvi_hrnjywg5_-m4e "guid" 704
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00005"
 )
 (uid "0_-fvi_hrnjywg5_-m4e"))
-($9 708 < 0_-fvi_hrnjywg5_-m4d "getRefStereochemistry" 698
+($9 707 < 0_-fvi_hrnjywg5_-m4d "getRefStereochemistry" 697
 (name "getRefStereochemistry"
 )
 (uid "0_-fvi_hrnjywg5_-m4d")
 (isQuery true))
-($8 709 < 0_-fvi_hrnjywg5_-m4c "documentation" 708
+($8 708 < 0_-fvi_hrnjywg5_-m4c "documentation" 707
 (name "documentation"
 )
 (value "getter for derived attribute refStereochemistry"
 )
 (uid "0_-fvi_hrnjywg5_-m4c"))
-($8 710 < 0_-fvi_hrnjywg5_-m4b "opType" 708
+($8 709 < 0_-fvi_hrnjywg5_-m4b "opType" 707
 (name "opType"
 )
 (value "get"
 )
 (uid "0_-fvi_hrnjywg5_-m4b"))
-($8 711 < 0_-fvi_hrnjywg5_-m4a "code:java" 708
+($8 710 < 0_-fvi_hrnjywg5_-m4a "code:java" 707
 (name "code:java"
 )
 (value "ccp.api.molecule.Stereochemistry.StereochemistryStore stereochemistryStore = getRoot().getCurrentStereochemistryStore;"
@@ -4701,7 +4695,7 @@ objectdomain.uml.core.Stereotype-owns $18
 "  result = stereochemistryStore.findFirstRefStereochemistry(\"stereoClass\", getStereoClass());"
 )
 (uid "0_-fvi_hrnjywg5_-m4a"))
-($8 712 < 0_-fvi_hrnjywg5_-m49 "code:python" 708
+($8 711 < 0_-fvi_hrnjywg5_-m49 "code:python" 707
 (name "code:python"
 )
 (value "stereochemistryStore = self.root.currentStereochemistryStore"
@@ -4711,29 +4705,29 @@ objectdomain.uml.core.Stereotype-owns $18
 "  result = stereochemistryStore.findFirstRefStereochemistry(stereoClass=self.stereoClass)"
 )
 (uid "0_-fvi_hrnjywg5_-m49"))
-($8 713 < 0_-fvi_hrnjywg5_-m48 "guid" 708
+($8 712 < 0_-fvi_hrnjywg5_-m48 "guid" 707
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2011-03-22-17:23:27_00003"
 )
 (uid "0_-fvi_hrnjywg5_-m48"))
-($9 714 < 0_-fvi_hrnjywg5_-m47 "setRefStereochemistry" 698
+($9 713 < 0_-fvi_hrnjywg5_-m47 "setRefStereochemistry" 697
 (name "setRefStereochemistry"
 )
 (uid "0_-fvi_hrnjywg5_-m47"))
-($8 715 < 0_-fvi_hrnjywg5_-m46 "documentation" 714
+($8 714 < 0_-fvi_hrnjywg5_-m46 "documentation" 713
 (name "documentation"
 )
 (value "setter for derived link refStereochemistry"
 )
 (uid "0_-fvi_hrnjywg5_-m46"))
-($8 716 < 0_-fvi_hrnjywg5_-m45 "opType" 714
+($8 715 < 0_-fvi_hrnjywg5_-m45 "opType" 713
 (name "opType"
 )
 (value "set"
 )
 (uid "0_-fvi_hrnjywg5_-m45"))
-($8 717 < 0_-fvi_hrnjywg5_-m44 "code:java" 714
+($8 716 < 0_-fvi_hrnjywg5_-m44 "code:java" 713
 (name "code:java"
 )
 (value "if (value == null)"
@@ -4744,7 +4738,7 @@ objectdomain.uml.core.Stereotype-owns $18
 "}"
 )
 (uid "0_-fvi_hrnjywg5_-m44"))
-($8 718 < 0_-fvi_hrnjywg5_-m43 "code:python" 714
+($8 717 < 0_-fvi_hrnjywg5_-m43 "code:python" 713
 (name "code:python"
 )
 (value "if value is None:"
@@ -4753,161 +4747,161 @@ objectdomain.uml.core.Stereotype-owns $18
 "  self.stereoClass = value.stereoClass"
 )
 (uid "0_-fvi_hrnjywg5_-m43"))
-($8 719 < 0_-fvi_hrnjywg5_-m42 "guid" 714
+($8 718 < 0_-fvi_hrnjywg5_-m42 "guid" 713
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2011-03-22-17:23:27_00004"
 )
 (uid "0_-fvi_hrnjywg5_-m42"))
-($12 720 < 0_-fvi_hrnjywg5_-m41 "#<anon> (Stereochemistry, DataObject)" 698
+($12 719 < 0_-fvi_hrnjywg5_-m41 "#<anon> (Stereochemistry, DataObject)" 697
 (uid "0_-fvi_hrnjywg5_-m41"))
-($10 721 < 0_-fvi_hrnjywg5_-m40 "#<anon> (Stereochemistry, AbstractChemAtom)##stereochemistries,chemAtoms" 698
+($10 720 < 0_-fvi_hrnjywg5_-m40 "#<anon> (Stereochemistry, AbstractChemAtom)##stereochemistries,chemAtoms" 697
 (name "")
 (uid "0_-fvi_hrnjywg5_-m40"))
-($11 722 < 0_-fvi_hrnjywg5_-m3z "stereochemistries#0" 721
+($11 721 < 0_-fvi_hrnjywg5_-m3z "stereochemistries#0" 720
 (name "stereochemistries"
 )
 (uid "0_-fvi_hrnjywg5_-m3z")
 (multiplicity "*"))
-($8 723 < 0_-fvi_hrnjywg5_-m3y "baseName" 722
+($8 722 < 0_-fvi_hrnjywg5_-m3y "baseName" 721
 (name "baseName"
 )
 (value "stereochemistry"
 )
 (uid "0_-fvi_hrnjywg5_-m3y"))
-($8 724 < 0_-fvi_hrnjywg5_-m3x "documentation" 722
+($8 723 < 0_-fvi_hrnjywg5_-m3x "documentation" 721
 (name "documentation"
 )
 (value "StereoChemistry objects that involve AbstractChemAtom in stereochemistry definition"
 )
 (uid "0_-fvi_hrnjywg5_-m3x"))
-($8 725 < 0_-fvi_hrnjywg5_-m3w "guid" 722
+($8 724 < 0_-fvi_hrnjywg5_-m3w "guid" 721
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00001"
 )
 (uid "0_-fvi_hrnjywg5_-m3w"))
-($11 726 < 0_-fvi_hrnjywg5_-m3v "chemAtoms#1" 721
+($11 725 < 0_-fvi_hrnjywg5_-m3v "chemAtoms#1" 720
 (isOrdered true)
 (changeability "frozen")
 (name "chemAtoms"
 )
 (uid "0_-fvi_hrnjywg5_-m3v")
 (multiplicity "*"))
-($8 727 < 0_-fvi_hrnjywg5_-m3u "baseName" 726
+($8 726 < 0_-fvi_hrnjywg5_-m3u "baseName" 725
 (name "baseName"
 )
 (value "chemAtom"
 )
 (uid "0_-fvi_hrnjywg5_-m3u"))
-($8 728 < 0_-fvi_hrnjywg5_-m3t "documentation" 726
+($8 727 < 0_-fvi_hrnjywg5_-m3t "documentation" 725
 (name "documentation"
 )
 (value "ChemAtoms that define value of StereoChemistry. The order of atoms in the link is significant."
 )
 (uid "0_-fvi_hrnjywg5_-m3t"))
-($8 729 < 0_-fvi_hrnjywg5_-m3s "guid" 726
+($8 728 < 0_-fvi_hrnjywg5_-m3s "guid" 725
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00002"
 )
 (uid "0_-fvi_hrnjywg5_-m3s"))
-($10 730 < 0_-fvi_hrnjywg5_-m3r "#<anon> (Stereochemistry, RefStereochemistry)##," 698
+($10 729 < 0_-fvi_hrnjywg5_-m3r "#<anon> (Stereochemistry, RefStereochemistry)##," 697
 (name "")
 (uid "0_-fvi_hrnjywg5_-m3r"))
-($11 731 < 0_-fvi_hrnjywg5_-m3q "#0" 730
+($11 730 < 0_-fvi_hrnjywg5_-m3q "#0" 729
 (uid "0_-fvi_hrnjywg5_-m3q")
 (isNavigable false))
-($11 732 < 0_-fvi_hrnjywg5_-m3p "#1" 730
+($11 731 < 0_-fvi_hrnjywg5_-m3p "#1" 729
 (uid "0_-fvi_hrnjywg5_-m3p"))
-($8 733 < 0_-fvi_hrnjywg5_-m3o "documentation" 732
+($8 732 < 0_-fvi_hrnjywg5_-m3o "documentation" 731
 (name "documentation"
 )
 (value "Stereochemistry class that Stereochemistry object corresponds to."
 )
 (uid "0_-fvi_hrnjywg5_-m3o"))
-($8 734 < 0_-fvi_hrnjywg5_-m3n "guid" 732
+($8 733 < 0_-fvi_hrnjywg5_-m3n "guid" 731
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00003"
 )
 (uid "0_-fvi_hrnjywg5_-m3n"))
-($8 735 < 0_-fvi_hrnjywg5_-m3m "isDerived" 730
+($8 734 < 0_-fvi_hrnjywg5_-m3m "isDerived" 729
 (name "isDerived"
 )
 (value "True"
 )
 (uid "0_-fvi_hrnjywg5_-m3m"))
-($10 736 < 0_-fvi_hrnjywg5_-m3l "#<anon> (Stereochemistry, AbstractChemAtom)##coreStereochemistries,coreAtoms" 698
+($10 735 < 0_-fvi_hrnjywg5_-m3l "#<anon> (Stereochemistry, AbstractChemAtom)##coreStereochemistries,coreAtoms" 697
 (name "")
 (uid "0_-fvi_hrnjywg5_-m3l"))
-($11 737 < 0_-fvi_hrnjywg5_-m3k "coreStereochemistries#0" 736
+($11 736 < 0_-fvi_hrnjywg5_-m3k "coreStereochemistries#0" 735
 (name "coreStereochemistries"
 )
 (uid "0_-fvi_hrnjywg5_-m3k")
 (multiplicity "*"))
-($8 738 < 0_-fvi_hrnjywg5_-m3j "baseName" 737
+($8 737 < 0_-fvi_hrnjywg5_-m3j "baseName" 736
 (name "baseName"
 )
 (value "coreStereochemistry"
 )
 (uid "0_-fvi_hrnjywg5_-m3j"))
-($8 739 < 0_-fvi_hrnjywg5_-m3i "documentation" 737
+($8 738 < 0_-fvi_hrnjywg5_-m3i "documentation" 736
 (name "documentation"
 )
 (value "Stereochemistry objects that describe the stereochemistry at ChemAtom."
 )
 (uid "0_-fvi_hrnjywg5_-m3i"))
-($8 740 < 0_-fvi_hrnjywg5_-m3h "guid" 737
+($8 739 < 0_-fvi_hrnjywg5_-m3h "guid" 736
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2011-03-22-17:23:27_00001"
 )
 (uid "0_-fvi_hrnjywg5_-m3h"))
-($11 741 < 0_-fvi_hrnjywg5_-m3g "coreAtoms#1" 736
+($11 740 < 0_-fvi_hrnjywg5_-m3g "coreAtoms#1" 735
 (isOrdered true)
 (changeability "frozen")
 (name "coreAtoms"
 )
 (uid "0_-fvi_hrnjywg5_-m3g")
 (multiplicity "*"))
-($8 742 < 0_-fvi_hrnjywg5_-m3f "baseName" 741
+($8 741 < 0_-fvi_hrnjywg5_-m3f "baseName" 740
 (name "baseName"
 )
 (value "coreAtom"
 )
 (uid "0_-fvi_hrnjywg5_-m3f"))
-($8 743 < 0_-fvi_hrnjywg5_-m3e "documentation" 741
+($8 742 < 0_-fvi_hrnjywg5_-m3e "documentation" 740
 (name "documentation"
 )
 (value "ChemAtoms making up core of stereochemsitry, to which stereochemistry designation belong (e.g. tetrahedral carbon, atoms in double bond). The order of atoms in the link is significant."
 )
 (uid "0_-fvi_hrnjywg5_-m3e"))
-($8 744 < 0_-fvi_hrnjywg5_-m3d "guid" 741
+($8 743 < 0_-fvi_hrnjywg5_-m3d "guid" 740
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2011-03-22-17:23:27_00002"
 )
 (uid "0_-fvi_hrnjywg5_-m3d"))
-($8 745 < 0_-fvi_hrnjywg5_-m3c "documentation" 698
+($8 744 < 0_-fvi_hrnjywg5_-m3c "documentation" 697
 (name "documentation"
 )
 (value "The stereochemistry attribute in combination with the AbstractChemAtoms and their order in the link define the stereochemistry of the atoms.  "
 )
 (uid "0_-fvi_hrnjywg5_-m3c"))
-($8 746 < 0_-fvi_hrnjywg5_-m3b "guid" 698
+($8 745 < 0_-fvi_hrnjywg5_-m3b "guid" 697
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:52_00028"
 )
 (uid "0_-fvi_hrnjywg5_-m3b"))
-($8 747 < 0_-fvi_hrnjywg5_-m3a "keyNames" 698
+($8 746 < 0_-fvi_hrnjywg5_-m3a "keyNames" 697
 (name "keyNames"
 )
 (value "serial"
 )
 (uid "0_-fvi_hrnjywg5_-m3a"))
-($13 748 < 0_-fvi_hrnjywg5_-m39 "number_of_chemAtoms_must_fit_refStereochemistry" 698
+($13 747 < 0_-fvi_hrnjywg5_-m39 "number_of_chemAtoms_must_fit_refStereochemistry" 697
 (name "number_of_chemAtoms_must_fit_refStereochemistry"
 )
 (uid "0_-fvi_hrnjywg5_-m39")
@@ -4919,136 +4913,136 @@ objectdomain.uml.core.Stereotype-owns $18
 "_"
 "getChemAtoms().size() == getRefStereochemistry().getNumAtoms()"
 ))
-($8 749 < 0_-fvi_hrnjywg5_-m38 "guid" 748
+($8 748 < 0_-fvi_hrnjywg5_-m38 "guid" 747
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:52_00029"
 )
 (uid "0_-fvi_hrnjywg5_-m38"))
-($6 750 < 0_-fvi_hrnjywg5_-m37 "LinkEnd" 1
+($6 749 < 0_-fvi_hrnjywg5_-m37 "LinkEnd" 1
 (name "LinkEnd"
 )
 (uid "0_-fvi_hrnjywg5_-m37"))
-($7 751 < 0_-fvi_hrnjywg5_-m36 "linkCode" 750
+($7 750 < 0_-fvi_hrnjywg5_-m36 "linkCode" 749
 (changeability "frozen")
 (name "linkCode"
 )
 (uid "0_-fvi_hrnjywg5_-m36")
 (multiplicity "1"))
-($8 752 < 0_-fvi_hrnjywg5_-m35 "documentation" 751
+($8 751 < 0_-fvi_hrnjywg5_-m35 "documentation" 750
 (name "documentation"
 )
 (value "code ('name') for link. The following naming convention is used:"
 "The linkCode is the same as the name of the boundChemAtom. E.g. a cysteine disulfide link will have linkCode 'SG'. The first exception is the case where there is more than one link starting at the same atom - here the linkCodes are the name of the first linkAtom followed by '_1', '_2'. E.g. an atom CX with three links starting from it will have linkEnds with linkCodes CX_1, CX_2, CX_3. If two different atom subtypes both have a link, the linkCodes are of the same form - there are no fixed rules for how to apportion the various suffixes. Another exception is the 'prev' and 'next' that form the backbone of linear polymers."
 )
 (uid "0_-fvi_hrnjywg5_-m35"))
-($8 753 < 0_-fvi_hrnjywg5_-m34 "guid" 751
+($8 752 < 0_-fvi_hrnjywg5_-m34 "guid" 750
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00024"
 )
 (uid "0_-fvi_hrnjywg5_-m34"))
-($9 754 < 0_-fvi_hrnjywg5_-m33 "getChemCompVars" 750
+($9 753 < 0_-fvi_hrnjywg5_-m33 "getChemCompVars" 749
 (name "getChemCompVars"
 )
 (uid "0_-fvi_hrnjywg5_-m33")
 (isQuery true))
-($8 755 < 0_-fvi_hrnjywg5_-m32 "documentation" 754
+($8 754 < 0_-fvi_hrnjywg5_-m32 "documentation" 753
 (name "documentation"
 )
 (value "getter for derived link chemCompVars"
 )
 (uid "0_-fvi_hrnjywg5_-m32"))
-($8 756 < 0_-fvi_hrnjywg5_-m31 "opType" 754
+($8 755 < 0_-fvi_hrnjywg5_-m31 "opType" 753
 (name "opType"
 )
 (value "get"
 )
 (uid "0_-fvi_hrnjywg5_-m31"))
-($8 757 < 0_-fvi_hrnjywg5_-m30 "guid" 754
+($8 756 < 0_-fvi_hrnjywg5_-m30 "guid" 753
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00025"
 )
 (uid "0_-fvi_hrnjywg5_-m30"))
-($8 758 < 0_-fvi_hrnjywg5_-m2z "code:java" 754
+($8 757 < 0_-fvi_hrnjywg5_-m2z "code:java" 753
 (name "code:java"
 )
 (value "result = getBoundLinkAtom().getChemCompVars();"
 )
 (uid "0_-fvi_hrnjywg5_-m2z"))
-($8 759 < 0_-fvi_hrnjywg5_-m2y "code:python" 754
+($8 758 < 0_-fvi_hrnjywg5_-m2y "code:python" 753
 (name "code:python"
 )
 (value "result = self.boundLinkAtom.chemCompVars"
 )
 (uid "0_-fvi_hrnjywg5_-m2y"))
-($12 760 < 0_-fvi_hrnjywg5_-m2x "#<anon> (LinkEnd, DataObject)" 750
+($12 759 < 0_-fvi_hrnjywg5_-m2x "#<anon> (LinkEnd, DataObject)" 749
 (uid "0_-fvi_hrnjywg5_-m2x"))
-($10 761 < 0_-fvi_hrnjywg5_-m2w "#<anon> (LinkEnd, ChemAtom)##boundLinkEnds,boundChemAtom" 750
+($10 760 < 0_-fvi_hrnjywg5_-m2w "#<anon> (LinkEnd, ChemAtom)##boundLinkEnds,boundChemAtom" 749
 (name "")
 (uid "0_-fvi_hrnjywg5_-m2w"))
-($11 762 < 0_-fvi_hrnjywg5_-m2v "boundLinkEnds#0" 761
+($11 761 < 0_-fvi_hrnjywg5_-m2v "boundLinkEnds#0" 760
 (name "boundLinkEnds"
 )
 (uid "0_-fvi_hrnjywg5_-m2v")
 (multiplicity "*"))
-($8 763 < 0_-fvi_hrnjywg5_-m2u "documentation" 762
+($8 762 < 0_-fvi_hrnjywg5_-m2u "documentation" 761
 (name "documentation"
 )
 (value "linkEnds with an out-of-ChemComp bond parting directly from ChemAtom."
 )
 (uid "0_-fvi_hrnjywg5_-m2u"))
-($8 764 < 0_-fvi_hrnjywg5_-m2t "baseName" 762
+($8 763 < 0_-fvi_hrnjywg5_-m2t "baseName" 761
 (name "baseName"
 )
 (value "boundLinkEnd"
 )
 (uid "0_-fvi_hrnjywg5_-m2t"))
-($8 765 < 0_-fvi_hrnjywg5_-m2s "guid" 762
+($8 764 < 0_-fvi_hrnjywg5_-m2s "guid" 761
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00010"
 )
 (uid "0_-fvi_hrnjywg5_-m2s"))
-($11 766 < 0_-fvi_hrnjywg5_-m2r "boundChemAtom#1" 761
+($11 765 < 0_-fvi_hrnjywg5_-m2r "boundChemAtom#1" 760
 (changeability "frozen")
 (name "boundChemAtom"
 )
 (uid "0_-fvi_hrnjywg5_-m2r")
 (multiplicity "1"))
-($8 767 < 0_-fvi_hrnjywg5_-m2q "documentation" 766
+($8 766 < 0_-fvi_hrnjywg5_-m2q "documentation" 765
 (name "documentation"
 )
 (value "One of the AbstractChemAtoms making up the Link. The direct bond is betweeen boundChemAtom (within this ChemComp) and boundLinkAtom (outside this ChemComp). The optional remoteChemAtom (within this ChemComp) and remoteLinkAtom (outside this ChemComp) arebound to the their respective boundAtoms. If defined they serve to define angles and torsions that involve the out-of-ChemComp bond."
 )
 (uid "0_-fvi_hrnjywg5_-m2q"))
-($8 768 < 0_-fvi_hrnjywg5_-m2p "guid" 766
+($8 767 < 0_-fvi_hrnjywg5_-m2p "guid" 765
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00011"
 )
 (uid "0_-fvi_hrnjywg5_-m2p"))
-($10 769 < 0_-fvi_hrnjywg5_-m2o "#<anon> (LinkEnd, LinkAtom)##boundLinkEnd,boundLinkAtom" 750
+($10 768 < 0_-fvi_hrnjywg5_-m2o "#<anon> (LinkEnd, LinkAtom)##boundLinkEnd,boundLinkAtom" 749
 (name "")
 (uid "0_-fvi_hrnjywg5_-m2o"))
-($11 770 < 0_-fvi_hrnjywg5_-m2n "boundLinkEnd#0" 769
+($11 769 < 0_-fvi_hrnjywg5_-m2n "boundLinkEnd#0" 768
 (name "boundLinkEnd"
 )
 (uid "0_-fvi_hrnjywg5_-m2n"))
-($8 771 < 0_-fvi_hrnjywg5_-m2m "documentation" 770
+($8 770 < 0_-fvi_hrnjywg5_-m2m "documentation" 769
 (name "documentation"
 )
 (value "linkEnd with link directly bound to LinkAtom"
 )
 (uid "0_-fvi_hrnjywg5_-m2m"))
-($8 772 < 0_-fvi_hrnjywg5_-m2l "guid" 770
+($8 771 < 0_-fvi_hrnjywg5_-m2l "guid" 769
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00012"
 )
 (uid "0_-fvi_hrnjywg5_-m2l"))
-($13 773 < 0_-fvi_hrnjywg5_-m2k "boundLinkEnd_incompatible_with_remoteLinkEnd" 770
+($13 772 < 0_-fvi_hrnjywg5_-m2k "boundLinkEnd_incompatible_with_remoteLinkEnd" 769
 (name "boundLinkEnd_incompatible_with_remoteLinkEnd"
 )
 (uid "0_-fvi_hrnjywg5_-m2k")
@@ -5060,13 +5054,13 @@ objectdomain.uml.core.Stereotype-owns $18
 "_"
 "other == null || self.getRemoteLinkEnd() == null"
 ))
-($8 774 < 0_-fvi_hrnjywg5_-m2j "guid" 773
+($8 773 < 0_-fvi_hrnjywg5_-m2j "guid" 772
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00014"
 )
 (uid "0_-fvi_hrnjywg5_-m2j"))
-($13 775 < 0_-fvi_hrnjywg5_-m2i "LinkAtom_name_is_linkCode_with_suffix_1" 770
+($13 774 < 0_-fvi_hrnjywg5_-m2i "LinkAtom_name_is_linkCode_with_suffix_1" 769
 (name "LinkAtom_name_is_linkCode_with_suffix_1"
 )
 (uid "0_-fvi_hrnjywg5_-m2i")
@@ -5078,134 +5072,134 @@ objectdomain.uml.core.Stereotype-owns $18
 "_"
 "other == null || self.getName().equals(other.getLinkCode().concat(\"_1\"))"
 ))
-($8 776 < 0_-fvi_hrnjywg5_-m2h "guid" 775
+($8 775 < 0_-fvi_hrnjywg5_-m2h "guid" 774
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00015"
 )
 (uid "0_-fvi_hrnjywg5_-m2h"))
-($11 777 < 0_-fvi_hrnjywg5_-m2g "boundLinkAtom#1" 769
+($11 776 < 0_-fvi_hrnjywg5_-m2g "boundLinkAtom#1" 768
 (changeability "frozen")
 (name "boundLinkAtom"
 )
 (uid "0_-fvi_hrnjywg5_-m2g")
 (multiplicity "1"))
-($8 778 < 0_-fvi_hrnjywg5_-m2f "documentation" 777
+($8 777 < 0_-fvi_hrnjywg5_-m2f "documentation" 776
 (name "documentation"
 )
 (value "One of the AbstractChemAtoms making up the Link. The direct bond is betweeen boundChemAtom (within this ChemComp) and boundLinkAtom (outside this ChemComp). The optional remoteChemAtom (within this ChemComp) and remoteLinkAtom (outside this ChemComp) arebound to the their respective boundAtoms. If defined they serve to define angles and torsions that involve the out-of-ChemComp bond."
 )
 (uid "0_-fvi_hrnjywg5_-m2f"))
-($8 779 < 0_-fvi_hrnjywg5_-m2e "guid" 777
+($8 778 < 0_-fvi_hrnjywg5_-m2e "guid" 776
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00013"
 )
 (uid "0_-fvi_hrnjywg5_-m2e"))
-($10 780 < 0_-fvi_hrnjywg5_-m2d "#<anon> (LinkEnd, ChemCompVar)##," 750
+($10 779 < 0_-fvi_hrnjywg5_-m2d "#<anon> (LinkEnd, ChemCompVar)##," 749
 (name "")
 (uid "0_-fvi_hrnjywg5_-m2d"))
-($11 781 < 0_-fvi_hrnjywg5_-m2c "#0" 780
+($11 780 < 0_-fvi_hrnjywg5_-m2c "#0" 779
 (changeability "frozen")
 (uid "0_-fvi_hrnjywg5_-m2c")
 (multiplicity "*"))
-($8 782 < 0_-fvi_hrnjywg5_-m2b "documentation" 781
+($8 781 < 0_-fvi_hrnjywg5_-m2b "documentation" 780
 (name "documentation"
 )
 (value "linkEnds available to ChemCompVar. A LinkEnd belongs to a ChemCompVar if and only if the LinkEnd.boundLinkAtom belongs to the ChemCompVAr."
 )
 (uid "0_-fvi_hrnjywg5_-m2b"))
-($8 783 < 0_-fvi_hrnjywg5_-m2a "guid" 781
+($8 782 < 0_-fvi_hrnjywg5_-m2a "guid" 780
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00016"
 )
 (uid "0_-fvi_hrnjywg5_-m2a"))
-($11 784 < 0_-fvi_hrnjywg5_-m29 "#1" 780
+($11 783 < 0_-fvi_hrnjywg5_-m29 "#1" 779
 (changeability "frozen")
 (uid "0_-fvi_hrnjywg5_-m29")
 (multiplicity "*"))
-($8 785 < 0_-fvi_hrnjywg5_-m28 "documentation" 784
+($8 784 < 0_-fvi_hrnjywg5_-m28 "documentation" 783
 (name "documentation"
 )
 (value "ChemCompVars that hold LinkEnd"
 )
 (uid "0_-fvi_hrnjywg5_-m28"))
-($8 786 < 0_-fvi_hrnjywg5_-m27 "guid" 784
+($8 785 < 0_-fvi_hrnjywg5_-m27 "guid" 783
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00017"
 )
 (uid "0_-fvi_hrnjywg5_-m27"))
-($8 787 < 0_-fvi_hrnjywg5_-m26 "isDerived" 780
+($8 786 < 0_-fvi_hrnjywg5_-m26 "isDerived" 779
 (name "isDerived"
 )
 (value "True"
 )
 (uid "0_-fvi_hrnjywg5_-m26"))
-($10 788 < 0_-fvi_hrnjywg5_-m25 "#<anon> (LinkEnd, ChemAtom)##remoteLinkEnds,remoteChemAtom" 750
+($10 787 < 0_-fvi_hrnjywg5_-m25 "#<anon> (LinkEnd, ChemAtom)##remoteLinkEnds,remoteChemAtom" 749
 (name "")
 (uid "0_-fvi_hrnjywg5_-m25"))
-($11 789 < 0_-fvi_hrnjywg5_-m24 "remoteLinkEnds#0" 788
+($11 788 < 0_-fvi_hrnjywg5_-m24 "remoteLinkEnds#0" 787
 (name "remoteLinkEnds"
 )
 (uid "0_-fvi_hrnjywg5_-m24")
 (multiplicity "*"))
-($8 790 < 0_-fvi_hrnjywg5_-m23 "documentation" 789
+($8 789 < 0_-fvi_hrnjywg5_-m23 "documentation" 788
 (name "documentation"
 )
 (value "LinkEnds where ChemAtom participates as remote ChemAtom"
 )
 (uid "0_-fvi_hrnjywg5_-m23"))
-($8 791 < 0_-fvi_hrnjywg5_-m22 "baseName" 789
+($8 790 < 0_-fvi_hrnjywg5_-m22 "baseName" 788
 (name "baseName"
 )
 (value "remoteLinkEnd"
 )
 (uid "0_-fvi_hrnjywg5_-m22"))
-($8 792 < 0_-fvi_hrnjywg5_-m21 "guid" 789
+($8 791 < 0_-fvi_hrnjywg5_-m21 "guid" 788
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00018"
 )
 (uid "0_-fvi_hrnjywg5_-m21"))
-($11 793 < 0_-fvi_hrnjywg5_-m20 "remoteChemAtom#1" 788
+($11 792 < 0_-fvi_hrnjywg5_-m20 "remoteChemAtom#1" 787
 (changeability "frozen")
 (name "remoteChemAtom"
 )
 (uid "0_-fvi_hrnjywg5_-m20"))
-($8 794 < 0_-fvi_hrnjywg5_-m1z "documentation" 793
+($8 793 < 0_-fvi_hrnjywg5_-m1z "documentation" 792
 (name "documentation"
 )
 (value "One of the AbstractChemAtoms making up the Link. The direct bond is betweeen boundChemAtom (within this ChemComp) and boundLinkAtom (outside this ChemComp). The optional remoteChemAtom (within this ChemComp) and remoteLinkAtom (outside this ChemComp) arebound to the their respective boundAtoms. If defined they serve to define angles and torsions that involve the out-of-ChemComp bond."
 )
 (uid "0_-fvi_hrnjywg5_-m1z"))
-($8 795 < 0_-fvi_hrnjywg5_-m1y "guid" 793
+($8 794 < 0_-fvi_hrnjywg5_-m1y "guid" 792
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00019"
 )
 (uid "0_-fvi_hrnjywg5_-m1y"))
-($10 796 < 0_-fvi_hrnjywg5_-m1x "#<anon> (LinkEnd, LinkAtom)##remoteLinkEnd,remoteLinkAtom" 750
+($10 795 < 0_-fvi_hrnjywg5_-m1x "#<anon> (LinkEnd, LinkAtom)##remoteLinkEnd,remoteLinkAtom" 749
 (name "")
 (uid "0_-fvi_hrnjywg5_-m1x"))
-($11 797 < 0_-fvi_hrnjywg5_-m1w "remoteLinkEnd#0" 796
+($11 796 < 0_-fvi_hrnjywg5_-m1w "remoteLinkEnd#0" 795
 (name "remoteLinkEnd"
 )
 (uid "0_-fvi_hrnjywg5_-m1w"))
-($8 798 < 0_-fvi_hrnjywg5_-m1v "documentation" 797
+($8 797 < 0_-fvi_hrnjywg5_-m1v "documentation" 796
 (name "documentation"
 )
 (value "LinkEnd where LinkAtom is remoteLinkAtom"
 )
 (uid "0_-fvi_hrnjywg5_-m1v"))
-($8 799 < 0_-fvi_hrnjywg5_-m1u "guid" 797
+($8 798 < 0_-fvi_hrnjywg5_-m1u "guid" 796
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00020"
 )
 (uid "0_-fvi_hrnjywg5_-m1u"))
-($13 800 < 0_-fvi_hrnjywg5_-m1t "remoteLinkEnd_incompatible_with_boundLinkEnd" 797
+($13 799 < 0_-fvi_hrnjywg5_-m1t "remoteLinkEnd_incompatible_with_boundLinkEnd" 796
 (name "remoteLinkEnd_incompatible_with_boundLinkEnd"
 )
 (uid "0_-fvi_hrnjywg5_-m1t")
@@ -5217,13 +5211,13 @@ objectdomain.uml.core.Stereotype-owns $18
 "_"
 "other == null || self.getBoundLinkEnd() == null"
 ))
-($8 801 < 0_-fvi_hrnjywg5_-m1s "guid" 800
+($8 800 < 0_-fvi_hrnjywg5_-m1s "guid" 799
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00022"
 )
 (uid "0_-fvi_hrnjywg5_-m1s"))
-($13 802 < 0_-fvi_hrnjywg5_-m1r "remoteLinkAtom_name_is_linkEnd_name_with_suffix" 797
+($13 801 < 0_-fvi_hrnjywg5_-m1r "remoteLinkAtom_name_is_linkEnd_name_with_suffix" 796
 (name "remoteLinkAtom_name_is_linkEnd_name_with_suffix"
 )
 (uid "0_-fvi_hrnjywg5_-m1r")
@@ -5235,30 +5229,30 @@ objectdomain.uml.core.Stereotype-owns $18
 "_"
 "other == null || self.getName().equals(other.getLinkCode().concat(\"_2\"))"
 ))
-($8 803 < 0_-fvi_hrnjywg5_-m1q "guid" 802
+($8 802 < 0_-fvi_hrnjywg5_-m1q "guid" 801
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00023"
 )
 (uid "0_-fvi_hrnjywg5_-m1q"))
-($11 804 < 0_-fvi_hrnjywg5_-m1p "remoteLinkAtom#1" 796
+($11 803 < 0_-fvi_hrnjywg5_-m1p "remoteLinkAtom#1" 795
 (changeability "frozen")
 (name "remoteLinkAtom"
 )
 (uid "0_-fvi_hrnjywg5_-m1p"))
-($8 805 < 0_-fvi_hrnjywg5_-m1o "documentation" 804
+($8 804 < 0_-fvi_hrnjywg5_-m1o "documentation" 803
 (name "documentation"
 )
 (value "One of the AbstractChemAtoms making up the Link. The direct bond is betweeen boundChemAtom (within this ChemComp) and boundLinkAtom (outside this ChemComp). The optional remoteChemAtom (within this ChemComp) and remoteLinkAtom (outside this ChemComp) arebound to the their respective boundAtoms. If defined they serve to define angles and torsions that involve the out-of-ChemComp bond."
 )
 (uid "0_-fvi_hrnjywg5_-m1o"))
-($8 806 < 0_-fvi_hrnjywg5_-m1n "guid" 804
+($8 805 < 0_-fvi_hrnjywg5_-m1n "guid" 803
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00021"
 )
 (uid "0_-fvi_hrnjywg5_-m1n"))
-($8 807 < 0_-fvi_hrnjywg5_-m1m "documentation" 750
+($8 806 < 0_-fvi_hrnjywg5_-m1m "documentation" 749
 (name "documentation"
 )
 (value "Describes one end of link to other ChemComp. "
@@ -5267,19 +5261,19 @@ objectdomain.uml.core.Stereotype-owns $18
 "There are constraints on the linkEnd, linkEnd.linkCode, ChemCompVar and ChemCompVar.linking (see ChemCompVar documentation). To satisfy the constraints the LinkEnd must be created after the ChemCompVars are created and linked to the correct AbstractChemAtoms."
 )
 (uid "0_-fvi_hrnjywg5_-m1m"))
-($8 808 < 0_-fvi_hrnjywg5_-m1l "guid" 750
+($8 807 < 0_-fvi_hrnjywg5_-m1l "guid" 749
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:52_00030"
 )
 (uid "0_-fvi_hrnjywg5_-m1l"))
-($8 809 < 0_-fvi_hrnjywg5_-m1k "keyNames" 750
+($8 808 < 0_-fvi_hrnjywg5_-m1k "keyNames" 749
 (name "keyNames"
 )
 (value "linkCode"
 )
 (uid "0_-fvi_hrnjywg5_-m1k"))
-($13 810 < 0_-fvi_hrnjywg5_-m1j "selected_atoms_must_form_outofchemComp_bond" 750
+($13 809 < 0_-fvi_hrnjywg5_-m1j "selected_atoms_must_form_outofchemComp_bond" 749
 (name "selected_atoms_must_form_outofchemComp_bond"
 )
 (uid "0_-fvi_hrnjywg5_-m1j")
@@ -5308,13 +5302,13 @@ objectdomain.uml.core.Stereotype-owns $18
 "    isValid = true;"
 "}"
 ))
-($8 811 < 0_-fvi_hrnjywg5_-m1i "guid" 810
+($8 810 < 0_-fvi_hrnjywg5_-m1i "guid" 809
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:52_00031"
 )
 (uid "0_-fvi_hrnjywg5_-m1i"))
-($13 812 < 0_-fvi_hrnjywg5_-m1h "selected_atoms_must_define_torsion" 750
+($13 811 < 0_-fvi_hrnjywg5_-m1h "selected_atoms_must_define_torsion" 749
 (name "selected_atoms_must_define_torsion"
 )
 (uid "0_-fvi_hrnjywg5_-m1h")
@@ -5358,13 +5352,13 @@ objectdomain.uml.core.Stereotype-owns $18
 "  }"
 "}"
 ))
-($8 813 < 0_-fvi_hrnjywg5_-m1g "guid" 812
+($8 812 < 0_-fvi_hrnjywg5_-m1g "guid" 811
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:52_00032"
 )
 (uid "0_-fvi_hrnjywg5_-m1g"))
-($13 814 < 0_-fvi_hrnjywg5_-m1f "both_link_atoms_in_same_chemCompVars" 750
+($13 813 < 0_-fvi_hrnjywg5_-m1f "both_link_atoms_in_same_chemCompVars" 749
 (name "both_link_atoms_in_same_chemCompVars"
 )
 (uid "0_-fvi_hrnjywg5_-m1f")
@@ -5396,13 +5390,13 @@ objectdomain.uml.core.Stereotype-owns $18
 "  }"
 "}"
 ))
-($8 815 < 0_-fvi_hrnjywg5_-m1e "guid" 814
+($8 814 < 0_-fvi_hrnjywg5_-m1e "guid" 813
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:52_00033"
 )
 (uid "0_-fvi_hrnjywg5_-m1e"))
-($13 816 < 0_-fvi_hrnjywg5_-m1d "chemAtoms_in_same_chemCompVars_as_linkAtoms" 750
+($13 815 < 0_-fvi_hrnjywg5_-m1d "chemAtoms_in_same_chemCompVars_as_linkAtoms" 749
 (name "chemAtoms_in_same_chemCompVars_as_linkAtoms"
 )
 (uid "0_-fvi_hrnjywg5_-m1d")
@@ -5447,13 +5441,13 @@ objectdomain.uml.core.Stereotype-owns $18
 "  }"
 "}"
 ))
-($8 817 < 0_-fvi_hrnjywg5_-m1c "guid" 816
+($8 816 < 0_-fvi_hrnjywg5_-m1c "guid" 815
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:52_00034"
 )
 (uid "0_-fvi_hrnjywg5_-m1c"))
-($13 818 < 0_-fvi_hrnjywg5_-m1b "linear_polymer_linkcodes_must_fit_chemCompVars" 750
+($13 817 < 0_-fvi_hrnjywg5_-m1b "linear_polymer_linkcodes_must_fit_chemCompVars" 749
 (name "linear_polymer_linkcodes_must_fit_chemCompVars"
 )
 (uid "0_-fvi_hrnjywg5_-m1b")
@@ -5493,13 +5487,13 @@ objectdomain.uml.core.Stereotype-owns $18
 "    isValid = false;"
 "}"
 ))
-($8 819 < 0_-fvi_hrnjywg5_-m1a "guid" 818
+($8 818 < 0_-fvi_hrnjywg5_-m1a "guid" 817
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:52_00035"
 )
 (uid "0_-fvi_hrnjywg5_-m1a"))
-($13 820 < 0_-fvi_hrnjywg5_-m19 "linkCode_conforms_to_boundChemAtom_name" 750
+($13 819 < 0_-fvi_hrnjywg5_-m19 "linkCode_conforms_to_boundChemAtom_name" 749
 (name "linkCode_conforms_to_boundChemAtom_name"
 )
 (uid "0_-fvi_hrnjywg5_-m19")
@@ -5539,256 +5533,256 @@ objectdomain.uml.core.Stereotype-owns $18
 "  }"
 "}"
 ))
-($8 821 < 0_-fvi_hrnjywg5_-m18 "guid" 820
+($8 820 < 0_-fvi_hrnjywg5_-m18 "guid" 819
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:52_00036"
 )
 (uid "0_-fvi_hrnjywg5_-m18"))
-($6 822 < 0_-fvi_hrnjywg5_-m17 "ChemAtom" 1
+($6 821 < 0_-fvi_hrnjywg5_-m17 "ChemAtom" 1
 (name "ChemAtom"
 )
 (uid "0_-fvi_hrnjywg5_-m17"))
-($7 823 < 0_-fvi_hrnjywg5_-m16 "chirality" 822
+($7 822 < 0_-fvi_hrnjywg5_-m16 "chirality" 821
 (name "chirality"
 )
 (uid "0_-fvi_hrnjywg5_-m16"))
-($8 824 < 0_-fvi_hrnjywg5_-m15 "documentation" 823
+($8 823 < 0_-fvi_hrnjywg5_-m15 "documentation" 822
 (name "documentation"
 )
 (value "Chirality of atom according to IUPAC R/S system. Note for some chiral atoms chirality cannot be specified according to this system but only using the Stereochemistry class. An example would be a chirality that involves a LinkAtom susbstituent."
 )
 (uid "0_-fvi_hrnjywg5_-m15"))
-($8 825 < 0_-fvi_hrnjywg5_-m14 "guid" 823
+($8 824 < 0_-fvi_hrnjywg5_-m14 "guid" 822
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00032"
 )
 (uid "0_-fvi_hrnjywg5_-m14"))
-($7 826 < 0_-fvi_hrnjywg5_-m13 "nuclGroupType" 822
+($7 825 < 0_-fvi_hrnjywg5_-m13 "nuclGroupType" 821
 (name "nuclGroupType"
 )
 (uid "0_-fvi_hrnjywg5_-m13"))
-($8 827 < 0_-fvi_hrnjywg5_-m12 "documentation" 826
+($8 826 < 0_-fvi_hrnjywg5_-m12 "documentation" 825
 (name "documentation"
 )
 (value "String to determine Atom Group (for assignment purposes). Proposed possibilities:"
 "'CH0','CH2','CH3','CHx','NH0','NH2','NH3', NHx, OH0m OH1, OH2, .. etc. 'OTHER'."
 )
 (uid "0_-fvi_hrnjywg5_-m12"))
-($8 828 < 0_-fvi_hrnjywg5_-m11 "guid" 826
+($8 827 < 0_-fvi_hrnjywg5_-m11 "guid" 825
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00033"
 )
 (uid "0_-fvi_hrnjywg5_-m11"))
-($7 829 < 0_-fvi_hrnjywg5_-m10 "elementSymbol" 822
+($7 828 < 0_-fvi_hrnjywg5_-m10 "elementSymbol" 821
 (changeability "frozen")
 (name "elementSymbol"
 )
 (uid "0_-fvi_hrnjywg5_-m10")
 (multiplicity "1"))
-($8 830 < 0_-fvi_hrnjywg5_-m0z "documentation" 829
+($8 829 < 0_-fvi_hrnjywg5_-m0z "documentation" 828
 (name "documentation"
 )
 (value "Chemical symbol of the atom. Strictly speaking an enum .E.g. H, C, Mg, Pt. Serves as key to derived link chemElement."
 )
 (uid "0_-fvi_hrnjywg5_-m0z"))
-($8 831 < 0_-fvi_hrnjywg5_-m0y "guid" 829
+($8 830 < 0_-fvi_hrnjywg5_-m0y "guid" 828
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00034"
 )
 (uid "0_-fvi_hrnjywg5_-m0y"))
-($7 832 < 0_-fvi_hrnjywg5_-m0x "shortVegaType" 822
+($7 831 < 0_-fvi_hrnjywg5_-m0x "shortVegaType" 821
 (name "shortVegaType"
 )
 (uid "0_-fvi_hrnjywg5_-m0x"))
-($8 833 < 0_-fvi_hrnjywg5_-m0w "documentation" 832
+($8 832 < 0_-fvi_hrnjywg5_-m0w "documentation" 831
 (name "documentation"
 )
 (value "VegaType for atom, covering only the atom itself, e.g (100) or (451). The full Vega Type is derived from the short Vegatype of the atom and the atoms bound to it."
 )
 (uid "0_-fvi_hrnjywg5_-m0w"))
-($8 834 < 0_-fvi_hrnjywg5_-m0v "guid" 832
+($8 833 < 0_-fvi_hrnjywg5_-m0v "guid" 831
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00035"
 )
 (uid "0_-fvi_hrnjywg5_-m0v"))
-($7 835 < 0_-fvi_hrnjywg5_-m0u "waterExchangeable" 822
+($7 834 < 0_-fvi_hrnjywg5_-m0u "waterExchangeable" 821
 (initialValue "False"
 )
 (name "waterExchangeable"
 )
 (uid "0_-fvi_hrnjywg5_-m0u")
 (multiplicity "1"))
-($8 836 < 0_-fvi_hrnjywg5_-m0t "documentation" 835
+($8 835 < 0_-fvi_hrnjywg5_-m0t "documentation" 834
 (name "documentation"
 )
 (value "Is this atom exchanging fast with solvent under aqueous conditions ( i.e. on a timescale of a milisecond or less)? Most atoms are not. The exceptions are e.g. protons bound to oxygen, or protons in  amine groups or NH2 in guanidinium groups."
 )
 (uid "0_-fvi_hrnjywg5_-m0t"))
-($8 837 < 0_-fvi_hrnjywg5_-m0s "guid" 835
+($8 836 < 0_-fvi_hrnjywg5_-m0s "guid" 834
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00036"
 )
 (uid "0_-fvi_hrnjywg5_-m0s"))
-($9 838 < 0_-fvi_hrnjywg5_-m0r "getChemElement" 822
+($9 837 < 0_-fvi_hrnjywg5_-m0r "getChemElement" 821
 (name "getChemElement"
 )
 (uid "0_-fvi_hrnjywg5_-m0r")
 (isQuery true))
-($8 839 < 0_-fvi_hrnjywg5_-m0q "documentation" 838
+($8 838 < 0_-fvi_hrnjywg5_-m0q "documentation" 837
 (name "documentation"
 )
 (value "getter for derived link chemElement"
 )
 (uid "0_-fvi_hrnjywg5_-m0q"))
-($8 840 < 0_-fvi_hrnjywg5_-m0p "opType" 838
+($8 839 < 0_-fvi_hrnjywg5_-m0p "opType" 837
 (name "opType"
 )
 (value "get"
 )
 (uid "0_-fvi_hrnjywg5_-m0p"))
-($8 841 < 0_-fvi_hrnjywg5_-m0o "guid" 838
+($8 840 < 0_-fvi_hrnjywg5_-m0o "guid" 837
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00037"
 )
 (uid "0_-fvi_hrnjywg5_-m0o"))
-($8 842 < 0_-fvi_hrnjywg5_-m0n "code:java" 838
+($8 841 < 0_-fvi_hrnjywg5_-m0n "code:java" 837
 (name "code:java"
 )
 (value "result = getRoot().getCurrentChemElementStore().findFirstChemElement(\"symbol\", getElementSymbol());"
 )
 (uid "0_-fvi_hrnjywg5_-m0n"))
-($8 843 < 0_-fvi_hrnjywg5_-m0m "code:python" 838
+($8 842 < 0_-fvi_hrnjywg5_-m0m "code:python" 837
 (name "code:python"
 )
 (value "result = self.root.currentChemElementStore.findFirstChemElement(symbol=self.elementSymbol)"
 )
 (uid "0_-fvi_hrnjywg5_-m0m"))
-($12 844 < 0_-fvi_hrnjywg5_-m0l "#<anon> (ChemAtom, AbstractChemAtom)" 822
+($12 843 < 0_-fvi_hrnjywg5_-m0l "#<anon> (ChemAtom, AbstractChemAtom)" 821
 (uid "0_-fvi_hrnjywg5_-m0l"))
-($10 845 < 0_-fvi_hrnjywg5_-m0k "#<anon> (ChemAtom, ChemElement)##," 822
+($10 844 < 0_-fvi_hrnjywg5_-m0k "#<anon> (ChemAtom, ChemElement)##," 821
 (name "")
 (uid "0_-fvi_hrnjywg5_-m0k"))
-($11 846 < 0_-fvi_hrnjywg5_-m0j "#0" 845
+($11 845 < 0_-fvi_hrnjywg5_-m0j "#0" 844
 (uid "0_-fvi_hrnjywg5_-m0j")
 (isNavigable false))
-($11 847 < 0_-fvi_hrnjywg5_-m0i "#1" 845
+($11 846 < 0_-fvi_hrnjywg5_-m0i "#1" 844
 (changeability "frozen")
 (uid "0_-fvi_hrnjywg5_-m0i")
 (multiplicity "1"))
-($8 848 < 0_-fvi_hrnjywg5_-m0h "documentation" 847
+($8 847 < 0_-fvi_hrnjywg5_-m0h "documentation" 846
 (name "documentation"
 )
 (value "ChemElement that corresponds to ChemAtom"
 )
 (uid "0_-fvi_hrnjywg5_-m0h"))
-($8 849 < 0_-fvi_hrnjywg5_-m0g "guid" 847
+($8 848 < 0_-fvi_hrnjywg5_-m0g "guid" 846
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00027"
 )
 (uid "0_-fvi_hrnjywg5_-m0g"))
-($8 850 < 0_-fvi_hrnjywg5_-m0f "isDerived" 845
+($8 849 < 0_-fvi_hrnjywg5_-m0f "isDerived" 844
 (name "isDerived"
 )
 (value "True"
 )
 (uid "0_-fvi_hrnjywg5_-m0f"))
-($8 851 < 0_-fvi_hrnjywg5_-m0e "documentation" 822
+($8 850 < 0_-fvi_hrnjywg5_-m0e "documentation" 821
 (name "documentation"
 )
 (value "Atom, in the sense of a part of a toplogical description of a ChemComp. ChemAtoms, unlike LinkAtoms, are part of the ChemComp itself."
 )
 (uid "0_-fvi_hrnjywg5_-m0e"))
-($8 852 < 0_-fvi_hrnjywg5_-m0d "guid" 822
+($8 851 < 0_-fvi_hrnjywg5_-m0d "guid" 821
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:52_00037"
 )
 (uid "0_-fvi_hrnjywg5_-m0d"))
-($6 853 < 0_-fvi_hrnjywg5_-m0c "LinkAtom" 1
+($6 852 < 0_-fvi_hrnjywg5_-m0c "LinkAtom" 1
 (name "LinkAtom"
 )
 (uid "0_-fvi_hrnjywg5_-m0c"))
-($7 854 < 0_-fvi_hrnjywg5_-m0b "elementSymbol" 853
+($7 853 < 0_-fvi_hrnjywg5_-m0b "elementSymbol" 852
 (changeability "frozen")
 (name "elementSymbol"
 )
 (uid "0_-fvi_hrnjywg5_-m0b"))
-($8 855 < 0_-fvi_hrnjywg5_-m0a "documentation" 854
+($8 854 < 0_-fvi_hrnjywg5_-m0a "documentation" 853
 (name "documentation"
 )
 (value "There for compatibility - is always None"
 )
 (uid "0_-fvi_hrnjywg5_-m0a"))
-($8 856 < 0_-fvi_hrnjywg5_-m09 "isDerived" 854
+($8 855 < 0_-fvi_hrnjywg5_-m09 "isDerived" 853
 (name "isDerived"
 )
 (value "True"
 )
 (uid "0_-fvi_hrnjywg5_-m09"))
-($8 857 < 0_-fvi_hrnjywg5_-m08 "guid" 854
+($8 856 < 0_-fvi_hrnjywg5_-m08 "guid" 853
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00039"
 )
 (uid "0_-fvi_hrnjywg5_-m08"))
-($9 858 < 0_-fvi_hrnjywg5_-m07 "getElementSymbol" 853
+($9 857 < 0_-fvi_hrnjywg5_-m07 "getElementSymbol" 852
 (name "getElementSymbol"
 )
 (uid "0_-fvi_hrnjywg5_-m07")
 (isQuery true))
-($8 859 < 0_-fvi_hrnjywg5_-m06 "documentation" 858
+($8 858 < 0_-fvi_hrnjywg5_-m06 "documentation" 857
 (name "documentation"
 )
 (value "getter for derived attribute elementSymbol"
 )
 (uid "0_-fvi_hrnjywg5_-m06"))
-($8 860 < 0_-fvi_hrnjywg5_-m05 "opType" 858
+($8 859 < 0_-fvi_hrnjywg5_-m05 "opType" 857
 (name "opType"
 )
 (value "get"
 )
 (uid "0_-fvi_hrnjywg5_-m05"))
-($8 861 < 0_-fvi_hrnjywg5_-m04 "guid" 858
+($8 860 < 0_-fvi_hrnjywg5_-m04 "guid" 857
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-18:23:25_00040"
 )
 (uid "0_-fvi_hrnjywg5_-m04"))
-($8 862 < 0_-fvi_hrnjywg5_-m03 "code:java" 858
+($8 861 < 0_-fvi_hrnjywg5_-m03 "code:java" 857
 (name "code:java"
 )
 (value "result = null;"
 )
 (uid "0_-fvi_hrnjywg5_-m03"))
-($8 863 < 0_-fvi_hrnjywg5_-m02 "code:python" 858
+($8 862 < 0_-fvi_hrnjywg5_-m02 "code:python" 857
 (name "code:python"
 )
 (value "result = None"
 )
 (uid "0_-fvi_hrnjywg5_-m02"))
-($12 864 < 0_-fvi_hrnjywg5_-m01 "#<anon> (LinkAtom, AbstractChemAtom)" 853
+($12 863 < 0_-fvi_hrnjywg5_-m01 "#<anon> (LinkAtom, AbstractChemAtom)" 852
 (uid "0_-fvi_hrnjywg5_-m01"))
-($8 865 < 0_-fvi_hrnjywg5_-m00 "documentation" 853
+($8 864 < 0_-fvi_hrnjywg5_-m00 "documentation" 852
 (name "documentation"
 )
 (value " Atom used to specify LinkEnds. Serves as a placeholder for ChemAtoms that are not part of the present ChemComp but of other ChemComps linked to it. As such allows the definition of bonds, Torsions, Stereochemistry etc. involving ChemAtoms from several ChemComps. The key element in the definition of LinkEnds. "
 )
 (uid "0_-fvi_hrnjywg5_-m00"))
-($8 866 < 0_-fvi_hrnjywg5_-lzz "guid" 853
+($8 865 < 0_-fvi_hrnjywg5_-lzz "guid" 852
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:52_00038"
 )
 (uid "0_-fvi_hrnjywg5_-lzz"))
-($13 867 < 0_-fvi_hrnjywg5_-lzy "subtype_must_be_one" 853
+($13 866 < 0_-fvi_hrnjywg5_-lzy "subtype_must_be_one" 852
 (name "subtype_must_be_one"
 )
 (uid "0_-fvi_hrnjywg5_-lzy")
@@ -5800,441 +5794,442 @@ objectdomain.uml.core.Stereotype-owns $18
 "_"
 "getSubType().intValue() == 1"
 ))
-($8 868 < 0_-fvi_hrnjywg5_-lzx "guid" 867
+($8 867 < 0_-fvi_hrnjywg5_-lzx "guid" 866
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2007-04-04-18:50:44_00001"
 )
 (uid "0_-fvi_hrnjywg5_-lzx"))
-($6 869 < 0_-fvi_hrnjywg5_-lzw "BondType" 1
+($6 868 < 0_-fvi_hrnjywg5_-lzw "BondType" 1
 (name "BondType"
 )
 (uid "0_-fvi_hrnjywg5_-lzw"))
-($12 870 < 0_-fvi_hrnjywg5_-lzv "#<anon> (BondType, Word)" 869
+($12 869 < 0_-fvi_hrnjywg5_-lzv "#<anon> (BondType, Word)" 868
 (uid "0_-fvi_hrnjywg5_-lzv"))
-($8 871 < 0_-fvi_hrnjywg5_-lzu "documentation" 869
+($8 870 < 0_-fvi_hrnjywg5_-lzu "documentation" 868
 (name "documentation"
 )
 (value "Bond types enumeration"
 )
 (uid "0_-fvi_hrnjywg5_-lzu"))
-($8 872 < 0_-fvi_hrnjywg5_-lzt "isOpen" 869
+($8 871 < 0_-fvi_hrnjywg5_-lzt "isOpen" 868
 (name "isOpen"
 )
 (value "False"
 )
 (uid "0_-fvi_hrnjywg5_-lzt"))
-($8 873 < 0_-fvi_hrnjywg5_-lzs "enumeration" 869
+($8 872 < 0_-fvi_hrnjywg5_-lzs "enumeration" 868
 (name "enumeration"
 )
 (value "'single','double','triple','aromatic','dative','singleplanar'"
 )
 (uid "0_-fvi_hrnjywg5_-lzs"))
-($8 874 < 0_-fvi_hrnjywg5_-lzr "guid" 869
+($8 873 < 0_-fvi_hrnjywg5_-lzr "guid" 868
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:52_00039"
 )
 (uid "0_-fvi_hrnjywg5_-lzr"))
-($14 875 < 0_-fvi_hrnjywg5_-lzq "#<anon> (ChemComp, Stereochemistry)" 1
+($14 874 < 0_-fvi_hrnjywg5_-lzq "#<anon> (ChemComp, Stereochemistry)" 1
 (uid "0_-fvi_hrnjywg5_-lzq"))
-($6 876 < 0_-fvi_hrnjywg5_-lzp "NamingSystem" 1
+($6 875 < 0_-fvi_hrnjywg5_-lzp "NamingSystem" 1
 (name "NamingSystem"
 )
 (uid "0_-fvi_hrnjywg5_-lzp"))
-($7 877 < 0_-fvi_hrnjywg5_-lzo "name" 876
+($7 876 < 0_-fvi_hrnjywg5_-lzo "name" 875
 (changeability "frozen")
 (name "name"
 )
 (uid "0_-fvi_hrnjywg5_-lzo")
 (multiplicity "1"))
-($8 878 < 0_-fvi_hrnjywg5_-lzn "documentation" 877
+($8 877 < 0_-fvi_hrnjywg5_-lzn "documentation" 876
 (name "documentation"
 )
 (value "naming system within which systematic names are defined"
 )
 (uid "0_-fvi_hrnjywg5_-lzn"))
-($8 879 < 0_-fvi_hrnjywg5_-lzm "guid" 877
+($8 878 < 0_-fvi_hrnjywg5_-lzm "guid" 876
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2007-05-03-18:05:22_00004"
 )
 (uid "0_-fvi_hrnjywg5_-lzm"))
-($9 880 < 0_-fvi_hrnjywg5_-lzl "getMainChemCompSysName" 876
+($9 879 < 0_-fvi_hrnjywg5_-lzl "getMainChemCompSysName" 875
 (name "getMainChemCompSysName"
 )
 (uid "0_-fvi_hrnjywg5_-lzl")
 (isQuery true))
-($8 881 < 0_-fvi_hrnjywg5_-lzk "documentation" 880
+($8 880 < 0_-fvi_hrnjywg5_-lzk "documentation" 879
 (name "documentation"
 )
 (value "getter for derived link mainChemCompSysName"
 )
 (uid "0_-fvi_hrnjywg5_-lzk"))
-($8 882 < 0_-fvi_hrnjywg5_-lzj "opType" 880
+($8 881 < 0_-fvi_hrnjywg5_-lzj "opType" 879
 (name "opType"
 )
 (value "get"
 )
 (uid "0_-fvi_hrnjywg5_-lzj"))
-($8 883 < 0_-fvi_hrnjywg5_-lzi "code:python" 880
+($8 882 < 0_-fvi_hrnjywg5_-lzi "code:python" 879
 (name "code:python"
 )
 (value "result = self.findFirstChemCompSysName(specificChemCompVars=frozenset())"
 )
 (uid "0_-fvi_hrnjywg5_-lzi"))
-($8 884 < 0_-fvi_hrnjywg5_-lzh "code:java" 880
+($8 883 < 0_-fvi_hrnjywg5_-lzh "code:java" 879
 (name "code:java"
 )
 (value "result = findFirstChemCompSysName(\"specificChemCompVars\", new java.util.HashSet());"
 )
 (uid "0_-fvi_hrnjywg5_-lzh"))
-($8 885 < 0_-fvi_hrnjywg5_-lzg "guid" 880
+($8 884 < 0_-fvi_hrnjywg5_-lzg "guid" 879
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2007-07-04-18:16:02_00002"
 )
 (uid "0_-fvi_hrnjywg5_-lzg"))
-($12 886 < 0_-fvi_hrnjywg5_-lzf "#<anon> (NamingSystem, DataObject)" 876
+($12 885 < 0_-fvi_hrnjywg5_-lzf "#<anon> (NamingSystem, DataObject)" 875
 (uid "0_-fvi_hrnjywg5_-lzf"))
-($10 887 < 0_-fvi_hrnjywg5_-lze "#<anon> (NamingSystem, AtomSysName)##," 876
+($10 886 < 0_-fvi_hrnjywg5_-lze "#<anon> (NamingSystem, AtomSysName)##," 875
 (name "")
 (uid "0_-fvi_hrnjywg5_-lze"))
-($11 888 < 0_-fvi_hrnjywg5_-lzd "#0" 887
+($11 887 < 0_-fvi_hrnjywg5_-lzd "#0" 886
 (changeability "frozen")
 (aggregation "composite")
 (uid "0_-fvi_hrnjywg5_-lzd")
 (multiplicity "1"))
-($8 889 < 0_-fvi_hrnjywg5_-lzc "guid" 888
+($8 888 < 0_-fvi_hrnjywg5_-lzc "guid" 887
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2007-05-03-17:42:27_00003"
 )
 (uid "0_-fvi_hrnjywg5_-lzc"))
-($11 890 < 0_-fvi_hrnjywg5_-lzb "#1" 887
+($11 889 < 0_-fvi_hrnjywg5_-lzb "#1" 886
 (uid "0_-fvi_hrnjywg5_-lzb")
 (multiplicity "*"))
-($8 891 < 0_-fvi_hrnjywg5_-lza "guid" 890
+($8 890 < 0_-fvi_hrnjywg5_-lza "guid" 889
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2007-05-03-17:50:40_00001"
 )
 (uid "0_-fvi_hrnjywg5_-lza"))
-($10 892 < 0_-fvi_hrnjywg5_-lz9 "#<anon> (NamingSystem, ChemCompSysName)##," 876
+($10 891 < 0_-fvi_hrnjywg5_-lz9 "#<anon> (NamingSystem, ChemCompSysName)##," 875
 (name "")
 (uid "0_-fvi_hrnjywg5_-lz9"))
-($11 893 < 0_-fvi_hrnjywg5_-lz8 "#0" 892
+($11 892 < 0_-fvi_hrnjywg5_-lz8 "#0" 891
 (changeability "frozen")
 (aggregation "composite")
 (uid "0_-fvi_hrnjywg5_-lz8")
 (multiplicity "1"))
-($8 894 < 0_-fvi_hrnjywg5_-lz7 "guid" 893
+($8 893 < 0_-fvi_hrnjywg5_-lz7 "guid" 892
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2007-05-03-17:50:40_00002"
 )
 (uid "0_-fvi_hrnjywg5_-lz7"))
-($11 895 < 0_-fvi_hrnjywg5_-lz6 "#1" 892
+($11 894 < 0_-fvi_hrnjywg5_-lz6 "#1" 891
 (uid "0_-fvi_hrnjywg5_-lz6")
 (multiplicity "*"))
-($8 896 < 0_-fvi_hrnjywg5_-lz5 "guid" 895
+($8 895 < 0_-fvi_hrnjywg5_-lz5 "guid" 894
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2007-05-03-18:05:22_00001"
 )
 (uid "0_-fvi_hrnjywg5_-lz5"))
-($10 897 < 0_-fvi_hrnjywg5_-lz4 "#<anon> (NamingSystem, )##atomReference,atomVariantSystems" 876
+($10 896 < 0_-fvi_hrnjywg5_-lz4 "#<anon> (NamingSystem, )##atomReference,atomVariantSystems" 875
 (name "")
 (uid "0_-fvi_hrnjywg5_-lz4"))
-($11 898 < 0_-fvi_hrnjywg5_-lz3 "atomReference#0" 897
+($11 897 < 0_-fvi_hrnjywg5_-lz3 "atomReference#0" 896
 (name "atomReference"
 )
 (uid "0_-fvi_hrnjywg5_-lz3"))
-($8 899 < 0_-fvi_hrnjywg5_-lz2 "documentation" 898
+($8 898 < 0_-fvi_hrnjywg5_-lz2 "documentation" 897
 (name "documentation"
 )
 (value "Reference naming system for atom names. Any atom names not found under the namingSystem itself should be sought in the reference NamingSystem"
 )
 (uid "0_-fvi_hrnjywg5_-lz2"))
-($8 900 < 0_-fvi_hrnjywg5_-lz1 "guid" 898
+($8 899 < 0_-fvi_hrnjywg5_-lz1 "guid" 897
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2007-05-03-18:05:22_00002"
 )
 (uid "0_-fvi_hrnjywg5_-lz1"))
-($11 901 < 0_-fvi_hrnjywg5_-lz0 "atomVariantSystems#1" 897
+($11 900 < 0_-fvi_hrnjywg5_-lz0 "atomVariantSystems#1" 896
 (name "atomVariantSystems"
 )
 (uid "0_-fvi_hrnjywg5_-lz0")
 (multiplicity "*"))
-($8 902 < 0_-fvi_hrnjywg5_-lyz "documentation" 901
+($8 901 < 0_-fvi_hrnjywg5_-lyz "documentation" 900
 (name "documentation"
 )
 (value "variant naming systems that use the present one for atom name reference"
 )
 (uid "0_-fvi_hrnjywg5_-lyz"))
-($8 903 < 0_-fvi_hrnjywg5_-lyy "baseName" 901
+($8 902 < 0_-fvi_hrnjywg5_-lyy "baseName" 900
 (name "baseName"
 )
 (value "atomVariantSystem"
 )
 (uid "0_-fvi_hrnjywg5_-lyy"))
-($8 904 < 0_-fvi_hrnjywg5_-lyx "guid" 901
+($8 903 < 0_-fvi_hrnjywg5_-lyx "guid" 900
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2007-05-03-18:05:22_00003"
 )
 (uid "0_-fvi_hrnjywg5_-lyx"))
-($10 905 < 0_-fvi_hrnjywg5_-lyw "#<anon> (NamingSystem, ChemTorsionSysName)##," 876
+($10 904 < 0_-fvi_hrnjywg5_-lyw "#<anon> (NamingSystem, ChemTorsionSysName)##," 875
 (name "")
 (uid "0_-fvi_hrnjywg5_-lyw"))
-($11 906 < 0_-fvi_hrnjywg5_-lyv "#0" 905
+($11 905 < 0_-fvi_hrnjywg5_-lyv "#0" 904
 (changeability "frozen")
 (aggregation "composite")
 (uid "0_-fvi_hrnjywg5_-lyv")
 (multiplicity "1"))
-($8 907 < 0_-fvi_hrnjywg5_-lyu "guid" 906
+($8 906 < 0_-fvi_hrnjywg5_-lyu "guid" 905
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2007-07-03-18:29:17_00001"
 )
 (uid "0_-fvi_hrnjywg5_-lyu"))
-($11 908 < 0_-fvi_hrnjywg5_-lyt "#1" 905
+($11 907 < 0_-fvi_hrnjywg5_-lyt "#1" 904
 (uid "0_-fvi_hrnjywg5_-lyt")
 (multiplicity "*"))
-($8 909 < 0_-fvi_hrnjywg5_-lys "guid" 908
+($8 908 < 0_-fvi_hrnjywg5_-lys "guid" 907
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2007-07-03-18:29:17_00002"
 )
 (uid "0_-fvi_hrnjywg5_-lys"))
-($10 910 < 0_-fvi_hrnjywg5_-lyr "#<anon> (NamingSystem, )##atomSetVariantSystems,atomSetReference" 876
+($10 909 < 0_-fvi_hrnjywg5_-lyr "#<anon> (NamingSystem, )##atomSetVariantSystems,atomSetReference" 875
 (name "")
 (uid "0_-fvi_hrnjywg5_-lyr"))
-($11 911 < 0_-fvi_hrnjywg5_-lyq "atomSetVariantSystems#0" 910
+($11 910 < 0_-fvi_hrnjywg5_-lyq "atomSetVariantSystems#0" 909
 (name "atomSetVariantSystems"
 )
 (uid "0_-fvi_hrnjywg5_-lyq")
 (multiplicity "*"))
-($8 912 < 0_-fvi_hrnjywg5_-lyp "baseName" 911
+($8 911 < 0_-fvi_hrnjywg5_-lyp "baseName" 910
 (name "baseName"
 )
 (value "atomSetVariantSystem"
 )
 (uid "0_-fvi_hrnjywg5_-lyp"))
-($8 913 < 0_-fvi_hrnjywg5_-lyo "guid" 911
+($8 912 < 0_-fvi_hrnjywg5_-lyo "guid" 910
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2007-07-03-18:29:17_00003"
 )
 (uid "0_-fvi_hrnjywg5_-lyo"))
-($8 914 < 0_-fvi_hrnjywg5_-lyn "documentation" 911
+($8 913 < 0_-fvi_hrnjywg5_-lyn "documentation" 910
 (name "documentation"
 )
 (value "variant naming systems that use the present one for atom name reference"
 )
 (uid "0_-fvi_hrnjywg5_-lyn"))
-($11 915 < 0_-fvi_hrnjywg5_-lym "atomSetReference#1" 910
+($11 914 < 0_-fvi_hrnjywg5_-lym "atomSetReference#1" 909
 (name "atomSetReference"
 )
 (uid "0_-fvi_hrnjywg5_-lym"))
-($8 916 < 0_-fvi_hrnjywg5_-lyl "guid" 915
+($8 915 < 0_-fvi_hrnjywg5_-lyl "guid" 914
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2007-07-03-18:29:17_00004"
 )
 (uid "0_-fvi_hrnjywg5_-lyl"))
-($8 917 < 0_-fvi_hrnjywg5_-lyk "documentation" 915
+($8 916 < 0_-fvi_hrnjywg5_-lyk "documentation" 914
 (name "documentation"
 )
 (value "Reference naming system for atom set names. Any atom names not found under the namingSystem itself should be sought in the reference NamingSystem"
 )
 (uid "0_-fvi_hrnjywg5_-lyk"))
-($10 918 < 0_-fvi_hrnjywg5_-lyj "#<anon> (NamingSystem, ChemCompSysName)##,mainChemCompSysName" 876
+($10 917 < 0_-fvi_hrnjywg5_-lyj "#<anon> (NamingSystem, ChemCompSysName)##,mainChemCompSysName" 875
 (name "")
 (uid "0_-fvi_hrnjywg5_-lyj"))
-($11 919 < 0_-fvi_hrnjywg5_-lyi "#0" 918
+($11 918 < 0_-fvi_hrnjywg5_-lyi "#0" 917
 (uid "0_-fvi_hrnjywg5_-lyi")
 (isNavigable false))
-($11 920 < 0_-fvi_hrnjywg5_-lyh "mainChemCompSysName#1" 918
+($11 919 < 0_-fvi_hrnjywg5_-lyh "mainChemCompSysName#1" 917
 (changeability "frozen")
 (name "mainChemCompSysName"
 )
 (uid "0_-fvi_hrnjywg5_-lyh"))
-($8 921 < 0_-fvi_hrnjywg5_-lyg "documentation" 920
+($8 920 < 0_-fvi_hrnjywg5_-lyg "documentation" 919
 (name "documentation"
 )
 (value "ChemCompSysName valid for ChemCompVars where nothing esle is set, and hence valid for the entire ChemComp."
 )
 (uid "0_-fvi_hrnjywg5_-lyg"))
-($8 922 < 0_-fvi_hrnjywg5_-lyf "guid" 920
+($8 921 < 0_-fvi_hrnjywg5_-lyf "guid" 919
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2007-07-04-18:16:02_00001"
 )
 (uid "0_-fvi_hrnjywg5_-lyf"))
-($8 923 < 0_-fvi_hrnjywg5_-lye "isDerived" 918
+($8 922 < 0_-fvi_hrnjywg5_-lye "isDerived" 917
 (name "isDerived"
 )
 (value "True"
 )
 (uid "0_-fvi_hrnjywg5_-lye"))
-($8 924 < 0_-fvi_hrnjywg5_-lyd "keyNames" 876
+($8 923 < 0_-fvi_hrnjywg5_-lyd "keyNames" 875
 (name "keyNames"
 )
 (value "name"
 )
 (uid "0_-fvi_hrnjywg5_-lyd"))
-($8 925 < 0_-fvi_hrnjywg5_-lyc "guid" 876
+($8 924 < 0_-fvi_hrnjywg5_-lyc "guid" 875
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2007-05-03-17:42:17_00001"
 )
 (uid "0_-fvi_hrnjywg5_-lyc"))
-($8 926 < 0_-fvi_hrnjywg5_-lyb "documentation" 876
+($8 925 < 0_-fvi_hrnjywg5_-lyb "documentation" 875
 (name "documentation"
 )
 (value "ChemComp naming system. Serves as container for ChemComp and Atom/AtomSet systematic names. May be defined relative to a reference, in which case only names that differ from those in the reference are given explicitly"
 )
 (uid "0_-fvi_hrnjywg5_-lyb"))
-($2 927 < 0_-fvi_hrnjywg5_-lya "Hinxton_ChemComp" 1
+($2 926 < 0_-fvi_hrnjywg5_-lya "Hinxton_ChemComp" 1
 (name "Hinxton_ChemComp"
 )
 (uid "0_-fvi_hrnjywg5_-lya")
 (diagramType "class"))
-($3 928 < 0_-fvi_hrnjywg5_-ly9 "ChemAtom" 927
+($3 927 < 0_-fvi_hrnjywg5_-ly9 "ChemAtom" 926
 (showOperationCompartment false)
 (uid "0_-fvi_hrnjywg5_-ly9")
 (bbx 20 320 230 130))
-($3 929 < 0_-fvi_hrnjywg5_-ly8 "ChemComp" 927
+($3 928 < 0_-fvi_hrnjywg5_-ly8 "ChemComp" 926
 (showOperationCompartment false)
 (uid "0_-fvi_hrnjywg5_-ly8")
 (bbx 510 20 200 300))
-($3 930 < 0_-fvi_hrnjywg5_-ly7 "ChemCompVar" 927
+($3 929 < 0_-fvi_hrnjywg5_-ly7 "ChemCompVar" 926
 (showOperationCompartment false)
 (uid "0_-fvi_hrnjywg5_-ly7")
 (bbx 20 20 190 250))
-($4 931 < 0_-fvi_hrnjywg5_-ly6 "" 927
+($4 930 < 0_-fvi_hrnjywg5_-ly6 "" 926
 (toMultiplicityPosition 215 35)
 (uid "0_-fvi_hrnjywg5_-ly6")
 (points 510 30 210 30)
 (fromMultiplicityPosition 495 40))
-($3 932 < 0_-fvi_hrnjywg5_-ly5 "AbstractChemAtom" 927
+($3 931 < 0_-fvi_hrnjywg5_-ly5 "AbstractChemAtom" 926
 (showOperationCompartment false)
 (uid "0_-fvi_hrnjywg5_-ly5")
 (bbx 290 170 130 80))
-($4 933 < 0_-fvi_hrnjywg5_-ly4 "" 927
+($4 932 < 0_-fvi_hrnjywg5_-ly4 "" 926
 (toMultiplicityPosition 215 175)
 (uid "0_-fvi_hrnjywg5_-ly4")
 (points 290 170 210 170)
 (fromRolePosition 240 150)
 (fromMultiplicityPosition 280 175))
-($4 934 < 0_-fvi_hrnjywg5_-ly3 "" 927
+($4 933 < 0_-fvi_hrnjywg5_-ly3 "" 926
 (toMultiplicityPosition 425 210)
 (toRolePosition 420 185)
 (uid "0_-fvi_hrnjywg5_-ly3")
 (points 510 205 420 205)
 (fromMultiplicityPosition 495 215))
-($5 935 < 0_-fvi_hrnjywg5_-ly2 "" 927
+($5 934 < 0_-fvi_hrnjywg5_-ly2 "" 926
 (uid "0_-fvi_hrnjywg5_-ly2")
 (points 235 320 235 235 290 235))
-($3 936 < 0_-fvi_hrnjywg5_-ly1 "LinkAtom" 927
+($3 935 < 0_-fvi_hrnjywg5_-ly1 "LinkAtom" 926
 (showOperationCompartment false)
 (uid "0_-fvi_hrnjywg5_-ly1")
 (bbx 480 390 150 60))
-($5 937 < 0_-fvi_hrnjywg5_-ly0 "" 927
+($5 936 < 0_-fvi_hrnjywg5_-ly0 "" 926
 (uid "0_-fvi_hrnjywg5_-ly0")
 (points 490 390 490 235 420 235))
-($3 938 < 0_-fvi_hrnjywg5_-lxz "LinkEnd" 927
+($3 937 < 0_-fvi_hrnjywg5_-lxz "LinkEnd" 926
 (showOperationCompartment false)
 (uid "0_-fvi_hrnjywg5_-lxz")
 (bbx 280 280 110 60))
-($4 939 < 0_-fvi_hrnjywg5_-lxy "" 927
+($4 938 < 0_-fvi_hrnjywg5_-lxy "" 926
 (toMultiplicityPosition 255 410)
 (toRolePosition 255 435)
 (uid "0_-fvi_hrnjywg5_-lxy")
 (points 330 340 330 430 250 430)
 (fromRolePosition 260 345)
 (fromMultiplicityPosition 320 360))
-($4 940 < 0_-fvi_hrnjywg5_-lxx "" 927
+($4 939 < 0_-fvi_hrnjywg5_-lxx "" 926
 (toMultiplicityPosition 470 410)
 (toRolePosition 375 435)
 (uid "0_-fvi_hrnjywg5_-lxx")
 (points 380 340 380 430 480 430)
 (fromRolePosition 375 355))
-($4 941 < 0_-fvi_hrnjywg5_-lxw "" 927
+($4 940 < 0_-fvi_hrnjywg5_-lxw "" 926
 (toMultiplicityPosition 215 240)
 (uid "0_-fvi_hrnjywg5_-lxw")
 (points 335 280 335 260 210 260)
 (fromMultiplicityPosition 340 265))
-($4 942 < 0_-fvi_hrnjywg5_-lxv "" 927
+($4 941 < 0_-fvi_hrnjywg5_-lxv "" 926
 (toRolePosition 45 305)
 (uid "0_-fvi_hrnjywg5_-lxv")
 (points 280 300 40 300 40 320)
 (fromRolePosition 175 280)
 (fromMultiplicityPosition 270 305))
-($4 943 < 0_-fvi_hrnjywg5_-lxu "" 927
+($4 942 < 0_-fvi_hrnjywg5_-lxu "" 926
 (toRolePosition 530 370)
 (uid "0_-fvi_hrnjywg5_-lxu")
 (points 390 330 605 330 605 390)
 (fromRolePosition 395 335))
-($4 944 < 0_-fvi_hrnjywg5_-lxt "" 927
+($4 943 < 0_-fvi_hrnjywg5_-lxt "" 926
 (toMultiplicityPosition 395 295)
 (uid "0_-fvi_hrnjywg5_-lxt")
 (points 510 290 390 290)
 (fromMultiplicityPosition 495 265))
-($3 945 < 0_-fvi_hrnjywg5_-lxs "ChemBond" 927
+($3 944 < 0_-fvi_hrnjywg5_-lxs "ChemBond" 926
 (uid "0_-fvi_hrnjywg5_-lxs")
 (bbx 240 40 220 80))
-($4 946 < 0_-fvi_hrnjywg5_-lxr "" 927
+($4 945 < 0_-fvi_hrnjywg5_-lxr "" 926
 (toMultiplicityPosition 345 150)
 (toRolePosition 365 150)
 (uid "0_-fvi_hrnjywg5_-lxr")
 (points 360 120 360 170)
 (fromMultiplicityPosition 365 125))
-($4 947 < 0_-fvi_hrnjywg5_-lxq "" 927
+($4 946 < 0_-fvi_hrnjywg5_-lxq "" 926
 (toMultiplicityPosition 500 85)
 (uid "0_-fvi_hrnjywg5_-lxq")
 (points 460 75 510 75)
 (fromMultiplicityPosition 465 80))
-($8 948 < 0_-fvi_hrnjywg5_-lxp "shortName" 1
+($8 947 < 0_-fvi_hrnjywg5_-lxp "shortName" 1
 (name "shortName"
 )
 (value "CHEM"
 )
 (uid "0_-fvi_hrnjywg5_-lxp"))
-($8 949 < 0_-fvi_hrnjywg5_-lxo "documentation" 1
+($8 948 < 0_-fvi_hrnjywg5_-lxo "documentation" 1
 (name "documentation"
 )
 (value "Reference description of residues, molecules and molecule fragments, mainly topology and naming."
 )
 (uid "0_-fvi_hrnjywg5_-lxo"))
-($8 950 < 0_-fvi_hrnjywg5_-lxn "isReferenceData" 1
+($8 949 < 0_-fvi_hrnjywg5_-lxn "isReferenceData" 1
 (name "isReferenceData"
 )
 (value "True"
 )
 (uid "0_-fvi_hrnjywg5_-lxn"))
-($8 951 < 0_-fvi_hrnjywg5_-lxm "guid" 1
+($8 950 < 0_-fvi_hrnjywg5_-lxm "guid" 1
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2006-08-16-14:22:51_00046"
 )
 (uid "0_-fvi_hrnjywg5_-lxm"))
-($16 953)
-($19 957)
+($16 952)
+($19 956)
+($19 959)
 ($19 960)
 ($19 961)
 ($19 962)
 ($19 963)
-($19 964)
-($19 966)
+($19 965)
+($19 967)
 ($19 968)
-($19 969)
+($19 971)
 ($19 972)
 ($19 973)
 ($19 974)
-($19 975)
+($19 976)
 ($19 977)
 ($19 978)
 ($19 979)
@@ -6242,19 +6237,19 @@ objectdomain.uml.core.Stereotype-owns $18
 ($19 981)
 ($19 982)
 ($19 983)
-($19 984)
+($19 985)
 ($19 986)
-($19 987)
+($19 989)
 ($19 990)
 ($19 991)
 ($19 992)
 ($19 993)
-($19 994)
+($16 994)
 ($16 995)
 ($16 996)
 ($16 997)
 ($16 998)
-($16 999)
+($16 1000)
 ($16 1001)
 ($16 1002)
 ($16 1003)
@@ -6388,7 +6383,7 @@ objectdomain.uml.core.Stereotype-owns $18
 ($16 1131)
 ($16 1132)
 ($16 1133)
-($16 1134)
+($16 1137)
 ($16 1138)
 ($16 1139)
 ($16 1140)
@@ -6408,26 +6403,25 @@ objectdomain.uml.core.Stereotype-owns $18
 ($16 1154)
 ($16 1155)
 ($16 1156)
-($16 1157)
-($15 952 @ -yk94ms_-e3s_e41656c6_-fvu 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "ChemComp" $15)
-($6 954 @ 0_-fvi_hrnjywg5_-dbb 4 "Logical" $1 "memops" $1 "Implementation" $1 "TopObject" $6)
-($18 955 @ -yk94ms_-e3s_e41656c6_-fw7 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "DataType" $18)
-($6 956 @ 0_-fvi_hrnjywg5_-dkb 4 "Logical" $1 "memops" $1 "Implementation" $1 "Word" $6)
-($6 958 @ 0_-fvi_hrnjywg5_-d6u 4 "Logical" $1 "memops" $1 "Implementation" $1 "LongWord" $6)
-($6 959 @ 0_-fvi_hrnjywg5_-dkm 4 "Logical" $1 "memops" $1 "Implementation" $1 "String" $6)
-($6 965 @ 0_-fvi_hrnjywg5_-dkx 4 "Logical" $1 "memops" $1 "Implementation" $1 "Line" $6)
-($6 967 @ 0_-fvi_hrnjywg5_-dlv 4 "Logical" $1 "memops" $1 "Implementation" $1 "Boolean" $6)
-($6 970 @ 0_-fvi_hrnjywg5_-d9g 4 "Logical" $1 "memops" $1 "Implementation" $1 "DataObject" $6)
-($6 971 @ 0_-fvi_hrnjywg5_-dl3 4 "Logical" $1 "memops" $1 "Implementation" $1 "Int" $6)
-($6 976 @ 0_-fvi_hrnjywg5_-dlb 4 "Logical" $1 "memops" $1 "Implementation" $1 "Float" $6)
-($6 985 @ -yk94ms_85r_eqyymv3f_-kik 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemElement" $1 "ChemElement" $6)
-($6 988 @ -yk94ms_85r_eqyymv3f_-jcy 5 "Logical" $1 "ccp" $1 "molecule" $1 "Stereochemistry" $1 "RefStereochemistry" $6)
-($6 989 @ 0_-m68_hshnuokh_-p98 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ResidueTypeProb" $6)
-($15 1000 @ -yk94ms_-e3s_e41656c6_-fvk 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Nucleus" $15)
-($18 1135 @ -yk94ms_-e3s_e41656c6_-fwy 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "import" $18)
-($1 1136 @ -yk94ms_-e3s_e41656c6_-hj7 4 "Logical" $1 "ccp" $1 "molecule" $1 "ChemElement" $1)
-($1 1137 @ -yk94ms_-e3s_e41656c6_-kpr 4 "Logical" $1 "ccp" $1 "molecule" $1 "Stereochemistry" $1)
-(styleAssn 3 952)
+($15 951 @ -yk94ms_-e3s_e41656c6_-fvu 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "ChemComp" $15)
+($6 953 @ 0_-fvi_hrnjywg5_-dbb 4 "Logical" $1 "memops" $1 "Implementation" $1 "TopObject" $6)
+($18 954 @ -yk94ms_-e3s_e41656c6_-fw7 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "DataType" $18)
+($6 955 @ 0_-fvi_hrnjywg5_-dkb 4 "Logical" $1 "memops" $1 "Implementation" $1 "Word" $6)
+($6 957 @ 0_-fvi_hrnjywg5_-d6u 4 "Logical" $1 "memops" $1 "Implementation" $1 "LongWord" $6)
+($6 958 @ 0_-fvi_hrnjywg5_-dkm 4 "Logical" $1 "memops" $1 "Implementation" $1 "String" $6)
+($6 964 @ 0_-fvi_hrnjywg5_-dkx 4 "Logical" $1 "memops" $1 "Implementation" $1 "Line" $6)
+($6 966 @ 0_-fvi_hrnjywg5_-dlv 4 "Logical" $1 "memops" $1 "Implementation" $1 "Boolean" $6)
+($6 969 @ 0_-fvi_hrnjywg5_-d9g 4 "Logical" $1 "memops" $1 "Implementation" $1 "DataObject" $6)
+($6 970 @ 0_-fvi_hrnjywg5_-dl3 4 "Logical" $1 "memops" $1 "Implementation" $1 "Int" $6)
+($6 975 @ 0_-fvi_hrnjywg5_-dlb 4 "Logical" $1 "memops" $1 "Implementation" $1 "Float" $6)
+($6 984 @ -yk94ms_85r_eqyymv3f_-kik 5 "Logical" $1 "ccp" $1 "molecule" $1 "ChemElement" $1 "ChemElement" $6)
+($6 987 @ -yk94ms_85r_eqyymv3f_-jcy 5 "Logical" $1 "ccp" $1 "molecule" $1 "Stereochemistry" $1 "RefStereochemistry" $6)
+($6 988 @ 0_-m68_hshnuokh_-p98 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ResidueTypeProb" $6)
+($15 999 @ -yk94ms_-e3s_e41656c6_-fvk 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Nucleus" $15)
+($18 1134 @ -yk94ms_-e3s_e41656c6_-fwy 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "import" $18)
+($1 1135 @ -yk94ms_-e3s_e41656c6_-hj7 4 "Logical" $1 "ccp" $1 "molecule" $1 "ChemElement" $1)
+($1 1136 @ -yk94ms_-e3s_e41656c6_-kpr 4 "Logical" $1 "ccp" $1 "molecule" $1 "Stereochemistry" $1)
+(styleAssn 3 951)
 (typeAssn 355 146)
 (assocEndAssn 146 355)
 (typeAssn 227 146)
@@ -6451,48 +6445,48 @@ objectdomain.uml.core.Stereotype-owns $18
 (typeAssn 221 146)
 (assocEndAssn 146 221)
 (subtypeAssn 270 146)
-(supertypeAssn 270 954)
+(supertypeAssn 270 953)
 (generalizationAssn 146 270)
-(stereotypeAssn 675 955)
-(subtypeAssn 676 675)
-(supertypeAssn 676 956)
-(generalizationAssn 675 676)
-(typeRefAssn 147 675)
-(typeExpression 147 957)
-(typeRefAssn 151 958)
-(typeExpression 151 957)
-(typeRefAssn 155 959)
-(typeExpression 155 960)
-(stereotypeAssn 670 955)
+(stereotypeAssn 674 954)
+(subtypeAssn 675 674)
+(supertypeAssn 675 955)
+(generalizationAssn 674 675)
+(typeRefAssn 147 674)
+(typeExpression 147 956)
+(typeRefAssn 151 957)
+(typeExpression 151 956)
+(typeRefAssn 155 958)
+(typeExpression 155 959)
+(stereotypeAssn 670 954)
 (subtypeAssn 671 670)
-(supertypeAssn 671 956)
+(supertypeAssn 671 955)
 (generalizationAssn 670 671)
 (typeRefAssn 158 670)
-(typeExpression 158 961)
-(typeRefAssn 161 956)
-(typeExpression 161 962)
-(typeRefAssn 166 959)
-(typeExpression 166 963)
-(typeRefAssn 169 959)
-(typeExpression 169 960)
-(typeRefAssn 173 958)
-(typeExpression 173 964)
-(typeRefAssn 177 965)
-(typeExpression 177 960)
-(typeRefAssn 181 956)
-(typeExpression 181 966)
-(typeRefAssn 184 956)
-(typeExpression 184 966)
-(typeRefAssn 187 956)
-(typeExpression 187 966)
-(typeRefAssn 190 956)
-(typeExpression 190 966)
-(typeRefAssn 193 959)
-(typeExpression 193 960)
-(typeRefAssn 201 967)
-(typeExpression 201 968)
-(typeRefAssn 210 967)
-(typeExpression 210 969)
+(typeExpression 158 960)
+(typeRefAssn 161 955)
+(typeExpression 161 961)
+(typeRefAssn 166 958)
+(typeExpression 166 962)
+(typeRefAssn 169 958)
+(typeExpression 169 959)
+(typeRefAssn 173 957)
+(typeExpression 173 963)
+(typeRefAssn 177 964)
+(typeExpression 177 959)
+(typeRefAssn 181 955)
+(typeExpression 181 965)
+(typeRefAssn 184 955)
+(typeExpression 184 965)
+(typeRefAssn 187 955)
+(typeExpression 187 965)
+(typeRefAssn 190 955)
+(typeExpression 190 965)
+(typeRefAssn 193 958)
+(typeExpression 193 959)
+(typeRefAssn 201 966)
+(typeExpression 201 967)
+(typeRefAssn 210 966)
+(typeExpression 210 968)
 (assocEndAssn 298 223)
 (typeAssn 288 298)
 (assocEndAssn 298 288)
@@ -6500,25 +6494,25 @@ objectdomain.uml.core.Stereotype-owns $18
 (assocEndAssn 298 545)
 (typeAssn 309 298)
 (assocEndAssn 298 309)
-(typeAssn 741 298)
-(assocEndAssn 298 741)
-(typeAssn 726 298)
-(assocEndAssn 298 726)
+(typeAssn 740 298)
+(assocEndAssn 298 740)
+(typeAssn 725 298)
+(assocEndAssn 298 725)
 (typeAssn 348 298)
 (assocEndAssn 298 348)
 (subtypeAssn 307 298)
-(supertypeAssn 307 970)
+(supertypeAssn 307 969)
 (generalizationAssn 298 307)
-(typeRefAssn 299 956)
-(typeExpression 299 960)
-(typeRefAssn 304 971)
-(typeExpression 304 972)
+(typeRefAssn 299 955)
+(typeExpression 299 959)
+(typeRefAssn 304 970)
+(typeExpression 304 971)
 (typeAssn 250 396)
 (assocEndAssn 396 250)
 (typeAssn 377 396)
 (assocEndAssn 396 377)
-(typeAssn 784 396)
-(assocEndAssn 396 784)
+(typeAssn 783 396)
+(assocEndAssn 396 783)
 (typeAssn 507 396)
 (assocEndAssn 396 507)
 (typeAssn 513 396)
@@ -6531,38 +6525,38 @@ objectdomain.uml.core.Stereotype-owns $18
 (assocEndAssn 396 387)
 (assocEndAssn 396 313)
 (subtypeAssn 505 396)
-(supertypeAssn 505 970)
+(supertypeAssn 505 969)
 (generalizationAssn 396 505)
-(stereotypeAssn 681 955)
-(subtypeAssn 682 681)
-(supertypeAssn 682 956)
-(generalizationAssn 681 682)
-(typeRefAssn 397 681)
-(typeExpression 397 973)
-(typeRefAssn 402 965)
-(typeExpression 402 973)
-(typeRefAssn 407 967)
-(typeExpression 407 974)
-(typeRefAssn 412 959)
-(typeExpression 412 972)
-(typeRefAssn 416 959)
-(typeExpression 416 972)
-(typeRefAssn 419 959)
-(typeExpression 419 963)
-(typeRefAssn 422 965)
-(typeExpression 422 975)
-(typeRefAssn 426 971)
-(typeExpression 426 975)
-(typeRefAssn 429 976)
-(typeExpression 429 977)
-(typeRefAssn 439 959)
-(typeExpression 439 975)
-(typeRefAssn 442 959)
-(typeExpression 442 975)
-(typeRefAssn 451 967)
-(typeExpression 451 975)
-(typeRefAssn 454 967)
-(typeExpression 454 975)
+(stereotypeAssn 680 954)
+(subtypeAssn 681 680)
+(supertypeAssn 681 955)
+(generalizationAssn 680 681)
+(typeRefAssn 397 680)
+(typeExpression 397 972)
+(typeRefAssn 402 964)
+(typeExpression 402 972)
+(typeRefAssn 407 966)
+(typeExpression 407 973)
+(typeRefAssn 412 958)
+(typeExpression 412 971)
+(typeRefAssn 416 958)
+(typeExpression 416 971)
+(typeRefAssn 419 958)
+(typeExpression 419 962)
+(typeRefAssn 422 964)
+(typeExpression 422 974)
+(typeRefAssn 426 970)
+(typeExpression 426 974)
+(typeRefAssn 429 975)
+(typeExpression 429 976)
+(typeRefAssn 439 958)
+(typeExpression 439 974)
+(typeRefAssn 442 958)
+(typeExpression 442 974)
+(typeRefAssn 451 966)
+(typeExpression 451 974)
+(typeRefAssn 454 966)
+(typeExpression 454 974)
 (typeAssn 234 537)
 (assocEndAssn 537 234)
 (typeAssn 551 537)
@@ -6571,18 +6565,18 @@ objectdomain.uml.core.Stereotype-owns $18
 (typeAssn 542 537)
 (assocEndAssn 537 542)
 (subtypeAssn 549 537)
-(supertypeAssn 549 970)
+(supertypeAssn 549 969)
 (generalizationAssn 537 549)
-(typeRefAssn 538 956)
-(typeExpression 538 978)
+(typeRefAssn 538 955)
+(typeExpression 538 977)
 (assocEndAssn 662 554)
-(typeAssn 908 662)
-(assocEndAssn 662 908)
+(typeAssn 907 662)
+(assocEndAssn 662 907)
 (subtypeAssn 666 662)
-(supertypeAssn 666 970)
+(supertypeAssn 666 969)
 (generalizationAssn 662 666)
-(typeRefAssn 663 956)
-(typeExpression 663 979)
+(typeRefAssn 663 955)
+(typeExpression 663 978)
 (typeAssn 554 662)
 (typeAssn 508 537)
 (typeAssn 229 283)
@@ -6591,7 +6585,7 @@ objectdomain.uml.core.Stereotype-owns $18
 (typeAssn 285 283)
 (assocEndAssn 283 285)
 (subtypeAssn 292 283)
-(supertypeAssn 292 970)
+(supertypeAssn 292 969)
 (generalizationAssn 283 292)
 (typeAssn 514 283)
 (typeAssn 353 337)
@@ -6600,20 +6594,20 @@ objectdomain.uml.core.Stereotype-owns $18
 (typeAssn 345 337)
 (assocEndAssn 337 345)
 (subtypeAssn 357 337)
-(supertypeAssn 357 970)
+(supertypeAssn 357 969)
 (generalizationAssn 337 357)
-(stereotypeAssn 869 955)
-(subtypeAssn 870 869)
-(supertypeAssn 870 956)
-(generalizationAssn 869 870)
-(typeRefAssn 338 869)
-(typeExpression 338 960)
-(stereotypeAssn 686 955)
-(subtypeAssn 687 686)
-(supertypeAssn 687 956)
-(generalizationAssn 686 687)
-(typeRefAssn 341 686)
-(typeExpression 341 960)
+(stereotypeAssn 868 954)
+(subtypeAssn 869 868)
+(supertypeAssn 869 955)
+(generalizationAssn 868 869)
+(typeRefAssn 338 868)
+(typeExpression 338 959)
+(stereotypeAssn 685 954)
+(subtypeAssn 686 685)
+(supertypeAssn 686 955)
+(generalizationAssn 685 686)
+(typeRefAssn 341 685)
+(typeExpression 341 959)
 (typeAssn 520 337)
 (typeAssn 239 606)
 (assocEndAssn 606 239)
@@ -6625,46 +6619,46 @@ objectdomain.uml.core.Stereotype-owns $18
 (assocEndAssn 606 643)
 (assocEndAssn 606 526)
 (subtypeAssn 641 606)
-(supertypeAssn 641 970)
+(supertypeAssn 641 969)
 (generalizationAssn 606 641)
-(typeRefAssn 607 956)
-(typeExpression 607 980)
-(typeRefAssn 612 971)
-(typeExpression 612 981)
-(typeRefAssn 615 967)
-(typeExpression 615 980)
-(typeRefAssn 618 967)
-(typeExpression 618 980)
-(typeRefAssn 621 976)
-(typeExpression 621 980)
-(typeRefAssn 624 956)
-(typeExpression 624 982)
-(typeAssn 846 822)
-(assocEndAssn 822 846)
-(assocEndAssn 822 646)
-(typeAssn 766 822)
-(assocEndAssn 822 766)
-(typeAssn 793 822)
-(assocEndAssn 822 793)
-(subtypeAssn 844 822)
-(supertypeAssn 844 298)
-(generalizationAssn 822 844)
-(stereotypeAssn 692 955)
-(subtypeAssn 693 692)
-(supertypeAssn 693 956)
-(generalizationAssn 692 693)
-(typeRefAssn 823 692)
-(typeExpression 823 983)
-(typeRefAssn 826 956)
-(typeExpression 826 983)
-(typeRefAssn 829 956)
-(typeExpression 829 983)
-(typeRefAssn 832 965)
-(typeExpression 832 984)
-(typeRefAssn 835 967)
-(typeExpression 835 983)
-(typeAssn 847 985)
-(typeAssn 646 822)
+(typeRefAssn 607 955)
+(typeExpression 607 979)
+(typeRefAssn 612 970)
+(typeExpression 612 980)
+(typeRefAssn 615 966)
+(typeExpression 615 979)
+(typeRefAssn 618 966)
+(typeExpression 618 979)
+(typeRefAssn 621 975)
+(typeExpression 621 979)
+(typeRefAssn 624 955)
+(typeExpression 624 981)
+(typeAssn 845 821)
+(assocEndAssn 821 845)
+(assocEndAssn 821 646)
+(typeAssn 765 821)
+(assocEndAssn 821 765)
+(typeAssn 792 821)
+(assocEndAssn 821 792)
+(subtypeAssn 843 821)
+(supertypeAssn 843 298)
+(generalizationAssn 821 843)
+(stereotypeAssn 691 954)
+(subtypeAssn 692 691)
+(supertypeAssn 692 955)
+(generalizationAssn 691 692)
+(typeRefAssn 822 691)
+(typeExpression 822 982)
+(typeRefAssn 825 955)
+(typeExpression 825 982)
+(typeRefAssn 828 955)
+(typeExpression 828 982)
+(typeRefAssn 831 964)
+(typeExpression 831 983)
+(typeRefAssn 834 966)
+(typeExpression 834 982)
+(typeAssn 846 984)
+(typeAssn 646 821)
 (typeAssn 526 606)
 (typeAssn 313 396)
 (typeAssn 223 298)
@@ -6672,539 +6666,539 @@ objectdomain.uml.core.Stereotype-owns $18
 (subtypeAssn 596 582)
 (supertypeAssn 596 146)
 (generalizationAssn 582 596)
-(typeRefAssn 583 956)
-(typeExpression 583 986)
-(typeRefAssn 594 958)
-(typeExpression 594 987)
+(typeRefAssn 583 955)
+(typeExpression 583 985)
+(typeRefAssn 594 957)
+(typeExpression 594 986)
 (typeAssn 243 582)
-(assocEndAssn 698 255)
-(typeAssn 731 698)
-(assocEndAssn 698 731)
-(typeAssn 737 698)
-(assocEndAssn 698 737)
-(typeAssn 722 698)
-(assocEndAssn 698 722)
-(subtypeAssn 720 698)
-(supertypeAssn 720 970)
-(generalizationAssn 698 720)
-(typeRefAssn 699 971)
-(typeExpression 699 977)
-(typeRefAssn 702 956)
-(typeExpression 702 977)
-(typeRefAssn 705 956)
-(typeExpression 705 974)
-(typeAssn 732 988)
-(typeAssn 255 698)
-(typeAssn 262 989)
-(assocEndAssn 750 268)
-(typeAssn 762 750)
-(assocEndAssn 750 762)
-(typeAssn 770 750)
-(assocEndAssn 750 770)
-(typeAssn 781 750)
-(assocEndAssn 750 781)
-(typeAssn 789 750)
-(assocEndAssn 750 789)
-(typeAssn 797 750)
-(assocEndAssn 750 797)
-(subtypeAssn 760 750)
-(supertypeAssn 760 970)
-(generalizationAssn 750 760)
-(typeRefAssn 751 956)
-(typeExpression 751 983)
-(assocEndAssn 853 777)
-(typeAssn 804 853)
-(assocEndAssn 853 804)
-(subtypeAssn 864 853)
-(supertypeAssn 864 298)
-(generalizationAssn 853 864)
-(typeRefAssn 854 956)
-(typeExpression 854 990)
-(typeAssn 777 853)
-(typeAssn 268 750)
-(assocEndAssn 876 274)
-(typeAssn 888 876)
-(assocEndAssn 876 888)
-(typeAssn 893 876)
-(assocEndAssn 876 893)
-(typeAssn 898 876)
-(assocEndAssn 876 898)
-(typeAssn 901 876)
-(assocEndAssn 876 901)
-(typeAssn 906 876)
-(assocEndAssn 876 906)
-(typeAssn 911 876)
-(assocEndAssn 876 911)
-(typeAssn 915 876)
-(assocEndAssn 876 915)
-(typeAssn 919 876)
-(assocEndAssn 876 919)
-(subtypeAssn 886 876)
-(supertypeAssn 886 970)
-(generalizationAssn 876 886)
-(typeRefAssn 877 956)
-(typeExpression 877 991)
-(assocEndAssn 319 890)
+(assocEndAssn 697 255)
+(typeAssn 730 697)
+(assocEndAssn 697 730)
+(typeAssn 736 697)
+(assocEndAssn 697 736)
+(typeAssn 721 697)
+(assocEndAssn 697 721)
+(subtypeAssn 719 697)
+(supertypeAssn 719 969)
+(generalizationAssn 697 719)
+(typeRefAssn 698 970)
+(typeExpression 698 976)
+(typeRefAssn 701 955)
+(typeExpression 701 976)
+(typeRefAssn 704 955)
+(typeExpression 704 973)
+(typeAssn 731 987)
+(typeAssn 255 697)
+(typeAssn 262 988)
+(assocEndAssn 749 268)
+(typeAssn 761 749)
+(assocEndAssn 749 761)
+(typeAssn 769 749)
+(assocEndAssn 749 769)
+(typeAssn 780 749)
+(assocEndAssn 749 780)
+(typeAssn 788 749)
+(assocEndAssn 749 788)
+(typeAssn 796 749)
+(assocEndAssn 749 796)
+(subtypeAssn 759 749)
+(supertypeAssn 759 969)
+(generalizationAssn 749 759)
+(typeRefAssn 750 955)
+(typeExpression 750 982)
+(assocEndAssn 852 776)
+(typeAssn 803 852)
+(assocEndAssn 852 803)
+(subtypeAssn 863 852)
+(supertypeAssn 863 298)
+(generalizationAssn 852 863)
+(typeRefAssn 853 955)
+(typeExpression 853 989)
+(typeAssn 776 852)
+(typeAssn 268 749)
+(assocEndAssn 875 274)
+(typeAssn 887 875)
+(assocEndAssn 875 887)
+(typeAssn 892 875)
+(assocEndAssn 875 892)
+(typeAssn 897 875)
+(assocEndAssn 875 897)
+(typeAssn 900 875)
+(assocEndAssn 875 900)
+(typeAssn 905 875)
+(assocEndAssn 875 905)
+(typeAssn 910 875)
+(assocEndAssn 875 910)
+(typeAssn 914 875)
+(assocEndAssn 875 914)
+(typeAssn 918 875)
+(assocEndAssn 875 918)
+(subtypeAssn 885 875)
+(supertypeAssn 885 969)
+(generalizationAssn 875 885)
+(typeRefAssn 876 955)
+(typeExpression 876 990)
+(assocEndAssn 319 889)
 (subtypeAssn 333 319)
-(supertypeAssn 333 970)
+(supertypeAssn 333 969)
 (generalizationAssn 319 333)
-(typeRefAssn 320 956)
-(typeExpression 320 960)
-(typeRefAssn 323 971)
-(typeExpression 323 992)
-(typeRefAssn 326 965)
-(typeExpression 326 993)
-(typeRefAssn 329 965)
-(typeExpression 329 994)
-(typeAssn 890 319)
+(typeRefAssn 320 955)
+(typeExpression 320 959)
+(typeRefAssn 323 970)
+(typeExpression 323 991)
+(typeRefAssn 326 964)
+(typeExpression 326 992)
+(typeRefAssn 329 964)
+(typeExpression 329 993)
+(typeAssn 889 319)
 (typeAssn 373 361)
 (assocEndAssn 361 373)
 (typeAssn 384 361)
 (assocEndAssn 361 384)
-(assocEndAssn 361 895)
-(typeAssn 920 361)
-(assocEndAssn 361 920)
+(assocEndAssn 361 894)
+(typeAssn 919 361)
+(assocEndAssn 361 919)
 (subtypeAssn 371 361)
-(supertypeAssn 371 970)
+(supertypeAssn 371 969)
 (generalizationAssn 361 371)
-(typeRefAssn 362 956)
-(typeExpression 362 960)
-(typeAssn 895 361)
-(typeAssn 274 876)
-(projectionAssn 3 146 953)
-(styleAssn 4 952)
-(projectionAssn 4 298 995)
+(typeRefAssn 362 955)
+(typeExpression 362 959)
+(typeAssn 894 361)
+(typeAssn 274 875)
+(projectionAssn 3 146 952)
+(styleAssn 4 951)
+(projectionAssn 4 298 994)
 (to 5 4)
 (from 5 3)
-(projectionAssn 5 220 996)
-(styleAssn 6 952)
-(projectionAssn 6 337 997)
+(projectionAssn 5 220 995)
+(styleAssn 6 951)
+(projectionAssn 6 337 996)
 (to 7 4)
 (from 7 6)
-(projectionAssn 7 344 998)
+(projectionAssn 7 344 997)
 (to 8 3)
 (from 8 6)
-(projectionAssn 8 352 999)
-(styleAssn 9 1000)
-(projectionAssn 9 985 1001)
-(styleAssn 10 952)
-(projectionAssn 10 283 1002)
+(projectionAssn 8 352 998)
+(styleAssn 9 999)
+(projectionAssn 9 984 1000)
+(styleAssn 10 951)
+(projectionAssn 10 283 1001)
 (to 11 10)
 (from 11 3)
-(projectionAssn 11 226 1003)
-(styleAssn 12 952)
-(projectionAssn 12 537 1004)
+(projectionAssn 11 226 1002)
+(styleAssn 12 951)
+(projectionAssn 12 537 1003)
 (to 13 12)
 (from 13 3)
-(projectionAssn 13 231 1005)
+(projectionAssn 13 231 1004)
 (to 14 4)
 (from 14 10)
-(projectionAssn 14 284 1006)
+(projectionAssn 14 284 1005)
 (to 15 4)
 (from 15 12)
-(projectionAssn 15 541 1007)
-(styleAssn 16 952)
-(projectionAssn 16 681 1008)
-(styleAssn 17 952)
-(projectionAssn 17 675 1009)
-(styleAssn 18 952)
-(projectionAssn 18 670 1010)
-(styleAssn 19 952)
+(projectionAssn 15 541 1006)
+(styleAssn 16 951)
+(projectionAssn 16 680 1007)
+(styleAssn 17 951)
+(projectionAssn 17 674 1008)
+(styleAssn 18 951)
+(projectionAssn 18 670 1009)
+(styleAssn 19 951)
 (subtypeAssn 577 564)
 (supertypeAssn 577 146)
 (generalizationAssn 564 577)
-(typeRefAssn 565 956)
-(typeExpression 565 986)
-(typeRefAssn 575 958)
-(typeExpression 575 987)
-(projectionAssn 19 564 1011)
-(styleAssn 20 952)
-(projectionAssn 20 582 1012)
-(styleAssn 21 952)
-(stereotypeAssn 601 955)
+(typeRefAssn 565 955)
+(typeExpression 565 985)
+(typeRefAssn 575 957)
+(typeExpression 575 986)
+(projectionAssn 19 564 1010)
+(styleAssn 20 951)
+(projectionAssn 20 582 1011)
+(styleAssn 21 951)
+(stereotypeAssn 601 954)
 (subtypeAssn 602 601)
-(supertypeAssn 602 956)
+(supertypeAssn 602 955)
 (generalizationAssn 601 602)
-(projectionAssn 21 601 1013)
-(styleAssn 22 952)
-(projectionAssn 22 662 1014)
+(projectionAssn 21 601 1012)
+(styleAssn 22 951)
+(projectionAssn 22 662 1013)
 (to 23 22)
 (from 23 12)
-(projectionAssn 23 550 1015)
-(styleAssn 24 952)
-(projectionAssn 24 686 1016)
-(styleAssn 25 952)
-(projectionAssn 25 692 1017)
+(projectionAssn 23 550 1014)
+(styleAssn 24 951)
+(projectionAssn 24 685 1015)
+(styleAssn 25 951)
+(projectionAssn 25 691 1016)
 (to 26 3)
 (from 26 20)
-(projectionAssn 26 596 1018)
+(projectionAssn 26 596 1017)
 (to 27 3)
 (from 27 19)
-(projectionAssn 27 577 1019)
+(projectionAssn 27 577 1018)
 (to 28 20)
 (from 28 3)
-(projectionAssn 28 241 1020)
-(styleAssn 29 952)
-(projectionAssn 29 396 1021)
+(projectionAssn 28 241 1019)
+(styleAssn 29 951)
+(projectionAssn 29 396 1020)
 (to 30 29)
 (from 30 3)
-(projectionAssn 30 247 1022)
+(projectionAssn 30 247 1021)
 (to 31 29)
 (from 31 4)
-(projectionAssn 31 308 1023)
-(styleAssn 32 952)
-(projectionAssn 32 698 1024)
+(projectionAssn 31 308 1022)
+(styleAssn 32 951)
+(projectionAssn 32 697 1023)
 (to 33 32)
 (from 33 3)
-(projectionAssn 33 252 1025)
+(projectionAssn 33 252 1024)
 (to 34 4)
 (from 34 32)
-(projectionAssn 34 721 1026)
-(styleAssn 35 952)
-(projectionAssn 35 750 1027)
+(projectionAssn 34 720 1025)
+(styleAssn 35 951)
+(projectionAssn 35 749 1026)
 (to 36 35)
 (from 36 3)
-(projectionAssn 36 265 1028)
-(styleAssn 37 952)
-(projectionAssn 37 822 1029)
+(projectionAssn 36 265 1027)
+(styleAssn 37 951)
+(projectionAssn 37 821 1028)
 (to 38 4)
 (from 38 37)
-(projectionAssn 38 844 1030)
+(projectionAssn 38 843 1029)
 (to 39 9)
 (from 39 37)
-(projectionAssn 39 845 1031)
+(projectionAssn 39 844 1030)
 (to 40 37)
 (from 40 35)
-(projectionAssn 40 761 1032)
+(projectionAssn 40 760 1031)
 (to 41 29)
 (from 41 35)
-(projectionAssn 41 780 1033)
-(styleAssn 42 952)
-(projectionAssn 42 869 1034)
+(projectionAssn 41 779 1032)
+(styleAssn 42 951)
+(projectionAssn 42 868 1033)
 (to 43 12)
 (from 43 29)
-(projectionAssn 43 506 1035)
+(projectionAssn 43 506 1034)
 (to 44 10)
 (from 44 29)
-(projectionAssn 44 512 1036)
+(projectionAssn 44 512 1035)
 (to 45 6)
 (from 45 29)
-(projectionAssn 45 518 1037)
-(styleAssn 46 952)
-(projectionAssn 46 853 1038)
+(projectionAssn 45 518 1036)
+(styleAssn 46 951)
+(projectionAssn 46 852 1037)
 (to 47 4)
 (from 47 46)
-(projectionAssn 47 864 1039)
+(projectionAssn 47 863 1038)
 (to 48 46)
 (from 48 35)
-(projectionAssn 48 769 1040)
+(projectionAssn 48 768 1039)
 (to 49 37)
 (from 49 35)
-(projectionAssn 49 788 1041)
+(projectionAssn 49 787 1040)
 (to 50 46)
 (from 50 35)
-(projectionAssn 50 796 1042)
+(projectionAssn 50 795 1041)
 (to 51 4)
 (from 51 32)
-(projectionAssn 51 736 1043)
-(styleAssn 53 952)
-(projectionAssn 53 146 1044)
-(styleAssn 54 952)
-(projectionAssn 54 319 1045)
-(styleAssn 55 952)
-(projectionAssn 55 361 1046)
-(styleAssn 56 952)
-(projectionAssn 56 606 1047)
-(styleAssn 57 952)
-(projectionAssn 57 396 1048)
-(styleAssn 58 952)
-(projectionAssn 58 822 1049)
+(projectionAssn 51 735 1042)
+(styleAssn 53 951)
+(projectionAssn 53 146 1043)
+(styleAssn 54 951)
+(projectionAssn 54 319 1044)
+(styleAssn 55 951)
+(projectionAssn 55 361 1045)
+(styleAssn 56 951)
+(projectionAssn 56 606 1046)
+(styleAssn 57 951)
+(projectionAssn 57 396 1047)
+(styleAssn 58 951)
+(projectionAssn 58 821 1048)
 (to 59 56)
 (from 59 53)
-(projectionAssn 59 236 1050)
+(projectionAssn 59 236 1049)
 (to 60 57)
 (from 60 53)
-(projectionAssn 60 247 1051)
+(projectionAssn 60 247 1050)
 (to 61 57)
 (from 61 55)
-(projectionAssn 61 372 1052)
+(projectionAssn 61 372 1051)
 (to 62 57)
 (from 62 55)
-(projectionAssn 62 383 1053)
+(projectionAssn 62 383 1052)
 (to 63 56)
 (from 63 56)
-(projectionAssn 63 634 1054)
+(projectionAssn 63 634 1053)
 (to 64 56)
 (from 64 57)
-(projectionAssn 64 524 1055)
+(projectionAssn 64 524 1054)
 (to 65 58)
 (from 65 56)
-(projectionAssn 65 642 1056)
-(styleAssn 66 952)
-(projectionAssn 66 876 1057)
+(projectionAssn 65 642 1055)
+(styleAssn 66 951)
+(projectionAssn 66 875 1056)
 (to 67 66)
 (from 67 53)
-(projectionAssn 67 271 1058)
+(projectionAssn 67 271 1057)
 (to 68 54)
 (from 68 66)
-(projectionAssn 68 887 1059)
+(projectionAssn 68 886 1058)
 (to 69 55)
 (from 69 66)
-(projectionAssn 69 892 1060)
+(projectionAssn 69 891 1059)
 (to 70 66)
 (from 70 66)
-(projectionAssn 70 897 1061)
-(styleAssn 71 952)
-(projectionAssn 71 537 1062)
+(projectionAssn 70 896 1060)
+(styleAssn 71 951)
+(projectionAssn 71 537 1061)
 (to 72 71)
 (from 72 53)
-(projectionAssn 72 231 1063)
+(projectionAssn 72 231 1062)
 (to 73 71)
 (from 73 57)
-(projectionAssn 73 506 1064)
-(styleAssn 74 952)
-(projectionAssn 74 662 1065)
+(projectionAssn 73 506 1063)
+(styleAssn 74 951)
+(projectionAssn 74 662 1064)
 (to 75 74)
 (from 75 71)
-(projectionAssn 75 550 1066)
+(projectionAssn 75 550 1065)
 (to 76 74)
 (from 76 66)
-(projectionAssn 76 905 1067)
+(projectionAssn 76 904 1066)
 (to 77 66)
 (from 77 66)
-(projectionAssn 77 910 1068)
+(projectionAssn 77 909 1067)
 (to 78 55)
 (from 78 66)
-(projectionAssn 78 918 1069)
-(styleAssn 80 952)
-(projectionAssn 80 146 1070)
-(styleAssn 81 952)
-(projectionAssn 81 319 1071)
-(styleAssn 82 952)
-(projectionAssn 82 361 1072)
-(styleAssn 83 952)
-(projectionAssn 83 606 1073)
+(projectionAssn 78 917 1068)
+(styleAssn 80 951)
+(projectionAssn 80 146 1069)
+(styleAssn 81 951)
+(projectionAssn 81 319 1070)
+(styleAssn 82 951)
+(projectionAssn 82 361 1071)
+(styleAssn 83 951)
+(projectionAssn 83 606 1072)
 (to 84 83)
 (from 84 80)
-(projectionAssn 84 236 1074)
+(projectionAssn 84 236 1073)
 (to 85 83)
 (from 85 83)
-(projectionAssn 85 634 1075)
-(styleAssn 86 952)
-(projectionAssn 86 396 1076)
+(projectionAssn 85 634 1074)
+(styleAssn 86 951)
+(projectionAssn 86 396 1075)
 (to 87 86)
 (from 87 80)
-(projectionAssn 87 247 1077)
-(styleAssn 88 952)
-(projectionAssn 88 822 1078)
+(projectionAssn 87 247 1076)
+(styleAssn 88 951)
+(projectionAssn 88 821 1077)
 (to 89 88)
 (from 89 83)
-(projectionAssn 89 642 1079)
+(projectionAssn 89 642 1078)
 (to 90 83)
 (from 90 86)
-(projectionAssn 90 524 1080)
+(projectionAssn 90 524 1079)
 (to 91 86)
 (from 91 82)
-(projectionAssn 91 372 1081)
+(projectionAssn 91 372 1080)
 (to 92 86)
 (from 92 82)
-(projectionAssn 92 383 1082)
-(styleAssn 93 952)
-(projectionAssn 93 876 1083)
+(projectionAssn 92 383 1081)
+(styleAssn 93 951)
+(projectionAssn 93 875 1082)
 (to 94 81)
 (from 94 93)
-(projectionAssn 94 887 1084)
+(projectionAssn 94 886 1083)
 (to 95 82)
 (from 95 93)
-(projectionAssn 95 892 1085)
+(projectionAssn 95 891 1084)
 (to 96 93)
 (from 96 80)
-(projectionAssn 96 271 1086)
+(projectionAssn 96 271 1085)
 (to 97 82)
 (from 97 93)
-(projectionAssn 97 918 1087)
+(projectionAssn 97 917 1086)
 (to 98 93)
 (from 98 93)
-(projectionAssn 98 897 1088)
+(projectionAssn 98 896 1087)
 (to 99 93)
 (from 99 93)
-(projectionAssn 99 910 1089)
-(styleAssn 100 952)
-(projectionAssn 100 537 1090)
+(projectionAssn 99 909 1088)
+(styleAssn 100 951)
+(projectionAssn 100 537 1089)
 (to 101 100)
 (from 101 80)
-(projectionAssn 101 231 1091)
+(projectionAssn 101 231 1090)
 (to 102 100)
 (from 102 86)
-(projectionAssn 102 506 1092)
-(styleAssn 103 952)
-(projectionAssn 103 662 1093)
+(projectionAssn 102 506 1091)
+(styleAssn 103 951)
+(projectionAssn 103 662 1092)
 (to 104 103)
 (from 104 100)
-(projectionAssn 104 550 1094)
+(projectionAssn 104 550 1093)
 (to 105 103)
 (from 105 93)
-(projectionAssn 105 905 1095)
-(styleAssn 107 952)
-(projectionAssn 107 146 1096)
-(styleAssn 108 952)
-(projectionAssn 108 298 1097)
+(projectionAssn 105 904 1094)
+(styleAssn 107 951)
+(projectionAssn 107 146 1095)
+(styleAssn 108 951)
+(projectionAssn 108 298 1096)
 (to 109 108)
 (from 109 107)
-(projectionAssn 109 220 1098)
-(styleAssn 110 952)
-(projectionAssn 110 337 1099)
+(projectionAssn 109 220 1097)
+(styleAssn 110 951)
+(projectionAssn 110 337 1098)
 (to 111 108)
 (from 111 110)
-(projectionAssn 111 344 1100)
+(projectionAssn 111 344 1099)
 (to 112 107)
 (from 112 110)
-(projectionAssn 112 352 1101)
-(styleAssn 113 952)
-(projectionAssn 113 283 1102)
+(projectionAssn 112 352 1100)
+(styleAssn 113 951)
+(projectionAssn 113 283 1101)
 (to 114 113)
 (from 114 107)
-(projectionAssn 114 226 1103)
-(styleAssn 115 952)
-(projectionAssn 115 537 1104)
+(projectionAssn 114 226 1102)
+(styleAssn 115 951)
+(projectionAssn 115 537 1103)
 (to 116 115)
 (from 116 107)
-(projectionAssn 116 231 1105)
+(projectionAssn 116 231 1104)
 (to 117 108)
 (from 117 113)
-(projectionAssn 117 284 1106)
+(projectionAssn 117 284 1105)
 (to 118 108)
 (from 118 115)
-(projectionAssn 118 541 1107)
-(styleAssn 119 952)
-(projectionAssn 119 564 1108)
-(styleAssn 120 952)
-(projectionAssn 120 582 1109)
-(styleAssn 121 952)
-(projectionAssn 121 662 1110)
+(projectionAssn 118 541 1106)
+(styleAssn 119 951)
+(projectionAssn 119 564 1107)
+(styleAssn 120 951)
+(projectionAssn 120 582 1108)
+(styleAssn 121 951)
+(projectionAssn 121 662 1109)
 (to 122 121)
 (from 122 115)
-(projectionAssn 122 550 1111)
-(styleAssn 123 952)
-(projectionAssn 123 396 1112)
+(projectionAssn 122 550 1110)
+(styleAssn 123 951)
+(projectionAssn 123 396 1111)
 (to 124 107)
 (from 124 120)
-(projectionAssn 124 596 1113)
+(projectionAssn 124 596 1112)
 (to 125 107)
 (from 125 119)
-(projectionAssn 125 577 1114)
+(projectionAssn 125 577 1113)
 (to 126 120)
 (from 126 107)
-(projectionAssn 126 241 1115)
+(projectionAssn 126 241 1114)
 (to 127 123)
 (from 127 107)
-(projectionAssn 127 247 1116)
+(projectionAssn 127 247 1115)
 (to 128 123)
 (from 128 108)
-(projectionAssn 128 308 1117)
-(styleAssn 129 952)
-(projectionAssn 129 822 1118)
+(projectionAssn 128 308 1116)
+(styleAssn 129 951)
+(projectionAssn 129 821 1117)
 (to 130 108)
 (from 130 129)
-(projectionAssn 130 844 1119)
-(styleAssn 131 952)
-(projectionAssn 131 750 1120)
+(projectionAssn 130 843 1118)
+(styleAssn 131 951)
+(projectionAssn 131 749 1119)
 (to 132 129)
 (from 132 131)
-(projectionAssn 132 761 1121)
+(projectionAssn 132 760 1120)
 (to 133 123)
 (from 133 131)
-(projectionAssn 133 780 1122)
+(projectionAssn 133 779 1121)
 (to 134 131)
 (from 134 107)
-(projectionAssn 134 265 1123)
-(styleAssn 135 952)
-(projectionAssn 135 853 1124)
+(projectionAssn 134 265 1122)
+(styleAssn 135 951)
+(projectionAssn 135 852 1123)
 (to 136 108)
 (from 136 135)
-(projectionAssn 136 864 1125)
+(projectionAssn 136 863 1124)
 (to 137 135)
 (from 137 131)
-(projectionAssn 137 769 1126)
-(styleAssn 138 952)
-(projectionAssn 138 698 1127)
+(projectionAssn 137 768 1125)
+(styleAssn 138 951)
+(projectionAssn 138 697 1126)
 (to 139 108)
 (from 139 138)
-(projectionAssn 139 721 1128)
+(projectionAssn 139 720 1127)
 (to 140 138)
 (from 140 107)
-(projectionAssn 140 252 1129)
+(projectionAssn 140 252 1128)
 (to 141 110)
 (from 141 123)
-(projectionAssn 141 518 1130)
+(projectionAssn 141 518 1129)
 (to 142 113)
 (from 142 123)
-(projectionAssn 142 512 1131)
+(projectionAssn 142 512 1130)
 (to 143 115)
 (from 143 123)
-(projectionAssn 143 506 1132)
+(projectionAssn 143 506 1131)
 (to 144 129)
 (from 144 131)
-(projectionAssn 144 788 1133)
+(projectionAssn 144 787 1132)
 (to 145 135)
 (from 145 131)
-(projectionAssn 145 796 1134)
-(stereotypeAssn 563 1135)
+(projectionAssn 145 795 1133)
+(stereotypeAssn 563 1134)
 (clientAssn 563 1)
-(supplierAssn 563 1136)
-(stereotypeAssn 875 1135)
-(clientAssn 875 1)
-(supplierAssn 875 1137)
-(styleAssn 928 952)
-(projectionAssn 928 822 1138)
-(styleAssn 929 952)
-(projectionAssn 929 146 1139)
-(styleAssn 930 952)
-(projectionAssn 930 396 1140)
-(to 931 930)
-(from 931 929)
-(projectionAssn 931 247 1141)
-(styleAssn 932 952)
-(projectionAssn 932 298 1142)
-(to 933 930)
-(from 933 932)
-(projectionAssn 933 308 1143)
-(to 934 932)
-(from 934 929)
-(projectionAssn 934 220 1144)
-(to 935 932)
-(from 935 928)
-(projectionAssn 935 844 1145)
-(styleAssn 936 952)
-(projectionAssn 936 853 1146)
-(to 937 932)
-(from 937 936)
-(projectionAssn 937 864 1147)
-(styleAssn 938 952)
-(projectionAssn 938 750 1148)
-(to 939 928)
-(from 939 938)
-(projectionAssn 939 761 1149)
-(to 940 936)
-(from 940 938)
-(projectionAssn 940 769 1150)
-(to 941 930)
-(from 941 938)
-(projectionAssn 941 780 1151)
-(to 942 928)
-(from 942 938)
-(projectionAssn 942 788 1152)
-(to 943 936)
-(from 943 938)
-(projectionAssn 943 796 1153)
-(to 944 938)
-(from 944 929)
-(projectionAssn 944 265 1154)
-(styleAssn 945 952)
-(projectionAssn 945 337 1155)
-(to 946 932)
-(from 946 945)
-(projectionAssn 946 344 1156)
-(to 947 929)
-(from 947 945)
-(projectionAssn 947 352 1157)
+(supplierAssn 563 1135)
+(stereotypeAssn 874 1134)
+(clientAssn 874 1)
+(supplierAssn 874 1136)
+(styleAssn 927 951)
+(projectionAssn 927 821 1137)
+(styleAssn 928 951)
+(projectionAssn 928 146 1138)
+(styleAssn 929 951)
+(projectionAssn 929 396 1139)
+(to 930 929)
+(from 930 928)
+(projectionAssn 930 247 1140)
+(styleAssn 931 951)
+(projectionAssn 931 298 1141)
+(to 932 929)
+(from 932 931)
+(projectionAssn 932 308 1142)
+(to 933 931)
+(from 933 928)
+(projectionAssn 933 220 1143)
+(to 934 931)
+(from 934 927)
+(projectionAssn 934 843 1144)
+(styleAssn 935 951)
+(projectionAssn 935 852 1145)
+(to 936 931)
+(from 936 935)
+(projectionAssn 936 863 1146)
+(styleAssn 937 951)
+(projectionAssn 937 749 1147)
+(to 938 927)
+(from 938 937)
+(projectionAssn 938 760 1148)
+(to 939 935)
+(from 939 937)
+(projectionAssn 939 768 1149)
+(to 940 929)
+(from 940 937)
+(projectionAssn 940 779 1150)
+(to 941 927)
+(from 941 937)
+(projectionAssn 941 787 1151)
+(to 942 935)
+(from 942 937)
+(projectionAssn 942 795 1152)
+(to 943 937)
+(from 943 928)
+(projectionAssn 943 265 1153)
+(styleAssn 944 951)
+(projectionAssn 944 337 1154)
+(to 945 931)
+(from 945 944)
+(projectionAssn 945 344 1155)
+(to 946 928)
+(from 946 944)
+(projectionAssn 946 352 1156)

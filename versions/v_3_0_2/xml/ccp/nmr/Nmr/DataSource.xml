@@ -284,7 +284,7 @@ else:
    isAbstract="false" isAutomatic="false" isDerived="false"
    isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
    locard="1" scope="instance_level" visibility="public_vis">
-    <documentation>name of DataSource - used as uniwue identifier for wrapper, NEF format, ...</documentation>
+    <documentation>name of DataSource - used as unique identifier for wrapper, NEF format, ...</documentation>
     <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00033</valueType>
 
     <!-- Start constraints for <MetaAttribute: ccp.nmr.Nmr.DataSource.name>: -->
@@ -293,7 +293,7 @@ else:
      container="www.ccpn.ac.uk_Fogh_2006-08-16-18:20:04_00008"
      isImplicit="false">
       <codeStubs>
-        <item tag="python">([x for y in self.topObject.experiments for x in y.dataSources if x.name == value] in ([], [self])) or True</item>
+        <item tag="python">([x for y in self.topObject.experiments for x in y.dataSources if x.name == value] in ([], [self])) or self.root._upgradedFromV2</item>
       </codeStubs>
     </MetaConstraint>
     <!-- End constraints for <MetaAttribute: ccp.nmr.Nmr.DataSource.name>: -->

@@ -74,6 +74,15 @@ Atoms can *not* be deleted while they are linked to FixedAtomSets. If this is de
   <supertypes>
     <item>www.ccpn.ac.uk_Fogh_2006-09-14-16:28:57_00005</item>
   </supertypes>
+  <destructorCodeStubs>
+    <item tag="python"># The following code interacts directly with the deletion implementation (use of 'objsToBeDeleted'). 
+# This is bad, but the only way to accomplish the desired result.
+for atomGroup in self.atomGroups:
+  if len(atomGroup.components) &lt;= 2:
+    #  NB there is nothing to check for cascading, so wee can put this to delete directly.
+    objsToBeDeleted.add(atomGroup)
+    </item>
+  </destructorCodeStubs>
 
   <!-- Start constraints for <MetaClass: ccp.molecule.MolSystem.Atom>: -->
   <MetaConstraint name="non_single_atoms_have_components"

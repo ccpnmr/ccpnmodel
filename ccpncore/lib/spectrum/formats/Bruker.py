@@ -118,7 +118,7 @@ def readParams(filePath):
     
     if int(float(dimDict.get('$FT_mod', 1))) == 0:
       msg = 'Bruker dimension %d not processed'
-      # showError('Error', msg % (i+1))
+      # showError('Error', msg % (i+1))aaaaa
       return
 
     numPoints[i] = int(dimDict['$SI'])
@@ -126,7 +126,7 @@ def readParams(filePath):
     if blockSizes[i] == 0:
       blockSizes[i] = numPoints[i]
     else:
-      # for 1D data blockSizes can be > numPoints, which is wrong
+      # for 1D data blockSizes can be > numPoints, which is wrongaaaaaaaaa
       blockSizes[i] = min(blockSizes[i], numPoints[i])
     origNumPoints[i] = int(dimDict.get('$FTSIZE', 0))
     pointOffsets[i] = int(dimDict.get('$STSR', 0))

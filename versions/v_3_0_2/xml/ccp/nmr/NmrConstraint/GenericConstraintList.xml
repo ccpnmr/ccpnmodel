@@ -66,13 +66,24 @@ and contains original contributions embedded in the framework
  isRoot="false" isSingleton="false" partitionsChildren="false"
  visibility="public_vis">
   <documentation>Constraint list for multiple types - the type is determined by the ConstraintType and itemLength fields.
-NB this class is also used for T1, T2, ChemicalSHift and all kinds of measurements..</documentation>
+NB this class is also used for T1, T2, ChemicalShift and all kinds of measurements..</documentation>
   <keyNames>
     <item>serial</item>
   </keyNames>
   <supertypes>
     <item>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:51_00023</item>
   </supertypes>
+
+  <!-- Start constraints for <MetaClass: ccp.nmr.NmrConstraint.GenericConstraintList>: -->
+  <MetaConstraint name="name_uniquely_identifies_constraintList"
+   guid="www.ccpn.ac.uk_Fogh_2016-11-19-20:39:02_00001"
+   container="www.ccpn.ac.uk_Fogh_2015-12-21-10:17:16_00001"
+   isImplicit="false">
+    <codeStubs>
+      <item tag="python">self.nmrConstraintStore.findAllConstraintLists(name=self.name) in (set(), set((self,)))</item>
+    </codeStubs>
+  </MetaConstraint>
+  <!-- End constraints for <MetaClass: ccp.nmr.NmrConstraint.GenericConstraintList>: -->
 
 
   <MetaAttribute name="constraintType"

@@ -155,7 +155,7 @@ NB All MeasurementLists have the attribute 'unit' (mandatory, datatype Word) giv
      container="www.ccpn.ac.uk_Fogh_2006-08-16-18:19:59_00007"
      isImplicit="false">
       <codeStubs>
-        <item tag="python">(self.nmrProject.findAllMeasurementLists(name=self.name) in (set(), set((self,)))) or True</item>
+        <item tag="python">(self.nmrProject.findAllMeasurementLists(name=self.name) in (set(), set((self,)))) or self.root._upgradedFromV2</item>
       </codeStubs>
     </MetaConstraint>
     <!-- End constraints for <MetaAttribute: ccp.nmr.Nmr.AbstractMeasurementList.name>: -->

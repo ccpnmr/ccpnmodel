@@ -662,7 +662,10 @@ def fetchChemCompVar(project:'MemopsRoot', residueType:str, linking:str=None, de
   residueName2chemCompId =  fetchStdResNameMap(project)
   chemCompVar = None
 
-  tt = residueName2chemCompId.get(residueType)
+  if residueType.startswith('dummy.'):
+    tt = ('dummy',residueType[6:])
+  else:
+    tt = residueName2chemCompId.get(residueType)
   if not tt and fallBackType:
     project._logger.warning(
       "Could not find ChemComp for %s - replacing with %s" % (residueType, fallBackType)

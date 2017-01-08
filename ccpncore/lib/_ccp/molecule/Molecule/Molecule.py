@@ -135,7 +135,15 @@ def extendMolResidues(self:'Molecule', sequence:Sequence[str], startNumber:int=1
 
   # Convert to sequence of (molType, ccpCode) and check for known residueNames
   residueName2chemCompId = MoleculeQuery.fetchStdResNameMap(root)
-  seqInput = [residueName2chemCompId.get(x) for x in sequence]
+  # seqInput = [residueName2chemCompId.get(x) for x in sequence]
+  seqInput = []
+  for x in sequence:
+    if x.startswith('dummy.'):
+      # Dummy residue, special handling
+      seqInput.append(('dummy',x[6:]))
+    else:
+      seqInput.append(residueName2chemCompId.get(x))
+
   if None in seqInput:
     ii = seqInput.index(None)
     raise ValueError("Unknown residueName %s at position %s in sequence"

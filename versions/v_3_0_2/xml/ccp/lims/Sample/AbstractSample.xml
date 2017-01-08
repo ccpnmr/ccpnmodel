@@ -67,7 +67,7 @@ and contains original contributions embedded in the framework
  visibility="public_vis">
   <documentation>General information on the sample or reagent.</documentation>
   <keyNames>
-    <item>name</item>
+    <item>serial</item>
   </keyNames>
   <supertypes>
     <item>www.ccpn.ac.uk_Fogh_2006-09-14-16:28:57_00005</item>
@@ -141,6 +141,17 @@ and contains original contributions embedded in the framework
    locard="1" scope="instance_level" visibility="public_vis">
     <documentation>The name of the sample or the code to identify it. It is the unique identifier.</documentation>
     <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00033</valueType>
+
+    <!-- Start constraints for <MetaAttribute: ccp.lims.Sample.AbstractSample.name>: -->
+    <MetaConstraint name="name_uniquely_identifies_Sample"
+     guid="www.ccpn.ac.uk_Fogh_2016-11-19-21:01:25_00002"
+     container="www.ccpn.ac.uk_Fogh_2006-08-16-18:22:46_00004"
+     isImplicit="false">
+      <codeStubs>
+        <item tag="python">self.sampleStore.findAllSamples(name=value) in (set(), set((self,)))</item>
+      </codeStubs>
+    </MetaConstraint>
+    <!-- End constraints for <MetaAttribute: ccp.lims.Sample.AbstractSample.name>: -->
   </MetaAttribute>
 
   <MetaAttribute name="ph"
@@ -178,5 +189,16 @@ and contains original contributions embedded in the framework
     <otherRole>www.ccpn.ac.uk_Fogh_2006-09-05-12:37:28_00005</otherRole>
     <valueType>www.ccpn.ac.uk_Fogh_2006-09-05-12:37:24_00008</valueType>
   </MetaRole>
+
+  <MetaAttribute name="serial"
+   guid="www.ccpn.ac.uk_Fogh_2016-11-19-21:01:25_00001"
+   container="www.ccpn.ac.uk_Fogh_2006-08-16-14:22:44_00007"
+   baseName="serial" changeability="frozen" forceUndoNotify="true" hicard="1"
+   isAbstract="false" isAutomatic="true" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="1" scope="instance_level" visibility="public_vis">
+    <documentation>Serial number of object. Serves as object main key. Serial numbers of deleted objects are not re-used. Serial numbers can only be set by the implementation. Values are in practice always positive, since negative values are interpreted as a signal to set the next free serial</documentation>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00032</valueType>
+  </MetaAttribute>
 </MetaClass>
 

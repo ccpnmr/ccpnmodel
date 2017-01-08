@@ -672,9 +672,6 @@ if __name__ == '__main__':
   # for item in sorted(counter.items()):
   #   print ('@~@~', item)
 
-  for key, val in sorted(counter.items()):
-    print ('@~@~', key, val)
-
   dd = {}
   ala = project.findFirstChemComp(code3Letter='ALA')
   for ns in ala.namingSystems:

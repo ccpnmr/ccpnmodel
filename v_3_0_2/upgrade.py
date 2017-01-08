@@ -24,6 +24,7 @@ __version__ = "$Revision$"
 #=========================================================================================
 
 import time
+import operator
 
 from ccpnmodel.ccpncore.lib import CopyData
 from ccpnmodel.ccpncore.lib import V2Upgrade
@@ -69,6 +70,8 @@ def extraMapChanges(globalMapping):
   # and requires special handling
   globalMapping['mapsByGuid']['www.ccpn.ac.uk_Fogh_2006-08-16-18:22:42_00002']['proc'] = 'delay'
 
+  # Set exolinks to Sample to 'delay' to handle key change
+  globalMapping['mapsByGuid']['www.ccpn.ac.uk_Fogh_2006-08-16-18:22:35_00001']['proc'] = 'delay'
 
 
 def correctData(topObj, delayDataDict, toNewObjDict, mapping=None):
@@ -84,9 +87,17 @@ def correctData(topObj, delayDataDict, toNewObjDict, mapping=None):
   doGet = delayDataDict.get
   pName = topObj.packageName
 
-  # Correct SampleComponent key, based on the old refComponent link (previous key)
   if pName == 'ccp.lims.Sample':
-    for sample in doGet(topObj, emptyDict).get('samples', emptyList):
+    nextSerial = 1
+    for sample in sorted(doGet(topObj, emptyDict).get('samples', emptyList),
+                         key=operator.attrgetter('name')):
+
+      # Add serial where missing (because of model change)
+      if sample.serial is None:
+        sample.__dict__['serial'] = nextSerial
+        nextSerial += 1
+
+      # Correct SampleComponent key, based on the old refComponent link (previous key)
       for sampleComponent in doGet(sample, emptyDict).get('sampleComponents', emptyList):
         dd = doGet(sampleComponent, emptyDict)
         inDataList = dd.get('refComponent')
@@ -94,6 +105,44 @@ def correctData(topObj, delayDataDict, toNewObjDict, mapping=None):
           keyList = inDataList[0]
           name = keyList[1]
           sampleComponent.__dict__['name'] = name
+
+
+  elif pName == 'ccp.nmr.Nmr':
+    nextSerial = 1
+    for spectrumGroup in sorted(doGet(topObj, emptyDict).get('spectrumGroups', emptyList),
+                                key=operator.attrgetter('name')):
+      # Add serial where missing (because of model change)
+      if spectrumGroup.serial is None:
+        spectrumGroup.__dict__['serial'] = nextSerial
+        nextSerial += 1
+
+    # Correct link to Sample (key has changed)
+    # This really is tricky, but byu th3 time this code is reached, the relevant SAmples
+    # should be loaded and ready
+    for experiment in doGet(topObj, emptyDict).get('experiments', emptyList):
+      dd = doGet(experiment, emptyDict)
+      inDataList = dd.get('sample')
+      if __name__ == '__main__':
+        if inDataList:
+          # set link to Sample - whose key has changed
+          keyList = inDataList[0]
+          sampleStore = experiment.root.findFirstSampleStore(guid=keyList[0])
+          sample = sampleStore.findFirstSample(name=keyList[-2])
+          experiment.sample = sample
+
+    # NBNB TODO ?? SampledDAtaDim.samples is NOT dealt with
+    # In theory it should, but there are no V2 data that require it.
+
+
+
+  elif pName == 'ccp.molecule.MolSystem':
+    nextSerial = 1
+    for chainGroup in sorted(doGet(topObj, emptyDict).get('chainGroups', emptyList),
+                             key=operator.attrgetter('name')):
+      # Add serial where missing (because of model change)
+      if chainGroup.serial is None:
+        chainGroup.__dict__['serial'] = nextSerial
+        nextSerial += 1
 
 
 def correctFinalResult(memopsRoot):
