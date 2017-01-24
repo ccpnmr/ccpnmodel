@@ -26,6 +26,8 @@ from typing import Tuple
 
 class Integral:
 
+  # NBNB is this still being used - properly at least????
+
   # NBNB TBD FIXME the peaks property does nto seem to be used anywhere
 
   def __init__(self, spectrum, points, factor=1.0, peaks=None, slope=1.0, bias=0.0):

@@ -567,6 +567,8 @@ def getRegionData(self:'DataSource', startPoint:Sequence[float], endPoint:Sequen
   return data.T, intRegion
   
 def automaticIntegration(self:'DataSource',spectralData, regions):
+
+
 #
   numDim = self.numDim
   if numDim != 1:
@@ -585,6 +587,9 @@ def automaticIntegration(self:'DataSource',spectralData, regions):
   # else:
   integrals = spInt.getIntegralRegions(spectralData[1, :], noise, level)
   spInt.setIntegrals(self,integrals)
+
+  # NBNB FIXME the use of spInt is BROKEN. It is imported as a class, never instantiated,
+  # and methods are called on it as if it was an object.
 
   #
   for integral in self.integrals:
