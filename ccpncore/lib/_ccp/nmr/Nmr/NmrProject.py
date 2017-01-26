@@ -122,7 +122,7 @@ def loadDataSource(self:'NmrProject', filePath, dataFileFormat):
 
 
 def createDummySpectrum(self:'NmrProject', axisCodes:Sequence[str],
-                      name=None) -> 'DataSource':
+                      name=None, shiftList=None) -> 'DataSource':
   """Make Experiment and DataSource with no data from list of standard atom axisCodes"""
 
   # Set up parameters and make Experiment
@@ -134,9 +134,10 @@ def createDummySpectrum(self:'NmrProject', axisCodes:Sequence[str],
   specName = name or expName
 
   experiment = self.createExperiment(name=expName, numDim=numDim,
-                                           sf=[DEFAULT_SPECTRUM_PARAMETERS[x]['sf']
-                                               for x in isotopeCodes], axisCodes=axisCodes,
-                                           isotopeCodes=isotopeCodes)
+                                     sf=[DEFAULT_SPECTRUM_PARAMETERS[x]['sf']
+                                         for x in isotopeCodes],
+                                     axisCodes=axisCodes, isotopeCodes=isotopeCodes,
+                                     shiftList=shiftList)
   # Make dataSource with default parameters
   params = dict((tag,[DEFAULT_SPECTRUM_PARAMETERS[x][tag] for x in isotopeCodes])
                 for tag in ('sw', 'refppm', 'refpt', 'numPoints'))
