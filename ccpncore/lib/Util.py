@@ -137,27 +137,3 @@ def getClassFromFullName(qualifiedName):
   pathList = qualifiedName.split('.')
   mod = __import__('.'.join([apiTopModule] + pathList[:-1]),{},{},[pathList[-1]])
   return getattr(mod,pathList[-1])
-
-def resetSerial(apiObject, newSerial:int, downlink:str):
-  """ADVANCED Reset serial of apiObject to newSerial, resetting parent link
-  and the nextSerial of the parent"""
-  parentDict = apiObject.parent.__dict__
-  downdict = parentDict[downlink]
-  oldSerial = apiObject.serial
-  serialDict = parentDict['_serialDict']
-
-  if newSerial == oldSerial:
-    return
-
-  elif newSerial in downdict:
-    raise ValueError("Cannot reset serial to %s - value already in use" % newSerial)
-
-  else:
-    maxSerial = serialDict[downlink]
-    apiObject.__dict__['serial'] = newSerial
-    downdict[newSerial] = apiObject
-    del downdict[oldSerial]
-    if newSerial > maxSerial:
-      serialDict[downlink] = newSerial
-    elif oldSerial == maxSerial:
-      serialDict[downlink] = max(downdict)
