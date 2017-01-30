@@ -1267,12 +1267,27 @@ def _initialiseStandardDataLocationStore(memopsRoot:Implementation.MemopsRoot):
 
   # alongsideData - points to directory containing project directory
   dataUrlObject = result.findFirstDataUrl(name='alongsideData')
+  oldUrlPath = dataUrlObject.url.dataLocation
   path, junk = Path.splitPath(projectUrl.path)
   newUrl = Implementation.Url(path=path)
   if dataUrlObject is None:
     # make new dataUrl
     result.newDataUrl(name='alongsideData', url=newUrl)
-  else:
+  elif path != oldUrlPath:
+    # Update only if the alongside path has changed
+    pointToExisting = [x for x in dataUrlObject.dataStores if os.path.exists(x.fullPath)]
+    if pointToExisting:
+      # If there are files in the old alongsideData that still exist, (typically if the
+      # project is moved elsewhere within the same file system) move them to a different
+      # dataUrl object so as not to break the link.
+      # If project comes from a different computer this will not normally happen
+      newName = 'alongsideData'
+      while result.findFirstDataUrl(name=newName):
+        newName = commonUtil.incrementName(newName)
+      newDataUrlObject = result.newDataUrl(name=newName, url=dataUrlObject.url)
+      for dataStore in pointToExisting:
+        dataStore.dataUrl = newDataUrlObject
+    #
     dataUrlObject.url = newUrl
 
   # remoteData - initialised to home directory and not reset
