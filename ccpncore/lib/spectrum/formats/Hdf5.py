@@ -131,6 +131,8 @@ def getPlaneData(dataSource:'DataSource', position:Sequence=None, xDim:int=1, yD
 
   data = data.reshape((yNumPoints, xNumPoints))
 
+  data *= dataSource.scale
+
   return data
 
 def getSliceData(dataSource:'DataSource', position:Sequence=None, sliceDim:int=1):
@@ -164,6 +166,8 @@ def getSliceData(dataSource:'DataSource', position:Sequence=None, sliceDim:int=1
 
   data = data.reshape((numPoints,))
 
+  data *= dataSource.scale
+
   return data
  
 def getRegionData(dataSource:'DataSource', startPoint:Sequence[float], endPoint:Sequence[float]):
@@ -180,5 +184,7 @@ def getRegionData(dataSource:'DataSource', startPoint:Sequence[float], endPoint:
       slices[numDim - dim - 1] = slice(startPoint[dim], endPoint[dim])
 
     data = dataset[tuple(slices)]
+
+  data *= dataSource.scale
 
   return data

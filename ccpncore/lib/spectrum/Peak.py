@@ -81,4 +81,4 @@ def fitExistingPeaks(peaks:Sequence[ApiPeak], fitMethod:str=None):
       peakDim.position = position[i] + 1 # API position starts at 1
       peakDim.lineWidth = linewidth[i]
 
-    peak.height = height
+    peak.height = dataSource.scale * height

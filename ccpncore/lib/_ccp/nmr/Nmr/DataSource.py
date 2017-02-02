@@ -291,7 +291,9 @@ def getPlaneData(self:'DataSource', position=None, xDim:int=1, yDim:int=2):
       data[ylower:yupper, xlower:xupper] = blockPlane.reshape((yupper-ylower,xupper-xlower))
     
   fp.close()
-  
+
+  data *= self.scale
+
   return data
 
 def getSliceData(self:'DataSource', position=None, sliceDim:int=1):
@@ -380,6 +382,8 @@ def getSliceData(self:'DataSource', position=None, sliceDim:int=1):
     data[sliceLower:sliceUpper] = blockData[blockSlice].squeeze()
   fp.close()
 
+  data *= self.scale
+
   return data
 
 def get1dSpectrumData(self:'DataSource'):
@@ -392,7 +396,7 @@ def get1dSpectrumData(self:'DataSource'):
   pointSpacing = (lastPoint-firstPoint)/pointCount
   position = numpy.array([firstPoint + n*pointSpacing for n in range(pointCount)],numpy.float32)
   sliceData = self.getSliceData()
-  scaledData = sliceData*self.scale
+  scaledData = sliceData  # *self.scale  (do not need this any more since getSliceData() does this)
   spectrumData = numpy.array([position,scaledData], numpy.float32)
   return numpy.array(spectrumData,numpy.float32)
 
@@ -563,7 +567,9 @@ def getRegionData(self:'DataSource', startPoint:Sequence[float], endPoint:Sequen
     data[dataSlice] = blockData[blockSlice].T
 
   fp.close()
-  
+
+  data *= self.scale
+
   return data.T, intRegion
   
 def automaticIntegration(self:'DataSource',spectralData, regions):

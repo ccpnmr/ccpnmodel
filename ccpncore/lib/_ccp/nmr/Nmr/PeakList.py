@@ -261,7 +261,7 @@ def pickNewPeaks(self:PeakList, startPoint:Sequence[int], endPoint:Sequence[int]
             if fitMethod and linewidth[i] is not None:
               peakDim.lineWidth = dataDim.valuePerPoint * linewidth[i] # conversion from points to Hz
 
-          peak.height = height
+          peak.height = dataSource.scale * height
           peaks.append(peak)
           objectsCreated.extend(peakDims)
 
