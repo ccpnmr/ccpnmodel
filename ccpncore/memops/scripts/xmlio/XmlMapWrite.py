@@ -1065,8 +1065,9 @@ definition element (e.g. <aSerial><Int>5</Int></aSerial> instead of
     tt = self.castVar(self.rootClassVarType, 'stackVal')
     self.setVar('val', self.streamGetValue(tt, 'name', keyIsMandatory=True))
     ss = self.getDictEntry('tmpMap', self.toLiteral('default'))
-    ss = self.comparison('val', '!=', ss)
-    self.startIf(self.logicalOp('doComplex', 'or', ss))
+    # ss = self.comparison('val', '!=', ss)
+    # self.startIf(self.logicalOp('doComplex', 'or', ss))
+    self.startIf('doComplex or (%s is None and val is not None) or val != %s' % (ss, ss))
 
     ss = self.getDictEntry('tmpMap', self.toLiteral('hicard'), keyIsMandatory=True)
     ss = self.comparison(ss, '==', self.toLiteral(1))

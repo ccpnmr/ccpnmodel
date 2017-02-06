@@ -1267,13 +1267,12 @@ def _initialiseStandardDataLocationStore(memopsRoot:Implementation.MemopsRoot):
 
   # alongsideData - points to directory containing project directory
   dataUrlObject = result.findFirstDataUrl(name='alongsideData')
-  oldUrlPath = dataUrlObject.url.dataLocation
   path, junk = Path.splitPath(projectUrl.path)
   newUrl = Implementation.Url(path=path)
   if dataUrlObject is None:
     # make new dataUrl
     result.newDataUrl(name='alongsideData', url=newUrl)
-  elif path != oldUrlPath:
+  elif path != dataUrlObject.url.dataLocation:
     # Update only if the alongside path has changed
     pointToExisting = [x for x in dataUrlObject.dataStores if os.path.exists(x.fullPath)]
     if pointToExisting:

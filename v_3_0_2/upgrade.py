@@ -24,7 +24,9 @@ __version__ = "$Revision$"
 #=========================================================================================
 
 import time
+import math
 import operator
+import collections
 
 from ccpnmodel.ccpncore.lib import CopyData
 from ccpnmodel.ccpncore.lib import V2Upgrade
@@ -149,10 +151,10 @@ def correctFinalResult(memopsRoot):
   """Correct final result in situ, after loading has finished
   NOT part of standard compatibility process, but a special case for upgrade from v2 to v3 """
 
-  # Copy across molSystem chains so all NmrProjects have only one MolSystem
 
   print ("Correcting Final Result for V2-V3 transition")
 
+  # Copy across molSystem chains so all NmrProjects have only one MolSystem
   molSystemMap = {}
   chainMap = {}
   for nmrProject in memopsRoot.sortedNmrProjects():
@@ -248,6 +250,9 @@ def correctFinalResult(memopsRoot):
               if residue:
                 coordResidue.code3Letter = residue.code3Letter or residue.ccpCode
 
+      # Move structure data into new Pandas structure
+      upgradeToPandasData(structureEnsemble)
+
 
     # print ('@~@~ done structures', time.time() - time0)
 
@@ -275,7 +280,7 @@ def correctFinalResult(memopsRoot):
     # Fix experiments
     fixExperiments(nmrProject)
 
-    # Make default NmrChan
+    # Make default NmrChain
     nmrChain = (nmrProject.findFirstNmrChain(code=Constants.defaultNmrChainCode) or
                 nmrProject.newNmrChain(code=Constants.defaultNmrChainCode))
 
@@ -290,7 +295,102 @@ def correctFinalResult(memopsRoot):
     for resonanceGroup in nmrProject.resonanceGroups:
       resonanceGroup.residue = None
 
-    # print ('@~@~ done experiments and assignmetns', time.time() - time0)
+    # print ('@~@~ done experiments and assignments', time.time() - time0)
+
+def upgradeToPandasData(structureEnsemble):
+  """Move all data to new pandas data structures and delete old objects"""
+
+  from ccpn.core.StructureEnsemble import EnsembleData
+
+  memopsRoot = structureEnsemble.root
+
+  # Get data for atoms
+  atomData = []
+  sequenceCodes = []
+  for atom in structureEnsemble.orderedAtoms:
+    coordResidue = atom.residue
+    # NB, this gives teh 'official' sequence codes as consecutive integers
+    # and uses the user-set values only for the nmrSequenceCode
+    atomData.append([
+      coordResidue.chain.code, coordResidue.seqId, coordResidue.code3Letter, atom.name,
+      atom.altLocationCode.strip() or None, atom.elementSymbol
+    ])
+    sequenceCodes.append(str(coordResidue.seqCode) + coordResidue.seqInsertCode.strip())
+  atomCount = len(atomData)
+  atomData = list(zip(*atomData))
+  modelCount = len(structureEnsemble.models)
+
+  #Pack atom data into ordered dictionary
+  allData = collections.OrderedDict()
+  allData['modelNumber'] = []
+  allData['chainCode'] = atomData[0] * modelCount
+  allData['sequenceId'] = atomData[1] * modelCount
+  allData['insertionCode'] = [None] * (modelCount * atomCount)
+  allData['residueName'] = atomData[2] * modelCount
+  allData['atomName'] = atomData[3] * modelCount
+  allData['altLocationCode'] = atomData[4] * modelCount
+  allData['element'] = atomData[5] * modelCount
+  allData['x'] = []
+  allData['y'] = []
+  allData['z'] = []
+  allData['occupancy'] = []
+  allData['bFactor'] = []
+  allData['nmrChainCode'] = list(allData['chainCode'])
+  allData['nmrSequenceCode'] = sequenceCodes * modelCount
+  allData['nmrResidueName'] = list(allData['residueName'])
+  allData['nmrAtomName'] = list(allData['atomName'])
+
+  isnan = math.isnan
+
+  for model in structureEnsemble.sortedModels():
+    # Add model-dependent data
+
+    allData['modelNumber'].extend([model.serial] * atomCount)
+
+    try:
+      occupancies = model.occupancies
+      occupancies = [None if isnan(x) else x for x in occupancies]
+    except:
+      occupancies = [None] * atomCount
+    allData['occupancy'].extend(occupancies)
+
+    try:
+      bFactors = model.bFactors
+      bFactors = [None if isnan(x) else x for x in bFactors]
+    except:
+      bFactors = [None] * atomCount
+    allData['bFactor'].extend(bFactors)
+
+    try:
+      coordinates = model.coordinates
+      coordinates = [None if isnan(x) else x for x in coordinates]
+    except:
+      coordinates = [None] * (atomCount * 3)
+    # The inner zip divides the packed coordinates into triples,
+    # and the outer zip gives separate x, y, z lists
+    x,y,z = zip(*zip(*[iter(coordinates)] * 3))
+    allData['x'].extend(x)
+    allData['y'].extend(y)
+    allData['z'].extend(z)
+
+  # Delete unneeded old data:
+  for obj in structureEnsemble.dataMatrices:
+    obj.resetData()
+  memopsRoot.override = True
+  try:
+    for obj in structureEnsemble.coordChains:
+      obj.delete()
+  finally:
+    memopsRoot.override = False
+
+  ensembleData = EnsembleData()
+  structureEnsemble.newParameter(name='data', value=ensembleData)
+  for key, val in allData.items():
+    # print('@~@~', key, len(val), val[0], '..', val[-1])
+    ensembleData[key] = val
+  # NBNB this still is missing setting ensembleData._structureEnsemble
+
+
 
 def fixExperiments(nmrProject):
   """ensure DataSource.name is unique"""
