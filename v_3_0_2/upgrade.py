@@ -300,7 +300,7 @@ def correctFinalResult(memopsRoot):
 def upgradeToPandasData(structureEnsemble):
   """Move all data to new pandas data structures and delete old objects"""
 
-  from ccpn.core.StructureEnsemble import EnsembleData
+  from ccpn.util.StructureData import EnsembleData
 
   memopsRoot = structureEnsemble.root
 
@@ -389,7 +389,6 @@ def upgradeToPandasData(structureEnsemble):
     # print('@~@~', key, len(val), val[0], '..', val[-1])
     ensembleData[key] = val
   # NBNB this still is missing setting ensembleData._structureEnsemble
-
 
 
 def fixExperiments(nmrProject):

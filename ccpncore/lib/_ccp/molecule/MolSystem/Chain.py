@@ -44,8 +44,14 @@ def expandMolSystemAtoms(self:'Chain'):
   # Set elementSymbol and add missing atoms (lest something breaks lower down)
   for residue in self.sortedResidues():
     chemCompVar = residue.chemCompVar
+    namingSystem = chemCompVar.chemComp.findFirstNamingSystem(name='PDB_REMED')
     for chemAtom in chemCompVar.findAllChemAtoms(className='ChemAtom'):
       atom = residue.findFirstAtom(name=chemAtom.name)
+      if atom is None and namingSystem:
+        # Special case - atoms may be named after PDB_REMED sysNAme rather than name
+        atomSysName = namingSystem.findFirstAtomSysName(atomName=chemAtom.name)
+        if atomSysName:
+          atom = residue.findFirstAtom(name=atomSysName.sysName)
       if atom is None:
         residue.newAtom(name=chemAtom.name, atomType='single',
                         elementSymbol=chemAtom.elementSymbol)
@@ -68,17 +74,29 @@ def expandMolSystemAtoms(self:'Chain'):
   # Set boundAtoms for existing atoms within residue
   for residue in self.sortedResidues():
     chemCompVar = residue.chemCompVar
+    namingSystem = chemCompVar.chemComp.findFirstNamingSystem(name='PDB_REMED')
     for atom in residue.atoms:
       chemAtom = chemCompVar.findFirstChemAtom(name=atom.name, className='ChemAtom')
+      atomSysName = boundChemAtoms = None
+      if chemAtom is None and namingSystem:
+        # Check for ChemAtom where match is in PDB_REMED rather than atom name (e.g. OXT, HXT)
+        atomSysName = namingSystem.findFirstAtomSysName(sysName=atom.name)
+        if atomSysName:
+          chemAtom = chemCompVar.findFirstChemAtom(name=atomSysName.atomName, className='ChemAtom')
       if chemAtom is not None:
         boundChemAtoms = set(x for y in chemAtom.chemBonds for x in y.chemAtoms)
         for boundChemAtom in boundChemAtoms:
           if boundChemAtom is not chemAtom and boundChemAtom.className == 'ChemAtom':
             boundAtom = residue.findFirstAtom(name=boundChemAtom.name)
+            if boundAtom is None and namingSystem:
+              # Check for ChemAtom where match is in PDB_REMED rather than atom name (e.g. OXT, HXT)
+              atomSysName = namingSystem.findFirstAtomSysName(atomName=boundChemAtom.name)
+              if atomSysName:
+                boundAtom = residue.findFirstAtom(name=atomSysName.sysName)
             if boundAtom is not None and boundAtom not in atom.boundAtoms:
               atom.addBoundAtom(boundAtom)
-
-    # Add boundAtoms for MolSystemLinks - Now add as GenericBond
+        #
+   # Add boundAtoms for MolSystemLinks - Now add as GenericBond
     for linkEnd in residue.sortedMolSystemLinkEnds():
       molSystemLink = linkEnd.molSystemLink
       atoms = frozenset(x.residue.findFirstAtom(name=x.linkEnd.boundChemAtom.name)

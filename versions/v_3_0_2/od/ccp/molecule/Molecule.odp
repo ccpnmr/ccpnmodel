@@ -31,7 +31,7 @@ objectdomain.uml.core.Stereotype-owns $18
 ($3 3 < 0_-fvi_hrnjywg5_-l94 "Molecule" 2
 (autoSizeToFit true)
 (uid "0_-fvi_hrnjywg5_-l94")
-(bbx 390 160 170 830))
+(bbx 390 160 170 590))
 ($3 4 < 0_-fvi_hrnjywg5_-l93 "MolResidue" 2
 (autoSizeToFit true)
 (uid "0_-fvi_hrnjywg5_-l93")
@@ -130,7 +130,7 @@ objectdomain.uml.core.Stereotype-owns $18
 ($4 25 < 0_-fvi_hrnjywg5_-l8i "" 2
 (toMultiplicityPosition 185 305)
 (uid "0_-fvi_hrnjywg5_-l8i")
-(points 210 300 210 340))
+(points 210 280 210 340))
 ($3 26 < 0_-fvi_hrnjywg5_-l8h "ChemComp" 2
 (showAttributeCompartment false)
 (showOperationCompartment false)
@@ -729,7 +729,7 @@ objectdomain.uml.core.Stereotype-owns $18
 ($7 137 < 0_-fvi_hrnjywg5_-l5d "documentation" 136
 (name "documentation"
 )
-(value "Getter for derived attribute molType. Possible return values are 'protein', 'DNA', 'RNA', 'carbohydrate', or 'DNA/RNA'"
+(value "Getter for derived attribute molType. Possible return values are 'protein', 'DNA', 'RNA', 'carbohydrate', 'other', or 'DNA/RNA'"
 )
 (uid "0_-fvi_hrnjywg5_-l5d"))
 ($7 138 < 0_-fvi_hrnjywg5_-l5c "opType" 136
@@ -767,6 +767,9 @@ objectdomain.uml.core.Stereotype-owns $18
 "aset = set(x.molType for x in aset)"
 "if len(aset) == 1:"
 "  result = aset.pop()"
+"  if result not in ('protein', 'DNA', 'RNA', 'carbohydrate', 'other'):"
+"    # This takes care of type 'dummy'"
+"    result = None"
 "elif aset == set(('DNA', 'RNA')):"
 "  result = 'DNA/RNA'"
 "else:"

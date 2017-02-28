@@ -112,10 +112,21 @@ def getAtomNameDifferences(self) -> Tuple[List[str], List[str]]:
   """return list of atomNamesRemoved, atomNamesAdded, relative to reference standard"""
   refChemCompVar = self.getReferenceChemCompVar()
   chemComp = refChemCompVar.chemComp
-  refAtomNames = set(x.name for x in refChemCompVar.chemAtoms
-                     if x.className == 'ChemAtom')
   molType = chemComp.molType
+  namingSystem = chemComp.findFirstNamingSystem(name='PDB_REMED')
   linking = self.linking
+
+  refAtomNames = set()
+  for chemAtom in refChemCompVar.chemAtoms:
+    atomSysName = namingSystem.findFirstAtomSysName(atomName=chemAtom.name)
+    if atomSysName:
+      refAtomNames.add(atomSysName.sysName)
+    else:
+      refAtomNames.add(chemAtom.name)
+
+  # refAtomNames = set(x.name for x in refChemCompVar.chemAtoms
+  #                    if x.className == 'ChemAtom')
+
 
   # NBNB for non-std protein/RNA/DNA we are NOT going back to
   # neutral form for backbone, but only for the side chain.
@@ -125,13 +136,12 @@ def getAtomNameDifferences(self) -> Tuple[List[str], List[str]]:
 
   if molType == 'protein':
     if chemComp.className != 'StdChemComp':
-      # NBNB we use IUPAC (O', O'', H'')
-      # data using PDB_REMED (O, OXT, HXT) must be modified first
+      # NBNB we use PDB_REMED (O, OXT, HXT) for (O', O'', H'')
       if 'H3' in refAtomNames:
         refAtomNames.remove('H3')
-      if (linking in ('end', 'none') and "H''" not in refAtomNames
-          and chemComp.findFirstChemAtom(name="H''")):
-        refAtomNames.add("H''")
+      if (linking in ('end', 'none') and "HXT" not in refAtomNames
+          and chemComp.findFirstChemAtom(name="H''")):  # NB "H''" is deliberate!!
+        refAtomNames.add("HXT")
 
   elif molType in ('DNA', 'RNA'):
     if chemComp.code3Letter in ('DA', 'DC', 'DG', 'DT', 'A', 'C', 'G', 'U'):
