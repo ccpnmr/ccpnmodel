@@ -314,12 +314,6 @@ def getSliceData(dataSource:'DataSource', position:Sequence=None, sliceDim:int=1
 
   dataDims = dataSource.sortedDataDims()
 
-  dataStore = dataSource.dataStore
-  filePath = dataStore.fullPath
-
-  hdf5file = h5py.File(filePath, 'r')
-  dataset = hdf5file[SPECTRUM_DATASET_NAME]
-
   slices = numDim * [0]
   for dim, dataDim in enumerate(dataDims):
     if dim == sliceDim:
