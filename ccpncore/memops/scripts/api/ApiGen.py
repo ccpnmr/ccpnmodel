@@ -3206,9 +3206,10 @@ class ApiGen(ApiInterface, PermissionInterface, PersistenceInterface,
     opType = op.opType
     element = op.target
 
-    if element.isDerived:
+    if element.isDerived and isinstance(element, MetaModel.ClassElement):
       # Changed, so that forceUndoNotify is now true by default for derived elements
-      # Hence the contorted if statement - should only return if value is False
+      # NB the 'new' operation can have a derived class target, and here
+      # forceUndoNotify does not apply
       forceUndoNotify = element.forceUndoNotify
       if not forceUndoNotify:
         return

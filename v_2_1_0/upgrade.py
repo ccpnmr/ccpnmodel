@@ -157,65 +157,69 @@ def fixMolStructure(topObj, delayDataDict, toNewObjDict):
 
   # set up system - models
   models = doGet(topObj, emptyDict).get('models', emptyList)
-  ll = [(x.serial,x) for x in models]
-  ll.sort()
-  models = [x[1] for x in ll]
-  for ii,model in enumerate(models):
-    model.index = ii
   nModels = len(models)
+  if nModels:
+    # NB this is called also on partial load,
+    # where there are no models and nothing should be done
 
-  # set up system - data matrices
-  # NB must set entry in parent __dict__ as this is done while reading
-  nAtoms = len(allAtoms)
-  xx = topObj.newDataMatrix(name='bFactors', shape=(nModels,nAtoms))
-  topObj.__dict__['dataMatrices']['bFactors'] = xx
-  xx = topObj.newDataMatrix(name='occupancies', shape=(nModels,nAtoms))
-  topObj.__dict__['dataMatrices']['occupancies'] = xx
-  xx = topObj.newDataMatrix(name='coordinates', shape=(nModels,nAtoms,3))
-  topObj.__dict__['dataMatrices']['coordinates'] = xx
+    ll = [(x.serial,x) for x in models]
+    ll.sort()
+    models = [x[1] for x in ll]
+    for ii,model in enumerate(models):
+      model.index = ii
 
-  # set data
-  for model in models:
+    # set up system - data matrices
+    # NB must set entry in parent __dict__ as this is done while reading
+    nAtoms = len(allAtoms)
+    xx = topObj.newDataMatrix(name='bFactors', shape=(nModels,nAtoms))
+    topObj.__dict__['dataMatrices']['bFactors'] = xx
+    xx = topObj.newDataMatrix(name='occupancies', shape=(nModels,nAtoms))
+    topObj.__dict__['dataMatrices']['occupancies'] = xx
+    xx = topObj.newDataMatrix(name='coordinates', shape=(nModels,nAtoms,3))
+    topObj.__dict__['dataMatrices']['coordinates'] = xx
 
-    occupancies = [1.0] * nAtoms
-    bFactors = [0.0] * nAtoms
-    coordinates = bFactors * 3
+    # set data
+    for model in models:
 
-    setBFactors = False
-    setOccupancies = False
-    coordIds = delayDataDict[model].get('coords', emptyList)
+      occupancies = [1.0] * nAtoms
+      bFactors = [0.0] * nAtoms
+      coordinates = bFactors * 3
 
-    #coords = [toNewObjDict.get(x) for x in coordIds]
+      setBFactors = False
+      setOccupancies = False
+      coordIds = delayDataDict[model].get('coords', emptyList)
 
-    nfound = 0
-    for coordId in coordIds:
-      coord = toNewObjDict.pop(coordId)    # Want them gone before final check
-      coordDict = delayDataDict.pop(coord) # Want them gone before final check
-      index = coord.atom.index
+      #coords = [toNewObjDict.get(x) for x in coordIds]
 
-      ll = coordDict.get('occupancy')
-      if ll:
-        setOccupancies = True
-        occupancies[index] = ll[0]
+      nfound = 0
+      for coordId in coordIds:
+        coord = toNewObjDict.pop(coordId)    # Want them gone before final check
+        coordDict = delayDataDict.pop(coord) # Want them gone before final check
+        index = coord.atom.index
 
-      ll = coordDict.get('bFactor')
-      if ll:
-        setBFactors = True
-        bFactors[index] = ll[0]
-
-      for ii,tag in enumerate(('x','y','z')):
-        ll = coordDict.get(tag)
+        ll = coordDict.get('occupancy')
         if ll:
-          nfound += 1
-          coordinates[3*index + ii] = ll[0]
+          setOccupancies = True
+          occupancies[index] = ll[0]
 
-    model.setSubmatrixData('coordinates', coordinates)
-    if setOccupancies:
-      model.setSubmatrixData('occupancies', occupancies)
-    if setBFactors:
-      model.setSubmatrixData('bFactors', bFactors)
-  #
-  topObj.purge()
+        ll = coordDict.get('bFactor')
+        if ll:
+          setBFactors = True
+          bFactors[index] = ll[0]
+
+        for ii,tag in enumerate(('x','y','z')):
+          ll = coordDict.get(tag)
+          if ll:
+            nfound += 1
+            coordinates[3*index + ii] = ll[0]
+
+      model.setSubmatrixData('coordinates', coordinates)
+      if setOccupancies:
+        model.setSubmatrixData('occupancies', occupancies)
+      if setBFactors:
+        model.setSubmatrixData('bFactors', bFactors)
+    #
+    topObj.purge()
 
 
 

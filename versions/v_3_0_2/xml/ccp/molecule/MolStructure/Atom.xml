@@ -270,6 +270,18 @@ ll[index] = value</item>
     <valueType>www.ccpn.ac.uk_Fogh_2015-10-26-11:28:17_00001</valueType>
   </MetaAttribute>
 
+  <MetaRole name="coords"
+   guid="www.ccpn.ac.uk_Fogh_2006-08-16-18:23:36_00063"
+   container="www.ccpn.ac.uk_Fogh_2006-08-16-14:22:55_00004"
+   baseName="coord" changeability="changeable" forceUndoNotify="true"
+   hicard="-1" hierarchy="child" isAbstract="false" isAutomatic="false"
+   isDerived="false" isImplementation="false" isImplicit="false"
+   isOrdered="false" isUnique="true" locard="0" noDeleteIfSet="false"
+   partitionsChildren="false" scope="instance_level" visibility="public_vis">
+    <otherRole>www.ccpn.ac.uk_Fogh_2006-08-16-18:23:36_00062</otherRole>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:55_00001</valueType>
+  </MetaRole>
+
   <MetaAttribute name="elementName"
    guid="www.ccpn.ac.uk_Fogh_2015-11-17-18:46:32_00001"
    container="www.ccpn.ac.uk_Fogh_2006-08-16-14:22:55_00004"
@@ -424,6 +436,23 @@ if dataMatrix:
   result = dataMatrix.getSubmatrixData(point=(0,self.index,), shape=(0,1,))
 else:
   raise ApiError("%s lacks DataMatrix named 'coordinates''" % self.topObject)</item>
+    </codeStubs>
+  </MetaOperation>
+
+  <MetaOperation name="getCoords"
+   guid="www.ccpn.ac.uk_Fogh_2011-04-11-17:36:15_00001"
+   container="www.ccpn.ac.uk_Fogh_2006-08-16-14:22:55_00004"
+   isAbstract="false" isImplicit="false" isQuery="true" opType="get"
+   scope="instance_level" visibility="public_vis">
+    <target>www.ccpn.ac.uk_Fogh_2006-08-16-18:23:36_00063</target>
+    <codeStubs>
+      <item tag="python">models = self.topObject.models
+dd = dataDict['coords']
+if len(dd) &lt; len(models):
+  missing = models.difference(x.model for x in dd.values())
+  for model in missing:
+    Coord(self, model=model)
+result = frozenset(dd.values())</item>
     </codeStubs>
   </MetaOperation>
 
@@ -585,6 +614,23 @@ NBNB TBD this list goes with a iupacNameIndex matrix, so that every atom in ever
     <documentation>Atom Name - identical to Molsystem.Atom.name of corersponding Molsysterm Atom. Part of object key, and foreign key used for deriving the link to MolSystem.Atom</documentation>
     <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00037</valueType>
   </MetaAttribute>
+
+  <MetaOperation name="newCoord"
+   guid="www.ccpn.ac.uk_Fogh_2011-03-22-17:23:27_00031"
+   container="www.ccpn.ac.uk_Fogh_2006-08-16-14:22:55_00004"
+   isAbstract="false" isImplicit="false" isQuery="false" opType="new"
+   scope="instance_level" visibility="public_vis">
+    <target>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:55_00001</target>
+    <codeStubs>
+      <item tag="python">model = attrlinks.get('model')
+for coord in self.__dict__['coords'].values():
+  if coord.__dict__['model'] is model:
+    result = coord
+    break
+else:
+  result = Coord(self, **attrlinks)</item>
+    </codeStubs>
+  </MetaOperation>
 
   <MetaAttribute name="occupancies"
    guid="www.ccpn.ac.uk_Fogh_2011-03-22-17:23:27_00010"

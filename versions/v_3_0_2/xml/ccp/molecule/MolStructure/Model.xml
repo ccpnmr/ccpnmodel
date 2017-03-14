@@ -131,6 +131,18 @@ if not structureEnsemble in objsToBeDeleted:
     <valueType>www.ccpn.ac.uk_Fogh_2015-10-26-11:28:17_00001</valueType>
   </MetaAttribute>
 
+  <MetaRole name="coords"
+   guid="www.ccpn.ac.uk_Fogh_2007-11-23-12:00:15_00002"
+   container="www.ccpn.ac.uk_Fogh_2007-11-23-12:00:10_00001"
+   baseName="coord" changeability="changeable" forceUndoNotify="true"
+   hicard="-1" isAbstract="false" isAutomatic="false" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="0" noDeleteIfSet="false" partitionsChildren="false"
+   scope="instance_level" visibility="public_vis">
+    <otherRole>www.ccpn.ac.uk_Fogh_2007-11-23-12:00:15_00001</otherRole>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:55_00001</valueType>
+  </MetaRole>
+
   <MetaAttribute name="details"
    guid="www.ccpn.ac.uk_Fogh_2008-07-11-16:03:09_00002"
    container="www.ccpn.ac.uk_Fogh_2007-11-23-12:00:10_00001"
@@ -173,6 +185,24 @@ if dataMatrix:
   result = dataMatrix.getSubmatrixData(point=(self.index,), shape=(1,))
 else:
   raise ApiError("%s lacks DataMatrix named 'coordinates''" % self.structureEnsemble)</item>
+    </codeStubs>
+  </MetaOperation>
+
+  <MetaOperation name="getCoords"
+   guid="www.ccpn.ac.uk_Fogh_2011-04-11-17:36:15_00002"
+   container="www.ccpn.ac.uk_Fogh_2007-11-23-12:00:10_00001"
+   isAbstract="false" isImplicit="false" isQuery="true" opType="get"
+   scope="instance_level" visibility="public_vis">
+    <target>www.ccpn.ac.uk_Fogh_2007-11-23-12:00:15_00002</target>
+    <codeStubs>
+      <item tag="python">structureEnsemble = dataDict['structureEnsemble']
+atoms = structureEnsemble.orderedAtoms
+coords = dataDict['coords']
+if len(coords) &lt; len(atoms):
+  missing = set(atoms).difference(x.atom for x in coords)
+  for atom in missing:
+    Coord(atom, model=self)
+result = frozenset(coords)</item>
     </codeStubs>
   </MetaOperation>
 
