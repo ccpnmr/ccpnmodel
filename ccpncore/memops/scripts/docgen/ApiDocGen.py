@@ -3116,41 +3116,6 @@ so, you should assume that these classes are not relevant to your purpose.
 
   ###########################################################################
 
-  # def pathToTop(self, element, isDiagram=False, upDir=0):
-  #   """ return relative directory path from a given element to the top directory
-  #   """
-  #
-  #   # upDir is hack to get Attribute Map pages to work
-  #
-  #   if isDiagram:
-  #     n = 2  # it's always in model/doc directory, not in language-specific api directory
-  #   else:
-  #     n = len(self.baseDirNames)
-  #
-  #   if element.container is None:
-  #     if hasattr(element, 'topPackage') and element is element.topPackage():
-  #       # this is the root package
-  #       #return Path.joinPath(*(['..']*(n+1+upDir)))
-  #       return Path.joinPath(*(['..']*(n+upDir)))
-  #
-  #     raise MemopsError("path from root element not implemented for %s"
-  #      % element
-  #     )
-  #
-  #   length = len(self.getElementPathList(element))
-  #   if isDiagram:
-  #     if element.containedPackages:
-  #       length = length + n + 1
-  #     else:
-  #       length += n
-  #   elif self.elemHasOwnDirectory(element):
-  #     length = length + n + 2
-  #   else:
-  #     length = length + n + 1
-  #
-  #   #return self.upDir(length)
-  #   return self.upDir(length-2) # truing to adjust to new locations. TODO experiment
-
   def pathToTop(self, element, isDiagram=False, upDir=0):
     """ return relative directory path from a given element to the top directory
     """
@@ -3174,7 +3139,6 @@ so, you should assume that these classes are not relevant to your purpose.
       length -= 1
 
     return self.upDir(length)
-    # return self.upDir(length-2) # truing to adjust to new locations. TODO experiment
 
   ###########################################################################
 

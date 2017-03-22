@@ -29,14 +29,11 @@ __version__ = "$Revision$"
 
 import os
 import re
-# from urllib.request import urlopen
 from ccpn.util import  Url
 
 from ccpnmodel.ccpncore.lib.Io import Api as apiIo
 from ccpn.util import Common as commonUtil
 from ccpn.util import Path as corePath
-# from ccpnmodel.ccpncore.memops.ApiError import ApiError
-# from ccpnmodel.ccpncore.api.memops import Implementation
 from ccpnmodel.ccpncore.memops.format.xml import XmlIO
 
 from ccpnmodel.ccpncore.lib.Constants import standardResidueCcpCodes
@@ -79,22 +76,11 @@ def fetchChemComp(project, molType, ccpCode, download=True, partialLoad=False):
         chemComp.newChemCompVar(linking='dummy', descriptor='neutral', isDefaultVar=True,
                                 formalCharge=0, isParamagnetic=False, isAromatic=False)
       elif download:
-        # # try to get it from chemCompArchiveDir directory, if any, or to download it.
-        # # Use custom directory if it was passed in!!!!
-        # if not chemCompArchiveDir:
-        #   chemCompPath = getChemCompArchiveDataDir()
-        # else:
-        #   chemCompPath = chemCompArchiveDir
 
         ccLocator = (project.findFirstPackageLocator(targetName=packageName) or
                      project.findFirstPackageLocator(targetName='any'))
         repository = ccLocator.findFirstRepository()
 
-        # fileFound = getChemCompXmlFile(repository, chemCompPath, molType, ccpCode,
-        #                               copyFile=copyFile)
-        # if not fileFound and download:
-          # Replaced by direct download from CcpForge (Wim 15/06/2010)
-          #fileFound = downloadChemCompXmlFile(repository, molType, ccpCode)
         fileFound = downloadChemCompInfoFromCcpForge(repository, molType, ccpCode)
         if fileFound:
           chemComp = XmlIO.loadFromFile(project, fileFound,  partialLoad=partialLoad)
@@ -109,86 +95,7 @@ def getChemCompArchiveXmlFilePath(chemCompPath,molType,ccpCode):
     chemCompXmlFilePath = corePath.joinPath(chemCompXmlFilePath,ccpCode[0])
   
   return chemCompXmlFilePath
-  
-# def getChemCompXmlFile(repository, chemCompPath, molType, ccpCode,
-#                        copyFile=True):
-#
-#   """
-#   Fetch chemComp 'molType', 'ccpCode' to local repository 'repository'
-#   from repository defined by chemCompPath
-#   contexts
-#   Returns name of copied file, or None if unsuccessful
-#   """
-#
-#   fileSearchString = "%s+%s+*.xml" % (molType,commonUtil.getCcpFileString(ccpCode))
-#   fileSearchPath = getChemCompArchiveXmlFilePath(chemCompPath,molType,ccpCode)
-#
-#   className = 'ChemComp'
-#   identifier = '%s.%s' % (molType,ccpCode)
-#
-#   return getChemCompOrCoordXmlFile(repository,fileSearchString,fileSearchPath,className,
-#                                    identifier,copyFile)
 
-# def getChemCompCoordXmlFile(repository, chemCompCoordPath, sourceName, molType, ccpCode,
-#                             copyFile=True):
-#
-#   """
-#   Fetch chemCompCoord 'sourceName', 'molType', 'ccpCode' to local repository 'repository'
-#   from repository defined by chemCompPath
-#   contexts
-#   Returns name of copied file, or None if unsuccessful
-#   """
-#
-#   fileSearchString = "%s+%s+%s+*.xml" % (commonUtil.getCcpFileString(sourceName),
-#                                          molType, commonUti.getCcpFileString(ccpCode))
-#   fileSearchPath = getChemCompCoordArchiveXmlFilePath(chemCompCoordPath, sourceName, molType,
-#                                                       ccpCode)
-#
-#   className = 'ChemCompCoord'
-#   identifier = '%s.%s.%s' % (sourceName,molType,ccpCode)
-#
-#   return getChemCompOrCoordXmlFile(repository, fileSearchString, fileSearchPath, className,
-#                                    identifier,copyFile)
-
-# def getChemCompOrCoordXmlFile(repository, fileSearchString, fileSearchPath, className,
-#                               identifier, copyFile):
-#
-#   result = None
-#   logger = repository.root._logger
-#
-#   # Try to find file...
-#
-#   import glob
-#   fileNameMatches = glob.glob(corePath.joinPath(fileSearchPath,fileSearchString))
-#
-#   if fileNameMatches:
-#     if len(fileNameMatches) > 1:
-#       errorText = "Error: multiple matches found for %s %s - taking last one." % (className,identifier)
-#       logger.error("Multiple %s matches" % className, errorText)
-#
-#     filePath = fileNameMatches[-1]
-#     (fileDir,fileName) = os.path.split(filePath)
-#
-#     #
-#     # Copy file if found...
-#     #
-#
-#     if os.path.exists(filePath):
-#       if copyFile:
-#         savePath = repository.getFileLocation('ccp.molecule.%s' % className)
-#         if not os.path.exists(savePath):
-#           os.makedirs(savePath)
-#         import shutil
-#         saveFilePath = corePath.joinPath(savePath,fileName)
-#         shutil.copy(filePath,saveFilePath)
-#         result = saveFilePath
-#
-#         print "  %s file %s copied to %s..." % (className,fileName,savePath)
-#
-#       else:
-#         result = filePath
-#
-#   return result
  
 def getChemCompCoordArchiveXmlFilePath(chemCompPath,sourceName,molType,ccpCode):
     
@@ -198,15 +105,6 @@ def getChemCompCoordArchiveXmlFilePath(chemCompPath,sourceName,molType,ccpCode):
     chemCompXmlFilePath = corePath.joinPath(chemCompXmlFilePath,ccpCode[0])
   
   return chemCompXmlFilePath
-
-# def getChemCompCoordArchiveDataDir():
-#
-#   """
-#   Default directory for locally storing all chemComps
-#   This is now available as a CcpForge repository, see http://ccpforge.cse.rl.ac.uk/projects/ccpn-chemcomp/
-#   """
-#
-#   return getDataPath('pdbe','chemComp','archive','ChemCompCoord')
 
 def fetchChemCompCoord(project, sourceName, molType, ccpCode, download=True, partialLoad=False):
   """ get ChemComp corresponding to molType,ccpCode,
@@ -239,22 +137,11 @@ def fetchChemCompCoord(project, sourceName, molType, ccpCode, download=True, par
                                          partialLoad=partialLoad)
 
     if chemCompCoord is None and download:
-      # try to get it from allChemCompCoordPath directory, if any, or to download it.
-      # Use custom directory if it was passed in!!!!
-      # if not chemCompCoordArchiveDir:
-      #   chemCompCoordPath = getChemCompCoordArchiveDataDir()
-      # else:
-      #   chemCompCoordPath = chemCompCoordArchiveDir
         
       ccLocator = (project.findFirstPackageLocator(targetName=packageName) or
                    project.findFirstPackageLocator(targetName='any'))
       repository = ccLocator.findFirstRepository()
-      
-      # fileFound = getChemCompCoordXmlFile(repository, chemCompCoordPath, sourceName, molType,
-      #                                     ccpCode,copyFile=copyFile)
-      # if not fileFound and download:
-        # Replaced by direct download from CcpForge (Wim 15/06/2010)    
-        #fileFound = downloadChemCompCoordXmlFile(repository, sourceName, molType, ccpCode)
+
       fileFound = downloadChemCompInfoFromCcpForge(repository, molType, ccpCode,
                                                    sourceName=sourceName)
                
@@ -348,12 +235,7 @@ def downloadChemCompInfoFromCcpForge(repository, molType, ccpCode, sourceName=No
     
   try:
 
-    # Get the file list, needs to be decomposed to get direct links
-    # r1 = Url.fetchUrl(ccpForgeDirUrl)
-
     try:
-      # dirData = r1.read()
-      # r1.close()
       # Get the file list, needs to be decomposed to get direct links
       dirData = Url.fetchUrl(ccpForgeDirUrl)
 
@@ -361,12 +243,8 @@ def downloadChemCompInfoFromCcpForge(repository, molType, ccpCode, sourceName=No
                                                                 ccpForgeDownloadUrl)
 
       if urlLocation:
- 
-        # r2 = urlopen(urlLocation)
-    
+
         try:
-          # data = r2.read()
-          # r2.close()
           data = Url.fetchUrl(urlLocation)
 
           try:
@@ -407,28 +285,6 @@ def downloadChemCompInfoFromCcpForge(repository, molType, ccpCode, sourceName=No
   #
   return result
 
-# def getCcpCodeFromXmlFile(xmlFile):
-#
-#   ccpCodePatt = re.compile("ccpCode=\"([^ ]+)\"")
-#
-#   fin = open(xmlFile)
-#   line = fin.readline()
-#
-#   ccpCode = None
-#
-#   while line:
-#     if line.count('<CHEM.StdChemComp') or line.count('<CHEM.NonStdChemComp') or line.count("<CCCO.ChemCompCoord"):
-#       ccpCodeSearch = ccpCodePatt.search(line)
-#       if ccpCodeSearch:
-#         ccpCode = ccpCodeSearch.group(1)
-#         break
-#
-#     line = fin.readline()
-#
-#   fin.close()
-#
-#   return ccpCode
-
 def fetchStdChemComps(project,molTypes=None):
 
   chemComps = []
@@ -448,215 +304,3 @@ def fetchStdChemComps(project,molTypes=None):
 
   return chemComps
 
-
-# def setDataSourceDataStore(dataSource, dataUrlPath, localPath,
-#                            dataLocationStore=None, dataUrl=None):
-#
-#   # Get DataLocationStore
-#   if dataLocationStore is not None:
-#     dataLocationStore = dataSource.root.currentDataLocationStore
-#
-#   #
-#   # Get (or create) DataUrl
-#   #
-#
-#   # TODO should this search function go elsewhere?
-#   if not dataUrl:
-#     for tmpDataUrl in dataLocationStore.dataUrls:
-#       if tmpDataUrl.url.dataLocation == dataUrlPath:
-#         dataUrl = tmpDataUrl
-#
-#     if not dataUrl:
-#       dataUrlPath = corePath.normalisePath(dataUrlPath)
-#       dataUrl = dataLocationStore.newDataUrl(url = Implementation.Url(path = dataUrlPath))
-#
-#   #
-#   # Create a BlockedBinaryMatrix. TODO: could be other classes that are set up this way - rename func and make general,, pass in class?
-#   #
-#   localPath = corePath.normalisePath(localPath)
-#   blockedBinaryMatrix = dataLocationStore.newBlockedBinaryMatrix(path=localPath,
-#                                                                  dataUrl=dataUrl)
-#
-#   """
-#   TODO Set here as well, or do this later after returning object:
-#
-# blockSizes      Int      0..*     Block sizes in dimension order
-# complexStoredBy   ComplexStorage   1..1   The ordering of real and imaginary parts of hypercomplex numbers in the data matrix. See ComplexStorage type for details
-# hasBlockPadding   Boolean   1..1   Are data padded to fill all blocks completely? Alternatively incomplete blocks store only the actual data.
-# headerSize   Int   1..1   Header size in bytes
-# isBigEndian   Boolean   1..1   Are data big-endian (alternative little-endian).
-# isComplex   Boolean   0..*   Are numbers complex (if True) or real/integer (if False).
-# nByte   Int   1..1   Number of bytes per number
-# numPoints   Int   0..*   number of points for each matrix dimension - also defines dimensionality of matrix. The number of points is the same for real or complex data, in the sense that n complex points require 2n real numbers for storage.
-# numRecords   Int   1..1   Number of matrix records in file. All other information in the object describes a single record.
-# numberType   NumberType   1..1   Type of numbers held in matrix
-#
-#   """
-#
-#   dataSource.dataStore = blockedBinaryMatrix
-#
-#   return blockedBinaryMatrix
-
-
-# def getDataSourceFileName(dataSource):
-#
-#   dataStore = dataSource.dataStore
-#
-#   if not dataStore:
-#     return None
-#
-#   return dataStore.fullPath
-
-
-# def setDataSourceFileName(dataSource, fileName):
-#
-#   dataStore = dataSource.dataStore
-#
-#   if dataStore is None:
-#     raise ApiError('dataStore is None')
-#
-#   setDataStoreFileName(dataStore, fileName)
-
-# def setDataStoreFileName(dataStore, fileName):
-#
-#   preferDataUrls=(dataStore.dataUrl,)
-#   (dataUrl, filePath) = getDataStoringFromFilepath(dataStore.root,
-#                                fullFilePath=fileName,
-#                                preferDataUrls=preferDataUrls,
-#                                dataLocationStore=dataStore.dataLocationStore)
-#
-#   dataStore.dataUrl = dataUrl
-#   dataStore.path = filePath
-
-# def getDataStoringFromFilepath(memopsRoot, fullFilePath, preferDataUrls=None,
-#                                dataLocationStore=None, keepDirectories=1):
-#
-#   # make absolute,, normalised path
-#   fullFilePath = corePath.normalisePath(fullFilePath, makeAbsolute=True)
-#
-#   dataUrl, filePath = findDataStoringFromFilepath(memopsRoot, fullFilePath,
-#                                                   preferDataUrls,
-#                                                   dataLocationStore,
-#                                                   keepDirectories)
-#
-#   if dataUrl is None:
-#
-#     urlPath = corePath.normalisePath((fullFilePath[:-len(filePath)]))
-#     dataLocationStore = memopsRoot.currentDataLocationStore
-#     dataUrl = dataLocationStore.newDataUrl(
-#                                    url=Implementation.Url(path=urlPath))
-#     dataUrl.name = 'auto-%s' % dataUrl.serial
-#   #
-#   return dataUrl, filePath
-
-# def findDataStoringFromFilepath(project, fullFilePath, preferDataUrls=None,
-#                                dataLocationStore=None, keepDirectories=1):
-#   """ Get DataUrl and relative filePath from normalised absolute filePath
-#   Uses heuristics to select compatible DataUrl from existing ones.
-#   sisterObjects is a collection of objects with a dataStore link -
-#   DataUrls in use for sisterObjects are given preference in the
-#   heuristics.
-#   uses dataLocationStore or current dataLocationStore
-#   If no compatible DataUrl is found the routine returns dataUrl None
-#   and the file name plus the lowest keepDirectories directories
-#   as the filePath
-#   """
-#   # NB fullFilePath *must* be absolute her for code to work properly
-#   #
-#   if not os.path.isabs(fullFilePath):
-#     raise ApiError(
-#      "findDataStoringFromFilepath called with non-absolute file name %s"
-#      % fullFilePath)
-#
-#   # get DataLocationStore
-#   if dataLocationStore is not None:
-#     dataLocationStore = project.currentDataLocationStore
-#
-#   # get DataUrl that match fullFilePath
-#   dataUrls = []
-#   for dataUrl in dataLocationStore.dataUrls:
-#     dirPath = corePath.normalisePath(dataUrl.url.path)
-#     if fullFilePath.startswith(dirPath):
-#       lenPath = len(dirPath)
-#       ss = fullFilePath
-#       while len(ss) > lenPath:
-#         ss,junk = corePath.splitPath(ss)
-#       if ss == dirPath:
-#         # DataUrl path matches file path
-#         dataUrls.append(dataUrl)
-#
-#   # process result
-#   if dataUrls:
-#     if preferDataUrls:
-#       # look for DataUrls that are in use with related objects
-#       ll = [x for x in dataUrls if x in preferDataUrls]
-#       if ll:
-#         dataUrls = ll
-#
-#     if len(dataUrls) == 1:
-#       # only one DataUrl - use it
-#       dataUrl = dataUrls[0]
-#     else:
-#       # use DataUrl with longest path
-#       ll = [(len(dataUrl.url.path),dataUrl) for dataUrl in dataUrls]
-#       ll.sort()
-#       dataUrl = ll[-1][1]
-#
-#     # get filePath
-#     ss = corePath.joinPath(dataUrl.url.path, '') # removes file separator from end
-#     filePath = fullFilePath[len(ss)+1:]
-#
-#   else:
-#     dataUrl = None
-#     ll = []
-#     ss = fullFilePath
-#     for dummy in range(keepDirectories + 1):
-#       ss,name = os.path.split(ss)
-#       ll.append(name)
-#     ll.reverse()
-#     filePath = corePath.joinPath(*ll)
-#
-#   #
-#   return dataUrl, filePath
-
-# def changeDataStoreUrl(dataStore, newPath):
-#   """ Change the url for this dataStore, so at the end we have
-#   dataStore.dataUrl.url.path = newPath.  This changes all dataUrls
-#   with the same old path if the old path does not exist and the
-#   new one does.
-#   """
-#
-#   newPath = corePath.normalisePath(newPath, makeAbsolute=True)
-#   oldDataUrl = dataStore.dataUrl
-#   oldUrl = oldDataUrl.url
-#   oldPath = oldUrl.dataLocation
-#   oldExists = os.path.exists(oldPath)
-#   if newPath != oldPath:
-#     dataLocationStore = dataStore.dataLocationStore
-#     newUrl = Implementation.Url(path=newPath)  # TBD: should use oldUrl.clone(path=newPath)
-#
-#     # first check if have a dataUrl with this path
-#     newDataUrl = dataLocationStore.findFirstDataUrl(url=newUrl)
-#     if not newDataUrl:
-#       # if old path exists and there is more than one dataStore with
-#       # this dataUrl then create new one
-#       dataUrlStores = dataLocationStore.findAllDataStores(dataUrl=oldDataUrl)
-#       if oldExists and len(dataUrlStores) > 1:
-#         newDataUrl = dataLocationStore.newDataUrl(name=oldDataUrl.name, url=newUrl)
-#
-#     # if have found or have created newDataUrl then set dataStore to point to it
-#     # else just change url of oldDataUrl (which could affect other dataStores)
-#     if newDataUrl:
-#       dataStore.dataUrl = newDataUrl
-#     else:
-#       oldDataUrl.url = newUrl
-#
-#     # if old path does not exist and new path exists then change urls of
-#     # all data urls which have old path to new path (there might be none)
-#     if not oldExists:
-#       newExists = os.path.exists(newPath)
-#       if newExists:
-#         for dataUrl in dataLocationStore.dataUrls:
-#           if dataUrl.url == oldUrl:
-#             dataUrl.url = newUrl
-#

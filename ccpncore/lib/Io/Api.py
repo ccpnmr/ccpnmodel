@@ -67,10 +67,6 @@ def _createLogger(project, applicationName=None, useFileLogger=None):
 
   logger = (Logging.createLogger(applicationName, project, stream=sys.stderr) if useFileLogger
             else Logging.getLogger())
-  # # NBNB FIXME TBD temporary redirect to stdout for debug purposes
-  # import sys
-  # logger = Logging.createLogger(applicationName, project,
-  #                               stream=sys.stdout) if useFileLogger else Logging.getLogger()
   project._applicationName = applicationName
   project._useFileLogger = useFileLogger
   project._logger = logger
@@ -1103,7 +1099,7 @@ def packageProject(project, filePrefix=None, includeBackups=False, includeData=F
   If includeData then also dataStores located inside project directory are included.
   """
 
-  # NBNB TBD FIXME check how many dataLocatoins to package (and make sure you reset first)
+  # NBNB TBD FIXME check how many dataLocations to package (and make sure you reset first)
 
   import datetime
   import tarfile

@@ -92,7 +92,7 @@ try:
         if atomSysName:
           # NBNB Atoms named by sysName will appear as UNCONNECTED to their ChemAtom
           # Code that assumes proper ChemAtom links (mainly for adding atoms ot nascent chains)
-          # must psecial-sase these stoms
+          # must special-case these stoms
           atomName = atomSysName.sysName
       atom = Atom(self, name=atomName)
       if _undo.blocking &lt;= 1:
@@ -163,6 +163,14 @@ for le in molResidue.molResLinkEnds:
 clazz = ccpnmodel.ccpncore.api.ccp.molecule.ChemComp.ChemAtom
 cvset = set(ca.name for ca in chemCompVar.chemAtoms if isinstance(ca, clazz))
 ccset = set(ca.name for ca in chemCompVar.chemComp.chemAtoms if isinstance(ca, clazz))
+
+# HACK - to allow for use of O/OXT instead of O'/O''
+# NBNB this may give errors in some non-proteins, 
+# but the caseds should be too rare to bother about
+if "O'" in cvset:
+  cvset.add('O')
+if "O''" in cvset:
+  cvset.add('OXT')
   
 for atom in self.atoms:
   name = atom.name
@@ -247,6 +255,17 @@ for atom in self.atoms:
    locard="1" scope="instance_level" visibility="public_vis">
     <documentation>ChemComp.code3Letter for residue</documentation>
     <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:52_00023</valueType>
+  </MetaAttribute>
+
+  <MetaAttribute name="configuration"
+   guid="www.ccpn.ac.uk_Fogh_2017-03-10-19:31:07_00001"
+   container="www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00030"
+   baseName="configuration" changeability="changeable" forceUndoNotify="true"
+   hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="0" scope="instance_level" visibility="public_vis">
+    <documentation>Residue configuration, i.e. three-dimensional structure not depending on making or breaking chemical bonds. Main example is the distinction between cis and trans peptide bonds, where 'cis' or 'trnas' refer to the bond N-0terminal to an amino acid.</documentation>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00037</valueType>
   </MetaAttribute>
 
   <MetaAttribute name="descriptor"

@@ -132,10 +132,8 @@ def correctData(topObj, delayDataDict, toNewObjDict, mapping=None):
           sample = sampleStore.findFirstSample(name=keyList[-2])
           experiment.sample = sample
 
-    # NBNB TODO ?? SampledDAtaDim.samples is NOT dealt with
+    # NBNB TODO ?? SampledDataDim.samples is NOT dealt with
     # In theory it should, but there are no V2 data that require it.
-
-
 
   elif pName == 'ccp.molecule.MolSystem':
     nextSerial = 1
