@@ -221,13 +221,6 @@ def analyseUrl(filePath):
 
 
   else:
-    # Text file
-    # if b'##TITLE' in firstData:
-    #   return ('Spectrum', BRUKER, dirName)
-    #
-    # if b'Version .....' in firstData:
-    #   # NBNB TBD FIXME what data is this?
-    #   return (None, XEASY, filePath)
 
     fileObj.close()
     text = open(filePath, 'rU').read()

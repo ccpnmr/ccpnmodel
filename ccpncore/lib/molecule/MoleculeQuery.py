@@ -23,18 +23,10 @@ __version__ = "$Revision$"
 #=========================================================================================
 """Code for querying Molecules and MolSystems"""
 
-import re
 from ccpnmodel.ccpncore.lib.chemComp import ChemCompOverview
 from ccpnmodel.ccpncore.lib.chemComp import ObsoleteChemComps
 from ccpnmodel.ccpncore.lib.chemComp import Io as chemCompIo
-from ccpn.util import Logging
 import urllib
-
-
-###from ccp.util.LabeledMolecule import getIsotopomerSingleAtomFractions, getIsotopomerAtomPairFractions
-###from ccp.util.LabeledMolecule import singleAtomFractions, atomPairFractions
-
-###from ccp.util.NmrExpPrototype import longRangeTransfers
 
 molTypeOrder = ('protein', 'DNA', 'RNA', 'carbohydrate', 'other')
 
@@ -112,236 +104,6 @@ ccpCodeRemap = {
 }
 
 
-
-# STEREO_PREFIX = 'stereo_'
-# CARBOHYDRATE_MOLTYPE = 'carbohydrate'
-# PROTEIN_MOLTYPE = 'protein'
-# OTHER_MOLTYPE = 'other'
-# DNA_MOLTYPE = 'DNA'
-# RNA_MOLTYPE = 'RNA'
-# DNARNA_MOLTYPE = 'DNA/RNA'
-
-
-# userResidueCodesDict = {DNA_MOLTYPE:{'A':'Ade','T':'Thy','G':'Gua','C':'Cyt','U':'Ura'},
-#                         RNA_MOLTYPE:{'A':'Ade','T':'Thy','G':'Gua','C':'Cyt','U':'Ura','I':'Ino'},
-#                         PROTEIN_MOLTYPE:{},
-#                         CARBOHYDRATE_MOLTYPE:{}
-#                         }
-
-#
-# # Should really be derived or modelled attrs
-# PROTEIN_RESIDUE_CLASS_DICT = {'Acidic'       :['Asp','Glu'],
-#                               'Basic'        :['Arg','Lys','His'],
-#                               'Charged'      :['Asp','Glu','Arg','Lys','His'],
-#                               'Polar'        :['Asn','Gln','Asp','Glu','Arg','Lys','His','Ser','Thr','Tyr'],
-#                               'Non-polar'    :['Ala','Phe','Gly','Ile','Leu','Met','Pro','Val','Trp','Cys'],
-#                               'Hydrophilic'  :['Ser','Asp','Glu','Arg','Lys','His','Asp','Glu','Pro','Tyr'],
-#                               'Hydrophobic'  :['Phe','Met','Ile','Leu','Val','Cys','Trp','Ala','Thr','Gly'],
-#                               'Amide'        :['Asn','Gln'],
-#                               'Hydroxyl'     :['Ser','Thr','Tyr'],
-#                               'Aromatic'     :['Phe','Ptr','Tyr','Trp'],
-#                               'Beta-branched':['Thr','Val','Ile'],
-#                               'Small'        :['Cys','Ala','Ser','Asp','Thr','Gly','Asn'],
-#                               'Neutral'      :['Ala','Asn','Cys','Gln','Gly','Ile','Leu','Met',
-#                                                'Phe','Pro','Ser','Thr','Trp','Tyr','Val'],
-#                               'Methyl'       :['Ala','Met','Ile','Leu','Thr','Val'],
-#                              }
-
-# X is an unusual base, not ambiguiuty
-
-####################################################################
-#
-# ChemComps and ccpCodes
-#
-
-# def getMolTypeCcpCodes(molType='all', project=None):
-#   """Gives ccpCodes for chemComps according to molecule type: e.g. DNA
-#              Project can be input to search for non-standard types.
-#   .. describe:: Input
-#
-#   Implementation.Project, String (ChemComp.molType or 'all')
-#
-#   .. describe:: Output
-#
-#   List of Words (ChemComp.CcpCodes)
-#   """
-#
-#   ccpCodes = []
-#   if molType == 'all':
-#     molTypes = [PROTEIN_MOLTYPE, DNA_MOLTYPE, RNA_MOLTYPE,
-#                 CARBOHYDRATE_MOLTYPE, OTHER_MOLTYPE]
-#   else:
-#     molTypes = [molType,]
-#
-#   for molType in molTypes:
-#     chemCompDict = getChemCompOverview(molType, project)
-#
-#     if chemCompDict:
-#       ccpCodes.extend( chemCompDict.keys() )
-#
-#   if ccpCodes:
-#     ccpCodes.sort()
-#
-#   return ccpCodes
-
-# def getChemCompOverview(molType, project=None):
-#   """Get a dictionary containing details of all available chemical compounds
-#              for a given molecule type. Project can be input to search for loaded,
-#              but non standard chem comps.
-#   .. describe:: Input
-#
-#   Word (Molecule.MolResidue.MolType), Implementation.Project
-#
-#   .. describe:: Output
-#
-#   Dict of ChemComp.ccpCode:[Word, Word, Line, Word]
-#              (1-letter Code, 3-letter Code, name, mol formula)
-#   """
-#
-#   if molType == OTHER_MOLTYPE:
-#     chemCompDict = ChemCompOverview.chemCompOverview.get(molType, {})
-#
-#   else:
-#     chemCompDict = ChemCompOverview.chemCompStdDict.get(molType, {})
-#
-#   if project:
-#     for chemComp in project.findAllChemComps(molType=molType):
-#       ccpCode  = chemComp.ccpCode
-#
-#       if chemCompDict.get(ccpCode) is None:
-#         chemCompVar = chemComp.findFirstChemCompVar(linking=None, isDefaultVar=True) \
-#                       or chemComp.findFirstChemCompVar(isDefaultVar=True) \
-#                       or chemComp.findFirstChemCompVar()
-#
-#         if chemCompVar:
-#           molFormula = chemCompVar.formula
-#         else:
-#           molFormula = ''
-#           # NBNB TBD fixme
-#
-#         chemCompDict[ccpCode] = [chemComp.code1Letter,
-#                                  chemComp.code3Letter,
-#                                  chemComp.name,
-#                                  None]   # Added RHF 1/7/10 for bug fix.
-#
-#   return  chemCompDict
-
-
-
-####################################################################
-#
-# Bonds between atoms
-#
-
-# def getNumConnectingBonds(atom1, atom2, limit=5):
-#   """
-#   Get the minimum number of binds that connect two atoms.
-#   Stops at a specified limit (and returns None if not within it)
-#
-#   .. describe:: Input
-#
-#   MolSystem.Atom, MolSystem.atom, Int
-#
-#   .. describe:: Output
-#
-#   Int
-#   """
-#
-#   num = 0
-#   atoms = {atom1}
-#
-#   while atom2 not in atoms:
-#     if num > limit:
-#       return None
-#
-#     atoms2 = atoms.copy()
-#
-#     for atom in atoms2:
-#       atoms.update(getBoundAtoms(atom))
-#
-#     num += 1
-#
-#   return num
-
-# def areAtomsTocsyLinked(atom1, atom2):
-#   """
-#   Determine if two atoms have a connectivity that may be observable in a TOCSY experiment
-#
-#   .. describe:: Input
-#
-#   MolSystem.Atom, MolSystem.atom
-#
-#   .. describe:: Output
-#
-#   Boolean
-#   """
-#
-#   if not hasattr(atom1, 'tocsyDict'):
-#     atom1.tocsyDict = {}
-#   elif atom2 in atom1.tocsyDict:
-#     return atom1.tocsyDict[atom2]
-#
-#   if not hasattr(atom2, 'tocsyDict'):
-#     atom2.tocsyDict = {}
-#   elif atom2 in atom2.tocsyDict:
-#     return atom2.tocsyDict[atom1]
-#
-#   chemAtom1 = atom1.chemAtom
-#   chemAtom2 = atom2.chemAtom
-#   element1  = chemAtom1.elementSymbol
-#   element2  = chemAtom2.elementSymbol
-#
-#   if element1 != element2:
-#     boolean = False
-#
-#   elif areAtomsBound(atom1, atom2):
-#     boolean = True
-#
-#   else:
-#
-#     residue1 = atom1.residue
-#     residue2 = atom2.residue
-#
-#     if residue1 is not residue2:
-#       boolean = False
-#
-#     else:
-#       atomsA = {atom1}
-#       boolean = True
-#       while atom2 not in atomsA:
-#         atomsB = atomsA.copy()
-#
-#         for atomB in atomsB:
-#           for atom3 in getBoundAtoms(atomB):
-#             if atom3.residue is not residue1:
-#               continue
-#
-#             if element1 == 'H':
-#               if atom3.chemAtom.elementSymbol != 'H':
-#                 for atom4 in getBoundAtoms(atom3):
-#                   if atom4.chemAtom.elementSymbol == 'H':
-#                     break
-#                 else:
-#                   continue
-#
-#             if atom3.chemAtom.elementSymbol == element1:
-#               if not hasattr(atom3, 'tocsyDict'):
-#                 atom3.tocsyDict = {}
-#
-#               atom1.tocsyDict[atom3] = True
-#               atom3.tocsyDict[atom1] = True
-#
-#             atomsA.add(atom3)
-#
-#         if atomsA == atomsB: # Nothing more to add and atom2 not in linked set
-#           boolean = False
-#           break
-#
-#   atom1.tocsyDict[atom2] = boolean
-#   atom2.tocsyDict[atom1] = boolean
-#   return boolean
-
-
 def fetchStdResNameMap(project:'MemopsRoot', reset:bool=False, debug:bool=False):
   """ fetch dict of {residueName:(molType,ccpCode)},
   using cached value if present and not reset.
@@ -361,18 +123,6 @@ def fetchStdResNameMap(project:'MemopsRoot', reset:bool=False, debug:bool=False)
     rejected = {}
     result.update(cifCodeRemap)
 
-  # for molType, ccpCode in (result.values()):
-  #   if ccpCode in chemCompOverview[molType]:
-  #     print ('\t'.join(("CPRE-FOUND", molType, ccpCode)))
-  #   else:
-  #     print ('\t'.join(("CPRE-MISS", molType, ccpCode)))
-  #
-  # for molType,dd in sorted(chemCompOverview.items()):
-  #   print ("CIF-TOTAL-%s %s" % (molType, len(dd)))
-
-
-  # print ("CIF-TOTAL %s" % sum(len(x) for x in chemCompOverview.values()))
-
   remapped = {}
   nFound = 0
   for molType in molTypeOrder:
@@ -387,10 +137,7 @@ def fetchStdResNameMap(project:'MemopsRoot', reset:bool=False, debug:bool=False)
       if dd:
         altCode = dd['cifCode']
         if altCode is None:
-          # cifCode is obsoleted. Skip it.
-          # print("CIF-SKIP\t%s\t%s\t%s\t%s\t%s\t%s\t%s"
-          #       % (molType, dd['shortType'], dd['longType'], ccpCode, tt[0] or '-', tt[1] or '-', tt[2] or '-'))
-          rejected[molType, ccpCode] = None
+         rejected[molType, ccpCode] = None
 
         else:
           # Remaps are handled in another loop
@@ -422,10 +169,6 @@ def fetchStdResNameMap(project:'MemopsRoot', reset:bool=False, debug:bool=False)
             val = result[cifCode] = result[locif] =(molType, ccpCode)
             message = 'CIF-OK'
 
-            # if ccpCode not in result:
-              # ccp code not in result. Debug message
-              # print("\t".join ('CCP-MISS', molType, ccpCode, val[0], val[1],
-              #                                tt[0] or '-', tt[1] or '-', tt[2] or '-') )
           else:
             # Value was already set
 
@@ -574,154 +317,9 @@ def fetchStdResNameMap(project:'MemopsRoot', reset:bool=False, debug:bool=False)
       #   print ("CWARNING\tclash2\tfor %s chemComp %s, %s v. cifCode %s:%s"
       #         % (tag, ccId, prevId, cifCode,  val))
 
-  # # Add UPPERCASE synonym for all ChemChomps
-  # for tag, val in result.items():
-  #   uptag = tag.upper()
-  #   if uptag != tag:
-  #     upval = result.get(uptag)
-  #     if upval is None:
-  #       print ('@~@~        overwriting', uptag, result[uptag])
-  #       result[upval] = val
-  #     elif upval != val:
-  #       print ('@~@~ ERROR, overwriting', uptag, result[uptag])
-  #       result[upval] = val
 
   #
   return result
-
-#
-# def printCcpCodeStats(project):
-#
-#   chemCompOverview = ChemCompOverview.chemCompOverview
-#
-#   for molType in molTypeOrder:
-#
-#     current = chemCompOverview[molType]
-#
-#     # Add data for all chemComps from overview
-#     for ccpCode,tt in sorted(current.items()):
-#
-#       code1Letter, cifCode, info = tt[:3]
-#       code1Letter = code1Letter or '-'
-#       ccpUpper = ccpCode.upper()
-#       # cifCode test
-#       if not cifCode:
-#         print ("CIF NONE  %s %s %s %s %s" % (molType, ccpCode, code1Letter, cifCode, info))
-#         continue
-#       elif cifCode != cifCode.upper():
-#         print ("CIF LOWER %s %s %s %s %s" % (molType, ccpCode, code1Letter, cifCode, info))
-#         continue
-#       else:
-#         print ("CIF UPPER %s %s %s %s %s" % (molType, ccpCode, code1Letter, cifCode, info))
-#
-#       cifMixed = cifCode[0] + cifCode[1:].lower()
-#
-#       if ccpUpper == cifMixed:
-#         ss1 = 'CCP BOTH'
-#         ss2 = 'THESAME'
-#       elif ccpCode == cifCode:
-#         ss1 = 'CCP UPPER'
-#         ss2 = (cifMixed in current and 'DOUBLE') or 'SINGLE'
-#       elif ccpCode == cifMixed:
-#         ss1 = 'CCP MIXED'
-#         ss2 = (ccpUpper in current and 'DOUBLE') or 'SINGLE'
-#       else:
-#         ss1 = 'CCP OTHER'
-#         ss2 = (cifCode in current and 'HASCIF') or 'NOTCIF'
-#
-#       cifclash = '-' + ','.join(x for x,dd in sorted(chemCompOverview.items())
-#                           if x != molType  and cifCode in dd)
-#       mixClash = '-'
-#       if cifMixed != cifCode:
-#         mixClash += ','.join(x for x,dd in sorted(chemCompOverview.items())
-#                              if x != molType  and cifMixed in dd)
-#       ccpClash = '-'
-#       if ccpCode != cifCode:
-#         ccpClash += ','.join(x for x,dd in sorted(chemCompOverview.items())
-#                              if x != molType  and ccpCode in dd)
-#
-#       print(ss1, ss2,molType, ccpCode, code1Letter, cifCode, cifclash, mixClash, ccpClash, info )
-
-# def _parseObsoleteChemCompTable(stream):
-#   result = {}
-#   for line in stream:
-#     ll = line.split()
-#     ll = [ll[0], ll[1], ' '.join(ll[2:-2]), ll[-2], ll[-1]]
-#     ll = [x if x != 'NONE' else None for x in ll]
-#     result[ll[0]] = {'cifCode':ll[-1], 'shortType':ll[1], 'typeCode':ll[-2],  'longType':ll[2]}
-#   return result
-
-
-def fetchChemCompVar(project:'MemopsRoot', residueType:str, linking:str=None, descriptor:str=None,
-                     fallBackType:str=None ):
-  """Get a ChemCompVar matching residueType,
-   May download from central CcpRepository if necessary.
-   if fallBackType is set will use that if the main type gives no answer"""
-
-
-  residueName2chemCompId =  fetchStdResNameMap(project)
-  chemCompVar = None
-
-  if residueType.startswith('dummy.'):
-    tt = ('dummy',residueType[6:])
-  else:
-    tt = residueName2chemCompId.get(residueType)
-  if not tt and fallBackType:
-    project._logger.warning(
-      "Could not find ChemComp for %s - replacing with %s" % (residueType, fallBackType)
-    )
-    residueType = fallBackType
-    tt = residueName2chemCompId.get(residueType)
-
-  if tt:
-    try:
-      chemComp = chemCompIo.fetchChemComp(project, tt[0], tt[1])
-    except IOError:
-      project._logger.warning(
-        "Could not read known ChemComp %s: %s %s - Files missing, or are you off line?"
-        % (residueType, tt[0], tt[1])
-      )
-      return
-    except urllib.error.URLError:
-      project._logger.warning(
-        "Could not download known ChemComp %s: %s %s - are you off line?"
-        % (residueType, tt[0], tt[1])
-      )
-      return
-
-    if chemComp:
-      if linking:
-        if descriptor:
-          chemCompVar  = chemComp.findFirstChemCompVar(linking=linking, descriptor=descriptor)
-        if chemCompVar is None:
-          chemCompVar  = (chemComp.findFirstChemCompVar(linking=linking, isDefaultVar=True) or
-                          chemComp.findFirstChemCompVar(linking=linking))
-        if chemCompVar is None and linking == 'none':
-          chemCompVar  = chemComp.findFirstChemCompVar()
-      else:
-        chemCompVar = (chemComp.findFirstChemCompVar(isDefaultVar=True) or
-                       chemComp.findFirstChemCompVar())
-    #
-    return chemCompVar
-
-  else:
-    project._logger.warning("Could not find ChemComp for %s - returning None" % residueType)
-
-
-  # from Resonance:
-
-    chemComp = None
-    if residueType:
-      residueType2ChemCompId = MoleculeQuery.fetchStdResNameMap(self.root)
-      tt = residueType2ChemCompId.get(residueType)
-      if tt:
-        chemComp = self.root.findFirstChemComp(molType=tt[0], ccpCode=tt[1])
-
-    if chemComp:
-      chemCompVar = chemComp.findFirstChemCompVar(linking=resonanceGroup.linking,
-                                                  descriptor=resonanceGroup.descriptor)
-      if not chemCompVar:
-        chemCompVar = chemComp.findFirstChemCopmVar(isDefaultVar=True)
 
 
 if __name__ == '__main__':

@@ -28,7 +28,7 @@ class Integral:
 
   # NBNB is this still being used - properly at least????
 
-  # NBNB TBD FIXME the peaks property does nto seem to be used anywhere
+  # NBNB TBD FIXME the peaks property does not seem to be used anywhere
 
   def __init__(self, spectrum, points, factor=1.0, peaks=None, slope=1.0, bias=0.0):
 
@@ -37,8 +37,6 @@ class Integral:
     self.dataDimRef = self.spectrum.findFirstDataDim().findFirstDataDimRef()
     self.firstPoint = round(self.dataDimRef.pointToValue(points[0][0]), 3)
     self.lastPoint = round(self.dataDimRef.pointToValue(points[-1][0]), 3)
-    # self.firstPoint = round(spectrum.pointToPpm(points[0][0], 0), 3)
-    # self.lastPoint = round(spectrum.pointToPpm(points[-1][0], 0), 3)
     self._peaks = peaks
     self.slope = slope
     self.bias = bias
@@ -48,13 +46,7 @@ class Integral:
       self.relativeVolume = round(self.volume * factor, 1)
     else:
       self.relativeVolume = self.volume
-  #
-  # def getPeaks(self):
-  #   return self.peaks
-  #
-  # def setPeaks(self, peaks):
-  #   self.peaks=peaks
-  #
+
   # Converted to property as per standard style guide
   @property
   def peaks(self) -> Tuple['Peak', ...]:
@@ -134,9 +126,9 @@ class Integral:
     self.spectrum.integrals.remove(self)
 
   def getIntegralRegions(self, values, noise, peakPickLevel):
-# If no peaks are selected integrals are determined automatically.
-# Integrals are added if there is at least one point above the peak picking threshold and three above noise.
-# Tails are added to each end of the integral and integrals are merged if overlapping.
+    # If no peaks are selected integrals are determined automatically.
+    # Integrals are added if there is at least one point above the peak picking threshold and three above noise.
+    # Tails are added to each end of the integral and integrals are merged if overlapping.
     integrals = []
     appendIntegral = integrals.append
     tailLength = 50 # TODO: Set tailLength based on peakWidth or make it customisable

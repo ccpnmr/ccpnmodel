@@ -28,7 +28,6 @@ from ccpnmodel.ccpncore.testing.CoreTesting import CoreTesting
 import os
 from ccpn.util import Path
 TEST_PROJECTS_PATH = os.path.join(Path.getTopDirectory(), 'internal', 'data', 'testProjects')
-from ccpnmodel.ccpncore.memops.ApiError import ApiError
 
 
 
@@ -48,6 +47,7 @@ class UpgradeMolSystemTest(CoreTesting):
   ))
 
     project = self.project
+    project.checkAllValid(complete=True)
 
     dd = {}
     for molSystem in project.sortedMolSystems():
@@ -62,6 +62,7 @@ class UpgradeMolSystemTest(CoreTesting):
     ))
 
     project = self.project
+    project.checkAllValid(complete=True)
 
     dd = {}
 
@@ -87,6 +88,7 @@ class UpgradeSamplesTest(CoreTesting):
                    ('TRIS:sample'), ('ZnSO4:sample'), ('benzamidine:sample')]
 
     project = self.project
+    project.checkAllValid(complete=True)
 
     sampleStores = project.sortedSampleStores()
     self.assertTrue(len(sampleStores) == 1)
