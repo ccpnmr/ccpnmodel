@@ -16,7 +16,7 @@ __reference__ = ("For publications, please use reference from www.ccpn.ac.uk/lic
 # Last code modification:
 #=========================================================================================
 __author__ = "$Author: wb104 $"
-__date__ = "$Date: 2017-03-23 14:01:40 +0000 (Thu, March 23, 2017) $"
+__date__ = "$Date: 2017-03-23 14:02:49 +0000 (Thu, March 23, 2017) $"
 
 #=========================================================================================
 # Start of code
