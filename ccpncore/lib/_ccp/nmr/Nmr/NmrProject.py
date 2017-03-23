@@ -15,9 +15,8 @@ __reference__ = ("For publications, please use reference from www.ccpn.ac.uk/lic
 #=========================================================================================
 # Last code modification:
 #=========================================================================================
-__author__ = "$Author$"
-__date__ = "$Date$"
-__version__ = "$Revision$"
+__author__ = "$Author: wb104 $"
+__date__ = "$Date: 2017-03-23 14:01:40 +0000 (Thu, March 23, 2017) $"
 
 #=========================================================================================
 # Start of code
@@ -94,6 +93,9 @@ def loadDataSource(self:'NmrProject', filePath, dataFileFormat):
     if mid == 'pdata':
       rest, upper = os.path.split(rest)
       name = '%s-%s' % (upper, lower)
+
+  if (dataFileFormat == NMRPIPE) and len(numPoints) > 2:
+    name = os.path.basename(dirName)
 
   while any(x.findFirstDataSource(name=name) for x in self.experiments):
     name = commonUtil.incrementName(name)

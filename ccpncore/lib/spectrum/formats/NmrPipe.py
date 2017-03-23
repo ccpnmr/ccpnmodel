@@ -14,9 +14,8 @@ __reference__ = ("For publications, please use reference from www.ccpn.ac.uk/lic
 #=========================================================================================
 # Last code modification:
 #=========================================================================================
-__author__ = "$Author$"
-__date__ = "$Date$"
-__version__ = "$Revision$"
+__author__ = "$Author: wb104 $"
+__date__ = "$Date: 2017-03-23 14:01:40 +0000 (Thu, March 23, 2017) $"
 
 #=========================================================================================
 # Start of code
@@ -176,6 +175,7 @@ def _guessFileTemplate(dataSource):
     return None
     
   fileName = os.path.basename(fullPath)
+  directory = os.path.dirname(fullPath)
   numDim = dataSource.numDim
 
   if numDim < 3:
@@ -186,14 +186,22 @@ def _guessFileTemplate(dataSource):
     
   else: # numDim == 4
     # don't understand NmrPipe templates (how many 0's are allowed) so a hack here for now
-    numPoints0 = [dataDim.numPoints for dataDim in dataSource.sortedDataDims()][-1]
+    numPoints1, numPoints0 = [dataDim.numPoints for dataDim in dataSource.sortedDataDims()][-2:]
 
-    if numPoints0 < 100:
-      template = re.sub('\d\d\d\d\d', '%02d%03d', fileName)
+    # had an example where numPoints0 < 100 but had %03d%03d
+    #if numPoints0 < 100:
+    #  template = re.sub('\d\d\d\d\d', '%02d%03d', fileName)
+    #else:
+    #  template = re.sub('\d\d\d\d\d\d', '%03d%03d', fileName)
+
+    for template in (re.sub('\d\d\d\d\d\d', '%03d%03d', fileName), ):
+      filePath = os.path.join(directory, template % (numPoints0, numPoints1))
+      if os.path.exists(filePath):
+        break
     else:
-      template = re.sub('\d\d\d\d\d\d', '%03d%03d', fileName)
+      template = re.sub('\d\d\d\d\d', '%02d%03d', fileName)
 
-  return os.path.join(os.path.dirname(fullPath), template)
+  return os.path.join(directory, template)
   
 def _getFileData(fullPath, numPoints, headerSize, dtype):
   
