@@ -15,7 +15,7 @@ __reference__ = ("For publications, please use reference from www.ccpn.ac.uk/lic
 # Last code modification:
 #=========================================================================================
 __author__ = "$Author: wb104 $"
-__date__ = "$Date: 2017-03-23 14:02:49 +0000 (Thu, March 23, 2017) $"
+__date__ = "$Date: 2017-03-24 14:31:10 +0000 (Fri, March 24, 2017) $"
 
 #=========================================================================================
 # Start of code
@@ -178,7 +178,7 @@ def _guessFileTemplate(dataSource):
   directory = os.path.dirname(fullPath)
   numDim = dataSource.numDim
 
-  if numDim < 3:
+  if numDim < 3 or r'%' in fileName:
     template = fileName
     
   elif numDim == 3:
