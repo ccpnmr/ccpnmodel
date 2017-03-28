@@ -260,33 +260,6 @@ def renameChain(self:'Chain', newCode:str):
 
   ###if 1:
   try:
-    # relink StructureEnsembles
-    for structureEnsemble in molSystem.structureEnsembles:
-
-      # reset chainCode
-
-      # NBNB TBD FIXME when we finish settling structures, this should NOT happen
-
-      for coordChain in structureEnsemble.coordChains:
-        if coordChain.code == oldCode:
-          parentDict = structureEnsemble.__dict__['coordChains']
-          del parentDict[oldCode]
-          coordChain.code = newCode
-          parentDict[newCode] = coordChain
-
-    # Fix NmrCalc instances
-    # Not wrapped, so no need for notifiers
-    for nmrCalcStore in molSystem.root.sortedNmrCalcStores():
-      for run in nmrCalcStore.sortedRuns():
-        for obj in run.findAllData(molSystemCode=molSystem.code):
-          className = obj.className
-          if className in ('MolSystemData', 'MolResidueData'):
-            chainCodes = list(obj.chainCodes)
-            if oldCode in chainCodes:
-              for ii,code in chainCodes:
-                if code == oldCode:
-                  chainCodes[ii] = newCode
-            obj.chainCodes = chainCodes
 
     # Fix self
     parentDict = molSystem.__dict__['chains']
@@ -306,15 +279,9 @@ def renameChain(self:'Chain', newCode:str):
   for nmrProject in molSystem.nmrProjects:
     nmrChain = nmrProject.findFirstNmrChain(code=oldCode)
     if nmrChain:
-      # parentDict = nmrProject.__dict__['nmrChains']
-      # del parentDict[oldCode]
       nmrChain.code = newCode
-      # parentDict[newCode] = nmrChain
 
   if undo is not None:
     undo.newItem(renameChain, renameChain, undoArgs=(self, oldCode), redoArgs=(self, newCode))
-
-  # call notifiers:
-  # NBNB the import MUST be inside a function as we can get circular import problems otherwise
 
   # NBNB TBD FIXME We should have notifiers here to update graphics.
