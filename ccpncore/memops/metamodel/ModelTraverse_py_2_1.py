@@ -474,14 +474,17 @@ class ModelTraverse_py_2_1:
     [<topObject>,<memopsRoot>]
     
     NB - as written this code checks that:
+
     - no partitioning links between parent and descendant
-    - No two partitioning links (inherited or not) between same pair of classes 
+
+    - No two partitioning links (inherited or not) between same pair of classes
+
     - If two partitioning links span the same up-down path in the parent tree,
       one link cannot be lower in the tree in one branch and higher in the other
-    Doing the checks in MetaModel would be better (and faster) but would
-    require partially duplicating some quite complicated code.
-    The code will be slow, considering that it is called for every writeModifier
-    and some getValue for roles.   
+      Doing the checks in MetaModel would be better (and faster) but would
+      require partially duplicating some quite complicated code.
+      The code will be slow, considering that it is called for every writeModifier
+      and some getValue for roles.
     """
     
     # get list of uplinks and list of the classes they point to
