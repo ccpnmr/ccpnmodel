@@ -193,18 +193,23 @@ class LanguageInterface:
 
   def newCollection(self, collection, isUnique, isOrdered, varType=None,
         initValues=None, isFrozen=False, needDeclType=False, useAdd=False):
-    """ make new collection, possibly initailising it. 
+    """make new collection, possibly initialising it.
     
-    - collection is the variable name to set the new collection to.
-    If collection is set, newCollection code will set the variable.
-    If collection is None an expression will be returned.
-    - if initValues if a string expression the new collection will be
-    initialised from this string expression at runtime.
-.   If initValues is a collection of literals the code will initialise
-    the new collection to these values. NB this requires collection != None
-    - if isFrozen the new collection will be frozen.
-    - if initValuesObject is True then initValues represents an object rather than a collection
-    - useAdd is a Java hack
+          - collection is the variable name to set the new collection to.
+          If collection is set, newCollection code will set the variable.
+          If collection is None an expression will be returned.
+
+          - if initValues if a string expression the new collection will be
+          initialised from this string expression at runtime.
+      .   If initValues is a collection of literals the code will initialise
+          the new collection to these values. NB this requires collection != None
+
+          - if isFrozen the new collection will be frozen.
+
+          - if initValuesObject is True,  initValues represents an object rather than a collection
+
+          - useAdd is a Java hack
+
     """
     
     raise NotImplementedError("Should be overridden")

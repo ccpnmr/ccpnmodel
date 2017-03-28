@@ -40,13 +40,13 @@ parameterData has the following legal tags:
   Anything without a default is a mandatory input parameter.
   
 - 'type' is either a Python class or type (for direct type checking),
- or a string typeCode for cases where special checking is needed.
- The legal string typeCodes are: Boolean,  Token, StringDict, and content.
- The latter is used for private implementation attributes, to prevent
- overwriting. 
- If 'type' is not set, the parameter can be of any type ('object'). In practice
- there will generally be some kind of type checking in the checkValid function.
- An example would be the value constants (see below).
+   or a string typeCode for cases where special checking is needed.
+   The legal string typeCodes are: Boolean,  Token, StringDict, and content.
+   The latter is used for private implementation attributes, to prevent
+   overwriting.
+   If 'type' is not set, the parameter can be of any type ('object'). In practice
+   there will generally be some kind of type checking in the checkValid function.
+   An example would be the value constants (see below).
 
 - 'namelist'. Allowed only for type == 'content'. Content is stored in a shared
   dictionary (elementDict). The namelist is the name of the attribute that holds

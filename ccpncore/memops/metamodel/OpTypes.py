@@ -575,12 +575,13 @@ def getTarget(metaOp, opData=None):
   NB used within ObjectDomain to make targets for Operations entered in UML
   
   The  converse operation is ModelAdapt.getOperationName
-  
-  NB 
-  - for target 'container' assumes nothing
-  - for target 'masterOp' assumes names of the form somename_somesubtypesuffix
-  - for ClassElement and ChildClass targets assumes names of the form 
-    prefixElementname_somesubtypesuffix
+
+    - for target 'container' assumes nothing
+
+    - for target 'masterOp' assumes names of the form somename_somesubtypesuffix
+
+    - for ClassElement and ChildClass targets assumes names of the form
+      prefixElementname_somesubtypesuffix
   """
   from ccpnmodel.ccpncore.memops.metamodel.MetaModel import MemopsError
  

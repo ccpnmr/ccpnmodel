@@ -177,8 +177,7 @@ class TextWriter_py_2_1:
 
   # internal function
   def clearOutDir(self, topDirName, forceClearOut=False):
-    """ NB DANGEROUS! clears out contents of topDirName - 
-    as in 'cd topDirName; \rm -rf *'
+    """ NB DANGEROUS! clears out contents of topDirName - as in 'cd topDirName; \rm -rf \*'
     
     if forceClearOut directories are cleared even if they contain clearOutGuards
     The clearOutGuards are not deleted or entered into even so.
