@@ -73,17 +73,6 @@ and contains original contributions embedded in the framework
     <item>www.ccpn.ac.uk_Fogh_2006-09-14-16:28:57_00005</item>
   </supertypes>
 
-  <!-- Start constraints for <MetaClass: ccp.molecule.MolSystem.ChainGroup>: -->
-  <MetaConstraint name="name_uniquely_identifies_ChainGroup"
-   guid="www.ccpn.ac.uk_Fogh_2016-11-19-20:33:12_00001"
-   container="www.ccpn.ac.uk_Fogh_2016-09-12-10:13:24_00001"
-   isImplicit="false">
-    <codeStubs>
-      <item tag="python">self.molSystem.findAllChainGroups(name=value) in (set(), set((self,)))</item>
-    </codeStubs>
-  </MetaConstraint>
-  <!-- End constraints for <MetaClass: ccp.molecule.MolSystem.ChainGroup>: -->
-
 
   <MetaRole name="chains"
    guid="www.ccpn.ac.uk_Fogh_2016-09-12-10:13:31_00001"
@@ -120,6 +109,17 @@ and contains original contributions embedded in the framework
    locard="1" scope="instance_level" visibility="public_vis">
     <documentation>Chain group name - secondary key attribute</documentation>
     <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00033</valueType>
+
+    <!-- Start constraints for <MetaAttribute: ccp.molecule.MolSystem.ChainGroup.name>: -->
+    <MetaConstraint name="name_uniquely_identifies_ChainGroup"
+     guid="www.ccpn.ac.uk_Fogh_2017-03-28-11:45:47_00001"
+     container="www.ccpn.ac.uk_Fogh_2016-09-12-10:13:31_00003"
+     isImplicit="false">
+      <codeStubs>
+        <item tag="python">self.molSystem.findAllChainGroups(name=value) in (set(), set((self,)))</item>
+      </codeStubs>
+    </MetaConstraint>
+    <!-- End constraints for <MetaAttribute: ccp.molecule.MolSystem.ChainGroup.name>: -->
   </MetaAttribute>
 
   <MetaAttribute name="serial"
