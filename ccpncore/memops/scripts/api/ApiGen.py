@@ -283,7 +283,7 @@ class ApiGen(ApiInterface, PermissionInterface, PersistenceInterface,
       return
     
     if not isinstance(inClass, MetaModel.MetaDataObjType):
-      raise MemopsError("writeCloneObj called for non-DAtaObjType %s" % inClass)
+      raise MemopsError("writeCloneObj called for non-DataObjType %s" % inClass)
     
     dictVar = self.varNames['attrlinks']
     self.newDict(dictVar=dictVar, keyType=self.stringType, needDeclType=True)
