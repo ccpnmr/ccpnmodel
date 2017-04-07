@@ -6,6 +6,7 @@ upgrade.py: Data compatibility handling
 Copyright (C) 2007-2014 Rasmus Fogh (CCPN project)
 
 =======================================================================
+# Licence, Reference and Credits
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -32,6 +33,27 @@ To obtain more information about this code:
 - contact Rasmus Fogh (ccpn@bioc.cam.ac.uk)
 
 =======================================================================
+__copyright__ = "Copyright (C) CCPN project (http://www.ccpn.ac.uk) 2014 - 2017"
+__credits__ = ("Wayne Boucher, Ed Brooksbank, Rasmus H Fogh, Luca Mureddu, Timothy J Ragan"
+               "Simon P Skinner & Geerten W Vuister")
+__licence__ = ("CCPN licence. See http://www.ccpn.ac.uk/v3-software/downloads/license"
+               "or ccpnmodel.ccpncore.memops.Credits.CcpnLicense for licence text")
+__reference__ = ("For publications, please use reference from http://www.ccpn.ac.uk/v3-software/downloads/license"
+               "or ccpnmodel.ccpncore.memops.Credits.CcpNmrReference")
+#=========================================================================================
+# Last code modification
+#=========================================================================================
+__modifiedBy__ = "$modifiedBy: Ed Brooksbank $"
+__dateModified__ = "$dateModified: 2017-04-07 11:41:48 +0100 (Fri, April 07, 2017) $"
+__version__ = "$Revision: 3.0.b1 $"
+#=========================================================================================
+# Created
+#=========================================================================================
+__author__ = "$Author: rhf22 $"
+__date__ = "$Date: 2017-04-07 10:28:48 +0000 (Fri, April 07, 2017) $"
+#=========================================================================================
+# Start of code
+#=========================================================================================
 
 If you are using this software for academic purposes, we suggest
 quoting the following reference:
@@ -44,7 +66,6 @@ automated software development. Bioinformatics 21, 1678-1684.
 ===========================REFERENCE END===============================
 
 """
-__author__ = 'rhf22'
 
 versionSequence = ['2.0.a0', '2.0.a1', '2.0.a2', '2.0.a3']
 # NBNB version 2.0.6 is a side branch, not on the main version sequence

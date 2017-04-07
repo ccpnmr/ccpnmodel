@@ -1,3 +1,13 @@
+#=========================================================================================
+# Licence, Reference and Credits
+#=========================================================================================
+__copyright__ = "Copyright (C) CCPN project (http://www.ccpn.ac.uk) 2014 - 2017"
+__credits__ = ("Wayne Boucher, Ed Brooksbank, Rasmus H Fogh, Luca Mureddu, Timothy J Ragan"
+               "Simon P Skinner & Geerten W Vuister")
+__licence__ = ("CCPN licence. See http://www.ccpn.ac.uk/v3-software/downloads/license"
+               "or ccpnmodel.ccpncore.memops.Credits.CcpnLicense for licence text")
+__reference__ = ("For publications, please use reference from http://www.ccpn.ac.uk/v3-software/downloads/license"
+               "or ccpnmodel.ccpncore.memops.Credits.CcpNmrReference")
 """Brookhaven PDB v2.2 file parser. All records in the PDB v2.2
 specification have corresponding classes defined here. PDB files are
 loaded into a list of these classes, and also can be constructed/modified
@@ -45,12 +55,17 @@ Compared to earlier, CING-specific modified version, this:
 """
 
 #=========================================================================================
-# Last code modification:
+# Last code modification
 #=========================================================================================
-__author__ = "$Author$"
-__date__ = "$Date$"
-__version__ = "$Revision$"
+__modifiedBy__ = "$modifiedBy: Ed Brooksbank $"
+__dateModified__ = "$dateModified: 2017-04-07 11:41:32 +0100 (Fri, April 07, 2017) $"
+__version__ = "$Revision: 3.0.b1 $"
+#=========================================================================================
+# Created
+#=========================================================================================
+__author__ = "$Author: CCPN $"
 
+__date__ = "$Date: 2017-04-07 10:28:48 +0000 (Fri, April 07, 2017) $"
 #=========================================================================================
 # Start of code
 #=========================================================================================
