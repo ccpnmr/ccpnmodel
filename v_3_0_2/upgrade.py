@@ -270,7 +270,7 @@ def correctFinalResult(memopsRoot):
     for obj in nmrProject.measurementLists:
       name = obj.name
       if name:
-        name = '_'.join(name.split()).replace('.','^')
+        name = '_'.join(name.split()).replace('.','_')
       else:
         name = '%ss%s' % (obj.className[:-4], obj.serial)
 
@@ -421,7 +421,7 @@ def fixExperiments(nmrProject):
           name = '%s-%s' % (experiment.serial, dataSource.serial)
 
       #regularise name
-      name = '_'.join(name.split()).replace('.','^')
+      name = '_'.join(name.split()).replace('.','_')
       while name in usedNames:
         name = commonUtil.incrementName(name)
       usedNames.add(name)
@@ -535,7 +535,7 @@ def fixNmrConstraintStore(nmrConstraintStore, molSystem, chainMap):
 
       name = constraintList.name
       if name:
-        name = '_'.join(name.split()).replace('.','^')
+        name = '_'.join(name.split()).replace('.','_')
       else:
         name = '%ss%s' % (restraintType, constraintList.serial)
 
