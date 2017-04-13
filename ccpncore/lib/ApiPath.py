@@ -40,6 +40,8 @@ keySep = '+'
 
 CCPN_DIRECTORY_SUFFIX = Path.CCPN_DIRECTORY_SUFFIX
 CCPN_ARCHIVES_DIRECTORY = Path.CCPN_ARCHIVES_DIRECTORY
+CCPN_SUMMARIES_DIRECTORY = Path.CCPN_SUMMARIES_DIRECTORY
+CCPN_LOGS_DIRECTORY = Path.CCPN_LOGS_DIRECTORY
 
 def addCcpnDirectorySuffix(path:str) -> str:
   """Add ccpn directory suffix ('.ccpn' to path, unless present already"""

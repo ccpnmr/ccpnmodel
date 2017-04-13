@@ -1093,7 +1093,7 @@ def modifyPackageLocators(project,repositoryName,repositoryPath,packageNames,res
   return repository
 
 def packageProject(project, filePrefix=None, includeBackups=False, includeData=False, includeLogs=False,
-                   includeArchives=False):
+                   includeArchives=False, includeSummaries=False):
   """
   Package up project userData into one gzipped tar file.
   If filePrefix is None then instead use the userData path.
@@ -1101,6 +1101,9 @@ def packageProject(project, filePrefix=None, includeBackups=False, includeData=F
   By default only \*.xml files are packaged up.
   If includeBackups then also \*.xml.bak files are included.
   If includeData then also dataStores located inside project directory are included.
+  If includeLogs then logs are included.
+  If includeArchives then archives are included.
+  If includeSummaries then summaries are included.
   """
 
   # NBNB TBD FIXME check how many dataLocations to package (and make sure you reset first)
@@ -1137,7 +1140,9 @@ def packageProject(project, filePrefix=None, includeBackups=False, includeData=F
         include = True
       elif includeBackups and relfile.endswith('.xml.bak'):
         include = True
-      elif includeLogs and relfile.endswith('.txt') and os.path.basename(directory) == 'logs':
+      elif includeLogs and relfile.endswith('.txt') and os.path.basename(directory) == ApiPath.CCPN_LOGS_DIRECTORY:
+        include = True
+      elif includeSummaries and os.path.basename(directory) == ApiPath.CCPN_SUMMARIES_DIRECTORY:
         include = True
       elif includeData and fullfile in includedDataPaths:
         include = True
