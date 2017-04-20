@@ -96,7 +96,7 @@ def getPythonDirectory():
 
 def getTopDirectory():
 
-  """Returns the 'top' directory of the containing repository (ccpn)."""
+  """Returns the 'top' directory of the containing repository (AnalysisV3)."""
   func = os.path.dirname
   from ccpn.util import Anchor
   return func(func(func(func(func(Anchor.__file__)))))

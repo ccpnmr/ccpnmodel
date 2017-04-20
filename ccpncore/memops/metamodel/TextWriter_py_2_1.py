@@ -269,7 +269,7 @@ class TextWriter_py_2_1:
 
   def getDirDepth(self):
 
-    dirDepth = len(self.fileName.split('/')) - len(Path.getTopDirectory().split('/')) - 1
+    dirDepth = len(self.fileName.split('/')) - len(Path.getTopDirectory().split('/')) -1
 
     return dirDepth
 
@@ -598,7 +598,7 @@ class TextWriter_py_2_1:
     
     dd = data.licenseInfo[packageGroup].copy()
     dd['fileName'] = '%s.%s' % (metaobj.name, self.fileSuffix)
-    dd['licenseLocation'] = dirDepth * '../' + 'license'
+    dd['licenseLocation'] = dirDepth * '../'
     dd['programType'] = programType
     dd['programFunction'] = ('%s %s for CCPN data model, %s %s' 
      % (self.language, programType, descriptor, metaobj.qualifiedName())
