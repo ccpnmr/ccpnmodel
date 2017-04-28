@@ -29,15 +29,6 @@ __date__ = "$Date: 2017-04-07 10:28:48 +0000 (Fri, April 07, 2017) $"
 # Start of code
 #=========================================================================================
 
-import re
-
-# CCPNMR data-transfer json mimetype
-ccpnmrJsonData = 'ccpnmr-json'
-
-# Timestamp formats
-stdTimeFormat = "%Y-%m-%d %%H:M:%S.%f"
-isoTimeFormat = "%Y-%m-%dT%%H:M:%S.%f"
-
 # Default NmrChain code
 defaultNmrChainCode = '@-'
 
@@ -58,17 +49,6 @@ constraintListType2ItemLength = {
   'JCoupling':2,
   'Dihedral':4,
 }
-
-# sequenceCode parsing expression
-# A sequenceCOde is combined (without whitespace) of:
-#   an optional integer
-#   an optional text field, as short as possible
-#   an optional field of the form +ii of -ii, where ii is an integer
-#
-# The expression below has one error:
-# a string of the form '+12' is parsed as (None, '', '+12'}
-# whereas it should be interpreted as (None, '+12', None), but that cannot be helped
-sequenceCodePattern = re.compile('(\-?\d+)?(.*?)(\+\d+|\-\d+)?$')
 
 
 #
