@@ -334,7 +334,7 @@ if __name__ == '__main__':
   # printCcpCodeStats(project)
   dd = fetchStdResNameMap(project, reset=True, debug=True)
   for key,val in sorted(dd.items()):
-    print ("%s  %s  %s" % (key, val[0], val[1]))
+    print ("  '%s':('%s','%s')," % (key, val[0], val[1]))
   # import json
   # data = _parseObsoleteChemCompTable(open('/home/rhf22/rhf22/Dropbox/RHFnotes/ChemComp/ResidueNameMap3.txt'))
   # print(json.dumps(data, sort_keys=True, indent=4))
