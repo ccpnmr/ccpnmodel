@@ -630,12 +630,12 @@ def _getAmbigProchiralLabel(resonance):
       data = []
       for resonance2 in resonanceSet.sortedResonances():
         if resonance2.shifts:
-          data.append( ('%f%d' % (resonance2.findFirstShift().value,resonance2.serial),resonance2) )
+          data.append( (resonance2.findFirstShift().value, resonance2.serial, resonance2) )
         else:
-          data.append( (resonance2.serial,resonance2) )
+          data.append( (999999.999, resonance2.serial, resonance2) )
 
       data.sort()
-      resonances = [x[1] for x in data]
+      resonances = [x[2] for x in data]
       i = resonances.index(resonance)
       letter = chr(ord('a')+i)
 
