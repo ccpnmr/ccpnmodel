@@ -3156,13 +3156,15 @@ class ApiGen(ApiInterface, PermissionInterface, PersistenceInterface,
     oldvar = self.valueVar(element, prefix=self.currentPrefix)
 
     # TBD: is this good enough if element.hicard != 1, with isUnique and isOrdered...
-    # NBNB This try - Except stuff is necessary because it otehrwise fails when
-    #  value is a numoy array. Hate that shit.
+    # NBNB This try - Except stuff is necessary because it otherwise fails when
+    #  value is a numpy array. Hate that shit.
     self.startTry()
     self.startIf(self.equals(newvar, oldvar))
     self.returnStatement()
     self.endIf()
     self.catchException("ValueError")
+    self.noStatement()
+    self.catchException("TypeError")
     self.noStatement()
     self.endTry()
 
