@@ -132,7 +132,9 @@ def getConfigParameter(name):
   """
 
   file = os.path.join(Path.getTopDirectory(),metaConstants.configFilePath)
-  dd = json.load(open(file))
+  # dd = json.load(open(file))
+  with open(file) as inFile:    # ejb - unclosed file error
+    dd = json.load(inFile)
   return dd['configuration'].get(name)
 
 
