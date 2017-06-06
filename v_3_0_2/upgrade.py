@@ -400,24 +400,37 @@ def fixExperiments(nmrProject):
   usedNames = set()
   for experiment in nmrProject.sortedExperiments():
     refExperiment = experiment.refExperiment
-    name1 = experiment.name
+    nameExp = experiment.name
     for dataSource in experiment.sortedDataSources():
-      name2 = dataSource.name
+      nameDat = dataSource.name
 
-      # Use experiment or dataSource name as default
-      name = name1 or name2
-
-      if name1 and name2 and name1 != name2:
+      if nameExp and nameDat and nameExp != nameDat:
         # We had both experiment and dataSource name. Combine them
-        name = '%s-%s' % (name1, name2)
+        # Use name from serials
+        name = '%s-%s' % (nameExp, nameDat)
 
-      elif not name:
-        # no name set in either object
-        if refExperiment:
-          # Use name from experiment type
-          name = refExperiment.synonym or refExperiment.name
+      else:
+        # Use experiment or dataSource name as default
+        name = nameExp or nameDat
+
+        # Try peakList name as an alternative
+        peakLists = dataSource.sortedPeakLists()
+        if len(peakLists) == 1:
+          namePl = peakLists[0].name
+          name = name or namePl
         else:
-          # Use name from serials
+          namePl = None
+
+        if refExperiment:
+          if namePl and name == refExperiment.name:
+            # prefer peakList name over systematic name
+            name = namePl
+          else:
+            # Use name from experiment type
+            name = refExperiment.synonym or refExperiment.name
+
+        if not name:
+          # no name set anywhere, use serials
           name = '%s-%s' % (experiment.serial, dataSource.serial)
 
       #regularise name
