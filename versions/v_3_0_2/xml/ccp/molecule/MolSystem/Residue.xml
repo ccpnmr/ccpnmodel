@@ -92,7 +92,7 @@ try:
         if atomSysName:
           # NBNB Atoms named by sysName will appear as UNCONNECTED to their ChemAtom
           # Code that assumes proper ChemAtom links (mainly for adding atoms ot nascent chains)
-          # must special-case these stoms
+          # must special-case these atoms
           atomName = atomSysName.sysName
       atom = Atom(self, name=atomName)
       if _undo.blocking &lt;= 1:
