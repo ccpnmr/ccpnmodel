@@ -118,9 +118,9 @@ for %s, %s in sorted(%s.items()):
     self.writeOne("except:")
     self.indent += self.INDENT
     if self.dataRoot in supertypes:
-      self.writeOne('print("ERROR in %s.__init__")' % inClass.qualifiedName())
+      self.writeOne('self.root._logger.error("ERROR in %s.__init__")' % inClass.qualifiedName())
     else:
-      self.writeOne('self.root._logger.error("in %s.__init__")' % inClass.qualifiedName())
+      self.writeOne('self.root._logger.debug("in %s.__init__")' % inClass.qualifiedName())
     self.setImplAttr(self.varNames['self'], 'inConstructor', False)
     self.writeOne('raise')
     self.indent -= self.INDENT
@@ -676,7 +676,7 @@ except:
     self.delete()
     del %s['%s']
   except:
-    print('''WARNING Error in clean-up of incorrectly created object. 
+    self.root._logger.debug('''WARNING Error in clean-up of incorrectly created object.
     Data may be left in an illegal state''')
     del %s['%s']
   raise exc_info[0](exc_info[1])
