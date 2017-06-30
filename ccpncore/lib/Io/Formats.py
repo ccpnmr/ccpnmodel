@@ -64,7 +64,8 @@ PYTHON = 'Python'
 
 #  Look-up formats
 CSV = 'csv'
-XLS = 'xls'
+EXCEL = 'Excel'
+
 
 DataTypes = ['Project', 'Spectrum', 'Text', 'Sequence', 'LookupFile', 'Structure', 'Macro']
 
@@ -206,25 +207,12 @@ def analyseUrl(filePath):
       if ok:
         return ('Project', CCPNTARFILE, filePath)
 
-  # Test Lookup format
-  # import csv
-  # if filePath.endswith('.csv'):
-  #   print('is a look up csv')
-  #   csv_in = open(filePath, 'r')
-  #   reader = csv.reader(csv_in)
-  #   for row in reader:
-  #    if row[0].split('/')[-1] == 'procs':
-  #      filename = row[0].split('/')
-  #      filename.pop()
-  #      Filename = '/'.join(filename)
-  #      print(Filename, 'filename path in format.py')
 
   if filePath.endswith('.csv'):
     return ('LookupFile', CSV, filePath)
 
-  if filePath.endswith('.xls'):
-    return ('LookupFile', XLS, filePath)
-
+  if filePath.endswith(('.xls', '.xlsx')):
+    return ('LookupFile', EXCEL, filePath)
 
   else:
 
