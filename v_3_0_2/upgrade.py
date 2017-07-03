@@ -402,36 +402,34 @@ def fixExperiments(nmrProject):
     refExperiment = experiment.refExperiment
     nameExp = experiment.name
     for dataSource in experiment.sortedDataSources():
-      nameDat = dataSource.name
+      # nameDat = dataSource.name
+      #
+      # SUPERSEDED - we want the dataSource name to travel unchanged, where possible
+      # to allow NEF roundtripping
+      # if nameExp and nameDat and nameExp != nameDat:
+      #   # We had both experiment and dataSource name. Combine them
+      #   # Use name from serials
+      #   name = '%s-%s' % (nameExp, nameDat)
+      #
+      # else:
+      #   # Use experiment or dataSource name as default
+      #   name = nameExp or nameDat
 
-      if nameExp and nameDat and nameExp != nameDat:
-        # We had both experiment and dataSource name. Combine them
-        # Use name from serials
-        name = '%s-%s' % (nameExp, nameDat)
+      # Give preference to datasource name
+      name = dataSource.name or experiment.name
 
-      else:
-        # Use experiment or dataSource name as default
-        name = nameExp or nameDat
+      # Try peakList name as an alternative
+      peakLists = dataSource.sortedPeakLists()
+      if len(peakLists) == 1:
+        name = name or peakLists[0].name
 
-        # Try peakList name as an alternative
-        peakLists = dataSource.sortedPeakLists()
-        if len(peakLists) == 1:
-          namePl = peakLists[0].name
-          name = name or namePl
-        else:
-          namePl = None
+      if refExperiment and not name:
+          # Use name from experiment type
+          name = refExperiment.synonym or refExperiment.name
 
-        if refExperiment:
-          if namePl and name == refExperiment.name:
-            # prefer peakList name over systematic name
-            name = namePl
-          else:
-            # Use name from experiment type
-            name = refExperiment.synonym or refExperiment.name
-
-        if not name:
-          # no name set anywhere, use serials
-          name = '%s-%s' % (experiment.serial, dataSource.serial)
+      if not name:
+        # no name set anywhere, use serials
+        name = '%s-%s' % (experiment.serial, dataSource.serial)
 
       #regularise name
       name = '_'.join(name.split()).replace('.','_')
