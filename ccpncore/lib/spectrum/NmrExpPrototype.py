@@ -111,7 +111,7 @@ def resetAllAxisCodes(nmrProject):
           else:
             indx += 1
             foundCodes[code] = indx
-            code = '%s_%s' % (code, str(indx))
+            code = '%s%s' % (code, str(indx))
 
           # Set the attribute
           expDimRef.name = code
