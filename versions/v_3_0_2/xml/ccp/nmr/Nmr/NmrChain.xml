@@ -329,6 +329,10 @@ If so, self.mainResonanceGroups are sequentially connected in the order given, a
     <codeStubs>
       <item tag="python">if self.implCode == '@-' and value != '@-':
   raise ApiError("NmrChain code '@-' cannot be reset") 
+elif (value and value[0] == ('#' if self.isConnected else '@')
+      and value[1:] == str(self.serial)):
+  # We are resetting to the original value. OK
+  self.implCode = None
 else:
   self.implCode = value</item>
     </codeStubs>

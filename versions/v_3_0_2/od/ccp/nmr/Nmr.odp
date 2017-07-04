@@ -397,8 +397,8 @@ objectdomain.uml.core.Stereotype-owns $22
 (toMultiplicityPosition 630 65)
 (toRolePosition 585 40)
 (uid "0_-fvi_hrnjywg5_-jgx")
-(points 540 90 640 90)
-(fromMultiplicityPosition 545 80))
+(points 550 90 640 90)
+(fromMultiplicityPosition 555 80))
 ($3 80 < 0_-fvi_hrnjywg5_-jgw "Method" 70
 (autoSizeToFit true)
 (uid "0_-fvi_hrnjywg5_-jgw")
@@ -22472,6 +22472,10 @@ objectdomain.uml.core.Stereotype-owns $22
 )
 (value "if self.implCode == '@-' and value != '@-':"
 "  raise ApiError(\"NmrChain code '@-' cannot be reset\") "
+"elif (value and value[0] == ('#' if self.isConnected else '@')"
+"      and value[1:] == str(self.serial)):"
+"  # We are resetting to the original value. OK"
+"  self.implCode = None"
 "else:"
 "  self.implCode = value"
 )

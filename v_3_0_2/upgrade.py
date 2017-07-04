@@ -630,12 +630,6 @@ def fixNmrConstraintStore(nmrConstraintStore, molSystem, chainMap):
 def transferAssignments(nmrProject, mainMolSystem, chainMap):
   """Transfer NmrProject assignments"""
 
-  # @~@~ debug:
-  # import time
-  # time0 = time.time()
-  # print ('@~@~ time0', time0)
-
-
   # Map Resonances that are fully assigned
   resonance2Assignment = V2Upgrade.mapAssignedResonances(nmrProject, molSystem=mainMolSystem,
                                                          chainMap=chainMap)
@@ -643,8 +637,6 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
   resonanceGroup2Residue = V2Upgrade.mapResonanceGroupResidues(nmrProject,
                                                                molSystem=mainMolSystem,
                                                                chainMap=chainMap)
-
-  # print ('@~@~ time1', time.time() - time0)
 
   # Map unmapped ResonanceGroups that follow from assigned resonances.
   # If resonance assignment conflicts with resonanceGroup assignment tha latter takes precedence.
@@ -665,8 +657,6 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
 
   handledResonanceGroups = set(resonanceGroup2Residue.keys())
 
-  # print ('@~@~ time2', time.time() - time0)
-
   # Set mandatory default NmrChain - must have serial == 1.
   # NB Looks like this is (sometimes?) set in wrapper init, hence the if statement
   defaultNmrChain = nmrProject.findFirstNmrChain(code=Constants.defaultNmrChainCode)
@@ -678,8 +668,6 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
                            nmrProject.newResonanceGroup(directNmrChain=defaultNmrChain,
                                                        seqInsertCode = '@',
                                                        details="Default ResonanceGroup"))
-
-  # print ('@~@~ time3', time.time() - time0)
 
   # Now set up assigned ResonanceGroups and add their offset groups
   reverseGroupMap = {}
