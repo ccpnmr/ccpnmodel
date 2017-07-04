@@ -427,7 +427,7 @@ def fixExperiments(nmrProject):
         refName = refExperiment.synonym or refExperiment.name
         if name:
           if dataSource.name and experiment.name and experiment.name != refName:
-            # Special case. FOr native (i.e. not beackread from V3) V2 data
+            # Special case. For native (i.e. not beackread from V3) V2 data
             # we want this behaviour
             name = '%s-%s' % (experiment.name, dataSource.name)
         else:
