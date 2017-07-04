@@ -423,9 +423,16 @@ def fixExperiments(nmrProject):
       if len(peakLists) == 1:
         name = name or peakLists[0].name
 
-      if refExperiment and not name:
+      if refExperiment:
+        refName = refExperiment.synonym or refExperiment.name
+        if name:
+          if dataSource.name and experiment.name and experiment.name != refName:
+            # Special case. FOr native (i.e. not beackread from V3) V2 data
+            # we want this behaviour
+            name = '%s-%s' % (experiment.name, dataSource.name)
+        else:
           # Use name from experiment type
-          name = refExperiment.synonym or refExperiment.name
+          name = refName
 
       if not name:
         # no name set anywhere, use serials
