@@ -31,6 +31,7 @@ __date__ = "$Date: 2017-04-07 10:28:48 +0000 (Fri, April 07, 2017) $"
 
 # Default NmrChain code
 defaultNmrChainCode = '@-'
+defaultNmrResidueCode = '@'
 
 # Constraint list constraintType to itemLength map
 # NB these data determine which constraintListTypes are legal.
