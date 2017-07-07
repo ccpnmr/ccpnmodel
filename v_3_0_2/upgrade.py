@@ -426,7 +426,8 @@ def fixExperiments(nmrProject):
       if refExperiment:
         refName = refExperiment.synonym or refExperiment.name
         if name:
-          if dataSource.name and experiment.name and experiment.name != refName:
+          if (dataSource.name and experiment.name  and experiment.name != refName
+              and not dataSource.name.startswith(experiment.name)):
             # Special case. For native (i.e. not beackread from V3) V2 data
             # we want this behaviour
             name = '%s-%s' % (experiment.name, dataSource.name)
@@ -663,11 +664,13 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
   if defaultNmrChain is None:
     defaultNmrChain = nmrProject.newNmrChain(code=Constants.defaultNmrChainCode)
   # Also set defaultResonanceGroup
-  defaultResonanceGroup = (defaultNmrChain.findFirstResonanceGroup(seqCode=None,
-                                                                   seqInsertCode='@') or
-                           nmrProject.newResonanceGroup(directNmrChain=defaultNmrChain,
-                                                       seqInsertCode = '@',
-                                                       details="Default ResonanceGroup"))
+  defaultResonanceGroup = (
+    defaultNmrChain.findFirstResonanceGroup(seqCode=None,
+                                            seqInsertCode=Constants.defaultNmrResidueCode)
+    or nmrProject.newResonanceGroup(directNmrChain=defaultNmrChain,
+                                    seqInsertCode=Constants.defaultNmrResidueCode,
+                                    details="Default ResonanceGroup")
+  )
 
   # Now set up assigned ResonanceGroups and add their offset groups
   reverseGroupMap = {}
@@ -872,12 +875,17 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
       else:
         resonanceGroup = groupsToMerge.get(resonanceGroup, resonanceGroup)
 
-      name = V2Upgrade.regularisedResonanceName(resonance)
-      oldResonance = resonanceGroup.findFirstResonance(name=name)
-      if oldResonance is not None:
-        if oldResonance is not resonance or len(resonanceGroup.findAllResonances(name=name)) > 1:
-          # Name clash. Should never happen here, but to avoid trouble, ...
-          name = None
+
+      if resonance.implName:
+        name = V2Upgrade.regularisedResonanceName(resonance)
+        oldResonance = resonanceGroup.findFirstResonance(name=name)
+        if oldResonance is not None:
+          if oldResonance is not resonance or len(resonanceGroup.findAllResonances(name=name)) > 1:
+            # Name clash. Should never happen here, but to avoid trouble, ...
+            name = None
+      else:
+        # In this case the name will match the 'H@123' default, so we want None here
+        name = None
 
       resonance.name = None
       resonance.resonanceGroup = resonanceGroup
