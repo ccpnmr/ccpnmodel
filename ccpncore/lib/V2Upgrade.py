@@ -554,10 +554,75 @@ def upgradeConstraintList(constraintList):
     constraintStore.root.override = False
 
 
-def findSpinSystemStretch(spinSystem, direction=1):
+
+def findSpinSystemStretch(resonanceGroup, excludedSpinSystems=set()):
+  """Find (one of the) longest sequential spin system stretch(es) containing resonanceGroup
   """
-  V2: Find unambiguous stretch of spin systems sequentially connected to the input one
-  in direction +1/-1.
+
+  # To avoid modifying external data
+  excludedSpinSystems = excludedSpinSystems.copy()
+  excludedSpinSystems.add(resonanceGroup)
+
+  stretches = []
+
+  for delta in (-1,1):
+    queue = [resonanceGroup]
+    dd = {resonanceGroup:[]}
+    for rg in queue:
+      ll = dd[rg]
+      for rg2 in findConnectedSpinSystems(rg, delta):
+        if rg2 not in excludedSpinSystems:
+          excludedSpinSystems.add(rg2)
+          queue.append(rg2)
+          ll2 = dd[rg2] = ll.copy()
+          ll2.append(rg2)
+
+    stretch = []
+    for ll3 in sorted(dd.values()):
+      if len(ll3) > len(stretch):
+        stretch = ll3
+    #
+    stretches.append(stretch)
+  #
+  result = list(reversed(stretches[0])) + [resonanceGroup] + stretches[1]
+  return result
+
+
+def getSeqSpinSystemLinks(spinSystem, delta=None):
+  """
+  Get any sequential spin system links (resonanceGroupProbs).
+  An optional sequence offset may be specified.
+
+  .. describe:: Input
+
+  Nmr.ResonanceGroup, Int
+
+  .. describe:: Output
+
+  List of Nmr.ResonanceGroupProbs
+  """
+
+  seqLinks = {}
+  for link in spinSystem.findAllResonanceGroupProbs(linkType='sequential', isSelected=True):
+    if delta is None:
+      seqLinks[link] = None
+
+    elif link.sequenceOffset == delta:
+      seqLinks[link] = None
+
+  for link in spinSystem.findAllFromResonanceGroups(linkType='sequential', isSelected=True):
+    if delta is None:
+      seqLinks[link] = None
+
+    elif link.sequenceOffset == -delta:
+      seqLinks[link] = None
+
+  return seqLinks.keys()
+
+
+def findConnectedSpinSystems(spinSystem, delta=None):
+  """
+  Find spin systems sequentially connected to the input one with given sequence offset.
 
   .. describe:: Input
 
@@ -567,27 +632,15 @@ def findSpinSystemStretch(spinSystem, direction=1):
   Nmr.ResonanceGroup
   """
 
-  stretch = [spinSystem]
+  result = []
 
-  while True:
-
-    ll = []
-    for link in stretch[-1].findAllResonanceGroupProbs(linkType='sequential',
-                                                       sequenceOffset=direction,
-                                                       isSelected=True):
-      ll.append(link.possibility)
-
-    for link in stretch[-1].findAllFromResonanceGroups(linkType='sequential',
-                                                       sequenceOffset=-direction,
-                                                       isSelected=True):
-      ll.append(link.parent)
-
-    if len(ll) == 1:
-      stretch.append(ll[0])
+  for link in getSeqSpinSystemLinks(spinSystem, delta=delta):
+    if spinSystem is link.parent:
+      result.append(link.possibility)
     else:
-      break
+      result.append(link.parent)
   #
-  return stretch[1:]
+  return result
 
 
 def  findIdentityResonanceGroup(resonanceGroup):
@@ -649,7 +702,8 @@ def _getAmbigProchiralLabel(resonance):
         for resonance2 in resonanceSet.resonances:
           if resonance2 is not resonance:
             resonance3 = _getOnebondResonance(resonance2)
-            if resonance3 and resonance3.resonanceSet and (len(resonance3.resonanceSet.atomSets) > 1):
+            if (resonance3 and resonance3.resonanceSet
+                and (len(resonance3.resonanceSet.atomSets) > 1)):
               letter = 'b'
             break
 
@@ -875,7 +929,8 @@ def _getBoundResonances(resonance, recalculate=False, contribs=None, recursiveCa
         # there are sister resonances
         resons.remove(resonance)
         for reson in resons:
-          boundResons = _getBoundResonances(reson, recalculate=True, contribs=contribs, recursiveCall=True)
+          boundResons = _getBoundResonances(reson, recalculate=True, contribs=contribs,
+                                            recursiveCall=True)
           ll = [x for x in pairResonances if x not in boundResons]
           if not ll:
             # One sister was bound to both. Incorrect data. Bind to both here too

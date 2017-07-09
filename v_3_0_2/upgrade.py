@@ -683,17 +683,28 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
       resonanceGroup.assignedResidue = residue
 
     # Add offset ResonanceGroups
-    for direction in (+1,-1):
-      stretch = V2Upgrade.findSpinSystemStretch(resonanceGroup, direction=direction)
-      offset = 0
-      for rg in stretch:
-        offset += direction
+    # for direction in (+1,-1):
+    #   stretch = V2Upgrade.findSpinSystemStretch(resonanceGroup, direction=direction)
+    #   offset = 0
+    #   for rg in stretch:
+    #     offset += direction
+    #
+    #     if rg in handledResonanceGroups:
+    #       # We have reached a residue already handled. Stop here.
+    #       break
+    #
+    #     else:
+    #       hasAddedGroup = V2Upgrade.addOffsetResonanceGroup(useResonanceGroup, rg, offset)
+    #       if hasAddedGroup:
+    #         handledResonanceGroups.add(rg)
 
-        if rg in handledResonanceGroups:
-          # We have reached a residue already handled. Stop here.
-          break
+    # Add offset ResonanceGroups
+    for offset in (-1, +1, -2, +2):
+      connected = V2Upgrade.findConnectedSpinSystems(resonanceGroup, offset)
+      if len(connected) == 1:
+        rg = connected[0]
 
-        else:
+        if rg not in handledResonanceGroups:
           hasAddedGroup = V2Upgrade.addOffsetResonanceGroup(useResonanceGroup, rg, offset)
           if hasAddedGroup:
             handledResonanceGroups.add(rg)
@@ -714,70 +725,78 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
       # Set to default naming to avoid potential clashes
       resonanceGroup.sequenceCode = None
       resonanceGroup.directNmrChain = defaultNmrChain
-      # NBNB check that resonance names are dealt with properly later
-      # print ('@~@~ from', resonanceGroup, resonanceGroup.sequenceCode, resonanceGroup.nmrChain)
-      # print ('@~@~', [(x.serial, x.name) for x in resonanceGroup.sortedResonances()])
-      # print ('@~@~ to', useResonanceGroup, useResonanceGroup.sequenceCode, useResonanceGroup.nmrChain)
-      # print ('@~@~', [(x.serial, x.name) for x in useResonanceGroup.sortedResonances()])
-      # for resonance in resonanceGroup.resonances:
-      #   resonance.resonanceGroup = useResonanceGroup
-      # resonanceGroup.delete()
-
-  # print ('@~@~ time4', time.time() - time0)
 
   # Now deal with stretches of connected resonanceGroups
   for resonanceGroup in nmrProject.sortedResonanceGroups():
-    if (resonanceGroup not in handledResonanceGroups
-        and not V2Upgrade.findSpinSystemStretch(resonanceGroup, direction=-1)):
-      # start at first resonanceGroup in stretch
-      stretch = V2Upgrade.findSpinSystemStretch(resonanceGroup, direction=1)
-      if len(stretch) > 1:
-        # Multi-residue stretch. Make connected stretch
+    if resonanceGroup not in handledResonanceGroups:
+      if (V2Upgrade.findConnectedSpinSystems(resonanceGroup, 1) and
+          V2Upgrade.findConnectedSpinSystems(resonanceGroup, -1)):
+        # start in the middle of stretches
+        #to avoid trouble with single offset residues hanging off a linear graph
+        stretch = V2Upgrade.findSpinSystemStretch(resonanceGroup, handledResonanceGroups)
+        # Multi-residue stretch, min length 3. Make connected stretch
+        if len(stretch) < 3:
+          raise RuntimeError("Code Error, in finding connected stretches")
         newNmrChain = nmrProject.newNmrChain(isConnected=True)
+        ss = resonanceGroup.name
+        if ss:
+          ll = ss.split('.', 1)
+          if len(ll) == 2 and ll[0].startswith('#'):
+            try:
+              serial = int(ll[0][1:])
+              commonUtil.resetSerial(newNmrChain, serial)
+            except:
+              pass
+            else:
+              newNmrChain.label = '#%s' % serial
         for rg in stretch:
-          if rg in handledResonanceGroups:
-            break
-          else:
-            newNmrChain.addMainResonanceGroup(rg)
-            handledResonanceGroups.add(rg)
-
-  # print ('@~@~ time5', time.time() - time0)
+          newNmrChain.addMainResonanceGroup(rg)
+          handledResonanceGroups.add(rg)
 
   # Deal with isolated resonanceGroups
-
   for resonanceGroup in nmrProject.sortedResonanceGroups():
     if resonanceGroup not in handledResonanceGroups:
 
-      plusStretch = V2Upgrade.findSpinSystemStretch(resonanceGroup, direction=1)
-      minusStretch = V2Upgrade.findSpinSystemStretch(resonanceGroup, direction=-1)
-      if plusStretch and plusStretch[0] in handledResonanceGroups:
-        rgmain = plusStretch[0]
-        rgminus = resonanceGroup
-      elif minusStretch and minusStretch[0] in handledResonanceGroups:
-        rgmain = resonanceGroup
-        rgminus = minusStretch[0]
-      else:
-        rgmain = resonanceGroup
-        rgminus = None
+      connectedPlus = V2Upgrade.findConnectedSpinSystems(resonanceGroup, 1)
+      connectedMinus = V2Upgrade.findConnectedSpinSystems(resonanceGroup, -1)
+      rgminus = None
+      if len(connectedPlus) == 1:
+        if connectedPlus[0] in handledResonanceGroups:
+          # offset off assigned or in-stretch group. connect it
+          addedGroup = V2Upgrade.addOffsetResonanceGroup(connectedPlus[0],
+                                                         resonanceGroup, -1)
+          if addedGroup:
+            handledResonanceGroups.add(resonanceGroup)
+            continue
+        else:
+          # Two-group stretch. Treat below
+          rgmain = connectedPlus[0]
+          rgminus = resonanceGroup
+
+      elif len(connectedMinus) == 1:
+        if connectedMinus[0] in handledResonanceGroups:
+          # offset off assigned or in-stretch group. connect it
+          addedGroup = V2Upgrade.addOffsetResonanceGroup(connectedMinus[0],
+                                                         resonanceGroup, 1)
+          if addedGroup:
+            handledResonanceGroups.add(resonanceGroup)
+            continue
+        else:
+          # Two-group stretch. Treat below
+          rgmain = resonanceGroup
+          rgminus = connectedMinus[0]
 
       if rgminus is None:
         # No two-group stretch found. Try assigning as zero-offset to already assigned resonanceGroup
         rg0 = V2Upgrade.findIdentityResonanceGroup(resonanceGroup)
-        addedGroup = False
         if rg0 is not None and rg0.relativeOffset is None:
           addedGroup = V2Upgrade.addOffsetResonanceGroup(rg0, resonanceGroup, 0)
-
-        if not addedGroup:
-        # Not a zero-offset residue3. Set it is its own right.
-          try:
-            resonanceGroup.directNmrChain = defaultNmrChain
-          except ApiError:
-            resonanceGroup.sequenceCode = None
-            resonanceGroup.directNmrChain = defaultNmrChain
-        handledResonanceGroups.add(resonanceGroup)
+          if addedGroup:
+            handledResonanceGroups.add(resonanceGroup)
+            continue
 
       else:
-        # Set i group.
+        # Two-group stretch. Put in as residue with i-1 offset
         try:
           rgmain.directNmrChain = defaultNmrChain
         except ApiError:
@@ -789,13 +808,20 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
         addedGroup = V2Upgrade.addOffsetResonanceGroup(rgmain, rgminus, -1)
         if not addedGroup:
           try:
-            resonanceGroup.directNmrChain = defaultNmrChain
+            rgminus.directNmrChain = defaultNmrChain
           except ApiError:
-            resonanceGroup.sequenceCode = None
-            resonanceGroup.directNmrChain = defaultNmrChain
-        handledResonanceGroups.add(resonanceGroup)
+            rgminus.sequenceCode = None
+            rgminus.directNmrChain = defaultNmrChain
+        handledResonanceGroups.add(rgminus)
+        continue
 
-  # print ('@~@~ time6', time.time() - time0)
+      # No connection of any kind found. Set residue in isolation
+      try:
+        resonanceGroup.directNmrChain = defaultNmrChain
+      except ApiError:
+        resonanceGroup.sequenceCode = None
+        resonanceGroup.directNmrChain = defaultNmrChain
+      handledResonanceGroups.add(resonanceGroup)
 
   # Almost done with resonanceGroups. Now for resonances.
 
@@ -861,8 +887,6 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
             convertResonance.isotopeCode = commonUtil.name2IsotopeCode(name) or '?'
           handledResonances.add(resonance)
 
-  # print ('@~@~ time7', time.time() - time0)
-
   # Now do unassigned resonances:
   for resonance in nmrProject.sortedResonances():
     if resonance not in handledResonances:
@@ -893,8 +917,6 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
       if name and resonance.isotopeCode in ('?', 'unknown', None):
         resonance.isotopeCode = commonUtil.name2IsotopeCode(name) or '?'
 
-  # print ('@~@~ time8', time.time() - time0)
-
   # Clean up merged ResonanceGroups
   for resonanceGroup in groupsToMerge:
     if resonanceGroup.resonances:
@@ -902,7 +924,16 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
       % (resonanceGroup, resonanceGroup.sortedResonances()))
     resonanceGroup.delete()
 
-  # print ('@~@~ time9', time.time() - time0)
+  # Heuristics - change first resonanceGroup in connected stretches from full member to -1 offset
+  # if it has CA but not 'H' or 'N'
+  for nmrChain in nmrProject.findAllNmrChains(isConnected=True):
+    mainResonanceGroups = nmrChain.mainResonanceGroups
+    if len(mainResonanceGroups) > 1:
+      firstResonanceGroup = mainResonanceGroups[0]
+      if (firstResonanceGroup.findFirstResonance(name='CA')
+          and not firstResonanceGroup.findFirstResonance(name='H')
+          and not firstResonanceGroup.findFirstResonance(name='N')):
+        V2Upgrade.addOffsetResonanceGroup(mainResonanceGroups[1], mainResonanceGroups[0], -1)
 
 
 def copyMolSystemContents(molSystem, toMolSystem, chainMap):
@@ -919,8 +950,6 @@ def copyMolSystemContents(molSystem, toMolSystem, chainMap):
                                     maySkipCrosslinks=True)
     chainMap[chain] = newChain
     newChains.append(newChain)
-
-  # chainCodeMap = dict(((key.code, val.code) for key,val in chainMap.items()))
 
   # copy ChainInteractions
   for chainInteraction in molSystem.sortedChainInteractions():
