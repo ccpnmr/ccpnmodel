@@ -663,13 +663,15 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
   if defaultNmrChain is None:
     defaultNmrChain = nmrProject.newNmrChain(code=Constants.defaultNmrChainCode)
   # Also set defaultResonanceGroup
-  defaultResonanceGroup = (
-    defaultNmrChain.findFirstResonanceGroup(seqCode=None,
-                                            seqInsertCode=Constants.defaultNmrResidueCode)
-    or nmrProject.newResonanceGroup(directNmrChain=defaultNmrChain,
+  defaultResonanceGroup = nmrProject.findFirstResonanceGroup(name=Constants.defaultNmrResidueCode,
+                                                             details="Default ResonanceGroup")
+  if (not defaultResonanceGroup or not defaultResonanceGroup.nmrChain
+      or defaultResonanceGroup.nmrChain.code != Constants.defaultNmrChainCode):
+    defaultResonanceGroup = nmrProject.newResonanceGroup(directNmrChain=defaultNmrChain,
                                     seqInsertCode=Constants.defaultNmrResidueCode,
                                     details="Default ResonanceGroup")
-  )
+  else:
+    defaultResonanceGroup.sequenceCode = Constants.defaultNmrResidueCode
 
   # Now set up assigned ResonanceGroups and add their offset groups
   reverseGroupMap = {}
