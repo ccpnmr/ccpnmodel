@@ -764,9 +764,12 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
       rgminus = None
       if len(connectedPlus) == 1:
         if connectedPlus[0] in handledResonanceGroups:
-          # offset off assigned or in-stretch group. connect it
-          addedGroup = V2Upgrade.addOffsetResonanceGroup(connectedPlus[0],
-                                                         resonanceGroup, -1)
+          if connectedPlus[0].relativeOffset is None:
+            # You could hve not-None offset if a coonected stretch ends with an assigned residue
+            # Ought not to happen, but you never know
+            # offset off assigned or in-stretch group. connect it
+            addedGroup = V2Upgrade.addOffsetResonanceGroup(connectedPlus[0],
+                                                           resonanceGroup, -1)
           if addedGroup:
             handledResonanceGroups.add(resonanceGroup)
             continue
@@ -777,9 +780,12 @@ def transferAssignments(nmrProject, mainMolSystem, chainMap):
 
       elif len(connectedMinus) == 1:
         if connectedMinus[0] in handledResonanceGroups:
-          # offset off assigned or in-stretch group. connect it
-          addedGroup = V2Upgrade.addOffsetResonanceGroup(connectedMinus[0],
-                                                         resonanceGroup, 1)
+          if connectedMinus[0].relativeOffset is None:
+            # You could hve not-None offset if a coonected stretch ends with an assigned residue
+            # Ought not to happen, but you never know
+            # offset off assigned or in-stretch group. connect it
+            addedGroup = V2Upgrade.addOffsetResonanceGroup(connectedMinus[0],
+                                                           resonanceGroup, 1)
           if addedGroup:
             handledResonanceGroups.add(resonanceGroup)
             continue
