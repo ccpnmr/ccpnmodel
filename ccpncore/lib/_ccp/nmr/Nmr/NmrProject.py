@@ -313,6 +313,7 @@ def initialiseGraphicsData(self:'NmrProject'):
     self.windowStore = project.newWindowStore(nmrProject=self)
 
   # Ensure there is a (single) task
+  # NB The underlying task must be made, even if it is not visible in the wrapper
   if not project.findAllGuiTasks(nmrProject=self):
     guiTask = project.newGuiTask(name='View', nmrProject=self,
                                  windows=(self.windowStore.mainWindow,))

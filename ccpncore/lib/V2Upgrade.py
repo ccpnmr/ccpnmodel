@@ -84,7 +84,13 @@ def mapResonanceGroupResidues(apiNmrProject, molSystem=None, chainMap=None) -> d
 
 
 def mapUnAssignedFixedResonances(nmrConstraintStore):
-  """Map unassigned resonances for NmrConstraintStore"""
+  """Map unassigned resonances for NmrConstraintStore
+
+   NBNB This must be done AFTER assignments and resonances are done,
+   as it transfers teh assignment of the attached NmrProject resonance (if any)
+   to the fixedResonance"""
+
+  nmrProject = nmrConstraintStore.nmrProject
 
   result = {}
 
@@ -95,23 +101,31 @@ def mapUnAssignedFixedResonances(nmrConstraintStore):
     if not resonance.resonanceSet:
       # unassigned - treat it
 
-      name =  regularisedResonanceName(resonance)
+      nmrResonance = nmrProject.findFirstResonance(serial=resonance.resonanceSerial)
 
-      # Add resonance serial to name, if it is not in the name already.
-      separator = separator1
-      # use resonanceSerial if available
-      serial = resonance.resonanceSerial
-      if not serial:
-        # use FixedResonance.serial instead, and use '@@' to distinguish
-        serial = resonance.serial
-        separator = separator2
+      if nmrResonance:
+        resonanceGroup = nmrResonance.resonanceGroup
+        result[resonance] = (resonanceGroup.nmrChain.code, resonanceGroup.sequenceCode,
+                             resonanceGroup.residueType, nmrResonance.name)
 
-      ss = '%s%s' % (separator1, serial)
-      if ss not in name:
-        name = '%s%s%s' % (name, separator, serial)
+      else:
+        # No resonance found - make name from fixedResonance info
+        name =  regularisedResonanceName(resonance)
 
-      #
-      result[resonance] = (None, None, None, name)
+        # Add resonance serial to name, if it is not in the name already.
+        separator = separator1
+        # use resonanceSerial if available
+        serial = resonance.resonanceSerial
+        if not serial:
+          # use FixedResonance.serial instead, and use '@@' to distinguish
+          serial = resonance.serial
+          separator = separator2
+
+        ss = '%s%s' % (separator1, serial)
+        if ss not in name:
+          name = '%s%s%s' % (name, separator, serial)
+        #
+        result[resonance] = (None, None, None, name)
   #
   return result
 
@@ -444,6 +458,10 @@ def regularisedResonanceName(resonance):
       else:
         # Set unique default name
         result = '%s@%s-%s' % (elementCode, resonance.serial, resonanceName)
+
+    elif hasattr(resonance, 'resonanceSerial') and resonance.resonanceSerial:
+      result = '%s@%s' % (elementCode, resonance.resonanceSerial)
+
 
     else:
       result = '%s@%s' % (elementCode, resonance.serial)

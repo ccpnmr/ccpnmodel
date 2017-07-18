@@ -259,12 +259,6 @@ def correctFinalResult(memopsRoot):
 
     # print ('@~@~ done structures', time.time() - time0)
 
-    for nmrConstraintStore in nmrProject.sortedNmrConstraintStores():
-      nmrConstraintStore.isModifiable = True
-      fixNmrConstraintStore(nmrConstraintStore ,mainMolSystem, chainMap)
-
-    # print ('@~@~ done constraints', time.time() - time0)
-
     # Fix measurementList names
     for obj in nmrProject.measurementLists:
       name = obj.name
@@ -297,6 +291,13 @@ def correctFinalResult(memopsRoot):
     # Remove ResonanceGroup.residue - no longer needed, and superseded in new model
     for resonanceGroup in nmrProject.resonanceGroups:
       resonanceGroup.residue = None
+
+    # NBNB This must be done AFTER assignments
+    for nmrConstraintStore in nmrProject.sortedNmrConstraintStores():
+      nmrConstraintStore.isModifiable = True
+      fixNmrConstraintStore(nmrConstraintStore ,mainMolSystem, chainMap)
+
+    # print ('@~@~ done constraints', time.time() - time0)
 
     # print ('@~@~ done experiments and assignments', time.time() - time0)
 
