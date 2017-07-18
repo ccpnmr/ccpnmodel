@@ -122,7 +122,7 @@ objectdomain.uml.core.Stereotype-owns $20
 ($3 21 < 0_6e6_i2eonilu_-p6w "GuiTask" 2
 (autoSizeToFit true)
 (uid "0_6e6_i2eonilu_-p6w")
-(bbx 930 30 280 170))
+(bbx 930 30 140 100))
 ($4 22 < 0_6e6_i2eonilu_-p6v "" 2
 (toMultiplicityPosition 695 40)
 (uid "0_6e6_i2eonilu_-p6v")
@@ -141,7 +141,7 @@ objectdomain.uml.core.Stereotype-owns $20
 ($3 25 < 0_6e6_i2eonilu_-p6s "Window" 2
 (autoSizeToFit true)
 (uid "0_6e6_i2eonilu_-p6s")
-(bbx 240 10 160 110))
+(bbx 240 10 160 100))
 ($4 26 < 0_6e6_i2eonilu_-p6r "" 2
 (toMultiplicityPosition 490 50)
 (uid "0_6e6_i2eonilu_-p6r")
@@ -1888,516 +1888,173 @@ objectdomain.uml.core.Stereotype-owns $20
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:46:55_00017"
 )
 (uid "0_6e6_i2eonilu_-oyf"))
-($9 332 < 0_6e6_i2eonilu_-oye "passivate" 320
-(name "passivate"
-)
-(uid "0_6e6_i2eonilu_-oye"))
-($8 333 < 0_6e6_i2eonilu_-oyd "documentation" 332
-(name "documentation"
-)
-(value "Disconnect task from NmrProject and deactivate it."
-)
-(uid "0_6e6_i2eonilu_-oyd"))
-($8 334 < 0_6e6_i2eonilu_-oyc "opType" 332
-(name "opType"
-)
-(value "other"
-)
-(uid "0_6e6_i2eonilu_-oyc"))
-($8 335 < 0_6e6_i2eonilu_-oyb "code:python" 332
-(name "code:python"
-)
-(value "self.root.override = True"
-"try:"
-"  self.nmrProjectName = self.nmrProject.name "
-"  self.nmrProject = None"
-"  for module in self.modules:"
-"    module.disconnect()"
-"  self.windows = ()"
-"finally:"
-"  self.root.override = False"
-""
-"undo = self.root._undo"
-"if undo is not None:"
-"   undo.newItem(self.activate, self.passivate)"
-)
-(uid "0_6e6_i2eonilu_-oyb"))
-($8 336 < 0_6e6_i2eonilu_-oya "guid" 332
-(name "guid"
-)
-(value "www.ccpn.ac.uk_Fogh_2014-11-04-17:46:55_00021"
-)
-(uid "0_6e6_i2eonilu_-oya"))
-($9 337 < 0_6e6_i2eonilu_-oy9 "activate#Window" 320
-(name "activate"
-)
-(uid "0_6e6_i2eonilu_-oy9"))
-($10 338 < 0_6e6_i2eonilu_-oy8 "window" 337
-(name "window"
-)
-(uid "0_6e6_i2eonilu_-oy8"))
-($8 339 < 0_6e6_i2eonilu_-oy7 "guid" 338
-(name "guid"
-)
-(value "www.ccpn.ac.uk_Fogh_2014-11-10-13:40:02_00001"
-)
-(uid "0_6e6_i2eonilu_-oy7"))
-($8 340 < 0_6e6_i2eonilu_-oy6 "documentation" 337
-(name "documentation"
-)
-(value "Connect Task to an NmrProject and its data objects and activate it. Display in passed-in window; if None make new window(s)."
-)
-(uid "0_6e6_i2eonilu_-oy6"))
-($8 341 < 0_6e6_i2eonilu_-oy5 "opType" 337
-(name "opType"
-)
-(value "other"
-)
-(uid "0_6e6_i2eonilu_-oy5"))
-($8 342 < 0_6e6_i2eonilu_-oy4 "code:python" 337
-(name "code:python"
-)
-(value "# Get NmrProject and validity test"
-"if self.nmrProject:"
-"  raise ApiError(\"Task %s is reconnected already\" % self)"
-"nmrProject = self.root.findFirstNmrProject(name=self.nmrProjectName)"
-"if self.nmrProject is None:"
-"  raise ApiError(\"Could not find NmrProject named %s\" % self.nmrProjectName)"
-"windowStore = nmrProject.windowStore"
-"if windowStore is None:"
-"  windowStore = self.root.newWindowStore(nmrProject=nmrProject)"
-""
-"# map windowId to windows, making new windows as necessary"
-"windowIds = list(sorted(set(x.windowId for x in self.modules)))"
-""
-"windows = windowStore.sortedWindows()"
-"nextSerial = 1"
-"if windows:"
-"  nextSerial = windows[-1].serial + 1"
-""
-"if window is None:"
-"  #No window passed in - make all new windows"
-"  windowMap = dict((oldId, windowStore.newWindow(title='W%s' % (nextSerial + ii)))"
-"                   for ii,oldId in enumerate(windowIds))"
-""
-"else:"
-"  # window is passed in. Empty and use this, and successive windows with higher serials"
-"  windowMap = {}"
-"  oldWindows = windowStore.sortedWindows()"
-"  if window not in oldWindows:"
-"    raise ApiError(\"Window %s does not match WindowStore %s\" % (window, windowStore))"
-"  oldWindows = oldWindows[oldWindows.index(window):]"
-"  oldWindowCount = len(oldWindows)"
-"  for ii, window in enumerate(oldWindows[:len(windowIds)]):"
-"    window.empty()"
-"    windowMap[windowIds[ii]] = window"
-"  for ii,windowId in enumerate(windowIds[oldWindowCount:]):"
-"  # We do not have enough windows = make the remainder"
-"    windowMap[windowId] = windowStore.newWindow(title='W%s' % (nextSerial + ii))"
-""
-"# Reconnect project"
-"self.root.override = True"
-"try:"
-"  self.nmrProject = nmrProject"
-"  self.windows = list(windowMap.values())"
-"  for module in self.modules:"
-"    module.reconnect(window=windowMap[module.windowId])"
-"except:"
-"  # NBNB  TBD replace print statement with log message"
-"  print (\"Error connecting task %s to NmrProject %s - data may be left in an illegal state\" % (self, nmrProject))"
-"  raise"
-"finally:"
-"  self.root.override = False"
-""
-"undo = self.root._undo"
-"if undo is not None:"
-"   undo.newItem(self.passivate, self.activate, redoArgs=(window,))"
-)
-(uid "0_6e6_i2eonilu_-oy4"))
-($8 343 < 0_6e6_i2eonilu_-oy3 "guid" 337
-(name "guid"
-)
-(value "www.ccpn.ac.uk_Fogh_2014-11-04-17:46:55_00019"
-)
-(uid "0_6e6_i2eonilu_-oy3"))
-($9 344 < 0_6e6_i2eonilu_-oy2 "adaptedCopy#NmrProject1#Window#Word#Word##GuiTask" 320
-(name "adaptedCopy"
-)
-(uid "0_6e6_i2eonilu_-oy2"))
-($10 345 < 0_6e6_i2eonilu_-oy1 "nmrProject" 344
-(name "nmrProject"
-)
-(uid "0_6e6_i2eonilu_-oy1"))
-($8 346 < 0_6e6_i2eonilu_-oy0 "guid" 345
-(name "guid"
-)
-(value "www.ccpn.ac.uk_Fogh_2014-11-10-13:48:28_00001"
-)
-(uid "0_6e6_i2eonilu_-oy0"))
-($10 347 < 0_6e6_i2eonilu_-oxz "window" 344
-(name "window"
-)
-(uid "0_6e6_i2eonilu_-oxz"))
-($8 348 < 0_6e6_i2eonilu_-oxy "guid" 347
-(name "guid"
-)
-(value "www.ccpn.ac.uk_Fogh_2014-11-10-13:48:28_00002"
-)
-(uid "0_6e6_i2eonilu_-oxy"))
-($10 349 < 0_6e6_i2eonilu_-oxx "result" 344
-(name "result"
-)
-(kind "return")
-(uid "0_6e6_i2eonilu_-oxx"))
-($8 350 < 0_6e6_i2eonilu_-oxw "guid" 349
-(name "guid"
-)
-(value "www.ccpn.ac.uk_Fogh_2014-11-10-13:48:28_00003"
-)
-(uid "0_6e6_i2eonilu_-oxw"))
-($10 351 < 0_6e6_i2eonilu_-oxt "name" 344
-(name "name"
-)
-(uid "0_6e6_i2eonilu_-oxt"))
-($8 352 < 0_6e6_i2eonilu_-oxs "guid" 351
-(name "guid"
-)
-(value "www.ccpn.ac.uk_Fogh_2014-11-11-18:25:59_00004"
-)
-(uid "0_6e6_i2eonilu_-oxs"))
-($10 353 < 0_6e6_i2eonilu_-oxv "nameSpace" 344
-(name "nameSpace"
-)
-(uid "0_6e6_i2eonilu_-oxv"))
-($8 354 < 0_6e6_i2eonilu_-oxu "guid" 353
-(name "guid"
-)
-(value "www.ccpn.ac.uk_Fogh_2014-11-11-18:25:59_00003"
-)
-(uid "0_6e6_i2eonilu_-oxu"))
-($8 355 < 0_6e6_i2eonilu_-oxr "documentation" 344
-(name "documentation"
-)
-(value "Export copy of task to new NmrProject. The functions assumes that data do not match, and will delete or use heuristics to match to the new project. NBNB TBD Window is optional, nmrProject is mandatory."
-"Display in passed-in window; if None make new window(s)."
-)
-(uid "0_6e6_i2eonilu_-oxr"))
-($8 356 < 0_6e6_i2eonilu_-oxq "guid" 344
-(name "guid"
-)
-(value "www.ccpn.ac.uk_Fogh_2014-11-10-13:47:47_00003"
-)
-(uid "0_6e6_i2eonilu_-oxq"))
-($8 357 < 0_6e6_i2eonilu_-oxp "opType" 344
-(name "opType"
-)
-(value "other"
-)
-(uid "0_6e6_i2eonilu_-oxp"))
-($8 358 < 0_6e6_i2eonilu_-oxo "code:python" 344
-(name "code:python"
-)
-(value "params = {'nmrProject':nmrProject}"
-"if name is not None:"
-"  params['name'] = name"
-"if nameSpace is not None:"
-"    params['nameSpace'] = nameSpace"
-""
-"result = self.root.newTask(**params)"
-"if self.details:"
-"  result.details = 'COPY: ' + self.details"
-""
-"for module in self.modules:"
-"  module.copyToTask(result), nmrProject"
-""
-"for axisPositionGroup in self.sortedAxisPositionGroups():"
-"  newGroup = result.newAxisPositionGroup()"
-"  axes = [result.findFirstModule(name=x.spectrumDisplay.name).findFirstAxis(code=x.code)"
-"              for x in axisPositionGroup.axes]"
-"  newGroup.axes = axes"
-""
-"for axisWidthGroup in self.sortedAxisWidthGroups():"
-"  newGroup = result.newAxisWidthGroup()"
-"  axes = [result.findFirstModule(name=x.spectrumDisplay.name).findFirstAxis(code=x.code)"
-"              for x in axisWidthGroup.axes]"
-"  newGroup.axes = axes"
-""
-"result.activate(window)"
-)
-(uid "0_6e6_i2eonilu_-oxo"))
-($9 359 < 0_6e6_i2eonilu_-oxn "clone#Word#Word" 320
-(name "clone"
-)
-(uid "0_6e6_i2eonilu_-oxn"))
-($10 360 < 0_6e6_i30aqkyl_-p98 "name" 359
-(name "name"
-)
-(uid "0_6e6_i30aqkyl_-p98"))
-($8 361 < 0_6e6_i30aqkyl_-p97 "documentation" 360
-(name "documentation"
-)
-(value "Name of new GuiTask"
-)
-(uid "0_6e6_i30aqkyl_-p97"))
-($8 362 < 0_6e6_i30aqkyl_-p92 "guid" 360
-(name "guid"
-)
-(value "www.ccpn.ac.uk_Fogh_2014-11-27-16:37:56_00001"
-)
-(uid "0_6e6_i30aqkyl_-p92"))
-($10 363 < 0_6e6_i30aqkyl_-p96 "nameSpace" 359
-(name "nameSpace"
-)
-(defaultValue "user"
-)
-(uid "0_6e6_i30aqkyl_-p96"))
-($8 364 < 0_6e6_i30aqkyl_-p95 "documentation" 363
-(name "documentation"
-)
-(value "nameSpace for new GuiTask"
-)
-(uid "0_6e6_i30aqkyl_-p95"))
-($8 365 < 0_6e6_i30aqkyl_-p91 "guid" 363
-(name "guid"
-)
-(value "www.ccpn.ac.uk_Fogh_2014-11-27-16:37:56_00002"
-)
-(uid "0_6e6_i30aqkyl_-p91"))
-($8 366 < 0_6e6_i2eonilu_-oxm "documentation" 359
-(name "documentation"
-)
-(value "Make precise, renamed copy of task - disconnecting if already connected"
-)
-(uid "0_6e6_i2eonilu_-oxm"))
-($8 367 < 0_6e6_i2eonilu_-oxl "opType" 359
-(name "opType"
-)
-(value "other"
-)
-(uid "0_6e6_i2eonilu_-oxl"))
-($8 368 < 0_6e6_i2eonilu_-oxk "guid" 359
-(name "guid"
-)
-(value "www.ccpn.ac.uk_Fogh_2014-11-10-13:47:47_00002"
-)
-(uid "0_6e6_i2eonilu_-oxk"))
-($8 369 < 0_6e6_i30aqkyl_-p94 "code:python" 359
-(name "code:python"
-)
-(value "from ccpnmodel.ccpncore.lib import CopyData"
-"if self.nmrProject is not None:"
-"  reactivate = True"
-"  self.passivate()"
-"else:"
-"  reactivate = False"
-"result = CopyData.copySubTree(self, self.root, topObjectParameters={'nameSpace':nameSpace, 'name':name})"
-"if reactivate:"
-"  self.activate()"
-)
-(uid "0_6e6_i30aqkyl_-p94"))
-($9 370 < 0_6e6_i2eonilu_-oxj "pruneSpectrumViews" 320
-(name "pruneSpectrumViews"
-)
-(uid "0_6e6_i2eonilu_-oxj"))
-($8 371 < 0_6e6_i2eonilu_-oxi "documentation" 370
-(name "documentation"
-)
-(value "Remove  SpectrumViews that do not match NmrProject- all other dangling links are removed by disconnect,reconnect"
-)
-(uid "0_6e6_i2eonilu_-oxi"))
-($8 372 < 0_6e6_i2eonilu_-oxh "opType" 370
-(name "opType"
-)
-(value "other"
-)
-(uid "0_6e6_i2eonilu_-oxh"))
-($8 373 < 0_6e6_i2eonilu_-oxg "guid" 370
-(name "guid"
-)
-(value "www.ccpn.ac.uk_Fogh_2014-11-10-13:48:28_00004"
-)
-(uid "0_6e6_i2eonilu_-oxg"))
-($8 374 < 0_6e6_i30aqkyl_-p93 "code:python" 370
-(name "code:python"
-)
-(value "for module in self.modules:"
-"  if hasattr(module, 'spectrumViews'):"
-"    for spectrumView in module.spectrumViews:"
-"      experiment = self.nmrProject.findFirstExperiment(name=module.experimentName)"
-"      dataSource = None"
-"      if experiment is not None:"
-"        dataSource = experiment.findFirstDataSource(serial=spectrumView.dataSourceSerial)"
-"      if dataSource is None:"
-"        spectrumView.delete()"
-)
-(uid "0_6e6_i30aqkyl_-p93"))
-($13 375 < 0_6e6_i2eonilu_-oxf "#<anon> (GuiTask, TopObject)" 320
+($13 332 < 0_6e6_i2eonilu_-oxf "#<anon> (GuiTask, TopObject)" 320
 (uid "0_6e6_i2eonilu_-oxf"))
-($11 376 < 0_6e6_i2eonilu_-oxe "#<anon> (GuiTask, Module)##," 320
+($11 333 < 0_6e6_i2eonilu_-oxe "#<anon> (GuiTask, Module)##," 320
 (name "")
 (uid "0_6e6_i2eonilu_-oxe"))
-($12 377 < 0_6e6_i2eonilu_-oxd "#0" 376
+($12 334 < 0_6e6_i2eonilu_-oxd "#0" 333
 (changeability "frozen")
 (aggregation "composite")
 (uid "0_6e6_i2eonilu_-oxd")
 (multiplicity "1"))
-($8 378 < 0_6e6_i2eonilu_-oxc "guid" 377
+($8 335 < 0_6e6_i2eonilu_-oxc "guid" 334
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:46:55_00007"
 )
 (uid "0_6e6_i2eonilu_-oxc"))
-($12 379 < 0_6e6_i2eonilu_-oxb "#1" 376
+($12 336 < 0_6e6_i2eonilu_-oxb "#1" 333
 (uid "0_6e6_i2eonilu_-oxb")
 (multiplicity "*"))
-($8 380 < 0_6e6_i2eonilu_-oxa "guid" 379
+($8 337 < 0_6e6_i2eonilu_-oxa "guid" 336
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:46:55_00008"
 )
 (uid "0_6e6_i2eonilu_-oxa"))
-($11 381 < 0_6e6_i2eonilu_-ox9 "#<anon> (GuiTask, NmrProject)##," 320
+($11 338 < 0_6e6_i2eonilu_-ox9 "#<anon> (GuiTask, NmrProject)##," 320
 (name "")
 (uid "0_6e6_i2eonilu_-ox9"))
-($12 382 < 0_6e6_i2eonilu_-ox8 "#0" 381
+($12 339 < 0_6e6_i2eonilu_-ox8 "#0" 338
 (uid "0_6e6_i2eonilu_-ox8")
 (multiplicity "*"))
-($8 383 < 0_6e6_i2eonilu_-ox7 "documentation" 382
+($8 340 < 0_6e6_i2eonilu_-ox7 "documentation" 339
 (name "documentation"
 )
 (value "Gui Tasks active on NmrProject"
 )
 (uid "0_6e6_i2eonilu_-ox7"))
-($8 384 < 0_6e6_i2eonilu_-ox6 "guid" 382
+($8 341 < 0_6e6_i2eonilu_-ox6 "guid" 339
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:46:55_00009"
 )
 (uid "0_6e6_i2eonilu_-ox6"))
-($12 385 < 0_6e6_i2eonilu_-ox5 "#1" 381
+($12 342 < 0_6e6_i2eonilu_-ox5 "#1" 338
 (changeability "frozen")
 (uid "0_6e6_i2eonilu_-ox5"))
-($8 386 < 0_6e6_i2eonilu_-ox4 "documentation" 385
+($8 343 < 0_6e6_i2eonilu_-ox4 "documentation" 342
 (name "documentation"
 )
 (value "NmrProject that task is active in. Tasks with no NmrProject attached are not active."
 )
 (uid "0_6e6_i2eonilu_-ox4"))
-($8 387 < 0_6e6_i2eonilu_-ox3 "guid" 385
+($8 344 < 0_6e6_i2eonilu_-ox3 "guid" 342
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:46:55_00010"
 )
 (uid "0_6e6_i2eonilu_-ox3"))
-($8 388 < 0_6e6_i2eonilu_-ox2 "partitionsChildren" 381
+($8 345 < 0_6e6_i2eonilu_-ox2 "partitionsChildren" 338
 (name "partitionsChildren"
 )
 (value "True"
 )
 (uid "0_6e6_i2eonilu_-ox2"))
-($11 389 < 0_6e6_i2eonilu_-ox1 "#<anon> (GuiTask, AxisWidthGroup)##," 320
+($11 346 < 0_6e6_i2eonilu_-ox1 "#<anon> (GuiTask, AxisWidthGroup)##," 320
 (name "")
 (uid "0_6e6_i2eonilu_-ox1"))
-($12 390 < 0_6e6_i2eonilu_-ox0 "#0" 389
+($12 347 < 0_6e6_i2eonilu_-ox0 "#0" 346
 (changeability "frozen")
 (aggregation "composite")
 (uid "0_6e6_i2eonilu_-ox0")
 (multiplicity "1"))
-($8 391 < 0_6e6_i2eonilu_-owz "guid" 390
+($8 348 < 0_6e6_i2eonilu_-owz "guid" 347
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:46:55_00011"
 )
 (uid "0_6e6_i2eonilu_-owz"))
-($12 392 < 0_6e6_i2eonilu_-owy "#1" 389
+($12 349 < 0_6e6_i2eonilu_-owy "#1" 346
 (uid "0_6e6_i2eonilu_-owy")
 (multiplicity "*"))
-($8 393 < 0_6e6_i2eonilu_-owx "guid" 392
+($8 350 < 0_6e6_i2eonilu_-owx "guid" 349
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:46:55_00012"
 )
 (uid "0_6e6_i2eonilu_-owx"))
-($11 394 < 0_6e6_i2eonilu_-oww "#<anon> (GuiTask, Mark)##," 320
+($11 351 < 0_6e6_i2eonilu_-oww "#<anon> (GuiTask, Mark)##," 320
 (name "")
 (uid "0_6e6_i2eonilu_-oww"))
-($12 395 < 0_6e6_i2eonilu_-owv "#0" 394
+($12 352 < 0_6e6_i2eonilu_-owv "#0" 351
 (changeability "frozen")
 (aggregation "composite")
 (uid "0_6e6_i2eonilu_-owv")
 (multiplicity "1"))
-($8 396 < 0_6e6_i2eonilu_-owu "guid" 395
+($8 353 < 0_6e6_i2eonilu_-owu "guid" 352
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-11-18:25:59_00001"
 )
 (uid "0_6e6_i2eonilu_-owu"))
-($12 397 < 0_6e6_i2eonilu_-owt "#1" 394
+($12 354 < 0_6e6_i2eonilu_-owt "#1" 351
 (uid "0_6e6_i2eonilu_-owt")
 (multiplicity "*"))
-($8 398 < 0_6e6_i2eonilu_-ows "guid" 397
+($8 355 < 0_6e6_i2eonilu_-ows "guid" 354
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-11-18:25:59_00002"
 )
 (uid "0_6e6_i2eonilu_-ows"))
-($11 399 < 0_6e6_i5z82i6b_-p98 "#<anon> (GuiTask, Window)##," 320
+($11 356 < 0_6e6_i5z82i6b_-p98 "#<anon> (GuiTask, Window)##," 320
 (name "")
 (uid "0_6e6_i5z82i6b_-p98"))
-($12 400 < 0_6e6_i5z82i6b_-p96 "#0" 399
+($12 357 < 0_6e6_i5z82i6b_-p96 "#0" 356
 (uid "0_6e6_i5z82i6b_-p96"))
-($8 401 < 0_6e6_i5z82i6b_-p94 "documentation" 400
+($8 358 < 0_6e6_i5z82i6b_-p94 "documentation" 357
 (name "documentation"
 )
 (value "GuiTask diaplayed in a window "
 )
 (uid "0_6e6_i5z82i6b_-p94"))
-($8 402 < 0_6e6_i5z82i6b_-p90 "guid" 400
+($8 359 < 0_6e6_i5z82i6b_-p90 "guid" 357
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-02-10-12:18:02_00001"
 )
 (uid "0_6e6_i5z82i6b_-p90"))
-($12 403 < 0_6e6_i5z82i6b_-p95 "#1" 399
+($12 360 < 0_6e6_i5z82i6b_-p95 "#1" 356
 (uid "0_6e6_i5z82i6b_-p95")
 (multiplicity "*"))
-($8 404 < 0_6e6_i5z82i6b_-p93 "documentation" 403
+($8 361 < 0_6e6_i5z82i6b_-p93 "documentation" 360
 (name "documentation"
 )
 (value "Wndows displaying GuiTAsk"
 )
 (uid "0_6e6_i5z82i6b_-p93"))
-($8 405 < 0_6e6_i5z82i6b_-p91 "guid" 403
+($8 362 < 0_6e6_i5z82i6b_-p91 "guid" 360
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-02-10-12:18:02_00002"
 )
 (uid "0_6e6_i5z82i6b_-p91"))
-($8 406 < 0_6e6_i5z82i6b_-p92 "partitionsChildren" 399
+($8 363 < 0_6e6_i5z82i6b_-p92 "partitionsChildren" 356
 (name "partitionsChildren"
 )
 (value "True"
 )
 (uid "0_6e6_i5z82i6b_-p92"))
-($8 407 < 0_6e6_i2eonilu_-owr "documentation" 320
+($8 364 < 0_6e6_i2eonilu_-owr "documentation" 320
 (name "documentation"
 )
 (value "Task - group of modules that together accomplish a task. Serves both to store working activities, and as shareable template desciptions. You must pass in either an nmrProject or an nmrProjectName."
 )
 (uid "0_6e6_i2eonilu_-owr"))
-($8 408 < 0_6e6_i2eonilu_-owq "keyNames" 320
+($8 365 < 0_6e6_i2eonilu_-owq "keyNames" 320
 (name "keyNames"
 )
 (value "nameSpace, name"
 )
 (uid "0_6e6_i2eonilu_-owq"))
-($8 409 < 0_6e6_i2eonilu_-owp "guid" 320
+($8 366 < 0_6e6_i2eonilu_-owp "guid" 320
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-10-31-16:36:26_00013"
 )
 (uid "0_6e6_i2eonilu_-owp"))
-($8 410 < 0_6e6_i2eonilu_-owo "constructorCode:python" 320
+($8 367 < 0_6e6_i2eonilu_-owo "constructorCode:python" 320
 (name "constructorCode:python"
 )
 (value "if self.nmrProject is None:"
@@ -2425,435 +2082,435 @@ objectdomain.uml.core.Stereotype-owns $20
 "      window.guiTask = self"
 )
 (uid "0_6e6_i2eonilu_-owo"))
-($6 411 < 0_6e6_i2eonilu_-own "AxisPositionGroup" 1
+($6 368 < 0_6e6_i2eonilu_-own "AxisPositionGroup" 1
 (name "AxisPositionGroup"
 )
 (uid "0_6e6_i2eonilu_-own"))
-($7 412 < 0_6e6_i2eonilu_-owm "serial" 411
+($7 369 < 0_6e6_i2eonilu_-owm "serial" 368
 (changeability "frozen")
 (name "serial"
 )
 (uid "0_6e6_i2eonilu_-owm")
 (multiplicity "1"))
-($8 413 < 0_6e6_i2eonilu_-owl "isAutomatic" 412
+($8 370 < 0_6e6_i2eonilu_-owl "isAutomatic" 369
 (name "isAutomatic"
 )
 (value "True"
 )
 (uid "0_6e6_i2eonilu_-owl"))
-($8 414 < 0_6e6_i2eonilu_-owk "guid" 412
+($8 371 < 0_6e6_i2eonilu_-owk "guid" 369
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:42:29_00009"
 )
 (uid "0_6e6_i2eonilu_-owk"))
-($13 415 < 0_6e6_i2eonilu_-owj "#<anon> (AxisPositionGroup, DataObject)" 411
+($13 372 < 0_6e6_i2eonilu_-owj "#<anon> (AxisPositionGroup, DataObject)" 368
 (uid "0_6e6_i2eonilu_-owj"))
-($11 416 < 0_6e6_i2eonilu_-owi "#<anon> (AxisPositionGroup, GuiTask)##," 411
+($11 373 < 0_6e6_i2eonilu_-owi "#<anon> (AxisPositionGroup, GuiTask)##," 368
 (name "")
 (uid "0_6e6_i2eonilu_-owi"))
-($12 417 < 0_6e6_i2eonilu_-owh "#0" 416
+($12 374 < 0_6e6_i2eonilu_-owh "#0" 373
 (uid "0_6e6_i2eonilu_-owh")
 (multiplicity "*"))
-($8 418 < 0_6e6_i2eonilu_-owg "guid" 417
+($8 375 < 0_6e6_i2eonilu_-owg "guid" 374
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:42:29_00007"
 )
 (uid "0_6e6_i2eonilu_-owg"))
-($12 419 < 0_6e6_i2eonilu_-owf "#1" 416
+($12 376 < 0_6e6_i2eonilu_-owf "#1" 373
 (changeability "frozen")
 (aggregation "composite")
 (uid "0_6e6_i2eonilu_-owf")
 (multiplicity "1"))
-($8 420 < 0_6e6_i2eonilu_-owe "guid" 419
+($8 377 < 0_6e6_i2eonilu_-owe "guid" 376
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:42:29_00008"
 )
 (uid "0_6e6_i2eonilu_-owe"))
-($8 421 < 0_6e6_i2eonilu_-owd "documentation" 411
+($8 378 < 0_6e6_i2eonilu_-owd "documentation" 368
 (name "documentation"
 )
 (value "Connecting class for Axis positions. NB. should NOT be coded to directly - all handing through Axis connect and disconnect functions."
 )
 (uid "0_6e6_i2eonilu_-owd"))
-($8 422 < 0_6e6_i2eonilu_-owc "keyNames" 411
+($8 379 < 0_6e6_i2eonilu_-owc "keyNames" 368
 (name "keyNames"
 )
 (value "serial"
 )
 (uid "0_6e6_i2eonilu_-owc"))
-($8 423 < 0_6e6_i2eonilu_-owb "guid" 411
+($8 380 < 0_6e6_i2eonilu_-owb "guid" 368
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:39:35_00002"
 )
 (uid "0_6e6_i2eonilu_-owb"))
-($6 424 < 0_6e6_i2eonilu_-owa "AxisWidthGroup" 1
+($6 381 < 0_6e6_i2eonilu_-owa "AxisWidthGroup" 1
 (name "AxisWidthGroup"
 )
 (uid "0_6e6_i2eonilu_-owa"))
-($7 425 < 0_6e6_i2eonilu_-ow9 "serial" 424
+($7 382 < 0_6e6_i2eonilu_-ow9 "serial" 381
 (changeability "frozen")
 (name "serial"
 )
 (uid "0_6e6_i2eonilu_-ow9")
 (multiplicity "1"))
-($8 426 < 0_6e6_i2eonilu_-ow8 "guid" 425
+($8 383 < 0_6e6_i2eonilu_-ow8 "guid" 382
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:42:29_00010"
 )
 (uid "0_6e6_i2eonilu_-ow8"))
-($8 427 < 0_6e6_i2eonilu_-ow7 "isAutomatic" 425
+($8 384 < 0_6e6_i2eonilu_-ow7 "isAutomatic" 382
 (name "isAutomatic"
 )
 (value "True"
 )
 (uid "0_6e6_i2eonilu_-ow7"))
-($13 428 < 0_6e6_i2eonilu_-ow6 "#<anon> (AxisWidthGroup, DataObject)" 424
+($13 385 < 0_6e6_i2eonilu_-ow6 "#<anon> (AxisWidthGroup, DataObject)" 381
 (uid "0_6e6_i2eonilu_-ow6"))
-($8 429 < 0_6e6_i2eonilu_-ow5 "keyNames" 424
+($8 386 < 0_6e6_i2eonilu_-ow5 "keyNames" 381
 (name "keyNames"
 )
 (value "serial"
 )
 (uid "0_6e6_i2eonilu_-ow5"))
-($8 430 < 0_6e6_i2eonilu_-ow4 "documentation" 424
+($8 387 < 0_6e6_i2eonilu_-ow4 "documentation" 381
 (name "documentation"
 )
 (value "Connecting class for Axis widths. NB. should NOT be coded to directly - all handing through Axis connect and disconnect functions."
 )
 (uid "0_6e6_i2eonilu_-ow4"))
-($8 431 < 0_6e6_i2eonilu_-ow3 "guid" 424
+($8 388 < 0_6e6_i2eonilu_-ow3 "guid" 381
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:39:35_00003"
 )
 (uid "0_6e6_i2eonilu_-ow3"))
-($6 432 < 0_6e6_i2eonilu_-ow2 "AxisArea" 1
+($6 389 < 0_6e6_i2eonilu_-ow2 "AxisArea" 1
 (name "AxisArea"
 )
 (uid "0_6e6_i2eonilu_-ow2")
 (isAbstract true))
-($7 433 < 0_6e6_i2eonilu_-ow1 "positions" 432
+($7 390 < 0_6e6_i2eonilu_-ow1 "positions" 389
 (name "positions"
 )
 (uid "0_6e6_i2eonilu_-ow1")
 (multiplicity "2..*"))
-($8 434 < 0_6e6_i2eonilu_-ow0 "documentation" 433
+($8 391 < 0_6e6_i2eonilu_-ow0 "documentation" 390
 (name "documentation"
 )
 (value "Axis positions in axis order"
 )
 (uid "0_6e6_i2eonilu_-ow0"))
-($8 435 < 0_6e6_i2eonilu_-ovz "isDerived" 433
+($8 392 < 0_6e6_i2eonilu_-ovz "isDerived" 390
 (name "isDerived"
 )
 (value "True"
 )
 (uid "0_6e6_i2eonilu_-ovz"))
-($8 436 < 0_6e6_i2eonilu_-ovy "guid" 433
+($8 393 < 0_6e6_i2eonilu_-ovy "guid" 390
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:40:19_00011"
 )
 (uid "0_6e6_i2eonilu_-ovy"))
-($8 437 < 0_6e6_i2eonilu_-ovx "baseName" 433
+($8 394 < 0_6e6_i2eonilu_-ovx "baseName" 390
 (name "baseName"
 )
 (value "position"
 )
 (uid "0_6e6_i2eonilu_-ovx"))
-($7 438 < 0_6e6_i2eonilu_-ovw "widths" 432
+($7 395 < 0_6e6_i2eonilu_-ovw "widths" 389
 (name "widths"
 )
 (uid "0_6e6_i2eonilu_-ovw")
 (multiplicity "2..*"))
-($8 439 < 0_6e6_i2eonilu_-ovv "documentation" 438
+($8 396 < 0_6e6_i2eonilu_-ovv "documentation" 395
 (name "documentation"
 )
 (value "Axis widths in axis order"
 )
 (uid "0_6e6_i2eonilu_-ovv"))
-($8 440 < 0_6e6_i2eonilu_-ovu "isDerived" 438
+($8 397 < 0_6e6_i2eonilu_-ovu "isDerived" 395
 (name "isDerived"
 )
 (value "True"
 )
 (uid "0_6e6_i2eonilu_-ovu"))
-($8 441 < 0_6e6_i2eonilu_-ovt "baseName" 438
+($8 398 < 0_6e6_i2eonilu_-ovt "baseName" 395
 (name "baseName"
 )
 (value "width"
 )
 (uid "0_6e6_i2eonilu_-ovt"))
-($8 442 < 0_6e6_i2eonilu_-ovs "guid" 438
+($8 399 < 0_6e6_i2eonilu_-ovs "guid" 395
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:41:36_00001"
 )
 (uid "0_6e6_i2eonilu_-ovs"))
-($7 443 < 0_6e6_i2eonilu_-ovr "units" 432
+($7 400 < 0_6e6_i2eonilu_-ovr "units" 389
 (name "units"
 )
 (uid "0_6e6_i2eonilu_-ovr")
 (multiplicity "2..*"))
-($8 444 < 0_6e6_i2eonilu_-ovq "documentation" 443
+($8 401 < 0_6e6_i2eonilu_-ovq "documentation" 400
 (name "documentation"
 )
 (value "Axis units in axis order"
 )
 (uid "0_6e6_i2eonilu_-ovq"))
-($8 445 < 0_6e6_i2eonilu_-ovp "isDerived" 443
+($8 402 < 0_6e6_i2eonilu_-ovp "isDerived" 400
 (name "isDerived"
 )
 (value "True"
 )
 (uid "0_6e6_i2eonilu_-ovp"))
-($8 446 < 0_6e6_i2eonilu_-ovo "baseName" 443
+($8 403 < 0_6e6_i2eonilu_-ovo "baseName" 400
 (name "baseName"
 )
 (value "unit"
 )
 (uid "0_6e6_i2eonilu_-ovo"))
-($8 447 < 0_6e6_i2eonilu_-ovn "guid" 443
+($8 404 < 0_6e6_i2eonilu_-ovn "guid" 400
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:41:36_00002"
 )
 (uid "0_6e6_i2eonilu_-ovn"))
-($9 448 < 0_6e6_i2eonilu_-ovm "getPositions" 432
+($9 405 < 0_6e6_i2eonilu_-ovm "getPositions" 389
 (name "getPositions"
 )
 (uid "0_6e6_i2eonilu_-ovm")
 (isQuery true))
-($8 449 < 0_6e6_i2eonilu_-ovl "documentation" 448
+($8 406 < 0_6e6_i2eonilu_-ovl "documentation" 405
 (name "documentation"
 )
 (value "getter for derived attribute positions"
 )
 (uid "0_6e6_i2eonilu_-ovl"))
-($8 450 < 0_6e6_i2eonilu_-ovk "opType" 448
+($8 407 < 0_6e6_i2eonilu_-ovk "opType" 405
 (name "opType"
 )
 (value "get"
 )
 (uid "0_6e6_i2eonilu_-ovk"))
-($8 451 < 0_6e6_i2eonilu_-ovj "code:python" 448
+($8 408 < 0_6e6_i2eonilu_-ovj "code:python" 405
 (name "code:python"
 )
 (value "result = tuple(x.position for x in self.orderedAxes)"
 )
 (uid "0_6e6_i2eonilu_-ovj"))
-($8 452 < 0_6e6_i2eonilu_-ovi "guid" 448
+($8 409 < 0_6e6_i2eonilu_-ovi "guid" 405
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-05-13:05:01_00001"
 )
 (uid "0_6e6_i2eonilu_-ovi"))
-($9 453 < 0_6e6_i2eonilu_-ovh "setPositions" 432
+($9 410 < 0_6e6_i2eonilu_-ovh "setPositions" 389
 (name "setPositions"
 )
 (uid "0_6e6_i2eonilu_-ovh"))
-($8 454 < 0_6e6_i2eonilu_-ovg "documentation" 453
+($8 411 < 0_6e6_i2eonilu_-ovg "documentation" 410
 (name "documentation"
 )
 (value "setter for derived attribute positions"
 )
 (uid "0_6e6_i2eonilu_-ovg"))
-($8 455 < 0_6e6_i2eonilu_-ovf "opType" 453
+($8 412 < 0_6e6_i2eonilu_-ovf "opType" 410
 (name "opType"
 )
 (value "set"
 )
 (uid "0_6e6_i2eonilu_-ovf"))
-($8 456 < 0_6e6_i2eonilu_-ove "code:python" 453
+($8 413 < 0_6e6_i2eonilu_-ove "code:python" 410
 (name "code:python"
 )
 (value "for ii,axis in enumerate(self.orderedAxes):"
 "  axis.position = values[ii]"
 )
 (uid "0_6e6_i2eonilu_-ove"))
-($8 457 < 0_6e6_i2eonilu_-ovd "guid" 453
+($8 414 < 0_6e6_i2eonilu_-ovd "guid" 410
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-05-13:05:02_00001"
 )
 (uid "0_6e6_i2eonilu_-ovd"))
-($9 458 < 0_6e6_i2eonilu_-ovc "getWidths" 432
+($9 415 < 0_6e6_i2eonilu_-ovc "getWidths" 389
 (name "getWidths"
 )
 (uid "0_6e6_i2eonilu_-ovc")
 (isQuery true))
-($8 459 < 0_6e6_i2eonilu_-ovb "documentation" 458
+($8 416 < 0_6e6_i2eonilu_-ovb "documentation" 415
 (name "documentation"
 )
 (value "getter for derived attribute widths"
 )
 (uid "0_6e6_i2eonilu_-ovb"))
-($8 460 < 0_6e6_i2eonilu_-ova "opType" 458
+($8 417 < 0_6e6_i2eonilu_-ova "opType" 415
 (name "opType"
 )
 (value "get"
 )
 (uid "0_6e6_i2eonilu_-ova"))
-($8 461 < 0_6e6_i2eonilu_-ov9 "code:python" 458
+($8 418 < 0_6e6_i2eonilu_-ov9 "code:python" 415
 (name "code:python"
 )
 (value "result = tuple(x.width for x in self.orderedAxes)"
 )
 (uid "0_6e6_i2eonilu_-ov9"))
-($8 462 < 0_6e6_i2eonilu_-ov8 "guid" 458
+($8 419 < 0_6e6_i2eonilu_-ov8 "guid" 415
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-05-13:05:02_00002"
 )
 (uid "0_6e6_i2eonilu_-ov8"))
-($9 463 < 0_6e6_i2eonilu_-ov7 "setWidths" 432
+($9 420 < 0_6e6_i2eonilu_-ov7 "setWidths" 389
 (name "setWidths"
 )
 (uid "0_6e6_i2eonilu_-ov7"))
-($8 464 < 0_6e6_i2eonilu_-ov6 "documentation" 463
+($8 421 < 0_6e6_i2eonilu_-ov6 "documentation" 420
 (name "documentation"
 )
 (value "setter for derived attribute widths"
 )
 (uid "0_6e6_i2eonilu_-ov6"))
-($8 465 < 0_6e6_i2eonilu_-ov5 "opType" 463
+($8 422 < 0_6e6_i2eonilu_-ov5 "opType" 420
 (name "opType"
 )
 (value "set"
 )
 (uid "0_6e6_i2eonilu_-ov5"))
-($8 466 < 0_6e6_i2eonilu_-ov4 "code:python" 463
+($8 423 < 0_6e6_i2eonilu_-ov4 "code:python" 420
 (name "code:python"
 )
 (value "for ii,axis in enumerate(self.orderedAxes):"
 "  axis.width = values[ii]"
 )
 (uid "0_6e6_i2eonilu_-ov4"))
-($8 467 < 0_6e6_i2eonilu_-ov3 "guid" 463
+($8 424 < 0_6e6_i2eonilu_-ov3 "guid" 420
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-05-13:05:02_00003"
 )
 (uid "0_6e6_i2eonilu_-ov3"))
-($9 468 < 0_6e6_i2eonilu_-ov2 "getUnits" 432
+($9 425 < 0_6e6_i2eonilu_-ov2 "getUnits" 389
 (name "getUnits"
 )
 (uid "0_6e6_i2eonilu_-ov2")
 (isQuery true))
-($8 469 < 0_6e6_i2eonilu_-ov1 "documentation" 468
+($8 426 < 0_6e6_i2eonilu_-ov1 "documentation" 425
 (name "documentation"
 )
 (value "getter for derived attribute units"
 )
 (uid "0_6e6_i2eonilu_-ov1"))
-($8 470 < 0_6e6_i2eonilu_-ov0 "opType" 468
+($8 427 < 0_6e6_i2eonilu_-ov0 "opType" 425
 (name "opType"
 )
 (value "get"
 )
 (uid "0_6e6_i2eonilu_-ov0"))
-($8 471 < 0_6e6_i2eonilu_-ouz "code:python" 468
+($8 428 < 0_6e6_i2eonilu_-ouz "code:python" 425
 (name "code:python"
 )
 (value "result = tuple(x.unit for x in self.orderedAxes)"
 )
 (uid "0_6e6_i2eonilu_-ouz"))
-($8 472 < 0_6e6_i2eonilu_-ouy "guid" 468
+($8 429 < 0_6e6_i2eonilu_-ouy "guid" 425
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-05-13:05:02_00004"
 )
 (uid "0_6e6_i2eonilu_-ouy"))
-($9 473 < 0_6e6_i2eonilu_-oux "setUnits" 432
+($9 430 < 0_6e6_i2eonilu_-oux "setUnits" 389
 (name "setUnits"
 )
 (uid "0_6e6_i2eonilu_-oux"))
-($8 474 < 0_6e6_i2eonilu_-ouw "documentation" 473
+($8 431 < 0_6e6_i2eonilu_-ouw "documentation" 430
 (name "documentation"
 )
 (value "setter for derived link units"
 )
 (uid "0_6e6_i2eonilu_-ouw"))
-($8 475 < 0_6e6_i2eonilu_-ouv "opType" 473
+($8 432 < 0_6e6_i2eonilu_-ouv "opType" 430
 (name "opType"
 )
 (value "set"
 )
 (uid "0_6e6_i2eonilu_-ouv"))
-($8 476 < 0_6e6_i2eonilu_-ouu "code:python" 473
+($8 433 < 0_6e6_i2eonilu_-ouu "code:python" 430
 (name "code:python"
 )
 (value "for ii,axis in enumerate(self.orderedAxes):"
 "  axis.unit = values[ii]"
 )
 (uid "0_6e6_i2eonilu_-ouu"))
-($8 477 < 0_6e6_i2eonilu_-out "guid" 473
+($8 434 < 0_6e6_i2eonilu_-out "guid" 430
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-05-13:05:02_00005"
 )
 (uid "0_6e6_i2eonilu_-out"))
-($9 478 < 0_6e6_i2eonilu_-ous "resetAxisOrder" 432
+($9 435 < 0_6e6_i2eonilu_-ous "resetAxisOrder" 389
 (name "resetAxisOrder"
 )
 (uid "0_6e6_i2eonilu_-ous"))
-($8 479 < 0_6e6_i2eonilu_-our "documentation" 478
+($8 436 < 0_6e6_i2eonilu_-our "documentation" 435
 (name "documentation"
 )
 (value "Reset axisOrder to original value"
 )
 (uid "0_6e6_i2eonilu_-our"))
-($8 480 < 0_6e6_i2eonilu_-ouq "opType" 478
+($8 437 < 0_6e6_i2eonilu_-ouq "opType" 435
 (name "opType"
 )
 (value "other"
 )
 (uid "0_6e6_i2eonilu_-ouq"))
-($8 481 < 0_6e6_i2eonilu_-oup "code:python" 478
+($8 438 < 0_6e6_i2eonilu_-oup "code:python" 435
 (name "code:python"
 )
 (value "self.axisOrder = self.axisCodes"
 )
 (uid "0_6e6_i2eonilu_-oup"))
-($8 482 < 0_6e6_i2eonilu_-ouo "guid" 478
+($8 439 < 0_6e6_i2eonilu_-ouo "guid" 435
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-06-10:52:36_00001"
 )
 (uid "0_6e6_i2eonilu_-ouo"))
-($9 483 < 0_6e6_i2eonilu_-oun "findAxis#Word1" 432
+($9 440 < 0_6e6_i2eonilu_-oun "findAxis#Word1" 389
 (name "findAxis"
 )
 (uid "0_6e6_i2eonilu_-oun")
 (isQuery true))
-($10 484 < 0_6e6_i2eonilu_-oum "value" 483
+($10 441 < 0_6e6_i2eonilu_-oum "value" 440
 (name "value"
 )
 (uid "0_6e6_i2eonilu_-oum"))
-($8 485 < 0_6e6_i2eonilu_-oul "guid" 484
+($8 442 < 0_6e6_i2eonilu_-oul "guid" 441
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-10-13:47:47_00001"
 )
 (uid "0_6e6_i2eonilu_-oul"))
-($8 486 < 0_6e6_i2eonilu_-ouk "documentation" 483
+($8 443 < 0_6e6_i2eonilu_-ouk "documentation" 440
 (name "documentation"
 )
 (value "Find connected axis that has exactly the input axis code."
 )
 (uid "0_6e6_i2eonilu_-ouk"))
-($8 487 < 0_6e6_i2eonilu_-ouj "opType" 483
+($8 444 < 0_6e6_i2eonilu_-ouj "opType" 440
 (name "opType"
 )
 (value "other"
 )
 (uid "0_6e6_i2eonilu_-ouj"))
-($8 488 < 0_6e6_i2eonilu_-oui "code:python" 483
+($8 445 < 0_6e6_i2eonilu_-oui "code:python" 440
 (name "code:python"
 )
 (value "try:"
@@ -2864,30 +2521,30 @@ objectdomain.uml.core.Stereotype-owns $20
 "return result"
 )
 (uid "0_6e6_i2eonilu_-oui"))
-($8 489 < 0_6e6_i2eonilu_-ouh "guid" 483
+($8 446 < 0_6e6_i2eonilu_-ouh "guid" 440
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:42:29_00006"
 )
 (uid "0_6e6_i2eonilu_-ouh"))
-($8 490 < 0_6e6_i2eonilu_-oug "documentation" 432
+($8 447 < 0_6e6_i2eonilu_-oug "documentation" 389
 (name "documentation"
 )
 (value "Abstract superclass for DIsplays and Strips"
 )
 (uid "0_6e6_i2eonilu_-oug"))
-($8 491 < 0_6e6_i2eonilu_-ouf "guid" 432
+($8 448 < 0_6e6_i2eonilu_-ouf "guid" 389
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:39:35_00004"
 )
 (uid "0_6e6_i2eonilu_-ouf"))
-($6 492 < 0_6e6_i2eonilu_-oue "SpectrumDisplay" 1
+($6 449 < 0_6e6_i2eonilu_-oue "SpectrumDisplay" 1
 (name "SpectrumDisplay"
 )
 (uid "0_6e6_i2eonilu_-oue")
 (isAbstract true))
-($7 493 < 0_6e6_i2eonilu_-oua "stripDirection" 492
+($7 450 < 0_6e6_i2eonilu_-oua "stripDirection" 449
 (initialValue "Y"
 )
 (changeability "frozen")
@@ -2895,83 +2552,83 @@ objectdomain.uml.core.Stereotype-owns $20
 )
 (uid "0_6e6_i2eonilu_-oua")
 (multiplicity "1"))
-($8 494 < 0_6e6_i2eonilu_-ou9 "documentation" 493
+($8 451 < 0_6e6_i2eonilu_-ou9 "documentation" 450
 (name "documentation"
 )
 (value "Strip Direction (if value is 'X' strips are wide and low, if value is 'Y', strips are tall and thin.). Value must be either 'X', 'Y'."
 )
 (uid "0_6e6_i2eonilu_-ou9"))
-($8 495 < 0_6e6_i2eonilu_-ou8 "guid" 493
+($8 452 < 0_6e6_i2eonilu_-ou8 "guid" 450
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:52:44_00001"
 )
 (uid "0_6e6_i2eonilu_-ou8"))
-($7 496 < 0_6e6_i2eonilu_-ou7 "stripCount" 492
+($7 453 < 0_6e6_i2eonilu_-ou7 "stripCount" 449
 (changeability "frozen")
 (name "stripCount"
 )
 (uid "0_6e6_i2eonilu_-ou7")
 (multiplicity "1"))
-($8 497 < 0_6e6_i2eonilu_-ou6 "documentation" 496
+($8 454 < 0_6e6_i2eonilu_-ou6 "documentation" 453
 (name "documentation"
 )
 (value "Numbre of current strips"
 )
 (uid "0_6e6_i2eonilu_-ou6"))
-($8 498 < 0_6e6_i2eonilu_-ou5 "isDerived" 496
+($8 455 < 0_6e6_i2eonilu_-ou5 "isDerived" 453
 (name "isDerived"
 )
 (value "True"
 )
 (uid "0_6e6_i2eonilu_-ou5"))
-($8 499 < 0_6e6_i2eonilu_-ou4 "guid" 496
+($8 456 < 0_6e6_i2eonilu_-ou4 "guid" 453
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:52:44_00002"
 )
 (uid "0_6e6_i2eonilu_-ou4"))
-($9 500 < 0_6e6_i2eonilu_-ou3 "getStripCount" 492
+($9 457 < 0_6e6_i2eonilu_-ou3 "getStripCount" 449
 (name "getStripCount"
 )
 (uid "0_6e6_i2eonilu_-ou3")
 (isQuery true))
-($8 501 < 0_6e6_i2eonilu_-ou2 "documentation" 500
+($8 458 < 0_6e6_i2eonilu_-ou2 "documentation" 457
 (name "documentation"
 )
 (value "getter for derived attribute stripCount"
 )
 (uid "0_6e6_i2eonilu_-ou2"))
-($8 502 < 0_6e6_i2eonilu_-ou1 "opType" 500
+($8 459 < 0_6e6_i2eonilu_-ou1 "opType" 457
 (name "opType"
 )
 (value "get"
 )
 (uid "0_6e6_i2eonilu_-ou1"))
-($8 503 < 0_6e6_i2eonilu_-ou0 "code:python" 500
+($8 460 < 0_6e6_i2eonilu_-ou0 "code:python" 457
 (name "code:python"
 )
 (value "result = len(self.strips)"
 )
 (uid "0_6e6_i2eonilu_-ou0"))
-($8 504 < 0_6e6_i2eonilu_-otz "guid" 500
+($8 461 < 0_6e6_i2eonilu_-otz "guid" 457
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:52:44_00003"
 )
 (uid "0_6e6_i2eonilu_-otz"))
-($9 505 < 0_6e6_i2eonilu_-oty "getOrderedAxes" 492
+($9 462 < 0_6e6_i2eonilu_-oty "getOrderedAxes" 449
 (name "getOrderedAxes"
 )
 (uid "0_6e6_i2eonilu_-oty")
 (isQuery true))
-($8 506 < 0_6e6_i2eonilu_-otx "opType" 505
+($8 463 < 0_6e6_i2eonilu_-otx "opType" 462
 (name "opType"
 )
 (value "get"
 )
 (uid "0_6e6_i2eonilu_-otx"))
-($8 507 < 0_6e6_i2eonilu_-otw "code:python" 505
+($8 464 < 0_6e6_i2eonilu_-otw "code:python" 462
 (name "code:python"
 )
 (value "axisOrder = self.axisOrder"
@@ -2990,29 +2647,29 @@ objectdomain.uml.core.Stereotype-owns $20
 "  result = tuple(result)"
 )
 (uid "0_6e6_i2eonilu_-otw"))
-($8 508 < 0_6e6_i2eonilu_-otv "guid" 505
+($8 465 < 0_6e6_i2eonilu_-otv "guid" 462
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:52:44_00006"
 )
 (uid "0_6e6_i2eonilu_-otv"))
-($9 509 < 0_6e6_i2eonilu_-otu "setOrderedAxes" 492
+($9 466 < 0_6e6_i2eonilu_-otu "setOrderedAxes" 449
 (name "setOrderedAxes"
 )
 (uid "0_6e6_i2eonilu_-otu"))
-($8 510 < 0_6e6_i2eonilu_-ott "documentation" 509
+($8 467 < 0_6e6_i2eonilu_-ott "documentation" 466
 (name "documentation"
 )
 (value "setter for derived link orderedAxes"
 )
 (uid "0_6e6_i2eonilu_-ott"))
-($8 511 < 0_6e6_i2eonilu_-ots "opType" 509
+($8 468 < 0_6e6_i2eonilu_-ots "opType" 466
 (name "opType"
 )
 (value "set"
 )
 (uid "0_6e6_i2eonilu_-ots"))
-($8 512 < 0_6e6_i2eonilu_-otr "code:python" 509
+($8 469 < 0_6e6_i2eonilu_-otr "code:python" 466
 (name "code:python"
 )
 (value "erroneous = list(x for x in values if x.spectrumDisplay is not self)"
@@ -3022,59 +2679,59 @@ objectdomain.uml.core.Stereotype-owns $20
 "  self.axisOrder = [x.code for x in values]"
 )
 (uid "0_6e6_i2eonilu_-otr"))
-($8 513 < 0_6e6_i2eonilu_-otq "guid" 509
+($8 470 < 0_6e6_i2eonilu_-otq "guid" 466
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-06-11:09:17_00001"
 )
 (uid "0_6e6_i2eonilu_-otq"))
-($9 514 < 0_6e6_i2eonilu_-otp "getOrderedStrips" 492
+($9 471 < 0_6e6_i2eonilu_-otp "getOrderedStrips" 449
 (name "getOrderedStrips"
 )
 (uid "0_6e6_i2eonilu_-otp")
 (isQuery true))
-($8 515 < 0_6e6_i2eonilu_-oto "documentation" 514
+($8 472 < 0_6e6_i2eonilu_-oto "documentation" 471
 (name "documentation"
 )
 (value "getter for derived link orderedStrips"
 )
 (uid "0_6e6_i2eonilu_-oto"))
-($8 516 < 0_6e6_i2eonilu_-otn "opType" 514
+($8 473 < 0_6e6_i2eonilu_-otn "opType" 471
 (name "opType"
 )
 (value "get"
 )
 (uid "0_6e6_i2eonilu_-otn"))
-($8 517 < 0_6e6_i2eonilu_-otm "code:python" 514
+($8 474 < 0_6e6_i2eonilu_-otm "code:python" 471
 (name "code:python"
 )
 (value "dd = dict((x.index, x) for x in self.strips)"
 "result = tuple(dd[x] for x in sorted(dd))"
 )
 (uid "0_6e6_i2eonilu_-otm"))
-($8 518 < 0_6e6_i2eonilu_-otl "guid" 514
+($8 475 < 0_6e6_i2eonilu_-otl "guid" 471
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:52:44_00004"
 )
 (uid "0_6e6_i2eonilu_-otl"))
-($9 519 < 0_6e6_i2eonilu_-otk "setOrderedStrips" 492
+($9 476 < 0_6e6_i2eonilu_-otk "setOrderedStrips" 449
 (name "setOrderedStrips"
 )
 (uid "0_6e6_i2eonilu_-otk"))
-($8 520 < 0_6e6_i2eonilu_-otj "opType" 519
+($8 477 < 0_6e6_i2eonilu_-otj "opType" 476
 (name "opType"
 )
 (value "set"
 )
 (uid "0_6e6_i2eonilu_-otj"))
-($8 521 < 0_6e6_i2eonilu_-oti "documentation" 519
+($8 478 < 0_6e6_i2eonilu_-oti "documentation" 476
 (name "documentation"
 )
 (value "setter for derived link orderedStrips"
 )
 (uid "0_6e6_i2eonilu_-oti"))
-($8 522 < 0_6e6_i2eonilu_-oth "code:python" 519
+($8 479 < 0_6e6_i2eonilu_-oth "code:python" 476
 (name "code:python"
 )
 (value "stripCount = self.stripCount"
@@ -3084,58 +2741,58 @@ objectdomain.uml.core.Stereotype-owns $20
 "  strip.__dict__['index'] = ii"
 )
 (uid "0_6e6_i2eonilu_-oth"))
-($8 523 < 0_6e6_i2eonilu_-otg "guid" 519
+($8 480 < 0_6e6_i2eonilu_-otg "guid" 476
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:52:44_00005"
 )
 (uid "0_6e6_i2eonilu_-otg"))
-($9 524 < z8kq45_85r_iascddog_-p93 "getIs1d" 492
+($9 481 < z8kq45_85r_iascddog_-p93 "getIs1d" 449
 (name "getIs1d"
 )
 (uid "z8kq45_85r_iascddog_-p93")
 (isQuery true))
-($8 525 < z8kq45_85r_iascddog_-p92 "documentation" 524
+($8 482 < z8kq45_85r_iascddog_-p92 "documentation" 481
 (name "documentation"
 )
 (value "getter for derived attribute is1d"
 )
 (uid "z8kq45_85r_iascddog_-p92"))
-($8 526 < z8kq45_85r_iascddog_-p91 "opType" 524
+($8 483 < z8kq45_85r_iascddog_-p91 "opType" 481
 (name "opType"
 )
 (value "get"
 )
 (uid "z8kq45_85r_iascddog_-p91"))
-($8 527 < z8kq45_85r_iascddog_-p90 "code:python" 524
+($8 484 < z8kq45_85r_iascddog_-p90 "code:python" 481
 (name "code:python"
 )
 (value "result = (self.axisCodes and self.axisCodes[1] == 'intensity')"
 )
 (uid "z8kq45_85r_iascddog_-p90"))
-($8 528 < z8kq45_85r_iascddog_-p7d "guid" 524
+($8 485 < z8kq45_85r_iascddog_-p7d "guid" 481
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-06-11-17:26:36_00001"
 )
 (uid "z8kq45_85r_iascddog_-p7d"))
-($9 529 < 0_6e6_i2eonilu_-otf "disconnect" 492
+($9 486 < 0_6e6_i2eonilu_-otf "disconnect" 449
 (name "disconnect"
 )
 (uid "0_6e6_i2eonilu_-otf"))
-($8 530 < 0_6e6_i2eonilu_-ote "documentation" 529
+($8 487 < 0_6e6_i2eonilu_-ote "documentation" 486
 (name "documentation"
 )
 (value "Disconnect module from NmrProject and windows, for inactivation, storage, and exchange. NOT IN USE"
 )
 (uid "0_6e6_i2eonilu_-ote"))
-($8 531 < 0_6e6_i2eonilu_-otd "opType" 529
+($8 488 < 0_6e6_i2eonilu_-otd "opType" 486
 (name "opType"
 )
 (value "other"
 )
 (uid "0_6e6_i2eonilu_-otd"))
-($8 532 < 0_6e6_i2eonilu_-otc "code:python" 529
+($8 489 < 0_6e6_i2eonilu_-otc "code:python" 486
 (name "code:python"
 )
 (value "# disconnect windows"
@@ -3172,55 +2829,55 @@ objectdomain.uml.core.Stereotype-owns $20
 "   undo.newItem(self.reconnect, self.disconnect, undoArgs=(window,))"
 )
 (uid "0_6e6_i2eonilu_-otc"))
-($8 533 < 0_6e6_i2eonilu_-otb "guid" 529
+($8 490 < 0_6e6_i2eonilu_-otb "guid" 486
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-10-13:49:17_00007"
 )
 (uid "0_6e6_i2eonilu_-otb"))
-($7 534 < 0_6e6_i2eonilu_-ota "resonanceGroupSerial" 492
+($7 491 < 0_6e6_i2eonilu_-ota "resonanceGroupSerial" 449
 (name "resonanceGroupSerial"
 )
 (uid "0_6e6_i2eonilu_-ota"))
-($8 535 < 0_6e6_i2eonilu_-ot9 "documentation" 534
+($8 492 < 0_6e6_i2eonilu_-ot9 "documentation" 491
 (name "documentation"
 )
 (value "Serial number of attached resonanceGroup. Used to store resonanceGroup liink while the task is detached."
 )
 (uid "0_6e6_i2eonilu_-ot9"))
-($8 536 < 0_6e6_i2eonilu_-ot8 "guid" 534
+($8 493 < 0_6e6_i2eonilu_-ot8 "guid" 491
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-10-13:49:17_00006"
 )
 (uid "0_6e6_i2eonilu_-ot8"))
-($9 537 < 0_6e6_i2eonilu_-ot7 "reconnect#Window1" 492
+($9 494 < 0_6e6_i2eonilu_-ot7 "reconnect#Window1" 449
 (name "reconnect"
 )
 (uid "0_6e6_i2eonilu_-ot7"))
-($10 538 < 0_6e6_i2eonilu_-ot6 "window" 537
+($10 495 < 0_6e6_i2eonilu_-ot6 "window" 494
 (name "window"
 )
 (uid "0_6e6_i2eonilu_-ot6"))
-($8 539 < 0_6e6_i2eonilu_-ot5 "guid" 538
+($8 496 < 0_6e6_i2eonilu_-ot5 "guid" 495
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-10-13:49:17_00009"
 )
 (uid "0_6e6_i2eonilu_-ot5"))
-($8 540 < 0_6e6_i2eonilu_-ot4 "documentation" 537
+($8 497 < 0_6e6_i2eonilu_-ot4 "documentation" 494
 (name "documentation"
 )
 (value "Reconnect Module to Nmr data and window, assuming that the NmrProject data fit. Data that do not fit are removed (except for SpectrumViews)  NOT IN USE"
 )
 (uid "0_6e6_i2eonilu_-ot4"))
-($8 541 < 0_6e6_i2eonilu_-ot3 "opType" 537
+($8 498 < 0_6e6_i2eonilu_-ot3 "opType" 494
 (name "opType"
 )
 (value "other"
 )
 (uid "0_6e6_i2eonilu_-ot3"))
-($8 542 < 0_6e6_i2eonilu_-ot2 "code:python" 537
+($8 499 < 0_6e6_i2eonilu_-ot2 "code:python" 494
 (name "code:python"
 )
 (value "# Reset window ID."
@@ -3267,43 +2924,43 @@ objectdomain.uml.core.Stereotype-owns $20
 "   undo.newItem(self.disconnect, self.reconnect, redoArgs=(window,))"
 )
 (uid "0_6e6_i2eonilu_-ot2"))
-($8 543 < 0_6e6_i2eonilu_-ot1 "guid" 537
+($8 500 < 0_6e6_i2eonilu_-ot1 "guid" 494
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-10-13:49:17_00008"
 )
 (uid "0_6e6_i2eonilu_-ot1"))
-($9 544 < 0_6e6_i2eonilu_-ot0 "copyToTask#GuiTask#NmrProject" 492
+($9 501 < 0_6e6_i2eonilu_-ot0 "copyToTask#GuiTask#NmrProject" 449
 (name "copyToTask"
 )
 (uid "0_6e6_i2eonilu_-ot0"))
-($10 545 < 0_6e6_i2eonilu_-osz "newTask" 544
+($10 502 < 0_6e6_i2eonilu_-osz "newTask" 501
 (name "newTask"
 )
 (uid "0_6e6_i2eonilu_-osz"))
-($8 546 < 0_6e6_i2eonilu_-osy "guid" 545
+($8 503 < 0_6e6_i2eonilu_-osy "guid" 502
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-11-18:25:59_00006"
 )
 (uid "0_6e6_i2eonilu_-osy"))
-($10 547 < 0_6e6_i2eonilu_-osx "nmrProject" 544
+($10 504 < 0_6e6_i2eonilu_-osx "nmrProject" 501
 (name "nmrProject"
 )
 (uid "0_6e6_i2eonilu_-osx"))
-($8 548 < 0_6e6_i2eonilu_-osw "guid" 547
+($8 505 < 0_6e6_i2eonilu_-osw "guid" 504
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-11-18:29:24_00001"
 )
 (uid "0_6e6_i2eonilu_-osw"))
-($8 549 < 0_6e6_i2eonilu_-osv "opType" 544
+($8 506 < 0_6e6_i2eonilu_-osv "opType" 501
 (name "opType"
 )
 (value "other"
 )
 (uid "0_6e6_i2eonilu_-osv"))
-($8 550 < 0_6e6_i2eonilu_-osu "code:python" 544
+($8 507 < 0_6e6_i2eonilu_-osu "code:python" 501
 (name "code:python"
 )
 (value "from ccpnmodel.ccpncore.lib import CopyData"
@@ -3341,67 +2998,67 @@ objectdomain.uml.core.Stereotype-owns $20
 "            newPeakListView = CopyData.copySubTree(peakListViews[0], spectrumView, topObjectParameters={'peakListSerial':peakLists[0].serial})"
 )
 (uid "0_6e6_i2eonilu_-osu"))
-($8 551 < 0_6e6_i2eonilu_-ost "guid" 544
+($8 508 < 0_6e6_i2eonilu_-ost "guid" 501
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-11-18:25:59_00005"
 )
 (uid "0_6e6_i2eonilu_-ost"))
-($8 552 < ajvq9s_joo_ipq2z8si_-p91 "documentation" 544
+($8 509 < ajvq9s_joo_ipq2z8si_-p91 "documentation" 501
 (name "documentation"
 )
 (value "Copy Module to target task.  NOT IN USE"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p91"))
-($7 553 < z8kq45_85r_iascddog_-p96 "is1d" 492
+($7 510 < z8kq45_85r_iascddog_-p96 "is1d" 449
 (changeability "frozen")
 (name "is1d"
 )
 (uid "z8kq45_85r_iascddog_-p96")
 (multiplicity "1"))
-($8 554 < z8kq45_85r_iascddog_-p95 "documentation" 553
+($8 511 < z8kq45_85r_iascddog_-p95 "documentation" 510
 (name "documentation"
 )
 (value "Is this a 1D display?"
 )
 (uid "z8kq45_85r_iascddog_-p95"))
-($8 555 < z8kq45_85r_iascddog_-p94 "isDerived" 553
+($8 512 < z8kq45_85r_iascddog_-p94 "isDerived" 510
 (name "isDerived"
 )
 (value "True"
 )
 (uid "z8kq45_85r_iascddog_-p94"))
-($8 556 < z8kq45_85r_iascddog_-p7l "guid" 553
+($8 513 < z8kq45_85r_iascddog_-p7l "guid" 510
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-06-11-17:25:53_00005"
 )
 (uid "z8kq45_85r_iascddog_-p7l"))
-($7 557 < z8kq45_85r_iascddog_-p8z "stripType" 492
+($7 514 < z8kq45_85r_iascddog_-p8z "stripType" 449
 (changeability "frozen")
 (name "stripType"
 )
 (uid "z8kq45_85r_iascddog_-p8z")
 (multiplicity "1"))
-($8 558 < z8kq45_85r_iascddog_-p8y "documentation" 557
+($8 515 < z8kq45_85r_iascddog_-p8y "documentation" 514
 (name "documentation"
 )
 (value "Strip type ('Free', or 'Bound')"
 )
 (uid "z8kq45_85r_iascddog_-p8y"))
-($8 559 < z8kq45_85r_iascddog_-p8x "isAutomatic" 557
+($8 516 < z8kq45_85r_iascddog_-p8x "isAutomatic" 514
 (name "isAutomatic"
 )
 (value "True"
 )
 (uid "z8kq45_85r_iascddog_-p8x"))
-($8 560 < z8kq45_85r_iascddog_-p7m "guid" 557
+($8 517 < z8kq45_85r_iascddog_-p7m "guid" 514
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-06-11-17:25:53_00006"
 )
 (uid "z8kq45_85r_iascddog_-p7m"))
-($7 561 < ajvq9s_joo_ipq2z8si_-p8a "moduleType" 492
+($7 518 < ajvq9s_joo_ipq2z8si_-p8a "moduleType" 449
 (initialValue "SpectrumDisplay"
 )
 (changeability "frozen")
@@ -3409,206 +3066,206 @@ objectdomain.uml.core.Stereotype-owns $20
 )
 (uid "ajvq9s_joo_ipq2z8si_-p8a")
 (multiplicity "1"))
-($8 562 < ajvq9s_joo_ipq2z8si_-p84 "guid" 561
+($8 519 < ajvq9s_joo_ipq2z8si_-p84 "guid" 518
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2016-06-22-02:40:58_00001"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p84"))
-($11 563 < 0_6e6_i2eonilu_-oss "#<anon> (SpectrumDisplay, Strip)##," 492
+($11 520 < 0_6e6_i2eonilu_-oss "#<anon> (SpectrumDisplay, Strip)##," 449
 (name "")
 (uid "0_6e6_i2eonilu_-oss")
 (isAbstract true))
-($12 564 < 0_6e6_i2eonilu_-osr "#0" 563
+($12 521 < 0_6e6_i2eonilu_-osr "#0" 520
 (changeability "frozen")
 (aggregation "composite")
 (uid "0_6e6_i2eonilu_-osr")
 (multiplicity "1"))
-($8 565 < 0_6e6_i2eonilu_-osq "guid" 564
+($8 522 < 0_6e6_i2eonilu_-osq "guid" 521
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:51:55_00003"
 )
 (uid "0_6e6_i2eonilu_-osq"))
-($12 566 < 0_6e6_i2eonilu_-osp "#1" 563
+($12 523 < 0_6e6_i2eonilu_-osp "#1" 520
 (uid "0_6e6_i2eonilu_-osp")
 (multiplicity "*"))
-($8 567 < 0_6e6_i2eonilu_-oso "guid" 566
+($8 524 < 0_6e6_i2eonilu_-oso "guid" 523
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:51:55_00004"
 )
 (uid "0_6e6_i2eonilu_-oso"))
-($11 568 < 0_6e6_i2eonilu_-osn "#<anon> (SpectrumDisplay, Strip)##,orderedStrips" 492
+($11 525 < 0_6e6_i2eonilu_-osn "#<anon> (SpectrumDisplay, Strip)##,orderedStrips" 449
 (name "")
 (uid "0_6e6_i2eonilu_-osn"))
-($12 569 < 0_6e6_i2eonilu_-osm "#0" 568
+($12 526 < 0_6e6_i2eonilu_-osm "#0" 525
 (uid "0_6e6_i2eonilu_-osm")
 (isNavigable false))
-($12 570 < 0_6e6_i2eonilu_-osl "orderedStrips#1" 568
+($12 527 < 0_6e6_i2eonilu_-osl "orderedStrips#1" 525
 (isOrdered true)
 (name "orderedStrips"
 )
 (uid "0_6e6_i2eonilu_-osl")
 (multiplicity "*"))
-($8 571 < 0_6e6_i2eonilu_-osk "documentation" 570
+($8 528 < 0_6e6_i2eonilu_-osk "documentation" 527
 (name "documentation"
 )
 (value "Strips in current display order"
 )
 (uid "0_6e6_i2eonilu_-osk"))
-($8 572 < 0_6e6_i2eonilu_-osj "baseName" 570
+($8 529 < 0_6e6_i2eonilu_-osj "baseName" 527
 (name "baseName"
 )
 (value "orderedStrip"
 )
 (uid "0_6e6_i2eonilu_-osj"))
-($8 573 < 0_6e6_i2eonilu_-osi "guid" 570
+($8 530 < 0_6e6_i2eonilu_-osi "guid" 527
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:51:55_00005"
 )
 (uid "0_6e6_i2eonilu_-osi"))
-($8 574 < 0_6e6_i2eonilu_-osh "isDerived" 568
+($8 531 < 0_6e6_i2eonilu_-osh "isDerived" 525
 (name "isDerived"
 )
 (value "True"
 )
 (uid "0_6e6_i2eonilu_-osh"))
-($13 575 < 0_6e6_i2eonilu_-osg "#<anon> (SpectrumDisplay, Module)" 492
+($13 532 < 0_6e6_i2eonilu_-osg "#<anon> (SpectrumDisplay, Module)" 449
 (uid "0_6e6_i2eonilu_-osg"))
-($11 576 < 0_6e6_i2eonilu_-osf "#<anon> (SpectrumDisplay, SpectrumView)##," 492
+($11 533 < 0_6e6_i2eonilu_-osf "#<anon> (SpectrumDisplay, SpectrumView)##," 449
 (name "")
 (uid "0_6e6_i2eonilu_-osf"))
-($12 577 < 0_6e6_i2eonilu_-ose "#0" 576
+($12 534 < 0_6e6_i2eonilu_-ose "#0" 533
 (changeability "frozen")
 (aggregation "composite")
 (uid "0_6e6_i2eonilu_-ose")
 (multiplicity "1"))
-($8 578 < 0_6e6_i2eonilu_-osd "guid" 577
+($8 535 < 0_6e6_i2eonilu_-osd "guid" 534
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:51:55_00006"
 )
 (uid "0_6e6_i2eonilu_-osd"))
-($12 579 < 0_6e6_i2eonilu_-osc "#1" 576
+($12 536 < 0_6e6_i2eonilu_-osc "#1" 533
 (uid "0_6e6_i2eonilu_-osc")
 (multiplicity "*"))
-($8 580 < 0_6e6_i2eonilu_-osb "guid" 579
+($8 537 < 0_6e6_i2eonilu_-osb "guid" 536
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:51:55_00007"
 )
 (uid "0_6e6_i2eonilu_-osb"))
-($11 581 < 0_6e6_i2eonilu_-osa "#<anon> (SpectrumDisplay, ResonanceGroup)##," 492
+($11 538 < 0_6e6_i2eonilu_-osa "#<anon> (SpectrumDisplay, ResonanceGroup)##," 449
 (name "")
 (uid "0_6e6_i2eonilu_-osa"))
-($12 582 < 0_6e6_i2eonilu_-os9 "#0" 581
+($12 539 < 0_6e6_i2eonilu_-os9 "#0" 538
 (uid "0_6e6_i2eonilu_-os9")
 (multiplicity "*"))
-($8 583 < 0_6e6_i2eonilu_-os8 "documentation" 582
+($8 540 < 0_6e6_i2eonilu_-os8 "documentation" 539
 (name "documentation"
 )
 (value "Spectrum displays where ResonanceGroup is attached"
 )
 (uid "0_6e6_i2eonilu_-os8"))
-($8 584 < 0_6e6_i2eonilu_-os7 "guid" 582
+($8 541 < 0_6e6_i2eonilu_-os7 "guid" 539
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:51:55_00008"
 )
 (uid "0_6e6_i2eonilu_-os7"))
-($12 585 < 0_6e6_i2eonilu_-os6 "#1" 581
+($12 542 < 0_6e6_i2eonilu_-os6 "#1" 538
 (uid "0_6e6_i2eonilu_-os6"))
-($8 586 < 0_6e6_i2eonilu_-os5 "documentation" 585
+($8 543 < 0_6e6_i2eonilu_-os5 "documentation" 542
 (name "documentation"
 )
 (value "ResonanceGroup attached to SpectrumDisplay"
 )
 (uid "0_6e6_i2eonilu_-os5"))
-($8 587 < 0_6e6_i2eonilu_-os4 "guid" 585
+($8 544 < 0_6e6_i2eonilu_-os4 "guid" 542
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:51:55_00009"
 )
 (uid "0_6e6_i2eonilu_-os4"))
-($11 588 < 0_6e6_i2eonilu_-os3 "#<anon> (SpectrumDisplay, Axis)##,axes" 492
+($11 545 < 0_6e6_i2eonilu_-os3 "#<anon> (SpectrumDisplay, Axis)##,axes" 449
 (name "")
 (uid "0_6e6_i2eonilu_-os3"))
-($12 589 < 0_6e6_i2eonilu_-os2 "#0" 588
+($12 546 < 0_6e6_i2eonilu_-os2 "#0" 545
 (changeability "frozen")
 (aggregation "composite")
 (uid "0_6e6_i2eonilu_-os2")
 (multiplicity "1"))
-($8 590 < 0_6e6_i2eonilu_-os1 "guid" 589
+($8 547 < 0_6e6_i2eonilu_-os1 "guid" 546
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:51:55_00010"
 )
 (uid "0_6e6_i2eonilu_-os1"))
-($12 591 < 0_6e6_i2eonilu_-os0 "axes#1" 588
+($12 548 < 0_6e6_i2eonilu_-os0 "axes#1" 545
 (name "axes"
 )
 (uid "0_6e6_i2eonilu_-os0")
 (multiplicity "*"))
-($8 592 < 0_6e6_i2eonilu_-orz "baseName" 591
+($8 549 < 0_6e6_i2eonilu_-orz "baseName" 548
 (name "baseName"
 )
 (value "axis"
 )
 (uid "0_6e6_i2eonilu_-orz"))
-($8 593 < 0_6e6_i2eonilu_-ory "guid" 591
+($8 550 < 0_6e6_i2eonilu_-ory "guid" 548
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:51:55_00011"
 )
 (uid "0_6e6_i2eonilu_-ory"))
-($11 594 < 0_6e6_i2eonilu_-orx "#<anon> (SpectrumDisplay, Axis)##,orderedAxes" 492
+($11 551 < 0_6e6_i2eonilu_-orx "#<anon> (SpectrumDisplay, Axis)##,orderedAxes" 449
 (name "")
 (uid "0_6e6_i2eonilu_-orx"))
-($12 595 < 0_6e6_i2eonilu_-orw "#0" 594
+($12 552 < 0_6e6_i2eonilu_-orw "#0" 551
 (uid "0_6e6_i2eonilu_-orw")
 (isNavigable false))
-($12 596 < 0_6e6_i2eonilu_-orv "orderedAxes#1" 594
+($12 553 < 0_6e6_i2eonilu_-orv "orderedAxes#1" 551
 (isOrdered true)
 (name "orderedAxes"
 )
 (uid "0_6e6_i2eonilu_-orv")
 (multiplicity "*"))
-($8 597 < 0_6e6_i2eonilu_-oru "baseName" 596
+($8 554 < 0_6e6_i2eonilu_-oru "baseName" 553
 (name "baseName"
 )
 (value "orderedAxis"
 )
 (uid "0_6e6_i2eonilu_-oru"))
-($8 598 < 0_6e6_i2eonilu_-ort "guid" 596
+($8 555 < 0_6e6_i2eonilu_-ort "guid" 553
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-05-13:11:24_00001"
 )
 (uid "0_6e6_i2eonilu_-ort"))
-($8 599 < 0_6e6_i2eonilu_-ors "isDerived" 594
+($8 556 < 0_6e6_i2eonilu_-ors "isDerived" 551
 (name "isDerived"
 )
 (value "True"
 )
 (uid "0_6e6_i2eonilu_-ors"))
-($13 600 < 0_6e6_i2eonilu_-orr "#<anon> (SpectrumDisplay, AxisArea)" 492
+($13 557 < 0_6e6_i2eonilu_-orr "#<anon> (SpectrumDisplay, AxisArea)" 449
 (uid "0_6e6_i2eonilu_-orr"))
-($8 601 < 0_6e6_i2eonilu_-orq "documentation" 492
+($8 558 < 0_6e6_i2eonilu_-orq "documentation" 449
 (name "documentation"
 )
 (value "Abstract superclass for All SpectrumDisplay."
 "Either resonancGroup or resonanceGroupSerial can be passed in at creation time"
 )
 (uid "0_6e6_i2eonilu_-orq"))
-($8 602 < 0_6e6_i2eonilu_-orp "guid" 492
+($8 559 < 0_6e6_i2eonilu_-orp "guid" 449
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:39:35_00005"
 )
 (uid "0_6e6_i2eonilu_-orp"))
-($14 603 < z8kq45_85r_iascddog_-p97 "only_Y_axis_can_be_intensity" 492
+($14 560 < z8kq45_85r_iascddog_-p97 "only_Y_axis_can_be_intensity" 449
 (name "only_Y_axis_can_be_intensity"
 )
 (uid "z8kq45_85r_iascddog_-p97")
@@ -3617,71 +3274,71 @@ objectdomain.uml.core.Stereotype-owns $20
 "axisCodes = self.axisCodes"
 "isValid = ('intensity' not in axisCodes[:1] and 'intensity' not in axisCodes[2:])"
 ))
-($8 604 < z8kq45_85r_iascddog_-p7k "guid" 603
+($8 561 < z8kq45_85r_iascddog_-p7k "guid" 560
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-06-11-17:25:49_00001"
 )
 (uid "z8kq45_85r_iascddog_-p7k"))
-($6 605 < 0_6e6_i2eonilu_-oro "Strip" 1
+($6 562 < 0_6e6_i2eonilu_-oro "Strip" 1
 (name "Strip"
 )
 (uid "0_6e6_i2eonilu_-oro")
 (isAbstract true))
-($7 606 < 0_6e6_i2eonilu_-orn "serial" 605
+($7 563 < 0_6e6_i2eonilu_-orn "serial" 562
 (changeability "frozen")
 (name "serial"
 )
 (uid "0_6e6_i2eonilu_-orn")
 (multiplicity "1"))
-($8 607 < 0_6e6_i2eonilu_-orm "isAutomatic" 606
+($8 564 < 0_6e6_i2eonilu_-orm "isAutomatic" 563
 (name "isAutomatic"
 )
 (value "True"
 )
 (uid "0_6e6_i2eonilu_-orm"))
-($8 608 < 0_6e6_i2eonilu_-orl "guid" 606
+($8 565 < 0_6e6_i2eonilu_-orl "guid" 563
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-05-12:31:24_00002"
 )
 (uid "0_6e6_i2eonilu_-orl"))
-($7 609 < 0_6e6_i2eonilu_-ork "index" 605
+($7 566 < 0_6e6_i2eonilu_-ork "index" 562
 (changeability "frozen")
 (name "index"
 )
 (uid "0_6e6_i2eonilu_-ork")
 (multiplicity "1"))
-($8 610 < 0_6e6_i2eonilu_-orj "documentation" 609
+($8 567 < 0_6e6_i2eonilu_-orj "documentation" 566
 (name "documentation"
 )
 (value "Index of strip in strip ordering, starting at zero, set automatically on object creation. New strips are added at the end of the list. Indices are reset when strips are deleted, by the Strip.moveTo(newIndex) command, and when the orderedStrips link is set."
 )
 (uid "0_6e6_i2eonilu_-orj"))
-($8 611 < 0_6e6_i2eonilu_-ori "isAutomatic" 609
+($8 568 < 0_6e6_i2eonilu_-ori "isAutomatic" 566
 (name "isAutomatic"
 )
 (value "True"
 )
 (uid "0_6e6_i2eonilu_-ori"))
-($8 612 < 0_6e6_i2eonilu_-orh "guid" 609
+($8 569 < 0_6e6_i2eonilu_-orh "guid" 566
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:53:34_00016"
 )
 (uid "0_6e6_i2eonilu_-orh"))
-($9 613 < 0_6e6_i2eonilu_-org "getOrderedAxes" 605
+($9 570 < 0_6e6_i2eonilu_-org "getOrderedAxes" 562
 (name "getOrderedAxes"
 )
 (uid "0_6e6_i2eonilu_-org")
 (isQuery true))
-($8 614 < 0_6e6_i2eonilu_-orf "opType" 613
+($8 571 < 0_6e6_i2eonilu_-orf "opType" 570
 (name "opType"
 )
 (value "get"
 )
 (uid "0_6e6_i2eonilu_-orf"))
-($8 615 < 0_6e6_i2eonilu_-ore "code:python" 613
+($8 572 < 0_6e6_i2eonilu_-ore "code:python" 570
 (name "code:python"
 )
 (value "display = self.spectrumDisplay"
@@ -3701,69 +3358,69 @@ objectdomain.uml.core.Stereotype-owns $20
 "  result = tuple(result)"
 )
 (uid "0_6e6_i2eonilu_-ore"))
-($8 616 < 0_6e6_i2eonilu_-ord "guid" 613
+($8 573 < 0_6e6_i2eonilu_-ord "guid" 570
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:53:34_00020"
 )
 (uid "0_6e6_i2eonilu_-ord"))
-($9 617 < 0_6e6_i2eonilu_-orc "setOrderedAxes" 605
+($9 574 < 0_6e6_i2eonilu_-orc "setOrderedAxes" 562
 (name "setOrderedAxes"
 )
 (uid "0_6e6_i2eonilu_-orc"))
-($8 618 < 0_6e6_i2eonilu_-orb "documentation" 617
+($8 575 < 0_6e6_i2eonilu_-orb "documentation" 574
 (name "documentation"
 )
 (value "setter for derived link orderedAxes"
 )
 (uid "0_6e6_i2eonilu_-orb"))
-($8 619 < 0_6e6_i2eonilu_-ora "opType" 617
+($8 576 < 0_6e6_i2eonilu_-ora "opType" 574
 (name "opType"
 )
 (value "set"
 )
 (uid "0_6e6_i2eonilu_-ora"))
-($8 620 < 0_6e6_i2eonilu_-or9 "code:python" 617
+($8 577 < 0_6e6_i2eonilu_-or9 "code:python" 574
 (name "code:python"
 )
 (value "self.axisOrder = [(x and x.code) for x in values]"
 "# The (x and x.code) trick gives None if x is None, x.code otherwise."
 )
 (uid "0_6e6_i2eonilu_-or9"))
-($8 621 < 0_6e6_i2eonilu_-or8 "guid" 617
+($8 578 < 0_6e6_i2eonilu_-or8 "guid" 574
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-06-11:09:17_00002"
 )
 (uid "0_6e6_i2eonilu_-or8"))
-($9 622 < 0_6e6_i2eonilu_-or2 "clone##Strip" 605
+($9 579 < 0_6e6_i2eonilu_-or2 "clone##Strip" 562
 (name "clone"
 )
 (uid "0_6e6_i2eonilu_-or2"))
-($10 623 < 0_6e6_i2eonilu_-or1 "result" 622
+($10 580 < 0_6e6_i2eonilu_-or1 "result" 579
 (name "result"
 )
 (kind "return")
 (uid "0_6e6_i2eonilu_-or1"))
-($8 624 < 0_6e6_i2eonilu_-or0 "guid" 623
+($8 581 < 0_6e6_i2eonilu_-or0 "guid" 580
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-05-12:31:24_00003"
 )
 (uid "0_6e6_i2eonilu_-or0"))
-($8 625 < 0_6e6_i2eonilu_-oqz "documentation" 622
+($8 582 < 0_6e6_i2eonilu_-oqz "documentation" 579
 (name "documentation"
 )
 (value "Make duplicate of strip and place it as the last ordered strip."
 )
 (uid "0_6e6_i2eonilu_-oqz"))
-($8 626 < 0_6e6_i2eonilu_-oqy "opType" 622
+($8 583 < 0_6e6_i2eonilu_-oqy "opType" 579
 (name "opType"
 )
 (value "other"
 )
 (uid "0_6e6_i2eonilu_-oqy"))
-($8 627 < 0_6e6_i2eonilu_-oqx "code:python" 622
+($8 584 < 0_6e6_i2eonilu_-oqx "code:python" 579
 (name "code:python"
 )
 (value "from ccpnmodel.ccpncore.lib import CopyData"
@@ -3786,39 +3443,39 @@ objectdomain.uml.core.Stereotype-owns $20
 "   undo.newItem(result.delete, self.clone)"
 )
 (uid "0_6e6_i2eonilu_-oqx"))
-($8 628 < 0_6e6_i2eonilu_-oqw "guid" 622
+($8 585 < 0_6e6_i2eonilu_-oqw "guid" 579
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:53:34_00019"
 )
 (uid "0_6e6_i2eonilu_-oqw"))
-($9 629 < 0_6e6_i2eonilu_-oqv "moveTo#Int1" 605
+($9 586 < 0_6e6_i2eonilu_-oqv "moveTo#Int1" 562
 (name "moveTo"
 )
 (uid "0_6e6_i2eonilu_-oqv"))
-($10 630 < 0_6e6_i2eonilu_-oqu "newIndex" 629
+($10 587 < 0_6e6_i2eonilu_-oqu "newIndex" 586
 (name "newIndex"
 )
 (uid "0_6e6_i2eonilu_-oqu"))
-($8 631 < 0_6e6_i2eonilu_-oqt "guid" 630
+($8 588 < 0_6e6_i2eonilu_-oqt "guid" 587
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-05-12:31:24_00005"
 )
 (uid "0_6e6_i2eonilu_-oqt"))
-($8 632 < 0_6e6_i2eonilu_-oqs "documentation" 629
+($8 589 < 0_6e6_i2eonilu_-oqs "documentation" 586
 (name "documentation"
 )
 (value "Move strip in stripOrder to position determined by newIndex"
 )
 (uid "0_6e6_i2eonilu_-oqs"))
-($8 633 < 0_6e6_i2eonilu_-oqr "opType" 629
+($8 590 < 0_6e6_i2eonilu_-oqr "opType" 586
 (name "opType"
 )
 (value "other"
 )
 (uid "0_6e6_i2eonilu_-oqr"))
-($8 634 < 0_6e6_i2eonilu_-oqq "code:python" 629
+($8 591 < 0_6e6_i2eonilu_-oqq "code:python" 586
 (name "code:python"
 )
 (value "if not isinstance(newIndex, int) or newIndex < 0:"
@@ -3842,203 +3499,203 @@ objectdomain.uml.core.Stereotype-owns $20
 "newIndex,))  "
 )
 (uid "0_6e6_i2eonilu_-oqq"))
-($8 635 < 0_6e6_i2eonilu_-oqp "guid" 629
+($8 592 < 0_6e6_i2eonilu_-oqp "guid" 586
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-05-12:31:24_00004"
 )
 (uid "0_6e6_i2eonilu_-oqp"))
-($9 636 < 0_jd_i37kgip4_-p8x "getSpectrumViews" 605
+($9 593 < 0_jd_i37kgip4_-p8x "getSpectrumViews" 562
 (name "getSpectrumViews"
 )
 (uid "0_jd_i37kgip4_-p8x")
 (isQuery true))
-($8 637 < 0_jd_i37kgip4_-p8w "documentation" 636
+($8 594 < 0_jd_i37kgip4_-p8w "documentation" 593
 (name "documentation"
 )
 (value "getter for derived link spectrumViews"
 )
 (uid "0_jd_i37kgip4_-p8w"))
-($8 638 < 0_jd_i37kgip4_-p8v "opType" 636
+($8 595 < 0_jd_i37kgip4_-p8v "opType" 593
 (name "opType"
 )
 (value "get"
 )
 (uid "0_jd_i37kgip4_-p8v"))
-($8 639 < 0_jd_i37kgip4_-p8l "code:python" 636
+($8 596 < 0_jd_i37kgip4_-p8l "code:python" 593
 (name "code:python"
 )
 (value "result = tuple(x.spectrumView for x in self.sortedStripSpectrumViews() )"
 )
 (uid "0_jd_i37kgip4_-p8l"))
-($8 640 < 0_jd_i37kgip4_-p8k "guid" 636
+($8 597 < 0_jd_i37kgip4_-p8k "guid" 593
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-12-02-18:39:42_00005"
 )
 (uid "0_jd_i37kgip4_-p8k"))
-($11 641 < 0_6e6_i2eonilu_-oqj "#<anon> (Strip, Axis)##,orderedAxes" 605
+($11 598 < 0_6e6_i2eonilu_-oqj "#<anon> (Strip, Axis)##,orderedAxes" 562
 (name "")
 (uid "0_6e6_i2eonilu_-oqj"))
-($12 642 < 0_6e6_i2eonilu_-oqi "#0" 641
+($12 599 < 0_6e6_i2eonilu_-oqi "#0" 598
 (isOrdered true)
 (changeability "frozen")
 (uid "0_6e6_i2eonilu_-oqi")
 (multiplicity "*"))
-($8 643 < 0_6e6_i3a1koxz_-p98 "documentation" 642
+($8 600 < 0_6e6_i3a1koxz_-p98 "documentation" 599
 (name "documentation"
 )
 (value "Strips that use Axis, in strip display order"
 )
 (uid "0_6e6_i3a1koxz_-p98"))
-($8 644 < 0_6e6_i3a4wtx1_-p97 "guid" 642
+($8 601 < 0_6e6_i3a4wtx1_-p97 "guid" 599
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-12-04-13:20:54_00002"
 )
 (uid "0_6e6_i3a4wtx1_-p97"))
-($12 645 < 0_6e6_i2eonilu_-oqh "orderedAxes#1" 641
+($12 602 < 0_6e6_i2eonilu_-oqh "orderedAxes#1" 598
 (isOrdered true)
 (name "orderedAxes"
 )
 (uid "0_6e6_i2eonilu_-oqh")
 (multiplicity "*"))
-($8 646 < 0_6e6_i2eonilu_-oqg "baseName" 645
+($8 603 < 0_6e6_i2eonilu_-oqg "baseName" 602
 (name "baseName"
 )
 (value "orderedAxis"
 )
 (uid "0_6e6_i2eonilu_-oqg"))
-($8 647 < 0_6e6_i2eonilu_-oqf "guid" 645
+($8 604 < 0_6e6_i2eonilu_-oqf "guid" 602
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-05-13:11:24_00002"
 )
 (uid "0_6e6_i2eonilu_-oqf"))
-($8 648 < 0_6e6_i2eonilu_-oqe "isDerived" 641
+($8 605 < 0_6e6_i2eonilu_-oqe "isDerived" 598
 (name "isDerived"
 )
 (value "True"
 )
 (uid "0_6e6_i2eonilu_-oqe"))
-($13 649 < 0_6e6_i2eonilu_-oqd "#<anon> (Strip, DataObject)" 605
+($13 606 < 0_6e6_i2eonilu_-oqd "#<anon> (Strip, DataObject)" 562
 (uid "0_6e6_i2eonilu_-oqd"))
-($13 650 < 0_6e6_i2eonilu_-oqc "#<anon> (Strip, AxisArea)" 605
+($13 607 < 0_6e6_i2eonilu_-oqc "#<anon> (Strip, AxisArea)" 562
 (uid "0_6e6_i2eonilu_-oqc"))
-($11 651 < 0_jd_i37kgip4_-p94 "#<anon> (Strip, SpectrumView)##," 605
+($11 608 < 0_jd_i37kgip4_-p94 "#<anon> (Strip, SpectrumView)##," 562
 (name "")
 (uid "0_jd_i37kgip4_-p94"))
-($12 652 < 0_jd_i37kgip4_-p92 "#0" 651
+($12 609 < 0_jd_i37kgip4_-p92 "#0" 608
 (changeability "frozen")
 (uid "0_jd_i37kgip4_-p92")
 (multiplicity "*"))
-($8 653 < 0_jd_i37kgip4_-p8y "documentation" 652
+($8 610 < 0_jd_i37kgip4_-p8y "documentation" 609
 (name "documentation"
 )
 (value "Strips that SpectrumView applies to"
 )
 (uid "0_jd_i37kgip4_-p8y"))
-($8 654 < 0_jd_i37kgip4_-p8h "guid" 652
+($8 611 < 0_jd_i37kgip4_-p8h "guid" 609
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-12-02-18:39:42_00003"
 )
 (uid "0_jd_i37kgip4_-p8h"))
-($12 655 < 0_jd_i37kgip4_-p91 "#1" 651
+($12 612 < 0_jd_i37kgip4_-p91 "#1" 608
 (changeability "frozen")
 (uid "0_jd_i37kgip4_-p91")
 (multiplicity "*"))
-($8 656 < 0_jd_i37kgip4_-p90 "documentation" 655
+($8 613 < 0_jd_i37kgip4_-p90 "documentation" 612
 (name "documentation"
 )
 (value "SpectrumViews showing spectra viewed in this strip"
 )
 (uid "0_jd_i37kgip4_-p90"))
-($8 657 < 0_jd_i37kgip4_-p8g "guid" 655
+($8 614 < 0_jd_i37kgip4_-p8g "guid" 612
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-12-02-18:39:42_00004"
 )
 (uid "0_jd_i37kgip4_-p8g"))
-($8 658 < 0_jd_i37kgip4_-p8z "isDerived" 651
+($8 615 < 0_jd_i37kgip4_-p8z "isDerived" 608
 (name "isDerived"
 )
 (value "True"
 )
 (uid "0_jd_i37kgip4_-p8z"))
-($11 659 < z8kq45_85r_iascddog_-p8d "#<anon> (Strip, StripSpectrumView)##," 605
+($11 616 < z8kq45_85r_iascddog_-p8d "#<anon> (Strip, StripSpectrumView)##," 562
 (name "")
 (uid "z8kq45_85r_iascddog_-p8d"))
-($12 660 < z8kq45_85r_iascddog_-p8b "#0" 659
+($12 617 < z8kq45_85r_iascddog_-p8b "#0" 616
 (changeability "frozen")
 (aggregation "composite")
 (uid "z8kq45_85r_iascddog_-p8b")
 (multiplicity "1"))
-($8 661 < z8kq45_85r_iascddog_-p7b "guid" 660
+($8 618 < z8kq45_85r_iascddog_-p7b "guid" 617
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-06-11-17:27:54_00001"
 )
 (uid "z8kq45_85r_iascddog_-p7b"))
-($12 662 < z8kq45_85r_iascddog_-p8a "#1" 659
+($12 619 < z8kq45_85r_iascddog_-p8a "#1" 616
 (uid "z8kq45_85r_iascddog_-p8a")
 (multiplicity "*"))
-($8 663 < z8kq45_85r_iascddog_-p7a "guid" 662
+($8 620 < z8kq45_85r_iascddog_-p7a "guid" 619
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-06-11-17:27:54_00002"
 )
 (uid "z8kq45_85r_iascddog_-p7a"))
-($11 664 < z8kq45_85r_iascddog_-p7y "#<anon> (Strip, StripAxis)##,stripAxes" 605
+($11 621 < z8kq45_85r_iascddog_-p7y "#<anon> (Strip, StripAxis)##,stripAxes" 562
 (name "")
 (uid "z8kq45_85r_iascddog_-p7y"))
-($12 665 < z8kq45_85r_iascddog_-p7w "#0" 664
+($12 622 < z8kq45_85r_iascddog_-p7w "#0" 621
 (changeability "frozen")
 (aggregation "composite")
 (uid "z8kq45_85r_iascddog_-p7w")
 (multiplicity "1"))
-($8 666 < z8kq45_85r_iascddog_-p79 "guid" 665
+($8 623 < z8kq45_85r_iascddog_-p79 "guid" 622
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-06-11-17:27:54_00003"
 )
 (uid "z8kq45_85r_iascddog_-p79"))
-($12 667 < z8kq45_85r_iascddog_-p7v "stripAxes#1" 664
+($12 624 < z8kq45_85r_iascddog_-p7v "stripAxes#1" 621
 (name "stripAxes"
 )
 (uid "z8kq45_85r_iascddog_-p7v")
 (multiplicity "*"))
-($8 668 < z8kq45_85r_iascddog_-p78 "guid" 667
+($8 625 < z8kq45_85r_iascddog_-p78 "guid" 624
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-06-11-17:27:54_00004"
 )
 (uid "z8kq45_85r_iascddog_-p78"))
-($8 669 < 0_6e6_ibm7lpuo_-p98 "baseName" 667
+($8 626 < 0_6e6_ibm7lpuo_-p98 "baseName" 624
 (name "baseName"
 )
 (value "stripAxis"
 )
 (uid "0_6e6_ibm7lpuo_-p98"))
-($8 670 < 0_6e6_i2eonilu_-oqb "documentation" 605
+($8 627 < 0_6e6_i2eonilu_-oqb "documentation" 562
 (name "documentation"
 )
 (value "Abstract superclass for display strips"
 )
 (uid "0_6e6_i2eonilu_-oqb"))
-($8 671 < 0_6e6_i2eonilu_-oqa "guid" 605
+($8 628 < 0_6e6_i2eonilu_-oqa "guid" 562
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:39:35_00006"
 )
 (uid "0_6e6_i2eonilu_-oqa"))
-($8 672 < 0_6e6_i2eonilu_-oq9 "keyNames" 605
+($8 629 < 0_6e6_i2eonilu_-oq9 "keyNames" 562
 (name "keyNames"
 )
 (value "serial"
 )
 (uid "0_6e6_i2eonilu_-oq9"))
-($14 673 < 0_6e6_i2eonilu_-oq8 "only_one_strip_in_non_strip_displays" 605
+($14 630 < 0_6e6_i2eonilu_-oq8 "only_one_strip_in_non_strip_displays" 562
 (name "only_one_strip_in_non_strip_displays"
 )
 (uid "0_6e6_i2eonilu_-oq8")
@@ -4046,64 +3703,64 @@ objectdomain.uml.core.Stereotype-owns $20
 "_"
 "not (self.index and self.spectrumDisplay.stripDirection is None)"
 ))
-($8 674 < 0_6e6_i2eonilu_-oq7 "guid" 673
+($8 631 < 0_6e6_i2eonilu_-oq7 "guid" 630
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:39:35_00007"
 )
 (uid "0_6e6_i2eonilu_-oq7"))
-($6 675 < 0_6e6_i2eonilu_-opd "BoundDisplay" 1
+($6 632 < 0_6e6_i2eonilu_-opd "BoundDisplay" 1
 (name "BoundDisplay"
 )
 (uid "0_6e6_i2eonilu_-opd"))
-($7 676 < 0_jd_i5gruzzt_-p8v "axisCodes" 675
+($7 633 < 0_jd_i5gruzzt_-p8v "axisCodes" 632
 (changeability "frozen")
 (name "axisCodes"
 )
 (uid "0_jd_i5gruzzt_-p8v")
 (multiplicity "2..*"))
-($8 677 < 0_jd_i5gruzzt_-p8u "baseName" 676
+($8 634 < 0_jd_i5gruzzt_-p8u "baseName" 633
 (name "baseName"
 )
 (value "axisCode"
 )
 (uid "0_jd_i5gruzzt_-p8u"))
-($8 678 < 0_jd_i5gruzzt_-p8t "documentation" 676
+($8 635 < 0_jd_i5gruzzt_-p8t "documentation" 633
 (name "documentation"
 )
 (value "Axis codes for display, in original (frozen) order"
 )
 (uid "0_jd_i5gruzzt_-p8t"))
-($8 679 < 0_jd_i5gruzzt_-p8h "guid" 676
+($8 636 < 0_jd_i5gruzzt_-p8h "guid" 633
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-01-28-15:29:03_00001"
 )
 (uid "0_jd_i5gruzzt_-p8h"))
-($7 680 < 0_6e6_i2eonilu_-opc "axisOrder" 675
+($7 637 < 0_6e6_i2eonilu_-opc "axisOrder" 632
 (name "axisOrder"
 )
 (uid "0_6e6_i2eonilu_-opc")
 (multiplicity "2..*"))
-($8 681 < 0_6e6_i2eonilu_-opb "guid" 680
+($8 638 < 0_6e6_i2eonilu_-opb "guid" 637
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:42:29_00011"
 )
 (uid "0_6e6_i2eonilu_-opb"))
-($8 682 < 0_6e6_i2eonilu_-opa "baseName" 680
+($8 639 < 0_6e6_i2eonilu_-opa "baseName" 637
 (name "baseName"
 )
 (value "axisOrderItem"
 )
 (uid "0_6e6_i2eonilu_-opa"))
-($8 683 < 0_jd_i5gruzzt_-p8s "documentation" 680
+($8 640 < 0_jd_i5gruzzt_-p8s "documentation" 637
 (name "documentation"
 )
 (value "Axis codes for display in current display order"
 )
 (uid "0_jd_i5gruzzt_-p8s"))
-($14 684 < 0_6e6_i2eonilu_-op9 "bound_axis_order_is_contained_in_axis_codes" 680
+($14 641 < 0_6e6_i2eonilu_-op9 "bound_axis_order_is_contained_in_axis_codes" 637
 (name "bound_axis_order_is_contained_in_axis_codes"
 )
 (uid "0_6e6_i2eonilu_-op9")
@@ -4111,29 +3768,29 @@ objectdomain.uml.core.Stereotype-owns $20
 "_"
 "value in self.axisCodes"
 ))
-($8 685 < 0_6e6_i2eonilu_-op8 "guid" 684
+($8 642 < 0_6e6_i2eonilu_-op8 "guid" 641
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:43:15_00001"
 )
 (uid "0_6e6_i2eonilu_-op8"))
-($9 686 < 0_63g_ijfjfa98_-p98 "setAxisOrder" 675
+($9 643 < 0_63g_ijfjfa98_-p98 "setAxisOrder" 632
 (name "setAxisOrder"
 )
 (uid "0_63g_ijfjfa98_-p98"))
-($8 687 < 0_63g_ijfjfa98_-p97 "documentation" 686
+($8 644 < 0_63g_ijfjfa98_-p97 "documentation" 643
 (name "documentation"
 )
 (value "Custom setter for axisOrder, to ensure strip axis is not changed for multstrip plots"
 )
 (uid "0_63g_ijfjfa98_-p97"))
-($8 688 < 0_63g_ijfjfa98_-p96 "opType" 686
+($8 645 < 0_63g_ijfjfa98_-p96 "opType" 643
 (name "opType"
 )
 (value "set"
 )
 (uid "0_63g_ijfjfa98_-p96"))
-($8 689 < 0_63g_ijfjfa98_-p95 "code:python" 686
+($8 646 < 0_63g_ijfjfa98_-p95 "code:python" 643
 (name "code:python"
 )
 (value "if len(self.strips) > 1:"
@@ -4143,60 +3800,60 @@ objectdomain.uml.core.Stereotype-owns $20
 "dataDict['axisOrder'] = values"
 )
 (uid "0_63g_ijfjfa98_-p95"))
-($8 690 < 0_63g_ijfjfa98_-p8z "guid" 686
+($8 647 < 0_63g_ijfjfa98_-p8z "guid" 643
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2016-01-15-11:25:46_00001"
 )
 (uid "0_63g_ijfjfa98_-p8z"))
-($13 691 < 0_6e6_i2eonilu_-op7 "#<anon> (BoundDisplay, SpectrumDisplay)" 675
+($13 648 < 0_6e6_i2eonilu_-op7 "#<anon> (BoundDisplay, SpectrumDisplay)" 632
 (uid "0_6e6_i2eonilu_-op7"))
-($11 692 < z8kq45_85r_iascddog_-p8q "#<anon> (BoundDisplay, BoundStrip)##spectrumDisplay,strips" 675
+($11 649 < z8kq45_85r_iascddog_-p8q "#<anon> (BoundDisplay, BoundStrip)##spectrumDisplay,strips" 632
 (name "")
 (uid "z8kq45_85r_iascddog_-p8q"))
-($12 693 < z8kq45_85r_iascddog_-p8p "spectrumDisplay#0" 692
+($12 650 < z8kq45_85r_iascddog_-p8p "spectrumDisplay#0" 649
 (changeability "frozen")
 (aggregation "composite")
 (name "spectrumDisplay"
 )
 (uid "z8kq45_85r_iascddog_-p8p")
 (multiplicity "1"))
-($8 694 < z8kq45_85r_iascddog_-p7j "guid" 693
+($8 651 < z8kq45_85r_iascddog_-p7j "guid" 650
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-06-11-17:25:53_00001"
 )
 (uid "z8kq45_85r_iascddog_-p7j"))
-($12 695 < z8kq45_85r_iascddog_-p8o "strips#1" 692
+($12 652 < z8kq45_85r_iascddog_-p8o "strips#1" 649
 (name "strips"
 )
 (uid "z8kq45_85r_iascddog_-p8o")
 (multiplicity "*"))
-($8 696 < z8kq45_85r_iascddog_-p7i "guid" 695
+($8 653 < z8kq45_85r_iascddog_-p7i "guid" 652
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-06-11-17:25:53_00002"
 )
 (uid "z8kq45_85r_iascddog_-p7i"))
-($8 697 < z8kq45_85r_iascddog_-p74 "baseName" 695
+($8 654 < z8kq45_85r_iascddog_-p74 "baseName" 652
 (name "baseName"
 )
 (value "strip"
 )
 (uid "z8kq45_85r_iascddog_-p74"))
-($8 698 < 0_6e6_i2eonilu_-op6 "documentation" 675
+($8 655 < 0_6e6_i2eonilu_-op6 "documentation" 632
 (name "documentation"
 )
 (value "Superclass for non-free contour displays"
 )
 (uid "0_6e6_i2eonilu_-op6"))
-($8 699 < 0_6e6_i2eonilu_-op5 "guid" 675
+($8 656 < 0_6e6_i2eonilu_-op5 "guid" 632
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:39:35_00009"
 )
 (uid "0_6e6_i2eonilu_-op5"))
-($8 700 < z8kq45_85r_iascddog_-p8w "constructorCode:python" 675
+($8 657 < z8kq45_85r_iascddog_-p8w "constructorCode:python" 632
 (name "constructorCode:python"
 )
 (value "dataDict['stripType'] = 'Bound'"
@@ -4208,189 +3865,189 @@ objectdomain.uml.core.Stereotype-owns $20
 "  self.resonanceGroupSerial = self.resonanceGroup.serial"
 )
 (uid "z8kq45_85r_iascddog_-p8w"))
-($6 701 < 0_6e6_i2eonilu_-oo4 "StripDirection" 1
+($6 658 < 0_6e6_i2eonilu_-oo4 "StripDirection" 1
 (name "StripDirection"
 )
 (uid "0_6e6_i2eonilu_-oo4"))
-($13 702 < 0_6e6_i2eonilu_-oo3 "#<anon> (StripDirection, Word)" 701
+($13 659 < 0_6e6_i2eonilu_-oo3 "#<anon> (StripDirection, Word)" 658
 (uid "0_6e6_i2eonilu_-oo3"))
-($8 703 < 0_6e6_i2eonilu_-oo2 "documentation" 701
+($8 660 < 0_6e6_i2eonilu_-oo2 "documentation" 658
 (name "documentation"
 )
 (value "Strip direction indicator: 'X' or 'Y'"
 )
 (uid "0_6e6_i2eonilu_-oo2"))
-($8 704 < 0_6e6_i2eonilu_-oo1 "isOpen" 701
+($8 661 < 0_6e6_i2eonilu_-oo1 "isOpen" 658
 (name "isOpen"
 )
 (value "False"
 )
 (uid "0_6e6_i2eonilu_-oo1"))
-($8 705 < 0_6e6_i2eonilu_-oo0 "enumeration" 701
+($8 662 < 0_6e6_i2eonilu_-oo0 "enumeration" 658
 (name "enumeration"
 )
 (value "('X', 'Y')"
 )
 (uid "0_6e6_i2eonilu_-oo0"))
-($8 706 < 0_6e6_i2eonilu_-onz "guid" 701
+($8 663 < 0_6e6_i2eonilu_-onz "guid" 658
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:39:35_00017"
 )
 (uid "0_6e6_i2eonilu_-onz"))
-($6 707 < 0_6e6_i2eonilu_-ony "BoundStrip" 1
+($6 664 < 0_6e6_i2eonilu_-ony "BoundStrip" 1
 (name "BoundStrip"
 )
 (uid "0_6e6_i2eonilu_-ony"))
-($7 708 < 0_6e6_i2eonilu_-onx "axisCodes" 707
+($7 665 < 0_6e6_i2eonilu_-onx "axisCodes" 664
 (changeability "frozen")
 (name "axisCodes"
 )
 (uid "0_6e6_i2eonilu_-onx")
 (multiplicity "2..*"))
-($8 709 < 0_6e6_i2eonilu_-onw "isDerived" 708
+($8 666 < 0_6e6_i2eonilu_-onw "isDerived" 665
 (name "isDerived"
 )
 (value "True"
 )
 (uid "0_6e6_i2eonilu_-onw"))
-($8 710 < 0_6e6_i2eonilu_-onv "guid" 708
+($8 667 < 0_6e6_i2eonilu_-onv "guid" 665
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:43:15_00006"
 )
 (uid "0_6e6_i2eonilu_-onv"))
-($8 711 < 0_6e6_i2eonilu_-onu "baseName" 708
+($8 668 < 0_6e6_i2eonilu_-onu "baseName" 665
 (name "baseName"
 )
 (value "axisCode"
 )
 (uid "0_6e6_i2eonilu_-onu"))
-($7 712 < 0_6e6_i2eonilu_-ont "axisOrder" 707
+($7 669 < 0_6e6_i2eonilu_-ont "axisOrder" 664
 (name "axisOrder"
 )
 (uid "0_6e6_i2eonilu_-ont")
 (multiplicity "2..*"))
-($8 713 < 0_6e6_i2eonilu_-ons "isDerived" 712
+($8 670 < 0_6e6_i2eonilu_-ons "isDerived" 669
 (name "isDerived"
 )
 (value "True"
 )
 (uid "0_6e6_i2eonilu_-ons"))
-($8 714 < 0_6e6_i2eonilu_-onr "baseName" 712
+($8 671 < 0_6e6_i2eonilu_-onr "baseName" 669
 (name "baseName"
 )
 (value "axisOrderItem"
 )
 (uid "0_6e6_i2eonilu_-onr"))
-($8 715 < 0_6e6_i2eonilu_-onq "guid" 712
+($8 672 < 0_6e6_i2eonilu_-onq "guid" 669
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:44:00_00001"
 )
 (uid "0_6e6_i2eonilu_-onq"))
-($9 716 < 0_6e6_i2eonilu_-onp "getAxisCodes" 707
+($9 673 < 0_6e6_i2eonilu_-onp "getAxisCodes" 664
 (name "getAxisCodes"
 )
 (uid "0_6e6_i2eonilu_-onp")
 (isQuery true))
-($8 717 < 0_6e6_i2eonilu_-ono "opType" 716
+($8 674 < 0_6e6_i2eonilu_-ono "opType" 673
 (name "opType"
 )
 (value "get"
 )
 (uid "0_6e6_i2eonilu_-ono"))
-($8 718 < 0_6e6_i2eonilu_-onn "code:python" 716
+($8 675 < 0_6e6_i2eonilu_-onn "code:python" 673
 (name "code:python"
 )
 (value "result = self.spectrumDisplay.axisCodes"
 )
 (uid "0_6e6_i2eonilu_-onn"))
-($8 719 < 0_6e6_i2eonilu_-onm "guid" 716
+($8 676 < 0_6e6_i2eonilu_-onm "guid" 673
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:44:00_00002"
 )
 (uid "0_6e6_i2eonilu_-onm"))
-($9 720 < 0_6e6_i2eonilu_-onl "getAxisOrder" 707
+($9 677 < 0_6e6_i2eonilu_-onl "getAxisOrder" 664
 (name "getAxisOrder"
 )
 (uid "0_6e6_i2eonilu_-onl")
 (isQuery true))
-($8 721 < 0_6e6_i2eonilu_-onk "opType" 720
+($8 678 < 0_6e6_i2eonilu_-onk "opType" 677
 (name "opType"
 )
 (value "get"
 )
 (uid "0_6e6_i2eonilu_-onk"))
-($8 722 < 0_6e6_i2eonilu_-onj "documentation" 720
+($8 679 < 0_6e6_i2eonilu_-onj "documentation" 677
 (name "documentation"
 )
 (value "getter for derived attribute axisOrder"
 )
 (uid "0_6e6_i2eonilu_-onj"))
-($8 723 < 0_6e6_i2eonilu_-oni "code:python" 720
+($8 680 < 0_6e6_i2eonilu_-oni "code:python" 677
 (name "code:python"
 )
 (value "result = self.spectrumDisplay.axisOrder"
 )
 (uid "0_6e6_i2eonilu_-oni"))
-($8 724 < 0_6e6_i2eonilu_-onh "guid" 720
+($8 681 < 0_6e6_i2eonilu_-onh "guid" 677
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:44:00_00003"
 )
 (uid "0_6e6_i2eonilu_-onh"))
-($9 725 < 0_6e6_i2eonilu_-ong "setAxisOrder" 707
+($9 682 < 0_6e6_i2eonilu_-ong "setAxisOrder" 664
 (name "setAxisOrder"
 )
 (uid "0_6e6_i2eonilu_-ong"))
-($8 726 < 0_6e6_i2eonilu_-onf "documentation" 725
+($8 683 < 0_6e6_i2eonilu_-onf "documentation" 682
 (name "documentation"
 )
 (value "setter for derived attribute axisOrder"
 )
 (uid "0_6e6_i2eonilu_-onf"))
-($8 727 < 0_6e6_i2eonilu_-one "opType" 725
+($8 684 < 0_6e6_i2eonilu_-one "opType" 682
 (name "opType"
 )
 (value "set"
 )
 (uid "0_6e6_i2eonilu_-one"))
-($8 728 < 0_6e6_i2eonilu_-ond "code:python" 725
+($8 685 < 0_6e6_i2eonilu_-ond "code:python" 682
 (name "code:python"
 )
 (value "self.spectrumDisplay.axisOrder = values"
 )
 (uid "0_6e6_i2eonilu_-ond"))
-($8 729 < 0_6e6_i2eonilu_-onc "guid" 725
+($8 686 < 0_6e6_i2eonilu_-onc "guid" 682
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:44:00_00004"
 )
 (uid "0_6e6_i2eonilu_-onc"))
-($13 730 < 0_6e6_i2eonilu_-onb "#<anon> (BoundStrip, Strip)" 707
+($13 687 < 0_6e6_i2eonilu_-onb "#<anon> (BoundStrip, Strip)" 664
 (uid "0_6e6_i2eonilu_-onb"))
-($8 731 < 0_6e6_i2eonilu_-ona "documentation" 707
+($8 688 < 0_6e6_i2eonilu_-ona "documentation" 664
 (name "documentation"
 )
 (value "Bound strip for display"
 )
 (uid "0_6e6_i2eonilu_-ona"))
-($8 732 < 0_6e6_i2eonilu_-on9 "guid" 707
+($8 689 < 0_6e6_i2eonilu_-on9 "guid" 664
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:39:35_00018"
 )
 (uid "0_6e6_i2eonilu_-on9"))
-($8 733 < z8kq45_85r_iascddog_-p8u "constructorCode:python" 707
+($8 690 < z8kq45_85r_iascddog_-p8u "constructorCode:python" 664
 (name "constructorCode:python"
 )
 (value "# NB, len(parent.strips) is the number INCLUDING the present one at the poinit the code is executed."
 "dataDict['index'] = len(parent.strips) - 1"
 )
 (uid "z8kq45_85r_iascddog_-p8u"))
-($8 734 < z8kq45_85r_iascddog_-p8r "destructorCode:python" 707
+($8 691 < z8kq45_85r_iascddog_-p8r "destructorCode:python" 664
 (name "destructorCode:python"
 )
 (value "spectrumDisplay = self.spectrumDisplay"
@@ -4412,7 +4069,7 @@ objectdomain.uml.core.Stereotype-owns $20
 "    objsToBeChecked.append(view)"
 )
 (uid "z8kq45_85r_iascddog_-p8r"))
-($8 735 < z8kq45_85r_iath4r22_-p98 "postConstructorCode:python" 707
+($8 692 < z8kq45_85r_iath4r22_-p98 "postConstructorCode:python" 664
 (name "postConstructorCode:python"
 )
 (value "_undo = root._undo"
@@ -4432,7 +4089,7 @@ objectdomain.uml.core.Stereotype-owns $20
 "    _undo.decreaseBlocking()"
 )
 (uid "z8kq45_85r_iath4r22_-p98"))
-($14 736 < 0_6e6_i2eonilu_-on8 "axiscodes_same_as_parent_display" 707
+($14 693 < 0_6e6_i2eonilu_-on8 "axiscodes_same_as_parent_display" 664
 (name "axiscodes_same_as_parent_display"
 )
 (uid "0_6e6_i2eonilu_-on8")
@@ -4440,210 +4097,210 @@ objectdomain.uml.core.Stereotype-owns $20
 "_"
 "self.axisCodes == self.spectrumDisplay.axisCodes"
 ))
-($8 737 < 0_6e6_i2eonilu_-on7 "guid" 736
+($8 694 < 0_6e6_i2eonilu_-on7 "guid" 693
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:39:35_00019"
 )
 (uid "0_6e6_i2eonilu_-on7"))
-($6 738 < 0_6e6_i2eonilu_-om3 "FreeDisplay" 1
+($6 695 < 0_6e6_i2eonilu_-om3 "FreeDisplay" 1
 (name "FreeDisplay"
 )
 (uid "0_6e6_i2eonilu_-om3"))
-($7 739 < 0_jd_i5gruzzt_-p8r "axisCodes" 738
+($7 696 < 0_jd_i5gruzzt_-p8r "axisCodes" 695
 (changeability "frozen")
 (name "axisCodes"
 )
 (uid "0_jd_i5gruzzt_-p8r")
 (multiplicity "*"))
-($8 740 < 0_jd_i5gruzzt_-p8q "documentation" 739
+($8 697 < 0_jd_i5gruzzt_-p8q "documentation" 696
 (name "documentation"
 )
 (value "Axis codes for display in original (frozen) order. Derived from values for first strip"
 )
 (uid "0_jd_i5gruzzt_-p8q"))
-($8 741 < 0_jd_i5gruzzt_-p8p "isDerived" 739
+($8 698 < 0_jd_i5gruzzt_-p8p "isDerived" 696
 (name "isDerived"
 )
 (value "True"
 )
 (uid "0_jd_i5gruzzt_-p8p"))
-($8 742 < 0_jd_i5gruzzt_-p8n "baseName" 739
+($8 699 < 0_jd_i5gruzzt_-p8n "baseName" 696
 (name "baseName"
 )
 (value "axisCode"
 )
 (uid "0_jd_i5gruzzt_-p8n"))
-($8 743 < 0_jd_i5gruzzt_-p8i "guid" 739
+($8 700 < 0_jd_i5gruzzt_-p8i "guid" 696
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-01-28-15:29:03_00002"
 )
 (uid "0_jd_i5gruzzt_-p8i"))
-($7 744 < 0_6e6_i2eonilu_-om2 "axisOrder" 738
+($7 701 < 0_6e6_i2eonilu_-om2 "axisOrder" 695
 (name "axisOrder"
 )
 (uid "0_6e6_i2eonilu_-om2")
 (multiplicity "*"))
-($8 745 < 0_6e6_i2eonilu_-om1 "isDerived" 744
+($8 702 < 0_6e6_i2eonilu_-om1 "isDerived" 701
 (name "isDerived"
 )
 (value "True"
 )
 (uid "0_6e6_i2eonilu_-om1"))
-($8 746 < 0_6e6_i2eonilu_-om0 "guid" 744
+($8 703 < 0_6e6_i2eonilu_-om0 "guid" 701
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:46:06_00003"
 )
 (uid "0_6e6_i2eonilu_-om0"))
-($8 747 < 0_6e6_i2eonilu_-olz "baseName" 744
+($8 704 < 0_6e6_i2eonilu_-olz "baseName" 701
 (name "baseName"
 )
 (value "axisOrderItem"
 )
 (uid "0_6e6_i2eonilu_-olz"))
-($8 748 < 0_jd_i5gruzzt_-p8o "documentation" 744
+($8 705 < 0_jd_i5gruzzt_-p8o "documentation" 701
 (name "documentation"
 )
 (value "Axis codes for display in current display order. Derived from values for first strip"
 )
 (uid "0_jd_i5gruzzt_-p8o"))
-($9 749 < 0_6e6_i2eonilu_-oly "getAxisOrder" 738
+($9 706 < 0_6e6_i2eonilu_-oly "getAxisOrder" 695
 (name "getAxisOrder"
 )
 (uid "0_6e6_i2eonilu_-oly")
 (isQuery true))
-($8 750 < 0_6e6_i2eonilu_-olx "documentation" 749
+($8 707 < 0_6e6_i2eonilu_-olx "documentation" 706
 (name "documentation"
 )
 (value "getter for derived attribute axisOrder"
 )
 (uid "0_6e6_i2eonilu_-olx"))
-($8 751 < 0_6e6_i2eonilu_-olw "opType" 749
+($8 708 < 0_6e6_i2eonilu_-olw "opType" 706
 (name "opType"
 )
 (value "get"
 )
 (uid "0_6e6_i2eonilu_-olw"))
-($8 752 < 0_6e6_i2eonilu_-olv "code:python" 749
+($8 709 < 0_6e6_i2eonilu_-olv "code:python" 706
 (name "code:python"
 )
 (value "result = self.findFirstStrip(index=0).axisOrder"
 )
 (uid "0_6e6_i2eonilu_-olv"))
-($8 753 < 0_6e6_i2eonilu_-olu "guid" 749
+($8 710 < 0_6e6_i2eonilu_-olu "guid" 706
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:46:55_00001"
 )
 (uid "0_6e6_i2eonilu_-olu"))
-($9 754 < 0_6e6_i2eonilu_-olt "setAxisOrder" 738
+($9 711 < 0_6e6_i2eonilu_-olt "setAxisOrder" 695
 (name "setAxisOrder"
 )
 (uid "0_6e6_i2eonilu_-olt"))
-($8 755 < 0_6e6_i2eonilu_-ols "documentation" 754
+($8 712 < 0_6e6_i2eonilu_-ols "documentation" 711
 (name "documentation"
 )
 (value "setter for derived attribute axisOrder"
 )
 (uid "0_6e6_i2eonilu_-ols"))
-($8 756 < 0_6e6_i2eonilu_-olr "opType" 754
+($8 713 < 0_6e6_i2eonilu_-olr "opType" 711
 (name "opType"
 )
 (value "set"
 )
 (uid "0_6e6_i2eonilu_-olr"))
-($8 757 < 0_6e6_i2eonilu_-olq "code:python" 754
+($8 714 < 0_6e6_i2eonilu_-olq "code:python" 711
 (name "code:python"
 )
 (value "self.findFirstStrip(index=0).axisOrder = values"
 )
 (uid "0_6e6_i2eonilu_-olq"))
-($8 758 < 0_6e6_i2eonilu_-olp "guid" 754
+($8 715 < 0_6e6_i2eonilu_-olp "guid" 711
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:46:55_00002"
 )
 (uid "0_6e6_i2eonilu_-olp"))
-($9 759 < 0_jd_i5gruzzt_-p8m "getAxisCodes" 738
+($9 716 < 0_jd_i5gruzzt_-p8m "getAxisCodes" 695
 (name "getAxisCodes"
 )
 (uid "0_jd_i5gruzzt_-p8m")
 (isQuery true))
-($8 760 < 0_jd_i5gruzzt_-p8l "documentation" 759
+($8 717 < 0_jd_i5gruzzt_-p8l "documentation" 716
 (name "documentation"
 )
 (value "getter for derived attribute axisCodes."
 )
 (uid "0_jd_i5gruzzt_-p8l"))
-($8 761 < 0_jd_i5gruzzt_-p8k "opType" 759
+($8 718 < 0_jd_i5gruzzt_-p8k "opType" 716
 (name "opType"
 )
 (value "get"
 )
 (uid "0_jd_i5gruzzt_-p8k"))
-($8 762 < 0_jd_i5gruzzt_-p8j "code:python" 759
+($8 719 < 0_jd_i5gruzzt_-p8j "code:python" 716
 (name "code:python"
 )
 (value "strip = self.findFirstStrip(index=0)"
 "result = () if strip is None else strip.axisCodes"
 )
 (uid "0_jd_i5gruzzt_-p8j"))
-($8 763 < 0_jd_i5gruzzt_-p8e "guid" 759
+($8 720 < 0_jd_i5gruzzt_-p8e "guid" 716
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-01-28-15:30:01_00001"
 )
 (uid "0_jd_i5gruzzt_-p8e"))
-($13 764 < 0_6e6_i2eonilu_-olo "#<anon> (FreeDisplay, SpectrumDisplay)" 738
+($13 721 < 0_6e6_i2eonilu_-olo "#<anon> (FreeDisplay, SpectrumDisplay)" 695
 (uid "0_6e6_i2eonilu_-olo"))
-($11 765 < z8kq45_85r_iascddog_-p8k "#<anon> (FreeDisplay, FreeStrip)##spectrumDisplay,strips" 738
+($11 722 < z8kq45_85r_iascddog_-p8k "#<anon> (FreeDisplay, FreeStrip)##spectrumDisplay,strips" 695
 (name "")
 (uid "z8kq45_85r_iascddog_-p8k"))
-($12 766 < z8kq45_85r_iascddog_-p8j "spectrumDisplay#0" 765
+($12 723 < z8kq45_85r_iascddog_-p8j "spectrumDisplay#0" 722
 (changeability "frozen")
 (aggregation "composite")
 (name "spectrumDisplay"
 )
 (uid "z8kq45_85r_iascddog_-p8j")
 (multiplicity "1"))
-($8 767 < z8kq45_85r_iascddog_-p7h "guid" 766
+($8 724 < z8kq45_85r_iascddog_-p7h "guid" 723
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-06-11-17:25:53_00003"
 )
 (uid "z8kq45_85r_iascddog_-p7h"))
-($12 768 < z8kq45_85r_iascddog_-p8i "strips#1" 765
+($12 725 < z8kq45_85r_iascddog_-p8i "strips#1" 722
 (name "strips"
 )
 (uid "z8kq45_85r_iascddog_-p8i")
 (multiplicity "*"))
-($8 769 < z8kq45_85r_iascddog_-p7g "guid" 768
+($8 726 < z8kq45_85r_iascddog_-p7g "guid" 725
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-06-11-17:25:53_00004"
 )
 (uid "z8kq45_85r_iascddog_-p7g"))
-($8 770 < z8kq45_85r_iascddog_-p73 "baseName" 768
+($8 727 < z8kq45_85r_iascddog_-p73 "baseName" 725
 (name "baseName"
 )
 (value "strip"
 )
 (uid "z8kq45_85r_iascddog_-p73"))
-($8 771 < 0_6e6_i2eonilu_-oln "documentation" 738
+($8 728 < 0_6e6_i2eonilu_-oln "documentation" 695
 (name "documentation"
 )
 (value "Abstract strip display with independent spectrum display and axis settings for each strip"
 )
 (uid "0_6e6_i2eonilu_-oln"))
-($8 772 < 0_6e6_i2eonilu_-olm "guid" 738
+($8 729 < 0_6e6_i2eonilu_-olm "guid" 695
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:39:35_00029"
 )
 (uid "0_6e6_i2eonilu_-olm"))
-($8 773 < z8kq45_85r_iascddog_-p8v "constructorCode:python" 738
+($8 730 < z8kq45_85r_iascddog_-p8v "constructorCode:python" 695
 (name "constructorCode:python"
 )
 (value "dataDict['stripType']  = 'Free'"
@@ -4656,46 +4313,46 @@ objectdomain.uml.core.Stereotype-owns $20
 "  self.resonanceGroupSerial = self.resonanceGroup.serial"
 )
 (uid "z8kq45_85r_iascddog_-p8v"))
-($6 774 < 0_6e6_i2eonilu_-oll "FreeStrip" 1
+($6 731 < 0_6e6_i2eonilu_-oll "FreeStrip" 1
 (name "FreeStrip"
 )
 (uid "0_6e6_i2eonilu_-oll"))
-($7 775 < 0_6e6_i2eonilu_-olk "axisCodes" 774
+($7 732 < 0_6e6_i2eonilu_-olk "axisCodes" 731
 (changeability "frozen")
 (name "axisCodes"
 )
 (uid "0_6e6_i2eonilu_-olk")
 (multiplicity "2..*"))
-($8 776 < 0_6e6_i2eonilu_-olj "baseName" 775
+($8 733 < 0_6e6_i2eonilu_-olj "baseName" 732
 (name "baseName"
 )
 (value "axisCode"
 )
 (uid "0_6e6_i2eonilu_-olj"))
-($8 777 < 0_6e6_i2eonilu_-oli "guid" 775
+($8 734 < 0_6e6_i2eonilu_-oli "guid" 732
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:44:49_00001"
 )
 (uid "0_6e6_i2eonilu_-oli"))
-($7 778 < 0_6e6_i2eonilu_-olf "axisOrder" 774
+($7 735 < 0_6e6_i2eonilu_-olf "axisOrder" 731
 (name "axisOrder"
 )
 (uid "0_6e6_i2eonilu_-olf")
 (multiplicity "2..*"))
-($8 779 < 0_6e6_i2eonilu_-ole "guid" 778
+($8 736 < 0_6e6_i2eonilu_-ole "guid" 735
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:44:00_00007"
 )
 (uid "0_6e6_i2eonilu_-ole"))
-($8 780 < 0_6e6_i2eonilu_-old "baseName" 778
+($8 737 < 0_6e6_i2eonilu_-old "baseName" 735
 (name "baseName"
 )
 (value "axisOrderItem"
 )
 (uid "0_6e6_i2eonilu_-old"))
-($14 781 < 0_6e6_i2eonilu_-olc "free_axis_order_codes_contained_in_axis_codes" 778
+($14 738 < 0_6e6_i2eonilu_-olc "free_axis_order_codes_contained_in_axis_codes" 735
 (name "free_axis_order_codes_contained_in_axis_codes"
 )
 (uid "0_6e6_i2eonilu_-olc")
@@ -4703,17 +4360,17 @@ objectdomain.uml.core.Stereotype-owns $20
 "_"
 "value in self.axisCodes"
 ))
-($8 782 < 0_6e6_i2eonilu_-olb "guid" 781
+($8 739 < 0_6e6_i2eonilu_-olb "guid" 738
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:46:06_00001"
 )
 (uid "0_6e6_i2eonilu_-olb"))
-($9 783 < 0_63g_ijfjfa98_-p94 "setAxisOrder" 774
+($9 740 < 0_63g_ijfjfa98_-p94 "setAxisOrder" 731
 (name "setAxisOrder"
 )
 (uid "0_63g_ijfjfa98_-p94"))
-($8 784 < 0_63g_ijfjfa98_-p93 "code:python" 783
+($8 741 < 0_63g_ijfjfa98_-p93 "code:python" 740
 (name "code:python"
 )
 (value "if len(self.strips) > 1:"
@@ -4723,46 +4380,46 @@ objectdomain.uml.core.Stereotype-owns $20
 "dataDict['axisOrder'] = values"
 )
 (uid "0_63g_ijfjfa98_-p93"))
-($8 785 < 0_63g_ijfjfa98_-p92 "documentation" 783
+($8 742 < 0_63g_ijfjfa98_-p92 "documentation" 740
 (name "documentation"
 )
 (value "Custom setter for axisOrder, to ensure strip axis is not changed for multstrip plots"
 )
 (uid "0_63g_ijfjfa98_-p92"))
-($8 786 < 0_63g_ijfjfa98_-p91 "opType" 783
+($8 743 < 0_63g_ijfjfa98_-p91 "opType" 740
 (name "opType"
 )
 (value "set"
 )
 (uid "0_63g_ijfjfa98_-p91"))
-($8 787 < 0_63g_ijfjfa98_-p90 "guid" 783
+($8 744 < 0_63g_ijfjfa98_-p90 "guid" 740
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2016-01-15-11:25:46_00002"
 )
 (uid "0_63g_ijfjfa98_-p90"))
-($13 788 < 0_6e6_i2eonilu_-ol5 "#<anon> (FreeStrip, Strip)" 774
+($13 745 < 0_6e6_i2eonilu_-ol5 "#<anon> (FreeStrip, Strip)" 731
 (uid "0_6e6_i2eonilu_-ol5"))
-($8 789 < 0_6e6_i2eonilu_-okw "documentation" 774
+($8 746 < 0_6e6_i2eonilu_-okw "documentation" 731
 (name "documentation"
 )
 (value "Abstract superclass of FreeStrip1d and FreeStripNd"
 )
 (uid "0_6e6_i2eonilu_-okw"))
-($8 790 < 0_6e6_i2eonilu_-okv "guid" 774
+($8 747 < 0_6e6_i2eonilu_-okv "guid" 731
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-04-17:39:35_00030"
 )
 (uid "0_6e6_i2eonilu_-okv"))
-($8 791 < z8kq45_85r_iascddog_-p8s "constructorCode:python" 774
+($8 748 < z8kq45_85r_iascddog_-p8s "constructorCode:python" 731
 (name "constructorCode:python"
 )
 (value "# NB, len(parent.strips) is the number INCLUDING the present one at the poinit the code is executed."
 "dataDict['index'] = len(parent.strips) - 1"
 )
 (uid "z8kq45_85r_iascddog_-p8s"))
-($8 792 < z8kq45_85r_iascddog_-p8m "destructorCode:python" 774
+($8 749 < z8kq45_85r_iascddog_-p8m "destructorCode:python" 731
 (name "destructorCode:python"
 )
 (value "spectrumDisplay = self.spectrumDisplay"
@@ -4784,7 +4441,7 @@ objectdomain.uml.core.Stereotype-owns $20
 "    objsToBeChecked.append(view)"
 )
 (uid "z8kq45_85r_iascddog_-p8m"))
-($8 793 < z8kq45_85r_iath4r22_-p97 "postConstructorCode:python" 774
+($8 750 < z8kq45_85r_iath4r22_-p97 "postConstructorCode:python" 731
 (name "postConstructorCode:python"
 )
 (value "_undo = root._undo"
@@ -4800,13 +4457,13 @@ objectdomain.uml.core.Stereotype-owns $20
 "    _undo.decreaseBlocking()"
 )
 (uid "z8kq45_85r_iath4r22_-p97"))
-($15 794 < 0_6e6_i2eonilu_-ok1 "#<anon> (Task, Nmr)" 1
+($15 751 < 0_6e6_i2eonilu_-ok1 "#<anon> (Task, Nmr)" 1
 (uid "0_6e6_i2eonilu_-ok1"))
-($6 795 < 0_6e6_i2eonilu_-ok0 "IntensityAxis" 1
+($6 752 < 0_6e6_i2eonilu_-ok0 "IntensityAxis" 1
 (name "IntensityAxis"
 )
 (uid "0_6e6_i2eonilu_-ok0"))
-($7 796 < 0_6e6_i2eonilu_-ojz "code" 795
+($7 753 < 0_6e6_i2eonilu_-ojz "code" 752
 (initialValue "intensity"
 )
 (changeability "frozen")
@@ -4814,13 +4471,13 @@ objectdomain.uml.core.Stereotype-owns $20
 )
 (uid "0_6e6_i2eonilu_-ojz")
 (multiplicity "1"))
-($8 797 < 0_6e6_i2eonilu_-ojy "guid" 796
+($8 754 < 0_6e6_i2eonilu_-ojy "guid" 753
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-06-10:53:15_00002"
 )
 (uid "0_6e6_i2eonilu_-ojy"))
-($14 798 < 0_6e6_i2eonilu_-ojx "intensity_axis_code_is_intensity" 796
+($14 755 < 0_6e6_i2eonilu_-ojx "intensity_axis_code_is_intensity" 753
 (name "intensity_axis_code_is_intensity"
 )
 (uid "0_6e6_i2eonilu_-ojx")
@@ -4828,26 +4485,26 @@ objectdomain.uml.core.Stereotype-owns $20
 "_"
 "value == 'intensity'"
 ))
-($8 799 < 0_6e6_i2eonilu_-ojw "guid" 798
+($8 756 < 0_6e6_i2eonilu_-ojw "guid" 755
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-06-10:53:15_00003"
 )
 (uid "0_6e6_i2eonilu_-ojw"))
-($7 800 < 0_6e6_i2eonilu_-ojv "unit" 795
+($7 757 < 0_6e6_i2eonilu_-ojv "unit" 752
 (initialValue "number"
 )
 (name "unit"
 )
 (uid "0_6e6_i2eonilu_-ojv")
 (multiplicity "1"))
-($8 801 < 0_6e6_i2eonilu_-oju "guid" 800
+($8 758 < 0_6e6_i2eonilu_-oju "guid" 757
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-06-10:53:15_00004"
 )
 (uid "0_6e6_i2eonilu_-oju"))
-($14 802 < 0_6e6_i2eonilu_-ojt "inteisyty_unit_is_number" 800
+($14 759 < 0_6e6_i2eonilu_-ojt "inteisyty_unit_is_number" 757
 (name "inteisyty_unit_is_number"
 )
 (uid "0_6e6_i2eonilu_-ojt")
@@ -4855,21 +4512,21 @@ objectdomain.uml.core.Stereotype-owns $20
 "_"
 "value == 'number'"
 ))
-($8 803 < 0_6e6_i2eonilu_-ojs "guid" 802
+($8 760 < 0_6e6_i2eonilu_-ojs "guid" 759
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-06-10:53:15_00005"
 )
 (uid "0_6e6_i2eonilu_-ojs"))
-($13 804 < 0_6e6_i2eonilu_-ojr "#<anon> (IntensityAxis, Axis)" 795
+($13 761 < 0_6e6_i2eonilu_-ojr "#<anon> (IntensityAxis, Axis)" 752
 (uid "0_6e6_i2eonilu_-ojr"))
-($8 805 < 0_6e6_i2eonilu_-ojq "guid" 795
+($8 762 < 0_6e6_i2eonilu_-ojq "guid" 752
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-06-10:52:33_00001"
 )
 (uid "0_6e6_i2eonilu_-ojq"))
-($8 806 < 0_6e6_i2eonilu_-ojp "constructorCode:python" 795
+($8 763 < 0_6e6_i2eonilu_-ojp "constructorCode:python" 752
 (name "constructorCode:python"
 )
 (value "if self.resonances:"
@@ -4881,7 +4538,7 @@ objectdomain.uml.core.Stereotype-owns $20
 "    self.resonances = [x for x in ll if x is not None]"
 )
 (uid "0_6e6_i2eonilu_-ojp"))
-($8 807 < 0_6e6_i2eonilu_-ojo "destructorCode:python" 795
+($8 764 < 0_6e6_i2eonilu_-ojo "destructorCode:python" 752
 (name "destructorCode:python"
 )
 (value "spectrumDisplay = self.spectrumDisplay"
@@ -4890,7 +4547,7 @@ objectdomain.uml.core.Stereotype-owns $20
 "  raise ApiError(\"Axes cannot be deleted independently\")"
 )
 (uid "0_6e6_i2eonilu_-ojo"))
-($8 808 < z8kq45_85r_iath4r22_-p91 "postConstructorCode:python" 795
+($8 765 < z8kq45_85r_iath4r22_-p91 "postConstructorCode:python" 752
 (name "postConstructorCode:python"
 )
 (value "stripSerial = self.stripSerial"
@@ -4905,23 +4562,23 @@ objectdomain.uml.core.Stereotype-owns $20
 "    objectsCreated.add(sa)"
 )
 (uid "z8kq45_85r_iath4r22_-p91"))
-($6 809 < 0_6e6_i2eonilu_-ojn "FrequencyAxis" 1
+($6 766 < 0_6e6_i2eonilu_-ojn "FrequencyAxis" 1
 (name "FrequencyAxis"
 )
 (uid "0_6e6_i2eonilu_-ojn"))
-($7 810 < 0_6e6_i2eonilu_-ojm "code" 809
+($7 767 < 0_6e6_i2eonilu_-ojm "code" 766
 (changeability "frozen")
 (name "code"
 )
 (uid "0_6e6_i2eonilu_-ojm")
 (multiplicity "1"))
-($8 811 < 0_6e6_i2eonilu_-ojl "guid" 810
+($8 768 < 0_6e6_i2eonilu_-ojl "guid" 767
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-06-10:52:36_00002"
 )
 (uid "0_6e6_i2eonilu_-ojl"))
-($14 812 < 0_6e6_i2eonilu_-ojk "frequency_axis_code_starts_with_upper_case" 810
+($14 769 < 0_6e6_i2eonilu_-ojk "frequency_axis_code_starts_with_upper_case" 767
 (name "frequency_axis_code_starts_with_upper_case"
 )
 (uid "0_6e6_i2eonilu_-ojk")
@@ -4929,26 +4586,26 @@ objectdomain.uml.core.Stereotype-owns $20
 "_"
 "value[0].isupper()"
 ))
-($8 813 < 0_6e6_i2eonilu_-ojj "guid" 812
+($8 770 < 0_6e6_i2eonilu_-ojj "guid" 769
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-06-10:52:36_00003"
 )
 (uid "0_6e6_i2eonilu_-ojj"))
-($7 814 < 0_6e6_i2eonilu_-oji "unit" 809
+($7 771 < 0_6e6_i2eonilu_-oji "unit" 766
 (initialValue "ppm"
 )
 (name "unit"
 )
 (uid "0_6e6_i2eonilu_-oji")
 (multiplicity "1"))
-($8 815 < 0_6e6_i2eonilu_-ojh "guid" 814
+($8 772 < 0_6e6_i2eonilu_-ojh "guid" 771
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-06-10:52:36_00004"
 )
 (uid "0_6e6_i2eonilu_-ojh"))
-($14 816 < 0_6e6_i2eonilu_-ojg "frequency_unit_is_ppm_or_Hz_or_point" 814
+($14 773 < 0_6e6_i2eonilu_-ojg "frequency_unit_is_ppm_or_Hz_or_point" 771
 (name "frequency_unit_is_ppm_or_Hz_or_point"
 )
 (uid "0_6e6_i2eonilu_-ojg")
@@ -4956,27 +4613,27 @@ objectdomain.uml.core.Stereotype-owns $20
 "_"
 "value in ('ppm', 'Hz', 'point')"
 ))
-($8 817 < 0_6e6_i2eonilu_-ojf "guid" 816
+($8 774 < 0_6e6_i2eonilu_-ojf "guid" 773
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-06-10:53:15_00001"
 )
 (uid "0_6e6_i2eonilu_-ojf"))
-($13 818 < 0_6e6_i2eonilu_-oje "#<anon> (FrequencyAxis, Axis)" 809
+($13 775 < 0_6e6_i2eonilu_-oje "#<anon> (FrequencyAxis, Axis)" 766
 (uid "0_6e6_i2eonilu_-oje"))
-($8 819 < 0_6e6_i2eonilu_-ojd "documentation" 809
+($8 776 < 0_6e6_i2eonilu_-ojd "documentation" 766
 (name "documentation"
 )
 (value "Nmr frequency axis, with ppm (increasing to teh left), Hz, and point values"
 )
 (uid "0_6e6_i2eonilu_-ojd"))
-($8 820 < 0_6e6_i2eonilu_-ojc "guid" 809
+($8 777 < 0_6e6_i2eonilu_-ojc "guid" 766
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-06-10:52:33_00002"
 )
 (uid "0_6e6_i2eonilu_-ojc"))
-($8 821 < 0_6e6_i2eonilu_-ojb "constructorCode:python" 809
+($8 778 < 0_6e6_i2eonilu_-ojb "constructorCode:python" 766
 (name "constructorCode:python"
 )
 (value "if self.resonances:"
@@ -4988,7 +4645,7 @@ objectdomain.uml.core.Stereotype-owns $20
 "    self.resonances = [x for x in ll if x is not None]"
 )
 (uid "0_6e6_i2eonilu_-ojb"))
-($8 822 < 0_6e6_i2eonilu_-oja "destructorCode:python" 809
+($8 779 < 0_6e6_i2eonilu_-oja "destructorCode:python" 766
 (name "destructorCode:python"
 )
 (value "spectrumDisplay = self.spectrumDisplay"
@@ -4999,7 +4656,7 @@ objectdomain.uml.core.Stereotype-owns $20
 "  "
 )
 (uid "0_6e6_i2eonilu_-oja"))
-($8 823 < z8kq45_85r_iath4r22_-p93 "postConstructorCode:python" 809
+($8 780 < z8kq45_85r_iath4r22_-p93 "postConstructorCode:python" 766
 (name "postConstructorCode:python"
 )
 (value "stripSerial = self.stripSerial"
@@ -5014,23 +4671,23 @@ objectdomain.uml.core.Stereotype-owns $20
 "    objectsCreated.add(sa)"
 )
 (uid "z8kq45_85r_iath4r22_-p93"))
-($6 824 < 0_6e6_i2eonilu_-oj9 "FidAxis" 1
+($6 781 < 0_6e6_i2eonilu_-oj9 "FidAxis" 1
 (name "FidAxis"
 )
 (uid "0_6e6_i2eonilu_-oj9"))
-($7 825 < 0_6e6_i2eonilu_-oj8 "code" 824
+($7 782 < 0_6e6_i2eonilu_-oj8 "code" 781
 (changeability "frozen")
 (name "code"
 )
 (uid "0_6e6_i2eonilu_-oj8")
 (multiplicity "1"))
-($8 826 < 0_6e6_i2eonilu_-oj7 "guid" 825
+($8 783 < 0_6e6_i2eonilu_-oj7 "guid" 782
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-06-10:53:15_00009"
 )
 (uid "0_6e6_i2eonilu_-oj7"))
-($14 827 < z8kq45_85r_iath4r22_-p94 "value_axis_code_starts_with_fid" 825
+($14 784 < z8kq45_85r_iath4r22_-p94 "value_axis_code_starts_with_fid" 782
 (name "value_axis_code_starts_with_fid"
 )
 (uid "z8kq45_85r_iath4r22_-p94")
@@ -5038,38 +4695,38 @@ objectdomain.uml.core.Stereotype-owns $20
 "_"
 "value.startswith('fid')"
 ))
-($8 828 < z8kq45_85r_iath4r22_-p8z "guid" 827
+($8 785 < z8kq45_85r_iath4r22_-p8z "guid" 784
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-06-12-14:56:55_00001"
 )
 (uid "z8kq45_85r_iath4r22_-p8z"))
-($7 829 < 0_6e6_i2eonilu_-oj4 "unit" 824
+($7 786 < 0_6e6_i2eonilu_-oj4 "unit" 781
 (name "unit"
 )
 (uid "0_6e6_i2eonilu_-oj4")
 (multiplicity "1"))
-($8 830 < 0_6e6_i2eonilu_-oj3 "guid" 829
+($8 787 < 0_6e6_i2eonilu_-oj3 "guid" 786
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-06-10:53:15_00011"
 )
 (uid "0_6e6_i2eonilu_-oj3"))
-($13 831 < 0_6e6_i2eonilu_-oj2 "#<anon> (FidAxis, Axis)" 824
+($13 788 < 0_6e6_i2eonilu_-oj2 "#<anon> (FidAxis, Axis)" 781
 (uid "0_6e6_i2eonilu_-oj2"))
-($8 832 < 0_6e6_i2eonilu_-oj1 "documentation" 824
+($8 789 < 0_6e6_i2eonilu_-oj1 "documentation" 781
 (name "documentation"
 )
 (value "Axis for FID - pre Fourier transformation"
 )
 (uid "0_6e6_i2eonilu_-oj1"))
-($8 833 < 0_6e6_i2eonilu_-oj0 "guid" 824
+($8 790 < 0_6e6_i2eonilu_-oj0 "guid" 781
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-06-10:52:33_00003"
 )
 (uid "0_6e6_i2eonilu_-oj0"))
-($8 834 < 0_6e6_i2eonilu_-oiz "constructorCode:python" 824
+($8 791 < 0_6e6_i2eonilu_-oiz "constructorCode:python" 781
 (name "constructorCode:python"
 )
 (value "if self.resonances:"
@@ -5081,7 +4738,7 @@ objectdomain.uml.core.Stereotype-owns $20
 "    self.resonances = [x for x in ll if x is not None]"
 )
 (uid "0_6e6_i2eonilu_-oiz"))
-($8 835 < 0_6e6_i2eonilu_-oiy "destructorCode:python" 824
+($8 792 < 0_6e6_i2eonilu_-oiy "destructorCode:python" 781
 (name "destructorCode:python"
 )
 (value "spectrumDisplay = self.spectrumDisplay"
@@ -5090,7 +4747,7 @@ objectdomain.uml.core.Stereotype-owns $20
 "  raise ApiError(\"Axes cannot be deleted independently\")"
 )
 (uid "0_6e6_i2eonilu_-oiy"))
-($8 836 < z8kq45_85r_iath4r22_-p92 "postConstructorCode:python" 824
+($8 793 < z8kq45_85r_iath4r22_-p92 "postConstructorCode:python" 781
 (name "postConstructorCode:python"
 )
 (value "stripSerial = self.stripSerial"
@@ -5105,23 +4762,23 @@ objectdomain.uml.core.Stereotype-owns $20
 "    objectsCreated.add(sa)"
 )
 (uid "z8kq45_85r_iath4r22_-p92"))
-($6 837 < 0_6e6_i2eonilu_-oix "SampledAxis" 1
+($6 794 < 0_6e6_i2eonilu_-oix "SampledAxis" 1
 (name "SampledAxis"
 )
 (uid "0_6e6_i2eonilu_-oix"))
-($7 838 < 0_6e6_i2eonilu_-oiw "code" 837
+($7 795 < 0_6e6_i2eonilu_-oiw "code" 794
 (changeability "frozen")
 (name "code"
 )
 (uid "0_6e6_i2eonilu_-oiw")
 (multiplicity "1"))
-($8 839 < 0_6e6_i2eonilu_-oiv "guid" 838
+($8 796 < 0_6e6_i2eonilu_-oiv "guid" 795
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-06-10:53:15_00006"
 )
 (uid "0_6e6_i2eonilu_-oiv"))
-($14 840 < 0_6e6_i2eonilu_-oiu "value_axis_code_starts_with_lower_case" 838
+($14 797 < 0_6e6_i2eonilu_-oiu "value_axis_code_starts_with_lower_case" 795
 (name "value_axis_code_starts_with_lower_case"
 )
 (uid "0_6e6_i2eonilu_-oiu")
@@ -5129,32 +4786,32 @@ objectdomain.uml.core.Stereotype-owns $20
 "_"
 "value[0].islower()"
 ))
-($8 841 < 0_6e6_i2eonilu_-oit "guid" 840
+($8 798 < 0_6e6_i2eonilu_-oit "guid" 797
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-06-10:53:15_00007"
 )
 (uid "0_6e6_i2eonilu_-oit"))
-($7 842 < 0_6e6_i2eonilu_-ois "unit" 837
+($7 799 < 0_6e6_i2eonilu_-ois "unit" 794
 (name "unit"
 )
 (uid "0_6e6_i2eonilu_-ois")
 (multiplicity "1"))
-($8 843 < 0_6e6_i2eonilu_-oir "guid" 842
+($8 800 < 0_6e6_i2eonilu_-oir "guid" 799
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-06-10:53:15_00008"
 )
 (uid "0_6e6_i2eonilu_-oir"))
-($13 844 < 0_6e6_i2eonilu_-oiq "#<anon> (SampledAxis, Axis)" 837
+($13 801 < 0_6e6_i2eonilu_-oiq "#<anon> (SampledAxis, Axis)" 794
 (uid "0_6e6_i2eonilu_-oiq"))
-($8 845 < 0_6e6_i2eonilu_-oip "guid" 837
+($8 802 < 0_6e6_i2eonilu_-oip "guid" 794
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-11-06-10:52:33_00004"
 )
 (uid "0_6e6_i2eonilu_-oip"))
-($8 846 < 0_6e6_i2eonilu_-oio "constructorCode:python" 837
+($8 803 < 0_6e6_i2eonilu_-oio "constructorCode:python" 794
 (name "constructorCode:python"
 )
 (value "if self.resonances:"
@@ -5166,7 +4823,7 @@ objectdomain.uml.core.Stereotype-owns $20
 "    self.resonances = [x for x in ll if x is not None]"
 )
 (uid "0_6e6_i2eonilu_-oio"))
-($8 847 < 0_6e6_i2eonilu_-oin "destructorCode:python" 837
+($8 804 < 0_6e6_i2eonilu_-oin "destructorCode:python" 794
 (name "destructorCode:python"
 )
 (value "spectrumDisplay = self.spectrumDisplay"
@@ -5175,7 +4832,7 @@ objectdomain.uml.core.Stereotype-owns $20
 "  raise ApiError(\"Axes cannot be deleted independently\")"
 )
 (uid "0_6e6_i2eonilu_-oin"))
-($8 848 < z8kq45_85r_iath4r22_-p90 "postConstructorCode:python" 837
+($8 805 < z8kq45_85r_iath4r22_-p90 "postConstructorCode:python" 794
 (name "postConstructorCode:python"
 )
 (value "stripSerial = self.stripSerial"
@@ -5190,67 +4847,67 @@ objectdomain.uml.core.Stereotype-owns $20
 "    objectsCreated.add(sa)"
 )
 (uid "z8kq45_85r_iath4r22_-p90"))
-($15 849 < 0_6e6_i2eonilu_-oim "#<anon> (Task, Window)" 1
+($15 806 < 0_6e6_i2eonilu_-oim "#<anon> (Task, Window)" 1
 (uid "0_6e6_i2eonilu_-oim"))
-($6 850 < 0_6e6_i2eonilu_-oil "Ruler" 1
+($6 807 < 0_6e6_i2eonilu_-oil "Ruler" 1
 (name "Ruler"
 )
 (uid "0_6e6_i2eonilu_-oil"))
-($7 851 < 0_6e6_i2eonilu_-oik "serial" 850
+($7 808 < 0_6e6_i2eonilu_-oik "serial" 807
 (changeability "frozen")
 (name "serial"
 )
 (uid "0_6e6_i2eonilu_-oik")
 (multiplicity "1"))
-($8 852 < 0_6e6_i2eonilu_-oij "isAutomatic" 851
+($8 809 < 0_6e6_i2eonilu_-oij "isAutomatic" 808
 (name "isAutomatic"
 )
 (value "True"
 )
 (uid "0_6e6_i2eonilu_-oij"))
-($8 853 < 0_6e6_i2eonilu_-oii "guid" 851
+($8 810 < 0_6e6_i2eonilu_-oii "guid" 808
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-10-31-16:36:30_00006"
 )
 (uid "0_6e6_i2eonilu_-oii"))
-($7 854 < 0_6e6_i2eonilu_-oih "position" 850
+($7 811 < 0_6e6_i2eonilu_-oih "position" 807
 (changeability "frozen")
 (name "position"
 )
 (uid "0_6e6_i2eonilu_-oih")
 (multiplicity "1"))
-($8 855 < 0_6e6_i2eonilu_-oig "documentation" 854
+($8 812 < 0_6e6_i2eonilu_-oig "documentation" 811
 (name "documentation"
 )
 (value "Ruler position"
 )
 (uid "0_6e6_i2eonilu_-oig"))
-($8 856 < 0_6e6_i2eonilu_-oif "guid" 854
+($8 813 < 0_6e6_i2eonilu_-oif "guid" 811
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-10-31-16:36:30_00007"
 )
 (uid "0_6e6_i2eonilu_-oif"))
-($7 857 < 0_6e6_i2eonilu_-oie "axisCode" 850
+($7 814 < 0_6e6_i2eonilu_-oie "axisCode" 807
 (changeability "frozen")
 (name "axisCode"
 )
 (uid "0_6e6_i2eonilu_-oie")
 (multiplicity "1"))
-($8 858 < 0_6e6_i2eonilu_-oid "documentation" 857
+($8 815 < 0_6e6_i2eonilu_-oid "documentation" 814
 (name "documentation"
 )
 (value "Axis code for ruler - deternines which axes hte ruler is displayed on"
 )
 (uid "0_6e6_i2eonilu_-oid"))
-($8 859 < 0_6e6_i2eonilu_-oic "guid" 857
+($8 816 < 0_6e6_i2eonilu_-oic "guid" 814
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-10-31-16:36:30_00008"
 )
 (uid "0_6e6_i2eonilu_-oic"))
-($7 860 < 0_6e6_i2eonilu_-oib "unit" 850
+($7 817 < 0_6e6_i2eonilu_-oib "unit" 807
 (initialValue "ppm"
 )
 (changeability "frozen")
@@ -5258,228 +4915,228 @@ objectdomain.uml.core.Stereotype-owns $20
 )
 (uid "0_6e6_i2eonilu_-oib")
 (multiplicity "1"))
-($8 861 < 0_6e6_i2eonilu_-oia "documentation" 860
+($8 818 < 0_6e6_i2eonilu_-oia "documentation" 817
 (name "documentation"
 )
 (value "Unit of position - defaults to ppm"
 )
 (uid "0_6e6_i2eonilu_-oia"))
-($8 862 < 0_6e6_i2eonilu_-oi9 "guid" 860
+($8 819 < 0_6e6_i2eonilu_-oi9 "guid" 817
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-10-31-16:36:30_00009"
 )
 (uid "0_6e6_i2eonilu_-oi9"))
-($7 863 < 0_6e6_i2eonilu_-oi8 "label" 850
+($7 820 < 0_6e6_i2eonilu_-oi8 "label" 807
 (name "label"
 )
 (uid "0_6e6_i2eonilu_-oi8"))
-($8 864 < 0_6e6_i2eonilu_-oi7 "documentation" 863
+($8 821 < 0_6e6_i2eonilu_-oi7 "documentation" 820
 (name "documentation"
 )
 (value "Text label to be displayed alongside ruler."
 )
 (uid "0_6e6_i2eonilu_-oi7"))
-($8 865 < 0_6e6_i2eonilu_-oi6 "guid" 863
+($8 822 < 0_6e6_i2eonilu_-oi6 "guid" 820
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-10-31-16:36:30_00010"
 )
 (uid "0_6e6_i2eonilu_-oi6"))
-($13 866 < 0_6e6_i2eonilu_-oi5 "#<anon> (Ruler, DataObject)" 850
+($13 823 < 0_6e6_i2eonilu_-oi5 "#<anon> (Ruler, DataObject)" 807
 (uid "0_6e6_i2eonilu_-oi5"))
-($8 867 < 0_6e6_i2eonilu_-oi4 "keyNames" 850
+($8 824 < 0_6e6_i2eonilu_-oi4 "keyNames" 807
 (name "keyNames"
 )
 (value "serial"
 )
 (uid "0_6e6_i2eonilu_-oi4"))
-($8 868 < 0_6e6_i2eonilu_-oi3 "documentation" 850
+($8 825 < 0_6e6_i2eonilu_-oi3 "documentation" 807
 (name "documentation"
 )
 (value "Single line with position, axisCode, and unit, displayed across all matching axes in all display modules"
 )
 (uid "0_6e6_i2eonilu_-oi3"))
-($8 869 < 0_6e6_i2eonilu_-oi2 "guid" 850
+($8 826 < 0_6e6_i2eonilu_-oi2 "guid" 807
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-10-31-16:36:25_00004"
 )
 (uid "0_6e6_i2eonilu_-oi2"))
-($6 870 < 0_6e6_i2eonilu_-oi1 "Mark" 1
+($6 827 < 0_6e6_i2eonilu_-oi1 "Mark" 1
 (name "Mark"
 )
 (uid "0_6e6_i2eonilu_-oi1"))
-($7 871 < 0_6e6_i2eonilu_-oi0 "serial" 870
+($7 828 < 0_6e6_i2eonilu_-oi0 "serial" 827
 (changeability "frozen")
 (name "serial"
 )
 (uid "0_6e6_i2eonilu_-oi0")
 (multiplicity "1"))
-($8 872 < 0_6e6_i2eonilu_-ohz "isAutomatic" 871
+($8 829 < 0_6e6_i2eonilu_-ohz "isAutomatic" 828
 (name "isAutomatic"
 )
 (value "True"
 )
 (uid "0_6e6_i2eonilu_-ohz"))
-($8 873 < 0_6e6_i2eonilu_-ohy "guid" 871
+($8 830 < 0_6e6_i2eonilu_-ohy "guid" 828
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-10-31-16:36:30_00003"
 )
 (uid "0_6e6_i2eonilu_-ohy"))
-($7 874 < 0_6e6_i2eonilu_-ohx "colour" 870
+($7 831 < 0_6e6_i2eonilu_-ohx "colour" 827
 (name "colour"
 )
 (uid "0_6e6_i2eonilu_-ohx")
 (multiplicity "1"))
-($8 875 < 0_6e6_i2eonilu_-ohw "documentation" 874
+($8 832 < 0_6e6_i2eonilu_-ohw "documentation" 831
 (name "documentation"
 )
 (value "Colour description string"
 )
 (uid "0_6e6_i2eonilu_-ohw"))
-($8 876 < 0_6e6_i2eonilu_-ohv "guid" 874
+($8 833 < 0_6e6_i2eonilu_-ohv "guid" 831
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-10-31-16:36:30_00004"
 )
 (uid "0_6e6_i2eonilu_-ohv"))
-($7 877 < 0_6e6_i2eonilu_-ohu "style" 870
+($7 834 < 0_6e6_i2eonilu_-ohu "style" 827
 (initialValue "simple"
 )
 (name "style"
 )
 (uid "0_6e6_i2eonilu_-ohu")
 (multiplicity "1"))
-($8 878 < 0_6e6_i2eonilu_-oht "documentation" 877
+($8 835 < 0_6e6_i2eonilu_-oht "documentation" 834
 (name "documentation"
 )
 (value "Style description string"
 )
 (uid "0_6e6_i2eonilu_-oht"))
-($8 879 < 0_6e6_i2eonilu_-ohs "guid" 877
+($8 836 < 0_6e6_i2eonilu_-ohs "guid" 834
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-10-31-16:36:30_00005"
 )
 (uid "0_6e6_i2eonilu_-ohs"))
-($13 880 < 0_6e6_i2eonilu_-ohr "#<anon> (Mark, DataObject)" 870
+($13 837 < 0_6e6_i2eonilu_-ohr "#<anon> (Mark, DataObject)" 827
 (uid "0_6e6_i2eonilu_-ohr"))
-($11 881 < 0_6e6_i2eonilu_-ohq "#<anon> (Mark, Ruler)##," 870
+($11 838 < 0_6e6_i2eonilu_-ohq "#<anon> (Mark, Ruler)##," 827
 (name "")
 (uid "0_6e6_i2eonilu_-ohq"))
-($12 882 < 0_6e6_i2eonilu_-ohp "#0" 881
+($12 839 < 0_6e6_i2eonilu_-ohp "#0" 838
 (changeability "frozen")
 (aggregation "composite")
 (uid "0_6e6_i2eonilu_-ohp")
 (multiplicity "1"))
-($8 883 < 0_6e6_i2eonilu_-oho "guid" 882
+($8 840 < 0_6e6_i2eonilu_-oho "guid" 839
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-10-31-16:36:30_00001"
 )
 (uid "0_6e6_i2eonilu_-oho"))
-($12 884 < 0_6e6_i2eonilu_-ohn "#1" 881
+($12 841 < 0_6e6_i2eonilu_-ohn "#1" 838
 (uid "0_6e6_i2eonilu_-ohn")
 (multiplicity "*"))
-($8 885 < 0_6e6_i2eonilu_-ohm "guid" 884
+($8 842 < 0_6e6_i2eonilu_-ohm "guid" 841
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-10-31-16:36:30_00002"
 )
 (uid "0_6e6_i2eonilu_-ohm"))
-($8 886 < 0_6e6_i2eonilu_-ohl "documentation" 870
+($8 843 < 0_6e6_i2eonilu_-ohl "documentation" 827
 (name "documentation"
 )
 (value "Group of markings - infinite lines at specific positions exending across all matching axes fo all windows."
 )
 (uid "0_6e6_i2eonilu_-ohl"))
-($8 887 < 0_6e6_i2eonilu_-ohk "keyNames" 870
+($8 844 < 0_6e6_i2eonilu_-ohk "keyNames" 827
 (name "keyNames"
 )
 (value "serial"
 )
 (uid "0_6e6_i2eonilu_-ohk"))
-($8 888 < 0_6e6_i2eonilu_-ohj "guid" 870
+($8 845 < 0_6e6_i2eonilu_-ohj "guid" 827
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-10-31-16:36:26_00002"
 )
 (uid "0_6e6_i2eonilu_-ohj"))
-($2 889 < 0_6e6_i2eonilu_-ohi "SpectrumDisplay-details" 1
+($2 846 < 0_6e6_i2eonilu_-ohi "SpectrumDisplay-details" 1
 (name "SpectrumDisplay-details"
 )
 (uid "0_6e6_i2eonilu_-ohi")
 (diagramType "class"))
-($3 890 < 0_6e6_i2eonilu_-ohh "Axis" 889
+($3 847 < 0_6e6_i2eonilu_-ohh "Axis" 846
 (autoSizeToFit true)
 (uid "0_6e6_i2eonilu_-ohh")
 (bbx 60 440 170 240))
-($3 891 < 0_6e6_i2eonilu_-ohg "BoundDisplay" 889
+($3 848 < 0_6e6_i2eonilu_-ohg "BoundDisplay" 846
 (autoSizeToFit true)
 (uid "0_6e6_i2eonilu_-ohg")
 (bbx 320 320 100 90))
-($3 892 < 0_6e6_i2eonilu_-ohb "BoundStrip" 889
+($3 849 < 0_6e6_i2eonilu_-ohb "BoundStrip" 846
 (autoSizeToFit true)
 (uid "0_6e6_i2eonilu_-ohb")
 (bbx 590 260 100 110))
-($3 893 < 0_6e6_i2eonilu_-oh6 "FreeStrip" 889
+($3 850 < 0_6e6_i2eonilu_-oh6 "FreeStrip" 846
 (autoSizeToFit true)
 (uid "0_6e6_i2eonilu_-oh6")
 (bbx 590 140 100 90))
-($3 894 < 0_6e6_i2eonilu_-oh3 "FreeDisplay" 889
+($3 851 < 0_6e6_i2eonilu_-oh3 "FreeDisplay" 846
 (autoSizeToFit true)
 (uid "0_6e6_i2eonilu_-oh3")
 (bbx 320 140 100 110))
-($3 895 < 0_6e6_i2eonilu_-ogu "FrequencyAxis" 889
+($3 852 < 0_6e6_i2eonilu_-ogu "FrequencyAxis" 846
 (autoSizeToFit true)
 (uid "0_6e6_i2eonilu_-ogu")
 (bbx 330 680 110 70))
-($5 896 < 0_6e6_i2eonilu_-ogt "" 889
+($5 853 < 0_6e6_i2eonilu_-ogt "" 846
 (uid "0_6e6_i2eonilu_-ogt")
 (points 380 680 380 615 230 615))
-($3 897 < 0_6e6_i2eonilu_-ogs "IntensityAxis" 889
+($3 854 < 0_6e6_i2eonilu_-ogs "IntensityAxis" 846
 (autoSizeToFit true)
 (uid "0_6e6_i2eonilu_-ogs")
 (bbx 580 680 130 70))
-($5 898 < 0_6e6_i2eonilu_-ogr "" 889
+($5 855 < 0_6e6_i2eonilu_-ogr "" 846
 (uid "0_6e6_i2eonilu_-ogr")
 (points 645 680 645 615 230 615))
-($3 899 < 0_6e6_i2eonilu_-ogq "SampledAxis" 889
+($3 856 < 0_6e6_i2eonilu_-ogq "SampledAxis" 846
 (autoSizeToFit true)
 (uid "0_6e6_i2eonilu_-ogq")
 (bbx 730 680 80 70))
-($5 900 < 0_6e6_i2eonilu_-ogp "" 889
+($5 857 < 0_6e6_i2eonilu_-ogp "" 846
 (uid "0_6e6_i2eonilu_-ogp")
 (points 770 680 770 615 230 615))
-($3 901 < 0_6e6_i2eonilu_-ogo "SpectrumDisplay" 889
+($3 858 < 0_6e6_i2eonilu_-ogo "SpectrumDisplay" 846
 (autoSizeToFit true)
 (uid "0_6e6_i2eonilu_-ogo")
 (bbx 80 20 200 250))
-($4 902 < 0_6e6_i2eonilu_-ogn "" 889
+($4 859 < 0_6e6_i2eonilu_-ogn "" 846
 (toMultiplicityPosition 145 415)
 (toRolePosition 160 420)
 (uid "0_6e6_i2eonilu_-ogn")
 (points 155 270 155 440)
 (fromMultiplicityPosition 140 275))
-($4 903 < 0_6e6_i2eonilu_-ogm "" 889
+($4 860 < 0_6e6_i2eonilu_-ogm "" 846
 (toMultiplicityPosition 90 420)
 (toRolePosition 65 405)
 (uid "0_6e6_i2eonilu_-ogm")
 (points 100 270 100 440)
 (toOrderedPosition 80 390))
-($5 904 < 0_6e6_i2eonilu_-ogl "" 889
+($5 861 < 0_6e6_i2eonilu_-ogl "" 846
 (uid "0_6e6_i2eonilu_-ogl")
 (points 320 335 270 335 270 270))
-($5 905 < 0_6e6_i2eonilu_-ogk "" 889
+($5 862 < 0_6e6_i2eonilu_-ogk "" 846
 (uid "0_6e6_i2eonilu_-ogk")
 (points 320 175 280 175))
-($3 906 < 0_6e6_i2eonilu_-ogj "Strip" 889
+($3 863 < 0_6e6_i2eonilu_-ogj "Strip" 846
 (autoSizeToFit true)
 (uid "0_6e6_i2eonilu_-ogj")
 (bbx 740 20 120 140))
-($4 907 < 0_6e6_i2eonilu_-ogi "" 889
+($4 864 < 0_6e6_i2eonilu_-ogi "" 846
 (toMultiplicityPosition 240 525)
 (fromOrderedPosition 885 70)
 (toRolePosition 255 525)
@@ -5487,148 +5144,148 @@ objectdomain.uml.core.Stereotype-owns $20
 (points 860 110 890 110 890 520 230 520)
 (toOrderedPosition 330 525)
 (fromMultiplicityPosition 870 115))
-($4 908 < 0_6e6_i2eonilu_-ogh "" 889
+($4 865 < 0_6e6_i2eonilu_-ogh "" 846
 (toMultiplicityPosition 730 15)
 (uid "0_6e6_i2eonilu_-ogh")
 (points 280 40 740 40)
 (fromMultiplicityPosition 285 30))
-($4 909 < 0_6e6_i2eonilu_-ogg "" 889
+($4 866 < 0_6e6_i2eonilu_-ogg "" 846
 (toMultiplicityPosition 730 65)
 (toRolePosition 640 70)
 (uid "0_6e6_i2eonilu_-ogg")
 (points 280 95 740 95)
 (toOrderedPosition 585 70))
-($5 910 < 0_6e6_i2eonilu_-ogf "" 889
+($5 867 < 0_6e6_i2eonilu_-ogf "" 846
 (uid "0_6e6_i2eonilu_-ogf")
 (points 690 280 770 280 770 160))
-($5 911 < 0_6e6_i2eonilu_-oge "" 889
+($5 868 < 0_6e6_i2eonilu_-oge "" 846
 (uid "0_6e6_i2eonilu_-oge")
 (points 690 150 740 150))
-($3 912 < 0_6e6_i2eonilu_-og3 "FidAxis" 889
+($3 869 < 0_6e6_i2eonilu_-og3 "FidAxis" 846
 (autoSizeToFit true)
 (uid "0_6e6_i2eonilu_-og3")
 (bbx 480 680 70 70))
-($5 913 < 0_6e6_i2eonilu_-og2 "" 889
+($5 870 < 0_6e6_i2eonilu_-og2 "" 846
 (uid "0_6e6_i2eonilu_-og2")
 (points 515 680 515 615 230 615))
-($4 914 < z8kq45_85r_iascddog_-p8f "" 889
+($4 871 < z8kq45_85r_iascddog_-p8f "" 846
 (toMultiplicityPosition 580 350)
 (toRolePosition 545 320)
 (uid "z8kq45_85r_iascddog_-p8f")
 (points 420 345 590 345)
 (fromRolePosition 430 365)
 (fromMultiplicityPosition 435 325))
-($4 915 < z8kq45_85r_iascddog_-p8g "" 889
+($4 872 < z8kq45_85r_iascddog_-p8g "" 846
 (toMultiplicityPosition 580 170)
 (toRolePosition 550 135)
 (uid "z8kq45_85r_iascddog_-p8g")
 (points 420 160 590 160)
 (fromRolePosition 435 185)
 (fromMultiplicityPosition 435 150))
-($3 916 < z8kq45_85r_iascddog_-p7p "StripAxis" 889
+($3 873 < z8kq45_85r_iascddog_-p7p "StripAxis" 846
 (autoSizeToFit true)
 (uid "z8kq45_85r_iascddog_-p7p")
 (bbx 770 440 60 40))
-($4 917 < z8kq45_85r_iascddog_-p7o "" 889
+($4 874 < z8kq45_85r_iascddog_-p7o "" 846
 (toMultiplicityPosition 830 415)
 (toRolePosition 840 405)
 (uid "z8kq45_85r_iascddog_-p7o")
 (points 825 160 825 440)
 (fromMultiplicityPosition 805 165))
-($4 918 < z8kq45_85r_iascddog_-p7n "" 889
+($4 875 < z8kq45_85r_iascddog_-p7n "" 846
 (toMultiplicityPosition 245 465)
 (uid "z8kq45_85r_iascddog_-p7n")
 (points 770 460 230 460)
 (fromRolePosition 700 425)
 (fromMultiplicityPosition 760 435))
-($6 919 < z8kq45_85r_iascddog_-p8e "StripSpectrumView" 1
+($6 876 < z8kq45_85r_iascddog_-p8e "StripSpectrumView" 1
 (name "StripSpectrumView"
 )
 (uid "z8kq45_85r_iascddog_-p8e"))
-($11 920 < z8kq45_85r_iascddog_-p8c "#<anon> (StripSpectrumView, SpectrumView)##," 919
+($11 877 < z8kq45_85r_iascddog_-p8c "#<anon> (StripSpectrumView, SpectrumView)##," 876
 (name "")
 (uid "z8kq45_85r_iascddog_-p8c"))
-($12 921 < z8kq45_85r_iascddog_-p89 "#0" 920
+($12 878 < z8kq45_85r_iascddog_-p89 "#0" 877
 (uid "z8kq45_85r_iascddog_-p89")
 (multiplicity "*"))
-($8 922 < z8kq45_85r_iascddog_-p77 "guid" 921
+($8 879 < z8kq45_85r_iascddog_-p77 "guid" 878
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-06-11-17:27:54_00007"
 )
 (uid "z8kq45_85r_iascddog_-p77"))
-($8 923 < z8kq45_85r_iath4r22_-p95 "documentation" 921
+($8 880 < z8kq45_85r_iath4r22_-p95 "documentation" 878
 (name "documentation"
 )
 (value "StripSpectrumViews defining a strip where this SpectrumView is avalid"
 )
 (uid "z8kq45_85r_iath4r22_-p95"))
-($12 924 < z8kq45_85r_iascddog_-p88 "#1" 920
+($12 881 < z8kq45_85r_iascddog_-p88 "#1" 877
 (changeability "frozen")
 (uid "z8kq45_85r_iascddog_-p88")
 (multiplicity "1"))
-($8 925 < z8kq45_85r_iascddog_-p87 "documentation" 924
+($8 882 < z8kq45_85r_iascddog_-p87 "documentation" 881
 (name "documentation"
 )
 (value "SpectrumView linked to Strip"
 )
 (uid "z8kq45_85r_iascddog_-p87"))
-($8 926 < z8kq45_85r_iascddog_-p7c "guid" 924
+($8 883 < z8kq45_85r_iascddog_-p7c "guid" 881
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-06-11-17:27:54_00008"
 )
 (uid "z8kq45_85r_iascddog_-p7c"))
-($8 927 < 0_-ea7_ichmhocx_-p92 "partitionsChildren" 920
+($8 884 < 0_-ea7_ichmhocx_-p92 "partitionsChildren" 877
 (name "partitionsChildren"
 )
 (value "True"
 )
 (uid "0_-ea7_ichmhocx_-p92"))
-($13 928 < z8kq45_85r_iascddog_-p85 "#<anon> (StripSpectrumView, DataObject)" 919
+($13 885 < z8kq45_85r_iascddog_-p85 "#<anon> (StripSpectrumView, DataObject)" 876
 (uid "z8kq45_85r_iascddog_-p85"))
-($11 929 < 0_-ea7_ichmhocx_-p96 "#<anon> (StripSpectrumView, StripPeakListView)##," 919
+($11 886 < 0_-ea7_ichmhocx_-p96 "#<anon> (StripSpectrumView, StripPeakListView)##," 876
 (name "")
 (uid "0_-ea7_ichmhocx_-p96"))
-($12 930 < 0_-ea7_ichmhocx_-p95 "#0" 929
+($12 887 < 0_-ea7_ichmhocx_-p95 "#0" 886
 (changeability "frozen")
 (aggregation "composite")
 (uid "0_-ea7_ichmhocx_-p95")
 (multiplicity "1"))
-($8 931 < 0_-ea7_ichmhocx_-p8p "guid" 930
+($8 888 < 0_-ea7_ichmhocx_-p8p "guid" 887
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-07-24-16:12:23_00003"
 )
 (uid "0_-ea7_ichmhocx_-p8p"))
-($12 932 < 0_-ea7_ichmhocx_-p94 "#1" 929
+($12 889 < 0_-ea7_ichmhocx_-p94 "#1" 886
 (uid "0_-ea7_ichmhocx_-p94")
 (multiplicity "*"))
-($8 933 < 0_-ea7_ichmhocx_-p8q "guid" 932
+($8 890 < 0_-ea7_ichmhocx_-p8q "guid" 889
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-07-24-16:12:23_00004"
 )
 (uid "0_-ea7_ichmhocx_-p8q"))
-($8 934 < z8kq45_85r_iascddog_-p86 "documentation" 919
+($8 891 < z8kq45_85r_iascddog_-p86 "documentation" 876
 (name "documentation"
 )
 (value "Class representing a spectrum being disoplayed in a strip"
 )
 (uid "z8kq45_85r_iascddog_-p86"))
-($8 935 < z8kq45_85r_iascddog_-p84 "keyNames" 919
+($8 892 < z8kq45_85r_iascddog_-p84 "keyNames" 876
 (name "keyNames"
 )
 (value "spectrumView"
 )
 (uid "z8kq45_85r_iascddog_-p84"))
-($8 936 < z8kq45_85r_iascddog_-p7f "guid" 919
+($8 893 < z8kq45_85r_iascddog_-p7f "guid" 876
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-06-11-17:25:49_00002"
 )
 (uid "z8kq45_85r_iascddog_-p7f"))
-($8 937 < 0_63g_icq9x6j9_-p98 "postConstructorCode:python" 919
+($8 894 < 0_63g_icq9x6j9_-p98 "postConstructorCode:python" 876
 (name "postConstructorCode:python"
 )
 (value "_undo = root._undo"
@@ -5643,7 +5300,7 @@ objectdomain.uml.core.Stereotype-owns $20
 "    _undo.decreaseBlocking()"
 )
 (uid "0_63g_icq9x6j9_-p98"))
-($8 938 < 0_63g_icrcd9h5_-p97 "destructorCode:python" 919
+($8 895 < 0_63g_icrcd9h5_-p97 "destructorCode:python" 876
 (name "destructorCode:python"
 )
 (value "# The following code interacts directly with the deletion implementation (use of 'objsToBeDeleted'). "
@@ -5652,125 +5309,125 @@ objectdomain.uml.core.Stereotype-owns $20
 "  raise ApiError(\"StripSpectrumView %s: StripSpectrumViews can only be deleted when the SpectrumView or Strip is deleted.\" % self)"
 )
 (uid "0_63g_icrcd9h5_-p97"))
-($6 939 < z8kq45_85r_iascddog_-p7z "StripAxis" 1
+($6 896 < z8kq45_85r_iascddog_-p7z "StripAxis" 1
 (name "StripAxis"
 )
 (uid "z8kq45_85r_iascddog_-p7z"))
-($11 940 < z8kq45_85r_iascddog_-p7x "#<anon> (StripAxis, Axis)##stripAxes," 939
+($11 897 < z8kq45_85r_iascddog_-p7x "#<anon> (StripAxis, Axis)##stripAxes," 896
 (name "")
 (uid "z8kq45_85r_iascddog_-p7x"))
-($12 941 < z8kq45_85r_iascddog_-p7u "stripAxes#0" 940
+($12 898 < z8kq45_85r_iascddog_-p7u "stripAxes#0" 897
 (name "stripAxes"
 )
 (uid "z8kq45_85r_iascddog_-p7u")
 (multiplicity "*"))
-($8 942 < z8kq45_85r_iascddog_-p76 "guid" 941
+($8 899 < z8kq45_85r_iascddog_-p76 "guid" 898
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-06-11-17:27:54_00005"
 )
 (uid "z8kq45_85r_iascddog_-p76"))
-($8 943 < 0_6e6_ibm7lpuo_-p97 "baseName" 941
+($8 900 < 0_6e6_ibm7lpuo_-p97 "baseName" 898
 (name "baseName"
 )
 (value "stripAxis"
 )
 (uid "0_6e6_ibm7lpuo_-p97"))
-($12 944 < z8kq45_85r_iascddog_-p7t "#1" 940
+($12 901 < z8kq45_85r_iascddog_-p7t "#1" 897
 (changeability "frozen")
 (uid "z8kq45_85r_iascddog_-p7t")
 (multiplicity "1"))
-($8 945 < z8kq45_85r_iascddog_-p7s "documentation" 944
+($8 902 < z8kq45_85r_iascddog_-p7s "documentation" 901
 (name "documentation"
 )
 (value "Axis belonging to Strip"
 )
 (uid "z8kq45_85r_iascddog_-p7s"))
-($8 946 < z8kq45_85r_iascddog_-p75 "guid" 944
+($8 903 < z8kq45_85r_iascddog_-p75 "guid" 901
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-06-11-17:27:54_00006"
 )
 (uid "z8kq45_85r_iascddog_-p75"))
-($13 947 < z8kq45_85r_iascddog_-p72 "#<anon> (StripAxis, DataObject)" 939
+($13 904 < z8kq45_85r_iascddog_-p72 "#<anon> (StripAxis, DataObject)" 896
 (uid "z8kq45_85r_iascddog_-p72"))
-($8 948 < z8kq45_85r_iascddog_-p7r "documentation" 939
+($8 905 < z8kq45_85r_iascddog_-p7r "documentation" 896
 (name "documentation"
 )
 (value "Axis belonging to specific strip"
 )
 (uid "z8kq45_85r_iascddog_-p7r"))
-($8 949 < z8kq45_85r_iascddog_-p7q "keyNames" 939
+($8 906 < z8kq45_85r_iascddog_-p7q "keyNames" 896
 (name "keyNames"
 )
 (value "axis"
 )
 (uid "z8kq45_85r_iascddog_-p7q"))
-($8 950 < z8kq45_85r_iascddog_-p7e "guid" 939
+($8 907 < z8kq45_85r_iascddog_-p7e "guid" 896
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-06-11-17:25:49_00003"
 )
 (uid "z8kq45_85r_iascddog_-p7e"))
-($6 951 < 0_-ea7_ichmhocx_-p97 "StripPeakListView" 1
+($6 908 < 0_-ea7_ichmhocx_-p97 "StripPeakListView" 1
 (name "StripPeakListView"
 )
 (uid "0_-ea7_ichmhocx_-p97"))
-($11 952 < 0_-ea7_ichmhocx_-p90 "#<anon> (StripPeakListView, PeakListView)##," 951
+($11 909 < 0_-ea7_ichmhocx_-p90 "#<anon> (StripPeakListView, PeakListView)##," 908
 (name "")
 (uid "0_-ea7_ichmhocx_-p90"))
-($12 953 < 0_-ea7_ichmhocx_-p8z "#0" 952
+($12 910 < 0_-ea7_ichmhocx_-p8z "#0" 909
 (uid "0_-ea7_ichmhocx_-p8z")
 (multiplicity "*"))
-($8 954 < 0_-ea7_ichmhocx_-p8w "documentation" 953
+($8 911 < 0_-ea7_ichmhocx_-p8w "documentation" 910
 (name "documentation"
 )
 (value "StripPeakListViews connecting PeakListView to Strips"
 )
 (uid "0_-ea7_ichmhocx_-p8w"))
-($8 955 < 0_-ea7_ichmhocx_-p8o "guid" 953
+($8 912 < 0_-ea7_ichmhocx_-p8o "guid" 910
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-07-24-16:12:23_00001"
 )
 (uid "0_-ea7_ichmhocx_-p8o"))
-($12 956 < 0_-ea7_ichmhocx_-p8y "#1" 952
+($12 913 < 0_-ea7_ichmhocx_-p8y "#1" 909
 (changeability "frozen")
 (uid "0_-ea7_ichmhocx_-p8y")
 (multiplicity "1"))
-($8 957 < 0_-ea7_ichmhocx_-p8x "documentation" 956
+($8 914 < 0_-ea7_ichmhocx_-p8x "documentation" 913
 (name "documentation"
 )
 (value "PeakListView holding data for StripPeakListView"
 )
 (uid "0_-ea7_ichmhocx_-p8x"))
-($8 958 < 0_-ea7_ichmhocx_-p8n "guid" 956
+($8 915 < 0_-ea7_ichmhocx_-p8n "guid" 913
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-07-24-16:12:23_00002"
 )
 (uid "0_-ea7_ichmhocx_-p8n"))
-($13 959 < 0_-ea7_ichmhocx_-p8t "#<anon> (StripPeakListView, DataObject)" 951
+($13 916 < 0_-ea7_ichmhocx_-p8t "#<anon> (StripPeakListView, DataObject)" 908
 (uid "0_-ea7_ichmhocx_-p8t"))
-($8 960 < 0_-ea7_ichmhocx_-p93 "documentation" 951
+($8 917 < 0_-ea7_ichmhocx_-p93 "documentation" 908
 (name "documentation"
 )
 (value "Strip-specific PeakListView"
 )
 (uid "0_-ea7_ichmhocx_-p93"))
-($8 961 < 0_-ea7_ichmhocx_-p8s "keyNames" 951
+($8 918 < 0_-ea7_ichmhocx_-p8s "keyNames" 908
 (name "keyNames"
 )
 (value "peakListView"
 )
 (uid "0_-ea7_ichmhocx_-p8s"))
-($8 962 < 0_-ea7_ichmhocx_-p8r "guid" 951
+($8 919 < 0_-ea7_ichmhocx_-p8r "guid" 908
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2015-07-24-16:11:39_00001"
 )
 (uid "0_-ea7_ichmhocx_-p8r"))
-($8 963 < 0_63g_icrcd9h5_-p98 "destructorCode:python" 951
+($8 920 < 0_63g_icrcd9h5_-p98 "destructorCode:python" 908
 (name "destructorCode:python"
 )
 (value "# The following code interacts directly with the deletion implementation (use of 'objsToBeDeleted'). "
@@ -5779,306 +5436,343 @@ objectdomain.uml.core.Stereotype-owns $20
 "  raise ApiError(\"StripPeakListView %s: StripPeakListViews can only be deleted when the PeakListView or StripSpectrumView is deleted.\" % self)"
 )
 (uid "0_63g_icrcd9h5_-p98"))
-($6 964 < ajvq9s_joo_ipq2z8si_-p98 "GenericModule" 1
+($6 921 < ajvq9s_joo_ipq2z8si_-p98 "GenericModule" 1
 (name "GenericModule"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p98"))
-($7 965 < ajvq9s_joo_ipq2z8si_-p96 "moduleType" 964
+($7 922 < ajvq9s_joo_ipq2z8si_-p96 "moduleType" 921
 (changeability "frozen")
 (name "moduleType"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p96")
 (multiplicity "1"))
-($8 966 < ajvq9s_joo_ipq2z8si_-p95 "documentation" 965
+($8 923 < ajvq9s_joo_ipq2z8si_-p95 "documentation" 922
 (name "documentation"
 )
 (value "Type of module represented by Object.Defines the graphical implementaiton to use to display it."
 )
 (uid "ajvq9s_joo_ipq2z8si_-p95"))
-($8 967 < ajvq9s_joo_ipq2z8si_-p83 "guid" 965
+($8 924 < ajvq9s_joo_ipq2z8si_-p83 "guid" 922
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2016-06-22-02:40:57_00001"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p83"))
-($9 968 < ajvq9s_joo_ipq2z8si_-p93 "disconnect" 964
+($9 925 < ajvq9s_joo_ipq2z8si_-p93 "disconnect" 921
 (name "disconnect"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p93"))
-($8 969 < ajvq9s_joo_ipq2z8si_-p92 "opType" 968
+($8 926 < ajvq9s_joo_ipq2z8si_-p92 "opType" 925
 (name "opType"
 )
 (value "other"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p92"))
-($8 970 < ajvq9s_joo_ipq2z8si_-p90 "documentation" 968
+($8 927 < ajvq9s_joo_ipq2z8si_-p90 "documentation" 925
 (name "documentation"
 )
 (value "NOT IMPLEMENTED, these functions are not used."
 )
 (uid "ajvq9s_joo_ipq2z8si_-p90"))
-($8 971 < ajvq9s_joo_ipq2z8si_-p8r "code:python" 968
+($8 928 < ajvq9s_joo_ipq2z8si_-p8r "code:python" 925
 (name "code:python"
 )
 (value "raise NotImplementedError(\"disconnect function is not in use\")"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p8r"))
-($8 972 < ajvq9s_joo_ipq2z8si_-p82 "guid" 968
+($8 929 < ajvq9s_joo_ipq2z8si_-p82 "guid" 925
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2016-06-22-02:40:57_00002"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p82"))
-($9 973 < ajvq9s_joo_ipq2z8si_-p8z "reconnect#Window" 964
+($9 930 < ajvq9s_joo_ipq2z8si_-p8z "reconnect#Window" 921
 (name "reconnect"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p8z"))
-($10 974 < ajvq9s_joo_ipq2z8si_-p8w "window" 973
+($10 931 < ajvq9s_joo_ipq2z8si_-p8w "window" 930
 (name "window"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p8w"))
-($8 975 < ajvq9s_joo_ipq2z8si_-p81 "guid" 974
+($8 932 < ajvq9s_joo_ipq2z8si_-p81 "guid" 931
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2016-06-22-02:40:57_00004"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p81"))
-($8 976 < ajvq9s_joo_ipq2z8si_-p8y "documentation" 973
+($8 933 < ajvq9s_joo_ipq2z8si_-p8y "documentation" 930
 (name "documentation"
 )
 (value "NOT IMPLEMENTED, these functions are not used."
 )
 (uid "ajvq9s_joo_ipq2z8si_-p8y"))
-($8 977 < ajvq9s_joo_ipq2z8si_-p8x "opType" 973
+($8 934 < ajvq9s_joo_ipq2z8si_-p8x "opType" 930
 (name "opType"
 )
 (value "other"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p8x"))
-($8 978 < ajvq9s_joo_ipq2z8si_-p8q "code:python" 973
+($8 935 < ajvq9s_joo_ipq2z8si_-p8q "code:python" 930
 (name "code:python"
 )
 (value "raise NotImplementedError(\"reconnect function is not in use\")"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p8q"))
-($8 979 < ajvq9s_joo_ipq2z8si_-p80 "guid" 973
+($8 936 < ajvq9s_joo_ipq2z8si_-p80 "guid" 930
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2016-06-22-02:40:57_00003"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p80"))
-($9 980 < ajvq9s_joo_ipq2z8si_-p8v "copyToTask#GuiTask#NmrProject" 964
+($9 937 < ajvq9s_joo_ipq2z8si_-p8v "copyToTask#GuiTask#NmrProject" 921
 (name "copyToTask"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p8v"))
-($10 981 < ajvq9s_joo_ipq2z8si_-p8t "newTask" 980
+($10 938 < ajvq9s_joo_ipq2z8si_-p8t "newTask" 937
 (name "newTask"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p8t"))
-($8 982 < ajvq9s_joo_ipq2z8si_-p7z "guid" 981
+($8 939 < ajvq9s_joo_ipq2z8si_-p7z "guid" 938
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2016-06-22-02:40:57_00006"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p7z"))
-($10 983 < ajvq9s_joo_ipq2z8si_-p8s "nmrProject" 980
+($10 940 < ajvq9s_joo_ipq2z8si_-p8s "nmrProject" 937
 (name "nmrProject"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p8s"))
-($8 984 < ajvq9s_joo_ipq2z8si_-p7y "guid" 983
+($8 941 < ajvq9s_joo_ipq2z8si_-p7y "guid" 940
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2016-06-22-02:40:57_00007"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p7y"))
-($8 985 < ajvq9s_joo_ipq2z8si_-p8u "documentation" 980
+($8 942 < ajvq9s_joo_ipq2z8si_-p8u "documentation" 937
 (name "documentation"
 )
 (value "NOT IMPLEMENTED. These functoins are not in use."
 )
 (uid "ajvq9s_joo_ipq2z8si_-p8u"))
-($8 986 < ajvq9s_joo_ipq2z8si_-p8p "opType" 980
+($8 943 < ajvq9s_joo_ipq2z8si_-p8p "opType" 937
 (name "opType"
 )
 (value "other"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p8p"))
-($8 987 < ajvq9s_joo_ipq2z8si_-p8o "code:python" 980
+($8 944 < ajvq9s_joo_ipq2z8si_-p8o "code:python" 937
 (name "code:python"
 )
 (value "raise NotImplementedError(\"copyToTask function is not in use\")"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p8o"))
-($8 988 < ajvq9s_joo_ipq2z8si_-p7x "guid" 980
+($8 945 < ajvq9s_joo_ipq2z8si_-p7x "guid" 937
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2016-06-22-02:40:57_00005"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p7x"))
-($13 989 < ajvq9s_joo_ipq2z8si_-p97 "#<anon> (GenericModule, Module)" 964
+($13 946 < ajvq9s_joo_ipq2z8si_-p97 "#<anon> (GenericModule, Module)" 921
 (uid "ajvq9s_joo_ipq2z8si_-p97"))
-($8 990 < ajvq9s_joo_ipq2z8si_-p7w "guid" 964
+($8 947 < ajvq9s_joo_ipq2z8si_-p7w "guid" 921
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2016-06-22-02:40:53_00001"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p7w"))
-($6 991 < ajvq9s_joo_ipq2z8si_-p8l "Parameter" 1
+($6 948 < ajvq9s_joo_ipq2z8si_-p8l "Parameter" 1
 (name "Parameter"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p8l"))
-($7 992 < ajvq9s_joo_ipq2z8si_-p8j "name" 991
+($7 949 < ajvq9s_joo_ipq2z8si_-p8j "name" 948
 (changeability "frozen")
 (name "name"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p8j")
 (multiplicity "1"))
-($8 993 < ajvq9s_joo_ipq2z8si_-p8i "documentation" 992
+($8 950 < ajvq9s_joo_ipq2z8si_-p8i "documentation" 949
 (name "documentation"
 )
 (value "name of parameter - key for object"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p8i"))
-($8 994 < ajvq9s_joo_ipq2z8si_-p7v "guid" 992
+($8 951 < ajvq9s_joo_ipq2z8si_-p7v "guid" 949
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2016-06-22-02:40:57_00010"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p7v"))
-($7 995 < ajvq9s_joo_ipq2z8si_-p8h "value" 991
+($7 952 < ajvq9s_joo_ipq2z8si_-p8h "value" 948
 (name "value"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p8h"))
-($8 996 < ajvq9s_joo_ipq2z8si_-p8g "documentation" 995
+($8 953 < ajvq9s_joo_ipq2z8si_-p8g "documentation" 952
 (name "documentation"
 )
 (value "Parameter value - can be of any of the several types supported by the Multiple data type"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p8g"))
-($8 997 < ajvq9s_joo_ipq2z8si_-p7u "guid" 995
+($8 954 < ajvq9s_joo_ipq2z8si_-p7u "guid" 952
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2016-06-22-02:40:57_00011"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p7u"))
-($13 998 < ajvq9s_joo_ipq2z8si_-p8k "#<anon> (Parameter, DataObject)" 991
+($13 955 < ajvq9s_joo_ipq2z8si_-p8k "#<anon> (Parameter, DataObject)" 948
 (uid "ajvq9s_joo_ipq2z8si_-p8k"))
-($8 999 < ajvq9s_joo_ipq2z8si_-p89 "documentation" 991
+($8 956 < ajvq9s_joo_ipq2z8si_-p89 "documentation" 948
 (name "documentation"
 )
 (value "General-purpose keyword-value parameter for Modules"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p89"))
-($8 1000 < ajvq9s_joo_ipq2z8si_-p7t "guid" 991
+($8 957 < ajvq9s_joo_ipq2z8si_-p7t "guid" 948
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2016-06-22-02:40:53_00002"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p7t"))
-($8 1001 < ajvq9s_joo_ipq2z8si_-p87 "keyNames" 991
+($8 958 < ajvq9s_joo_ipq2z8si_-p87 "keyNames" 948
 (name "keyNames"
 )
 (value "name"
 )
 (uid "ajvq9s_joo_ipq2z8si_-p87"))
-($8 1002 < 0_6e6_i2eonilu_-ofy "guid" 1
+($8 959 < 0_6e6_i2eonilu_-ofy "guid" 1
 (name "guid"
 )
 (value "www.ccpn.ac.uk_Fogh_2014-10-31-16:36:26_00004"
 )
 (uid "0_6e6_i2eonilu_-ofy"))
-($8 1003 < 0_6e6_i2eonilu_-ofx "shortName" 1
+($8 960 < 0_6e6_i2eonilu_-ofx "shortName" 1
 (name "shortName"
 )
 (value "GUIT"
 )
 (uid "0_6e6_i2eonilu_-ofx"))
-($16 1004)
+($16 961)
+($18 964)
+($18 966)
+($18 968)
+($18 970)
+($18 975)
+($18 976)
+($18 977)
+($18 978)
+($18 980)
+($18 981)
+($16 983)
+($18 984)
+($18 986)
+($18 987)
+($18 988)
+($18 989)
+($18 990)
+($18 991
+(body "1"
+))
+($18 992
+(body "1"
+))
+($18 993
+(body "1"
+))
+($18 994)
+($16 996)
+($18 997)
+($18 998)
+($18 999)
+($18 1001)
+($18 1002)
+($18 1003)
+($18 1005)
 ($18 1007)
+($18 1008)
 ($18 1009)
-($18 1011)
-($18 1013)
-($18 1016)
-($18 1018
-(body "1"
-))
-($18 1019)
-($18 1020)
-($18 1022)
-($18 1023)
-($18 1024)
-($18 1025)
-($18 1027)
-($18 1028)
+($16 1012)
+($16 1013)
+($16 1014)
+($16 1015)
+($16 1017)
+($16 1019)
+($16 1020)
+($16 1021)
+($16 1023)
+($16 1025)
+($16 1027)
+($16 1029)
 ($16 1030)
-($18 1031)
-($18 1033)
-($18 1034)
-($18 1035)
-($18 1036)
-($18 1037)
-($18 1038
-(body "1"
-))
-($18 1039
-(body "1"
-))
-($18 1040
-(body "1"
-))
-($18 1041)
+($16 1031)
+($16 1033)
+($16 1035)
+($16 1036)
+($16 1037)
+($16 1038)
+($16 1039)
+($16 1040)
+($16 1042)
 ($16 1043)
-($18 1044)
-($18 1045)
-($18 1046)
-($18 1048)
-($18 1049)
-($18 1050)
-($18 1052)
+($16 1044)
+($16 1045)
+($16 1046)
+($16 1047)
+($16 1048)
+($18 1049
+(body "1"
+))
+($16 1050)
+($18 1052
+(body "1"
+))
+($18 1053)
 ($18 1054)
 ($18 1055)
 ($18 1056)
+($18 1057
+(body "1"
+))
+($16 1058)
 ($16 1059)
 ($16 1060)
 ($16 1061)
 ($16 1062)
+($16 1063)
 ($16 1064)
+($16 1065)
 ($16 1066)
 ($16 1067)
 ($16 1068)
+($16 1069)
 ($16 1070)
+($16 1071)
 ($16 1072)
+($16 1073)
 ($16 1074)
-($16 1076)
+($16 1075)
 ($16 1077)
 ($16 1078)
+($16 1079)
 ($16 1080)
+($16 1081)
 ($16 1082)
 ($16 1083)
 ($16 1084)
 ($16 1085)
 ($16 1086)
 ($16 1087)
-($16 1089)
-($16 1090)
-($16 1091)
-($16 1092)
-($16 1093)
-($16 1094)
+($16 1088)
+($18 1089)
+($18 1090)
+($18 1093)
 ($16 1095)
-($18 1096
-(body "1"
-))
+($16 1096)
 ($16 1097)
-($18 1099
-(body "1"
-))
-($18 1100)
-($18 1101)
-($18 1102)
-($18 1103
-(body "1"
-))
+($16 1098)
+($16 1099)
+($16 1100)
+($16 1101)
+($16 1102)
+($16 1103)
 ($16 1104)
 ($16 1105)
 ($16 1106)
@@ -6097,694 +5791,636 @@ objectdomain.uml.core.Stereotype-owns $20
 ($16 1119)
 ($16 1120)
 ($16 1121)
+($16 1122)
 ($16 1123)
-($16 1124)
-($16 1125)
-($16 1126)
-($16 1127)
-($16 1128)
-($16 1129)
-($16 1130)
-($16 1131)
-($16 1132)
-($16 1133)
-($16 1134)
-($18 1135)
-($18 1136)
-($18 1139)
-($16 1141)
-($16 1142)
-($16 1143)
-($16 1144)
-($16 1145)
-($16 1146)
-($16 1147)
-($16 1148)
-($16 1149)
-($16 1150)
-($16 1151)
-($16 1152)
-($16 1153)
-($16 1154)
-($16 1155)
-($16 1156)
-($16 1157)
-($16 1158)
-($16 1159)
-($16 1160)
-($16 1161)
-($16 1162)
-($16 1163)
-($16 1164)
-($16 1165)
-($16 1166)
-($16 1167)
-($16 1168)
-($16 1169)
-($6 1005 @ 0_-fvi_hrnjywg5_-d9g 4 "Logical" $1 "memops" $1 "Implementation" $1 "DataObject" $6)
-($6 1006 @ 0_-fvi_hrnjywg5_-dkb 4 "Logical" $1 "memops" $1 "Implementation" $1 "Word" $6)
-($6 1008 @ 0_-fvi_hrnjywg5_-dcl 4 "Logical" $1 "memops" $1 "Implementation" $1 "PositiveInt" $6)
-($6 1010 @ 0_-fvi_hrnjywg5_-dkm 4 "Logical" $1 "memops" $1 "Implementation" $1 "String" $6)
-($6 1012 @ 0_-m68_i1awny29_-p7r 5 "Logical" $1 "ccpnmr" $1 "gui" $1 "Window" $1 "Window" $6)
-($6 1014 @ 0_-fvi_hrnjywg5_-dbb 4 "Logical" $1 "memops" $1 "Implementation" $1 "TopObject" $6)
-($6 1015 @ 0_-fvi_hrnjywg5_-dkx 4 "Logical" $1 "memops" $1 "Implementation" $1 "Line" $6)
-($6 1017 @ 0_-fvi_hrnjywg5_-gwd 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "NmrProject" $6)
-($6 1021 @ 0_-fvi_hrnjywg5_-dl3 4 "Logical" $1 "memops" $1 "Implementation" $1 "Int" $6)
-($6 1026 @ 0_-fvi_hrnjywg5_-dlb 4 "Logical" $1 "memops" $1 "Implementation" $1 "Float" $6)
-($6 1029 @ ajvq9s_joo_ikxbcnnd_-p98 4 "Logical" $1 "memops" $1 "Implementation" $1 "Multiple" $6)
-($6 1032 @ 0_-fvi_hrnjywg5_-dbr 4 "Logical" $1 "memops" $1 "Implementation" $1 "NonNegativeInt" $6)
-($6 1042 @ 0_-fvi_hrnjywg5_-hj8 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "Resonance" $6)
-($6 1047 @ 0_-fvi_hrnjywg5_-dlv 4 "Logical" $1 "memops" $1 "Implementation" $1 "Boolean" $6)
-($6 1051 @ 0_-fvi_hrnjywg5_-dc3 4 "Logical" $1 "memops" $1 "Implementation" $1 "PositiveFloat" $6)
-($6 1053 @ 0_-fvi_hrnjywg5_-d0t 4 "Logical" $1 "memops" $1 "Implementation" $1 "NegativeFloat" $6)
-($6 1057 @ 0_-fvi_hrnjywg5_-nm1 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "DataSource" $6)
-($6 1058 @ 0_-fvi_hrnjywg5_-ip7 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "AbstractDataDim" $6)
-($19 1063 @ -yk94ms_-e3s_e41656c6_-fvm 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Nmr" $19)
-($6 1065 @ 0_-fvi_hrnjywg5_-hhe 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ResonanceGroup" $6)
-($6 1069 @ 0_-fvi_hrnjywg5_-hnv 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "PeakList" $6)
-($11 1071 @ 0_-fvi_hrnjywg5_-iaf 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "DataSource" $6 "#<anon> (DataSource, PeakList)##," $11)
-($6 1073 @ 0_-fvi_hrnjywg5_-im3 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "Peak" $6)
-($11 1075 @ 0_-fvi_hrnjywg5_-hni 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "PeakList" $6 "#<anon> (PeakList, Peak)##," $11)
-($11 1079 @ 0_6e6_i1v279qx_-p8b 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "PeakList" $6 "#<anon> (PeakList, PeakListView)##," $11)
-($11 1081 @ 0_6e6_i1v279qx_-p7z 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "Peak" $6 "#<anon> (Peak, PeakView)##," $11)
-($11 1088 @ 0_-m68_i1awny29_-p7h 6 "Logical" $1 "ccpnmr" $1 "gui" $1 "Window" $1 "Window" $6 "#<anon> (Window, Module)##," $11)
-($20 1098 @ -yk94ms_-e3s_e41656c6_-fw7 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "DataType" $20)
-($11 1122 @ 0_-fvi_hrnjywg5_-iom 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "AbstractDataDim" $6 "#<anon> (AbstractDataDim, DataSource)##dataDims," $11)
-($20 1137 @ -yk94ms_-e3s_e41656c6_-fwy 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "import" $20)
-($1 1138 @ 0_-fvi_hrnjywg5_-ota 4 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1)
-($1 1140 @ 0_6e6_i1unbjiz_-p98 4 "Logical" $1 "ccpnmr" $1 "gui" $1 "Window" $1)
-(typeAssn 379 160)
-(assocEndAssn 160 379)
+($6 962 @ 0_-fvi_hrnjywg5_-d9g 4 "Logical" $1 "memops" $1 "Implementation" $1 "DataObject" $6)
+($6 963 @ 0_-fvi_hrnjywg5_-dkb 4 "Logical" $1 "memops" $1 "Implementation" $1 "Word" $6)
+($6 965 @ 0_-fvi_hrnjywg5_-dcl 4 "Logical" $1 "memops" $1 "Implementation" $1 "PositiveInt" $6)
+($6 967 @ 0_-fvi_hrnjywg5_-dkm 4 "Logical" $1 "memops" $1 "Implementation" $1 "String" $6)
+($6 969 @ 0_-m68_i1awny29_-p7r 5 "Logical" $1 "ccpnmr" $1 "gui" $1 "Window" $1 "Window" $6)
+($6 971 @ 0_-fvi_hrnjywg5_-dbb 4 "Logical" $1 "memops" $1 "Implementation" $1 "TopObject" $6)
+($6 972 @ 0_-fvi_hrnjywg5_-dkx 4 "Logical" $1 "memops" $1 "Implementation" $1 "Line" $6)
+($6 973 @ 0_-fvi_hrnjywg5_-gwd 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "NmrProject" $6)
+($6 974 @ 0_-fvi_hrnjywg5_-dl3 4 "Logical" $1 "memops" $1 "Implementation" $1 "Int" $6)
+($6 979 @ 0_-fvi_hrnjywg5_-dlb 4 "Logical" $1 "memops" $1 "Implementation" $1 "Float" $6)
+($6 982 @ ajvq9s_joo_ikxbcnnd_-p98 4 "Logical" $1 "memops" $1 "Implementation" $1 "Multiple" $6)
+($6 985 @ 0_-fvi_hrnjywg5_-dbr 4 "Logical" $1 "memops" $1 "Implementation" $1 "NonNegativeInt" $6)
+($6 995 @ 0_-fvi_hrnjywg5_-hj8 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "Resonance" $6)
+($6 1000 @ 0_-fvi_hrnjywg5_-dlv 4 "Logical" $1 "memops" $1 "Implementation" $1 "Boolean" $6)
+($6 1004 @ 0_-fvi_hrnjywg5_-dc3 4 "Logical" $1 "memops" $1 "Implementation" $1 "PositiveFloat" $6)
+($6 1006 @ 0_-fvi_hrnjywg5_-d0t 4 "Logical" $1 "memops" $1 "Implementation" $1 "NegativeFloat" $6)
+($6 1010 @ 0_-fvi_hrnjywg5_-nm1 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "DataSource" $6)
+($6 1011 @ 0_-fvi_hrnjywg5_-ip7 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "AbstractDataDim" $6)
+($19 1016 @ -yk94ms_-e3s_e41656c6_-fvm 2 "styles" objectdomain.uml.mechanisms.StylePackage-owns "Nmr" $19)
+($6 1018 @ 0_-fvi_hrnjywg5_-hhe 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "ResonanceGroup" $6)
+($6 1022 @ 0_-fvi_hrnjywg5_-hnv 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "PeakList" $6)
+($11 1024 @ 0_-fvi_hrnjywg5_-iaf 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "DataSource" $6 "#<anon> (DataSource, PeakList)##," $11)
+($6 1026 @ 0_-fvi_hrnjywg5_-im3 5 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "Peak" $6)
+($11 1028 @ 0_-fvi_hrnjywg5_-hni 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "PeakList" $6 "#<anon> (PeakList, Peak)##," $11)
+($11 1032 @ 0_6e6_i1v279qx_-p8b 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "PeakList" $6 "#<anon> (PeakList, PeakListView)##," $11)
+($11 1034 @ 0_6e6_i1v279qx_-p7z 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "Peak" $6 "#<anon> (Peak, PeakView)##," $11)
+($11 1041 @ 0_-m68_i1awny29_-p7h 6 "Logical" $1 "ccpnmr" $1 "gui" $1 "Window" $1 "Window" $6 "#<anon> (Window, Module)##," $11)
+($20 1051 @ -yk94ms_-e3s_e41656c6_-fw7 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "DataType" $20)
+($11 1076 @ 0_-fvi_hrnjywg5_-iom 6 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1 "AbstractDataDim" $6 "#<anon> (AbstractDataDim, DataSource)##dataDims," $11)
+($20 1091 @ -yk94ms_-e3s_e41656c6_-fwy 2 "stereotypes" objectdomain.uml.mechanisms.StereotypePackage-owns "import" $20)
+($1 1092 @ 0_-fvi_hrnjywg5_-ota 4 "Logical" $1 "ccp" $1 "nmr" $1 "Nmr" $1)
+($1 1094 @ 0_6e6_i1unbjiz_-p98 4 "Logical" $1 "ccpnmr" $1 "gui" $1 "Window" $1)
+(typeAssn 336 160)
+(assocEndAssn 160 336)
 (typeAssn 187 160)
 (assocEndAssn 160 187)
 (subtypeAssn 185 160)
-(supertypeAssn 185 1005)
+(supertypeAssn 185 962)
 (generalizationAssn 160 185)
-(typeRefAssn 161 1006)
-(typeExpression 161 1007)
-(typeRefAssn 163 1008)
-(typeExpression 163 1009)
-(typeRefAssn 166 1010)
-(typeExpression 166 1011)
-(typeAssn 172 1012)
-(typeExpression 172 1013)
-(typeAssn 377 320)
-(assocEndAssn 320 377)
-(typeAssn 382 320)
-(assocEndAssn 320 382)
-(typeAssn 419 320)
-(assocEndAssn 320 419)
-(typeAssn 390 320)
-(assocEndAssn 320 390)
-(typeAssn 395 320)
-(assocEndAssn 320 395)
-(typeAssn 400 320)
-(assocEndAssn 320 400)
-(subtypeAssn 375 320)
-(supertypeAssn 375 1014)
-(generalizationAssn 320 375)
-(typeRefAssn 321 1006)
-(typeExpression 321 1011)
-(typeRefAssn 324 1006)
-(typeExpression 324 1011)
-(typeRefAssn 327 1015)
-(typeExpression 327 1011)
-(typeRefAssn 330 1010)
-(typeExpression 330 1011)
-(typeAssn 338 1012)
-(typeExpression 338 1016)
-(typeAssn 345 1017)
-(typeExpression 345 1018)
-(typeAssn 347 1012)
-(typeExpression 347 1013)
-(typeAssn 349 320)
-(typeExpression 349 1013)
-(typeAssn 351 1006)
-(typeExpression 351 1019)
-(typeAssn 353 1006)
-(typeExpression 353 1019)
-(typeAssn 360 1006)
-(typeExpression 360 1020)
-(typeAssn 363 1006)
-(typeExpression 363 1020)
-(typeAssn 385 1017)
-(typeAssn 154 424)
-(assocEndAssn 424 154)
-(assocEndAssn 424 392)
-(subtypeAssn 428 424)
-(supertypeAssn 428 1005)
-(generalizationAssn 424 428)
-(typeRefAssn 425 1021)
-(typeExpression 425 1022)
-(typeAssn 392 424)
-(typeAssn 882 870)
-(assocEndAssn 870 882)
-(assocEndAssn 870 397)
-(subtypeAssn 880 870)
-(supertypeAssn 880 1005)
-(generalizationAssn 870 880)
-(typeRefAssn 871 1021)
-(typeExpression 871 1023)
-(typeRefAssn 874 1006)
-(typeExpression 874 1024)
-(typeRefAssn 877 1006)
-(typeExpression 877 1024)
-(assocEndAssn 850 884)
-(subtypeAssn 866 850)
-(supertypeAssn 866 1005)
-(generalizationAssn 850 866)
-(typeRefAssn 851 1021)
-(typeExpression 851 1025)
-(typeRefAssn 854 1026)
-(typeExpression 854 1025)
-(typeRefAssn 857 1006)
-(typeExpression 857 1025)
-(typeRefAssn 860 1006)
-(typeExpression 860 1025)
-(typeRefAssn 863 1006)
-(typeExpression 863 1025)
-(typeAssn 884 850)
-(typeAssn 397 870)
-(typeAssn 403 1012)
+(typeRefAssn 161 963)
+(typeExpression 161 964)
+(typeRefAssn 163 965)
+(typeExpression 163 966)
+(typeRefAssn 166 967)
+(typeExpression 166 968)
+(typeAssn 172 969)
+(typeExpression 172 970)
+(typeAssn 334 320)
+(assocEndAssn 320 334)
+(typeAssn 339 320)
+(assocEndAssn 320 339)
+(typeAssn 376 320)
+(assocEndAssn 320 376)
+(typeAssn 347 320)
+(assocEndAssn 320 347)
+(typeAssn 352 320)
+(assocEndAssn 320 352)
+(typeAssn 357 320)
+(assocEndAssn 320 357)
+(subtypeAssn 332 320)
+(supertypeAssn 332 971)
+(generalizationAssn 320 332)
+(typeRefAssn 321 963)
+(typeExpression 321 968)
+(typeRefAssn 324 963)
+(typeExpression 324 968)
+(typeRefAssn 327 972)
+(typeExpression 327 968)
+(typeRefAssn 330 967)
+(typeExpression 330 968)
+(typeAssn 342 973)
+(typeAssn 154 381)
+(assocEndAssn 381 154)
+(assocEndAssn 381 349)
+(subtypeAssn 385 381)
+(supertypeAssn 385 962)
+(generalizationAssn 381 385)
+(typeRefAssn 382 974)
+(typeExpression 382 975)
+(typeAssn 349 381)
+(typeAssn 839 827)
+(assocEndAssn 827 839)
+(assocEndAssn 827 354)
+(subtypeAssn 837 827)
+(supertypeAssn 837 962)
+(generalizationAssn 827 837)
+(typeRefAssn 828 974)
+(typeExpression 828 976)
+(typeRefAssn 831 963)
+(typeExpression 831 977)
+(typeRefAssn 834 963)
+(typeExpression 834 977)
+(assocEndAssn 807 841)
+(subtypeAssn 823 807)
+(supertypeAssn 823 962)
+(generalizationAssn 807 823)
+(typeRefAssn 808 974)
+(typeExpression 808 978)
+(typeRefAssn 811 979)
+(typeExpression 811 978)
+(typeRefAssn 814 963)
+(typeExpression 814 978)
+(typeRefAssn 817 963)
+(typeExpression 817 978)
+(typeRefAssn 820 963)
+(typeExpression 820 978)
+(typeAssn 841 807)
+(typeAssn 354 827)
+(typeAssn 360 969)
 (typeAssn 178 320)
-(typeExpression 178 1013)
-(typeAssn 180 1017)
-(typeExpression 180 1027)
-(assocEndAssn 991 189)
-(subtypeAssn 998 991)
-(supertypeAssn 998 1005)
-(generalizationAssn 991 998)
-(typeRefAssn 992 1015)
-(typeExpression 992 1028)
-(typeRefAssn 995 1029)
-(typeExpression 995 1028)
-(typeAssn 189 991)
-(projectionAssn 3 160 1004)
+(typeExpression 178 970)
+(typeAssn 180 973)
+(typeExpression 180 980)
+(assocEndAssn 948 189)
+(subtypeAssn 955 948)
+(supertypeAssn 955 962)
+(generalizationAssn 948 955)
+(typeRefAssn 949 972)
+(typeExpression 949 981)
+(typeRefAssn 952 982)
+(typeExpression 952 981)
+(typeAssn 189 948)
+(projectionAssn 3 160 961)
 (typeAssn 133 65)
 (assocEndAssn 65 133)
 (typeAssn 142 65)
 (assocEndAssn 65 142)
 (typeAssn 150 65)
 (assocEndAssn 65 150)
-(typeAssn 591 65)
-(assocEndAssn 65 591)
-(typeAssn 596 65)
-(assocEndAssn 65 596)
-(typeAssn 645 65)
-(assocEndAssn 65 645)
-(typeAssn 944 65)
-(assocEndAssn 65 944)
+(typeAssn 548 65)
+(assocEndAssn 65 548)
+(typeAssn 553 65)
+(assocEndAssn 65 553)
+(typeAssn 602 65)
+(assocEndAssn 65 602)
+(typeAssn 901 65)
+(assocEndAssn 65 901)
 (subtypeAssn 140 65)
-(supertypeAssn 140 1005)
+(supertypeAssn 140 962)
 (generalizationAssn 65 140)
-(typeRefAssn 66 1006)
-(typeExpression 66 1031)
-(typeRefAssn 70 1032)
-(typeExpression 70 1033)
-(typeRefAssn 73 1026)
-(typeExpression 73 1034)
-(typeRefAssn 76 1026)
-(typeExpression 76 1035)
-(typeRefAssn 79 1006)
-(typeExpression 79 1036)
-(typeRefAssn 83 1026)
-(typeExpression 83 1037)
+(typeRefAssn 66 963)
+(typeExpression 66 984)
+(typeRefAssn 70 985)
+(typeExpression 70 986)
+(typeRefAssn 73 979)
+(typeExpression 73 987)
+(typeRefAssn 76 979)
+(typeExpression 76 988)
+(typeRefAssn 79 963)
+(typeExpression 79 989)
+(typeRefAssn 83 979)
+(typeExpression 83 990)
 (typeAssn 103 65)
-(typeExpression 103 1038)
+(typeExpression 103 991)
 (typeAssn 110 65)
-(typeExpression 110 1039)
+(typeExpression 110 992)
 (typeAssn 117 65)
-(typeExpression 117 1040)
-(typeRefAssn 123 1008)
-(typeExpression 123 1041)
-(typeAssn 137 1042)
-(typeAssn 417 411)
-(assocEndAssn 411 417)
-(assocEndAssn 411 146)
-(subtypeAssn 415 411)
-(supertypeAssn 415 1005)
-(generalizationAssn 411 415)
-(typeRefAssn 412 1021)
-(typeExpression 412 1022)
-(typeAssn 146 411)
-(projectionAssn 4 65 1030)
+(typeExpression 117 993)
+(typeRefAssn 123 965)
+(typeExpression 123 994)
+(typeAssn 137 995)
+(typeAssn 374 368)
+(assocEndAssn 368 374)
+(assocEndAssn 368 146)
+(subtypeAssn 372 368)
+(supertypeAssn 372 962)
+(generalizationAssn 368 372)
+(typeRefAssn 369 974)
+(typeExpression 369 975)
+(typeAssn 146 368)
+(projectionAssn 4 65 983)
 (typeAssn 296 233)
 (assocEndAssn 233 296)
 (typeAssn 301 233)
 (assocEndAssn 233 301)
-(typeAssn 579 233)
-(assocEndAssn 233 579)
+(typeAssn 536 233)
+(assocEndAssn 233 536)
 (typeAssn 310 233)
 (assocEndAssn 233 310)
-(typeAssn 655 233)
-(assocEndAssn 233 655)
-(typeAssn 924 233)
-(assocEndAssn 233 924)
+(typeAssn 612 233)
+(assocEndAssn 233 612)
+(typeAssn 881 233)
+(assocEndAssn 233 881)
 (subtypeAssn 308 233)
-(supertypeAssn 308 1005)
+(supertypeAssn 308 962)
 (generalizationAssn 233 308)
-(typeRefAssn 234 1015)
-(typeExpression 234 1009)
-(typeRefAssn 237 1021)
-(typeExpression 237 1044)
-(typeRefAssn 242 1015)
-(typeExpression 242 1045)
-(typeRefAssn 245 1032)
-(typeExpression 245 1046)
-(typeRefAssn 249 1047)
-(typeExpression 249 1048)
-(typeRefAssn 252 1006)
-(typeExpression 252 1049)
-(typeRefAssn 255 1032)
-(typeExpression 255 1050)
-(typeRefAssn 258 1051)
-(typeExpression 258 1050)
-(typeRefAssn 261 1051)
-(typeExpression 261 1050)
-(typeRefAssn 264 1047)
-(typeExpression 264 1052)
-(typeRefAssn 267 1032)
-(typeExpression 267 1050)
-(typeRefAssn 270 1006)
-(typeExpression 270 1049)
-(typeRefAssn 273 1053)
-(typeExpression 273 1050)
-(typeRefAssn 276 1051)
-(typeExpression 276 1050)
-(typeRefAssn 279 1047)
-(typeExpression 279 1052)
-(typeRefAssn 282 1006)
-(typeExpression 282 1049)
+(typeRefAssn 234 972)
+(typeExpression 234 966)
+(typeRefAssn 237 974)
+(typeExpression 237 997)
+(typeRefAssn 242 972)
+(typeExpression 242 998)
+(typeRefAssn 245 985)
+(typeExpression 245 999)
+(typeRefAssn 249 1000)
+(typeExpression 249 1001)
+(typeRefAssn 252 963)
+(typeExpression 252 1002)
+(typeRefAssn 255 985)
+(typeExpression 255 1003)
+(typeRefAssn 258 1004)
+(typeExpression 258 1003)
+(typeRefAssn 261 1004)
+(typeExpression 261 1003)
+(typeRefAssn 264 1000)
+(typeExpression 264 1005)
+(typeRefAssn 267 985)
+(typeExpression 267 1003)
+(typeRefAssn 270 963)
+(typeExpression 270 1002)
+(typeRefAssn 273 1006)
+(typeExpression 273 1003)
+(typeRefAssn 276 1004)
+(typeExpression 276 1003)
+(typeRefAssn 279 1000)
+(typeExpression 279 1005)
+(typeRefAssn 282 963)
+(typeExpression 282 1002)
 (assocEndAssn 194 298)
 (typeAssn 214 194)
 (assocEndAssn 194 214)
-(typeAssn 956 194)
-(assocEndAssn 194 956)
+(typeAssn 913 194)
+(assocEndAssn 194 913)
 (subtypeAssn 218 194)
-(supertypeAssn 218 1005)
+(supertypeAssn 218 962)
 (generalizationAssn 194 218)
-(typeRefAssn 195 1021)
-(typeExpression 195 1050)
-(typeRefAssn 198 1006)
-(typeExpression 198 1049)
-(typeRefAssn 201 1006)
-(typeExpression 201 1049)
-(typeRefAssn 204 1006)
-(typeExpression 204 1049)
-(typeRefAssn 207 1047)
-(typeExpression 207 1054)
-(typeRefAssn 210 1047)
-(typeExpression 210 1055)
+(typeRefAssn 195 974)
+(typeExpression 195 1003)
+(typeRefAssn 198 963)
+(typeExpression 198 1002)
+(typeRefAssn 201 963)
+(typeExpression 201 1002)
+(typeRefAssn 204 963)
+(typeExpression 204 1002)
+(typeRefAssn 207 1000)
+(typeExpression 207 1007)
+(typeRefAssn 210 1000)
+(typeExpression 210 1008)
 (assocEndAssn 222 216)
 (subtypeAssn 230 222)
-(supertypeAssn 230 1005)
+(supertypeAssn 230 962)
 (generalizationAssn 222 230)
-(typeRefAssn 223 1021)
-(typeExpression 223 1050)
-(typeRefAssn 226 1026)
-(typeExpression 226 1056)
+(typeRefAssn 223 974)
+(typeExpression 223 1003)
+(typeRefAssn 226 979)
+(typeExpression 226 1009)
 (typeAssn 216 222)
 (typeAssn 298 194)
-(typeAssn 304 1057)
-(typeAssn 311 1058)
-(projectionAssn 5 233 1043)
-(projectionAssn 6 194 1059)
+(typeAssn 304 1010)
+(typeAssn 311 1011)
+(projectionAssn 5 233 996)
+(projectionAssn 6 194 1012)
 (to 7 6)
 (from 7 5)
-(projectionAssn 7 295 1060)
-(projectionAssn 8 222 1061)
+(projectionAssn 7 295 1013)
+(projectionAssn 8 222 1014)
 (to 9 8)
 (from 9 6)
-(projectionAssn 9 213 1062)
-(styleAssn 10 1063)
-(projectionAssn 10 1065 1064)
-(styleAssn 11 1063)
-(projectionAssn 11 1057 1066)
+(projectionAssn 9 213 1015)
+(styleAssn 10 1016)
+(projectionAssn 10 1018 1017)
+(styleAssn 11 1016)
+(projectionAssn 11 1010 1019)
 (to 12 11)
 (from 12 5)
-(projectionAssn 12 300 1067)
-(styleAssn 13 1063)
-(projectionAssn 13 1069 1068)
+(projectionAssn 12 300 1020)
+(styleAssn 13 1016)
+(projectionAssn 13 1022 1021)
 (to 14 13)
 (from 14 11)
-(projectionAssn 14 1071 1070)
-(styleAssn 15 1063)
-(projectionAssn 15 1073 1072)
+(projectionAssn 14 1024 1023)
+(styleAssn 15 1016)
+(projectionAssn 15 1026 1025)
 (to 16 15)
 (from 16 13)
-(projectionAssn 16 1075 1074)
-(styleAssn 17 1063)
-(projectionAssn 17 1042 1076)
+(projectionAssn 16 1028 1027)
+(styleAssn 17 1016)
+(projectionAssn 17 995 1029)
 (to 18 17)
 (from 18 4)
-(projectionAssn 18 132 1077)
+(projectionAssn 18 132 1030)
 (to 19 6)
 (from 19 13)
-(projectionAssn 19 1079 1078)
+(projectionAssn 19 1032 1031)
 (to 20 8)
 (from 20 15)
-(projectionAssn 20 1081 1080)
-(projectionAssn 21 320 1082)
+(projectionAssn 20 1034 1033)
+(projectionAssn 21 320 1035)
 (to 22 3)
 (from 22 21)
-(projectionAssn 22 376 1083)
-(styleAssn 23 1063)
-(projectionAssn 23 1017 1084)
+(projectionAssn 22 333 1036)
+(styleAssn 23 1016)
+(projectionAssn 23 973 1037)
 (to 24 23)
 (from 24 21)
-(projectionAssn 24 381 1085)
-(projectionAssn 25 1012 1086)
+(projectionAssn 24 338 1038)
+(projectionAssn 25 969 1039)
 (to 26 3)
 (from 26 25)
-(projectionAssn 26 1088 1087)
-(projectionAssn 27 411 1089)
+(projectionAssn 26 1041 1040)
+(projectionAssn 27 368 1042)
 (to 28 21)
 (from 28 27)
-(projectionAssn 28 416 1090)
+(projectionAssn 28 373 1043)
 (to 29 27)
 (from 29 4)
-(projectionAssn 29 141 1091)
-(projectionAssn 30 424 1092)
+(projectionAssn 29 141 1044)
+(projectionAssn 30 381 1045)
 (to 31 30)
 (from 31 4)
-(projectionAssn 31 149 1093)
+(projectionAssn 31 149 1046)
 (to 32 30)
 (from 32 21)
-(projectionAssn 32 389 1094)
-(typeRefAssn 433 1026)
-(typeExpression 433 1022)
-(typeRefAssn 438 1026)
-(typeExpression 438 1022)
-(typeRefAssn 443 1006)
-(typeExpression 443 1022)
-(typeAssn 484 1006)
-(typeExpression 484 1096)
-(projectionAssn 33 432 1095)
-(typeAssn 564 492)
-(assocEndAssn 492 564)
-(typeAssn 569 492)
-(assocEndAssn 492 569)
-(typeAssn 577 492)
-(assocEndAssn 492 577)
-(typeAssn 582 492)
-(assocEndAssn 492 582)
-(typeAssn 589 492)
-(assocEndAssn 492 589)
-(typeAssn 595 492)
-(assocEndAssn 492 595)
-(subtypeAssn 575 492)
-(supertypeAssn 575 160)
-(generalizationAssn 492 575)
-(subtypeAssn 600 492)
-(supertypeAssn 600 432)
-(generalizationAssn 492 600)
-(stereotypeAssn 701 1098)
-(subtypeAssn 702 701)
-(supertypeAssn 702 1006)
-(generalizationAssn 701 702)
-(typeRefAssn 493 701)
-(typeExpression 493 1022)
-(typeRefAssn 496 1021)
-(typeExpression 496 1022)
-(typeRefAssn 534 1008)
-(typeExpression 534 1041)
-(typeAssn 538 1012)
-(typeExpression 538 1099)
-(typeAssn 545 320)
-(typeExpression 545 1019)
-(typeAssn 547 1017)
-(typeExpression 547 1100)
-(typeRefAssn 553 1047)
-(typeExpression 553 1101)
-(typeRefAssn 557 1006)
-(typeExpression 557 1101)
-(typeRefAssn 561 1006)
-(typeExpression 561 1028)
-(assocEndAssn 605 566)
-(typeAssn 570 605)
-(assocEndAssn 605 570)
-(typeAssn 642 605)
-(assocEndAssn 605 642)
-(typeAssn 652 605)
-(assocEndAssn 605 652)
-(typeAssn 660 605)
-(assocEndAssn 605 660)
-(typeAssn 665 605)
-(assocEndAssn 605 665)
-(subtypeAssn 649 605)
-(supertypeAssn 649 1005)
-(generalizationAssn 605 649)
-(subtypeAssn 650 605)
-(supertypeAssn 650 432)
-(generalizationAssn 605 650)
-(typeRefAssn 606 1021)
-(typeExpression 606 1102)
-(typeRefAssn 609 1021)
-(typeExpression 609 1022)
-(typeAssn 623 605)
-(typeExpression 623 1102)
-(typeAssn 630 1021)
-(typeExpression 630 1103)
-(assocEndAssn 919 662)
-(typeAssn 921 919)
-(assocEndAssn 919 921)
-(typeAssn 930 919)
-(assocEndAssn 919 930)
-(subtypeAssn 928 919)
-(supertypeAssn 928 1005)
-(generalizationAssn 919 928)
-(assocEndAssn 951 932)
-(typeAssn 953 951)
-(assocEndAssn 951 953)
-(subtypeAssn 959 951)
-(supertypeAssn 959 1005)
-(generalizationAssn 951 959)
-(typeAssn 932 951)
-(typeAssn 662 919)
-(assocEndAssn 939 667)
-(typeAssn 941 939)
-(assocEndAssn 939 941)
-(subtypeAssn 947 939)
-(supertypeAssn 947 1005)
-(generalizationAssn 939 947)
-(typeAssn 667 939)
-(typeAssn 566 605)
-(typeAssn 585 1065)
-(projectionAssn 34 492 1097)
-(projectionAssn 35 605 1104)
+(projectionAssn 32 346 1047)
+(typeRefAssn 390 979)
+(typeExpression 390 975)
+(typeRefAssn 395 979)
+(typeExpression 395 975)
+(typeRefAssn 400 963)
+(typeExpression 400 975)
+(typeAssn 441 963)
+(typeExpression 441 1049)
+(projectionAssn 33 389 1048)
+(typeAssn 521 449)
+(assocEndAssn 449 521)
+(typeAssn 526 449)
+(assocEndAssn 449 526)
+(typeAssn 534 449)
+(assocEndAssn 449 534)
+(typeAssn 539 449)
+(assocEndAssn 449 539)
+(typeAssn 546 449)
+(assocEndAssn 449 546)
+(typeAssn 552 449)
+(assocEndAssn 449 552)
+(subtypeAssn 532 449)
+(supertypeAssn 532 160)
+(generalizationAssn 449 532)
+(subtypeAssn 557 449)
+(supertypeAssn 557 389)
+(generalizationAssn 449 557)
+(stereotypeAssn 658 1051)
+(subtypeAssn 659 658)
+(supertypeAssn 659 963)
+(generalizationAssn 658 659)
+(typeRefAssn 450 658)
+(typeExpression 450 975)
+(typeRefAssn 453 974)
+(typeExpression 453 975)
+(typeRefAssn 491 965)
+(typeExpression 491 994)
+(typeAssn 495 969)
+(typeExpression 495 1052)
+(typeAssn 502 320)
+(typeExpression 502 1053)
+(typeAssn 504 973)
+(typeExpression 504 1054)
+(typeRefAssn 510 1000)
+(typeExpression 510 1055)
+(typeRefAssn 514 963)
+(typeExpression 514 1055)
+(typeRefAssn 518 963)
+(typeExpression 518 981)
+(assocEndAssn 562 523)
+(typeAssn 527 562)
+(assocEndAssn 562 527)
+(typeAssn 599 562)
+(assocEndAssn 562 599)
+(typeAssn 609 562)
+(assocEndAssn 562 609)
+(typeAssn 617 562)
+(assocEndAssn 562 617)
+(typeAssn 622 562)
+(assocEndAssn 562 622)
+(subtypeAssn 606 562)
+(supertypeAssn 606 962)
+(generalizationAssn 562 606)
+(subtypeAssn 607 562)
+(supertypeAssn 607 389)
+(generalizationAssn 562 607)
+(typeRefAssn 563 974)
+(typeExpression 563 1056)
+(typeRefAssn 566 974)
+(typeExpression 566 975)
+(typeAssn 580 562)
+(typeExpression 580 1056)
+(typeAssn 587 974)
+(typeExpression 587 1057)
+(assocEndAssn 876 619)
+(typeAssn 878 876)
+(assocEndAssn 876 878)
+(typeAssn 887 876)
+(assocEndAssn 876 887)
+(subtypeAssn 885 876)
+(supertypeAssn 885 962)
+(generalizationAssn 876 885)
+(assocEndAssn 908 889)
+(typeAssn 910 908)
+(assocEndAssn 908 910)
+(subtypeAssn 916 908)
+(supertypeAssn 916 962)
+(generalizationAssn 908 916)
+(typeAssn 889 908)
+(typeAssn 619 876)
+(assocEndAssn 896 624)
+(typeAssn 898 896)
+(assocEndAssn 896 898)
+(subtypeAssn 904 896)
+(supertypeAssn 904 962)
+(generalizationAssn 896 904)
+(typeAssn 624 896)
+(typeAssn 523 562)
+(typeAssn 542 1018)
+(projectionAssn 34 449 1050)
+(projectionAssn 35 562 1058)
 (to 36 35)
 (from 36 34)
-(projectionAssn 36 563 1105)
+(projectionAssn 36 520 1059)
 (to 37 35)
 (from 37 34)
-(projectionAssn 37 568 1106)
+(projectionAssn 37 525 1060)
 (to 38 3)
 (from 38 34)
-(projectionAssn 38 575 1107)
-(projectionAssn 39 701 1108)
+(projectionAssn 38 532 1061)
+(projectionAssn 39 658 1062)
 (to 40 5)
 (from 40 34)
-(projectionAssn 40 576 1109)
+(projectionAssn 40 533 1063)
 (to 41 10)
 (from 41 34)
-(projectionAssn 41 581 1110)
+(projectionAssn 41 538 1064)
 (to 42 4)
 (from 42 34)
-(projectionAssn 42 588 1111)
+(projectionAssn 42 545 1065)
 (to 43 4)
 (from 43 34)
-(projectionAssn 43 594 1112)
+(projectionAssn 43 551 1066)
 (to 44 4)
 (from 44 35)
-(projectionAssn 44 641 1113)
+(projectionAssn 44 598 1067)
 (to 45 33)
 (from 45 35)
-(projectionAssn 45 650 1114)
+(projectionAssn 45 607 1068)
 (to 46 33)
 (from 46 34)
-(projectionAssn 46 600 1115)
-(projectionAssn 47 870 1116)
-(projectionAssn 48 850 1117)
+(projectionAssn 46 557 1069)
+(projectionAssn 47 827 1070)
+(projectionAssn 48 807 1071)
 (to 49 48)
 (from 49 47)
-(projectionAssn 49 881 1118)
+(projectionAssn 49 838 1072)
 (to 50 47)
 (from 50 21)
-(projectionAssn 50 394 1119)
-(styleAssn 51 1063)
-(projectionAssn 51 1058 1120)
+(projectionAssn 50 351 1073)
+(styleAssn 51 1016)
+(projectionAssn 51 1011 1074)
 (to 52 11)
 (from 52 51)
-(projectionAssn 52 1122 1121)
+(projectionAssn 52 1076 1075)
 (to 53 51)
 (from 53 5)
-(projectionAssn 53 309 1123)
+(projectionAssn 53 309 1077)
 (to 54 5)
 (from 54 35)
-(projectionAssn 54 651 1124)
-(projectionAssn 55 919 1125)
+(projectionAssn 54 608 1078)
+(projectionAssn 55 876 1079)
 (to 56 55)
 (from 56 35)
-(projectionAssn 56 659 1126)
+(projectionAssn 56 616 1080)
 (to 57 5)
 (from 57 55)
-(projectionAssn 57 920 1127)
-(projectionAssn 58 951 1128)
+(projectionAssn 57 877 1081)
+(projectionAssn 58 908 1082)
 (to 59 58)
 (from 59 55)
-(projectionAssn 59 929 1129)
+(projectionAssn 59 886 1083)
 (to 60 6)
 (from 60 58)
-(projectionAssn 60 952 1130)
-(subtypeAssn 989 964)
-(supertypeAssn 989 160)
-(generalizationAssn 964 989)
-(typeRefAssn 965 1006)
-(typeExpression 965 1028)
-(typeAssn 974 1012)
-(typeExpression 974 1028)
-(typeAssn 981 320)
-(typeExpression 981 1028)
-(typeAssn 983 1017)
-(typeExpression 983 1028)
-(projectionAssn 61 964 1131)
+(projectionAssn 60 909 1084)
+(subtypeAssn 946 921)
+(supertypeAssn 946 160)
+(generalizationAssn 921 946)
+(typeRefAssn 922 963)
+(typeExpression 922 981)
+(typeAssn 931 969)
+(typeExpression 931 981)
+(typeAssn 938 320)
+(typeExpression 938 981)
+(typeAssn 940 973)
+(typeExpression 940 981)
+(projectionAssn 61 921 1085)
 (to 62 3)
 (from 62 61)
-(projectionAssn 62 989 1132)
-(projectionAssn 63 991 1133)
+(projectionAssn 62 946 1086)
+(projectionAssn 63 948 1087)
 (to 64 63)
 (from 64 3)
-(projectionAssn 64 186 1134)
-(typeAssn 693 675)
-(assocEndAssn 675 693)
-(subtypeAssn 691 675)
-(supertypeAssn 691 492)
-(generalizationAssn 675 691)
-(typeRefAssn 676 1006)
-(typeExpression 676 1135)
-(typeRefAssn 680 1006)
-(typeExpression 680 1022)
-(assocEndAssn 707 695)
-(subtypeAssn 730 707)
-(supertypeAssn 730 605)
-(generalizationAssn 707 730)
-(typeRefAssn 708 1006)
-(typeExpression 708 1136)
-(typeRefAssn 712 1006)
-(typeExpression 712 1136)
-(typeAssn 695 707)
-(typeAssn 766 738)
-(assocEndAssn 738 766)
-(subtypeAssn 764 738)
-(supertypeAssn 764 492)
-(generalizationAssn 738 764)
-(typeRefAssn 739 1006)
-(typeExpression 739 1135)
-(typeRefAssn 744 1006)
-(typeExpression 744 1136)
-(assocEndAssn 774 768)
-(subtypeAssn 788 774)
-(supertypeAssn 788 605)
-(generalizationAssn 774 788)
-(typeRefAssn 775 1006)
-(typeExpression 775 1136)
-(typeRefAssn 778 1006)
-(typeExpression 778 1136)
-(typeAssn 768 774)
-(stereotypeAssn 794 1137)
-(clientAssn 794 1)
-(supplierAssn 794 1138)
-(subtypeAssn 804 795)
-(supertypeAssn 804 65)
-(generalizationAssn 795 804)
-(typeRefAssn 796 1006)
-(typeExpression 796 1139)
-(typeRefAssn 800 1006)
-(typeExpression 800 1139)
-(subtypeAssn 818 809)
-(supertypeAssn 818 65)
-(generalizationAssn 809 818)
-(typeRefAssn 810 1006)
-(typeExpression 810 1139)
-(typeRefAssn 814 1006)
-(typeExpression 814 1139)
-(subtypeAssn 831 824)
-(supertypeAssn 831 65)
-(generalizationAssn 824 831)
-(typeRefAssn 825 1006)
-(typeExpression 825 1139)
-(typeRefAssn 829 1006)
-(typeExpression 829 1139)
-(subtypeAssn 844 837)
-(supertypeAssn 844 65)
-(generalizationAssn 837 844)
-(typeRefAssn 838 1006)
-(typeExpression 838 1139)
-(typeRefAssn 842 1006)
-(typeExpression 842 1139)
-(stereotypeAssn 849 1137)
-(clientAssn 849 1)
-(supplierAssn 849 1140)
-(projectionAssn 890 65 1141)
-(projectionAssn 891 675 1142)
-(projectionAssn 892 707 1143)
-(projectionAssn 893 774 1144)
-(projectionAssn 894 738 1145)
-(projectionAssn 895 809 1146)
-(to 896 890)
-(from 896 895)
-(projectionAssn 896 818 1147)
-(projectionAssn 897 795 1148)
-(to 898 890)
-(from 898 897)
-(projectionAssn 898 804 1149)
-(projectionAssn 899 837 1150)
-(to 900 890)
-(from 900 899)
-(projectionAssn 900 844 1151)
-(projectionAssn 901 492 1152)
-(to 902 890)
-(from 902 901)
-(projectionAssn 902 588 1153)
-(to 903 890)
-(from 903 901)
-(projectionAssn 903 594 1154)
-(to 904 901)
-(from 904 891)
-(projectionAssn 904 691 1155)
-(to 905 901)
-(from 905 894)
-(projectionAssn 905 764 1156)
-(projectionAssn 906 605 1157)
-(to 907 890)
-(from 907 906)
-(projectionAssn 907 641 1158)
-(to 908 906)
-(from 908 901)
-(projectionAssn 908 563 1159)
-(to 909 906)
-(from 909 901)
-(projectionAssn 909 568 1160)
-(to 910 906)
-(from 910 892)
-(projectionAssn 910 730 1161)
-(to 911 906)
-(from 911 893)
-(projectionAssn 911 788 1162)
-(projectionAssn 912 824 1163)
-(to 913 890)
-(from 913 912)
-(projectionAssn 913 831 1164)
-(to 914 892)
-(from 914 891)
-(projectionAssn 914 692 1165)
-(to 915 893)
-(from 915 894)
-(projectionAssn 915 765 1166)
-(projectionAssn 916 939 1167)
-(to 917 916)
-(from 917 906)
-(projectionAssn 917 664 1168)
-(to 918 890)
-(from 918 916)
-(projectionAssn 918 940 1169)
+(projectionAssn 64 186 1088)
+(typeAssn 650 632)
+(assocEndAssn 632 650)
+(subtypeAssn 648 632)
+(supertypeAssn 648 449)
+(generalizationAssn 632 648)
+(typeRefAssn 633 963)
+(typeExpression 633 1089)
+(typeRefAssn 637 963)
+(typeExpression 637 975)
+(assocEndAssn 664 652)
+(subtypeAssn 687 664)
+(supertypeAssn 687 562)
+(generalizationAssn 664 687)
+(typeRefAssn 665 963)
+(typeExpression 665 1090)
+(typeRefAssn 669 963)
+(typeExpression 669 1090)
+(typeAssn 652 664)
+(typeAssn 723 695)
+(assocEndAssn 695 723)
+(subtypeAssn 721 695)
+(supertypeAssn 721 449)
+(generalizationAssn 695 721)
+(typeRefAssn 696 963)
+(typeExpression 696 1089)
+(typeRefAssn 701 963)
+(typeExpression 701 1090)
+(assocEndAssn 731 725)
+(subtypeAssn 745 731)
+(supertypeAssn 745 562)
+(generalizationAssn 731 745)
+(typeRefAssn 732 963)
+(typeExpression 732 1090)
+(typeRefAssn 735 963)
+(typeExpression 735 1090)
+(typeAssn 725 731)
+(stereotypeAssn 751 1091)
+(clientAssn 751 1)
+(supplierAssn 751 1092)
+(subtypeAssn 761 752)
+(supertypeAssn 761 65)
+(generalizationAssn 752 761)
+(typeRefAssn 753 963)
+(typeExpression 753 1093)
+(typeRefAssn 757 963)
+(typeExpression 757 1093)
+(subtypeAssn 775 766)
+(supertypeAssn 775 65)
+(generalizationAssn 766 775)
+(typeRefAssn 767 963)
+(typeExpression 767 1093)
+(typeRefAssn 771 963)
+(typeExpression 771 1093)
+(subtypeAssn 788 781)
+(supertypeAssn 788 65)
+(generalizationAssn 781 788)
+(typeRefAssn 782 963)
+(typeExpression 782 1093)
+(typeRefAssn 786 963)
+(typeExpression 786 1093)
+(subtypeAssn 801 794)
+(supertypeAssn 801 65)
+(generalizationAssn 794 801)
+(typeRefAssn 795 963)
+(typeExpression 795 1093)
+(typeRefAssn 799 963)
+(typeExpression 799 1093)
+(stereotypeAssn 806 1091)
+(clientAssn 806 1)
+(supplierAssn 806 1094)
+(projectionAssn 847 65 1095)
+(projectionAssn 848 632 1096)
+(projectionAssn 849 664 1097)
+(projectionAssn 850 731 1098)
+(projectionAssn 851 695 1099)
+(projectionAssn 852 766 1100)
+(to 853 847)
+(from 853 852)
+(projectionAssn 853 775 1101)
+(projectionAssn 854 752 1102)
+(to 855 847)
+(from 855 854)
+(projectionAssn 855 761 1103)
+(projectionAssn 856 794 1104)
+(to 857 847)
+(from 857 856)
+(projectionAssn 857 801 1105)
+(projectionAssn 858 449 1106)
+(to 859 847)
+(from 859 858)
+(projectionAssn 859 545 1107)
+(to 860 847)
+(from 860 858)
+(projectionAssn 860 551 1108)
+(to 861 858)
+(from 861 848)
+(projectionAssn 861 648 1109)
+(to 862 858)
+(from 862 851)
+(projectionAssn 862 721 1110)
+(projectionAssn 863 562 1111)
+(to 864 847)
+(from 864 863)
+(projectionAssn 864 598 1112)
+(to 865 863)
+(from 865 858)
+(projectionAssn 865 520 1113)
+(to 866 863)
+(from 866 858)
+(projectionAssn 866 525 1114)
+(to 867 863)
+(from 867 849)
+(projectionAssn 867 687 1115)
+(to 868 863)
+(from 868 850)
+(projectionAssn 868 745 1116)
+(projectionAssn 869 781 1117)
+(to 870 847)
+(from 870 869)
+(projectionAssn 870 788 1118)
+(to 871 849)
+(from 871 848)
+(projectionAssn 871 649 1119)
+(to 872 850)
+(from 872 851)
+(projectionAssn 872 722 1120)
+(projectionAssn 873 896 1121)
+(to 874 873)
+(from 874 863)
+(projectionAssn 874 621 1122)
+(to 875 847)
+(from 875 873)
+(projectionAssn 875 897 1123)
