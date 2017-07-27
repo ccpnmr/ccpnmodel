@@ -4379,7 +4379,7 @@ creates the Residue and Atom objects corresponding to it.
           _undo.increaseBlocking()
         try:
           # make Residues
-          for molResidue in self.molecule.molResidues:
+          for molResidue in self.molecule.sortedMolResidues():
             rs = Residue(self, seqId=molResidue.serial,seqCode=molResidue.seqCode, seqInsertCode=molResidue.seqInsertCode, linking=molResidue.linking, descriptor=molResidue.descriptor )
             objectsCreated.add(rs)
       
