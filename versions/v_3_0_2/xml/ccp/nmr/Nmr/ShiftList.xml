@@ -169,7 +169,9 @@ getNmrProject().findAllMeasurementLists("className", "ShiftDifferenceList", "ref
     <documentation>setter for experiments link - speciual-cased to trigger shift averaging</documentation>
     <target>www.ccpn.ac.uk_Fogh_2006-08-16-18:20:11_00051</target>
     <codeStubs>
-      <item tag="python">for cv in currentValues:
+      <item tag="python">currentValues = set(currentValues)
+
+for cv in currentValues:
   if (not (cv in values)):
     cv.shiftList = None
 
