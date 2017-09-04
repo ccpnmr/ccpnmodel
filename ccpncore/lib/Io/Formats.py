@@ -132,7 +132,11 @@ def analyseUrl(filePath):
   elif filePath.endswith('.nef'):
     # NBNB TODO is this OK? enough?
     return ('Project', NEF, filePath)
-    
+
+  elif filePath.endswith('.str'):
+    # NBNB TODO:ED is this OK? enough?
+    return ('Project', NMRSTAR, filePath)
+
   # Set up for further analysis
   dirName, fileName = os.path.split(filePath)
 
