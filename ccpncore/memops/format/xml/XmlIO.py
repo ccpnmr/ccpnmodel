@@ -285,6 +285,7 @@ def loadFromStream(stream, topObjId=None, topObject=None, partialLoad=False):
     result = Implementation.loadFromStream(stream, topObjId=topObjId, 
                                            topObject=topObject, 
                                            partialLoad=partialLoad)
-  #
+
+  stream.close()    # ejb - temp
   return result
    
