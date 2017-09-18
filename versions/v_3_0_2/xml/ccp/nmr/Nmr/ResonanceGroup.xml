@@ -722,19 +722,22 @@ isValid = (rr is None or value == rr.code3Letter)
     <documentation>setter for derived link assignedResidue</documentation>
     <target>www.ccpn.ac.uk_Fogh_2015-07-08-14:08:26_00003</target>
     <codeStubs>
-      <item tag="python">if value is None:
+      <item tag="python">if value is None:         # or 'undoAssign' in dataDict:
   # ejb - 15/9/17 modified to all Undo to original chain
-  #self.sequenceCode = None
-  #return
+  # self.sequenceCode = None
+  # return
 
-   # undo to previous chain
+  # undo to previous chain
   nmrProject = self.nmrProject
-  oldChainCode = dataDict.get('oldChainCode')
-  oldSeqCode = dataDict.get('oldSeqCode')
-  oldSequenceCode = dataDict.get('oldSequenceCode')
-  oldSeqInsertCode = dataDict.get('oldSeqInsertCode')
-  oldResidueType = dataDict.get('oldResidueType')
-  oldRelativeOffset = dataDict.get('oldRelativeOffset')
+
+  numUndos = dataDict.get('undoAssign')-1
+  oldChainCode = dataDict.get('oldChainCode')[numUndos]
+  oldSeqCode = dataDict.get('oldSeqCode')[numUndos]
+  oldSequenceCode = dataDict.get('oldSequenceCode')[numUndos]
+  oldSeqInsertCode = dataDict.get('oldSeqInsertCode')[numUndos]
+  oldRelativeOffset = dataDict.get('oldRelativeOffset')[numUndos]
+  oldResidueType = dataDict.get('oldResidueType')[numUndos]
+
   directNmrChain = nmrProject.findFirstNmrChain(code=oldChainCode)
   if directNmrChain is None:
     directNmrChain = nmrProject.newNmrChain(code=oldChainCode)
@@ -756,13 +759,13 @@ isValid = (rr is None or value == rr.code3Letter)
   except:
     raise
 
-  del dataDict['assignConnected']           # ejb - clean up
-  del dataDict['oldChainCode']
-  del dataDict['oldSeqCode']
-  del dataDict['oldSequenceCode']
-  del dataDict['oldSeqInsertCode']
-  del dataDict['oldRelativeOffset']
-  del dataDict['oldResidueType']
+  dataDict['undoAssign'] -= 1
+  del dataDict['oldChainCode'][numUndos]
+  del dataDict['oldSeqCode'][numUndos]
+  del dataDict['oldSequenceCode'][numUndos]
+  del dataDict['oldSeqInsertCode'][numUndos]
+  del dataDict['oldRelativeOffset'][numUndos]
+  del dataDict['oldResidueType'][numUndos]
 
 else:
   chainCode = value.chain.code
@@ -777,13 +780,23 @@ else:
   directNmrChain = nmrProject.findFirstNmrChain(code=chainCode)
 
   # ejb - new bit for undo to previous chain
-  dataDict['assignConnected'] = True
-  dataDict['oldChainCode'] = self.directNmrChain.code
-  dataDict['oldSeqCode'] = self.seqCode
-  dataDict['oldSequenceCode'] = self.sequenceCode
-  dataDict['oldSeqInsertCode'] = self.seqInsertCode
-  dataDict['oldRelativeOffset'] = self.relativeOffset
-  dataDict['oldResidueType'] = self.residueType
+  # needs to be in a queue
+  if 'undoAssign' in dataDict:
+    dataDict['undoAssign'] += 1
+    dataDict['oldChainCode'].append(self.nmrChain.code)
+    dataDict['oldSeqCode'].append(self.seqCode)
+    dataDict['oldSequenceCode'].append(self.sequenceCode)
+    dataDict['oldSeqInsertCode'].append(self.seqInsertCode)
+    dataDict['oldRelativeOffset'].append(self.relativeOffset)
+    dataDict['oldResidueType'].append(self.residueType)
+  else:
+    dataDict['undoAssign'] = 1
+    dataDict['oldChainCode'] = [self.nmrChain.code]
+    dataDict['oldSeqCode'] = [self.seqCode]
+    dataDict['oldSequenceCode'] = [self.sequenceCode]
+    dataDict['oldSeqInsertCode'] = [self.seqInsertCode]
+    dataDict['oldRelativeOffset'] = [self.relativeOffset]
+    dataDict['oldResidueType'] = [self.residueType]
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   if directNmrChain is None:
@@ -805,8 +818,7 @@ else:
     dataDict['seqInsertCode'] = oldSeqInsertCode
     dataDict['relativeOffset'] = oldRelativeOffset
     dataDict['residueType'] = oldResidueType
-    raise
-</item>
+    raise</item>
     </codeStubs>
   </MetaOperation>
 
@@ -825,12 +837,13 @@ else:
       raise ValueError("ResonanceGroup in the middle of connected NmrChain cannot be assigned away from the NmrChain")
   stretch.remove(self)
 if value is not None:
-  # 'assignConnected' is used by Undo to reverse the re-insertion of nmrResidues
-  if 'assignConnected' in dataDict and dataDict['assignConnected']:
+  # 'undoAssign' is used by Undo to reverse the re-insertion of nmrResidues
+  if 'undoAssign' in dataDict and dataDict['undoAssign']:
     value.__dict__['mainResonanceGroups'].insert(0, self)
   else:
     value.__dict__['mainResonanceGroups'].append(self)
-dataDict['directNmrChain'] = value</item>
+dataDict['directNmrChain'] = value
+</item>
     </codeStubs>
   </MetaOperation>
 
