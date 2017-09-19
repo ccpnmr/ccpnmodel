@@ -722,8 +722,8 @@ isValid = (rr is None or value == rr.code3Letter)
     <documentation>setter for derived link assignedResidue</documentation>
     <target>www.ccpn.ac.uk_Fogh_2015-07-08-14:08:26_00003</target>
     <codeStubs>
-      <item tag="python">if value is None:         # or 'undoAssign' in dataDict:
-  # ejb - 15/9/17 modified to all Undo to original chain
+      <item tag="python">if value is None:
+  # ejb - 19/9/17 modified to all Undo to original chain
   # self.sequenceCode = None
   # return
 
@@ -752,12 +752,15 @@ isValid = (rr is None or value == rr.code3Letter)
   dataDict['seqInsertCode'] = oldSeqInsertCode
   dataDict['relativeOffset'] = oldRelativeOffset
   dataDict['residueType'] = oldResidueType
+  dataDict['insertAtHead'] = True           # fix to undo to the head of the list
 
   try:
     self.directNmrChain = directNmrChain    # actual move - need to append to the end of chain
                                             # or insert at the correct place
   except:
     raise
+
+  del dataDict['insertAtHead']
 
   dataDict['undoAssign'] -= 1
   del dataDict['oldChainCode'][numUndos]
@@ -818,7 +821,8 @@ else:
     dataDict['seqInsertCode'] = oldSeqInsertCode
     dataDict['relativeOffset'] = oldRelativeOffset
     dataDict['residueType'] = oldResidueType
-    raise</item>
+    raise
+</item>
     </codeStubs>
   </MetaOperation>
 
@@ -838,7 +842,7 @@ else:
   stretch.remove(self)
 if value is not None:
   # 'undoAssign' is used by Undo to reverse the re-insertion of nmrResidues
-  if 'undoAssign' in dataDict and dataDict['undoAssign']:
+  if 'insertAtHead' in dataDict and dataDict['insertAtHead']:
     value.__dict__['mainResonanceGroups'].insert(0, self)
   else:
     value.__dict__['mainResonanceGroups'].append(self)
