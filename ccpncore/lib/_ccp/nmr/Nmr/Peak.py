@@ -29,6 +29,8 @@ __date__ = "$Date: 2017-04-07 10:28:48 +0000 (Fri, April 07, 2017) $"
 
 from typing import Sequence
 
+import numpy
+
 def assignByDimensions(self:'Peak', value:Sequence[Sequence['Resonance']]):
   """Set per-dimension assignments on peak.
   value is a list of lists (one per dimension) of resonances.
@@ -102,6 +104,101 @@ def assignByContributions(self:'Peak', value:Sequence[Sequence['Resonance']]):
           for ii,peakDim in enumerate(peakDims)]
     firstPeakContrib.peakDimContribs = [x for x in ll if x is not None]
 
+
+def snapToExtremum(self:'Peak', halfBoxWidth:int=2, fitMethod:str='gaussian'):
+
+  from ccpnc.peak import Peak as CPeak
+
+  peakList = self.peakList
+  dataSource = peakList.dataSource
+
+  peakDims = self.sortedPeakDims()
+  numDim = len(peakDims)
+  position = [peakDim.position - 1 for peakDim in peakDims]  # -1 because points start at 1 in peakDim
+
+  plower = [int(numpy.floor(p)) for p in position]
+  pupper = [int(numpy.ceil(p)) for p in position]
+
+  startPoint = numpy.array([max(plower[i] - halfBoxWidth, 0) for i in range(numDim)])
+  endPoint = numpy.array([min(pupper[i] + halfBoxWidth + 1, peakDims[i].dataDim.numPoints) for i in range(numDim)])
+  numPoint = endPoint - startPoint
+
+  dataArray, intRegion = dataSource.getRegionData(startPoint, endPoint)
+
+  scaledHeight = 0.5 * self.height  # this is so that have sensible pos/negLevel
+  if self.height > 0:
+    doPos = True
+    doNeg = False
+    posLevel = scaledHeight
+    negLevel = 0 # arbitrary
+  else:
+    doPos = False
+    doNeg = True
+    posLevel = 0 # arbitrary
+    negLevel = scaledHeight
+
+  exclusionBuffer = [1] * numDim
+
+  nonAdj = 0
+  minDropfactor = 0.1
+  minLinewidth = [0.0] * numDim
+
+  excludedRegionsList = []
+  excludedDiagonalDimsList = []
+  excludedDiagonalTransformList = []
+
+  peakPoints = CPeak.findPeaks(dataArray, doNeg, doPos,
+                               negLevel, posLevel, exclusionBuffer,
+                               nonAdj, minDropfactor, minLinewidth,
+                               excludedRegionsList, excludedDiagonalDimsList, excludedDiagonalTransformList)
+
+  if len(peakPoints) == 1:
+    peakPoint, height = peakPoints[0]
+    for i, peakDim in enumerate(peakDims):
+      peakDim.position = float(startPoint[i] + peakPoint[i] + 1)  # +1 because points start at 1 in peakDim
+        # float() because otherwise get numpy float which API does not allow
+
+      peakPoint = numpy.array(peakPoint)
+      firstArray = numpy.maximum(peakPoint - halfBoxWidth, 0)
+      lastArray = numpy.minimum(peakPoint + halfBoxWidth + 1, numPoint)
+      peakArray = numpy.array(peakPoint).reshape((1, numDim))
+      peakArray = peakArray.astype('float32')
+      firstArray = firstArray.astype('int32')
+      lastArray = lastArray.astype('int32')
+      regionArray = numpy.array((firstArray, lastArray))
+
+      method = 0 if fitMethod == 'gaussian' else 1
+
+      try:
+        result = CPeak.fitPeaks(dataArray, regionArray, peakArray, method)
+        height, center, linewidth = result[0]
+      except:
+        return
+
+      position = center + startPoint
+
+      dataDims = dataSource.sortedDataDims()
+
+      for i, peakDim in enumerate(peakDims):
+        dataDim = dataDims[i]
+
+        if dataDim.className == 'FreqDataDim':
+          dataDimRef = dataDim.primaryDataDimRef
+        else:
+          dataDimRef = None
+
+        if dataDimRef:
+          peakDim.numAliasing = int(divmod(position[i], dataDim.numPointsOrig)[0])
+          peakDim.position = float(
+            position[i] + 1 - peakDim.numAliasing * dataDim.numPointsOrig)  # API position starts at 1
+
+        else:
+          peakDim.position = float(position[i] + 1)
+
+        if linewidth[i] is not None:
+          peakDim.lineWidth = dataDim.valuePerPoint * linewidth[i]  # conversion from points to Hz
+
+      self.height = dataSource.scale * height
 
 # NBNB unit operations needed:
 #
