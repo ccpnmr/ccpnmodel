@@ -105,7 +105,7 @@ def assignByContributions(self:'Peak', value:Sequence[Sequence['Resonance']]):
     firstPeakContrib.peakDimContribs = [x for x in ll if x is not None]
 
 
-def snapToExtremum(self:'Peak', halfBoxWidth:int=2, fitMethod:str='gaussian'):
+def snapToExtremum(self:'Peak', halfBoxSearchWidth:int=2, halfBoxFitWidth:int=2, fitMethod:str='gaussian'):
 
   # this assumes you have a peak position
 
@@ -124,8 +124,8 @@ def snapToExtremum(self:'Peak', halfBoxWidth:int=2, fitMethod:str='gaussian'):
   plower = [int(numpy.floor(p)) for p in position]
   pupper = [int(numpy.ceil(p)) for p in position]
 
-  startPoint = numpy.array([max(plower[i] - halfBoxWidth, 0) for i in range(numDim)])
-  endPoint = numpy.array([min(pupper[i] + halfBoxWidth + 1, peakDims[i].dataDim.numPoints) for i in range(numDim)])
+  startPoint = numpy.array([max(plower[i] - halfBoxSearchWidth, 0) for i in range(numDim)])
+  endPoint = numpy.array([min(pupper[i] + halfBoxSearchWidth + 1, peakDims[i].dataDim.numPoints) for i in range(numDim)])
   numPoint = endPoint - startPoint
 
   dataArray, intRegion = dataSource.getRegionData(startPoint, endPoint)
@@ -163,7 +163,7 @@ def snapToExtremum(self:'Peak', halfBoxWidth:int=2, fitMethod:str='gaussian'):
       peakDim.position = float(startPoint[i] + peakPoint[i] + 1)  # +1 because points start at 1 in peakDim
         # float() because otherwise get numpy float which API does not allow
 
-    self.fitPositionHeightLineWidths(halfBoxWidth, fitMethod)
+    self.fitPositionHeightLineWidths(halfBoxFitWidth, fitMethod)
 
 def fitPositionHeightLineWidths(self:'Peak', halfBoxWidth:int=2, fitMethod:str='gaussian'):
 
