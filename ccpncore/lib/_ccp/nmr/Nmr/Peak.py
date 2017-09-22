@@ -107,6 +107,8 @@ def assignByContributions(self:'Peak', value:Sequence[Sequence['Resonance']]):
 
 def snapToExtremum(self:'Peak', halfBoxWidth:int=2, fitMethod:str='gaussian'):
 
+  # this assumes you have a peak position
+
   from ccpnc.peak import Peak as CPeak
 
   peakList = self.peakList
@@ -114,6 +116,9 @@ def snapToExtremum(self:'Peak', halfBoxWidth:int=2, fitMethod:str='gaussian'):
 
   peakDims = self.sortedPeakDims()
   numDim = len(peakDims)
+
+  position = [peakDim.position for peakDim in peakDims]
+  height = dataSource.getPositionValue(position)  # no -1 because function does that
   position = [peakDim.position - 1 for peakDim in peakDims]  # -1 because points start at 1 in peakDim
 
   plower = [int(numpy.floor(p)) for p in position]
@@ -125,8 +130,8 @@ def snapToExtremum(self:'Peak', halfBoxWidth:int=2, fitMethod:str='gaussian'):
 
   dataArray, intRegion = dataSource.getRegionData(startPoint, endPoint)
 
-  scaledHeight = 0.5 * self.height  # this is so that have sensible pos/negLevel
-  if self.height > 0:
+  scaledHeight = 0.5 * height  # this is so that have sensible pos/negLevel
+  if height > 0:
     doPos = True
     doNeg = False
     posLevel = scaledHeight
@@ -158,47 +163,71 @@ def snapToExtremum(self:'Peak', halfBoxWidth:int=2, fitMethod:str='gaussian'):
       peakDim.position = float(startPoint[i] + peakPoint[i] + 1)  # +1 because points start at 1 in peakDim
         # float() because otherwise get numpy float which API does not allow
 
-      peakPoint = numpy.array(peakPoint)
-      firstArray = numpy.maximum(peakPoint - halfBoxWidth, 0)
-      lastArray = numpy.minimum(peakPoint + halfBoxWidth + 1, numPoint)
-      peakArray = numpy.array(peakPoint).reshape((1, numDim))
-      peakArray = peakArray.astype('float32')
-      firstArray = firstArray.astype('int32')
-      lastArray = lastArray.astype('int32')
-      regionArray = numpy.array((firstArray, lastArray))
+    self.fitPositionHeightLineWidths(halfBoxWidth, fitMethod)
 
-      method = 0 if fitMethod == 'gaussian' else 1
+def fitPositionHeightLineWidths(self:'Peak', halfBoxWidth:int=2, fitMethod:str='gaussian'):
 
-      try:
-        result = CPeak.fitPeaks(dataArray, regionArray, peakArray, method)
-        height, center, linewidth = result[0]
-      except:
-        return
+  # this assumes you have a peak position
 
-      position = center + startPoint
+  from ccpnc.peak import Peak as CPeak
 
-      dataDims = dataSource.sortedDataDims()
+  peakList = self.peakList
+  dataSource = peakList.dataSource
 
-      for i, peakDim in enumerate(peakDims):
-        dataDim = dataDims[i]
+  peakDims = self.sortedPeakDims()
+  numDim = len(peakDims)
+  position = [peakDim.position - 1 for peakDim in peakDims]  # -1 because points start at 1 in peakDim
 
-        if dataDim.className == 'FreqDataDim':
-          dataDimRef = dataDim.primaryDataDimRef
-        else:
-          dataDimRef = None
+  plower = [int(numpy.floor(p)) for p in position]
+  pupper = [int(numpy.ceil(p)) for p in position]
 
-        if dataDimRef:
-          peakDim.numAliasing = int(divmod(position[i], dataDim.numPointsOrig)[0])
-          peakDim.position = float(
-            position[i] + 1 - peakDim.numAliasing * dataDim.numPointsOrig)  # API position starts at 1
+  startPoint = numpy.array([max(plower[i] - halfBoxWidth, 0) for i in range(numDim)])
+  endPoint = numpy.array([min(pupper[i] + halfBoxWidth + 1, peakDims[i].dataDim.numPoints) for i in range(numDim)])
+  numPoint = endPoint - startPoint
 
-        else:
-          peakDim.position = float(position[i] + 1)
+  dataArray, intRegion = dataSource.getRegionData(startPoint, endPoint)
 
-        if linewidth[i] is not None:
-          peakDim.lineWidth = dataDim.valuePerPoint * linewidth[i]  # conversion from points to Hz
+  peakPoint = numpy.array(position) - startPoint
+  firstArray = numpy.maximum(peakPoint - halfBoxWidth, 0)
+  lastArray = numpy.minimum(peakPoint + halfBoxWidth + 1, numPoint)
+  peakArray = numpy.array(peakPoint).reshape((1, numDim))
+  peakArray = peakArray.astype('float32')
+  firstArray = firstArray.astype('int32')
+  lastArray = lastArray.astype('int32')
+  regionArray = numpy.array((firstArray, lastArray))
 
-      self.height = dataSource.scale * height
+  method = 0 if fitMethod == 'gaussian' else 1
+
+  try:
+    result = CPeak.fitPeaks(dataArray, regionArray, peakArray, method)
+    height, center, linewidth = result[0]
+  except:
+    return
+
+  position = center + startPoint
+
+  dataDims = dataSource.sortedDataDims()
+
+  for i, peakDim in enumerate(peakDims):
+    dataDim = dataDims[i]
+
+    if dataDim.className == 'FreqDataDim':
+      dataDimRef = dataDim.primaryDataDimRef
+    else:
+      dataDimRef = None
+
+    if dataDimRef:
+      peakDim.numAliasing = int(divmod(position[i], dataDim.numPointsOrig)[0])
+      peakDim.position = float(
+        position[i] + 1 - peakDim.numAliasing * dataDim.numPointsOrig)  # API position starts at 1
+
+    else:
+      peakDim.position = float(position[i] + 1)
+
+    if linewidth[i] is not None:
+      peakDim.lineWidth = dataDim.valuePerPoint * linewidth[i]  # conversion from points to Hz
+
+  self.height = dataSource.scale * height
 
 # NBNB unit operations needed:
 #
