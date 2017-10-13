@@ -343,8 +343,10 @@ def getSliceData(self:'DataSource', position=None, sliceDim:int=1):
   for dim in range(numDim):
     point = position[dim] - 1
     if point >= numPoints[dim]:
+      return None
       raise ValueError('Slice index %d not within dataSource bounds' % point)
     if point < 0:
+      return None
       raise ValueError('Slice index %d less than 0' % point)
 
   blockSizes = dataStore.blockSizes
