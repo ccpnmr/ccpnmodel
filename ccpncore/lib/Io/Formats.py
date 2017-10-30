@@ -251,8 +251,9 @@ def analyseUrl(filePath):
       # Assume it is a PDB-type file
       return ('Structure', PDB, filePath)
 
-
-
+    if textblock.startswith('<sparky project file>'):
+      # ejb - new sparky project reader, must be the .proj/.proj.BAK file
+      return ('Project', SPARKY, filePath)
 
     # Default - return as plain text
     return ('Text', None, filePath)
