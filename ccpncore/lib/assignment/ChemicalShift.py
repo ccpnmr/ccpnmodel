@@ -877,14 +877,17 @@ def getChainResidueCodes(chain):
 def getSpinSystemScore(spinSystem, shifts, chain, shiftList):
 
     scores = getSpinSystemChainProbabilities(spinSystem, chain, shiftList)
-    total = sum(scores.values())
 
-    if total:
-      for ccpCode in scores:
-        scores[ccpCode] *= 100.0/total
+    # ejb - error here, this was empty in nef file: 1nk2_docr_extended.ccpn.nef
+    if scores:
+      total = sum(scores.values())
 
-    else:
-      return scores
+      if total:
+        for ccpCode in scores:
+          scores[ccpCode] *= 100.0/total
+
+      else:
+        return scores
 
     return scores
 
