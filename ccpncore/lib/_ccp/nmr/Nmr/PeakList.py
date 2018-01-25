@@ -232,12 +232,14 @@ def pickNewPeaks(self:PeakList, startPoint:Sequence[int], endPoint:Sequence[int]
 
             try:
               result = CPeak.fitPeaks(dataArray, regionArray, peakArray, method)
-              height, center, linewidth = result[0]
+              height, centerGuess, linewidth = result[0]
 
               # TODO:ED constrain result to position +/- exclusionBuffer
-              center = center.clip(min=position-exclusionBuffer
-                                   , max=position+exclusionBuffer)
-            except:
+              center = numpy.array(centerGuess).clip(min=position-0.999999*numpyExclusionBuffer
+                                   , max=position+0.999999*numpyExclusionBuffer)
+              # print ('>>>', position, centerGuess, center, (center-centerGuess))
+
+            except Exception as es:
               # possibly should log error??
               dimCount = len(startPoint)
               height = float(dataArray[tuple(position[::-1])])
