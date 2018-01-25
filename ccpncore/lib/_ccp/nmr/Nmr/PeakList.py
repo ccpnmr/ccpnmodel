@@ -233,6 +233,10 @@ def pickNewPeaks(self:PeakList, startPoint:Sequence[int], endPoint:Sequence[int]
             try:
               result = CPeak.fitPeaks(dataArray, regionArray, peakArray, method)
               height, center, linewidth = result[0]
+
+              # TODO:ED constrain result to position +/- exclusionBuffer
+              center = center.clip(min=position-exclusionBuffer
+                                   , max=position+exclusionBuffer)
             except:
               # possibly should log error??
               dimCount = len(startPoint)
