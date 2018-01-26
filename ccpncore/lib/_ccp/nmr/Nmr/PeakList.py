@@ -216,7 +216,9 @@ def pickNewPeaks(self:PeakList, startPoint:Sequence[int], endPoint:Sequence[int]
 
         for existingPosition in existingPositions:
           delta = abs(existingPosition - position)
-          if (delta < numpyExclusionBuffer).all():
+
+          # TODO:ED changed to '<='
+          if (delta <= numpyExclusionBuffer).all():
             break
         else:
           if fitMethod:
@@ -235,8 +237,8 @@ def pickNewPeaks(self:PeakList, startPoint:Sequence[int], endPoint:Sequence[int]
               height, centerGuess, linewidth = result[0]
 
               # TODO:ED constrain result to position +/- exclusionBuffer
-              center = numpy.array(centerGuess).clip(min=position-0.999999*numpyExclusionBuffer
-                                   , max=position+0.999999*numpyExclusionBuffer)
+              center = numpy.array(centerGuess).clip(min=position-numpyExclusionBuffer
+                                   , max=position+numpyExclusionBuffer)
               # print ('>>>', position, centerGuess, center, (center-centerGuess))
 
             except Exception as es:
