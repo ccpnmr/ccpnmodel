@@ -653,7 +653,7 @@ def saveProject(project, newPath=None, changeBackup=True,
       # if os.path.exists(oldPath):  # only copy if this is a directory
       if os.path.isdir(oldPath):
         # just copy everything from oldPath to newPath
-        logger.warning(
+        logger.info(
           'Copying directory %s to %s (this might take some time if there are big files)'
           % (oldPath, newPath))
         shutil.copytree(oldPath, newPath)
@@ -1355,7 +1355,7 @@ def copyV2ToV3Location(projectPath) -> str:
       ii += 1
       newProjectPath = addCcpnDirectorySuffix('%s_%s' % (projectPath, ii))
 
-    logger.warning(
+    logger.info(
       'Copying directory %s to %s (this might take some time if there are big files)'
       % (projectPath, newProjectPath))
 
