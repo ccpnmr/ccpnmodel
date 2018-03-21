@@ -616,6 +616,7 @@ def saveProject(project, newPath=None, changeBackup=True,
         os.makedirs(upDir)
       if newProjectName != oldProjectName:
         _renameProject(project, newProjectName)
+        logger.info('Renamed project %s to %s' % (oldProjectName, newProjectName))
     else:
       if undo is not None:
         undo.decreaseBlocking()
@@ -896,7 +897,7 @@ def _renameProject(project, newProjectName):
 
   logger = Logging.getLogger()
 
-  logger.warning('Renaming project %s to %s' % (project.name, newProjectName))
+  # logger.warning('Renaming project %s to %s' % (project.name, newProjectName))
 
   # change project name
   if newProjectName == oldProjectName:
