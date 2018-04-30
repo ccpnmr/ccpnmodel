@@ -73,7 +73,7 @@ and contains original contributions embedded in the framework
     <item>www.ccpn.ac.uk_Fogh_2006-09-14-16:28:57_00005</item>
   </supertypes>
   <destructorCodeStubs>
-    <item tag="python">#~~~~~ desctructorCode ~~~~~~~~~~~~~~
+    <item tag="python">#~~~~~ destructorCode ~~~~~~~~~~~~~~
 # modified by ejb66 24/4/18
 # error raised if the list is in the reverse order
 # although still trying to trace this
@@ -104,8 +104,7 @@ objsToBeChecked.extend(self.offsetResonanceGroups)
 
 objsToBeChecked.extend(self.resonances)
 
-#~~~~~ end desctructorCode ~~~~~~~~~~~~~~
-</item>
+#~~~~~ end destructorCode ~~~~~~~~~~~~~~</item>
   </destructorCodeStubs>
 
   <!-- Start constraints for <MetaClass: ccp.nmr.Nmr.ResonanceGroup>: -->
@@ -475,6 +474,85 @@ else:
     <documentation>String describing the molecule type of the ChemComp giving the type of the ResonanceGroup. Used as a key in deriving the link chemComp.</documentation>
     <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:52_00024</valueType>
   </MetaAttribute>
+
+  <MetaOperation name="moveDirectNmrChain"
+   guid="www.ccpn.ac.uk_EJB_2018-04-21-07:50:48_00001"
+   container="www.ccpn.ac.uk_Fogh_2006-08-16-14:22:47_00034"
+   isAbstract="false" isImplicit="false" isQuery="false" opType="other"
+   scope="instance_level" visibility="public_vis">
+    <documentation>Connect the nmrChain to the head of the mainResonanceGroup</documentation>
+    <target>www.ccpn.ac.uk_EJB_2018-04-21-07:50:48_00001</target>
+    <codeStubs>
+      <item tag="python"># ejb ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+topObject = dataDict.get('topObject')
+root = topObject.__dict__.get('memopsRoot')
+
+_undo = root.__dict__.get('_undo')
+if (_undo is not None):
+  _undo.increaseBlocking()
+
+# oldPosition = 'head'
+try:
+  currentValue = dataDict['directNmrChain']
+
+  if currentValue is not None:
+    stretch = currentValue.__dict__['mainResonanceGroups']
+    if currentValue.isConnected:
+      if self not in (stretch[0], stretch[-1]):
+        raise ValueError("ResonanceGroup in the middle of connected NmrChain cannot be assigned away from the NmrChain")
+
+    oldPosition = 'head' if stretch[0] == currentValue else 'tail'
+    stretch.remove(self)
+  
+  if nmrChain is not None:
+    if position == 'head':
+      nmrChain.__dict__['mainResonanceGroups'].insert(0, self)
+    else:
+      nmrChain.__dict__['mainResonanceGroups'].append(self)
+  dataDict['directNmrChain'] = nmrChain
+finally:
+  if (_undo is not None):
+    _undo.decreaseBlocking()
+
+topObject.__dict__['isModified'] = True
+  
+_notifies = self.__class__._notifies
+  
+ll1 = _notifies['']
+for notify in ll1:
+  notify(self)
+
+ll = _notifies.get('setDirectNmrChain')
+if ll:
+  for notify in ll:
+    if notify not in ll1:
+      notify(self)
+
+# register Undo functions
+if (_undo is not None):
+  _undo.newItem(self.moveDirectNmrChain, self.moveDirectNmrChain,
+                undoArgs=(currentValue, oldPosition), redoArgs=(nmrChain, position))
+
+# ejb ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</item>
+    </codeStubs>
+
+
+    <MetaParameter name="nmrChain"
+     guid="www.ccpn.ac.uk_EJB_2018-04-21-07:50:48_00002"
+     container="www.ccpn.ac.uk_EJB_2018-04-21-07:50:48_00001"
+     direction="in_dir" hicard="1" isImplicit="false" isOrdered="false"
+     isUnique="true" locard="1">
+      <valueType>www.ccpn.ac.uk_Fogh_2014-07-30-17:44:22_00001</valueType>
+    </MetaParameter>
+
+    <MetaParameter name="position"
+     guid="www.ccpn.ac.uk_EJB_2018-04-21-08:58:46_00001"
+     container="www.ccpn.ac.uk_EJB_2018-04-21-07:50:48_00001"
+     defaultValue="tail" direction="in_dir" hicard="1" isImplicit="false"
+     isOrdered="false" isUnique="true" locard="0">
+      <valueType>www.ccpn.ac.uk_EJB_2018-04-21-08:58:44_00001</valueType>
+    </MetaParameter>
+  </MetaOperation>
 
   <MetaAttribute name="name"
    guid="www.ccpn.ac.uk_Fogh_2006-08-16-18:20:10_00028"
