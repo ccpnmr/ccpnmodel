@@ -15864,7 +15864,7 @@ objectdomain.uml.core.Stereotype-owns $22
 "      if self not in (stretch[0], stretch[-1]):"
 "        raise ValueError(\"ResonanceGroup in the middle of connected NmrChain cannot be assigned away from the NmrChain\")"
 ""
-"    oldPosition = 'head' if stretch[0] == currentValue else 'tail'"
+"    oldPosition = 'head' if self == stretch[0] else 'tail'"
 "    stretch.remove(self)"
 "  "
 "  if nmrChain is not None:"
