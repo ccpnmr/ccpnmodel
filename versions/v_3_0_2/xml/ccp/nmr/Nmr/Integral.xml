@@ -65,7 +65,7 @@ and contains original contributions embedded in the framework
  isAbstract="false" isDerived="false" isImplicit="false" isLeaf="false"
  isRoot="false" isSingleton="false" partitionsChildren="false"
  visibility="public_vis">
-  <documentation>Group of peaks that together make up a multiplet, and belong to a single spectrum.</documentation>
+  <documentation>Area or volume containing a peak.</documentation>
   <keyNames>
     <item>serial</item>
   </keyNames>
@@ -81,7 +81,7 @@ and contains original contributions embedded in the framework
    hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
    isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
    locard="0" scope="instance_level" visibility="public_vis">
-    <documentation>Peak Cluster annotation. Short descriptive information, which may be used on screen displays of spectra with peaks.</documentation>
+    <documentation>Integral annotation. Short descriptive information, which may be used on screen displays of spectra with integrals.</documentation>
     <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00033</valueType>
   </MetaAttribute>
 
@@ -129,7 +129,7 @@ and contains original contributions embedded in the framework
    hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
    isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
    locard="0" scope="instance_level" visibility="public_vis">
-    <documentation>Multiplet height - as determined by whichever program set it last.</documentation>
+    <documentation>Integral height - as determined by whichever program set it last.</documentation>
     <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00032</valueType>
   </MetaAttribute>
 
@@ -140,7 +140,7 @@ and contains original contributions embedded in the framework
    hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
    isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
    locard="0" scope="instance_level" visibility="public_vis">
-    <documentation>Error on multiplet height measurement.</documentation>
+    <documentation>Error on Integral height measurement.</documentation>
     <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00009</valueType>
   </MetaAttribute>
 
@@ -156,17 +156,6 @@ and contains original contributions embedded in the framework
     <otherRole>www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00015</otherRole>
     <valueType>www.ccpn.ac.uk_EJB_2018-04-21-18:51:56_00001</valueType>
   </MetaRole>
-
-  <MetaAttribute name="multipletType"
-   guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00002"
-   container="www.ccpn.ac.uk_EJB_2018-04-21-18:48:48_00001"
-   baseName="multipletType" changeability="changeable" forceUndoNotify="true"
-   hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
-   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
-   locard="1" scope="instance_level" visibility="public_vis">
-    <documentation>Multiplet types: simple couplings involving equivalent coupling constants [doublet (d), triplet (t), quartet (q), quintet, sextet, septet, octet, and nonet], there are more complex patterns involving different coupling constants. Common patterns include the doublet of doublets (dd), doublet of triplets (dt), triplet of doublets (td), doublet of doublet of doublets (ddd), and a few involving more than three couplings (dddd, dq, qd, tt, ddt, dtd, tdd, etc.)</documentation>
-    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00033</valueType>
-  </MetaAttribute>
 
   <MetaAttribute name="offset"
    guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00008"
@@ -201,7 +190,7 @@ and contains original contributions embedded in the framework
    hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
    isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
    locard="0" scope="instance_level" visibility="public_vis">
-    <documentation>Position of the multiplet.</documentation>
+    <documentation>Position of the Integral.</documentation>
     <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00031</valueType>
   </MetaAttribute>
 
@@ -243,7 +232,7 @@ and contains original contributions embedded in the framework
    hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
    isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
    locard="0" scope="instance_level" visibility="public_vis">
-    <documentation>Error on multiplet volume.</documentation>
+    <documentation>Error on Integral volume.</documentation>
     <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00009</valueType>
   </MetaAttribute>
 </MetaClass>

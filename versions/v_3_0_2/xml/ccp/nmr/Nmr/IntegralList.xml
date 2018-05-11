@@ -65,19 +65,13 @@ and contains original contributions embedded in the framework
  isAbstract="false" isDerived="false" isImplicit="false" isLeaf="false"
  isRoot="false" isSingleton="false" partitionsChildren="false"
  visibility="public_vis">
-  <documentation>List of Multiplets, all belonging to a specific DataSource.</documentation>
+  <documentation>List of Integrals, all belonging to a specific DataSource.</documentation>
   <keyNames>
     <item>serial</item>
   </keyNames>
   <supertypes>
     <item>www.ccpn.ac.uk_Fogh_2006-09-14-16:28:57_00005</item>
   </supertypes>
-  <destructorCodeStubs>
-    <item tag="java">if (this == getDataSource().getActivePeakList())
-  getDataSource().setActivePeakList(null);</item>
-    <item tag="python">if self is self.dataSource.activePeakList:
-  self.dataSource.activePeakList = None</item>
-  </destructorCodeStubs>
 
 
   <MetaRole name="dataSource"
@@ -100,10 +94,10 @@ and contains original contributions embedded in the framework
    isAbstract="false" isAutomatic="false" isDerived="false"
    isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
    locard="1" scope="instance_level" visibility="public_vis">
-    <documentation>Type of data the MultipletList is used for. Initially set to'Multiplet'.</documentation>
+    <documentation>Type of data the IntegralList is used for. Initially set 'IntegralList'.</documentation>
     <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00037</valueType>
     <defaultValue>
-      <item>Multiplet</item>
+      <item>IntegralList</item>
     </defaultValue>
   </MetaAttribute>
 
@@ -137,7 +131,7 @@ and contains original contributions embedded in the framework
    hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
    isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
    locard="1" scope="instance_level" visibility="public_vis">
-    <documentation>Are the multiplets calculated rather than measured? </documentation>
+    <documentation>Are the IntegralList calculated rather than measured? </documentation>
     <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00028</valueType>
     <defaultValue>
       <item>false</item>
@@ -151,7 +145,7 @@ and contains original contributions embedded in the framework
    isAbstract="false" isAutomatic="false" isDerived="false"
    isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
    locard="0" scope="instance_level" visibility="public_vis">
-    <documentation>Name of Multipletlist. Used in e.g. annotation to distinguish the multipletList from others belonging to the same dataSource. </documentation>
+    <documentation>Name of IntegralList. Used in e.g. annotation to distinguish the integralList from others belonging to the same dataSource. </documentation>
     <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00033</valueType>
   </MetaAttribute>
 
@@ -173,7 +167,7 @@ and contains original contributions embedded in the framework
    hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
    isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
    locard="1" scope="instance_level" visibility="public_vis">
-    <documentation>Multiplet marker symbol colour string - either a colour name or a defining string</documentation>
+    <documentation>IntegralList marker symbol colour string - either a colour name or a defining string</documentation>
     <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00037</valueType>
     <defaultValue>
       <item>#7a7a7a</item>
@@ -187,7 +181,7 @@ and contains original contributions embedded in the framework
    hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
    isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
    locard="1" scope="instance_level" visibility="public_vis">
-    <documentation>Multiplet marker symbol identifier</documentation>
+    <documentation>IntegralList marker symbol identifier</documentation>
     <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00037</valueType>
     <defaultValue>
       <item>cross</item>
@@ -201,7 +195,7 @@ and contains original contributions embedded in the framework
    hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
    isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
    locard="1" scope="instance_level" visibility="public_vis">
-    <documentation>Multiplet marker symbol colour string - either a colour name or a defining string</documentation>
+    <documentation>IntegralList marker symbol colour string - either a colour name or a defining string</documentation>
     <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00037</valueType>
     <defaultValue>
       <item>#7a7a7a</item>
