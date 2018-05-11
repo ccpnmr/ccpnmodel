@@ -60,16 +60,191 @@ and contains original contributions embedded in the framework
 -->
 
 <MetaClass name="Integral"
- guid="www.ccpn.ac.uk_Fogh_2018-04-13-08:29:19_00003"
+ guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:48_00001"
  container="www.ccpn.ac.uk_Fogh_2006-08-16-14:22:46_00006"
  isAbstract="false" isDerived="false" isImplicit="false" isLeaf="false"
- isRoot="false" isSingleton="false" partitionsChildren="true"
+ isRoot="false" isSingleton="false" partitionsChildren="false"
  visibility="public_vis">
+  <documentation>Group of peaks that together make up a multiplet, and belong to a single spectrum.</documentation>
   <keyNames>
     <item>serial</item>
   </keyNames>
   <supertypes>
-    <item>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:46_00011</item>
+    <item>www.ccpn.ac.uk_Fogh_2006-09-14-16:28:57_00005</item>
   </supertypes>
+
+
+  <MetaAttribute name="annotation"
+   guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00003"
+   container="www.ccpn.ac.uk_EJB_2018-04-21-18:48:48_00001"
+   baseName="annotation" changeability="changeable" forceUndoNotify="true"
+   hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="0" scope="instance_level" visibility="public_vis">
+    <documentation>Peak Cluster annotation. Short descriptive information, which may be used on screen displays of spectra with peaks.</documentation>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00033</valueType>
+  </MetaAttribute>
+
+  <MetaAttribute name="constraintWeight"
+   guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00010"
+   container="www.ccpn.ac.uk_EJB_2018-04-21-18:48:48_00001"
+   baseName="constraintWeight" changeability="changeable" forceUndoNotify="true"
+   hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="1" scope="instance_level" visibility="public_vis">
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00009</valueType>
+    <defaultValue>
+      <item>1.0</item>
+    </defaultValue>
+  </MetaAttribute>
+
+  <MetaAttribute name="details"
+   guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00011"
+   container="www.ccpn.ac.uk_EJB_2018-04-21-18:48:48_00001"
+   baseName="details" changeability="changeable" forceUndoNotify="true"
+   hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="0" scope="instance_level" visibility="public_vis">
+    <documentation>Free text, for notes, explanatory comments, etc.</documentation>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00035</valueType>
+  </MetaAttribute>
+
+  <MetaAttribute name="figOfMerit"
+   guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00009"
+   container="www.ccpn.ac.uk_EJB_2018-04-21-18:48:48_00001"
+   baseName="figOfMerit" changeability="changeable" forceUndoNotify="true"
+   hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="1" scope="instance_level" visibility="public_vis">
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00058</valueType>
+    <defaultValue>
+      <item>1.0</item>
+    </defaultValue>
+  </MetaAttribute>
+
+  <MetaAttribute name="height"
+   guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00004"
+   container="www.ccpn.ac.uk_EJB_2018-04-21-18:48:48_00001"
+   baseName="height" changeability="changeable" forceUndoNotify="true"
+   hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="0" scope="instance_level" visibility="public_vis">
+    <documentation>Multiplet height - as determined by whichever program set it last.</documentation>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00032</valueType>
+  </MetaAttribute>
+
+  <MetaAttribute name="heightError"
+   guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00005"
+   container="www.ccpn.ac.uk_EJB_2018-04-21-18:48:48_00001"
+   baseName="heightError" changeability="changeable" forceUndoNotify="true"
+   hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="0" scope="instance_level" visibility="public_vis">
+    <documentation>Error on multiplet height measurement.</documentation>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00009</valueType>
+  </MetaAttribute>
+
+  <MetaRole name="integralList"
+   guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00014"
+   container="www.ccpn.ac.uk_EJB_2018-04-21-18:48:48_00001"
+   aggregation="composite" baseName="integralList" changeability="frozen"
+   forceUndoNotify="true" hicard="1" hierarchy="parent" isAbstract="false"
+   isAutomatic="false" isDerived="false" isImplementation="false"
+   isImplicit="false" isOrdered="false" isUnique="true" locard="1"
+   noDeleteIfSet="false" partitionsChildren="false" scope="instance_level"
+   visibility="public_vis">
+    <otherRole>www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00015</otherRole>
+    <valueType>www.ccpn.ac.uk_EJB_2018-04-21-18:51:56_00001</valueType>
+  </MetaRole>
+
+  <MetaAttribute name="multipletType"
+   guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00002"
+   container="www.ccpn.ac.uk_EJB_2018-04-21-18:48:48_00001"
+   baseName="multipletType" changeability="changeable" forceUndoNotify="true"
+   hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="1" scope="instance_level" visibility="public_vis">
+    <documentation>Multiplet types: simple couplings involving equivalent coupling constants [doublet (d), triplet (t), quartet (q), quintet, sextet, septet, octet, and nonet], there are more complex patterns involving different coupling constants. Common patterns include the doublet of doublets (dd), doublet of triplets (dt), triplet of doublets (td), doublet of doublet of doublets (ddd), and a few involving more than three couplings (dddd, dq, qd, tt, ddt, dtd, tdd, etc.)</documentation>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00033</valueType>
+  </MetaAttribute>
+
+  <MetaAttribute name="offset"
+   guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00008"
+   container="www.ccpn.ac.uk_EJB_2018-04-21-18:48:48_00001"
+   baseName="offset" changeability="changeable" forceUndoNotify="true"
+   hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="1" scope="instance_level" visibility="public_vis">
+    <documentation>Height of baseplane, used to calculate volume and height.</documentation>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00031</valueType>
+    <defaultValue>
+      <item>0.0</item>
+    </defaultValue>
+  </MetaAttribute>
+
+  <MetaRole name="peak"
+   guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00024"
+   container="www.ccpn.ac.uk_EJB_2018-04-21-18:48:48_00001"
+   baseName="peak" changeability="changeable" forceUndoNotify="true" hicard="1"
+   isAbstract="false" isAutomatic="false" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="0" noDeleteIfSet="false" partitionsChildren="false"
+   scope="instance_level" visibility="public_vis">
+    <otherRole>www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00025</otherRole>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:46_00011</valueType>
+  </MetaRole>
+
+  <MetaAttribute name="position"
+   guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00012"
+   container="www.ccpn.ac.uk_EJB_2018-04-21-18:48:48_00001"
+   baseName="position" changeability="changeable" forceUndoNotify="true"
+   hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="0" scope="instance_level" visibility="public_vis">
+    <documentation>Position of the multiplet.</documentation>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00031</valueType>
+  </MetaAttribute>
+
+  <MetaAttribute name="positionError"
+   guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00013"
+   container="www.ccpn.ac.uk_EJB_2018-04-21-18:48:48_00001"
+   baseName="positionError" changeability="changeable" forceUndoNotify="true"
+   hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="0" scope="instance_level" visibility="public_vis">
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00031</valueType>
+  </MetaAttribute>
+
+  <MetaAttribute name="serial"
+   guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00001"
+   container="www.ccpn.ac.uk_EJB_2018-04-21-18:48:48_00001"
+   baseName="serial" changeability="frozen" forceUndoNotify="true" hicard="1"
+   isAbstract="false" isAutomatic="true" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="1" scope="instance_level" visibility="public_vis">
+    <documentation>Serial number of object. Serves as object main key. Serial numbers of deleted objects are not re-used. Serial numbers can only be set by the implementation. Values are in practice always positive, since negative values are interpreted as a signal to set the next free serial</documentation>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00032</valueType>
+  </MetaAttribute>
+
+  <MetaAttribute name="volume"
+   guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00006"
+   container="www.ccpn.ac.uk_EJB_2018-04-21-18:48:48_00001"
+   baseName="volume" changeability="changeable" forceUndoNotify="true"
+   hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="0" scope="instance_level" visibility="public_vis">
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00031</valueType>
+  </MetaAttribute>
+
+  <MetaAttribute name="volumeError"
+   guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00007"
+   container="www.ccpn.ac.uk_EJB_2018-04-21-18:48:48_00001"
+   baseName="volumeError" changeability="changeable" forceUndoNotify="true"
+   hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="0" scope="instance_level" visibility="public_vis">
+    <documentation>Error on multiplet volume.</documentation>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:54_00009</valueType>
+  </MetaAttribute>
 </MetaClass>
 

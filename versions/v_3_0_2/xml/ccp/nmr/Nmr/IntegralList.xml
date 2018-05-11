@@ -60,16 +60,152 @@ and contains original contributions embedded in the framework
 -->
 
 <MetaClass name="IntegralList"
- guid="www.ccpn.ac.uk_Fogh_2018-04-13-08:29:19_00004"
+ guid="www.ccpn.ac.uk_EJB_2018-04-21-18:51:56_00001"
  container="www.ccpn.ac.uk_Fogh_2006-08-16-14:22:46_00006"
  isAbstract="false" isDerived="false" isImplicit="false" isLeaf="false"
  isRoot="false" isSingleton="false" partitionsChildren="false"
  visibility="public_vis">
+  <documentation>List of Multiplets, all belonging to a specific DataSource.</documentation>
   <keyNames>
     <item>serial</item>
   </keyNames>
   <supertypes>
-    <item>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:47_00022</item>
+    <item>www.ccpn.ac.uk_Fogh_2006-09-14-16:28:57_00005</item>
   </supertypes>
+  <destructorCodeStubs>
+    <item tag="java">if (this == getDataSource().getActivePeakList())
+  getDataSource().setActivePeakList(null);</item>
+    <item tag="python">if self is self.dataSource.activePeakList:
+  self.dataSource.activePeakList = None</item>
+  </destructorCodeStubs>
+
+
+  <MetaRole name="dataSource"
+   guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:50_00001"
+   container="www.ccpn.ac.uk_EJB_2018-04-21-18:51:56_00001"
+   aggregation="composite" baseName="dataSource" changeability="frozen"
+   forceUndoNotify="true" hicard="1" hierarchy="parent" isAbstract="false"
+   isAutomatic="false" isDerived="false" isImplementation="false"
+   isImplicit="false" isOrdered="false" isUnique="true" locard="1"
+   noDeleteIfSet="false" partitionsChildren="false" scope="instance_level"
+   visibility="public_vis">
+    <otherRole>www.ccpn.ac.uk_EJB_2018-04-21-18:48:50_00002</otherRole>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:46_00020</valueType>
+  </MetaRole>
+
+  <MetaAttribute name="dataType"
+   guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00018"
+   container="www.ccpn.ac.uk_EJB_2018-04-21-18:51:56_00001"
+   baseName="dataType" changeability="frozen" forceUndoNotify="true" hicard="1"
+   isAbstract="false" isAutomatic="false" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="1" scope="instance_level" visibility="public_vis">
+    <documentation>Type of data the MultipletList is used for. Initially set to'Multiplet'.</documentation>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00037</valueType>
+    <defaultValue>
+      <item>Multiplet</item>
+    </defaultValue>
+  </MetaAttribute>
+
+  <MetaAttribute name="details"
+   guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00019"
+   container="www.ccpn.ac.uk_EJB_2018-04-21-18:51:56_00001"
+   baseName="details" changeability="changeable" forceUndoNotify="true"
+   hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="0" scope="instance_level" visibility="public_vis">
+    <documentation>Free text, for notes, explanatory comments, etc.</documentation>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00035</valueType>
+  </MetaAttribute>
+
+  <MetaRole name="integrals"
+   guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00015"
+   container="www.ccpn.ac.uk_EJB_2018-04-21-18:51:56_00001"
+   baseName="integral" changeability="changeable" forceUndoNotify="true"
+   hicard="-1" hierarchy="child" isAbstract="false" isAutomatic="false"
+   isDerived="false" isImplementation="false" isImplicit="false"
+   isOrdered="false" isUnique="true" locard="0" noDeleteIfSet="false"
+   partitionsChildren="false" scope="instance_level" visibility="public_vis">
+    <otherRole>www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00014</otherRole>
+    <valueType>www.ccpn.ac.uk_EJB_2018-04-21-18:48:48_00001</valueType>
+  </MetaRole>
+
+  <MetaAttribute name="isSimulated"
+   guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00020"
+   container="www.ccpn.ac.uk_EJB_2018-04-21-18:51:56_00001"
+   baseName="isSimulated" changeability="frozen" forceUndoNotify="true"
+   hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="1" scope="instance_level" visibility="public_vis">
+    <documentation>Are the multiplets calculated rather than measured? </documentation>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00028</valueType>
+    <defaultValue>
+      <item>false</item>
+    </defaultValue>
+  </MetaAttribute>
+
+  <MetaAttribute name="name"
+   guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00017"
+   container="www.ccpn.ac.uk_EJB_2018-04-21-18:51:56_00001"
+   baseName="name" changeability="changeable" forceUndoNotify="true" hicard="1"
+   isAbstract="false" isAutomatic="false" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="0" scope="instance_level" visibility="public_vis">
+    <documentation>Name of Multipletlist. Used in e.g. annotation to distinguish the multipletList from others belonging to the same dataSource. </documentation>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00033</valueType>
+  </MetaAttribute>
+
+  <MetaAttribute name="serial"
+   guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00016"
+   container="www.ccpn.ac.uk_EJB_2018-04-21-18:51:56_00001"
+   baseName="serial" changeability="frozen" forceUndoNotify="true" hicard="1"
+   isAbstract="false" isAutomatic="true" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="1" scope="instance_level" visibility="public_vis">
+    <documentation>Serial number of object. Serves as object main key. Serial numbers of deleted objects are not re-used. Serial numbers can only be set by the implementation. Values are in practice always positive, since negative values are interpreted as a signal to set the next free serial</documentation>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00032</valueType>
+  </MetaAttribute>
+
+  <MetaAttribute name="symbolColour"
+   guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00022"
+   container="www.ccpn.ac.uk_EJB_2018-04-21-18:51:56_00001"
+   baseName="symbolColour" changeability="changeable" forceUndoNotify="true"
+   hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="1" scope="instance_level" visibility="public_vis">
+    <documentation>Multiplet marker symbol colour string - either a colour name or a defining string</documentation>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00037</valueType>
+    <defaultValue>
+      <item>#7a7a7a</item>
+    </defaultValue>
+  </MetaAttribute>
+
+  <MetaAttribute name="symbolStyle"
+   guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00021"
+   container="www.ccpn.ac.uk_EJB_2018-04-21-18:51:56_00001"
+   baseName="symbolStyle" changeability="changeable" forceUndoNotify="true"
+   hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="1" scope="instance_level" visibility="public_vis">
+    <documentation>Multiplet marker symbol identifier</documentation>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00037</valueType>
+    <defaultValue>
+      <item>cross</item>
+    </defaultValue>
+  </MetaAttribute>
+
+  <MetaAttribute name="textColour"
+   guid="www.ccpn.ac.uk_EJB_2018-04-21-18:48:51_00023"
+   container="www.ccpn.ac.uk_EJB_2018-04-21-18:51:56_00001"
+   baseName="textColour" changeability="changeable" forceUndoNotify="true"
+   hicard="1" isAbstract="false" isAutomatic="false" isDerived="false"
+   isImplementation="false" isImplicit="false" isOrdered="false" isUnique="true"
+   locard="1" scope="instance_level" visibility="public_vis">
+    <documentation>Multiplet marker symbol colour string - either a colour name or a defining string</documentation>
+    <valueType>www.ccpn.ac.uk_Fogh_2006-08-16-14:22:53_00037</valueType>
+    <defaultValue>
+      <item>#7a7a7a</item>
+    </defaultValue>
+  </MetaAttribute>
 </MetaClass>
 
