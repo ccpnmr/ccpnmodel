@@ -2693,10 +2693,10 @@ require some code modifications.
     self.startIf(self.logicalOp(ss, 'and', tt))
     tt = self.callFunc('getFullKey', 'result', doWrite=False)
     self.setVar('xx', tt, varType=self.anyVarType)
-    self.startIf(self.comparison('topObjectKey', '!=', 'xx'))
-    self.printMessage(self.toLiteral('WARNING TopObject key changed on reading'),
-                      'topObjectKey', 'xx')
-    self.endIf()
+    # self.startIf(self.comparison('topObjectKey', '!=', 'xx'))
+    # self.printMessage(self.toLiteral('WARNING TopObject key changed on reading'),
+    #                   'topObjectKey', 'xx')
+    # self.endIf()
     self.endIf()
     self.writeNewline()
 
