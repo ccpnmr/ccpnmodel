@@ -3387,7 +3387,7 @@ def saveToStream(stream, topObject, mapping=None, comment=None, simplified=True,
   strapp('\n')
 
   # Write objects
-  print('start generating output : ', topObject.getQualifiedName())
+  # print('start generating output : ', topObject.getQualifiedName())
   stack = [topObject]
   mapStack = [mapping['abstractTypes'][topObject.__class__.__name__]]
   while stack:

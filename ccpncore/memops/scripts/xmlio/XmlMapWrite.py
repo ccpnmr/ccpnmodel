@@ -739,9 +739,9 @@ definition element (e.g. <aSerial><Int>5</Int></aSerial> instead of
     # Write objects
     self.writeNewline()
     self.writeComment('Write objects')
-    self.printMessage(self.toLiteral('start generating output : '), 
-     self.callFunc('getQualifiedName', 'topObject', doWrite=False)
-    )
+    # self.printMessage(self.toLiteral('start generating output : '),
+    #  self.callFunc('getQualifiedName', 'topObject', doWrite=False)
+    # )
 
     # new stacks: stack and mapStack
     self.newStack('stack', initValues=('topObject',), needDeclType=True)
