@@ -476,14 +476,17 @@ else:
   </MetaAttribute>
 
   <MetaOperation name="moveDirectNmrChain"
-   guid="www.ccpn.ac.uk_EJB_2018-04-21-07:50:48_00001"
+   guid="www.ccpn.ac.uk_EJB_2018-05-18-14:55:55_00001"
    container="www.ccpn.ac.uk_Fogh_2006-08-16-14:22:47_00034"
    isAbstract="false" isImplicit="false" isQuery="false" opType="other"
    scope="instance_level" visibility="public_vis">
-    <documentation>Connect the nmrChain to the head of the mainResonanceGroup</documentation>
-    <target>www.ccpn.ac.uk_EJB_2018-04-21-07:50:48_00001</target>
+    <documentation>Connect the nmrChain to the head or tail of the mainResonanceGroup</documentation>
+    <target>www.ccpn.ac.uk_EJB_2018-05-18-14:55:55_00001</target>
     <codeStubs>
       <item tag="python"># ejb ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# this it taken from setDirectNmrChain to ensure correct
+# sequence of events and notifers
+
 topObject = dataDict.get('topObject')
 root = topObject.__dict__.get('memopsRoot')
 
@@ -501,7 +504,7 @@ try:
       if self not in (stretch[0], stretch[-1]):
         raise ValueError("ResonanceGroup in the middle of connected NmrChain cannot be assigned away from the NmrChain")
 
-    oldPosition = 'head' if stretch[0] == currentValue else 'tail'
+    oldPosition = 'head' if self == stretch[0] else 'tail'
     stretch.remove(self)
   
   if nmrChain is not None:
@@ -533,24 +536,25 @@ if (_undo is not None):
   _undo.newItem(self.moveDirectNmrChain, self.moveDirectNmrChain,
                 undoArgs=(currentValue, oldPosition), redoArgs=(nmrChain, position))
 
-# ejb ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</item>
+# ejb ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+</item>
     </codeStubs>
 
 
     <MetaParameter name="nmrChain"
-     guid="www.ccpn.ac.uk_EJB_2018-04-21-07:50:48_00002"
-     container="www.ccpn.ac.uk_EJB_2018-04-21-07:50:48_00001"
+     guid="www.ccpn.ac.uk_EJB_2018-05-18-14:55:55_00002"
+     container="www.ccpn.ac.uk_EJB_2018-05-18-14:55:55_00001"
      direction="in_dir" hicard="1" isImplicit="false" isOrdered="false"
      isUnique="true" locard="1">
       <valueType>www.ccpn.ac.uk_Fogh_2014-07-30-17:44:22_00001</valueType>
     </MetaParameter>
 
     <MetaParameter name="position"
-     guid="www.ccpn.ac.uk_EJB_2018-04-21-08:58:46_00001"
-     container="www.ccpn.ac.uk_EJB_2018-04-21-07:50:48_00001"
+     guid="www.ccpn.ac.uk_EJB_2018-05-18-14:55:55_00003"
+     container="www.ccpn.ac.uk_EJB_2018-05-18-14:55:55_00001"
      defaultValue="tail" direction="in_dir" hicard="1" isImplicit="false"
      isOrdered="false" isUnique="true" locard="0">
-      <valueType>www.ccpn.ac.uk_EJB_2018-04-21-08:58:44_00001</valueType>
+      <valueType>www.ccpn.ac.uk_EJB_2018-05-18-14:55:52_00001</valueType>
     </MetaParameter>
   </MetaOperation>
 
@@ -844,10 +848,10 @@ isValid = (rr is None or value == rr.code3Letter)
   if directNmrChain is None:
     directNmrChain = nmrProject.newNmrChain(code=oldChainCode)
   else:
-    oldSelf = directNmrChain.findFirstResonanceGroup(sequenceCode=oldSequenceCode
-                                                    , seqInsertCode=oldSeqInsertCode
-                                                    , relativeOffset=oldRelativeOffset
-                                                    , residueType=oldResidueType)
+    oldSelf = directNmrChain.findFirstResonanceGroup(sequenceCode=oldSequenceCode,
+                                                    seqInsertCode=oldSeqInsertCode,
+                                                    relativeOffset=oldRelativeOffset,
+                                                    residueType=oldResidueType)
     if oldSelf is not None:
       raise ValueError("Residue %s.%s.%s is already assigned" % (oldChainCode, oldSeqCode, oldSeqInsertCode or ''))
   dataDict['seqCode'] = oldSeqCode
