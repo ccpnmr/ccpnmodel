@@ -26970,7 +26970,7 @@ class StripMultipletListView(ccpnmodel.ccpncore.api.memops.Implementation.DataOb
     
     # The following code interacts directly with the deletion implementation (use of 'objsToBeDeleted'). 
     # This is bad, but the only way to accomplish the desired result.
-    if self.mutlipletListView not in objsToBeDeleted and self.stripSpectrumView not in objsToBeDeleted and not self.root.override:
+    if self.multipletListView not in objsToBeDeleted and self.stripSpectrumView not in objsToBeDeleted and not self.root.override:
       raise ApiError("StripMultipletListView %s: StripMultipletListViews can only be deleted when the MultipletListView or StripSpectrumView is deleted." % self)
     topObject = dataDict.get('topObject')
     topObjectsToCheck.add(topObject)
