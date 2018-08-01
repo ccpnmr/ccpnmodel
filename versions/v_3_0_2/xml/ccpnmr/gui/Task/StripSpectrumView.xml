@@ -86,6 +86,15 @@ try:
   for peakListView in self.spectrumView.peakListViews:
     plv = self.newStripPeakListView(peakListView=peakListView)
     objectsCreated.add(plv)
+            
+  # ED: added to create objects for the new integral and Multiplet lists
+  for integralListView in self.spectrumView.integralListViews:
+    ilv = self.newStripIntegralListView(integralListView=integralListView)
+    objectsCreated.add(ilv)
+  for multipletListView in self.spectrumView.multipletListViews:
+    mlv = self.newStripMultipletListView(multipletListView=multipletListView)
+    objectsCreated.add(mlv)
+
 finally:
   if _undo is not None:
     _undo.decreaseBlocking()</item>
