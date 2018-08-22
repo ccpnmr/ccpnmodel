@@ -220,7 +220,14 @@ def analyseUrl(filePath):
   else:
 
     fileObj.close()
-    text = open(filePath, 'rU').read()
+
+    try:
+      text = open(filePath, 'rU').read()
+    except:
+
+      # error as the file is not uniCode - ejb
+      return(None, None, filePath)
+
     textblock = '\n'.join([line.strip() for line in text.splitlines()
                            if not (line and line[0] == '!')])
 
