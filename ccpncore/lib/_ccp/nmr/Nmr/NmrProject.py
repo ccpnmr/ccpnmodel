@@ -38,6 +38,7 @@ from ccpnmodel.ccpncore.lib.spectrum.formats import Azara, Bruker, Felix, Hdf5, 
 from ccpnmodel.ccpncore.lib.Io.Formats import AZARA, BRUKER, FELIX, HDF5, NMRPIPE, NMRVIEW, UCSF, VARIAN, XEASY
 from ccpn.util.Path import checkFilePath
 from ccpnmodel.ccpncore.lib import V2Upgrade
+from ccpn.util.Logging import getLogger
 
 
 def loadDataSource(self:'NmrProject', filePath, dataFileFormat):
@@ -45,7 +46,8 @@ def loadDataSource(self:'NmrProject', filePath, dataFileFormat):
   isOk, msg = checkFilePath(filePath)
 
   if not isOk:
-    print(msg)
+    # print(msg)
+    getLogger().warning(msg)
     # showError('Error', msg)
     return None
 
@@ -58,7 +60,8 @@ def loadDataSource(self:'NmrProject', filePath, dataFileFormat):
   # dataFileFormat = getSpectrumFileFormat(filePath)
   if dataFileFormat is None:
     msg = 'Spectrum data format could not be determined for %s' % filePath
-    print(msg)
+    getLogger().warning(msg)
+    # print(msg)
     return None
   #
   # if dataFileFormat == CCPN:
@@ -68,7 +71,8 @@ def loadDataSource(self:'NmrProject', filePath, dataFileFormat):
 
   if formatData is None:
     msg = 'Spectrum load failed for "%s": could not read params' % filePath
-    print(msg)
+    getLogger().warning(msg)
+    # print(msg)
     return None
 
   else:
@@ -78,7 +82,8 @@ def loadDataSource(self:'NmrProject', filePath, dataFileFormat):
 
   if not os.path.exists(specFile):
     msg = 'Spectrum data file %s not found' % specFile
-    print(msg)
+    getLogger().warning(msg)
+    # print(msg)
     return None
 
   # NBNB TBD REDO!

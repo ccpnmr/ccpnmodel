@@ -10,7 +10,6 @@ __licence__ = ("CCPN licence. See http://www.ccpn.ac.uk/v3-software/downloads/li
                "or ccpnmodel.ccpncore.memops.Credits.CcpnLicense for licence text")
 __reference__ = ("For publications, please use reference from http://www.ccpn.ac.uk/v3-software/downloads/license",
                "or ccpnmodel.ccpncore.memops.Credits.CcpNmrReference")
-
 #=========================================================================================
 # Last code modification
 #=========================================================================================
@@ -22,16 +21,18 @@ __version__ = "$Revision: 3.0.b3 $"
 #=========================================================================================
 __author__ = "$Author: wb104 $"
 __date__ = "$Date: 2017-03-24 14:31:10 +0000 (Fri, March 24, 2017) $"
-
 #=========================================================================================
 # Start of code
 #=========================================================================================
+
 import os, re, sys
 from typing import Sequence
 
 import numpy
 
 from ccpn.util.Common import checkIsotope
+from ccpn.util.Logging import getLogger
+
 # from memops.qtgui.MessageDialog import showError
 
 from array import array
@@ -68,6 +69,7 @@ def readParams(filePath, getFileCount=False):
 
   if len(headData) < headerSize:
     msg = 'NMRPipe file %s appears to be truncated'
+    getLogger().warning(msg)
     # showError('Error', msg % filePath)
     return
 
@@ -76,6 +78,7 @@ def readParams(filePath, getFileCount=False):
 
   if floatVals[0] != 0.0:
     msg = 'NMRPipe file %s appears to be corrupted'
+    getLogger().warning(msg)
     # showError('Error', msg % filePath)
     return
 
@@ -91,6 +94,7 @@ def readParams(filePath, getFileCount=False):
       
     else:
       msg = 'NMRPipe file %s appears to be corrupted'
+      getLogger().warning(msg)
       # showError('Error', msg % filePath)
       return
 
@@ -101,6 +105,7 @@ def readParams(filePath, getFileCount=False):
   
   if not (0 < ndim < 5):
     msg = 'Can only handle NMRPipe files with between 1 and 4 dimensions'
+    getLogger().warning(msg)
     # showError('Error', msg)
     return
 
@@ -115,12 +120,17 @@ def readParams(filePath, getFileCount=False):
     specWidths = [1000.0] * ndim
     specFreqs = [500.0] * ndim
     isotopes = [None] * ndim
-  
+
+    # print indices
+    # print([int(floatVals[i])-1 for i in ORDER_INDEX])
+    # print([int(floatVals[i]) for i in COMPLEX_INDEX+(50,)])
+
     for i in range(ndim):
       j = int(floatVals[ORDER_INDEX[i]]) - 1
       c = int(floatVals[COMPLEX_INDEX[i]])
       if c == 0:
-        msg = 'NMRPipe data is complex in dim %d, can only cope with real data at present'
+        msg = 'NMRPipe data is complex in dim %d, can only cope with real data at present' % i
+        getLogger().warning(msg)
         # showError('Error', msg % (i+1))
         return
       

@@ -29,6 +29,7 @@ __date__ = "$Date: 2017-04-07 10:28:48 +0000 (Fri, April 07, 2017) $"
 import os, sys
 
 from ccpn.util.Common import checkIsotope
+from ccpn.util.Logging import getLogger
 
 # from memops.qtgui.MessageDialog import showError
 
@@ -69,7 +70,8 @@ def readParams(filePath):
       else:
         msg = 'Could not find Bruker "procs" file "%s"' % filePath
         # showError('Error', msg % filePath)
-        print(msg)
+        getLogger().warning(msg)
+        # print(msg)
         return
 
   wordSize = 4
@@ -87,7 +89,7 @@ def readParams(filePath):
   while 'proc%ds' % (numDim+1) in files:
     numDim += 1
     procsFiles.append('proc%ds' % numDim)
-  
+
   dimDicts = []
   for i, procsFile in enumerate(procsFiles):
     procsPath = os.path.join(dirName, procsFile)
@@ -100,6 +102,10 @@ def readParams(filePath):
     acqusPath = os.path.join(acqusDirName, 'acqu%ss' % ('' if i == 0 else i+1))
     procsDict = dimDicts[i]
     _parseBrukerFile(acqusPath, procsDict)
+
+  if not dimDicts[0]:
+    getLogger().warning('Error loading Bruker dimensions')
+    raise RuntimeError('Error loading Bruker dimensions')
 
   dataFile = os.path.join(dirName, '%d%s' % (numDim, numDim * 'r'))
   isBigEndian = dimDicts[0]['$BYTORDP'] == '1'
@@ -123,6 +129,7 @@ def readParams(filePath):
     
     if int(float(dimDict.get('$FT_mod', 1))) == 0:
       msg = 'Bruker dimension %d not processed'
+      getLogger().warning(msg)
       # showError('Error', msg % (i+1))aaaaa
       return
 
