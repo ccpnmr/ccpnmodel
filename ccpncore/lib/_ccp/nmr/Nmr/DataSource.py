@@ -742,71 +742,73 @@ def _saveNmrPipe2DHeader(self:'DataSource', fp:'file', xDim:int=1, yDim:int=2):
   x.tofile(fp)
   y[3:].tofile(fp)
 
-def projectedPlaneData(self:'DataSource', xDim:int=1, yDim:int=2, method:str='max', noise=None):
-
-  numDim = self.numDim
-
-  if numDim != 3:
-    raise Exception('Can only project from 3D currently')
-
-  if not (1 <= xDim <= numDim):
-    raise Exception('For projection, xDim = %d, must be in range 1 to $d' % (xDim, numDim))
-
-  if not (1 <= yDim <= numDim):
-    raise Exception('For projection, yDim = %d, must be in range 1 to $d' % (yDim, numDim))
-  
-  if xDim == yDim:
-    raise Exception('For projection, must have xDim != yDim')
-
-  METHODS = ('max', 'max above noise', 'min', 'min below noise', 'sum', 'sum above noise')
-  if method not in METHODS:
-    raise Exception('For projection, method must be one of %s' % (METHODS,))
-
-  if method.endswith('noise') and noise is None:
-    raise Exception('For projection method "%s", noise parameter must be defined' % (method,))
-
-  dims = set(range(1,numDim+1))
-  dims.remove(xDim)
-  dims.remove(yDim)
-  zDim = dims.pop()
-
-  position = [1] * numDim
-  projectedData = None
-  dataDims = self.sortedDataDims()
-  numZPoints = dataDims[zDim-1].numPoints
-
-  for zPos in range(1,numZPoints+1):
-    position[zDim-1] = zPos
-    planeData = getPlaneData(self, position, xDim, yDim)
-    if method == 'sum above noise' or method == 'max above noise':
-      lowIndices = planeData < noise
-      planeData[lowIndices] = 0
-    elif method == 'min below noise':
-      lowIndices = planeData > -noise
-      planeData[lowIndices] = 0
-
-    if projectedData is None:
-      projectedData = planeData
-    else:
-      if method == 'max':
-        projectedData = numpy.maximum(projectedData, planeData)
-      elif method == 'min':
-        projectedData = numpy.minimum(projectedData, planeData)
-      else:
-        projectedData += planeData
-
-  return projectedData
-
-def projectedToFile(self:'DataSource', path:str, xDim:int=1, yDim:int=2, method:str='max', noise=None, format:str=Formats.NMRPIPE):
-
-  if format != Formats.NMRPIPE:
-    raise Exception('Can only project to %s format currently' % Formats.NMRPIPE)
-
-  projectedData = projectedPlaneData(self, xDim, yDim, method=method, noise=noise)
-
-  with open(path, 'wb') as fp:
-    _saveNmrPipe2DHeader(self, fp, xDim, yDim)
-    projectedData.tofile(fp)
+# GWV 5/10/18: Replaced by routines in Core.Lib.SpectrumLib.py
+#
+# def projectedPlaneData(self:'DataSource', xDim:int=1, yDim:int=2, method:str='max', noise=None):
+#
+#   numDim = self.numDim
+#
+#   if numDim != 3:
+#     raise Exception('Can only project from 3D currently')
+#
+#   if not (1 <= xDim <= numDim):
+#     raise Exception('For projection, xDim = %d, must be in range 1 to $d' % (xDim, numDim))
+#
+#   if not (1 <= yDim <= numDim):
+#     raise Exception('For projection, yDim = %d, must be in range 1 to $d' % (yDim, numDim))
+#
+#   if xDim == yDim:
+#     raise Exception('For projection, must have xDim != yDim')
+#
+#   METHODS = ('max', 'max above noise', 'min', 'min below noise', 'sum', 'sum above noise')
+#   if method not in METHODS:
+#     raise Exception('For projection, method must be one of %s' % (METHODS,))
+#
+#   if method.endswith('noise') and noise is None:
+#     raise Exception('For projection method "%s", noise parameter must be defined' % (method,))
+#
+#   dims = set(range(1,numDim+1))
+#   dims.remove(xDim)
+#   dims.remove(yDim)
+#   zDim = dims.pop()
+#
+#   position = [1] * numDim
+#   projectedData = None
+#   dataDims = self.sortedDataDims()
+#   numZPoints = dataDims[zDim-1].numPoints
+#
+#   for zPos in range(1,numZPoints+1):
+#     position[zDim-1] = zPos
+#     planeData = getPlaneData(self, position, xDim, yDim)
+#     if method == 'sum above noise' or method == 'max above noise':
+#       lowIndices = planeData < noise
+#       planeData[lowIndices] = 0
+#     elif method == 'min below noise':
+#       lowIndices = planeData > -noise
+#       planeData[lowIndices] = 0
+#
+#     if projectedData is None:
+#       projectedData = planeData
+#     else:
+#       if method == 'max':
+#         projectedData = numpy.maximum(projectedData, planeData)
+#       elif method == 'min':
+#         projectedData = numpy.minimum(projectedData, planeData)
+#       else:
+#         projectedData += planeData
+#
+#   return projectedData
+#
+# def projectedToFile(self:'DataSource', path:str, xDim:int=1, yDim:int=2, method:str='max', noise=None, format:str=Formats.NMRPIPE):
+#
+#   if format != Formats.NMRPIPE:
+#     raise Exception('Can only project to %s format currently' % Formats.NMRPIPE)
+#
+#   projectedData = projectedPlaneData(self, xDim, yDim, method=method, noise=noise)
+#
+#   with open(path, 'wb') as fp:
+#     _saveNmrPipe2DHeader(self, fp, xDim, yDim)
+#     projectedData.tofile(fp)
 
 
 def addDataStore(self: 'DataSource', spectrumPath, **params):
