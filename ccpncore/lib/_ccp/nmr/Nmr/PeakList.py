@@ -29,7 +29,7 @@ __date__ = "$Date: 2017-04-07 10:28:48 +0000 (Fri, April 07, 2017) $"
 
 import numpy
 
-from ccpn.util import Undo
+from ccpn.core.lib import Undo
 from ccpnmodel.ccpncore.api.ccp.nmr.Nmr import PeakList
 
 from typing import Sequence

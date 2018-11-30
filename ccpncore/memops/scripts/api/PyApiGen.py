@@ -782,7 +782,7 @@ containsNonAlphanumeric = re.compile('[^a-zA-Z0-9_]').search
 # Global NaN constant
 NaN = float('NaN')
 
-from ccpn.util.Undo import _deleteAllApiObjects, restoreOriginalLinks, no_op
+from ccpn.core.lib.Undo import _deleteAllApiObjects, restoreOriginalLinks, no_op
  
 from ccpnmodel.ccpncore.%s.ApiError import ApiError
 """ % metaConstants.modellingPackageName)
