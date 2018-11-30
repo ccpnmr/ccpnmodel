@@ -35,7 +35,7 @@ import contextlib
 
 from ccpn.util import Path
 from ccpnmodel.ccpncore.lib.Io import Api as apiIo
-from ccpn.util import Undo
+from ccpn.core.lib import Undo
 
 TEST_PROJECTS_PATH = os.path.join(Path.getTopDirectory(), 'internal', 'data', 'testProjects')
 
