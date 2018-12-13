@@ -150,7 +150,7 @@ def newProject(projectName, path:str=None, overwriteExisting:bool=False, applica
 
   # create logger
   logger = _createLogger(project, applicationName, useFileLogger)
-  logger.info("Located at %s", path)
+  logger.info("Located at %s" % path)
 
   return project
 
