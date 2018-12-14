@@ -28,11 +28,12 @@ __date__ = "$Date: 2017-04-07 10:28:48 +0000 (Fri, April 07, 2017) $"
 #=========================================================================================
 
 import numpy
-
+from typing import Sequence
 from ccpn.core.lib import Undo
 from ccpnmodel.ccpncore.api.ccp.nmr.Nmr import PeakList
+from ccpn.core.lib.ContextManagers import newObject, ccpNmrV3CoreSetter, logCommandBlock, \
+    notificationBlanking, undoBlock, BlankedPartial
 
-from typing import Sequence
 
 def _cumulativeArray(array):
   """ get total size and strides array.
