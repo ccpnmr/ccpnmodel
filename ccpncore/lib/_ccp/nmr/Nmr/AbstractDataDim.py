@@ -9,8 +9,7 @@ __credits__ = ("Wayne Boucher, Ed Brooksbank, Rasmus H Fogh, Luca Mureddu, Timot
 __licence__ = ("CCPN licence. See http://www.ccpn.ac.uk/v3-software/downloads/license",
                "or ccpnmodel.ccpncore.memops.Credits.CcpnLicense for licence text")
 __reference__ = ("For publications, please use reference from http://www.ccpn.ac.uk/v3-software/downloads/license",
-               "or ccpnmodel.ccpncore.memops.Credits.CcpNmrReference")
-
+                 "or ccpnmodel.ccpncore.memops.Credits.CcpNmrReference")
 #=========================================================================================
 # Last code modification
 #=========================================================================================
@@ -20,7 +19,6 @@ __version__ = "$Revision: 3.0.b4 $"
 #=========================================================================================
 # Created
 #=========================================================================================
-
 __author__ = "$Author: CCPN $"
 __date__ = "$Date: 2017-04-07 10:28:48 +0000 (Fri, April 07, 2017) $"
 #=========================================================================================
@@ -35,30 +33,29 @@ __date__ = "$Date: 2017-04-07 10:28:48 +0000 (Fri, April 07, 2017) $"
 from typing import Set
 
 
-   
 # NB change from getDataDimIsotopes
 #def getDataDimIsotopes(dataDim):
-def getIsotopeCodes(self:'AbstractDataDim') -> Set[str]:
-  """
-  Get the shift measurement isotopes for a spectrum data dim
-  
-  .. describe:: Input
-  
-  Nmr.AbstarctDataDim (or subtypes)
-  
-  .. describe:: Output
+def getIsotopeCodes(self: 'AbstractDataDim') -> Set[str]:
+    """
+    Get the shift measurement isotopes for a spectrum data dim
 
-  Set of Words (Nmr.ExpDimRef.isotopeCodes)
-  """
+    .. describe:: Input
 
-  isotopes = set()
-    
-  for expDimRef in self.expDim.expDimRefs:
-    if expDimRef.measurementType in ('Shift','shift'):
-      for isotopeCode in expDimRef.isotopeCodes:
-        isotopes.add(isotopeCode)
- 
-  return isotopes
+    Nmr.AbstarctDataDim (or subtypes)
+
+    .. describe:: Output
+
+    Set of Words (Nmr.ExpDimRef.isotopeCodes)
+    """
+
+    isotopes = set()
+
+    for expDimRef in self.expDim.expDimRefs:
+        if expDimRef.measurementType in ('Shift', 'shift'):
+            for isotopeCode in expDimRef.isotopeCodes:
+                isotopes.add(isotopeCode)
+
+    return isotopes
 
 # Not needed after all
 # def getDefaultPlaneSize(dataDim):
