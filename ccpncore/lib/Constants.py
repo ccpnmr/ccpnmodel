@@ -28,6 +28,8 @@ __date__ = "$Date: 2017-04-07 10:28:48 +0000 (Fri, April 07, 2017) $"
 # Start of code
 #=========================================================================================
 
+from collections import OrderedDict
+
 # Default NmrChain code
 defaultNmrChainCode = '@-'
 defaultNmrResidueCode = '@'
@@ -37,18 +39,18 @@ defaultNmrResidueCode = '@'
 # To add new ones, just add them here.
 #
 # NBNB TBD we should constrain origin and measurementType depending on the constraintListType
-constraintListType2ItemLength = {
-  'Csa':1,
-  'T1':1,
-  'T2':1,
-  'T1rho':1,
-  'pKa':1,
-  'ChemicalShift':1,
-  'Distance':2,
-  'Rdc':2,
-  'JCoupling':2,
-  'Dihedral':4,
-}
+constraintListType2ItemLength = OrderedDict([
+        ('Distance', 2),
+        ('Dihedral', 4),
+        ('Rdc', 2),
+        ('JCoupling', 2),
+        ('ChemicalShift',1),
+        ('Csa', 1),
+        ('T1', 1),
+        ('T2',1),
+        ('T1rho', 1),
+        ('pKa', 1),
+])
 
 
 #
