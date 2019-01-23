@@ -23739,7 +23739,7 @@ class Residue(ccpnmodel.ccpncore.api.memops.Implementation.DataObject):
                 # must special-case these atoms
                 atomName = atomSysName.sysName
             atom = Atom(self, name=atomName)
-            if _undo.blocking <= 1:
+            if _undo.undoItemBlockingLevel <= 1:
               # NB dodgy, but should work for plain creation of chain or residue
               objectsCreated.add(atom)
       finally:

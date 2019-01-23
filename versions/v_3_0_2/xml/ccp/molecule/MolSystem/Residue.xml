@@ -95,7 +95,7 @@ try:
           # must special-case these atoms
           atomName = atomSysName.sysName
       atom = Atom(self, name=atomName)
-      if _undo.blocking &lt;= 1:
+      if _undo.undoItemBlockingLevel &lt;= 1:
         # NB dodgy, but should work for plain creation of chain or residue
         objectsCreated.add(atom)
 finally:
