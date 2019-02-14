@@ -297,7 +297,7 @@ def getPlaneData(self: 'DataSource', position=None, xDim: int = 1, yDim: int = 2
 
     fp.close()
 
-    data *= self.scale
+    # data *= self.scale
 
     return data
 
@@ -390,7 +390,7 @@ def getSliceData(self: 'DataSource', position=None, sliceDim: int = 1):
         data[sliceLower:sliceUpper] = blockData[blockSlice].squeeze()
     fp.close()
 
-    data *= self.scale
+    # data *= self.scale
 
     return data
 
@@ -577,7 +577,7 @@ def getRegionData(self: 'DataSource', startPoint: Sequence[float], endPoint: Seq
 
     fp.close()
 
-    data *= self.scale
+    # data *= self.scale
 
     return data.T, intRegion
 
