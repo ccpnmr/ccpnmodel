@@ -4,14 +4,12 @@
 #=========================================================================================
 # Licence, Reference and Credits
 #=========================================================================================
-
 __copyright__ = "Copyright (C) CCPN project (http://www.ccpn.ac.uk) 2014 - 2017"
 __credits__ = ("Wayne Boucher, Ed Brooksbank, Rasmus H Fogh, Luca Mureddu, Timothy J Ragan & Geerten W Vuister")
 __licence__ = ("CCPN licence. See http://www.ccpn.ac.uk/v3-software/downloads/license",
                "or ccpnmodel.ccpncore.memops.Credits.CcpnLicense for licence text")
 __reference__ = ("For publications, please use reference from http://www.ccpn.ac.uk/v3-software/downloads/license",
                "or ccpnmodel.ccpncore.memops.Credits.CcpNmrReference")
-
 #=========================================================================================
 # Last code modification
 #=========================================================================================
@@ -48,8 +46,9 @@ def loadDataSource(self:'NmrProject', filePath, dataFileFormat):
   if not isOk:
     # print(msg)
     getLogger().warning(msg)
-    # showError('Error', msg)
-    return None
+    raise ValueError(msg)
+    # # showError('Error', msg)
+    # return None
 
   numPoints = None
 
@@ -61,8 +60,10 @@ def loadDataSource(self:'NmrProject', filePath, dataFileFormat):
   if dataFileFormat is None:
     msg = 'Spectrum data format could not be determined for %s' % filePath
     getLogger().warning(msg)
-    # print(msg)
-    return None
+    raise ValueError(msg)
+    # # print(msg)
+    # return None
+
   #
   # if dataFileFormat == CCPN:
   #   return project.getSpectrum(filePath)
@@ -72,8 +73,9 @@ def loadDataSource(self:'NmrProject', filePath, dataFileFormat):
   if formatData is None:
     msg = 'Spectrum load failed for "%s": could not read params' % filePath
     getLogger().warning(msg)
-    # print(msg)
-    return None
+    raise ValueError(msg)
+    # # print(msg)
+    # return None
 
   else:
     fileType, specFile, numPoints, blockSizes, wordSize, isBigEndian, \
@@ -83,8 +85,9 @@ def loadDataSource(self:'NmrProject', filePath, dataFileFormat):
   if not os.path.exists(specFile):
     msg = 'Spectrum data file %s not found' % specFile
     getLogger().warning(msg)
-    # print(msg)
-    return None
+    raise ValueError(msg)
+    # # print(msg)
+    # return None
 
   # NBNB TBD REDO!
   # This way of setting DataLocationStores and DataUrls is HOPELESS, STUPID KLUDGE!!
