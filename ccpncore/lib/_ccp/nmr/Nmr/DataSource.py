@@ -434,24 +434,25 @@ def getPositionValue(self: 'DataSource', position: Sequence[float]):
     endPoint = startPoint + 2  # at top will only end up with +1 in effect, so doesn't wrap around
 
     data = getRegionData(self, startPoint, endPoint)
-    if data is not None and data.size != 0:
+    if data:
         data = data[0]
 
-        n, cumShape = _cumulativeArray(data.shape)
-        value = 0
-        for i in range(n):  # generally 2^numDim (except with edge effect at top)
-            array = _arrayOfIndex(i, cumShape)
-            m = 1.0
-            for j in range(len(array)):  # numDim
-                if data.shape[j] == 2:
-                    k = self.numDim - j - 1
-                    if array[j] == 0:
-                        m *= 1 - position[k] + startPoint[k]
-                    else:
-                        m *= position[k] - startPoint[k]
-            value += m * data[tuple(array)]
+        if data is not None and data.size != 0:
+            n, cumShape = _cumulativeArray(data.shape)
+            value = 0
+            for i in range(n):  # generally 2^numDim (except with edge effect at top)
+                array = _arrayOfIndex(i, cumShape)
+                m = 1.0
+                for j in range(len(array)):  # numDim
+                    if data.shape[j] == 2:
+                        k = self.numDim - j - 1
+                        if array[j] == 0:
+                            m *= 1 - position[k] + startPoint[k]
+                        else:
+                            m *= position[k] - startPoint[k]
+                value += m * data[tuple(array)]
 
-        return value
+            return value
 
 
 def getRegionData(self: 'DataSource', startPoint: Sequence[float], endPoint: Sequence[float]):
