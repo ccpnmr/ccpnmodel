@@ -39648,6 +39648,7 @@ class BoundStrip(Strip):
         if strip is not self:
           strip.__dict__['index'] = ii
           ii += 1
+      # self.__dict__['index'] = ii-1
     
       # delete strip-specific objects
       for axis in spectrumDisplay.findAllAxes(stripSerial=self.serial):
