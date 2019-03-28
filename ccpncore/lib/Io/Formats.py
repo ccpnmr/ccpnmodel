@@ -77,7 +77,7 @@ def analyseUrl(filePath):
 
   isOk, msg = Path.checkFilePath(filePath)
   if not isOk:
-    print (msg)
+    # print (msg)
     return (None, None, filePath)
 
   # Deal with directories as input
