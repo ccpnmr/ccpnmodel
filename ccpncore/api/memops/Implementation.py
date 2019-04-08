@@ -13509,7 +13509,7 @@ Implementations
       if topObj.isDeleted:
         for repository in topObj.activeRepositories:
           topObj.removeFrom(repository)
-        del  self.__dict__['topObjects'][topObj.guid]
+        del  self.__dict__['topObjects'][topObj.guidsa]
       elif topObj.isModified:
         topObj.save()
     if self.isModified:
