@@ -669,21 +669,26 @@ def getDefaultColours(self: 'DataSource') -> Tuple[str, str]:
     """Get default positivecontourcolour, negativecontourcolour for Spectrum
     (calculated by hashing spectrum properties to avoid always getting the same colours"""
 
-    from ccpn.util.Colour import spectrumHexColours
+    # 20190509: ED link to the new v3 routine as the one below has an indexing bug
+    from ccpn.core.lib.SpectrumLib import _getDefaultApiSpectrumColours
 
-    # The formula gives 0 for DataSource(1,1)    (22//2 -1)//2 *2
-    # and puts DataSource 2 reasonably far away from dataSource 1 within an experiment
+    return _getDefaultApiSpectrumColours(self)
 
-    colorCount = len(spectrumHexColours)
-    step = ((colorCount // 2 - 1) // 2)
-    index = self.experiment.serial - 1 + step * (self.serial - 1)
-
-    if self.numDim == 1:
-        ii = (2 * index) % colorCount
-    else:
-        ii = (2 * index) % colorCount
+    # from ccpn.util.Colour import spectrumHexColours
     #
-    return (spectrumHexColours[ii], spectrumHexColours[ii + 1])
+    # # The formula gives 0 for DataSource(1,1)    (22//2 -1)//2 *2
+    # # and puts DataSource 2 reasonably far away from dataSource 1 within an experiment
+    #
+    # colorCount = len(spectrumHexColours)
+    # step = ((colorCount // 2 - 1) // 2)
+    # index = self.experiment.serial - 1 + step * (self.serial - 1)
+    #
+    # if self.numDim == 1:
+    #     ii = (2 * index) % colorCount
+    # else:
+    #     ii = (2 * index) % colorCount
+    # #
+    # return (spectrumHexColours[ii], spectrumHexColours[ii + 1])
 
 
 def _saveNmrPipe2DHeader(self: 'DataSource', fp: 'file', xDim: int = 1, yDim: int = 2):
