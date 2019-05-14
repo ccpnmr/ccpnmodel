@@ -34,6 +34,9 @@ from ccpnmodel.ccpncore.lib.spectrum import Spectrum as spectrumLib
 from ccpnmodel.ccpncore.lib.spectrum.Integral import Integral as spInt
 from ccpnmodel.ccpncore.lib.Io import Formats
 
+# 20190514: ED
+from ccpn.util.Logging import getLogger
+
 
 # Additional functions for ccp.nmr.Nmr.DataSource
 #
@@ -282,18 +285,25 @@ def getPlaneData(self: 'DataSource', position=None, xDim: int = 1, yDim: int = 2
             ind = sum(x[0] * x[1] for x in zip(blockCoords, cumulativeBlocks))
             offset = wordSize * (blockSize * ind) + headerSize
             fp.seek(offset, 0)
-            blockData = numpy.fromfile(file=fp, dtype=dtype, count=blockSize).reshape(blockSizes)  # data is in reverse order: e.g. z,y,x not x,y,z
+            # blockData = numpy.fromfile(file=fp, dtype=dtype, count=blockSize).reshape(blockSizes)  # data is in reverse order: e.g. z,y,x not x,y,z
 
-            if blockData.dtype != numpy.float32:
-                blockData = numpy.array(blockData, numpy.float32)
+            try:
+                blockDataPre = numpy.fromfile(file=fp, dtype=dtype, count=blockSize)
+                blockData = blockDataPre.reshape(blockSizes)  # data is in reverse order: e.g. z,y,x not x,y,z
 
-            blockPlane = blockData[tuple(blockSlice)]
+                if blockData.dtype != numpy.float32:
+                    blockData = numpy.array(blockData, numpy.float32)
 
-            if xDim > yDim:
-                blockPlane = blockPlane.transpose()
+                blockPlane = blockData[tuple(blockSlice)]
 
-            #blockPlane = blockPlane.squeeze()  # removes 1, but sometimes block size is indeed 1 so do reshape instead
-            data[ylower:yupper, xlower:xupper] = blockPlane.reshape((yupper - ylower, xupper - xlower))
+                if xDim > yDim:
+                    blockPlane = blockPlane.transpose()
+
+                #blockPlane = blockPlane.squeeze()  # removes 1, but sometimes block size is indeed 1 so do reshape instead
+                data[ylower:yupper, xlower:xupper] = blockPlane.reshape((yupper - ylower, xupper - xlower))
+
+            except Exception as es:
+                getLogger().warning('getPlaneData: error loading last blockData')
 
     fp.close()
 
@@ -384,10 +394,19 @@ def getSliceData(self: 'DataSource', position=None, sliceDim: int = 1):
         ind = sum(x[0] * x[1] for x in zip(blockCoords, cumulativeBlocks))
         offset = wordSize * (blockSize * ind) + headerSize
         fp.seek(offset, 0)
-        blockData = numpy.fromfile(file=fp, dtype=dtype, count=blockSize).reshape(blockSizes)  # data is in reverse order: e.g. z,y,x not x,y,z
-        if blockData.dtype != numpy.float32:
-            blockData = numpy.array(blockData, numpy.float32)
-        data[sliceLower:sliceUpper] = blockData[blockSlice].squeeze()
+        # blockData = numpy.fromfile(file=fp, dtype=dtype, count=blockSize).reshape(blockSizes)  # data is in reverse order: e.g. z,y,x not x,y,z
+
+        try:
+            blockDataPre = numpy.fromfile(file=fp, dtype=dtype, count=blockSize)
+            blockData = blockDataPre.reshape(blockSizes)  # data is in reverse order: e.g. z,y,x not x,y,z
+
+            if blockData.dtype != numpy.float32:
+                blockData = numpy.array(blockData, numpy.float32)
+            data[sliceLower:sliceUpper] = blockData[blockSlice].squeeze()
+
+        except Exception as es:
+            getLogger().warning('getSliceData: error loading last blockData')
+
     fp.close()
 
     # data *= self.scale
@@ -572,12 +591,20 @@ def getRegionData(self: 'DataSource', startPoint: Sequence[float], endPoint: Seq
         ind = sum(x[0] * x[1] for x in zip(blockCoord, cumulativeBlocks))
         offset = wordSize * (blockSize * ind) + headerSize
         fp.seek(offset, 0)
-        blockData = numpy.fromfile(file=fp, dtype=dtype, count=blockSize).reshape(blockSizesRev)  # data is in reverse order: e.g. z,y,x not x,y,z
+        # blockData = numpy.fromfile(file=fp, dtype=dtype, count=blockSize).reshape(blockSizesRev)  # data is in reverse order: e.g. z,y,x not x,y,z
 
-        if blockData.dtype != numpy.float32:
-            blockData = numpy.array(blockData, numpy.float32)
+        try:
+            blockDataPre = numpy.fromfile(file=fp, dtype=dtype, count=blockSize)
+            blockData = blockDataPre.reshape(blockSizesRev)
 
-        data[dataSlice] = blockData[blockSlice].T
+            if blockData.dtype != numpy.float32:
+                blockData = numpy.array(blockData, numpy.float32)
+
+            data[dataSlice] = blockData[blockSlice].T
+
+        except Exception as es:
+            getLogger().warning('getRegionData: error loading last blockData')
+
 
     fp.close()
 
