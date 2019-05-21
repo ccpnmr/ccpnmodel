@@ -174,6 +174,7 @@ def createDummySpectrum(self:'NmrProject', axisCodes:Sequence[str],
 
   return experiment.createDataSource(name=specName, **params)
 
+
 def createExperiment(self:'NmrProject', name:str, numDim:int, sf:Sequence[float],
                      isotopeCodes:Sequence[str], isAcquisition:Sequence[bool]=None,
                      axisCodes:Sequence[str]=None,
@@ -210,6 +211,7 @@ def createExperiment(self:'NmrProject', name:str, numDim:int, sf:Sequence[float]
 
   return experiment
 
+
 def initialiseData(self:'NmrProject'):
   """Add objects that must be present from V3 onwards"""
   # add V3 mandatory objects (code in Project.__init__ and _fixLoadedProject)
@@ -224,12 +226,13 @@ def initialiseData(self:'NmrProject'):
         # Set a peakList for every spectrum
         dataSource.newPeakList()
 
-      if not dataSource.positiveContourColour or not dataSource.negativeContourColour:
-        # set contour colours for every spectrum
-        (dataSource.positiveContourColour,
-         dataSource.negativeContourColour) = dataSource.getDefaultColours()
-      if not dataSource.sliceColour:
-        dataSource.sliceColour = dataSource.positiveContourColour
+        # 20190520:ED new code to set colours and update contour levels now in core project_initialiseProject
+      # if not dataSource.positiveContourColour or not dataSource.negativeContourColour:
+      #   # set contour colours for every spectrum
+      #   (dataSource.positiveContourColour,
+      #    dataSource.negativeContourColour) = dataSource.getDefaultColours()
+      # if not dataSource.sliceColour:
+      #   dataSource.sliceColour = dataSource.positiveContourColour
 
   # MolSystem
   if self.molSystem is None:
