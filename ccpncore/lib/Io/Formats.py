@@ -74,8 +74,7 @@ def analyseUrl(filePath):
   Note:
   For Bruker and Varian Spectrum data, the usePath returned is the directory containing the spectrum
   """
-  identifiers = ('procpar', '1r','2rr','3rrr','4rrrr')
-  extensions = ('.hdf5','.spc', '.ucsf' )
+  extensions = ('.hdf5','.spc', '.ucsf','procs','procpar','.pipe')
   isOk, msg = Path.checkFilePath(filePath)
   if not isOk:
     # print (msg)
@@ -117,19 +116,11 @@ def analyseUrl(filePath):
       paths = []
       for dirp, dirn, file in  os.walk(filePath):
         for name in file:
-          if name in identifiers:
             path = os.path.join(dirp, name)
-            paths.append(path)
-          elif name.endswith((extensions)):
-            path = os.path.join(dirp, name)
-            paths.append(path)
-      if len(paths)==1:
-        return ('Spectrum', BRUKER, filePath)
-      else:
-          return ('Dirs',None, paths)
+            if path.endswith((extensions)):
+              paths.append(path)
+      return ('Dirs',None, paths)
 
-      # for p in ss:
-      #   analyseUrl(p)
 
 
     # No match
