@@ -67,6 +67,16 @@ EXCEL = 'Excel'
 
 
 DataTypes = ['Project', 'Spectrum', 'Text', 'Sequence', 'LookupFile', 'Structure', 'Macro']
+SpectrumTypes = ('.hdf5','.spc','.ucsf','procs','procpar','.pipe')
+
+def _searchSpectraPathsInSubDir(filePath):
+  paths = []
+  for dirp, dirn, file in os.walk(filePath):
+    for name in file:
+      path = os.path.join(dirp, name)
+      if path.endswith((SpectrumTypes)):
+        paths.append(path)
+  return paths
 
 def analyseUrl(filePath):
   """ Analyse filePath, and return (dataType, subType, usePath) tuple
@@ -74,7 +84,7 @@ def analyseUrl(filePath):
   Note:
   For Bruker and Varian Spectrum data, the usePath returned is the directory containing the spectrum
   """
-  extensions = ('.hdf5','.spc', '.ucsf','procs','procpar','.pipe')
+
   isOk, msg = Path.checkFilePath(filePath)
   if not isOk:
     # print (msg)
@@ -113,12 +123,7 @@ def analyseUrl(filePath):
 
 
     else:
-      paths = []
-      for dirp, dirn, file in  os.walk(filePath):
-        for name in file:
-            path = os.path.join(dirp, name)
-            if path.endswith((extensions)):
-              paths.append(path)
+      paths = _searchSpectraPathsInSubDir(filePath)
       return ('Dirs',None, paths)
 
 
