@@ -67,7 +67,7 @@ EXCEL = 'Excel'
 
 
 DataTypes = ['Project', 'Spectrum', 'Text', 'Sequence', 'LookupFile', 'Structure', 'Macro']
-SpectrumTypes = ('.hdf5','.spc','.ucsf','procs','procpar','.pipe')
+SpectrumTypes = ('.hdf5','.spc','.ucsf','1r','2rr','3rrr','4rrrr','procpar','.pipe')
 
 def _searchSpectraPathsInSubDir(filePath):
   paths = []
