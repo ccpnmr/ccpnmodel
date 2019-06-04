@@ -74,7 +74,8 @@ def analyseUrl(filePath):
   Note:
   For Bruker and Varian Spectrum data, the usePath returned is the directory containing the spectrum
   """
-
+  identifiers = ('procpar', '1r','2rr','3rrr','4rrrr')
+  extensions = ('.hdf5','.spc', '.ucsf' )
   isOk, msg = Path.checkFilePath(filePath)
   if not isOk:
     # print (msg)
@@ -101,7 +102,7 @@ def analyseUrl(filePath):
       # CCPN Project
       return ('Project', CCPN, filePath)
 
-    elif 'procs' in fileNames:
+    elif 'procs' in fileNames :
 
       # 'Bruker processed spectrum'
       return ('Spectrum', BRUKER, filePath)
@@ -113,15 +114,23 @@ def analyseUrl(filePath):
 
 
     else:
-      # fileNames = os.listdir(filePath)
-
+      paths = []
       for dirp, dirn, file in  os.walk(filePath):
         for name in file:
-          path = os.path.join(dirp, name)
+          if name in identifiers:
+            path = os.path.join(dirp, name)
+            paths.append(path)
+          elif name.endswith((extensions)):
+            path = os.path.join(dirp, name)
+            paths.append(path)
+      if len(paths)==1:
+        return ('Spectrum', BRUKER, filePath)
+      else:
+          return ('Dirs',None, paths)
 
-          if path.endswith('procs'):
-            filePath = path
-            return ('Spectrum', BRUKER, filePath)
+      # for p in ss:
+      #   analyseUrl(p)
+
 
     # No match
     return (None, None, filePath)
@@ -178,7 +187,7 @@ def analyseUrl(filePath):
       return ('Spectrum', NMRVIEW, filePath)
 
     # BRUKER file
-    if fileName in ('1r','2rr','3rrr','4rrrr'):
+    if fileName in ('1r','2rr','3rrr','4rrrr', 'procs'):
       return ('Spectrum', BRUKER, dirName)
 
     if fileName == 'phasefile':
