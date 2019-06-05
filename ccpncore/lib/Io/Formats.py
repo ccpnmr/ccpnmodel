@@ -67,16 +67,18 @@ EXCEL = 'Excel'
 
 
 DataTypes = ['Project', 'Spectrum', 'Text', 'Sequence', 'LookupFile', 'Structure', 'Macro']
-SpectrumTypes = ('.hdf5','.spc','.ucsf','1r','2rr','3rrr','4rrrr','procpar','.pipe')
+SpectrumTypes = ['.hdf5','.spc','.ucsf','1r','2rr','3rrr','4rrrr','procpar','.pipe']
+AdditionalTypes = ['procs'] # issue with adding the procs extension. If a Dir contains eg 1r file and procs file then the spectrum will load twice...
+# That's way the procs is in a separated group
 
 def _searchSpectraPathsInSubDir(filePath):
   paths = []
-  if filePath.endswith((SpectrumTypes)):
+  if filePath.endswith(tuple(SpectrumTypes + AdditionalTypes)):
     paths.append(filePath)
   for dirp, dirn, file in os.walk(filePath):
     for name in file:
       path = os.path.join(dirp, name)
-      if path.endswith((SpectrumTypes)):
+      if path.endswith(tuple(SpectrumTypes)):
         paths.append(path)
   return paths
 
