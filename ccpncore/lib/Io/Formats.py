@@ -71,6 +71,8 @@ SpectrumTypes = ('.hdf5','.spc','.ucsf','1r','2rr','3rrr','4rrrr','procpar','.pi
 
 def _searchSpectraPathsInSubDir(filePath):
   paths = []
+  if filePath.endswith((SpectrumTypes)):
+    paths.append(filePath)
   for dirp, dirn, file in os.walk(filePath):
     for name in file:
       path = os.path.join(dirp, name)
