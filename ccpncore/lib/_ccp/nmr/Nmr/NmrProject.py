@@ -39,7 +39,7 @@ from ccpnmodel.ccpncore.lib import V2Upgrade
 from ccpn.util.Logging import getLogger
 
 
-def loadDataSource(self:'NmrProject', filePath, dataFileFormat):
+def loadDataSource(self:'NmrProject', filePath, dataFileFormat, name=None):
 
   isOk, msg = checkFilePath(filePath)
 
@@ -96,23 +96,24 @@ def loadDataSource(self:'NmrProject', filePath, dataFileFormat):
   # Or at least refrain from creating individual DataLocationStores
   # when you only ever need one!
   # Rasmus Fogh
-
   dirName, fileName = os.path.split(specFile)
-  name, fex = os.path.splitext(fileName)
 
-  if (dataFileFormat == BRUKER) and name in ('1r','2rr','3rrr','4rrrr'):
-    rest, lower = os.path.split(dirName)
-    rest, mid = os.path.split(rest)
+  if not name:
+    name, fex = os.path.splitext(fileName)
 
-    if mid == 'pdata':
-      rest, upper = os.path.split(rest)
-      name = '%s-%s' % (upper, lower)
+    if (dataFileFormat == BRUKER) and name in ('1r','2rr','3rrr','4rrrr'):
+      rest, lower = os.path.split(dirName)
+      rest, mid = os.path.split(rest)
 
-  if (dataFileFormat == NMRPIPE) and len(numPoints) > 2:
-    name = os.path.basename(dirName)
+      if mid == 'pdata':
+        rest, upper = os.path.split(rest)
+        name = '%s-%s' % (upper, lower)
 
-  while any(x.findFirstDataSource(name=name) for x in self.experiments):
-    name = commonUtil.incrementName(name)
+    if (dataFileFormat == NMRPIPE) and len(numPoints) > 2:
+      name = os.path.basename(dirName)
+
+    while any(x.findFirstDataSource(name=name) for x in self.experiments):
+      name = commonUtil.incrementName(name)
 
   numberType = 'float' if isFloatData else 'int'
   experiment = self.createExperiment(name=name, numDim=len(numPoints),
