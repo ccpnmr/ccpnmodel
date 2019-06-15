@@ -4332,10 +4332,12 @@ def loadFromStream(stream, topObjId=None, topObject=None, partialLoad=False):
 
     if ((topObjectKey is not None and topObjectKey != 'ignore')):
       xx = result.getFullKey()
-
-    if (not (memopsRoot._upgradedFromV2)):
-      for obj in objectDict.values():
-        obj.checkValid()
+    try:
+      if (not (memopsRoot._upgradedFromV2)):
+        for obj in objectDict.values():
+          obj.checkValid()
+    except Exception as e:
+      print('Error reading project', e)
 
   except:
     
