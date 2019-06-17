@@ -65,9 +65,11 @@ PYTHON = 'Python'
 CSV = 'csv'
 EXCEL = 'Excel'
 
+# We need a better way of reading formats. This is all a part of a bigger mess.
 
 DataTypes = ['Project', 'Spectrum', 'Text', 'Sequence', 'LookupFile', 'Structure', 'Macro']
-SpectrumTypes = ['.hdf5','.spc','.ucsf','1r','2rr','3rrr','4rrrr','procpar','.pipe']
+SpectrumTypes = ['.hdf5','.spc','.ucsf','1r','2rr','3rrr','4rrrr','procpar','.pipe', '.ft1','.ft2','.ft3']
+# this is used only when searching in subdirectories which can contain several different files. NMRPipe can have arbitrary extensions names (renamed by user)
 AdditionalTypes = ['procs'] # issue with adding the procs extension. If a Dir contains eg 1r file and procs file then the spectrum will load twice...
 # That's way the procs is in a separated group
 
