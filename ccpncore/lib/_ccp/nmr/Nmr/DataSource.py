@@ -335,7 +335,7 @@ def getSliceData(self: 'DataSource', position=None, sliceDim: int = 1):
 
     if dataStore.fileType == 'NMRPipe':  # data is not blocked but multi-file in general
         if not hasattr(dataStore, 'template'):
-            dataStore.template = NmrPipe.guessFileTemplate(self)
+            dataStore.template = NmrPipe._guessFileTemplate(self)
         if dataStore.template:
             return NmrPipe.getSliceData(self, position, sliceDim)
 
