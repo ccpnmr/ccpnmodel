@@ -201,7 +201,7 @@ def analyseUrl(filePath):
     from array import array
 
     vals = array('i')
-    vals.fromstring(firstData[:4])
+    vals.fromstring(firstData[:8])
     if (0 < vals[0] < 6) and (vals[1] == 1):
       return ('Spectrum', FELIX, filePath)
 
