@@ -229,7 +229,6 @@ def analyseUrl(filePath):
   if filePath.endswith('.json'):
     from ccpn.util.Layout import isLayoutFile
     if isLayoutFile(filePath):
-      print("opening Layout")
       return ('Layout', JSON, filePath)
 
   if filePath.endswith(('.xls', '.xlsx')):
