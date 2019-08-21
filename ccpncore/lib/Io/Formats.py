@@ -63,6 +63,7 @@ PYTHON = 'Python'
 
 #  Look-up formats
 CSV = 'csv'
+JSON = 'json'
 EXCEL = 'Excel'
 
 # We need a better way of reading formats. This is all a part of a bigger mess.
@@ -224,6 +225,12 @@ def analyseUrl(filePath):
 
   if filePath.endswith('.csv'):
     return ('LookupFile', CSV, filePath)
+
+  if filePath.endswith('.json'):
+    from ccpn.util.Layout import isLayoutFile
+    if isLayoutFile(filePath):
+      print("opening Layout")
+      return ('Layout', JSON, filePath)
 
   if filePath.endswith(('.xls', '.xlsx')):
     return ('LookupFile', EXCEL, filePath)
