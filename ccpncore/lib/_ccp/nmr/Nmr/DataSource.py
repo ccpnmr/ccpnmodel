@@ -482,7 +482,7 @@ def getRegionData(self: 'DataSource', startPoint: Sequence[float], endPoint: Seq
 
     dataStore = self.dataStore
     if not dataStore:
-        return None
+        return None, None
 
     numDim = self.numDim
     assert len(startPoint) == numDim, 'len(startPoint) = %d, numDim=%d' % (len(startPoint), numDim)
