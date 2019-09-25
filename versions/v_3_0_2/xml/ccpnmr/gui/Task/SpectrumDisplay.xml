@@ -231,12 +231,17 @@ if stripDirection is None:
 else:
   result = []
   stripSerial = self.findFirstStrip(index=0).serial
-  index = 'XY'.index(stripDirection)
+  index = 'ZZZXY'.index(stripDirection)
   for ii,code in enumerate(axisOrder):
-    if ii == index:
+    if ii == index and index in (0, 1):
       result.append(self.findFirstAxis(code=code))
     else:
-      result.append(self.findFirstAxis(code=code, stripSerial=stripSerial))
+      axis = self.findFirstAxis(code=code, stripSerial=stripSerial)
+      if axis is not None:
+        result.append(axis)
+      else:
+        # get this first axis if stripSerial axis not found
+        result.append(self.findFirstAxis(code=code))
   result = tuple(result)</item>
     </codeStubs>
   </MetaOperation>

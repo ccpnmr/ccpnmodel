@@ -24446,12 +24446,17 @@ class Strip(ccpnmodel.ccpncore.api.memops.Implementation.DataObject):
     else:
       result = []
       stripSerial = self.serial
-      index = 'XY'.index(stripDirection)
+      index = 'ZZZXY'.index(stripDirection)
       for ii,code in enumerate(axisOrder):
-        if ii == index:
+        if ii == index and index in (0, 1):
           result.append(display.findFirstAxis(code=code))
         else:
-          result.append(display.findFirstAxis(code=code, stripSerial=stripSerial))
+          axis = display.findFirstAxis(code=code, stripSerial=stripSerial)
+          if axis is not None:
+            result.append(axis)
+          else:
+            # get this first axis if stripSerial axis not found
+            result.append(display.findFirstAxis(code=code))
       result = tuple(result)
     return result
 
@@ -36361,12 +36366,17 @@ resonanceGroupSerial can be passed in at creation time
     else:
       result = []
       stripSerial = self.findFirstStrip(index=0).serial
-      index = 'XY'.index(stripDirection)
+      index = 'ZZZXY'.index(stripDirection)
       for ii,code in enumerate(axisOrder):
-        if ii == index:
+        if ii == index and index in (0, 1):
           result.append(self.findFirstAxis(code=code))
         else:
-          result.append(self.findFirstAxis(code=code, stripSerial=stripSerial))
+          axis = self.findFirstAxis(code=code, stripSerial=stripSerial)
+          if axis is not None:
+            result.append(axis)
+          else:
+            # get this first axis if stripSerial axis not found
+            result.append(self.findFirstAxis(code=code))
       result = tuple(result)
     return result
   
@@ -39321,9 +39331,9 @@ class FreeStrip(Strip):
 
     try:
       if len(self.strips) > 1:
-        index = 'XY'.index(self.spectrumDisplay.stripDirection)
-        if values[index] != self.axisCodes[index]:
-          raise ValueError("Cannot change strip axis for multistip display while reordering axes")
+        index = 'ZZZXY'.index(self.spectrumDisplay.stripDirection)
+        if index in (0, 1) and values[index] != self.axisCodes[index]:
+          raise ValueError("Cannot change strip axis for multistrip display while reordering axes")
       dataDict['axisOrder'] = values
     finally:
       if (_undo is not None):
@@ -44152,9 +44162,9 @@ class BoundDisplay(SpectrumDisplay):
 
     try:
       if len(self.strips) > 1:
-        index = 'XY'.index(self.stripDirection)
-        if values[index] != self.axisCodes[index]:
-          raise ValueError("Cannot change strip axis for multistip display while reordering axes")
+        index = 'ZZZXY'.index(self.stripDirection)
+        if index in (0, 1) and values[index] != self.axisCodes[index]:
+          raise ValueError("Cannot change strip axis for multistrip display while reordering axes")
       dataDict['axisOrder'] = values
     finally:
       if (_undo is not None):
