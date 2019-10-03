@@ -15839,9 +15839,9 @@ class PeakListView(ccpnmodel.ccpncore.api.memops.Implementation.DataObject):
       dataDict['isSymbolDisplayed'] = True
       dataDict['isTextDisplayed'] = True
       dataDict['peakListSerial'] = None
-      dataDict['symbolColour'] = '#7a7a7a'
+      dataDict['symbolColour'] = None       #'#7a7a7a'
       dataDict['symbolStyle'] = 'cross'
-      dataDict['textColour'] = '#7a7a7a'
+      dataDict['textColour'] = None     #'#7a7a7a'
       dataDict['peakList'] = None
       dataDict['peakViews'] = {}
       dataDict['stripPeakListViews'] = set()
