@@ -7542,9 +7542,9 @@ class IntegralListView(ccpnmodel.ccpncore.api.memops.Implementation.DataObject):
       dataDict['integralListSerial'] = None
       dataDict['isSymbolDisplayed'] = True
       dataDict['isTextDisplayed'] = True
-      dataDict['symbolColour'] = None       #'#7a7a7a'
+      dataDict['symbolColour'] = '#'       #'#7a7a7a'
       dataDict['symbolStyle'] = 'cross'
-      dataDict['textColour'] = None     #'#7a7a7a'
+      dataDict['textColour'] = '#'     #'#7a7a7a'
       dataDict['integralList'] = None
       dataDict['integralViews'] = {}
       dataDict['stripIntegralListViews'] = set()
@@ -12265,9 +12265,9 @@ class MultipletListView(ccpnmodel.ccpncore.api.memops.Implementation.DataObject)
       dataDict['isSymbolDisplayed'] = True
       dataDict['isTextDisplayed'] = True
       dataDict['multipletListSerial'] = None
-      dataDict['symbolColour'] = None           #'#7a7a7a'
+      dataDict['symbolColour'] = '#'           #'#7a7a7a'
       dataDict['symbolStyle'] = 'cross'
-      dataDict['textColour'] = ''         #'#7a7a7a'
+      dataDict['textColour'] = '#'         #'#7a7a7a'
       dataDict['multipletList'] = None
       dataDict['multipletViews'] = {}
       dataDict['stripMultipletListViews'] = set()
@@ -15839,9 +15839,9 @@ class PeakListView(ccpnmodel.ccpncore.api.memops.Implementation.DataObject):
       dataDict['isSymbolDisplayed'] = True
       dataDict['isTextDisplayed'] = True
       dataDict['peakListSerial'] = None
-      dataDict['symbolColour'] = None       #'#7a7a7a'
+      dataDict['symbolColour'] = '#'       #'#7a7a7a'
       dataDict['symbolStyle'] = 'cross'
-      dataDict['textColour'] = None         #'#7a7a7a'
+      dataDict['textColour'] = '#'         #'#7a7a7a'
       dataDict['peakList'] = None
       dataDict['peakViews'] = {}
       dataDict['stripPeakListViews'] = set()
