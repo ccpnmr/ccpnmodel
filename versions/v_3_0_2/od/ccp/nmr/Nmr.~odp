@@ -9766,7 +9766,9 @@ objectdomain.uml.core.Stereotype-owns $22
 )
 (value "if value is not None:"
 "  name = value.name"
-"self.experimentType = name"
+"  self.experimentType = name"
+"else:"
+"  self.experimentType = None"
 ""
 "# Set expDimRef.axisCode to match RefExpDimRef axisCodes, linking the two objects"
 "# from ccpn.util.Common import _axisCodeMapIndices"
