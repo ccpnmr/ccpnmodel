@@ -30,6 +30,32 @@ from ccpn.util import Path
 from ccpnmodel.ccpncore.api.memops import Implementation
 
 
+def forceChangeDataStoreUrl(self: 'AbstractDataStore', newPath: str):
+    """ Change the url for this dataStore, so that the end we have
+    dataStore.dataUrl.url.path = newPath.  This changes all dataUrls
+    with the same old path if the old path does not exist and the
+    new one does.
+    """
+
+    newPath = Path.normalisePath(newPath, makeAbsolute=True)
+    oldDataUrl = self.dataUrl
+    oldUrl = oldDataUrl.url
+    oldPath = oldUrl.dataLocation
+    if newPath != oldPath:
+        dataLocationStore = self.dataLocationStore
+
+        # newUrl = Implementation.Url(path=newPath)  # TBD: should use oldUrl.clone(path=newPath)
+        newUrl = oldUrl.clone(path=newPath)
+
+        # first check if have a dataUrl with this path
+        newDataUrl = dataLocationStore.findFirstDataUrl(url=newUrl)
+        if not newDataUrl:
+            newDataUrl = dataLocationStore.newDataUrl(name=oldDataUrl.name, url=newUrl)
+            self.dataUrl = newDataUrl
+            repointToDataUrl(self, newDataUrl)
+            oldDataUrl.delete()
+
+
 def changeDataStoreUrl(self: 'AbstractDataStore', newPath: str):
     """ Change the url for this dataStore, so that the end we have
     dataStore.dataUrl.url.path = newPath.  This changes all dataUrls
@@ -44,42 +70,32 @@ def changeDataStoreUrl(self: 'AbstractDataStore', newPath: str):
     oldExists = os.path.exists(oldPath)
     if newPath != oldPath:
         dataLocationStore = self.dataLocationStore
-
-        # newUrl = Implementation.Url(path=newPath)  # TBD: should use oldUrl.clone(path=newPath)
-        newUrl = oldUrl.clone(path=newPath)
+        newUrl = Implementation.Url(path=newPath)  # TBD: should use oldUrl.clone(path=newPath)
 
         # first check if have a dataUrl with this path
         newDataUrl = dataLocationStore.findFirstDataUrl(url=newUrl)
         if not newDataUrl:
-            # # if old path exists and there is more than one dataStore with
-            # # this dataUrl then create new one
-            # dataUrlStores = dataLocationStore.findAllDataStores(dataUrl=oldDataUrl)
-            # if oldExists and len(dataUrlStores) > 1:
-            #     newDataUrl = dataLocationStore.newDataUrl(name=oldDataUrl.name, url=newUrl)
+            # if old path exists and there is more than one dataStore with
+            # this dataUrl then create new one
+            dataUrlStores = dataLocationStore.findAllDataStores(dataUrl=oldDataUrl)
+            if oldExists and len(dataUrlStores) > 1:
+                newDataUrl = dataLocationStore.newDataUrl(name=oldDataUrl.name, url=newUrl)
 
-            newDataUrl = dataLocationStore.newDataUrl(name=oldDataUrl.name, url=newUrl)
+        # if have found or have created newDataUrl then set dataStore to point to it
+        # else just change url of oldDataUrl (which could affect other dataStores)
+        if newDataUrl:
             self.dataUrl = newDataUrl
-            repointToDataUrl(self, newDataUrl)
-            oldDataUrl.delete()
+        else:
+            oldDataUrl.url = newUrl
 
-        # # if have found or have created newDataUrl then set dataStore to point to it
-        # # else just change url of oldDataUrl (which could affect other dataStores)
-        # if newDataUrl:
-        #     self.dataUrl = newDataUrl
-        # else:
-        #     oldDataUrl.url = newUrl
-        #
-        # for dataUrl in dataLocationStore.dataUrls:
-        #     dataUrl.url = newUrl
-
-        # # if old path does not exist and new path exists then change urls of
-        # # all data urls which have old path to new path (there might be none)
-        # if not oldExists:
-        #     newExists = os.path.exists(newPath)
-        #     if newExists:
-        #         for dataUrl in dataLocationStore.dataUrls:
-        #             if dataUrl.url == oldUrl:
-        #                 dataUrl.url = newUrl
+        # if old path does not exist and new path exists then change urls of
+        # all data urls which have old path to new path (there might be none)
+        if not oldExists:
+            newExists = os.path.exists(newPath)
+            if newExists:
+                for dataUrl in dataLocationStore.dataUrls:
+                    if dataUrl.url == oldUrl:
+                        dataUrl.url = newUrl
 
 
 def repointToDataUrl(self: 'AbstractDataStore', dataUrl: 'DataUrl'):
