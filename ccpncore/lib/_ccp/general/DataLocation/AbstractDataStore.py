@@ -53,8 +53,9 @@ def forceChangeDataStoreUrl(self: 'AbstractDataStore', newPath: str):
             newDataUrl = dataLocationStore.newDataUrl(name=oldDataUrl.name, url=newUrl)
             self.dataUrl = newDataUrl
             repointToDataUrl(self, newDataUrl)
-            oldDataUrl.delete()
+            # oldDataUrl.delete()
 
+            return newDataUrl
 
 def changeDataStoreUrl(self: 'AbstractDataStore', newPath: str):
     """ Change the url for this dataStore, so that the end we have
