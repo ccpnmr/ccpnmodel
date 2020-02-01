@@ -19728,7 +19728,7 @@ so is lysozyme.
         )
 
       _lenValue = len(value)
-      if (_lenValue > 80):
+      if (_lenValue > 280):
         raise ApiError("""%s.setSmiles:
          memops.Implementation.Line maximum length is 80 violated by value""" % self.qualifiedName
          + ": %s" % (value,)
