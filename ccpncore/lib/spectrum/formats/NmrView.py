@@ -34,6 +34,9 @@ import os, sys
 # from memops.qtgui.MessageDialog import showError
 
 from array import array
+from os import stat
+from math import ceil
+import traceback
 
 FILE_TYPE = 'NMRView'
 
@@ -84,8 +87,8 @@ def readParams(paramFileName):
       
   if magicBytes not in byteOrderFlags:
     msg = 'NmrView file %s appears to be corrupted: does not start with the expected magic bytes'
-    # showError('Error', msg % dataFile)
-    return
+    raise Exception(msg)
+
 
   if sys.byteorder != byteOrderFlags[magicBytes]:
     intVals.byteswap()
@@ -133,7 +136,8 @@ def readParams(paramFileName):
     del specWidths[i]
     del refPpms[i]
     del refPpms[i]
-  
+
+  fullSanityCheck(paramFileName,ndim,numPoints,blockSizes)
   isotopes = _guessConsistentNuclei(specFreqs)
 
   if len(parFileText) != 0:
@@ -159,7 +163,32 @@ def readParams(paramFileName):
           pulseProgram, dataScale)
 
   return data
-  
+
+def fullSanityCheck(dataFile,ndim,npts,block):
+
+  headerLength = 2048
+
+  rawDimLengths = []
+  for i in range(0,ndim):
+    realDimBytes = npts[i]
+    blocks = ceil(realDimBytes/float(block[i]))
+    rawDimBytes = blocks*block[i]
+    rawDimLengths.append(rawDimBytes)
+    #if __debug__:
+    #  print i,self.npts[i],self.block[i],realDimBytes,rawDimBytes,blocks
+
+  dataSize = 1
+  for rawDimLength in rawDimLengths:
+    dataSize *= rawDimLength
+
+  expectedSize = (dataSize *4) + headerLength
+
+  fileSize = stat(dataFile).st_size
+
+  if fileSize < expectedSize:
+    raise Exception('nmrview file %s\n is not the correct size (%d bytes; expected %d bytes)' % (dataFile,fileSize,expectedSize))
+
+
 def _guessConsistentNuclei(sf):
 
   ndim = len(sf)
