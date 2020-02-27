@@ -152,6 +152,13 @@ def analyseUrl(filePath, recursiveSearch=True):
   # Set up for further analysis
   dirName, fileName = os.path.split(filePath)
 
+  # check if this is a par file for an nv file
+  if fileName.endswith('.par'):
+    dataFile = '%s.nv' % os.path.splitext(fileName)[0]
+    dataFilePath = os.path.join(dirName,dataFile)
+    if os.path.exists(dataFilePath):
+      filePath = dataFilePath
+
   # Check for binary files
   fileObj = open(filePath, 'rb')
   firstData = fileObj.read(1024)
@@ -166,10 +173,10 @@ def analyseUrl(filePath, recursiveSearch=True):
     if b'UCSF NMR' in firstData:
       return ('Spectrum', UCSF, filePath)
 
+    # NMRPIPE spectrum
     refBytes = [ 0x40, 0x16, 0x14, 0x7b ]
     qBytes = [ ord(chr(c)) for c in firstData[8:12] ]
 
-    # NMRPIPE spectrum
     if qBytes == refBytes:
       return ('Spectrum', NMRPIPE, filePath)
 
