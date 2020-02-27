@@ -114,7 +114,7 @@ def readParams(paramFileName):
     blockSizes[i] = intVals[dimBase + (i*dimRecordSize) + dimBlockSizeOffest]
     specFreqs[i] = floatVals[dimBase + (i*dimRecordSize) + dimSFOffest]
     specWidths[i] = floatVals[dimBase + (i*dimRecordSize) + dimSWOffest]
-    refPpms[i]  = floatVals[dimBase + (i*dimRecordSize) + dimRefPointOffset]+1
+    refPoints[i] = floatVals[dimBase + (i*dimRecordSize) + dimRefPointOffset]+1
     refPpms[i] = floatVals[dimBase + (i*dimRecordSize) + dimRefValueOffset]
   
   for i in duffDims[::-1]:
