@@ -1,4 +1,6 @@
 """Module Documentation here
+  based on original code from g.s.thompson@kent.ac.uk
+  Copyright (C) 2006 Gary Thompson (University of Leeds & Kent)
 
 """
 #=========================================================================================
@@ -52,9 +54,16 @@ def readParams(paramFileName):
   pulseProgram = None
   dataScale = 1.0
   
-  dataFile = os.path.splitext(paramFileName)[0] + '.nv'
+  dataFileName = os.path.splitext(paramFileName)[0] + '.nv'
+  parFileName = os.path.splitext(paramFileName)[0] + '.par'
+
   
-  fileObj = open(dataFile, 'rb')  
+  fileObj = open(dataFileName, 'rb')
+  parFileText = []
+  with open(parFileName) as parFile:
+    for line in parFile:
+      parFileText.append(line.strip())
+
   headData = fileObj.read(headerSize)
   if len(headData) < headerSize:
     msg = 'NmrView file %s appears to be truncated'
@@ -127,7 +136,21 @@ def readParams(paramFileName):
   
   isotopes = _guessConsistentNuclei(specFreqs)
 
-  data = (FILE_TYPE, dataFile, numPoints, blockSizes,
+  if len(parFileText) != 0:
+    parFileData = parseParFile( parFileName, ndim, parFileText)
+
+    if parFileData['good']:
+      for dim in range(ndim):
+        if parFileData['sf'][dim] != None:
+          specFreqs[dim] = parFileData['sf'][dim]
+        if parFileData['sw'][dim] != None:
+          specWidths[dim] = parFileData['sw'][dim]
+        if parFileData['refpt'][dim] != None:
+          refPoints[dim] = parFileData['refpt'][dim]
+        if parFileData['refppm'][dim] != None:
+          refPpms[dim] = parFileData['refppm'][dim]
+
+  data = (FILE_TYPE, dataFileName, numPoints, blockSizes,
           wordSize, isBigEndian, isFloatData,
           headerSize, blockHeaderSize,
           isotopes, specFreqs,
@@ -196,3 +219,52 @@ def _guessConsistentNuclei(sf):
       isotopes[i] = '1H'
   
   return isotopes
+
+def parseParFile(parFileName, ndims, lines):
+  result = {'sw' : [None] * ndims, 'sf' : [None] * ndims, 'refpt' : [None] * ndims,
+            'refppm' : [None] * ndims, 'good' : True}
+  try:
+      for i, line in enumerate(lines):
+        fields = line.strip().split()
+        attribute = fields[0]
+        # doesn't work for nmrpipe currently
+        # if i ==0:
+        #   if attribute != 'header':
+        #     msg = 'file %s doesn\'t appear to be an nmrview .par file the first line doesn\'t start with \'header\' %s'
+        #     return
+        if attribute == 'sw':
+          axisIndex = int(fields[1])-1
+          checkParFileNumberOfFields(parFileName, i, fields, 3)
+          checkParFileAxisIndex(parFileName, ndims, i, fields)
+          result[attribute][axisIndex] = float(fields[2])
+
+        elif attribute == 'sf':
+          axisIndex = int(fields[1])-1
+          checkParFileNumberOfFields(parFileName, i, fields, 3)
+          checkParFileAxisIndex(parFileName,  ndims, i, fields)
+          result[attribute][axisIndex] = float(fields[2])
+
+        elif attribute == 'ref':
+          axisIndex = int(fields[1])-1
+          checkParFileNumberOfFields(parFileName, i, fields, 4)
+          checkParFileAxisIndex(parFileName, ndims, i, fields)
+          result['refpt'][axisIndex] = float(fields[3])
+          result['refppm'][axisIndex] = float(fields[2])
+
+  except Exception as  e:
+    print ('nmrview parameter file error',e)
+    traceback.print_exc(file=sys.stdout)
+    result['good'] = False
+
+  return result
+
+def checkParFileNumberOfFields(parFile, lineIndex, fields, expected):
+  if len(fields) != expected:
+    tooManyFieldsError = 'line %d in nmrview .par file %s has a bad format: incorrect number of fields for %s expected %d\n (line: %s)\n'
+    raise Exception(tooManyFieldsError % (lineIndex +1 ,parFile,fields[0],expected,' '.join(fields)))
+
+def checkParFileAxisIndex(parFile, ndim, lineIndex, fields):
+  axis = int(fields[1])
+  if axis > ndim or  axis < 1:
+    badAxisError = 'line %d in nmrview .par %s, has a bad axis index: %d. Permissible axis indices are 1 to %d  (line: %s)\n'
+    raise Exception(badAxisError % (lineIndex + 1, parFile, axis, ndim, ' '.join(fields)))
