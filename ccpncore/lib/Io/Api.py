@@ -34,6 +34,7 @@ import glob
 import os
 import sys
 import tempfile
+import posixpath
 
 from ccpn.util import Common as commonUtil
 from ccpn.util import Logging
@@ -1297,6 +1298,10 @@ def _initialiseStandardDataLocationStore(memopsRoot:Implementation.MemopsRoot):
   # remoteData - initialised to home directory and not reset
   dataUrlObject = result.findFirstDataUrl(name='remoteData')
   path = os.path.expanduser('~')
+
+  # # NOTE:ED - store in api as posixpath?
+  # path = path.replace(os.sep, posixpath.sep)
+
   if dataUrlObject is None:
     # make new dataUrl
     result.newDataUrl(name='remoteData', url=Implementation.Url(path=path))

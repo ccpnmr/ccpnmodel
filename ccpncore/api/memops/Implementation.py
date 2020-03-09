@@ -1222,7 +1222,9 @@ class Url(MemopsDataTypeObject):
           func(self, value)
       del dataDict['inConstructor']
     except:
-      self.root._logger.debug("in memops.Implementation.Url.__init__")
+      # TODO:ED bug in autogenerate - superclass has no 'root'
+      if hasattr(self, 'root'):
+        self.root._logger.debug("in memops.Implementation.Url.__init__")
       del dataDict['inConstructor']
       raise
 
@@ -1258,11 +1260,11 @@ class Url(MemopsDataTypeObject):
          + ": %s" % (value,)
         )
 
-      if (not (value.find(chr(92)) == -1)):
-        raise ApiError("""%s.checkValid: dataLocation:
-         PathString constraint contains_no_backslash violated by value""" % self.qualifiedName
-         + ": %s" % (value,)
-        )
+      # if (not (value.find(chr(92)) == -1)):
+      #   raise ApiError("""%s.checkValid: dataLocation:
+      #    PathString constraint contains_no_backslash violated by value""" % self.qualifiedName
+      #    + ": %s" % (value,)
+      #   )
 
       if (not (len(value.splitlines()) <= 1)):
         raise ApiError("""%s.checkValid: dataLocation:
@@ -1695,11 +1697,11 @@ class Url(MemopsDataTypeObject):
        + ": %s" % (value,)
       )
 
-    if (not (value.find(chr(92)) == -1)):
-      raise ApiError("""%s.setPath:
-       PathString constraint contains_no_backslash violated by value""" % self.qualifiedName
-       + ": %s" % (value,)
-      )
+    # if (not (value.find(chr(92)) == -1)):
+    #   raise ApiError("""%s.setPath:
+    #    PathString constraint contains_no_backslash violated by value""" % self.qualifiedName
+    #    + ": %s" % (value,)
+    #   )
 
     if (not (len(value.splitlines()) <= 1)):
       raise ApiError("""%s.setPath:
